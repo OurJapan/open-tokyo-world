@@ -12,6 +12,8 @@
 
 ## 自分のPCで試す
 
+[固定版スターターのダウンロード・更新方法](starter/plaza/releases.md)：比較画像・検証・ソースをまとめた v0.1.0 プレビューを配布しています。画像を見るだけならBlenderは不要です。
+
 [初めての参加ガイド](starter/plaza/first-contribution.md)：画像を見る、AIと試す、結果を紹介するところまで順に案内します。
 
 [6部品のスターター](starter/plaza/README.md)で、元の都市ファイルなしに生成・保存・検証・Before/After比較を実行できます。PythonとBlenderが必要です。独自部品はCC BY 4.0、対象の生成コードはMITで利用できます。
