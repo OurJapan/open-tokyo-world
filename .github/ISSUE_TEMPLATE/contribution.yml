@@ -1,0 +1,44 @@
+name: 成果物・外部の改善を紹介する
+description: 自作モデルやコード、他の人が公開している改善を紹介できます。
+title: "[改善の紹介] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        説明とURLだけでも歓迎します。この送信だけで成果物の利用許諾とは扱いません。
+        運営が条件を確認してから取り込みます。巨大なデータは添付せず、共有してよいURLを記載してください。
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 何を紹介しますか？
+      options:
+        - 自分または自分のAIが作ったモデル・素材
+        - 自分または自分のAIが作ったコード・機能
+        - 他の人・団体が公開している改善
+        - その他・まだ分からない
+    validations:
+      required: true
+  - type: textarea
+    id: improvement
+    attributes:
+      label: どんな改善ですか？
+      description: 対象の場所や機能、よくなる点を教えてください。
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: 成果物のURLや入手方法
+      description: 関連PRやファイル名でも構いません。未共有ならその旨を記載してください。
+    validations:
+      required: true
+  - type: textarea
+    id: rights
+    attributes:
+      label: 作者・利用条件（分かる範囲で）
+      description: LICENSEへのリンク、第三者素材、AI利用など。不明でも受付可能です。紹介者が所有権を保証する必要はありません。
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 編集・再現に役立つ情報（任意）
+      description: 編集データ、生成コード、依存素材、動作環境、比較や検証結果。
