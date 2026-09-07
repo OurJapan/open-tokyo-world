@@ -6,12 +6,15 @@ import { zipSync, strToU8 } from 'fflate';
 import { Sensors } from './sensors.js';
 import { fresh, cameraQuaternion, geoGate, containRect } from './spatial.js';
 import { makeDraft, validateDraft, sha256 } from './observation.js';
+import { submitObservation } from './submission.js';
 
 const $=id=>document.getElementById(id);
 const stage=$('stage'),video=$('camera'),host=$('canvas-host');
 let manifest,model,renderer,scene,camera,controls,grid;
 let active=false,busy=false,viewPose=null,photo=null,draft=null,previewURL=null,packedFile=null;
 let capturing=false,draftGeneration=0;
+let sending=false,submissionSnapshot=null;
+const submissionEndpoint=import.meta.env.VITE_OBSERVATION_API_URL||'';
 const testAnchor=new THREE.Vector3(0,0,-25);
 const sensors=new Sensors({onChange:()=>{
   for(const type of ['camera','location','orientation'])$(type+'-status').textContent=sensors.state[type];
@@ -62,6 +65,8 @@ async function start() {
   } catch(e){stop(e.message);}finally{busy=false;if(!active)$('start').disabled=false;}
 }
 function clearDraft() {
+  submissionSnapshot=null;$('submission-consent').checked=false;$('submission-token').value='';$('send-observation').disabled=false;
+  $('description').disabled=false;$('observation-type').disabled=false;
   draftGeneration++;if(previewURL)URL.revokeObjectURL(previewURL);previewURL=null;
   photo=null;draft=null;packedFile=null;$('photo-preview').removeAttribute('src');$('description').value='';
   $('observation-type').value='reality_difference';$('draft-dialog').close();
@@ -159,6 +164,34 @@ $('capture').addEventListener('click',()=>{if(draft)$('draft-dialog').showModal(
 $('close-draft').addEventListener('click',()=>{$('draft-dialog').close();say('下書きを保持しています。「下書きを開く」で再開できます。撮り直す場合は下書きを削除してください。');});
 $('delete-draft').addEventListener('click',()=>{clearDraft();say('下書きの写真と位置情報をこのタブから削除しました。保存済みZIPは端末側で削除してください。');});
 $('draft-form').addEventListener('submit',saveDraft);$('opacity').addEventListener('input',setOpacity);
+$('submission-controls').hidden=!submissionEndpoint;
+$('send-observation').addEventListener('click',async()=>{
+  if(sending||!draft||!photo)return;
+  if(!$('submission-consent').checked||!$('submission-token').value.trim()){
+    $('draft-status').textContent='参加用コードと保存への同意をご確認ください。';return;
+  }
+  sending=true;
+  for(const id of ['send-observation','delete-draft','description','observation-type'])$(id).disabled=true;
+  const generation=draftGeneration;
+  let sent=false;
+  try {
+    if(!submissionSnapshot){
+      draft.description=$('description').value;draft.observation_type=$('observation-type').value;validateDraft(draft);
+      submissionSnapshot=structuredClone(draft);
+      submissionSnapshot.consent={evidence_storage:true,public_display:false,visual_map:false,model_training:false,policy_revision:'private-poc-v1'};
+    }
+    $('draft-status').textContent='送信しています…';
+    const id=await submitObservation({endpoint:submissionEndpoint,token:$('submission-token').value.trim(),draft:submissionSnapshot,photo});
+    if(generation===draftGeneration)$('draft-status').textContent=`受け付けました。受付番号：${id}`;
+    sent=true;
+  } catch(e){if(generation===draftGeneration)$('draft-status').textContent=e.name==='AbortError'?'受付結果を確認できませんでした。同じ下書きで再送すると受付を確認できます。':e.message;}
+  finally {
+    sending=false;$('delete-draft').disabled=false;
+    $('send-observation').disabled=sent;
+    // Freeze the payload after the first attempt so retries have an identical identity.
+    $('description').disabled=!!submissionSnapshot;$('observation-type').disabled=!!submissionSnapshot;
+  }
+});
 $('placement').addEventListener('change',()=>{
   $('placement-help').textContent=$('placement').value==='geo'?'東京タワーから300m以内で利用できます。位置や方位が不明な場合は表示されません。':'カメラ前方に仮配置します。実際の位置とは一致しません。';
   if(active)anchorTest();
@@ -166,4 +199,4 @@ $('placement').addEventListener('change',()=>{
 window.addEventListener('resize',resize);video.addEventListener('resize',resize);new ResizeObserver(resize).observe(stage);
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&(active||busy))stop('画面を離れたためカメラとセンサーを停止しました。ボタンから再開できます。');});
 window.addEventListener('pagehide',()=>{sensors.stop();clearDraft();});
-init();
+  init();

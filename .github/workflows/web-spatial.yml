@@ -1,9 +1,9 @@
 name: Web spatial viewer
 on:
   pull_request:
-    paths: ['web/spatial-viewer/**', 'adapters/open-tokyo-world/**', '.github/workflows/web-spatial.yml']
+    paths: ['web/**', 'adapters/open-tokyo-world/**', '.github/workflows/web-spatial.yml']
   push:
-    paths: ['web/spatial-viewer/**', 'adapters/open-tokyo-world/**', '.github/workflows/web-spatial.yml']
+    paths: ['web/**', 'adapters/open-tokyo-world/**', '.github/workflows/web-spatial.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -30,6 +30,8 @@ jobs:
       - run: git diff --exit-code -- public/data
       - run: pnpm install --frozen-lockfile
       - run: pnpm test
+      - run: node --test ../observation-api/tests/*.test.mjs
+      - run: python -m unittest discover -s ../observation-api/tests -p "test_*.py"
       - run: pnpm build
       - uses: actions/upload-artifact@v4
         with:

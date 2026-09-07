@@ -34,7 +34,7 @@
         <label for="radius">表示範囲</label><select id="radius"><option value="50">50 m</option><option value="100" selected>100 m</option><option value="300">300 m</option></select>
 
       </section>
-      <p class="privacy-note">写真と位置情報は端末に保存されます。外部には送信されません。</p>
+      <p class="privacy-note">写真と位置情報は、送信を選ぶまで外部に送られません。</p>
       <details><summary>接続情報</summary>      <div class="sensor-strip"><span>カメラ <b id="camera-status">停止中</b></span><span>位置 <b id="location-status">未取得</b></span><span>方位 <b id="orientation-status">未取得</b></span></div><pre id="diagnostics">準備中</pre><p class="help">表示位置は概算です。自動の位置補正には対応していません。</p></details>
     </aside>
   </main>
@@ -48,6 +48,13 @@
   <label for="description">メモ（任意）</label><textarea id="description" rows="3" maxlength="2000" placeholder="例：入口の屋根がモデルと違うように見える"></textarea>
   <p class="help">写真と撮影情報をZIPで保存します。位置情報を含むため、共有前に内容をご確認ください。</p>
   <p id="draft-status" role="status" aria-live="polite">下書き</p>
+  <fieldset id="submission-controls" hidden>
+    <legend>運営に送信</legend>
+    <p class="help">1枚5MBまで。全体で1日30件・月300件・保存合計2GB。写真と位置・撮影情報は非公開で保存し、30日経過後に順次削除します。AI処理は自動実行しません。</p>
+    <label for="submission-token">参加用コード</label><input id="submission-token" type="password" autocomplete="off" />
+    <label><input id="submission-consent" type="checkbox" /> 写真・位置情報・メモを運営が確認するために保存することに同意します。</label>
+    <button type="button" id="send-observation">送信する</button>
+  </fieldset>
   <div class="actions"><button type="submit" id="save-draft" class="primary">写真とメモを保存</button><button type="button" id="delete-draft">下書きを削除</button></div>
 </form></dialog>
 <script type="module" src="/src/main.js"></script>

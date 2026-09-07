@@ -50,10 +50,14 @@ Webからは上記Pythonや親directoryをimportしない。package一式だけ�
 
 高さ1.6mと横画角60°は表示仮定であり、sensor計測値ではない。未知高度を0で保存しない。位置は10秒、方向は2秒を超える古い値や未来timestampを写真metadataへ付けない。既存originの`vertical_datum=unknown`を維持する。
 
-今後のbackendは、この下書きを検査してserver IDと保存状態を付与する。現時点ではZIPの保存によってIssue/AI修正が起動することはない。
+送信APIは、この下書きを検査して受付番号と保存状態を付与する。ZIPの保存・API送信によってIssue/AI修正が起動することはない。
 
 ## 未達・実機で確認すること
 
-実都市GLBの権利確認・測地登録、VPS、画像照合、連続6DoF、正確なocclusion、校正済みintrinsics、server受付は未実装。iPhoneの権限/映像/方向/ZIP保存、SNS内browser、横向き、10分の発熱とメモリは実機確認待ち。Desktopのmodule試験やbuildをSafari動作の証拠にしない。
+実都市GLBの権利確認・測地登録、VPS、画像照合、連続6DoF、正確なocclusion、校正済みintrinsicsは未実装。送信APIは実装済み・未デプロイ。iPhoneの権限/映像/方向/ZIP保存/送信、SNS内browser、横向き、10分の発熱とメモリは実機確認待ち。Desktopのmodule試験やbuildをSafari動作の証拠にしない。
 
 最小の実機手順：HTTPS URL→「カメラで試す」→許可→左右上下へ向ける→写真→分類/コメント→ZIP保存→camera終了→ZIPに生写真とJSONが入ることを確認。続いて位置/方位拒否、画面lock/復帰、下書き削除を試す。現地geo modeは最後に確認する。
+
+## 写真の送信と利用枠
+
+`VITE_OBSERVATION_API_URL` を設定してビルドすると、同意確認・参加用コード・送信ボタンが表示されます。未設定時は端末へのZIP保存だけ利用できます。コードはメモリ内のみで保持します。送信先の構築・初期利用枠・停止方法は [Observation API](../observation-api/README.md) を参照してください。APIは同じリポジトリの独立パッケージで、Cloudflareへの公開は別途必要です。

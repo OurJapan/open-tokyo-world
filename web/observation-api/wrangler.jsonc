@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "otw-observation-api",
+  "main": "src/worker.mjs",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": true,
+  "vars": {
+    "INTAKE_ENABLED": "false",
+    "ALLOWED_ORIGIN": "https://ourjapan.github.io"
+  },
+  "d1_databases": [{"binding": "DB", "database_name": "otw-observations", "database_id": "REPLACE_BEFORE_DEPLOY", "migrations_dir": "migrations"}],
+  "r2_buckets": [{"binding": "PHOTOS", "bucket_name": "otw-observation-photos"}],
+  "triggers": {"crons": ["15 * * * *"]},
+  "observability": {"enabled": false}
+}
