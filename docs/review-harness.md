@@ -48,7 +48,7 @@ OptiXが使えない環境では明示的に`--device CPU`を選びます。自�
 ## 初版の制約
 
 - 現実との一致、画像内の対象coverage、遮蔽、4カメラの適切さは人間の確認が必要。
-- 東京タワーのcamera poseは既存カメラから固定した候補。deck-interiorはdeck-to-moriの受入済み視点ではない。
+- 東京タワーは旧4視点にdeck-to-moriとmori-fullを加えた6候補。展望台視点には窓枠の遮蔽があり、人間の受入は未完了。
 - patch adapterは対象IDを確認した、非アニメーション・親なし・constraintなしobjectのtranslationのみ。窓割りや材質修正は次段階でadapterを追加。
 - meshの有限座標・index・UV等を確認するが、全法線、ゼロ面積、non-manifold、全modifier評価を検査するものではない。
 - 材質nodeの入力とリンクを記録するが、ネストしたnode groupや全RNA属性の完全なfingerprintではない。
@@ -78,3 +78,7 @@ OptiXが使えない環境では明示的に`--device CPU`を選びます。自�
 ## 次の受入条件
 
 実データの4画像を人間が確認し、必要ならカメラを修正する。画像ごとの出典・利用条件を特定し、配布できるbaselineを定義する。その後、根拠のある現実差分を一件選び、対応する限定patch adapterを実装してIssue→PRを通す。
+
+## カメラ・出典調査の追加
+
+6視点・12枚を960×540、16 samplesで再生成し検証成功。画像384件の素材使用先と出典URLの記録を抽出した。[追加調査と制約](camera-provenance-review.md)を参照。上記4視点の測定値は旧baseline実行時の記録である。
