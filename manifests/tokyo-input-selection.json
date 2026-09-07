@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "kind": "input-selection-plan-not-executable-lock",
+  "status": "not-ready-for-area-release",
+  "verified_date": "2026-09-07",
+  "repository_base": "9fd8fd6dce7c5691c7b0b24928a355e2ed1853b0",
+  "reference_scene": {
+    "sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+    "bytes": 558751758,
+    "source_pr": "https://github.com/OurJapan/open-tokyo-world/pull/12",
+    "merge_commit": "17ad6b36ecbf0e7673147de2a70fb0fdb6176eda",
+    "distribution": "local-only-pending-rights-review"
+  },
+  "public_component": {
+    "id": "plaza-six-parts",
+    "tag": "plaza-starter-v0.1.0",
+    "source_commit": "31e2d3c12b9986e4f40831b3392d3b2173389f32",
+    "asset": {
+      "name": "ourjapan-plaza-starter-v0.1.0.zip",
+      "url": "https://github.com/OurJapan/open-tokyo-world/releases/download/plaza-starter-v0.1.0/ourjapan-plaza-starter-v0.1.0.zip",
+      "bytes": 1142240,
+      "sha256": "308eb5c1b8597b81a9bafbd3cec815c5bb38d5ac5b0cf7c0dd52cb92f3115116"
+    },
+    "licenses": "See starter/plaza/ASSET-LICENSE.md and LICENSE.md"
+  },
+  "next_trial": {
+    "id": "mori-entry-plaza-and-one-plateau-tile",
+    "geographic_boundary": null,
+    "selected_feature_ids": null,
+    "components": [
+      "plaza-six-parts",
+      "plateau-data221"
+    ],
+    "source": {
+      "url": "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data221.b3dm",
+      "bytes": 1246040,
+      "sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2",
+      "fresh_download_matches": true
+    },
+    "dataset_url": "https://www.geospatial.jp/ckan/dataset/plateau-13103-minato-ku-2025",
+    "resource_url": "https://www.geospatial.jp/ckan/dataset/plateau-13103-minato-ku-2025/resource/08755b94-7b2e-4c9c-bf35-6c4d0768a463",
+    "terms_url": "https://www.mlit.go.jp/plateau/site-policy/",
+    "resource_terms_verified_via_browser": "2026-09-07",
+    "required_parent_tilesets": null,
+    "coordinate_transform": null,
+    "importer_commit": null,
+    "area_release_version": null
+  },
+  "deferred": [
+    "Tokyo Tower independent model and license/dependencies",
+    "Mori JP independent model, source NPZ and license/dependencies",
+    "OSM road derivation and distribution",
+    "Legacy atlas and other imagery",
+    "Music and completed film"
+  ],
+  "exit_conditions": [
+    "All required source URLs, hashes and terms fixed",
+    "Feature identities and transforms verified",
+    "Import code permission and version recorded",
+    "Fresh reconstruction without legacy blend or local caches",
+    "Blender reopen, render and human review passed"
+  ],
+  "notes": [
+    "Null means unresolved, not optional. This file must not drive an automated download/build.",
+    "No paid storage configured. No city assets uploaded.",
+    "Legacy local coordinates are not a surveyed EPSG CRS."
+  ]
+}
