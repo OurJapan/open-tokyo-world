@@ -1,0 +1,210 @@
+{
+  "ok": true,
+  "contract_tests": 32,
+  "blender_smoke": [
+    {
+      "case": "valid",
+      "passed": true
+    },
+    {
+      "case": "missing-image",
+      "passed": true
+    }
+  ],
+  "geometry_audit": {
+    "ok": true,
+    "road_checks": {
+      "asphalt 15s road detail": {
+        "original_vertices_exact": true,
+        "unclipped_faces_preserved": 140594,
+        "removed_inside_area_m2": 30.78706276132976,
+        "remaining_inside_area_m2": 4.691159933682841e-05,
+        "outside_area_error_m2": 1.8045306205749512e-05
+      },
+      "gutter 15s road detail": {
+        "original_vertices_exact": true,
+        "unclipped_faces_preserved": 33750,
+        "removed_inside_area_m2": 3.3520148770949123,
+        "remaining_inside_area_m2": 2.848818212307069e-07,
+        "outside_area_error_m2": 4.638110112864524e-06
+      },
+      "paint_0 unified road": {
+        "original_vertices_exact": true,
+        "unclipped_faces_preserved": 29925,
+        "removed_inside_area_m2": 0,
+        "remaining_inside_area_m2": 0,
+        "outside_area_error_m2": 0.0
+      },
+      "pavement_0 unified road": {
+        "original_vertices_exact": true,
+        "unclipped_faces_preserved": 271853,
+        "removed_inside_area_m2": 18.889873431900085,
+        "remaining_inside_area_m2": 7.163605908931985e-06,
+        "outside_area_error_m2": 5.748588591814041e-06
+      }
+    },
+    "new_objects": {
+      "OTW Mori plaza link / paving": {
+        "vertices": 1048,
+        "polygons": 786,
+        "triangles": 1572,
+        "min_triangle_area": 7.185608410509303e-05,
+        "closed_oriented_edges": true,
+        "in_footprint": true
+      },
+      "OTW Mori plaza link / planters": {
+        "vertices": 80,
+        "polygons": 60,
+        "triangles": 120,
+        "min_triangle_area": 0.006647402420639992,
+        "closed_oriented_edges": true,
+        "in_footprint": true
+      },
+      "OTW Mori plaza link / planting": {
+        "vertices": 22680,
+        "polygons": 30240,
+        "triangles": 30240,
+        "min_triangle_area": 0.0009120209724642336,
+        "closed_oriented_edges": true,
+        "in_footprint": true
+      }
+    },
+    "join_height_m": 0.303,
+    "accepted_paving_edge_m": 0.303,
+    "lawn_join_height_m": 0.11299999999999999,
+    "mapped_lawn_height_m": 0.11,
+    "minimum_unplanted_width_m": 7.4,
+    "limitations": [
+      "Outside this small footprint, old pedestrian-outline road artifacts remain.",
+      "Source road sheets are clipped surfaces, not asserted watertight solids.",
+      "Inferred landscape layout, not surveyed or regulatory accessibility approval.",
+      "This connection ends at mapped green; complete Central Green paths and elevations remain unresolved."
+    ],
+    "saved_surface_rays": [
+      {
+        "u": -3.25,
+        "v": 21.99,
+        "z": 0.30303335189819336,
+        "object": "OTW Mori entry plaza / paving"
+      },
+      {
+        "u": -3.25,
+        "v": 22.01,
+        "z": 0.3028101921081543,
+        "object": "OTW Mori plaza link / paving"
+      },
+      {
+        "u": -3.25,
+        "v": 24.25,
+        "z": 0.2602500915527344,
+        "object": "OTW Mori plaza link / paving"
+      },
+      {
+        "u": -3.25,
+        "v": 28.25,
+        "z": 0.1842498779296875,
+        "object": "OTW Mori plaza link / paving"
+      },
+      {
+        "u": -3.25,
+        "v": 31.99,
+        "z": 0.1131901741027832,
+        "object": "OTW Mori plaza link / paving"
+      },
+      {
+        "u": -3.25,
+        "v": 32.01,
+        "z": 0.1100001335144043,
+        "object": "park mapped land use"
+      },
+      {
+        "u": 0.25,
+        "v": 21.99,
+        "z": 0.30303382873535156,
+        "object": "OTW Mori entry plaza / paving"
+      },
+      {
+        "u": 0.25,
+        "v": 22.01,
+        "z": 0.3028101921081543,
+        "object": "OTW Mori plaza link / paving"
+      },
+      {
+        "u": 0.25,
+        "v": 24.25,
+        "z": 0.2602510452270508,
+        "object": "OTW Mori plaza link / paving"
+      },
+      {
+        "u": 0.25,
+        "v": 28.25,
+        "z": 0.1842498779296875,
+        "object": "OTW Mori plaza link / paving"
+      },
+      {
+        "u": 0.25,
+        "v": 31.99,
+        "z": 0.1131901741027832,
+        "object": "OTW Mori plaza link / paving"
+      },
+      {
+        "u": 0.25,
+        "v": 32.01,
+        "z": 0.1100001335144043,
+        "object": "park mapped land use"
+      },
+      {
+        "u": 3.25,
+        "v": 21.99,
+        "z": 0.30303382873535156,
+        "object": "OTW Mori entry plaza / paving"
+      },
+      {
+        "u": 3.25,
+        "v": 22.01,
+        "z": 0.3028097152709961,
+        "object": "OTW Mori plaza link / paving"
+      },
+      {
+        "u": 3.25,
+        "v": 24.25,
+        "z": 0.2602500915527344,
+        "object": "OTW Mori plaza link / paving"
+      },
+      {
+        "u": 3.25,
+        "v": 28.25,
+        "z": 0.1842503547668457,
+        "object": "OTW Mori plaza link / paving"
+      },
+      {
+        "u": 3.25,
+        "v": 31.99,
+        "z": 0.1131901741027832,
+        "object": "OTW Mori plaza link / paving"
+      },
+      {
+        "u": 3.25,
+        "v": 32.01,
+        "z": 0.1100001335144043,
+        "object": "park mapped land use"
+      }
+    ]
+  },
+  "changed_objects": [
+    "pavement_0 unified road",
+    "asphalt 15s road detail",
+    "gutter 15s road detail",
+    "OTW Mori plaza link / paving",
+    "OTW Mori plaza link / planters",
+    "OTW Mori plaza link / planting"
+  ],
+  "unchanged_existing_objects": 3299,
+  "assets_unchanged": true,
+  "limitations": [
+    "Human visual approval is required.",
+    "Peak RAM/VRAM and physical accuracy are not measured.",
+    "Timing is one run, not a warmed-up median.",
+    "Dependency audit and fingerprints cover documented initial checks, not all Blender features."
+  ]
+}

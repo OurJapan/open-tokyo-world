@@ -1,0 +1,241 @@
+{
+  "version": 1,
+  "status": "candidate-poses-human-review-pending",
+  "note": "Fixed cameras shared by before/after for Mori shape candidate.",
+  "views": [
+    {
+      "id": "link-overview",
+      "frame": 1,
+      "matrix_world": [
+        [
+          -0.19302186029333604,
+          -0.6560569020525068,
+          0.7296107885154711,
+          -381.33963078700367
+        ],
+        [
+          0.9811944564911177,
+          -0.12906037417426458,
+          0.14352999118337242,
+          318.5472429209974
+        ],
+        [
+          0.0,
+          0.7435944869935942,
+          0.6686308689499264,
+          25.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 42,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "source_camera": "Fixed inferred plaza connection review pose"
+    },
+    {
+      "id": "link-approach",
+      "frame": 1,
+      "matrix_world": [
+        [
+          -0.8944271909999154,
+          0.004258983953179568,
+          0.44719331508385446,
+          -403.7003105620015
+        ],
+        [
+          0.44721359549995904,
+          0.00851796790635911,
+          0.8943866301677063,
+          323.01937887599695
+        ],
+        [
+          0.0,
+          0.9999546516109783,
+          -0.009523377634390272,
+          1.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 28,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "source_camera": "Fixed inferred plaza connection review pose"
+    },
+    {
+      "id": "plaza-overview",
+      "frame": 1,
+      "matrix_world": [
+        [
+          -0.17888543819998384,
+          -0.6838113279427738,
+          0.7073910289063186,
+          -384.0229123600034
+        ],
+        [
+          0.9838699100999073,
+          -0.12432933235323208,
+          0.12861655071024022,
+          308.70854381999834
+        ],
+        [
+          0.0,
+          0.7189883760491124,
+          0.6950220968474745,
+          30.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 42,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "source_camera": "Fixed entry plaza comparison pose; local registration inferred"
+    },
+    {
+      "id": "plaza-approach",
+      "frame": 1,
+      "matrix_world": [
+        [
+          -0.8944271909999147,
+          0.0564626303602291,
+          0.4436349528303716,
+          -408.61966011250104
+        ],
+        [
+          0.44721359549996004,
+          0.11292526072045753,
+          0.8872699056607379,
+          313.1806797749979
+        ],
+        [
+          0.0,
+          0.9919979117236188,
+          -0.12625427967391512,
+          2.2
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 28,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "source_camera": "Fixed entry plaza comparison pose; local registration inferred"
+    },
+    {
+      "id": "terrace-overview",
+      "frame": 1,
+      "matrix_world": [
+        [
+          -0.5144957554275269,
+          -0.47783184120659683,
+          0.7120188545089042,
+          -369.25898033750315
+        ],
+        [
+          0.857492925712544,
+          -0.2866991047239584,
+          0.4272113127053429,
+          300.17854381999837
+        ],
+        [
+          0.0,
+          0.8303495377728554,
+          0.557242895980205,
+          39.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 44,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "source_camera": "Fixed northeast terrace review pose; estimated local registration"
+    },
+    {
+      "id": "entrance-front",
+      "frame": 1,
+      "matrix_world": [
+        [
+          -0.894427190999916,
+          -0.04048881650894584,
+          0.4453769815984038,
+          -409.96130089900095
+        ],
+        [
+          0.447213595499958,
+          -0.08097763301789168,
+          0.8907539631968076,
+          310.4973982019981
+        ],
+        [
+          0.0,
+          0.9958932064677039,
+          0.09053574604251861,
+          8.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 24,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "source_camera": "Fixed entrance detail pose; estimated registration to legacy scene"
+    }
+  ]
+}

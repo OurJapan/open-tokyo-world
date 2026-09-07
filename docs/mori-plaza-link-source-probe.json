@@ -1,0 +1,300 @@
+{
+  "input_sha256": "c43523e8a54767117f4fbc85ffe2a50fa5a15e3709847e9a33ae195f95bb4b0a",
+  "method": "49 downward rays from z=6, distance=30, inherited entry coordinates; local model evidence, not survey",
+  "rays": [
+    {
+      "u": -14,
+      "v": 22,
+      "z": 0.3209,
+      "object": "PLATEAU_data221"
+    },
+    {
+      "u": -14,
+      "v": 24,
+      "z": 0.3209,
+      "object": "PLATEAU_data221"
+    },
+    {
+      "u": -14,
+      "v": 26,
+      "z": 0.3209,
+      "object": "PLATEAU_data221"
+    },
+    {
+      "u": -14,
+      "v": 28,
+      "z": 0.321,
+      "object": "PLATEAU_data221"
+    },
+    {
+      "u": -14,
+      "v": 30,
+      "z": 0.321,
+      "object": "PLATEAU_data221"
+    },
+    {
+      "u": -14,
+      "v": 34,
+      "z": 0.3211,
+      "object": "PLATEAU_data221"
+    },
+    {
+      "u": -14,
+      "v": 38,
+      "z": 0.3211,
+      "object": "PLATEAU_data221"
+    },
+    {
+      "u": -10,
+      "v": 22,
+      "z": 0.321,
+      "object": "PLATEAU_data221"
+    },
+    {
+      "u": -10,
+      "v": 24,
+      "z": 0.321,
+      "object": "PLATEAU_data221"
+    },
+    {
+      "u": -10,
+      "v": 26,
+      "z": 0.321,
+      "object": "PLATEAU_data221"
+    },
+    {
+      "u": -10,
+      "v": 28,
+      "z": 0.46,
+      "object": "pavement_0 unified road"
+    },
+    {
+      "u": -10,
+      "v": 30,
+      "z": 0.11,
+      "object": "park mapped land use"
+    },
+    {
+      "u": -10,
+      "v": 34,
+      "z": 0.3,
+      "object": "asphalt 15s road detail"
+    },
+    {
+      "u": -10,
+      "v": 38,
+      "z": 0.3,
+      "object": "gutter 15s road detail"
+    },
+    {
+      "u": -6,
+      "v": 22,
+      "z": 0.3,
+      "object": "asphalt 15s road detail"
+    },
+    {
+      "u": -6,
+      "v": 24,
+      "z": 0.11,
+      "object": "park mapped land use"
+    },
+    {
+      "u": -6,
+      "v": 26,
+      "z": 0.11,
+      "object": "park mapped land use"
+    },
+    {
+      "u": -6,
+      "v": 28,
+      "z": 0.11,
+      "object": "park mapped land use"
+    },
+    {
+      "u": -6,
+      "v": 30,
+      "z": 0.11,
+      "object": "park mapped land use"
+    },
+    {
+      "u": -6,
+      "v": 34,
+      "z": 0.11,
+      "object": "park mapped land use"
+    },
+    {
+      "u": -6,
+      "v": 38,
+      "z": 0.11,
+      "object": "park mapped land use"
+    },
+    {
+      "u": 0,
+      "v": 22,
+      "z": 0.3,
+      "object": "OTW Mori entry plaza / paving"
+    },
+    {
+      "u": 0,
+      "v": 24,
+      "z": 0.3,
+      "object": "asphalt 15s road detail"
+    },
+    {
+      "u": 0,
+      "v": 26,
+      "z": 0.11,
+      "object": "park mapped land use"
+    },
+    {
+      "u": 0,
+      "v": 28,
+      "z": 0.11,
+      "object": "park mapped land use"
+    },
+    {
+      "u": 0,
+      "v": 30,
+      "z": 0.11,
+      "object": "park mapped land use"
+    },
+    {
+      "u": 0,
+      "v": 34,
+      "z": 0.11,
+      "object": "park mapped land use"
+    },
+    {
+      "u": 0,
+      "v": 38,
+      "z": 0.11,
+      "object": "park mapped land use"
+    },
+    {
+      "u": 6,
+      "v": 22,
+      "z": 0.3,
+      "object": "OTW Mori entry plaza / paving"
+    },
+    {
+      "u": 6,
+      "v": 24,
+      "z": 0.3,
+      "object": "asphalt 15s road detail"
+    },
+    {
+      "u": 6,
+      "v": 26,
+      "z": 0.3,
+      "object": "asphalt 15s road detail"
+    },
+    {
+      "u": 6,
+      "v": 28,
+      "z": 0.46,
+      "object": "pavement_0 unified road"
+    },
+    {
+      "u": 6,
+      "v": 30,
+      "z": 0.11,
+      "object": "park mapped land use"
+    },
+    {
+      "u": 6,
+      "v": 34,
+      "z": 0.11,
+      "object": "park mapped land use"
+    },
+    {
+      "u": 6,
+      "v": 38,
+      "z": 0.11,
+      "object": "park mapped land use"
+    },
+    {
+      "u": 10,
+      "v": 22,
+      "z": 0.3,
+      "object": "asphalt 15s road detail"
+    },
+    {
+      "u": 10,
+      "v": 24,
+      "z": 0.3,
+      "object": "asphalt 15s road detail"
+    },
+    {
+      "u": 10,
+      "v": 26,
+      "z": 0.3,
+      "object": "asphalt 15s road detail"
+    },
+    {
+      "u": 10,
+      "v": 28,
+      "z": 0.3,
+      "object": "asphalt 15s road detail"
+    },
+    {
+      "u": 10,
+      "v": 30,
+      "z": 0.3,
+      "object": "asphalt 15s road detail"
+    },
+    {
+      "u": 10,
+      "v": 34,
+      "z": 0.46,
+      "object": "pavement_0 unified road"
+    },
+    {
+      "u": 10,
+      "v": 38,
+      "z": 0.3,
+      "object": "gutter 15s road detail"
+    },
+    {
+      "u": 14,
+      "v": 22,
+      "z": 0.3,
+      "object": "asphalt 15s road detail"
+    },
+    {
+      "u": 14,
+      "v": 24,
+      "z": 0.3,
+      "object": "asphalt 15s road detail"
+    },
+    {
+      "u": 14,
+      "v": 26,
+      "z": 0.3,
+      "object": "asphalt 15s road detail"
+    },
+    {
+      "u": 14,
+      "v": 28,
+      "z": 0.3,
+      "object": "asphalt 15s road detail"
+    },
+    {
+      "u": 14,
+      "v": 30,
+      "z": 0.3,
+      "object": "asphalt 15s road detail"
+    },
+    {
+      "u": 14,
+      "v": 34,
+      "z": 0.3,
+      "object": "asphalt 15s road detail"
+    },
+    {
+      "u": 14,
+      "v": 38,
+      "z": 0.3,
+      "object": "asphalt 15s road detail"
+    }
+  ]
+}

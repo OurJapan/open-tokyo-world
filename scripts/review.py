@@ -106,8 +106,11 @@ def validate_patch(patch):
             require(set(op)=={'op','feature_id','object','expected_mesh_sha256'}, 'Unexpected podium patch keys')
             require(op['feature_id']=='otw:jp:tokyo:minato:azabudai-mori-jp' and op['object']=='Mori JP podium / stone', 'Wrong podium target')
             require(re.fullmatch('[0-9a-f]{64}',op['expected_mesh_sha256']) is not None and bool(patch['source_refs']), 'Podium patch requires hash and sources')
-        elif op['op']=='mori_plaza_v1':
-            from mori_plaza_v1 import ANCHOR,FEATURE,ROADS,ADDED
+        elif op['op'] in ('mori_plaza_v1','mori_plaza_link_v1'):
+            if op['op']=='mori_plaza_link_v1':
+                from mori_plaza_link_v1 import ANCHOR,FEATURE,ROADS,ADDED
+            else:
+                from mori_plaza_v1 import ANCHOR,FEATURE,ROADS,ADDED
             require(set(op)=={'op','feature_id','object','expected_mesh_sha256','road_mesh_sha256','added_objects'}, 'Unexpected plaza keys')
             require(op['object']==ANCHOR and op['feature_id']==FEATURE, 'Wrong plaza anchor')
             require(set(op['road_mesh_sha256'])==ROADS and set(op['added_objects'])==ADDED and len(op['added_objects'])==len(ADDED), 'Wrong plaza change scope')
@@ -203,7 +206,7 @@ def main():
     try:
         revision = subprocess.run(['git','-c',f'safe.directory={ROOT.as_posix()}','-C',str(ROOT),'rev-parse','HEAD'],capture_output=True,text=True,check=True).stdout.strip()
         summary['code_base_commit'] = revision
-        summary['code_files'] = {f.relative_to(ROOT).as_posix():digest(f) for f in (Path(__file__),WORKER,ROOT/'scripts/mori_shape.py',ROOT/'scripts/mori_crown_v2.py',ROOT/'scripts/mori_crown_material.py',ROOT/'scripts/mori_facade_v2.py',ROOT/'scripts/mori_podium_v2.py',ROOT/'scripts/mori_entrance_v1.py',ROOT/'scripts/mori_podium_v3.py',ROOT/'scripts/mori_terrace_v1.py',ROOT/'scripts/mori_plaza_v1.py')}
+        summary['code_files'] = {f.relative_to(ROOT).as_posix():digest(f) for f in (Path(__file__),WORKER,ROOT/'scripts/mori_shape.py',ROOT/'scripts/mori_crown_v2.py',ROOT/'scripts/mori_crown_material.py',ROOT/'scripts/mori_facade_v2.py',ROOT/'scripts/mori_podium_v2.py',ROOT/'scripts/mori_entrance_v1.py',ROOT/'scripts/mori_podium_v3.py',ROOT/'scripts/mori_terrace_v1.py',ROOT/'scripts/mori_plaza_v1.py',ROOT/'scripts/mori_plaza_link_v1.py')}
         job = {'output':str(output),'cameras':cameras,'features':features,'patch':patch,'settings':{k:summary[k] for k in ('blender_version','device','width','height','samples','seed')}}
         if needs_geometry:
             job['geometry_source']=str(a.geometry_source.resolve())
@@ -216,6 +219,9 @@ def main():
         added=[]
         if patch and any(op['op']=='mori_plaza_v1' for op in patch['operations']):
             from mori_plaza_v1 import ROADS,ADDED
+            allowed=sorted(ROADS);added=sorted(ADDED)
+        if patch and any(op['op']=='mori_plaza_link_v1' for op in patch['operations']):
+            from mori_plaza_link_v1 import ROADS,ADDED
             allowed=sorted(ROADS);added=sorted(ADDED)
         summary['changed_objects'] = compare_reports(before,after,allowed,added)
         if patch: require(bool(summary['changed_objects']), 'Patch produced no recorded change')

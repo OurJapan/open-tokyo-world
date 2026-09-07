@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "purpose": "reviewed-change",
+  "reason": "Connect the accepted entry plaza to mapped green with a tapered 120m2 pedestrian increment; dimensions and planting are inferred.",
+  "source_refs": [
+    "https://www.openstreetmap.org/way/1443867470",
+    "https://www.mori.co.jp/projects/azabudaihills/facilities/",
+    "https://www.azabudai-hills.com/floor_map/mori-jp_tower-plaza_1f.html"
+  ],
+  "operations": [
+    {
+      "op": "mori_plaza_link_v1",
+      "object": "Mori JP podium / stone",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "expected_mesh_sha256": "4f4cfbc17a08f91e35ea5787b9bc062a51c0df8ffdee5a4017c9ed85da16ccf6",
+      "road_mesh_sha256": {
+        "asphalt 15s road detail": "0d30f9fd0b40597d68c162bb28ebbd5fa7f64d2b3a83e46d2adb29f209387ab7",
+        "gutter 15s road detail": "4b512daff78bba4c7b100d834eb288f5dc5e811a66cd590a39bbb1901f0bc180",
+        "pavement_0 unified road": "3d3bb581eb36ec18aa16db441dafb2c28863ce11d6851c0970c4fe951bf9596c",
+        "paint_0 unified road": "ba63b01e354ae1e7e228454601a818cf34e93957eee395d3b87a81360c452343"
+      },
+      "added_objects": [
+        "OTW Mori plaza link / paving",
+        "OTW Mori plaza link / planters",
+        "OTW Mori plaza link / planting"
+      ]
+    }
+  ]
+}
