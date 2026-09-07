@@ -28,7 +28,7 @@
 
 PR #2をsquash/rebaseで取り込む場合は、#4の依存関係を組み直してから再確認する。現在の簡単な取り込み手順はmerge commitを前提とする。
 
-repositoryのAGENTS.mdにある`Do not merge your own changes.`に従い、Agentは資料整理・検証・Ready for reviewへの変更まで担当し、mergeは人間が行う。
+承認・mergeは[mainの保護と承認責任](main-governance.md)に従う。Agentの操作はアカウント保有者の責任と許可範囲で行い、本人PRの例外でも検証と採用判断を記録する。
 
 ## 未完の作業
 
