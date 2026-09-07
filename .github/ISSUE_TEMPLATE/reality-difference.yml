@@ -1,1 +1,36 @@
-
+name: 街の違い・改善を報告する
+description: 建物名や地図リンク、一言から参加できます。
+title: "[街の改善] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Blenderやプログラミングの知識は不要です。現在は設計・準備段階で、自動修正はまだ稼働していません。
+        写真は提供する権利があるものを添付してください。他者の資料はURLだけでも役立ちます。
+  - type: input
+    id: location
+    attributes:
+      label: どこの場所ですか？
+      description: 建物名、地図リンク、動画の時刻などで構いません。
+    validations:
+      required: true
+  - type: textarea
+    id: observation
+    attributes:
+      label: 何が違いますか？ どう改善したいですか？
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 写真・資料・見た時期（分かる範囲で）
+      description: 写真の撮影日、見た方向、資料URL。写真を添付する場合は撮影者と利用できる範囲も記載してください。
+  - type: dropdown
+    id: credit
+    attributes:
+      label: 成果へのお名前の掲載
+      options:
+        - 希望しない
+        - GitHubの表示名で掲載してよい
+        - 掲載前に相談したい
+      default: 0
