@@ -15,10 +15,18 @@ The independent code in the following four files, as present in baseline commit 
 
 対象は上記4ファイルの独自実装です。この版の利用・改変・再配布・商用利用をMITの条件で許諾します。ハッシュは対象版の特定用であり、改変禁止や追加制限ではありません。後続寄稿者の権利をこの表示で勝手に許諾しません。
 
-## Outside this grant
+## MIT: starter runner
 
-No license is granted here for other repository files, legacy city scenes, generated models, reference photos, textures, music, trademarks, PLATEAU data, OpenStreetMap data, or other third-party content. Any separately applicable license remains in effect. Execution of the covered code does not itself grant rights to its inputs or outputs. This scope document adds no conditions to the MIT grant for the covered code.
+The original code in `starter/plaza/run.py` and `starter/plaza/scene.py`, marked with SPDX-License-Identifier: MIT and copyright (c) 2026 ark4ez, is also licensed under [MIT](MIT-LICENSE.txt). This does not extend the four-file snapshot grant above to unrelated later modifications.
 
-独自モデルをCC BY 4.0で配布する方針は別途対象を確認して適用します。この段階では6部品のblendや全都市モデルにライセンスを付与せず、配布もしません。他のコード・文書も一括してMIT／CC BYになったとは扱わないでください。
+## CC BY 4.0: six-part starter
+
+The original six procedural parts, their materials, starter camera/lighting, previews, and documentation/metadata in `starter/plaza/` have the separate grant in [starter/plaza/ASSET-LICENSE.md](starter/plaza/ASSET-LICENSE.md). Preserve its source notices. Python code remains MIT.
+
+## Outside these grants
+
+Except for the separately identified starter above, no license is granted here for other repository files, legacy city scenes, generated models, reference photos, textures, music, trademarks, PLATEAU data, OpenStreetMap data, or other third-party content. Any separately applicable license remains in effect. Execution of the covered code does not itself grant rights to its inputs or outputs. This scope document adds no conditions to the MIT grant for the covered code.
+
+6部品のスターターに限ってCC BY 4.0を適用します。全都市モデルや他のコード・文書が一括してMIT／CC BYになったとは扱わないでください。
 
 See [NOTICE](NOTICE.md) for provenance and operational dependencies. Attribution required by a third-party license must be retained when that data is used; those requirements are not additional restrictions on the independent MIT code.

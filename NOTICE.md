@@ -17,3 +17,7 @@ The plaza diagnosis and connection context used saved OpenStreetMap information:
 Visual references were linked in the existing modeling records: [Mori Building](https://www.mori.co.jp/projects/azabudaihills/facilities/), [official floor map](https://www.azabudai-hills.com/floor_map/mori-jp_tower-plaza_1f.html), [PCPA](https://pcparch.com/work/azabudai-hills), and [Nihon Sekkei](https://www.nihonsekkei.co.jp/projects/19811/). Those photographs and plans are not included or relicensed here. Their mention does not imply endorsement.
 
 No third-party data license is replaced by the MIT license for the four independent implementations. Future contributors should follow CONTRIBUTING.md and record permission for their own changes.
+
+## Standalone starter
+
+The two additional MIT scripts in `starter/plaza/` regenerate six original procedural parts without the legacy city input. See the [asset grant](starter/plaza/ASSET-LICENSE.md) and [machine-readable provenance](starter/plaza/provenance.json). This starter supplies a new viewing setup, not a reconstruction of the full legacy scene.
