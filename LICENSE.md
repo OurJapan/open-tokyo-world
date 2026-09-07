@@ -51,10 +51,16 @@ The independent implementations in the eleven files below, at commit `e349a7dafd
 
 The original contributions within thirteen detailed Mori parts, their original materials, standalone camera/lighting, and original documentation/metadata in `starter/mori/` have the grant in [ASSET-LICENSE.md](starter/mori/ASSET-LICENSE.md). Underlying PLATEAU-derived geometry and other third-party components retain their source terms. This is not a blanket license for the combined scene.
 
+## Tokyo Tower: MIT code and CC BY 4.0 original assets
+
+The nine historical code snapshots listed with SHA-256 and source ranges in [Tokyo Tower provenance](assets/tokyo-tower/provenance.json), plus the original `assets/tokyo-tower/export.py` and `tests/test_tower_license.py`, are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. Source ranges cover only the archived text, not unrelated portions of the legacy files. The account holder explicitly confirmed authorship, authority and the same MIT/CC BY policy on 2026-09-07. Snapshot hashes identify the grant and do not restrict modifications allowed by MIT.
+
+The 77 original Tokyo Tower parts and their original materials, plus the new isolated review setup and previews, have the [CC BY 4.0 grant](assets/tokyo-tower/ASSET-LICENSE.md). Third-party rights and the rest of the legacy city remain outside that grant.
+
 ## Outside these grants
 
 Except for the separately identified starters and original additions above, no license is granted here for other repository files, legacy city scenes, generated models, reference photos, textures, music, trademarks, PLATEAU data, OpenStreetMap data, or other third-party content. Any separately applicable license remains in effect. Execution of the covered code does not itself grant rights to its inputs or outputs. This scope document adds no conditions to the MIT grant for the covered code.
 
-広場6部品と、別途列挙した森JPタワーの独自追加部分等にCC BY 4.0を適用します。全都市モデルや他のコード・文書が一括してMIT／CC BYになったとは扱わないでください。
+広場6部品、森JPタワーの独自追加部分等、および東京タワーの指定独自部分等にCC BY 4.0を適用します。全都市モデルや他のコード・文書が一括してMIT／CC BYになったとは扱わないでください。
 
 See [NOTICE](NOTICE.md) for provenance and operational dependencies. Attribution required by a third-party license must be retained when that data is used; those requirements are not additional restrictions on the independent MIT code.

@@ -1,0 +1,68 @@
+import bpy,bmesh,math,json
+from pathlib import Path
+P=Path(__file__).resolve().parent;R=P.parents[1];O=R/'outputs/Interior_Detail_Accelerate'
+bpy.ops.wm.open_mainfile(filepath=str(O/'Interior_Detail_Accelerate.blend'))
+s=bpy.context.scene;holes=[(x,y) for x in [-6,6] for y in [-12.25,12.25]];z=145.1
+# Recess the existing carpet boundary to receive a flush surround, with no overlap.
+for ob in bpy.data.objects:
+ if ob.type!='MESH' or not ob.name.startswith('Photo based main deck / carpet'):continue
+ for v in ob.data.vertices:
+  if abs(v.co.z-z)>.1:continue
+  for hx,hy in holes:
+   dx=v.co.x-hx;dy=v.co.y-hy
+   if abs(dx)<1.26 and abs(dy)<1.01:
+    if abs(abs(dx)-1)<.0001:v.co.x=hx+math.copysign(1.075,dx)
+    if abs(abs(dy)-.75)<.0001:v.co.y=hy+math.copysign(.825,dy)
+# Replace only the old raised floor-surround bars and bolt heads.
+for name in ['Photo based main deck / silver','Photo based main deck / rubber']:
+ ob=bpy.data.objects.get(name)
+ if not ob:continue
+ bm=bmesh.new();bm.from_mesh(ob.data);seen=set();remove=[]
+ for v in bm.verts:
+  if v in seen:continue
+  todo=[v];seen.add(v);comp=[]
+  while todo:
+   u=todo.pop();comp.append(u)
+   for e in u.link_edges:
+    w=e.other_vert(u)
+    if w not in seen:seen.add(w);todo.append(w)
+  lo=min(v.co.z for v in comp);hi=max(v.co.z for v in comp)
+  cx=sum(v.co.x for v in comp)/len(comp);cy=sum(v.co.y for v in comp)/len(comp)
+  if lo>z-.025 and hi<z+.05 and any(abs(cx-hx)<1.12 and abs(cy-hy)<.85 for hx,hy in holes):remove.extend(comp)
+ bmesh.ops.delete(bm,geom=remove,context='VERTS');bm.to_mesh(ob.data);bm.free()
+glass=bpy.data.objects['Photo based main deck / glass']
+for v in glass.data.vertices:
+ hx,hy=min(holes,key=lambda p:(v.co.x-p[0])**2+(v.co.y-p[1])**2)
+ v.co.x=hx+(v.co.x-hx)*(.918/.925);v.co.y=hy+(v.co.y-hy)*(.668/.675)
+ if v.co.z>145.025:v.co.z=z
+col=bpy.data.collections.new('Flush glass floor surrounds');s.collection.children.link(col)
+def ring(name,hx,hy,outer,inner,material):
+ verts=[]
+ for height in [z-.03,z]:
+  for a,b in [outer,inner]:verts.extend([(hx-a,hy-b,height),(hx+a,hy-b,height),(hx+a,hy+b,height),(hx-a,hy+b,height)])
+ faces=[]
+ for i in range(4):
+  j=(i+1)%4;faces.extend([(8+i,8+j,12+j,12+i),(i,4+i,4+j,j),(i,j,8+j,8+i),(4+j,4+i,12+i,12+j)])
+ me=bpy.data.meshes.new(name);me.from_pydata(verts,[],faces);me.materials.append(bpy.data.materials[material]);me.update();ob=bpy.data.objects.new(name,me);col.objects.link(ob);return ob
+for hx,hy in holes:
+ ob=ring('Flush metal surround',hx,hy,(1.069,.819),(.925,.675),'Photo interior / silver')
+ ring('Continuous outer gasket',hx,hy,(1.075,.825),(1.069,.819),'Photo interior / rubber')
+ ring('Continuous glass edge seal',hx,hy,(.925,.675),(.918,.668),'Photo interior / rubber')
+ for x in [hx-1,hx+1]:
+  for y in [hy-.58,hy,hy+.58]:
+   bpy.ops.mesh.primitive_cylinder_add(vertices=16,radius=.018,depth=.12,location=(x,y,z-.02));cutter=bpy.context.object
+   bpy.context.view_layer.objects.active=ob;mod=ob.modifiers.new('Countersunk fixing socket','BOOLEAN');mod.operation='DIFFERENCE';mod.solver='EXACT';mod.object=cutter;bpy.ops.object.modifier_apply(modifier=mod.name)
+   bpy.data.objects.remove(cutter,do_unlink=True)
+   bpy.ops.mesh.primitive_cylinder_add(vertices=16,radius=.018,depth=.022,location=(x,y,z-.011));bolt=bpy.context.object;bolt.name='Flush fixing';bolt.data.materials.append(bpy.data.materials['Photo interior / rubber'])
+   for c in list(bolt.users_collection):c.objects.unlink(bolt)
+   col.objects.link(bolt)
+for ob in col.objects:
+ assert abs(max((ob.matrix_world@v.co).z for v in ob.data.vertices)-z)<.0001
+assert abs(max(v.co.z for v in glass.data.vertices)-z)<.0001
+assert bpy.data.objects.get('Continuous window joint seals') is not None
+s['flush_floor_note']='Glass, metal surround, continuous inner and outer gaskets, countersunk fixings and adjacent carpet share Z=145.1m. Carpet trimmed to avoid coplanar overlap.'
+s.frame_start=1;s.frame_end=200;s.frame_set(1);bpy.context.preferences.filepaths.save_version=0;bpy.ops.wm.save_as_mainfile(filepath=str(O/'Interior_Detail_Accelerate.blend'))
+p=O/'verification.json';j=json.loads(p.read_text());j['floor_surround_flush_z']=z;j['continuous_inner_outer_gaskets']=True;j['existing_exterior_window_joint_seals_retained']=True;p.write_text(json.dumps(j,indent=2))
+for f in [1,30,40]:
+ s.frame_set(f);s.render.filepath=str(O/f'check_{f:03d}.png');bpy.ops.render.render(write_still=True)
+print('FLUSH_FLOOR_VERIFIED',flush=True)

@@ -1,0 +1,165 @@
+def mat(k,color,metal=0,rough=.5,trans=0,emit=0):
+ m=bpy.data.materials.new('Rebuilt • '+k);m.use_nodes=True;m.diffuse_color=(*color,1);p=m.node_tree.nodes.get('Principled BSDF');p.inputs['Base Color'].default_value=(*color,1);p.inputs['Metallic'].default_value=metal;p.inputs['Roughness'].default_value=rough;p.inputs['Transmission Weight'].default_value=trans;p.inputs['IOR'].default_value=1.46
+ if emit:p.inputs['Emission Color'].default_value=(*color,1);p.inputs['Emission Strength'].default_value=emit
+ if trans and hasattr(m,'use_raytrace_refraction'):m.use_raytrace_refraction=True
+ materials[k]=m;return m
+mat('orange',(.66,.054,.012),.28,.31);mat('white',(.78,.79,.75),.28,.28);mat('aluminum',(.43,.48,.5),.8,.26);mat('darkmetal',(.034,.045,.05),.65,.29);mat('gasket',(.008,.012,.014),0,.65)
+mat('clear glass',(.96,.988,1),0,.035,1);mat('blue glass',(.78,.92,.965),0,.048,1);mat('spandrel',(.065,.12,.145),.45,.26)
+mat('stone',(.43,.415,.375),0,.7);mat('floor',(.30,.27,.235),0,.68);mat('ceiling',(.79,.78,.735),0,.75);mat('wood',(.23,.105,.037),0,.48);mat('fabric',(.18,.21,.205),0,.87);mat('chair',(.028,.035,.04),0,.6);mat('screen',(.011,.019,.024),.15,.21);mat('warm light',(1,.84,.64),0,.35,0,2.5);mat('mirror',(.78,.82,.83),1,.075);mat('leaf',(.054,.125,.027),0,.6);mat('soil',(.055,.031,.016),0,.96)
+for key in ['orange','white','stone','wood','floor']:
+ m=materials[key];n=m.node_tree.nodes;l=m.node_tree.links;bs=n.get('Principled BSDF');g=n.new('ShaderNodeNewGeometry');tex=n.new('ShaderNodeTexNoise');tex.inputs['Scale'].default_value=4 if key=='stone' else 18;tex.inputs['Detail'].default_value=2;l.new(g.outputs['Position'],tex.inputs['Vector']);b=n.new('ShaderNodeBump');b.inputs['Strength'].default_value=.1;b.inputs['Distance'].default_value=.001 if key!='stone' else .003;l.new(tex.outputs['Fac'],b.inputs['Height']);l.new(b.outputs[0],bs.inputs['Normal'])
+section='Tokyo Tower structure'
+def add(k,v,f):
+ a,b=geo.setdefault((section,k),([],[]));off=len(a);a.extend([tuple(q) for q in v]);b.extend([tuple(off+i for i in q) for q in f])
+def box(k,p,size,ang=0):
+ x,y,z=p;a,b,h=np.array(size)/2;c,t=math.cos(ang),math.sin(ang)
+ v=[(x+c*u-t*w,y+t*u+c*w,z+zz) for zz in [-h,h] for u,w in [(-a,-b),(a,-b),(a,b),(-a,b)]];add(k,v,[(0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)])
+def beam(k,a,b,r,N=8):
+ a,b=Vector(a),Vector(b);d=b-a
+ if d.length<1e-5:return
+ d.normalize();u=d.cross(Vector((0,0,1)))
+ if u.length<.01:u=d.cross(Vector((0,1,0)))
+ u.normalize();v=d.cross(u);vs=[q+r*(u*math.cos(i*math.tau/N)+v*math.sin(i*math.tau/N)) for q in [a,b] for i in range(N)]
+ add(k,vs,[tuple(range(N-1,-1,-1)),tuple(range(N,2*N))]+[(i,(i+1)%N,(i+1)%N+N,i+N) for i in range(N)])
+def girder(k,a,b,w):
+ a,b=Vector(a),Vector(b);d=b-a
+ if d.length<1e-5:return
+ d.normalize();u=d.cross(Vector((0,0,1)))
+ if u.length<.01:u=d.cross(Vector((0,1,0)))
+ u.normalize();v=d.cross(u);t=w*.14
+ for off,ww,hh in [(0,t,w),(-w*.43,w,t),(w*.43,w,t)]:
+  vs=[q+u*x+v*(y+off) for q in [a,b] for x,y in [(-ww/2,-hh/2),(ww/2,-hh/2),(ww/2,hh/2),(-ww/2,hh/2)]]
+  add(k,vs,[(0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)])
+ stats['structural_members']+=1
+def ring(k,pts,z,h,inset=0):
+ pts=np.array(pts);c=pts.mean(0);v=pts-c;v*=((np.linalg.norm(v,axis=1)-inset)/np.linalg.norm(v,axis=1))[:,None];pts=v+c;N=len(pts)
+ add(k,[(x,y,zz) for zz in [z,z+h] for x,y in pts],[tuple(range(N-1,-1,-1)),tuple(range(N,2*N))]+[(i,(i+1)%N,(i+1)%N+N,i+N) for i in range(N)])
+def band(k,pts,z,h,depth=.16):
+ a=np.array(pts);c=a.mean(0);b=a+(c-a)/np.linalg.norm(c-a,axis=1)[:,None]*depth;N=len(a)
+ vs=[(x,y,zz) for zz in [z,z+h] for arr in [a,b] for x,y in arr];faces=[]
+ for i in range(N):
+  j=(i+1)%N;faces.extend([(i,j,2*N+j,2*N+i),(N+j,N+i,3*N+i,3*N+j),(2*N+i,2*N+j,3*N+j,3*N+i),(i,N+i,N+j,j)])
+ add(k,vs,faces)
+def rounded(w,d,r,step=16,center=(0,0)):
+ a=[]
+ for x,y,start in [(w/2-r,d/2-r,0),(-w/2+r,d/2-r,90),(-w/2+r,-d/2+r,180),(w/2-r,-d/2+r,270)]:
+  for i in range(step):
+   t=math.radians(start+90*i/step);a.append((center[0]+x+r*math.cos(t),center[1]+y+r*math.sin(t)))
+ return np.array(a)
+def glasswall(pts,z0,z1,key='clear glass',thick=.024):
+ a=np.array(pts);cen=a.mean(0)
+ for p,q in zip(a,np.roll(a,-1,axis=0)):
+  d=q-p;L=np.linalg.norm(d);ang=math.atan2(d[1],d[0]);box(key,(*(p+q)/2,(z0+z1)/2),(max(.01,L-.055),thick,z1-z0-.055),ang);stats['glass_panels']+=1
+  box('gasket',(*p,(z0+z1)/2),(.07,.10,z1-z0),ang);box('aluminum',(*p,(z0+z1)/2),(.045,.15,z1-z0),ang)
+def resample(pts,N):
+ a=np.vstack([pts,pts[0]]);lens=np.linalg.norm(np.diff(a,axis=0),axis=1);cum=np.r_[0,np.cumsum(lens)];out=[]
+ for d in np.linspace(0,cum[-1],N,endpoint=False):
+  j=min(len(lens)-1,np.searchsorted(cum,d,side='right')-1);out.append(a[j]+(a[j+1]-a[j])*(d-cum[j])/lens[j])
+ return np.array(out)
+def furniture(x,y,z,ang=0,residential=False):
+ # Real mesh furniture; the layout is illustrative rather than an undocumented tenant plan.
+ c,t=math.cos(ang),math.sin(ang)
+ def bb(k,p,sz):
+  u,v,h=p;box(k,(x+c*u-t*v,y+t*u+c*v,z+h),sz,ang)
+ if residential:
+  bb('fabric',(0,0,.42),(2.3,.9,.38));bb('fabric',(0,.39,.83),(2.3,.18,.65));bb('wood',(0,-1.2,.38),(1.2,.65,.07));bb('stone',(2,0,.3),(.45,.45,.6))
+ else:
+  bb('wood',(0,0,.75),(1.6,.8,.055))
+  for u in [-.68,.68]:bb('aluminum',(u,0,.37),(.055,.65,.73))
+  bb('darkmetal',(0,.16,.85),(.2,.17,.16));bb('screen',(0,.21,1.12),(.54,.047,.32));bb('darkmetal',(0,-.15,.79),(.43,.17,.022));bb('chair',(0,-.68,.45),(.46,.45,.08));bb('chair',(0,-.91,.73),(.46,.05,.57));bb('aluminum',(0,-.68,.23),(.06,.06,.43));
+  for a0 in range(5):
+   a=ang+a0*math.tau/5;center=Vector((x+t*.68,y-c*.68,z+.10));end=center+Vector((math.cos(a)*.28,math.sin(a)*.28,-.035));beam('aluminum',center,end,.022,8);beam('chair',end-Vector((.03,0,.02)),end+Vector((.03,0,.02)),.035,12)
+  for u in [-.29,.29]:bb('darkmetal',(u,-.65,.64),(.055,.34,.055))
+ stats['furniture_groups']+=1
+def plant(x,y,z):
+ box('stone',(x,y,z+.26),(.5,.5,.52));box('soil',(x,y,z+.53),(.45,.45,.025))
+ for i in range(12):
+  a=rng.random()*math.tau;p=Vector((x,y,z+.53));q=p+Vector((math.cos(a)*.35,math.sin(a)*.35,rng.uniform(.6,1.2)));beam('wood',p,q,.015,5);u=Vector((math.cos(a+1.57)*.11,math.sin(a+1.57)*.11,0));add('leaf',[q-u,q+Vector((0,0,.22)),q+u,q-Vector((0,0,.1))],[(0,1,2),(0,2,3)])
+# Tokyo Tower: four independent latticed legs, curved arch girders and upper lattice.
+zs=np.array([0,15,30,50,75,100,125,140,155,180,205,230,250,270,290,310,333]);ws=np.array([47.5,40.8,34,26,19.2,14.6,10.9,9.1,8.4,7,5.7,4.3,3.25,2.2,1.4,.75,.08])
+def w(z):return float(np.interp(z,zs,ws))
+def color(z):return 'orange' if z<154 or int((z-154)/(179/7))%2==0 else 'white'
+corners=[(-1,-1),(1,-1),(1,1),(-1,1)]
+for sx,sy in corners:
+ box('stone',(sx*47.5,sy*47.5,1.0),(10.5,10.5,2))
+ levels=list(np.arange(2,141,5))+[144]
+ for a,b in zip(levels,levels[1:]):
+  half=max(.85,3.4-a*.017);ha=max(.85,3.4-b*.017);pa=Vector((sx*w(a),sy*w(a),a));pb=Vector((sx*w(b),sy*w(b),b))
+  for dx,dy in corners:
+   girder('orange',pa+Vector((dx*half,dy*half,0)),pb+Vector((dx*ha,dy*ha,0)),max(.22,.65-a*.0025))
+  for k in range(4):
+   q,c=corners[k],corners[(k+1)%4];A=pa+Vector((q[0]*half,q[1]*half,0));B=pa+Vector((c[0]*half,c[1]*half,0));C=pb+Vector((q[0]*ha,q[1]*ha,0));D=pb+Vector((c[0]*ha,c[1]*ha,0))
+   girder('orange',A,B,.18);girder('orange',A,D,.14);girder('orange',B,C,.14)
+for z in [52,65,80,96,112,128]:
+ for j in range(4):
+  a,b=corners[j],corners[(j+1)%4];A=(a[0]*w(z),a[1]*w(z),z);B=(b[0]*w(z),b[1]*w(z),z);C=(a[0]*w(z+13),a[1]*w(z+13),z+13);D=(b[0]*w(z+13),b[1]*w(z+13),z+13)
+  girder('orange',A,B,.75);girder('orange',A,D,.55);girder('orange',B,C,.55)
+for axis in [0,1]:
+ for sign in [-1,1]:
+  points=[]
+  for x in np.linspace(-45,45,73):
+   z=7+44*(1-(x/45)**2);points.append((x,sign*w(z),z) if axis==0 else (sign*w(z),x,z))
+  for a,b in zip(points,points[1:]):
+   girder('orange',a,b,.8);aa=Vector(a)+Vector((0,0,2));bb=Vector(b)+Vector((0,0,2));girder('orange',aa,bb,.4);beam('orange',a,bb,.09)
+for a in np.arange(154,306,6):
+ b=min(a+6,310);ma=color((a+b)/2)
+ for j in range(4):
+  p,q=corners[j],corners[(j+1)%4];A=(p[0]*w(a),p[1]*w(a),a);B=(q[0]*w(a),q[1]*w(a),a);C=(p[0]*w(b),p[1]*w(b),b);D=(q[0]*w(b),q[1]*w(b),b)
+  girder(ma,A,C,max(.13,.4-a*.0007));girder(ma,A,B,.19);girder(ma,A,D,.16);girder(ma,B,C,.16)
+  box(ma,A,(.55,.15,.6),j*math.pi/2)
+  for dz in [-.19,.19]:
+   for dx in [-.17,.17]:
+    p0=Vector(A)+Vector((dx,0,dz));beam(ma,p0,p0+Vector((0,.10,0)),.045,6);stats['bolts']+=1
+# Elevator shaft, stair flights and safety rails are visible through the lattice.
+box('orange',(0,0,79),(4.4,4.4,126));box('darkmetal',(0,-2.23,80),(2.9,.12,125))
+for j in range(44):
+ z=17+j*2.86;side=1 if j%2==0 else -1
+ for step in range(13):box('white',(side*(-2.8+step*.45),4.1,z+step*.22),(.5,1.4,.10))
+ girder('orange',(-side*2.8,3.4,z+1),(side*2.6,3.4,z+3.64),.09);girder('orange',(-side*2.8,4.8,z+1),(side*2.6,4.8,z+3.64),.09)
+for z,rad in [(181,9),(202,7.5),(232,6.5),(240,7.4),(258,5.7)]:
+ pts=[(rad*math.cos(t),rad*math.sin(t)) for t in np.linspace(0,math.tau,64,endpoint=False)];band(color(z),pts,z,.32,.7)
+ for j in range(16):
+  a=math.tau*j/16;x,y=rad*math.cos(a),rad*math.sin(a);beam(color(z),(x,y,z),(x,y,z+1.1),.05)
+ band('white',pts,z+1.05,.08,.08)
+for z in np.arange(274,331,1.4):
+ beam(color(z),(0,0,z),(0,0,z+1.4),.9 if z<304 else .4,24)
+ if z<316:
+  for j in range(4):
+   a=j*math.pi/2;beam(color(z),(1.2*math.cos(a),1.2*math.sin(a),z),(1.2*math.cos(a),1.2*math.sin(a),z+.9),.075,8)
+beam('orange',(0,0,330),(0,0,333),.11,16)
+section='Tokyo Tower decks and interior'
+main=resample(rounded(29,29,3.4,24),72)
+for z in [144.7,149.6,154.0]:ring('white',main,z,.30)
+for z in [144.7,149.6,153.7]:band('aluminum',main,z,.45,.35)
+for z in [145.2,150.1]:glasswall(main,z,z+(4.05 if z<150 else 3.45))
+for z in [145.2,150.1]:
+ ring('floor',main,z-.19,.12,inset=.20);ring('ceiling',main,z+(4.0 if z<150 else 3.3),.12,inset=.35)
+ box('wood',(0,0,z+1.6),(11,11,3.2))
+ for x in [-8,8]:
+  for y in [-8,8]:beam('aluminum',(x,y,z),(x,y,z+3.2),.24,20)
+ for side in range(4):
+  a=side*math.pi/2;c,t=math.cos(a),math.sin(a)
+  for u in [-9,-4.5,0,4.5,9]:
+   x,y=c*u-t*12.5,t*u+c*12.5;box('wood',(x,y,z+.95),(2.5,.48,.065),a);beam('aluminum',(x,y,z),(x,y,z+.92),.07)
+   box('warm light',(x,y,z+3.20),(2.7,.18,.035),a)
+  for u in [-9,9]:plant(c*u-t*10.8,t*u+c*10.8,z)
+for z in [146.4,151.2]:
+ for side in range(4):
+  angle=side*math.pi/2
+  for j in range(-4,5):box('aluminum',(j*2.8*math.cos(angle)-14.35*math.sin(angle),j*2.8*math.sin(angle)+14.35*math.cos(angle),z),(.10,.12,.3),angle)
+# Circular top deck with faceted mirrored core and a real observation corridor.
+top=np.array([(8*math.cos(t),8*math.sin(t)) for t in np.linspace(0,math.tau,40,endpoint=False)])
+ring('white',top,245,.7);ring('floor',top,246,.22);glasswall(top,246.25,250.1);ring('white',top,250.1,.65);ring('white',top*.93,250.75,.6);ring('ceiling',top,249.95,.10)
+for i in range(20):
+ a=i*math.tau/20;b=(i+1)*math.tau/20;p=[(2.2*math.cos(a),2.2*math.sin(a),246.3),(2.2*math.cos(b),2.2*math.sin(b),246.3),(2.6*math.cos((a+b)/2),2.6*math.sin((a+b)/2),249.7)];add('mirror',p,[(0,1,2)])
+for i in range(10):
+ a=i*math.tau/10;box('warm light',(6*math.cos(a),6*math.sin(a),249.84),(1.0,.10,.04),a+math.pi/2)
+# FootTown facade, cornices, glazed entrances and roof services.
+foot=resample(rounded(73,58,1.2),112)
+for z in [0.32,4.2,8.1,12,15.9]:ring('stone',foot,z,.24)
+for z in [.56,4.44,8.34,12.24]:glasswall(foot,z,z+3.38);band('white',foot,z+2.5,.8,.25)
+box('stone',(0,0,8),(48,33,15.4))
+for x in [-24,-12,0,12,24]:
+ box('aluminum',(x,0,16.9),(7,5,1.7))
+ for y in np.arange(-2,2.1,.25):box('darkmetal',(x,y,17.77),(6.8,.08,.035))
+print('TOKYO_TOWER_GEOMETRY',stats,flush=True)

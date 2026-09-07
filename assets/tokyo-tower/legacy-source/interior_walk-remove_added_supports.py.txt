@@ -1,0 +1,15 @@
+import bpy,bmesh,json
+from pathlib import Path
+P=Path(__file__).resolve().parent;R=P.parents[1];O=R/'outputs/Interior_Detail_Accelerate'
+bpy.ops.wm.open_mainfile(filepath=str(O/'Interior_Detail_Accelerate.blend'))
+removed=0
+for ob in list(bpy.data.collections['Skywalk visible detail'].objects):
+ bm=bmesh.new();bm.from_mesh(ob.data);verts=[v for v in bm.verts if v.co.z>130];removed+=len(verts)
+ bmesh.ops.delete(bm,geom=verts,context='VERTS');bm.to_mesh(ob.data);bm.free()
+ if not len(ob.data.polygons):bpy.data.objects.remove(ob,do_unlink=True)
+s=bpy.context.scene;s.frame_start=1;s.frame_end=200;s.frame_set(1)
+s['skywalk_detail_note']='Added near-window support beams and fittings removed at user request. Existing glass floor surround retained. Ground and roof enhancements retained; inferred equipment layout, no aerial imagery.'
+bpy.context.preferences.filepaths.save_version=0;bpy.ops.wm.save_as_mainfile(filepath=str(O/'Interior_Detail_Accelerate.blend'))
+p=O/'verification.json';j=json.loads(p.read_text());j['added_supports_removed']=True;j['removed_vertices']=removed;p.write_text(json.dumps(j,indent=2))
+s.frame_set(30);s.render.filepath=str(O/'check_030.png');bpy.ops.render.render(write_still=True)
+print('ADDED_SUPPORTS_REMOVED',removed,flush=True)
