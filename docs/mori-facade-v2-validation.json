@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "all_facade_coordinates_and_topology_identical": true,
+  "approved_corner_geometry_preserved": true,
+  "crown_and_body_glass_parameters_identical": true,
+  "central_strips_have_zero_emission": true,
+  "all_facade_principled_emission_strengths_zero": true,
+  "geometry_sha256": {
+    "Mori continuous pearl glass / pearl grey coated glass": "aae613ec67fe05562db8172a911d7ae6e3a19017d2d22a94c5f04f7671cf979a",
+    "Mori continuous pearl glass / recessed spandrel": "2f78f3a0abdabccaa78bc72cdaa3667f8b87605b7c0185e6b382ca0accafd9cb",
+    "Mori continuous pearl glass / sealing joint": "f4874fe96c013b635d8bfbf5f175eaf1334e48c3ab70c1d9f64fba026ebae387",
+    "Mori continuous pearl glass / slender mullion": "ddb6d5ef4acff1baa068c7844e5c5f392dcbc73069442eb654017d6b8510de10"
+  }
+}

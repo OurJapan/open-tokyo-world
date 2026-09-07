@@ -30,3 +30,5 @@ python scripts/review.py --blender BLENDER --input LEGACY_BLEND --lock manifests
 Pythonテスト14件、Blender統合テスト2ケース（正常系・画像欠落の検出）が成功。保存済み形状の比較で全頂点・接続関係・下部材質が一致。前回候補とのobject比較では対象ガラス1objectのみ変化した。
 
 最終実データ実行は保存14.860秒、再open検証34.203／40.297秒、4視点render28.735／26.578秒。原本SHA-256は不変。比較は単発測定であり性能保証ではない。
+
+続報: [胴体と頂部の統一・非発光の縦帯](mori-facade-v2.md)。本書は頂部のみを修正した旧候補の記録です。
