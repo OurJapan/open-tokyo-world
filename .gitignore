@@ -8,6 +8,9 @@ work/
 cache/
 .DS_Store
 Thumbs.db
+build/
+runs/
+data/cache/
 
 # Large assets are introduced separately after provenance/storage review
 *.blend
