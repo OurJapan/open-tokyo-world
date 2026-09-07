@@ -1,0 +1,68 @@
+{
+  "ok": true,
+  "changed_from_accepted_podium": [
+    "Mori JP podium / aluminum",
+    "Mori JP podium / clear glass",
+    "Mori JP podium / ceiling"
+  ],
+  "accepted_podium_and_tower_unchanged": true,
+  "all_neighbor_objects_unchanged": true,
+  "image_dependencies_unchanged": true,
+  "saved_vertices_match_generator_float32": true,
+  "nonzero_face_areas": true,
+  "new_material_emission_zero": true,
+  "parts": {
+    "Mori JP podium / aluminum": {
+      "vertices": 3248,
+      "polygons": 1920,
+      "bounds": [
+        [
+          -433.4713134765625,
+          284.21466064453125,
+          0.3799999952316284
+        ],
+        [
+          -402.28265380859375,
+          304.3795166015625,
+          11.559934616088867
+        ]
+      ]
+    },
+    "Mori JP podium / ceiling": {
+      "vertices": 1536,
+      "polygons": 858,
+      "bounds": [
+        [
+          -434.379150390625,
+          283.1279296875,
+          0.2800000011920929
+        ],
+        [
+          -402.13507080078125,
+          304.6836242675781,
+          11.130000114440918
+        ]
+      ]
+    },
+    "Mori JP podium / clear glass": {
+      "vertices": 288,
+      "polygons": 240,
+      "bounds": [
+        [
+          -433.3952941894531,
+          285.0956726074219,
+          10.930000305175781
+        ],
+        [
+          -402.3586730957031,
+          304.2364196777344,
+          11.475000381469727
+        ]
+      ]
+    }
+  },
+  "limitations": [
+    "Photo-derived dimensions and site registration are estimates.",
+    "No guarantee of survey accuracy or complete clash-free accessibility."
+  ]
+}

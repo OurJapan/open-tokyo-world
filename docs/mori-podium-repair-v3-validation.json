@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "changed_from_entrance_candidate": [
+    "Mori JP podium / stone"
+  ],
+  "tower_entrance_and_neighbors_unchanged": true,
+  "image_dependencies_unchanged": true,
+  "source_sha256": "786c370507eeb819fe004be256d02a995cb08a2cc301bf742e057b1e89b5ed3d",
+  "triangles": 1070,
+  "additional_triangles": 403,
+  "maximum_source_height_m": 46.946895599365234,
+  "saved_triangles_exact_float32": true,
+  "all_faces_nonzero_area": true,
+  "missing_lowrise_neighbor_edges_before": 83,
+  "missing_lowrise_neighbor_edges_after": 0,
+  "edge_coordinate_tolerance_m": 0.01,
+  "source_height_gap_50_to_100m_empty": true,
+  "limitations": [
+    "Replacement-tower junctions are excluded from the low-rise adjacency check.",
+    "This is not a complete watertightness or surveyed-accuracy certificate."
+  ]
+}

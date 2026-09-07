@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "purpose": "reviewed-change",
+  "reason": "Preserve approved corner peaks; reduce excessive crown transmission using PCPA official photography. Shader values are appearance estimates.",
+  "source_refs": [
+    "https://pcparch.com/work/azabudai-hills",
+    "https://www.mori.co.jp/en/projects/azabudaihills/facilities/"
+  ],
+  "operations": [
+    {
+      "op": "mori_shape_v1",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "object": "Mori JP podium / aluminum",
+      "expected_mesh_sha256": "4f9150c53949ef700c54f1d8f2c14b3f917e4192f1de1ce863783815bdb1c331"
+    },
+    {
+      "op": "mori_shape_v1",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "object": "Mori JP podium / ceiling",
+      "expected_mesh_sha256": "86da5ab22a5ba00d342a5dac077093c9a46ab1c7c886a7822554f75a0d8821b9"
+    },
+    {
+      "op": "mori_shape_v1",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "object": "Mori JP podium / clear glass",
+      "expected_mesh_sha256": "0d008d47da021f8abe96b854970d767a5a676a2ed0f2ae70931e6efef5ca439c"
+    },
+    {
+      "op": "mori_shape_v1",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "object": "Mori JP podium / gasket",
+      "expected_mesh_sha256": "afbf1ebae85fe8650c238ec2066037f4c93fe7be223f00aefbd9801b676d39f9"
+    },
+    {
+      "op": "mori_shape_v1",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "object": "Mori JP podium / leaf",
+      "expected_mesh_sha256": "326e5701f2f3e87df30083abdda472411f6c62368070a6055019ce4d5537de03"
+    },
+    {
+      "op": "mori_shape_v1",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "object": "Mori JP podium / soil",
+      "expected_mesh_sha256": "a77e4ba3f3e18dfec1c8cdcb526c9446ac8530693e4dcd2dc4e0352aa546f1fd"
+    },
+    {
+      "op": "mori_shape_v1",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "object": "Mori JP podium / stone",
+      "expected_mesh_sha256": "e70315281f6277dc1eab3542677ce214891fe5e930826db6505c8feeaf4cfa6a"
+    },
+    {
+      "op": "mori_shape_v1",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "object": "Mori JP podium / warm light",
+      "expected_mesh_sha256": "c5a883edadee0657ab7d437c2c64597c2e81153bd2e00da3b03925f8c02fe863"
+    },
+    {
+      "op": "mori_shape_v1",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "object": "Mori JP podium / wood",
+      "expected_mesh_sha256": "29218c29621145e20270c25610fafd95fbeb9305643ce90b8d5d1e2b6596e9fe"
+    },
+    {
+      "op": "mori_crown_v2",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "object": "Mori continuous pearl glass / pearl grey coated glass",
+      "expected_mesh_sha256": "1836bdd958f9afc260cfa4c6c3107e006d32275b8a5b1aca6674025e56b6a61c"
+    },
+    {
+      "op": "mori_crown_v2",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "object": "Mori continuous pearl glass / recessed spandrel",
+      "expected_mesh_sha256": "1e64a01d84751bab19a371e2539316f3f2d3a48e906c4aaeba13bd173c7599bd"
+    },
+    {
+      "op": "mori_crown_v2",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "object": "Mori continuous pearl glass / sealing joint",
+      "expected_mesh_sha256": "1dbdd6fcdbdd1bf1cdcb72b7c00e623f2ff3106b78318f089346fa3e84d00210"
+    },
+    {
+      "op": "mori_crown_v2",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "object": "Mori continuous pearl glass / slender mullion",
+      "expected_mesh_sha256": "1543966b034d27e846438eeb8dae63e746d6e05122aca464283c941d4e570df4"
+    },
+    {
+      "op": "mori_crown_material_v1",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "object": "Mori continuous pearl glass / pearl grey coated glass",
+      "expected_mesh_sha256": "7a9f079d2330c11886b1db8f5abb67b6126beb2c9565d5e0dac954f9d957a9f3",
+      "expected_material_sha256": "cb1eafb14625642ccdd66a1f1ebb2135146819b8d9c314f377217e8eb60bce74"
+    }
+  ]
+}

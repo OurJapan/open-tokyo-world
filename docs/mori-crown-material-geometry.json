@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "comparison": "approved crown v2 versus material v1",
+  "all_vertex_coordinates_identical": true,
+  "topology_identical": true,
+  "lower_facade_material_identical": true,
+  "only_crown_face_assignments_changed": true,
+  "existing_uv_layers_identical": true,
+  "new_crown_uv_finite": true,
+  "crown_faces": 1280,
+  "vertex_coordinates_sha256": "c12a6a6e2473c9f87ab6e3fdf0f53519a63462869c90a04178370c4b51ae3e83"
+}

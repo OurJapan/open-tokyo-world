@@ -1,6 +1,14 @@
 # 移行ロードマップ
 
-日程ではなく受入条件で段階を区切ります。M0の設計・一次棚卸しを公開し、M1のローカル検証・比較CLIを実装しています。日本語Issue Formも導入済みです。M1の配布権確認とカメラ承認、M2の現実差分修正・人間レビューは未完です。実行方法は [review-harness.md](review-harness.md) を参照してください。
+日程ではなく受入条件で段階を区切ります。M0の設計・一次棚卸し、M1のローカル検証・比較CLI、日本語Issue Formを用意しました。M2では森JPタワーの現実差分修正・追加指示・再修正・人間の画像レビューまで進み、mainへの取り込み待ちです。配布権の確定、別Contributorの環境での再現、都市全体の品質保証は未完です。[採用基準と取り込み手順](mori-review-acceptance.md)、[実行方法](review-harness.md)を参照してください。
+
+## 2026-09-07の到達点
+
+- Issue #3 → AIの調査・Blender修正 → 8視点比較 → 人間の追加指示 → 屋根・壁の欠落修正 → 画像レビューを実施。
+- 採用する形状はモデルcommit `e6846145424bfe91c65d2ae12dbe3ae6d58bcac8`と[review reference](mori-reviewed-baseline.json)で固定。これはrunnerの入力lockの置き換えではない。
+- 次の取り込み順は[PR #2](https://github.com/OurJapan/open-tokyo-world/pull/2) → [PR #4](https://github.com/OurJapan/open-tokyo-world/pull/4)。両方の取り込み先をmainとし、#2の履歴を維持するmerge commitで進める。まだmerge済みとは扱わない。
+- 次のモデリングは[Issue #5：低層部の植栽・手すり](https://github.com/OurJapan/open-tokyo-world/issues/5)として独立させ、#4の取り込み後に着手する。
+- Issueの自動受付から無人でPRを作るサービスは未実装。現段階は人間と担当Agentが進めるローカルPoC。
 
 | 段階 | 作業 | 出口条件 |
 |---|---|---|

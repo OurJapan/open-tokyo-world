@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "reference_id": "mori-jp-visual-accepted-2026-09-07",
+  "purpose": "visual-review-reference-not-runner-input-lock",
+  "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+  "status": "maintainer-visual-review-accepted-in-chat",
+  "review_date": "2026-09-07",
+  "review_channel": "development chat",
+  "review_statement": "いいですね。次何したらいいですか。",
+  "reviewed_model_commit": "e6846145424bfe91c65d2ae12dbe3ae6d58bcac8",
+  "pull_request": "https://github.com/OurJapan/open-tokyo-world/pull/4",
+  "merge_status_at_recording": "not-merged",
+  "formal_github_approval": "not-submitted",
+  "blend_sha256": "77752f9009a0f3a1979734e3374de50d933253a5408c99f38297765548969179",
+  "blend_bytes": 553280443,
+  "blend_filename": "accepted-2026-09-07.blend",
+  "legacy_input_sha256": "f04b68c07d138b880576d511000b55a9fc3104d28cc9e3750b511023b10ab70d",
+  "geometry_source_sha256": "786c370507eeb819fe004be256d02a995cb08a2cc301bf742e057b1e89b5ed3d",
+  "patch": "patches/mori-podium-repair-v3.json",
+  "patch_sha256": "7c093c52a4407c85a59bcb67d017271b86947d3994b8df69a2856de00ef70e15",
+  "cameras": "areas/tokyo-tower/mori-entrance-cameras.json",
+  "cameras_sha256": "a59d4a4237636751b976ee4f0dcceba233b3aa1c5279cd815a56723cb4280607",
+  "code_files": {
+    "scripts/review.py": "fdef138b1655911c4a88e3c8e37fb7344b5986c8dedae6daa963e381b7da8a67",
+    "scripts/blender_worker.py": "fc0c185d4589cabc4e4db73eac2ab836297c4fc9e39b5578fb459d4b0c8f1df0",
+    "scripts/mori_shape.py": "e82b840819da692b1a0dd6b27f095c524706fce08c0e85db47b2236301f91411",
+    "scripts/mori_crown_v2.py": "8bb386b4429575c4c37b914c71b63629fb844c84c0399e943706b34fd10e64a7",
+    "scripts/mori_crown_material.py": "02e207032a4873ee75cf80991ab2066e3621e9a8ccbf4c014e2c5aee06bbc8b5",
+    "scripts/mori_facade_v2.py": "b962aeb523cb35cd242bad7f3a91409750219bda62eec1cd64ddcbf49a7ab26f",
+    "scripts/mori_podium_v2.py": "821a8ee485ff39757d97ee29a2678083a850c5b714eda7698457105b5745520e",
+    "scripts/mori_entrance_v1.py": "aeb7417803ebea8ac8af590aeca7a1e723d1591e1756eb07ad1078cd9e753c90",
+    "scripts/mori_podium_v3.py": "cec7699cb570248bfb4c121275044b0950a6bfcad128464455a2faabc9321790"
+  },
+  "run_record": "docs/mori-podium-repair-v3-run.json",
+  "validation_record": "docs/mori-podium-repair-v3-validation.json",
+  "scope": [
+    "Four-corner crown and dark non-emissive facade",
+    "Source-derived low-rise roof and wall recovery through 46.947m",
+    "Current photo-based entrance canopy and columns as a provisional visual baseline"
+  ],
+  "limitations": [
+    "Visual acceptance is not surveyed accuracy or legal redistribution clearance.",
+    "Entrance dimensions and registration remain estimates.",
+    "The review does not certify all mesh boundaries, geographic heights or pedestrian accessibility.",
+    "Legacy input and source archive remain required by the cumulative patch."
+  ],
+  "features": "areas/tokyo-tower/features.json",
+  "features_sha256": "d3072a503cca5ea3e1879b5eb413bcec9c80e62ed63c1212d67f01915a591d25",
+  "blender_version": "4.5.1 LTS",
+  "render_settings": {
+    "width": 960,
+    "height": 540,
+    "samples": 24,
+    "seed": 0,
+    "device": "OPTIX"
+  }
+}

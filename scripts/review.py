@@ -81,10 +81,35 @@ def validate_patch(patch):
     ops = patch.get('operations')
     require(isinstance(ops, list) and len(ops) > 0, 'Empty patch')
     for op in ops:
-        require(set(op) == {'op','feature_id','object','translation_m'}, 'Unexpected patch keys')
-        require(op['op'] == 'translate_object', 'Unsupported patch operation')
-        v = op['translation_m']
-        require(len(v) == 3 and all(isinstance(x,(int,float)) and math.isfinite(x) and abs(x) <= 100 for x in v), 'Invalid translation')
+        if op['op'] == 'translate_object':
+            require(set(op) == {'op','feature_id','object','translation_m'}, 'Unexpected patch keys')
+            v = op['translation_m']
+            require(len(v) == 3 and all(isinstance(x,(int,float)) and math.isfinite(x) and abs(x) <= 100 for x in v), 'Invalid translation')
+        elif op['op'] in ('mori_crown_material_v1','mori_facade_v2'):
+            require(set(op) == {'op','feature_id','object','expected_mesh_sha256','expected_material_sha256'}, 'Unexpected material patch keys')
+            targets = {'Mori continuous pearl glass / pearl grey coated glass'}
+            if op['op']=='mori_facade_v2':
+                targets |= {'Mori continuous pearl glass / '+k for k in ('recessed spandrel','slender mullion','sealing joint')}
+            require(op['feature_id']=='otw:jp:tokyo:minato:azabudai-mori-jp' and op['object'] in targets, 'Wrong facade material target')
+            for key in ('expected_mesh_sha256','expected_material_sha256'):
+                require(re.fullmatch('[0-9a-f]{64}',op[key]) is not None, 'Material patch requires hashes')
+            require(bool(patch['source_refs']), 'Material hypotheses require evidence')
+        elif op['op']=='mori_entrance_v1':
+            from mori_entrance_v1 import TARGETS
+            require(set(op)=={'op','feature_id','object','expected_mesh_sha256'}, 'Unexpected entrance patch keys')
+            require(op['feature_id']=='otw:jp:tokyo:minato:azabudai-mori-jp' and op['object'] in TARGETS, 'Wrong entrance target')
+            require(re.fullmatch('[0-9a-f]{64}',op['expected_mesh_sha256']) is not None and bool(patch['source_refs']), 'Entrance patch requires hash and sources')
+        elif op['op'] in ('mori_podium_v2','mori_podium_v3'):
+            require(set(op)=={'op','feature_id','object','expected_mesh_sha256'}, 'Unexpected podium patch keys')
+            require(op['feature_id']=='otw:jp:tokyo:minato:azabudai-mori-jp' and op['object']=='Mori JP podium / stone', 'Wrong podium target')
+            require(re.fullmatch('[0-9a-f]{64}',op['expected_mesh_sha256']) is not None and bool(patch['source_refs']), 'Podium patch requires hash and sources')
+        elif op['op'] in ('mori_shape_v1','mori_crown_v2'):
+            require(set(op) == {'op','feature_id','object','expected_mesh_sha256'}, 'Unexpected shape patch keys')
+            require(op['feature_id']=='otw:jp:tokyo:minato:azabudai-mori-jp', 'Wrong shape feature')
+            require(re.fullmatch('[0-9a-f]{64}',op['expected_mesh_sha256']) is not None, 'Shape patch requires mesh hash')
+            require(bool(patch['source_refs']), 'Shape hypotheses require evidence')
+        else:
+            raise ValueError('Unsupported patch operation')
         require(bool(op['object']) and op['feature_id'].startswith('otw:'), 'Missing patch target')
     if patch['purpose'] == 'reviewed-change':
         require(bool(patch['source_refs']), 'Real changes require source references')
@@ -120,7 +145,7 @@ def make_html(output, cameras, summary):
     for v in cameras['views']:
         name = v['id']
         rows.append(f'<section><h2>{html.escape(name)}</h2><div><figure><img src="before-{name}.png"><figcaption>Before</figcaption></figure><figure><img src="after-{name}.png"><figcaption>After</figcaption></figure></div></section>')
-    page = '<!doctype html><meta charset="utf-8"><title>OurJapan review</title><style>body{font:16px system-ui;max-width:1400px;margin:32px auto;padding:16px;background:#16202b;color:#eee}section div{display:flex}figure{margin:8px;width:50%}img{width:100%}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style><h1>OurJapan — review evidence</h1><p>Technical comparison. Human review of real-world accuracy is still required.</p>'
+    page = '<!doctype html><meta charset="utf-8"><title>OurJapan review</title><style>body{font:16px system-ui;max-width:1400px;margin:32px auto;padding:16px;background:#16202b;color:#eee}section div{display:flex}figure{margin:8px;width:50%}img{width:100%}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style><h1>OurJapan â€” review evidence</h1><p>Technical comparison. Human review of real-world accuracy is still required.</p>'
     page += ''.join(rows) + '<h2>Run</h2><pre>' + html.escape(json.dumps(summary,ensure_ascii=False,indent=2)) + '</pre>'
     (output/'review.html').write_text(page,encoding='utf-8')
 
@@ -133,6 +158,7 @@ def main():
     p.add_argument('--cameras', required=True, type=Path)
     p.add_argument('--features', required=True, type=Path)
     p.add_argument('--patch', type=Path)
+    p.add_argument('--geometry-source', type=Path, help='Pinned source_mori.npz, only for podium recovery')
     p.add_argument('--output', required=True, type=Path, help='Must not already exist')
     p.add_argument('--device', choices=['CPU','OPTIX'], default='CPU')
     p.add_argument('--width', type=int, default=640)
@@ -147,6 +173,14 @@ def main():
     validate_cameras(cameras); validate_features(features)
     patch = read_json(a.patch) if a.patch else None
     if patch: validate_patch(patch)
+    needs_geometry=bool(patch and any(op['op'] in ('mori_podium_v2','mori_podium_v3') for op in patch['operations']))
+    require(needs_geometry==bool(a.geometry_source), 'Podium operation requires exactly one geometry source')
+    geometry_hash=None
+    if needs_geometry:
+        from mori_podium_v2 import SOURCE_BYTES,SOURCE_SHA256
+        require(a.geometry_source.stat().st_size==SOURCE_BYTES, 'Geometry source size differs')
+        geometry_hash=digest(a.geometry_source)
+        require(geometry_hash==SOURCE_SHA256, 'Geometry source hash differs')
     require(source.stat().st_size == lock['bytes'], 'Input size does not match lock')
     input_hash = digest(source)
     require(input_hash == lock['sha256'], 'Input hash does not match lock')
@@ -158,8 +192,11 @@ def main():
     try:
         revision = subprocess.run(['git','-c',f'safe.directory={ROOT.as_posix()}','-C',str(ROOT),'rev-parse','HEAD'],capture_output=True,text=True,check=True).stdout.strip()
         summary['code_base_commit'] = revision
-        summary['code_files'] = {f.relative_to(ROOT).as_posix():digest(f) for f in (Path(__file__),WORKER)}
+        summary['code_files'] = {f.relative_to(ROOT).as_posix():digest(f) for f in (Path(__file__),WORKER,ROOT/'scripts/mori_shape.py',ROOT/'scripts/mori_crown_v2.py',ROOT/'scripts/mori_crown_material.py',ROOT/'scripts/mori_facade_v2.py',ROOT/'scripts/mori_podium_v2.py',ROOT/'scripts/mori_entrance_v1.py',ROOT/'scripts/mori_podium_v3.py')}
         job = {'output':str(output),'cameras':cameras,'features':features,'patch':patch,'settings':{k:summary[k] for k in ('blender_version','device','width','height','samples','seed')}}
+        if needs_geometry:
+            job['geometry_source']=str(a.geometry_source.resolve())
+            summary['geometry_source_sha256']=geometry_hash
         job_path = output/'job.json'; write_json(job_path,job)
         for phase, blend in [('prepare',source),('validate-before',output/'before.blend'),('validate-after',output/'after.blend')]:
             summary['jobs'][phase] = run_job(a.blender,phase,output,job_path,blend,a.timeout)
@@ -171,6 +208,7 @@ def main():
             summary['jobs'][phase] = run_job(a.blender,phase,output,job_path,output/(phase.removeprefix('render-')+'.blend'),a.timeout)
         summary['output_blends'] = {n:digest(output/n) for n in ('before.blend','after.blend')}
         require(digest(source) == input_hash, 'Source changed during review')
+        if needs_geometry: require(digest(a.geometry_source)==geometry_hash, 'Geometry source changed during review')
         summary['ok'] = True
         make_html(output,cameras,summary)
     except Exception as error:

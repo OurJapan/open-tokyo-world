@@ -83,8 +83,46 @@ def prepare(job):
             obj=bpy.data.objects.get(op['object'])
             if obj is None or obj.get('otw_feature_id')!=op['feature_id']: raise ValueError('Patch target not in specified feature')
             if obj.animation_data or obj.constraints or obj.parent: raise ValueError('Translation adapter requires unanimated, unparented object without constraints')
-            if op['op']!='translate_object': raise ValueError('Unsupported patch')
-            for i,value in enumerate(op['translation_m']): obj.location[i]+=value
+            if op['op']=='translate_object':
+                for i,value in enumerate(op['translation_m']): obj.location[i]+=value
+            elif op['op'] in ('mori_crown_material_v1','mori_facade_v2'):
+                if obj.type!='MESH' or mesh_fingerprint(obj.data)!=op['expected_mesh_sha256']:
+                    raise ValueError('Crown material baseline mesh differs')
+                if len(obj.data.materials)!=1 or material_fingerprint(obj.data.materials[0])!=op['expected_material_sha256']:
+                    raise ValueError('Crown material baseline shader differs')
+                sys.path.insert(0,str(Path(__file__).resolve().parent))
+                if op['op']=='mori_facade_v2':
+                    import mori_facade_v2
+                    mori_facade_v2.apply(obj)
+                else:
+                    import mori_crown_material
+                    mori_crown_material.apply(obj)
+            elif op['op']=='mori_entrance_v1':
+                if obj.type!='MESH' or mesh_fingerprint(obj.data)!=op['expected_mesh_sha256']:
+                    raise ValueError('Entrance baseline mesh differs')
+                sys.path.insert(0,str(Path(__file__).resolve().parent))
+                import mori_entrance_v1
+                mori_entrance_v1.apply(obj)
+            elif op['op'] in ('mori_podium_v2','mori_podium_v3'):
+                if obj.type!='MESH' or mesh_fingerprint(obj.data)!=op['expected_mesh_sha256']:
+                    raise ValueError('Podium baseline mesh differs')
+                sys.path.insert(0,str(Path(__file__).resolve().parent))
+                if op['op']=='mori_podium_v3':
+                    import mori_podium_v3 as podium
+                else:
+                    import mori_podium_v2 as podium
+                podium.apply(obj,job['geometry_source'])
+            elif op['op'] in ('mori_shape_v1','mori_crown_v2'):
+                if obj.type!='MESH' or mesh_fingerprint(obj.data)!=op['expected_mesh_sha256']:
+                    raise ValueError('Shape patch baseline mesh differs')
+                sys.path.insert(0,str(Path(__file__).resolve().parent))
+                if op['op']=='mori_crown_v2':
+                    import mori_crown_v2
+                    mori_crown_v2.apply(obj)
+                else:
+                    import mori_shape
+                    mori_shape.apply(obj)
+            else: raise ValueError('Unsupported patch')
     bpy.ops.wm.save_as_mainfile(filepath=str(out/'after.blend'),compress=True)
     return {'ok':True,'mapped_objects':len(seen),'patch_applied':bool(patch)}
 

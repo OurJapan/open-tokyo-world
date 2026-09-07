@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "ok": true,
+  "mode": "patch-review",
+  "input_sha256": "f04b68c07d138b880576d511000b55a9fc3104d28cc9e3750b511023b10ab70d",
+  "blender_version": "4.5.1 LTS",
+  "cameras_sha256": "fc17f411ea2bfc2d96694c331c200b246cffc3578f62fce35d382b4b9d515e42",
+  "features_sha256": "d3072a503cca5ea3e1879b5eb413bcec9c80e62ed63c1212d67f01915a591d25",
+  "patch_sha256": "4f65ca3e11f7568ef97623fed2fc2c37d138da595d666a013b56320feafdba29",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "device": "OPTIX",
+  "width": 960,
+  "height": 540,
+  "samples": 16,
+  "seed": 0,
+  "jobs": {
+    "prepare": {
+      "seconds": 13.734,
+      "report_sha256": "9e0032a0f476cad616b1287aac26102333779acd3e498070ed4918ffc1a963b5"
+    },
+    "validate-before": {
+      "seconds": 34.141,
+      "report_sha256": "1147165795645a9ccb22573b10b21329e2833bcfbc07c54a0135e3cbdf22136a"
+    },
+    "validate-after": {
+      "seconds": 34.313,
+      "report_sha256": "a742ac4b27f3124905f4ef57e20e64d6821f0fed6c4f316da0754c065cbfc347"
+    },
+    "render-before": {
+      "seconds": 39.907,
+      "report_sha256": "b5c854ec7a06e4ea420f2a356ffe3c54b2d1799f53653a0504eb6a13024dabfa"
+    },
+    "render-after": {
+      "seconds": 30.0,
+      "report_sha256": "915255ef8b4a7b09364d8a04dc555c80bedc9e17d1dba4ba2bb3dc68a296870f"
+    }
+  },
+  "limitations": [
+    "Human visual approval is required.",
+    "Peak RAM/VRAM and physical accuracy are not measured.",
+    "Timing is one run, not a warmed-up median.",
+    "Dependency audit and fingerprints cover documented initial checks, not all Blender features."
+  ],
+  "code_base_commit": "295b6190f29e552ef6007f6b41873fa5c6fd0545",
+  "code_files": {
+    "scripts/review.py": "f538de99b2b3377b92b2d0f6a96f9e18ae6b63846306e955ba2888230ddc65f0",
+    "scripts/blender_worker.py": "4fb06943c5301dbaf852e94c28fc0e7521466acdcfbe01c7f42fcdd8c0882bfe",
+    "scripts/mori_shape.py": "e82b840819da692b1a0dd6b27f095c524706fce08c0e85db47b2236301f91411",
+    "scripts/mori_crown_v2.py": "8bb386b4429575c4c37b914c71b63629fb844c84c0399e943706b34fd10e64a7"
+  },
+  "changed_objects": [
+    "Mori JP podium / stone",
+    "Mori JP podium / aluminum",
+    "Mori JP podium / clear glass",
+    "Mori JP podium / gasket",
+    "Mori JP podium / soil",
+    "Mori JP podium / wood",
+    "Mori JP podium / leaf",
+    "Mori JP podium / warm light",
+    "Mori JP podium / ceiling",
+    "Mori continuous pearl glass / slender mullion",
+    "Mori continuous pearl glass / pearl grey coated glass",
+    "Mori continuous pearl glass / sealing joint"
+  ],
+  "output_blends": {
+    "before.blend": "728c72556851cb40bcd224465a91a51ad14384a09cf5c98c99db5be14ce2e16a",
+    "after.blend": "6f03f31fd4c6bb11bfb5c7c35f93365027de4be45c37e5717765a731902e92d7"
+  }
+}

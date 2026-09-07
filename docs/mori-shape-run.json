@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "ok": true,
+  "mode": "patch-review",
+  "input_sha256": "f04b68c07d138b880576d511000b55a9fc3104d28cc9e3750b511023b10ab70d",
+  "blender_version": "4.5.1 LTS",
+  "cameras_sha256": "fc17f411ea2bfc2d96694c331c200b246cffc3578f62fce35d382b4b9d515e42",
+  "features_sha256": "d3072a503cca5ea3e1879b5eb413bcec9c80e62ed63c1212d67f01915a591d25",
+  "patch_sha256": "78dfc499dd15029d16a0e7b4ab57fbac961561c26a440f467a813ae561d6e5da",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "device": "OPTIX",
+  "width": 960,
+  "height": 540,
+  "samples": 16,
+  "seed": 0,
+  "jobs": {
+    "prepare": {
+      "seconds": 15.234,
+      "report_sha256": "9e0032a0f476cad616b1287aac26102333779acd3e498070ed4918ffc1a963b5"
+    },
+    "validate-before": {
+      "seconds": 34.016,
+      "report_sha256": "1147165795645a9ccb22573b10b21329e2833bcfbc07c54a0135e3cbdf22136a"
+    },
+    "validate-after": {
+      "seconds": 33.703,
+      "report_sha256": "a604f87fe84617063f99a4d9ac1edd45e8cf96796a79ae416d5e080f2528b154"
+    },
+    "render-before": {
+      "seconds": 28.562,
+      "report_sha256": "730af48a5b67e065e0e423661bb5b61a0f45876a8d799c2a946a2e6bb998d1b6"
+    },
+    "render-after": {
+      "seconds": 35.297,
+      "report_sha256": "3142399f369ea93b50692d0d1ad9b3db43b110177ee56e112d245012b4d132e1"
+    }
+  },
+  "limitations": [
+    "Human visual approval is required.",
+    "Peak RAM/VRAM and physical accuracy are not measured.",
+    "Timing is one run, not a warmed-up median.",
+    "Dependency audit and fingerprints cover documented initial checks, not all Blender features."
+  ],
+  "code_base_commit": "295b6190f29e552ef6007f6b41873fa5c6fd0545",
+  "code_files": {
+    "scripts/review.py": "ec139dd73c2966fefdd63c0f375376183e5b25e36f236120281962ccf4a18411",
+    "scripts/blender_worker.py": "6f9615ecbbf18e1ef33d9c99e32f356159ddf46002d3217392b3bba4b38d3460",
+    "scripts/mori_shape.py": "e82b840819da692b1a0dd6b27f095c524706fce08c0e85db47b2236301f91411"
+  },
+  "changed_objects": [
+    "Mori JP podium / stone",
+    "Mori JP podium / aluminum",
+    "Mori JP podium / clear glass",
+    "Mori JP podium / gasket",
+    "Mori JP podium / soil",
+    "Mori JP podium / wood",
+    "Mori JP podium / leaf",
+    "Mori JP podium / warm light",
+    "Mori JP podium / ceiling",
+    "Mori continuous pearl glass / recessed spandrel",
+    "Mori continuous pearl glass / slender mullion",
+    "Mori continuous pearl glass / pearl grey coated glass",
+    "Mori continuous pearl glass / sealing joint"
+  ],
+  "output_blends": {
+    "before.blend": "35c12cf0f3dde383cafb1d1b7197fdbb3e16c68faf7cbc80d5d526014eefe818",
+    "after.blend": "8dce31cc602d338298cc0ec055cdb35453eeee76a630e1c8728bb1e772b57db2"
+  },
+  "visual_acceptance": "pending; ground-level reconstruction remains unresolved",
+  "validation_errors": [],
+  "validation_warnings": [
+    "Modifier stack not fingerprinted: Close detail rim",
+    "Modifier stack not fingerprinted: Close detail iron",
+    "Modifier stack not fingerprinted: Close detail silver",
+    "Modifier stack not fingerprinted: Close detail frame",
+    "Modifier stack not fingerprinted: Tokyo traffic • silver",
+    "Modifier stack not fingerprinted: Tokyo traffic • white",
+    "Modifier stack not fingerprinted: Tokyo traffic • blue",
+    "Modifier stack not fingerprinted: Tokyo traffic • black",
+    "Modifier stack not fingerprinted: Tokyo traffic • red",
+    "Modifier stack not fingerprinted: Tokyo Tower structure / stone",
+    "Modifier stack not fingerprinted: Tokyo Tower structure / orange",
+    "Modifier stack not fingerprinted: Tokyo Tower structure / white",
+    "Modifier stack not fingerprinted: Tokyo Tower decks and interior / white",
+    "Modifier stack not fingerprinted: Tokyo Tower decks and interior / aluminum",
+    "Known empty legacy mesh: Tokyo Tower decks and interior / wood; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Modifier stack not fingerprinted: Tokyo Tower decks and interior / wood",
+    "Known empty legacy mesh: Tokyo Tower decks and interior / stone; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Modifier stack not fingerprinted: Tokyo Tower decks and interior / stone",
+    "Known empty legacy mesh: Tokyo Tower decks and interior / soil; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Known empty legacy mesh: Tokyo Tower decks and interior / leaf; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Known empty legacy mesh: Tokyo Tower decks and interior / darkmetal; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Modifier stack not fingerprinted: Mori JP curtain wall / aluminum",
+    "Modifier stack not fingerprinted: Mori JP interior / stone",
+    "Modifier stack not fingerprinted: Mori JP interior / wood",
+    "Modifier stack not fingerprinted: Mori JP interior / aluminum",
+    "Modifier stack not fingerprinted: Mori JP interior / chair",
+    "Modifier stack not fingerprinted: Mori JP interior / fabric",
+    "Modifier stack not fingerprinted: Mori JP podium / stone",
+    "Modifier stack not fingerprinted: Mori JP podium / aluminum",
+    "Modifier stack not fingerprinted: Mori JP podium / wood",
+    "Modifier stack not fingerprinted: Observation interior detail / charcoal glass",
+    "Modifier stack not fingerprinted: Observation interior detail / brushed steel",
+    "Modifier stack not fingerprinted: Observation interior detail / ceiling",
+    "Modifier stack not fingerprinted: Photo based main deck / frame",
+    "Modifier stack not fingerprinted: Photo based main deck / silver",
+    "Modifier stack not fingerprinted: Photo based main deck / wall",
+    "Modifier stack not fingerprinted: 2019 reference window revision / black",
+    "Modifier stack not fingerprinted: 2019 reference window revision / aluminum",
+    "Modifier stack not fingerprinted: 2019 reference window revision / white"
+  ]
+}

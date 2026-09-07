@@ -1,0 +1,253 @@
+{
+  "version": 1,
+  "status": "candidate-poses-human-review-pending",
+  "note": "Fixed cameras shared by before/after for Mori shape candidate.",
+  "views": [
+    {
+      "id": "deck-to-mori",
+      "frame": 1,
+      "matrix_world": [
+        [
+          0.5075700579701535,
+          0.06770027447806812,
+          0.8589466276130138,
+          -12.8
+        ],
+        [
+          0.8616104898689285,
+          -0.03988186384157848,
+          -0.5060007911894475,
+          7.4
+        ],
+        [
+          -0.0,
+          0.9969082755058843,
+          -0.07857410659933695,
+          146.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 24.0,
+      "sensor_width_mm": 36.0,
+      "sensor_height_mm": 24.0,
+      "sensor_fit": "AUTO",
+      "shift_x": 0.0,
+      "shift_y": 0.0,
+      "clip_start": 0.04,
+      "clip_end": 9000.0,
+      "source_camera": "New review pose based on legacy model coordinates",
+      "target_local_m": [
+        -430.39,
+        253.4,
+        185.0
+      ],
+      "purpose": "Candidate framing; human acceptance pending"
+    },
+    {
+      "id": "mori-full",
+      "frame": 1,
+      "matrix_world": [
+        [
+          0.7835501942263602,
+          -0.0694920764207553,
+          0.6174301130027311,
+          -55.0
+        ],
+        [
+          0.6213284905167583,
+          0.08763565619112272,
+          -0.7786339952995361,
+          -220.0
+        ],
+        [
+          -0.0,
+          0.9937257383597767,
+          0.11184434237509182,
+          233.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 28.0,
+      "sensor_width_mm": 36.0,
+      "sensor_height_mm": 24.0,
+      "sensor_fit": "AUTO",
+      "shift_x": 0.0,
+      "shift_y": 0.0,
+      "clip_start": 0.04,
+      "clip_end": 9000.0,
+      "source_camera": "New review pose based on legacy model coordinates",
+      "target_local_m": [
+        -430.39,
+        253.4,
+        165.0
+      ],
+      "purpose": "Candidate framing; human acceptance pending"
+    },
+    {
+      "id": "mori-crown",
+      "frame": 1,
+      "matrix_world": [
+        [
+          0.7673445288453703,
+          -0.08647273265926014,
+          0.6353777148732216,
+          -110.0
+        ],
+        [
+          0.6412350380719045,
+          0.10347902775230294,
+          -0.7603352660270082,
+          -130.0
+        ],
+        [
+          -0.0,
+          0.9908655596607838,
+          0.13485341181491017,
+          365.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 65,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "source_camera": "New review detail pose; human acceptance pending"
+    },
+    {
+      "id": "mori-podium",
+      "frame": 1,
+      "matrix_world": [
+        [
+          0.7180113415885901,
+          -0.18896006562579817,
+          0.6698908918240694,
+          -235.0
+        ],
+        [
+          0.696031402560368,
+          0.19492722559292866,
+          -0.6910453410395663,
+          50.0
+        ],
+        [
+          -0.0,
+          0.9624434894170866,
+          0.2714820982655439,
+          92.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 38,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "source_camera": "New review detail pose; human acceptance pending"
+    },
+    {
+      "id": "podium-southwest",
+      "frame": 1,
+      "matrix_world": [
+        [
+          0.7822378731683638,
+          0.336457663066033,
+          -0.5243092129127415,
+          -580.0
+        ],
+        [
+          -0.6229798630622297,
+          0.4224693964814099,
+          -0.6583431470408108,
+          90.0
+        ],
+        [
+          0.0,
+          0.8416150248188163,
+          0.5400779110454555,
+          155.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 55,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "source_camera": "New fixed context view for podium recovery; human acceptance pending"
+    },
+    {
+      "id": "podium-northwest",
+      "frame": 1,
+      "matrix_world": [
+        [
+          -0.7762925059857203,
+          0.29822345599395084,
+          -0.5553671897451583,
+          -555.0
+        ],
+        [
+          -0.630372862003442,
+          -0.367256663399958,
+          0.6839244095935746,
+          390.0
+        ],
+        [
+          0.0,
+          0.8810137986906643,
+          0.47309056904217184,
+          110.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 48,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "source_camera": "New fixed context view for podium recovery; human acceptance pending"
+    }
+  ]
+}

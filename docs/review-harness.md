@@ -49,7 +49,7 @@ OptiXが使えない環境では明示的に`--device CPU`を選びます。自�
 
 - 現実との一致、画像内の対象coverage、遮蔽、4カメラの適切さは人間の確認が必要。
 - 東京タワーは旧4視点にdeck-to-moriとmori-fullを加えた6候補。展望台視点には窓枠の遮蔽があり、人間の受入は未完了。
-- patch adapterは対象IDを確認した、非アニメーション・親なし・constraintなしobjectのtranslationのみ。窓割りや材質修正は次段階でadapterを追加。
+- patch adapterはtranslationと版固定のmori_shape_v1／mori_crown_v2／mori_crown_material_v1／mori_facade_v2を提供する。後者は指定feature・object・変更前mesh hashに限定され、一般的な形状編集APIではない。[最新の外装材質候補と制約](mori-facade-dark.md)を参照。
 - meshの有限座標・index・UV等を確認するが、全法線、ゼロ面積、non-manifold、全modifier評価を検査するものではない。
 - 材質nodeの入力とリンクを記録するが、ネストしたnode groupや全RNA属性の完全なfingerprintではない。
 - 画像はサイズと先頭pixelのdecode probe。全サンプルの完全性保証ではない。動画・UDIM等は未対応として停止。
@@ -82,3 +82,15 @@ OptiXが使えない環境では明示的に`--device CPU`を選びます。自�
 ## カメラ・出典調査の追加
 
 6視点・12枚を960×540、16 samplesで再生成し検証成功。画像384件の素材使用先と出典URLの記録を抽出した。[追加調査と制約](camera-provenance-review.md)を参照。上記4視点の測定値は旧baseline実行時の記録である。
+
+## 低層部の元形状復元
+
+`mori_podium_v2`は、固定hashのローカルgeometry archiveを`--geometry-source`で受け取り、削除されていたタワー側低層部だけを復元する。archiveは本repositoryに配布しない。[最新の低層部候補・再現手順](mori-podium-v2.md)を参照。
+
+## 入口の写真ベース詳細
+
+`mori_entrance_v1`は、既存の3つの非表示podium部品を限定targetとして、ガラス庇の三角格子・丸柱・入口フレームを生成する。累積patchでは低層部復元も行うため、引き続き`--geometry-source`が必要。[入口の根拠・推定寸法・再現手順](mori-entrance-v1.md)を参照。
+
+## 低層部の欠落面修正
+
+人間レビューで、`mori_podium_v2`の40m選択条件による屋根・壁の欠落を発見。最新の`mori_podium_v3`は元データの低層部最高点約46.947mを含む1,070三角形を復元し、捨てた低層部の隣接面が残っていないか検査する。[原因・修正・検査の範囲](mori-podium-repair-v3.md)を参照。旧v2の実行成功は閉形状の保証ではない。

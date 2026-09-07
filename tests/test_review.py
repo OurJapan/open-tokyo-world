@@ -46,5 +46,14 @@ class Contracts(unittest.TestCase):
             p=Path(d)/'input';p.write_bytes(b'original');h=review.digest(p);p.write_bytes(b'modified')
             self.assertNotEqual(h,review.digest(p))
 
+    def test_shape_adapter_requires_exact_feature_hash_and_evidence(self):
+        p={'version':1,'purpose':'reviewed-change','reason':'visual hypothesis','source_refs':['https://pcparch.com/work/azabudai-hills'],'operations':[{'op':'mori_shape_v1','feature_id':'otw:jp:tokyo:minato:azabudai-mori-jp','object':'Mori continuous pearl glass / recessed spandrel','expected_mesh_sha256':'a'*64}]}
+        review.validate_patch(p)
+        for key,value in [('feature_id','otw:other'),('expected_mesh_sha256','missing')]:
+            changed=copy.deepcopy(p);changed['operations'][0][key]=value
+            with self.assertRaises(ValueError):review.validate_patch(changed)
+        p['source_refs']=[]
+        with self.assertRaises(ValueError):review.validate_patch(p)
+
 
 if __name__=='__main__':unittest.main()
