@@ -115,6 +115,11 @@ def prepare(job):
                 else:
                     import mori_podium_v2 as podium
                 podium.apply(obj,job['geometry_source'])
+            elif op['op']=='mori_plaza_v1':
+                if obj.type!='MESH' or mesh_fingerprint(obj.data)!=op['expected_mesh_sha256']:raise ValueError('Plaza anchor differs')
+                sys.path.insert(0,str(Path(__file__).resolve().parent))
+                import mori_plaza_v1
+                mori_plaza_v1.apply(op,mesh_fingerprint)
             elif op['op'] in ('mori_shape_v1','mori_crown_v2'):
                 if obj.type!='MESH' or mesh_fingerprint(obj.data)!=op['expected_mesh_sha256']:
                     raise ValueError('Shape patch baseline mesh differs')

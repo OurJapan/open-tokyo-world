@@ -106,6 +106,13 @@ def validate_patch(patch):
             require(set(op)=={'op','feature_id','object','expected_mesh_sha256'}, 'Unexpected podium patch keys')
             require(op['feature_id']=='otw:jp:tokyo:minato:azabudai-mori-jp' and op['object']=='Mori JP podium / stone', 'Wrong podium target')
             require(re.fullmatch('[0-9a-f]{64}',op['expected_mesh_sha256']) is not None and bool(patch['source_refs']), 'Podium patch requires hash and sources')
+        elif op['op']=='mori_plaza_v1':
+            from mori_plaza_v1 import ANCHOR,FEATURE,ROADS,ADDED
+            require(set(op)=={'op','feature_id','object','expected_mesh_sha256','road_mesh_sha256','added_objects'}, 'Unexpected plaza keys')
+            require(op['object']==ANCHOR and op['feature_id']==FEATURE, 'Wrong plaza anchor')
+            require(set(op['road_mesh_sha256'])==ROADS and set(op['added_objects'])==ADDED and len(op['added_objects'])==len(ADDED), 'Wrong plaza change scope')
+            require(all(re.fullmatch('[0-9a-f]{64}',h) for h in [op['expected_mesh_sha256']]+list(op['road_mesh_sha256'].values())), 'Plaza requires hashes')
+            require(bool(patch['source_refs']) and len(ops)==1, 'Plaza must be a standalone evidence-backed increment')
         elif op['op'] in ('mori_shape_v1','mori_crown_v2'):
             require(set(op) == {'op','feature_id','object','expected_mesh_sha256'}, 'Unexpected shape patch keys')
             require(op['feature_id']=='otw:jp:tokyo:minato:azabudai-mori-jp', 'Wrong shape feature')
@@ -118,13 +125,14 @@ def validate_patch(patch):
         require(bool(patch['source_refs']), 'Real changes require source references')
 
 
-def compare_reports(before, after, allowed):
+def compare_reports(before, after, allowed, added=()):
     require(before['ok'] and after['ok'], 'Blender validation failed')
-    require(set(before['objects']) == set(after['objects']), 'Unexpected object creation/deletion')
+    require(not (set(before['objects'])-set(after['objects'])), 'Unexpected object deletion')
+    require(set(after['objects'])-set(before['objects']) == set(added), 'Unexpected or missing object creation')
     changed = [n for n in before['objects'] if before['objects'][n] != after['objects'][n]]
     require(set(changed) <= set(allowed), 'Unexpected changed objects: ' + ', '.join(sorted(set(changed)-set(allowed))))
     require(before['assets'] == after['assets'], 'Unexpected asset change')
-    return changed
+    return changed + sorted(added)
 
 
 def run_job(blender, phase, output, job, source=None, timeout=900):
@@ -195,7 +203,7 @@ def main():
     try:
         revision = subprocess.run(['git','-c',f'safe.directory={ROOT.as_posix()}','-C',str(ROOT),'rev-parse','HEAD'],capture_output=True,text=True,check=True).stdout.strip()
         summary['code_base_commit'] = revision
-        summary['code_files'] = {f.relative_to(ROOT).as_posix():digest(f) for f in (Path(__file__),WORKER,ROOT/'scripts/mori_shape.py',ROOT/'scripts/mori_crown_v2.py',ROOT/'scripts/mori_crown_material.py',ROOT/'scripts/mori_facade_v2.py',ROOT/'scripts/mori_podium_v2.py',ROOT/'scripts/mori_entrance_v1.py',ROOT/'scripts/mori_podium_v3.py',ROOT/'scripts/mori_terrace_v1.py')}
+        summary['code_files'] = {f.relative_to(ROOT).as_posix():digest(f) for f in (Path(__file__),WORKER,ROOT/'scripts/mori_shape.py',ROOT/'scripts/mori_crown_v2.py',ROOT/'scripts/mori_crown_material.py',ROOT/'scripts/mori_facade_v2.py',ROOT/'scripts/mori_podium_v2.py',ROOT/'scripts/mori_entrance_v1.py',ROOT/'scripts/mori_podium_v3.py',ROOT/'scripts/mori_terrace_v1.py',ROOT/'scripts/mori_plaza_v1.py')}
         job = {'output':str(output),'cameras':cameras,'features':features,'patch':patch,'settings':{k:summary[k] for k in ('blender_version','device','width','height','samples','seed')}}
         if needs_geometry:
             job['geometry_source']=str(a.geometry_source.resolve())
@@ -205,7 +213,11 @@ def main():
             summary['jobs'][phase] = run_job(a.blender,phase,output,job_path,blend,a.timeout)
         before, after = read_json(output/'validate-before.json'), read_json(output/'validate-after.json')
         allowed = [op['object'] for op in patch['operations']] if patch else []
-        summary['changed_objects'] = compare_reports(before,after,allowed)
+        added=[]
+        if patch and any(op['op']=='mori_plaza_v1' for op in patch['operations']):
+            from mori_plaza_v1 import ROADS,ADDED
+            allowed=sorted(ROADS);added=sorted(ADDED)
+        summary['changed_objects'] = compare_reports(before,after,allowed,added)
         if patch: require(bool(summary['changed_objects']), 'Patch produced no recorded change')
         for phase in ('render-before','render-after'):
             summary['jobs'][phase] = run_job(a.blender,phase,output,job_path,output/(phase.removeprefix('render-')+'.blend'),a.timeout)
