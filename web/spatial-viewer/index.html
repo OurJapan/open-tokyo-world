@@ -3,52 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#101c29" />
+  <meta name="theme-color" content="#f5f5f7" />
   <meta name="description" content="カメラと3D表示を試し、現実の気づきを写真と一緒に手元へ保存するOpen Tokyo Worldの実験ビューア。" />
   <meta name="referrer" content="no-referrer" />
-  <title>Open Tokyo World · 現実を観測する</title>
+  <title>Open Tokyo World</title>
 </head>
 <body>
 <div id="app">
-  <header><a class="brand" href="./" aria-label="Open Tokyo World ホーム"><span class="brand-symbol">⊕</span><span>OPEN TOKYO<span class="brand-sub">WORLD / FIELD VIEWER</span></span></a><span class="pill">実機検証版 01</span></header>
+  <header><a class="brand" href="./" aria-label="Open Tokyo World ホーム">Open Tokyo World</a><span class="pill">Preview</span></header>
   <main>
     <section class="workspace" aria-labelledby="viewer-title">
-      <div class="workspace-heading"><div><p class="eyebrow">TOKYO TOWER AREA</p><h1 id="viewer-title">現実と、つながる。</h1></div><button id="reset-view" class="quiet">視点を戻す</button></div>
+      <div class="workspace-heading"><div><h1 id="viewer-title">東京タワー周辺</h1></div><button id="reset-view" class="quiet">視点を戻す</button></div>
       <div id="stage" class="stage">
         <video id="camera" playsinline muted autoplay aria-label="背面カメラ映像" hidden></video>
         <div id="canvas-host" aria-label="3D検証モデル。ドラッグで回転、ピンチで拡大"></div>
-        <div class="stage-label"><span class="status-dot"></span><span id="mode-label">3D Viewer</span></div>
-        <span class="north-mark" aria-hidden="true">N<br>↑</span>
-        <div class="model-caption"><strong>空間表示テスト</strong><span>実在する東京タワーの形状ではありません</span></div>
+        <div class="stage-label"><span id="mode-label">3Dビュー</span></div>
+
+        <div class="model-caption"><span>サンプルモデル · 実際の建物とは異なります</span></div>
         <div id="loading" role="status">3Dモデルを読み込んでいます…</div>
       </div>
-      <div class="sensor-strip"><span>カメラ <b id="camera-status">停止中</b></span><span>位置 <b id="location-status">未取得</b></span><span>方位 <b id="orientation-status">未取得</b></span></div>
-      <p id="notice" class="notice" role="status" aria-live="polite">まずは3D表示を探索できます。カメラはボタンを押すまで起動しません。</p>
-      <div class="actions"><button id="start" class="primary">カメラで試す <span aria-hidden="true">↗</span></button><button id="stop" hidden>カメラを終了</button><button id="capture" disabled>写真を撮る</button></div>
+
+      <p id="offline-status" class="help" role="status">初回は通信できる場所で開いてください。</p>
+      <p id="notice" class="notice" role="status" aria-live="polite">ドラッグで回転、ピンチで拡大できます。</p>
+      <div class="actions"><button id="start" class="primary">カメラを開く</button><button id="stop" hidden>カメラを終了</button><button id="capture" disabled>写真を撮る</button></div>
     </section>
     <aside class="panel" aria-label="表示と観測">
-      <section><p class="eyebrow">01 / EXPLORE</p><h2>表示を選ぶ</h2>
-        <label for="placement">配置方法</label><select id="placement"><option value="device-test">どこでも試す（仮の配置）</option><option value="geo">東京タワー周辺で概略配置</option></select>
-        <p class="help" id="placement-help">開始時のカメラ前方に検証モデルを置きます。現実の地物との位置合わせではありません。</p>
+      <section><h2>表示設定</h2>
+        <label for="area">対象エリア</label><select id="area"><option value="tokyo-tower">東京タワー周辺</option><option value="iidabashi">飯田橋駅付近（千代田区側）</option></select>
+        <label for="placement">表示位置</label><select id="placement"><option value="device-test">目の前に表示</option><option value="geo">現在地に合わせる（周辺のみ）</option></select>
+        <p class="help" id="placement-help">カメラ前方に仮配置します。実際の位置とは一致しません。</p>
         <label for="opacity">モデルの濃さ <output id="opacity-label">75%</output></label><input id="opacity" type="range" min="0" max="100" value="75" />
-        <label for="radius">周辺の取得範囲</label><select id="radius"><option value="50">50 m</option><option value="100" selected>100 m</option><option value="300">300 m</option></select>
-        <p class="help">配信対象は検証モデル1点のみ。東京タワー周辺以外では3D Viewerを利用できます。</p>
+        <label for="radius">表示範囲</label><select id="radius"><option value="50">50 m</option><option value="100" selected>100 m</option><option value="300">300 m</option></select>
+
       </section>
-      <section><p class="eyebrow">02 / OBSERVE</p><h2>気づきを、持ち帰る。</h2><p>写真と、撮影時の位置・方位をまとめて保存できます。</p><div class="privacy-note"><span aria-hidden="true">◉</span><p>写真・位置情報は外部へ送信しません。保存するまで、このタブのメモリだけに保持します。</p></div></section>
-      <details><summary>実機の診断情報</summary><pre id="diagnostics">準備中</pre><p class="help">方向・距離・高さは概算です。画像による自動補正と連続6DoF追跡は未実装です。</p></details>
+      <section aria-labelledby="saved-title"><h2 id="saved-title">端末に保存した写真</h2><p id="storage-status" class="help" role="status">読み込み中…</p><div id="saved-list"></div><button id="refresh-saved" type="button">一覧を更新</button></section>
+      <p class="privacy-note">撮影した写真とメモはこの端末のブラウザに保存します。送信を選ぶまで外部に送られません。ブラウザのデータ消去で失われるため、テスト終了後にZIPも保存してください。</p>
+      <details><summary>接続情報</summary>      <div class="sensor-strip"><span>カメラ <b id="camera-status">停止中</b></span><span>位置 <b id="location-status">未取得</b></span><span>方位 <b id="orientation-status">未取得</b></span></div><pre id="diagnostics">準備中</pre><p class="help">表示位置は概算です。自動の位置補正には対応していません。</p></details>
     </aside>
   </main>
-  <footer><span>OPEN TOKYO WORLD</span><span>見つける → 記録する → 人とAIで確かめる</span></footer>
+
 </div>
 <dialog id="draft-dialog" aria-labelledby="draft-title"><form id="draft-form">
-  <div class="dialog-heading"><div><p class="eyebrow">REALITY OBSERVATION</p><h2 id="draft-title">観測を保存する</h2></div><button type="button" id="close-draft" aria-label="下書きを閉じる">×</button></div>
+  <div class="dialog-heading"><div><h2 id="draft-title">写真にメモを追加</h2></div><button type="button" id="close-draft" aria-label="下書きを閉じる">×</button></div>
   <img id="photo-preview" alt="撮影した生写真。3Dモデルは含まれません" />
   <p id="capture-summary" class="help"></p>
   <label for="observation-type">何を記録しますか？</label><select id="observation-type"><option value="reality_difference">現実と違う</option><option value="addition">Worldに追加したい</option><option value="outdated">情報が古い</option><option value="digital_correction">デジタル側を修正したい</option><option value="no_issue">問題なし・確認した</option></select>
-  <label for="description">場所や気づいたこと（任意）</label><textarea id="description" rows="3" maxlength="2000" placeholder="例：入口の屋根がモデルと違うように見える"></textarea>
-  <p class="help">地物は未確定として保存します。検証モデルを現実の建物と同一視しません。ZIPには写真と位置情報が含まれるため、共有前に内容を確認してください。</p>
-  <p id="draft-status" role="status" aria-live="polite">未保存・未送信</p>
-  <div class="actions"><button type="submit" id="save-draft" class="primary">写真＋観測データを保存</button><button type="button" id="delete-draft">下書きを削除</button></div>
+  <label for="description">メモ（任意）</label><textarea id="description" rows="3" maxlength="2000" placeholder="例：入口の屋根がモデルと違うように見える"></textarea>
+  <p class="help">写真は撮影後に端末内へ保存します。メモは「端末に保存して次の写真へ」で確定します。ZIPとしても書き出せます。位置情報を含むため、共有前に内容をご確認ください。</p>
+  <p id="draft-status" role="status" aria-live="polite">下書き</p>
+  <fieldset id="submission-controls" hidden>
+    <legend>運営に送信</legend>
+    <p class="help">1枚5MBまで。全体で1日30件・月300件・保存合計2GB。写真と位置・撮影情報は非公開で保存し、30日経過後に順次削除します。AI処理は自動実行しません。</p>
+    <label for="submission-token">参加用コード</label><input id="submission-token" type="password" autocomplete="off" />
+    <label><input id="submission-consent" type="checkbox" /> 写真・位置情報・メモを運営が確認するために保存することに同意します。</label>
+    <button type="button" id="send-observation">送信する</button>
+  </fieldset>
+  <div class="actions"><button type="button" id="next-photo" class="primary">端末に保存して次の写真へ</button><button type="submit" id="save-draft">ZIPをダウンロード</button><button type="button" id="share-draft">ZIPを共有・ファイルに保存</button><button type="button" id="delete-draft">下書きを削除</button></div>
 </form></dialog>
 <script type="module" src="/src/main.js"></script>
 </body>

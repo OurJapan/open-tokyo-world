@@ -1,0 +1,15 @@
+{
+  "area_id": "iidabashi",
+  "label": "飯田橋駅付近（千代田区側）",
+  "origin": {
+    "latitude": 35.7009,
+    "longitude": 139.745,
+    "vertical_datum": "unknown",
+    "note": "Approximate test anchor on the Chiyoda side near Iidabashi station, manually selected; not a surveyed point or a building location."
+  },
+  "radius_m": 300,
+  "fixture": true,
+  "real_city_model": false,
+  "selection_method": "Manual approximate field-test anchor; field confirmation pending",
+  "context_url": "https://place.0rz.org/station/1131316"
+}

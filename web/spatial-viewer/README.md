@@ -28,9 +28,9 @@ pnpm dev
 - 50/100/300mの範囲選択：現在地からfixture原点までの距離で表示を選別。**全国周辺取得APIではなく1点のstatic manifest**。
 - 写真撮影：videoの生画像を長辺2,048px以下のJPEGにし、同時点の位置/方位/表示版をsnapshot。3D overlayを含まない。
 - 下書き：5分類、コメント、ZIP download。`observation.json`、`photo.jpg`、説明をまとめる。SHA-256で写真とmetadataを紐付ける。
-- camera終了、background、pagehideでtrackとgeolocation watchを解除。復帰は明示操作。閉じた下書きはcamera停止後も再表示・保存可能。
+- camera終了、background、pagehideでtrackとgeolocation watchを解除。復帰は明示操作。保存した下書きはcamera停止・ページ再読込後も一覧から再表示できます。
 
-写真は明示保存までメモリのみ。外部upload/analytics/CDN request、localStorage/IndexedDB保存、service workerは実装しない。ZIPがdownloadされたことをOSから確実に検出できないため、UIは「保存用ZIPを作成」と表示する。下書き削除は既にdownloadしたZIPを消さない。
+写真は撮影後にIndexedDBへ端末保存し、メモも入力後に保存します。保存一覧から復元・削除できます。公開ビルドはService Workerでアプリと検証モデルだけをキャッシュし、初回準備後はオフラインで再度開けます。写真・投稿API・参加用コードはキャッシュしません。送信は明示操作時のみで、analytics/CDN requestはありません。ZIPがdownloadされたことをOSから確実に検出できないため、UIは「保存用ZIPを作成」と表示する。下書き削除は既にdownloadしたZIPを消さない。
 
 ## 既存資産との接続
 
@@ -50,10 +50,17 @@ Webからは上記Pythonや親directoryをimportしない。package一式だけ�
 
 高さ1.6mと横画角60°は表示仮定であり、sensor計測値ではない。未知高度を0で保存しない。位置は10秒、方向は2秒を超える古い値や未来timestampを写真metadataへ付けない。既存originの`vertical_datum=unknown`を維持する。
 
-今後のbackendは、この下書きを検査してserver IDと保存状態を付与する。現時点ではZIPの保存によってIssue/AI修正が起動することはない。
+送信APIは、この下書きを検査して受付番号と保存状態を付与する。ZIPの保存・API送信によってIssue/AI修正が起動することはない。
 
 ## 未達・実機で確認すること
 
-実都市GLBの権利確認・測地登録、VPS、画像照合、連続6DoF、正確なocclusion、校正済みintrinsics、server受付は未実装。iPhoneの権限/映像/方向/ZIP保存、SNS内browser、横向き、10分の発熱とメモリは実機確認待ち。Desktopのmodule試験やbuildをSafari動作の証拠にしない。
+実都市GLBの権利確認・測地登録、VPS、画像照合、連続6DoF、正確なocclusion、校正済みintrinsicsは未実装。送信APIは公開済みで、公開用の接続設定を追加しました。iPhoneの権限/映像/方向/ZIP保存/送信、SNS内browser、横向き、10分の発熱とメモリは実機確認待ち。Desktopのmodule試験やbuildをSafari動作の証拠にしない。
 
 最小の実機手順：HTTPS URL→「カメラで試す」→許可→左右上下へ向ける→写真→分類/コメント→ZIP保存→camera終了→ZIPに生写真とJSONが入ることを確認。続いて位置/方位拒否、画面lock/復帰、下書き削除を試す。現地geo modeは最後に確認する。
+
+## 写真の送信と利用枠
+
+`VITE_OBSERVATION_API_URL` を設定してビルドすると、同意確認・参加用コード・送信ボタンが表示されます。未設定時は端末へのZIP保存だけ利用できます。コードはメモリ内のみで保持します。送信先の構築・初期利用枠・停止方法は [Observation API](../observation-api/README.md) を参照してください。APIは同じリポジトリの独立パッケージで、Cloudflareへの公開は別途必要です。
+`?area=iidabashi` で飯田橋駅付近を選択できます。[現地テスト手順](../../docs/iidabashi-field-test.md)を参照してください。
+
+飯田橋の現地運用では写真の端末保存・メモ保存・連続撮影・送信結果の再確認・ZIP共有を利用できます。ブラウザ検証は `pnpm test:browser`（ビルド済みpreviewを4181番で起動、Playwright Chromiumが必要）。詳細は[9月8日の手順](../../docs/iidabashi-field-test.md)を参照してください。
