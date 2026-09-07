@@ -23,18 +23,21 @@
         <div id="loading" role="status">3Dモデルを読み込んでいます…</div>
       </div>
 
+      <p id="offline-status" class="help" role="status">初回は通信できる場所で開いてください。</p>
       <p id="notice" class="notice" role="status" aria-live="polite">ドラッグで回転、ピンチで拡大できます。</p>
       <div class="actions"><button id="start" class="primary">カメラを開く</button><button id="stop" hidden>カメラを終了</button><button id="capture" disabled>写真を撮る</button></div>
     </section>
     <aside class="panel" aria-label="表示と観測">
       <section><h2>表示設定</h2>
+        <label for="area">対象エリア</label><select id="area"><option value="tokyo-tower">東京タワー周辺</option><option value="iidabashi">飯田橋駅付近（千代田区側）</option></select>
         <label for="placement">表示位置</label><select id="placement"><option value="device-test">目の前に表示</option><option value="geo">現在地に合わせる（周辺のみ）</option></select>
         <p class="help" id="placement-help">カメラ前方に仮配置します。実際の位置とは一致しません。</p>
         <label for="opacity">モデルの濃さ <output id="opacity-label">75%</output></label><input id="opacity" type="range" min="0" max="100" value="75" />
         <label for="radius">表示範囲</label><select id="radius"><option value="50">50 m</option><option value="100" selected>100 m</option><option value="300">300 m</option></select>
 
       </section>
-      <p class="privacy-note">写真と位置情報は、送信を選ぶまで外部に送られません。</p>
+      <section aria-labelledby="saved-title"><h2 id="saved-title">端末に保存した写真</h2><p id="storage-status" class="help" role="status">読み込み中…</p><div id="saved-list"></div><button id="refresh-saved" type="button">一覧を更新</button></section>
+      <p class="privacy-note">撮影した写真とメモはこの端末のブラウザに保存します。送信を選ぶまで外部に送られません。ブラウザのデータ消去で失われるため、テスト終了後にZIPも保存してください。</p>
       <details><summary>接続情報</summary>      <div class="sensor-strip"><span>カメラ <b id="camera-status">停止中</b></span><span>位置 <b id="location-status">未取得</b></span><span>方位 <b id="orientation-status">未取得</b></span></div><pre id="diagnostics">準備中</pre><p class="help">表示位置は概算です。自動の位置補正には対応していません。</p></details>
     </aside>
   </main>
@@ -46,7 +49,7 @@
   <p id="capture-summary" class="help"></p>
   <label for="observation-type">何を記録しますか？</label><select id="observation-type"><option value="reality_difference">現実と違う</option><option value="addition">Worldに追加したい</option><option value="outdated">情報が古い</option><option value="digital_correction">デジタル側を修正したい</option><option value="no_issue">問題なし・確認した</option></select>
   <label for="description">メモ（任意）</label><textarea id="description" rows="3" maxlength="2000" placeholder="例：入口の屋根がモデルと違うように見える"></textarea>
-  <p class="help">写真と撮影情報をZIPで保存します。位置情報を含むため、共有前に内容をご確認ください。</p>
+  <p class="help">写真は撮影後に端末内へ保存します。メモは「端末に保存して次の写真へ」で確定します。ZIPとしても書き出せます。位置情報を含むため、共有前に内容をご確認ください。</p>
   <p id="draft-status" role="status" aria-live="polite">下書き</p>
   <fieldset id="submission-controls" hidden>
     <legend>運営に送信</legend>
@@ -55,7 +58,7 @@
     <label><input id="submission-consent" type="checkbox" /> 写真・位置情報・メモを運営が確認するために保存することに同意します。</label>
     <button type="button" id="send-observation">送信する</button>
   </fieldset>
-  <div class="actions"><button type="submit" id="save-draft" class="primary">写真とメモを保存</button><button type="button" id="delete-draft">下書きを削除</button></div>
+  <div class="actions"><button type="button" id="next-photo" class="primary">端末に保存して次の写真へ</button><button type="submit" id="save-draft">ZIPをダウンロード</button><button type="button" id="share-draft">ZIPを共有・ファイルに保存</button><button type="button" id="delete-draft">下書きを削除</button></div>
 </form></dialog>
 <script type="module" src="/src/main.js"></script>
 </body>

@@ -75,3 +75,6 @@ dialog .actions button { flex: 1; }
   dialog .actions { flex-direction: column; }
 }
 @media(prefers-reduced-motion:reduce) { * { transition: none !important; } }
+
+.saved-record { display:block; width:100%; text-align:left; overflow-wrap:anywhere; margin:8px 0; font-size:.8rem; }
+#saved-list {max-height:320px;overflow:auto;}
