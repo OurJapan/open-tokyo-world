@@ -20,7 +20,7 @@
 python scripts/review.py --blender BLENDER --input LEGACY_BLEND --lock manifests/legacy-baseline.json --cameras areas/tokyo-tower/mori-shape-cameras.json --features areas/tokyo-tower/features.json --patch patches/mori-crown-v2.json --output runs/mori-crown-v2 --device OPTIX --width 960 --height 540 --samples 16 --timeout 1200
 ```
 
-v1 adapterとpatchは過去の候補を再現するため保持する。最新候補は上記v2。入力mesh hashの照合、別process再open、対象外変更・素材依存検査は共通基盤を使う。
+v1 adapterとpatchは過去の候補を再現するため保持する。形状候補は上記v2。材質の続報は[頂部の透けの調整](mori-crown-material.md)を参照。入力mesh hashの照合、別process再open、対象外変更・素材依存検査は共通基盤を使う。
 
 Pythonテストは12件。四つの最大点・中間の最小点、旧上端から新上端への写像、境界以下の不変、上下順序の保持を検証する。見た目の受入はユーザーによる確認を待つ。
 
