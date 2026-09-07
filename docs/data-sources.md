@@ -6,7 +6,7 @@
 
 ローカル `work/detail_upgrade/selected_tiles.json` は港区、year=2025、spec=5.0、3D Tiles 1.0、texture=true、LOD表記3、file_size=369,231,400を記録しています。これは保存済みcatalog値であり、現在の配信容量・全地物LOD3を保証しません。実装自身もmixed source detailと記録しています。
 
-記録されたtilesetは [港区2025の配信入口](https://api.plateauview.mlit.go.jp/datacatalog/3dtiles/13103-bldg-lod3-texture-2025/tileset.json)。再利用時は配信URL、実データhash、年度、地物の実LODを固定します。G空間の候補ページ取得は今回403等で失敗し、2025港区の個別resource利用条件をオンラインで確定できていません。PLATEAUサイト全体の条件だけで個別textureの配布を承認しません。
+記録されたtilesetは [港区2025の配信入口](https://api.plateauview.mlit.go.jp/datacatalog/3dtiles/13103-bldg-lod3-texture-2025/tileset.json)。再利用時は配信URL、実データhash、年度、地物の実LODを固定します。初期調査では403で未確認でしたが、2026-09-07の入力選定でブラウザから港区2025データセットと3D Tiles/MVT個別resourceの条件を確認しました。[最新の入力選定と確認範囲](tokyo-input-plan.md)。公式resourceの条件確認は、旧シーンの全textureの出典照合完了を意味しません。
 
 ## 取込経路の比較
 
@@ -36,7 +36,7 @@
 
 Google Street ViewのURLは報告の手がかりとして受け付けられますが、自動取込・画像抽出・trace・texture化の入力にはしない運用を提案します。[Google公式Geo Guidelines](https://about.google/brand-resource-center/products-and-services/geo-guidelines/)にはStreet Viewからのデータ生成・解析抽出・サービス外downloadの制限があります。Agentは独立した許諾済み資料で裏付けます。
 
-公開前に `NOTICE.md` とasset別license manifestを生成し、code MIT、独自文書/asset CC BY 4.0案をmaintainerが確定します。既存blend全体を一括MITにしません。不明素材はlegacyとして保管し、公開buildでは除外または置換。正式LICENSEの未配置は意図的な公開前ゲートです。
+対象を限定した許諾は既に [LICENSE.md](../LICENSE.md) と [NOTICE.md](../NOTICE.md) に記録しています。広場6部品以外の都市blend全体には拡張しません。不明素材はlegacyとして保管し、公開buildでは除外または置換します。
 
 ## ストレージ方針
 
