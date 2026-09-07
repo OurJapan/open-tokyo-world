@@ -12,6 +12,8 @@
 
 ## 自分のPCで試す
 
+[初めての参加ガイド](starter/plaza/first-contribution.md)：画像を見る、AIと試す、結果を紹介するところまで順に案内します。
+
 [6部品のスターター](starter/plaza/README.md)で、元の都市ファイルなしに生成・保存・検証・Before/After比較を実行できます。PythonとBlenderが必要です。独自部品はCC BY 4.0、対象の生成コードはMITで利用できます。
 
 ## 最初に実現すること
