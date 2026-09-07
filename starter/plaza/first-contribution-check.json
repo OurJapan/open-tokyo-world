@@ -1,0 +1,40 @@
+{
+  "verified_on": "2026-09-07",
+  "source_commit": "c3474aaab4d85aeabc444ee422ecd26b3b25e04b",
+  "source_acquisition": "Fresh public git clone --depth 1 into a new folder; ZIP download not independently tested",
+  "environment": "Existing Windows machine, Python 3.12.14 at explicit path, Blender 4.5.1 LTS, Cycles CPU",
+  "experiment": "paving brightness 1.0 -> 0.9, no source edit",
+  "legacy_city_input": false,
+  "ok": true,
+  "portable_tests": 35,
+  "elapsed_seconds": 10.609,
+  "source_sha256": {
+    "starter/plaza/scene.py": "52bed9bca744615928232d524091caf9d8a7f98cd7b69314364e474ce236bd93",
+    "starter/plaza/run.py": "a76fe93e537f03b160f2e1207764671398142fe18dbcaf686ca7c08a2987ad4a",
+    "scripts/mori_plaza_v1.py": "5f92f0381ab16fd0bbef325db2200381a903723ab5418ecb51c0c64562131ef9",
+    "scripts/mori_plaza_link_v1.py": "9db234b625b99fe1ee5751b4f4da57445ea6122222377e8b2e9fe36105519ec3",
+    "scripts/mori_entrance_v1.py": "aeb7417803ebea8ac8af590aeca7a1e723d1591e1756eb07ad1078cd9e753c90",
+    "scripts/mori_terrace_v1.py": "26f9149e5889266caa7c62bbd8a0df886fb9713266751c0a69e6c6df24a036e5"
+  },
+  "before_after_meshes_identical": true,
+  "separate_process_validation": [
+    true,
+    true
+  ],
+  "image_review": "Two complete previews visually inspected; difference is subtle by design",
+  "repeat_existing_output": "FileExistsError; all existing output hashes unchanged",
+  "submission_preparation": "Two PNGs plus five-file evidence ZIP and local draft prepared; public form field labels and attachment controls checked; no test Issue sent",
+  "fixed_documentation_gaps": [
+    "Python missing from PATH",
+    "Find repository root",
+    "How to inspect success",
+    "Choose Issue or PR and distinguish practice from accuracy correction",
+    "Select files and retain attribution"
+  ],
+  "limitations": [
+    "Not a fresh OS installation",
+    "Not an independent nontechnical user test",
+    "Not macOS/Linux testing",
+    "No public test Issue or attachment upload performed"
+  ]
+}

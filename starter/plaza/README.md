@@ -4,6 +4,8 @@
 
 ## 実行する
 
+初めての方は[取得・Pythonの確認・実行・投稿準備を順に進めるガイド](first-contribution.md)を参照してください。画像を見て報告するだけの参加方法も選べます。
+
 このリポジトリをclone、またはGitHubの「Code → Download ZIP」で取得・展開してください。`starter/plaza`だけを取り出すと依存コードが不足します。参照環境はPython 3.12、Blender 4.5.1 LTS。追加のpipパッケージ・都市データ・外部Textureは不要です。
 
 リポジトリのルートから、Blenderの場所を自分のPCに合わせて実行します。
