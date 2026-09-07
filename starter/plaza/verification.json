@@ -1,0 +1,67 @@
+{
+  "ok": true,
+  "experiment": "paving brightness only; not a real-world correction",
+  "paving_brightness": 0.85,
+  "runs": {
+    "before": {
+      "ok": true,
+      "separate_process_open": true,
+      "mesh_count": 6,
+      "mesh_fingerprints": {
+        "OTW Mori entry plaza / paving": "b7cfa6b6ff99276bfb028bc7068c7742746aebaeacb24dde2507c9977a7c6a80",
+        "OTW Mori entry plaza / planters": "70e7a3cfbd268aa2de11d99cdaf5c8d8d037a7f269173d479155ca7b5333ef05",
+        "OTW Mori entry plaza / planting": "aa39ca38721618a6b90f6ef18a3c744eb7effc18c081a096957aaaab94d273c1",
+        "OTW Mori plaza link / paving": "50c83d9fea28e898753654b0f7532264e71043ba6f259f4a4b3b8c4431b52910",
+        "OTW Mori plaza link / planters": "924854f35e5d4931ea3a6e3f3df535c7fb1549e896e377f0015eecce98f3153c",
+        "OTW Mori plaza link / planting": "be4bf78b80d3d23b233ed3f36c0e0e98b2b943556b774bb02f36fe135a396963"
+      },
+      "paving_brightness": 1.0,
+      "render_pixels": [
+        800,
+        600
+      ],
+      "blender_version": "4.5.1 LTS",
+      "triangles": 129896,
+      "scope": "geometry/material/render checks; not real-world accuracy or legal assurance",
+      "elapsed_seconds": 5.562
+    },
+    "after": {
+      "ok": true,
+      "separate_process_open": true,
+      "mesh_count": 6,
+      "mesh_fingerprints": {
+        "OTW Mori entry plaza / paving": "b7cfa6b6ff99276bfb028bc7068c7742746aebaeacb24dde2507c9977a7c6a80",
+        "OTW Mori entry plaza / planters": "70e7a3cfbd268aa2de11d99cdaf5c8d8d037a7f269173d479155ca7b5333ef05",
+        "OTW Mori entry plaza / planting": "aa39ca38721618a6b90f6ef18a3c744eb7effc18c081a096957aaaab94d273c1",
+        "OTW Mori plaza link / paving": "50c83d9fea28e898753654b0f7532264e71043ba6f259f4a4b3b8c4431b52910",
+        "OTW Mori plaza link / planters": "924854f35e5d4931ea3a6e3f3df535c7fb1549e896e377f0015eecce98f3153c",
+        "OTW Mori plaza link / planting": "be4bf78b80d3d23b233ed3f36c0e0e98b2b943556b774bb02f36fe135a396963"
+      },
+      "paving_brightness": 0.85,
+      "render_pixels": [
+        800,
+        600
+      ],
+      "blender_version": "4.5.1 LTS",
+      "triangles": 129896,
+      "scope": "geometry/material/render checks; not real-world accuracy or legal assurance",
+      "elapsed_seconds": 5.485
+    }
+  },
+  "source_sha256": {
+    "starter/plaza/scene.py": "272f5b50a7d6953c67ec2a0b9acb209a4124b7120b4db21c225292c4b86cf751",
+    "starter/plaza/run.py": "30f59e787944fb593dfb7a1f61b924a38248301fe28a6b82343edf2c2f33b8c0",
+    "scripts/mori_plaza_v1.py": "5f92f0381ab16fd0bbef325db2200381a903723ab5418ecb51c0c64562131ef9",
+    "scripts/mori_plaza_link_v1.py": "9db234b625b99fe1ee5751b4f4da57445ea6122222377e8b2e9fe36105519ec3",
+    "scripts/mori_entrance_v1.py": "aeb7417803ebea8ac8af590aeca7a1e723d1591e1756eb07ad1078cd9e753c90",
+    "scripts/mori_terrace_v1.py": "26f9149e5889266caa7c62bbd8a0df886fb9713266751c0a69e6c6df24a036e5"
+  },
+  "negative_test": {
+    "case": "move one mesh after save",
+    "result": "rejected before render",
+    "exit_code": 1
+  },
+  "portable_tests": 35,
+  "base_commit": "254d67d8d81b513cfd31498a01052171550fa30c",
+  "blend_bytes": 3049999
+}

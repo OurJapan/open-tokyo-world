@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "model_version": "plaza-starter-0.1",
+  "last_verified": "2026-09-07",
+  "creator": "AI generated with human direction and review; ark4ez / OurJapan",
+  "license": "CC-BY-4.0 for original starter assets; third-party terms retained",
+  "authority_confirmation": "Maintainer confirmed personal authority to license original contributions on 2026-09-07",
+  "geometry_source": "Deterministic geometry() functions from MIT-scoped plaza generators; no legacy blend input",
+  "assets": [
+    {
+      "name": "OTW Mori entry plaza / paving",
+      "geometry_generator": "scripts/mori_plaza_v1.py",
+      "accuracy": "inferred, not surveyed"
+    },
+    {
+      "name": "OTW Mori entry plaza / planters",
+      "geometry_generator": "scripts/mori_plaza_v1.py",
+      "accuracy": "inferred, not surveyed"
+    },
+    {
+      "name": "OTW Mori entry plaza / planting",
+      "geometry_generator": "scripts/mori_plaza_v1.py",
+      "accuracy": "inferred, not surveyed"
+    },
+    {
+      "name": "OTW Mori plaza link / paving",
+      "geometry_generator": "scripts/mori_plaza_link_v1.py",
+      "accuracy": "inferred, not surveyed"
+    },
+    {
+      "name": "OTW Mori plaza link / planters",
+      "geometry_generator": "scripts/mori_plaza_link_v1.py",
+      "accuracy": "inferred, not surveyed"
+    },
+    {
+      "name": "OTW Mori plaza link / planting",
+      "geometry_generator": "scripts/mori_plaza_link_v1.py",
+      "accuracy": "inferred, not surveyed"
+    }
+  ],
+  "coordinate_system": {
+    "units": "meters",
+    "kind": "legacy local scene; not an EPSG CRS",
+    "legacy_geographic_origin": {
+      "latitude": 35.65858,
+      "longitude": 139.74543,
+      "datum": "WGS84"
+    },
+    "entrance_origin_xy": [
+      -419.8,
+      290.82
+    ],
+    "u_axis": "(2,-1)/sqrt(5)",
+    "v_axis": "(1,2)/sqrt(5)",
+    "vertical_note": "Legacy import individually shifted building bases to z=0.32. Road ground z=0.11 is a generator constant. Neither is a surveyed elevation. Do not interpret mesh coordinates as a geodetic position without a new registration audit."
+  },
+  "sources": [
+    {
+      "id": "plateau-minato-2025",
+      "publisher": "Project PLATEAU / MLIT",
+      "url": "https://www.geospatial.jp/ckan/dataset/plateau-13103-minato-ku-2025",
+      "source_date": "2025 dataset edition; observation date not established",
+      "last_verified": "2026-09-07",
+      "terms_url": "https://www.mlit.go.jp/plateau/site-policy/",
+      "use": "Inherited placement via legacy PLATEAU_data221 batch 5 wall; transformed and height-shifted. No building mesh included.",
+      "tile_url": "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data221.b3dm",
+      "tile_sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2",
+      "verification_scope": "Saved tile byte-matched distribution (1246040 bytes); not a full legacy reconstruction audit"
+    },
+    {
+      "id": "osm-road-context",
+      "publisher": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/way/1443867470",
+      "source_date": "2026-08-16T23:30:05Z (saved version 4)",
+      "last_verified": "2026-09-07 (local reference audit)",
+      "terms_url": "https://www.openstreetmap.org/copyright",
+      "use": "Road context and connection diagnosis. No OSM road mesh or coordinate dataset included."
+    },
+    {
+      "id": "mori-building",
+      "url": "https://www.mori.co.jp/projects/azabudaihills/facilities/",
+      "source_date": null,
+      "use": "Visual reference only; no photos, plans or textures redistributed. Observation date unknown."
+    },
+    {
+      "id": "official-floor-map",
+      "url": "https://www.azabudai-hills.com/floor_map/mori-jp_tower-plaza_1f.html",
+      "source_date": null,
+      "use": "Visual reference only; no photos, plans or textures redistributed. Observation date unknown."
+    },
+    {
+      "id": "pcpa",
+      "url": "https://pcparch.com/work/azabudai-hills",
+      "source_date": null,
+      "use": "Visual reference only; no photos, plans or textures redistributed. Observation date unknown."
+    },
+    {
+      "id": "nihon-sekkei",
+      "url": "https://www.nihonsekkei.co.jp/projects/19811/",
+      "source_date": null,
+      "use": "Visual reference only; no photos, plans or textures redistributed. Observation date unknown."
+    }
+  ],
+  "inferred": [
+    "Paving dimensions and seams",
+    "Plant species, sizes and placements",
+    "Planter dimensions",
+    "Connection slope and ground height",
+    "Material colors and roughness"
+  ],
+  "starter_changes": [
+    "New camera and sun for isolated viewing",
+    "Uniform material roughness 0.85",
+    "Optional paving brightness multiplier; demonstration, not accuracy correction"
+  ],
+  "excluded": [
+    "Legacy city blend",
+    "Tower and podium meshes",
+    "PLATEAU building meshes and textures",
+    "OSM road geometry",
+    "Reference photographs and floor-map files"
+  ],
+  "attribution_file": "ASSET-LICENSE.md"
+}
