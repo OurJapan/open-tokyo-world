@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "ok": true,
+  "mode": "patch-review",
+  "input_sha256": "f04b68c07d138b880576d511000b55a9fc3104d28cc9e3750b511023b10ab70d",
+  "blender_version": "4.5.1 LTS",
+  "cameras_sha256": "fc17f411ea2bfc2d96694c331c200b246cffc3578f62fce35d382b4b9d515e42",
+  "features_sha256": "d3072a503cca5ea3e1879b5eb413bcec9c80e62ed63c1212d67f01915a591d25",
+  "patch_sha256": "a2b474fd84f17c2e41636daa8e1fa106584fe1ce41da4c49b67ddfba4ea628d3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "device": "OPTIX",
+  "width": 960,
+  "height": 540,
+  "samples": 16,
+  "seed": 0,
+  "jobs": {
+    "prepare": {
+      "seconds": 15.516,
+      "report_sha256": "9e0032a0f476cad616b1287aac26102333779acd3e498070ed4918ffc1a963b5"
+    },
+    "validate-before": {
+      "seconds": 36.922,
+      "report_sha256": "1147165795645a9ccb22573b10b21329e2833bcfbc07c54a0135e3cbdf22136a"
+    },
+    "validate-after": {
+      "seconds": 40.281,
+      "report_sha256": "207d26d01506047c2774c6794fb21dfbe052b9ea9c5b7f9cda1e8aa36bf7d9f7"
+    },
+    "render-before": {
+      "seconds": 65.625,
+      "report_sha256": "f86ee956c8cae343ea405798c94008190c86d1c8f86a9695a1a452eef9157fbb"
+    },
+    "render-after": {
+      "seconds": 27.047,
+      "report_sha256": "9434a4599dc387be22656011b5afb4fa6c701b31285e20871c4d8e978f85c4dc"
+    }
+  },
+  "limitations": [
+    "Human visual approval is required.",
+    "Peak RAM/VRAM and physical accuracy are not measured.",
+    "Timing is one run, not a warmed-up median.",
+    "Dependency audit and fingerprints cover documented initial checks, not all Blender features."
+  ],
+  "code_base_commit": "295b6190f29e552ef6007f6b41873fa5c6fd0545",
+  "code_files": {
+    "scripts/review.py": "c2d81886827207dbd11f34a7e1c2a88ea858d8afdb71934a038210b9f0b010be",
+    "scripts/blender_worker.py": "1aa503b4da12a04c45e7736217d682ebf35cb921edc281ef0761657e74660bc3",
+    "scripts/mori_shape.py": "e82b840819da692b1a0dd6b27f095c524706fce08c0e85db47b2236301f91411",
+    "scripts/mori_crown_v2.py": "8bb386b4429575c4c37b914c71b63629fb844c84c0399e943706b34fd10e64a7",
+    "scripts/mori_crown_material.py": "02e207032a4873ee75cf80991ab2066e3621e9a8ccbf4c014e2c5aee06bbc8b5",
+    "scripts/mori_facade_v2.py": "b962aeb523cb35cd242bad7f3a91409750219bda62eec1cd64ddcbf49a7ab26f"
+  },
+  "changed_objects": [
+    "Mori JP podium / stone",
+    "Mori JP podium / aluminum",
+    "Mori JP podium / clear glass",
+    "Mori JP podium / gasket",
+    "Mori JP podium / soil",
+    "Mori JP podium / wood",
+    "Mori JP podium / leaf",
+    "Mori JP podium / warm light",
+    "Mori JP podium / ceiling",
+    "Mori continuous pearl glass / recessed spandrel",
+    "Mori continuous pearl glass / slender mullion",
+    "Mori continuous pearl glass / pearl grey coated glass",
+    "Mori continuous pearl glass / sealing joint"
+  ],
+  "output_blends": {
+    "before.blend": "02b31ef0f9473de8ed169747727b38450a335c0a32d50963d5702b97e2242422",
+    "after.blend": "6aa879ac4a03f5a7c265025a9a264a97da075ce4bdf084bf4e335d96a097e0d7"
+  }
+}

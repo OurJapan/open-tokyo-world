@@ -36,3 +36,5 @@ Pythonテスト16件。保存後の別process検査で、外装4objectの全頂�
 [実行記録](mori-facade-v2-run.json) / [保存後の形状・材質・非発光検査](mori-facade-v2-validation.json)。表示する比較画像の左は前回の頂部材質候補、右は今回。共通runnerの数値Beforeは固定原本である。
 
 帯の正確な寸法・ディテール、実写と同じ照明での比較、地面付近の形状再現は残課題。自動検証は現実との完全一致を保証しない。
+
+最新の色調整は[暗いガラス候補](mori-facade-dark.md)。本書の明るい色のプリセットはcommit `d32ba0b189066dd06a7e1dcd65ba928fdea99740`をcheckoutすると再現できる。

@@ -49,7 +49,7 @@ OptiXが使えない環境では明示的に`--device CPU`を選びます。自�
 
 - 現実との一致、画像内の対象coverage、遮蔽、4カメラの適切さは人間の確認が必要。
 - 東京タワーは旧4視点にdeck-to-moriとmori-fullを加えた6候補。展望台視点には窓枠の遮蔽があり、人間の受入は未完了。
-- patch adapterはtranslationと版固定のmori_shape_v1／mori_crown_v2／mori_crown_material_v1／mori_facade_v2を提供する。後者は指定feature・object・変更前mesh hashに限定され、一般的な形状編集APIではない。[最新の外装材質候補と制約](mori-facade-v2.md)を参照。
+- patch adapterはtranslationと版固定のmori_shape_v1／mori_crown_v2／mori_crown_material_v1／mori_facade_v2を提供する。後者は指定feature・object・変更前mesh hashに限定され、一般的な形状編集APIではない。[最新の外装材質候補と制約](mori-facade-dark.md)を参照。
 - meshの有限座標・index・UV等を確認するが、全法線、ゼロ面積、non-manifold、全modifier評価を検査するものではない。
 - 材質nodeの入力とリンクを記録するが、ネストしたnode groupや全RNA属性の完全なfingerprintではない。
 - 画像はサイズと先頭pixelのdecode probe。全サンプルの完全性保証ではない。動画・UDIM等は未対応として停止。
