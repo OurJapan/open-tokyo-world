@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "ok": true,
+  "mode": "patch-review",
+  "input_sha256": "c43523e8a54767117f4fbc85ffe2a50fa5a15e3709847e9a33ae195f95bb4b0a",
+  "blender_version": "4.5.1 LTS",
+  "cameras_sha256": "23090a38f95022ce2c60febf52fc9af28c7906326efcfcded3ab444ba746afd9",
+  "features_sha256": "39d5792f7bb3f1f80bd4051b6268d69be41b2566f1d6bed6f9fd18470288fa07",
+  "patch_sha256": "0d7fddf77e264f53ec1406e5c9e02c60eb1543605c6f985ee437441db8be24a5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "device": "OPTIX",
+  "width": 960,
+  "height": 540,
+  "samples": 24,
+  "seed": 0,
+  "jobs": {
+    "prepare": {
+      "seconds": 17.875,
+      "report_sha256": "2a69368ee0953bb0387170a7a520af8946c627c854eeb925493cd5fcd80aacc2"
+    },
+    "validate-before": {
+      "seconds": 35.578,
+      "report_sha256": "c58461ee8203453d4d99cd7361d62217716e0a2513e5be44ab76bbd0647f2288"
+    },
+    "validate-after": {
+      "seconds": 35.141,
+      "report_sha256": "ec2a45e696a4e2e3025b79254cd9dd75c6f9015fc4be4244fad8adbe6c85bb0a"
+    },
+    "render-before": {
+      "seconds": 50.969,
+      "report_sha256": "1add899a10361d1319b502b425b29bbc63a14d57be2beb5c360acf320887a92a"
+    },
+    "render-after": {
+      "seconds": 40.672,
+      "report_sha256": "8b7d4f47e09eb4768aaf4ca0f23accd9acae3c04886c082815ba6b01a8303b13"
+    }
+  },
+  "limitations": [
+    "Human visual approval is required.",
+    "Peak RAM/VRAM and physical accuracy are not measured.",
+    "Timing is one run, not a warmed-up median.",
+    "Dependency audit and fingerprints cover documented initial checks, not all Blender features."
+  ],
+  "code_base_commit": "b4824a83887d4dabf15843daed33f78981064435",
+  "code_files": {
+    "scripts/review.py": "a4f4b22024a4a328dd83f37e1353724a55368c0e697b7a6c7cfb53156a0fdfde",
+    "scripts/blender_worker.py": "9493329e839431dafd4f4935928f899e9668e8ae4b49799ceab3c6c5ac188065",
+    "scripts/mori_shape.py": "e82b840819da692b1a0dd6b27f095c524706fce08c0e85db47b2236301f91411",
+    "scripts/mori_crown_v2.py": "9822f54cec4965881dc5838e5204f55fcf95fcf172620ebb56735101be98015b",
+    "scripts/mori_crown_material.py": "02e207032a4873ee75cf80991ab2066e3621e9a8ccbf4c014e2c5aee06bbc8b5",
+    "scripts/mori_facade_v2.py": "b962aeb523cb35cd242bad7f3a91409750219bda62eec1cd64ddcbf49a7ab26f",
+    "scripts/mori_podium_v2.py": "f5de3f66b97bd63d55e91820ccbddf7bd99b0a290d65bc4c0f2eb5f91168d8ca",
+    "scripts/mori_entrance_v1.py": "aeb7417803ebea8ac8af590aeca7a1e723d1591e1756eb07ad1078cd9e753c90",
+    "scripts/mori_podium_v3.py": "cec7699cb570248bfb4c121275044b0950a6bfcad128464455a2faabc9321790",
+    "scripts/mori_terrace_v1.py": "26f9149e5889266caa7c62bbd8a0df886fb9713266751c0a69e6c6df24a036e5",
+    "scripts/mori_plaza_v1.py": "5f92f0381ab16fd0bbef325db2200381a903723ab5418ecb51c0c64562131ef9",
+    "scripts/mori_plaza_link_v1.py": "9db234b625b99fe1ee5751b4f4da57445ea6122222377e8b2e9fe36105519ec3"
+  },
+  "changed_objects": [
+    "pavement_0 unified road",
+    "asphalt 15s road detail",
+    "gutter 15s road detail",
+    "OTW Mori plaza link / paving",
+    "OTW Mori plaza link / planters",
+    "OTW Mori plaza link / planting"
+  ],
+  "output_blends": {
+    "before.blend": "ef0afd68c94d81099922e48c988d74b463601970ee1a2c9bb6bcf44defb80208",
+    "after.blend": "0212627cd195fa582a481c4276d5c89da7722362002c2652f855258f33edfd7c"
+  }
+}
