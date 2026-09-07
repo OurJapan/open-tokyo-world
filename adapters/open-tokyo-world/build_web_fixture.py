@@ -63,6 +63,13 @@ def main():
     OUT.mkdir(parents=True,exist_ok=True)
     (OUT/'device-test.glb').write_bytes(model)
     (OUT/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    area=json.loads((ROOT/'areas/iidabashi/field-test.json').read_text(encoding='utf-8'))
+    local=json.loads(json.dumps(manifest))
+    local.pop('world_version')
+    local.update(area_id=area['area_id'],origin=area['origin'],known_features=[],source_refs=['areas/iidabashi/field-test.json'])
+    local['frame']['id']='iidabashi-test-display'
+    local['world_version']='sha256:'+hashlib.sha256(encoded(local)).hexdigest()
+    (OUT/'manifest-iidabashi.json').write_text(json.dumps(local,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(f'Generated original fixture: {len(model)} bytes; no legacy geometry or textures')
 
 

@@ -40,9 +40,9 @@ export function cameraQuaternion(s) {
 export function geoGate(location, orientation, origin, radius, now=Date.now()) {
   if (!fresh(location,now)) return {ok:false,reason:'現在地を取得しています。許可と電波状況を確認してください。'};
   const p=horizontalENU(location,origin), distance=Math.hypot(p.east,p.north);
-  if (distance>300) return {ok:false,reason:'東京タワー周辺300mの範囲外です。「どこでも試す」か3D Viewerを利用できます。',distance};
+  if (distance>300) return {ok:false,reason:'選択エリアの検証原点から300mの範囲外です。「目の前に表示」か3Dビューを利用できます。',distance};
   if (location.accuracy_m>50) return {ok:false,reason:'位置の誤差が大きいため、モデルを非表示にしています。',distance};
-  if (!fresh(orientation,now,2000) || orientation.reference==='relative') return {ok:false,reason:'北基準の方位を待っています。取得できない場合は「どこでも試す」を利用してください。',distance};
+  if (!fresh(orientation,now,2000) || orientation.reference==='relative') return {ok:false,reason:'北基準の方位を待っています。取得できない場合は「目の前に表示」を利用してください。',distance};
   if (distance>radius) return {ok:false,reason:'モデルが取得範囲の外にあります。周辺の取得範囲を広げてください。',distance};
   return {ok:true,position:p,distance};
 }

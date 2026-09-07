@@ -1,4 +1,6 @@
 import './style.css';
+import { selectedArea } from './areas.js';
+import { createDraftStore } from './draft-store.js';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
@@ -6,12 +8,19 @@ import { zipSync, strToU8 } from 'fflate';
 import { Sensors } from './sensors.js';
 import { fresh, cameraQuaternion, geoGate, containRect } from './spatial.js';
 import { makeDraft, validateDraft, sha256 } from './observation.js';
+import { submitObservation } from './submission.js';
 
 const $=id=>document.getElementById(id);
 const stage=$('stage'),video=$('camera'),host=$('canvas-host');
 let manifest,model,renderer,scene,camera,controls,grid;
 let active=false,busy=false,viewPose=null,photo=null,draft=null,previewURL=null,packedFile=null;
 let capturing=false,draftGeneration=0;
+const draftStore=createDraftStore();
+let receipt=null,localSaved=false,saving=false;
+let saveQueue=Promise.resolve();
+let memoTimer;
+let sending=false,submissionSnapshot=null;
+const submissionEndpoint=import.meta.env.VITE_OBSERVATION_API_URL||'';
 const testAnchor=new THREE.Vector3(0,0,-25);
 const sensors=new Sensors({onChange:()=>{
   for(const type of ['camera','location','orientation'])$(type+'-status').textContent=sensors.state[type];
@@ -42,26 +51,30 @@ function anchorTest() {
   if(direction.length()<.1)direction.set(0,0,-1);direction.normalize();
   testAnchor.copy(direction.multiplyScalar(25));
 }
-function stop(message='カメラを終了しました。下書きはこのタブを閉じるまで保持されます。') {
+function stop(message='カメラを終了しました。') {
   active=false;busy=false;sensors.stop();video.pause();video.srcObject=null;video.hidden=true;
   stage.classList.remove('camera-active');$('start').hidden=false;$('start').disabled=!model;
   $('stop').hidden=true;$('capture').disabled=!draft;$('reset-view').disabled=false;
   if(model){model.position.set(0,0,0);model.visible=true;}if(grid)grid.visible=true;
   if(controls){controls.enabled=true;resetView();resize();}
-  $('mode-label').textContent='3D Viewer';viewPose=null;say(message);
+  $('mode-label').textContent='3Dビュー';viewPose=null;say(message);
 }
 async function start() {
   if(busy||active||!model)return;
-  busy=true;$('start').disabled=true;$('stop').hidden=false;say('カメラ・位置・方位の許可を確認してください。停止した場所でお試しください。');
+  busy=true;$('start').disabled=true;$('stop').hidden=false;say('カメラへのアクセスを許可してください。');
   try {
     const started=await sensors.start(video);if(!started)return;
     active=true;controls.enabled=false;grid.visible=false;video.hidden=false;
     stage.classList.add('camera-active');$('start').hidden=true;$('stop').hidden=false;
     $('capture').disabled=false;$('reset-view').disabled=true;anchorTest();resize();
-    $('mode-label').textContent='Camera / 概略表示';
+    $('mode-label').textContent='カメラ';
   } catch(e){stop(e.message);}finally{busy=false;if(!active)$('start').disabled=false;}
 }
 function clearDraft() {
+  clearTimeout(memoTimer);
+  receipt=null;localSaved=false;
+  submissionSnapshot=null;$('submission-consent').checked=false;$('submission-token').value='';$('send-observation').disabled=false;
+  $('description').disabled=false;$('observation-type').disabled=false;
   draftGeneration++;if(previewURL)URL.revokeObjectURL(previewURL);previewURL=null;
   photo=null;draft=null;packedFile=null;$('photo-preview').removeAttribute('src');$('description').value='';
   $('observation-type').value='reality_difference';$('draft-dialog').close();
@@ -84,9 +97,11 @@ async function capture() {
     if(previewURL)URL.revokeObjectURL(previewURL);
     draft=snapshot;photo=bytes;packedFile=null;previewURL=URL.createObjectURL(blob);$('photo-preview').src=previewURL;
     $('description').value='';$('observation-type').value='reality_difference';
-    $('capture-summary').textContent=`${new Date(now).toLocaleString('ja-JP')} · ${canvas.width} × ${canvas.height} · ${snapshot.location?'位置あり':'位置なし'} · 地物未確定`;
-    $('draft-status').textContent='未保存・未送信。3D表示を含まない写真です。';$('capture').textContent='下書きを開く';$('draft-dialog').showModal();
-  } catch(e){say(e.message);}finally{capturing=false;$('capture').disabled=!active&&!draft;}
+    $('capture-summary').textContent=`${new Date(now).toLocaleString('ja-JP')} · ${canvas.width} × ${canvas.height} · ${snapshot.location?'位置あり':'位置なし'} · 対象未指定`;
+    receipt=null;localSaved=false;
+    await persistDraft();
+    $('draft-status').textContent='端末に保存しました。写真に3Dモデルは含まれません。';$('capture').textContent='下書きを開く';$('draft-dialog').showModal();
+  } catch(e){say(e.message);if(draft){$('draft-status').textContent='端末保存に失敗しました。ZIPを保存してください。';$('draft-dialog').showModal();}}finally{capturing=false;$('capture').disabled=!active&&!draft;}
 }
 function packageDraft() {
   draft.description=$('description').value;draft.observation_type=$('observation-type').value;validateDraft(draft);
@@ -100,7 +115,7 @@ function saveDraft(e) {
     packedFile=packageDraft();
     const url=URL.createObjectURL(packedFile),a=document.createElement('a');a.href=url;a.download=packedFile.name;
     document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);
-    $('draft-status').textContent='保存用ZIPを作成しました。ダウンロード先を確認してください。外部へは未送信です。';
+    $('draft-status').textContent='ZIPを作成しました。ダウンロード先をご確認ください。';
   } catch(e){$('draft-status').textContent=e.message;}
 }
 let lastDiagnostic=0;
@@ -115,12 +130,12 @@ function frame(now) {
         const gate=geoGate(sensors.location,sensors.orientation,manifest.origin,Number($('radius').value),time);
         model.visible=gate.ok;model.position.set(0,0,0);
         if(gate.ok){camera.position.set(gate.position.east,1.6,-gate.position.north);position=gate.position;}
-        message=gate.ok?'GPS・方位による概略配置です。地面高さとカメラ画角は仮定値です。':gate.reason;
+        message=gate.ok?'現在地に合わせて概略表示しています。':gate.reason;
       }else{
         camera.position.set(0,1.6,0);model.position.copy(testAnchor);model.visible=true;
-        message=orientation?'仮の配置で表示中。現実への固定精度は検証していません。':'方向センサー待ち。モデルは画面に固定したカメラ重畳テストです。';
+        message=orientation?'カメラ前方に仮配置しています。':'方位を取得中です。現在は画面に固定して表示しています。';
       }
-      viewPose={frame:position?'tokyo-tower-legacy-display':'device-test-session',position_render_m:camera.position.toArray(),quaternion_xyzw:camera.quaternion.toArray(),timestamp:time,
+      viewPose={frame:position?manifest.frame.id:'device-test-session',position_render_m:camera.position.toArray(),quaternion_xyzw:camera.quaternion.toArray(),timestamp:time,
         height_assumption_m:1.6,method:'display-only-estimate',orientation_measured:!!orientation};
       if(now-lastDiagnostic>500){say(message);}
       if(!sensors.stream?.getVideoTracks().some(t=>t.readyState==='live'))stop('カメラが停止しました。もう一度カメラを開始してください。');
@@ -142,8 +157,9 @@ async function init() {
     scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(48,1,.1,1500);
     controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.minDistance=10;controls.maxDistance=100;controls.maxPolarAngle=Math.PI*.49;
     scene.add(new THREE.HemisphereLight(0xd9edff,0x36536a,2.7));const sun=new THREE.DirectionalLight(0xffdbc4,3);sun.position.set(8,20,12);scene.add(sun);
-    grid=new THREE.GridHelper(80,40,0x648498,0x2d4c63);scene.add(grid);resetView();resize();requestAnimationFrame(frame);
-    const response=await fetch(`${import.meta.env.BASE_URL}data/manifest.json`);if(!response.ok)throw new Error('表示データを取得できませんでした。');manifest=await response.json();
+    grid=new THREE.GridHelper(60,12,0xd4d4d8,0xe7e7eb);grid.material.transparent=true;grid.material.opacity=.45;scene.add(grid);resetView();resize();requestAnimationFrame(frame);
+    const area=selectedArea(location.search);$('area').value=area.id;$('viewer-title').textContent=area.label;
+    const response=await fetch(`${import.meta.env.BASE_URL}data/${area.manifest}`);if(!response.ok)throw new Error('表示データを取得できませんでした。');manifest=await response.json();
     if(manifest.schema_version!=='otw-spatial-manifest/0.1'||!manifest.fixture||manifest.assets.length!==1)throw new Error('未対応の表示データです。');
     const asset=manifest.assets[0];if(asset.bytes>5*1024*1024||!asset.fixture||asset.feature_id!==null)throw new Error('検証用assetの範囲を超えています。');
     const assetURL=new URL(`${import.meta.env.BASE_URL}data/${asset.url}`,location.href);if(assetURL.origin!==location.origin)throw new Error('配信元が異なるassetは読み込めません。');
@@ -154,16 +170,118 @@ async function init() {
     renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();stop('3D描画が中断されました。ページを再読み込みしてください。');$('start').disabled=true;});
   }catch(e){$('loading').textContent=`${e.message} ページを再読み込みしてください。`;$('start').disabled=true;}
 }
+$('area').addEventListener('change',()=>{
+  if((draft||capturing||sending)&&!window.confirm('エリアを切り替えると未保存の下書きは失われます。切り替えますか？')){$('area').value=manifest.area_id;return;}
+  const url=new URL(location.href);url.searchParams.set('area',$('area').value);location.assign(url);
+});
 $('start').addEventListener('click',start);$('stop').addEventListener('click',()=>stop());$('reset-view').addEventListener('click',resetView);
 $('capture').addEventListener('click',()=>{if(draft)$('draft-dialog').showModal();else capture();});
-$('close-draft').addEventListener('click',()=>{$('draft-dialog').close();say('下書きを保持しています。「下書きを開く」で再開できます。撮り直す場合は下書きを削除してください。');});
-$('delete-draft').addEventListener('click',()=>{clearDraft();say('下書きの写真と位置情報をこのタブから削除しました。保存済みZIPは端末側で削除してください。');});
+$('close-draft').addEventListener('click',async()=>{try{await persistDraft();$('draft-dialog').close();say('写真とメモを端末に保存しました。保存一覧から再開できます。');}catch(e){$('draft-status').textContent=e.message;}});
+$('draft-dialog').addEventListener('cancel',e=>{e.preventDefault();if(!sending)$('close-draft').click();});
+$('delete-draft').addEventListener('click',async()=>{if(sending||saving)return;if(!confirm('この端末の写真とメモを削除しますか？送信済みデータと書き出したZIPは残ります。'))return;try{await saveQueue.catch(()=>{});await draftStore.delete(draft.client_submission_id);clearDraft();await refreshSaved();say('端末内の写真を削除しました。');}catch(e){$('draft-status').textContent=e.message;}});
 $('draft-form').addEventListener('submit',saveDraft);$('opacity').addEventListener('input',setOpacity);
+$('submission-controls').hidden=!submissionEndpoint;
+$('send-observation').addEventListener('click',async()=>{
+  if(sending||!draft||!photo)return;
+  if(!$('submission-consent').checked||!$('submission-token').value.trim()){
+    $('draft-status').textContent='参加用コードと保存への同意をご確認ください。';return;
+  }
+  sending=true;
+  for(const id of ['send-observation','delete-draft','description','observation-type','next-photo','close-draft','area'])$(id).disabled=true;
+  const generation=draftGeneration;
+  let sent=false;
+  try {
+    if(!submissionSnapshot){
+      draft.description=$('description').value;draft.observation_type=$('observation-type').value;validateDraft(draft);
+      submissionSnapshot=structuredClone(draft);
+      submissionSnapshot.consent={evidence_storage:true,public_display:false,visual_map:false,model_training:false,policy_revision:'private-poc-v1'};
+    }
+    await persistDraft();
+    $('draft-status').textContent='送信しています…';
+    const id=await submitObservation({endpoint:submissionEndpoint,token:$('submission-token').value.trim(),draft:submissionSnapshot,photo});
+    receipt=id;await persistDraft();
+    if(generation===draftGeneration)$('draft-status').textContent=`受け付けました。受付番号：${id}`;
+    sent=true;
+  } catch(e){if(generation===draftGeneration)$('draft-status').textContent=e.name==='AbortError'?'受付結果を確認できませんでした。同じ下書きで再送すると受付を確認できます。':e.message;}
+  finally {
+    sending=false;for(const id of ['delete-draft','next-photo','close-draft','area'])$(id).disabled=false;
+    $('send-observation').disabled=sent;
+    // Freeze the payload after the first attempt so retries have an identical identity.
+    $('description').disabled=!!submissionSnapshot;$('observation-type').disabled=!!submissionSnapshot;
+  }
+});
 $('placement').addEventListener('change',()=>{
-  $('placement-help').textContent=$('placement').value==='geo'?'既存の東京タワー原点を使用します。300m圏内・位置誤差50m以下・北基準の方位が必要です。':'開始時のカメラ前方に検証モデルを置きます。現実の地物との位置合わせではありません。';
+  $('placement-help').textContent=$('placement').value==='geo'?`${$('viewer-title').textContent}の検証原点から300m以内で利用できます。位置や方位が不明な場合は表示されません。`:'カメラ前方に仮配置します。実際の位置とは一致しません。';
   if(active)anchorTest();
 });
 window.addEventListener('resize',resize);video.addEventListener('resize',resize);new ResizeObserver(resize).observe(stage);
-document.addEventListener('visibilitychange',()=>{if(document.hidden&&(active||busy))stop('画面を離れたためカメラとセンサーを停止しました。ボタンから再開できます。');});
-window.addEventListener('pagehide',()=>{sensors.stop();clearDraft();});
-init();
+document.addEventListener('visibilitychange',()=>{if(document.hidden){if(draft&&!sending)persistDraft().catch(()=>{localSaved=false;});if(active||busy)stop('画面を離れたためカメラとセンサーを停止しました。ボタンから再開できます。');}});
+window.addEventListener('pagehide',()=>{sensors.stop();});
+window.addEventListener('beforeunload',e=>{if(capturing||saving||sending||(draft&&(!localSaved||draft.description!==$('description').value||draft.observation_type!==$('observation-type').value))){e.preventDefault();e.returnValue='';}});
+refreshSaved();
+  init();
+
+for(const id of ['description','observation-type'])$(id).addEventListener('input',()=>{
+  localSaved=false;clearTimeout(memoTimer);
+  memoTimer=setTimeout(()=>persistDraft().then(()=>{$('draft-status').textContent='写真とメモを端末に保存しました。';}).catch(()=>{$('draft-status').textContent='端末に保存できません。ZIPを保存してください。';}),500);
+});
+
+async function persistDraft() {
+  if(!draft||!photo)return;
+  if(!submissionSnapshot){draft.description=$('description').value;draft.observation_type=$('observation-type').value;}
+  const record={id:draft.client_submission_id,draft:structuredClone(draft),photo:photo.slice(0),submissionSnapshot:submissionSnapshot?structuredClone(submissionSnapshot):null,receipt,updatedAt:Date.now()};
+  saving=true;
+  const operation=saveQueue.catch(()=>{}).then(()=>draftStore.put(record));saveQueue=operation;
+  try{await operation;localSaved=draft?.client_submission_id===record.id&&$('description').value===record.draft.description&&$('observation-type').value===record.draft.observation_type;await refreshSaved();}finally{saving=false;}
+}
+async function refreshSaved() {
+  try {
+    const records=await draftStore.list();$('saved-list').replaceChildren();
+    $('storage-status').textContent=records.length+'件をこの端末に保存しています。';
+    for(const record of records){
+      const button=document.createElement('button');button.type='button';button.className='saved-record';
+      button.textContent=new Date(record.draft.captured_at).toLocaleString('ja-JP')+' · '+record.draft.area_id+' · '+(record.receipt?'送信済み':'未送信')+' · '+(record.draft.description||'メモなし');
+      button.addEventListener('click',async()=>{
+        if(capturing||sending||saving)return;
+        try {
+          await persistDraft();const row=await draftStore.get(record.id);if(!row)throw new Error('この写真は削除されています。');
+          stop();clearDraft();draft=row.draft;photo=row.photo;receipt=row.receipt;submissionSnapshot=row.submissionSnapshot;localSaved=true;
+          previewURL=URL.createObjectURL(new Blob([photo],{type:'image/jpeg'}));$('photo-preview').src=previewURL;
+          $('description').value=draft.description;$('observation-type').value=draft.observation_type;
+          $('description').disabled=$('observation-type').disabled=!!submissionSnapshot;
+          $('send-observation').disabled=!!receipt;
+          $('capture-summary').textContent=draft.area_id+' · '+new Date(draft.captured_at).toLocaleString('ja-JP')+' · '+(draft.location?'位置あり':'位置なし');
+          $('draft-status').textContent=receipt?'送信済み。受付番号：'+receipt:submissionSnapshot?'送信結果の確認待ち。同じ内容で再送できます。':'端末に保存した写真です。';
+          $('capture').disabled=false;$('capture').textContent='下書きを開く';$('draft-dialog').showModal();
+        }catch(e){say(e.message);}
+      });$('saved-list').append(button);
+    }
+  }catch(e){$('storage-status').textContent='端末保存を利用できません。写真はZIPで保存してください。';}
+}
+$('refresh-saved').addEventListener('click',refreshSaved);
+$('next-photo').addEventListener('click',async()=>{
+  if(sending||saving||capturing)return;
+  $('next-photo').disabled=true;
+  try{await persistDraft();clearDraft();say(active?'保存しました。次の写真を撮れます。':'保存しました。「カメラを開く」で撮影を続けられます。');}
+  catch(e){$('draft-status').textContent='保存できませんでした。ZIPを保存してください。';}
+  finally{$('next-photo').disabled=false;}
+});
+$('share-draft').addEventListener('click',async()=>{
+  if(!draft||!photo)return;
+  try {
+    const file=packageDraft();
+    if(!navigator.canShare?.({files:[file]})){saveDraft({preventDefault(){}});return;}
+    await navigator.share({files:[file],title:'Open Tokyo World 観測写真'});
+    $('draft-status').textContent='共有画面を閉じました。保存先でファイルを確認してください。';
+  }catch(e){if(e.name!=='AbortError')$('draft-status').textContent='共有できませんでした。ZIPダウンロードをお試しください。';}
+});
+
+function updateConnection(){if(!navigator.onLine)$('offline-status').textContent='オフラインです。写真は端末に保存し、通信が戻ってから送信できます。';}
+window.addEventListener('offline',updateConnection);
+window.addEventListener('online',()=>{$('offline-status').textContent='オンラインです。端末に保存した写真を送信できます。';});
+if(import.meta.env.PROD&&'serviceWorker' in navigator){
+  navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`).then(()=>navigator.serviceWorker.ready).then(()=>{
+    $('offline-status').textContent='オフライン撮影の準備ができました。';updateConnection();
+  }).catch(()=>{$('offline-status').textContent='オフライン準備に失敗しました。通信できる状態で利用してください。';});
+}
+updateConnection();
