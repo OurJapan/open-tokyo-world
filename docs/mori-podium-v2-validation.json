@@ -1,0 +1,27 @@
+{
+  "ok": true,
+  "changed_from_accepted_facade": [
+    "Mori JP podium / stone"
+  ],
+  "accepted_tower_geometry_and_materials_unchanged": true,
+  "all_neighbor_objects_unchanged": true,
+  "image_dependencies_unchanged": true,
+  "triangles_match_pinned_source_float32_exactly": true,
+  "nonzero_triangle_areas": true,
+  "triangles": 667,
+  "source_batch": 5,
+  "source_sha256": "786c370507eeb819fe004be256d02a995cb08a2cc301bf742e057b1e89b5ed3d",
+  "max_height_m": 38.986995697021484,
+  "bounds": [
+    [
+      -515.1380615234375,
+      186.4099884033203,
+      0.3199999928474426
+    ],
+    [
+      -379.28955078125,
+      327.12591552734375,
+      38.986995697021484
+    ]
+  ]
+}

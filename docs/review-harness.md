@@ -82,3 +82,7 @@ OptiXが使えない環境では明示的に`--device CPU`を選びます。自�
 ## カメラ・出典調査の追加
 
 6視点・12枚を960×540、16 samplesで再生成し検証成功。画像384件の素材使用先と出典URLの記録を抽出した。[追加調査と制約](camera-provenance-review.md)を参照。上記4視点の測定値は旧baseline実行時の記録である。
+
+## 低層部の元形状復元
+
+`mori_podium_v2`は、固定hashのローカルgeometry archiveを`--geometry-source`で受け取り、削除されていたタワー側低層部だけを復元する。archiveは本repositoryに配布しない。[最新の低層部候補・再現手順](mori-podium-v2.md)を参照。
