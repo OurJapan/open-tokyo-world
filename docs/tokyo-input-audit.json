@@ -1,0 +1,117 @@
+{
+  "input_sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+  "bytes": 558751758,
+  "blender_version": "4.5.1 LTS",
+  "counts": {
+    "meshes": 3255,
+    "images": 384,
+    "packed_images": 383,
+    "linked_libraries": 0
+  },
+  "limits": [
+    "Read-only dependency inventory, not redistribution clearance.",
+    "Only object material image dependencies enumerated; not world/compositor/other data."
+  ],
+  "verified_date": "2026-09-07",
+  "source_pr": "https://github.com/OurJapan/open-tokyo-world/pull/12",
+  "source_merge_commit": "17ad6b36ecbf0e7673147de2a70fb0fdb6176eda",
+  "inspection": "read-only, autoexec disabled, no save",
+  "collection_summary": [
+    {
+      "collection": "2019 reference window revision",
+      "mesh_objects": 5,
+      "material_image_count": 0
+    },
+    {
+      "collection": "Collection",
+      "mesh_objects": 21,
+      "material_image_count": 1
+    },
+    {
+      "collection": "Environment • park undergrowth",
+      "mesh_objects": 1333,
+      "material_image_count": 0
+    },
+    {
+      "collection": "Flush glass floor surrounds",
+      "mesh_objects": 36,
+      "material_image_count": 0
+    },
+    {
+      "collection": "Mori JP curtain wall",
+      "mesh_objects": 4,
+      "material_image_count": 0
+    },
+    {
+      "collection": "Mori JP interior",
+      "mesh_objects": 12,
+      "material_image_count": 0
+    },
+    {
+      "collection": "Mori JP podium",
+      "mesh_objects": 15,
+      "material_image_count": 0
+    },
+    {
+      "collection": "Mori continuous pearl glass",
+      "mesh_objects": 4,
+      "material_image_count": 0
+    },
+    {
+      "collection": "Observation interior detail",
+      "mesh_objects": 5,
+      "material_image_count": 0
+    },
+    {
+      "collection": "PLATEAU 2025 • real building geometry and imagery",
+      "mesh_objects": 63,
+      "material_image_count": 87
+    },
+    {
+      "collection": "PLATEAU 2025 • real building geometry and imagery.001",
+      "mesh_objects": 365,
+      "material_image_count": 295
+    },
+    {
+      "collection": "Photo based main deck",
+      "mesh_objects": 15,
+      "material_image_count": 0
+    },
+    {
+      "collection": "Scene Collection",
+      "mesh_objects": 16,
+      "material_image_count": 0
+    },
+    {
+      "collection": "Skywalk visible detail",
+      "mesh_objects": 6,
+      "material_image_count": 0
+    },
+    {
+      "collection": "Street close-up • added physical details",
+      "mesh_objects": 8,
+      "material_image_count": 0
+    },
+    {
+      "collection": "Tokyo Tower decks and interior",
+      "mesh_objects": 13,
+      "material_image_count": 0
+    },
+    {
+      "collection": "Tokyo Tower structure",
+      "mesh_objects": 4,
+      "material_image_count": 0
+    },
+    {
+      "collection": "Tokyo traffic and street trees",
+      "mesh_objects": 1330,
+      "material_image_count": 0
+    }
+  ],
+  "official_tile": {
+    "url": "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data221.b3dm",
+    "bytes": 1246040,
+    "sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2",
+    "fresh_download_matches": true
+  }
+}
