@@ -85,7 +85,7 @@ def validate_patch(patch):
             require(set(op) == {'op','feature_id','object','translation_m'}, 'Unexpected patch keys')
             v = op['translation_m']
             require(len(v) == 3 and all(isinstance(x,(int,float)) and math.isfinite(x) and abs(x) <= 100 for x in v), 'Invalid translation')
-        elif op['op'] == 'mori_shape_v1':
+        elif op['op'] in ('mori_shape_v1','mori_crown_v2'):
             require(set(op) == {'op','feature_id','object','expected_mesh_sha256'}, 'Unexpected shape patch keys')
             require(op['feature_id']=='otw:jp:tokyo:minato:azabudai-mori-jp', 'Wrong shape feature')
             require(re.fullmatch('[0-9a-f]{64}',op['expected_mesh_sha256']) is not None, 'Shape patch requires mesh hash')
@@ -165,7 +165,7 @@ def main():
     try:
         revision = subprocess.run(['git','-c',f'safe.directory={ROOT.as_posix()}','-C',str(ROOT),'rev-parse','HEAD'],capture_output=True,text=True,check=True).stdout.strip()
         summary['code_base_commit'] = revision
-        summary['code_files'] = {f.relative_to(ROOT).as_posix():digest(f) for f in (Path(__file__),WORKER,ROOT/'scripts/mori_shape.py')}
+        summary['code_files'] = {f.relative_to(ROOT).as_posix():digest(f) for f in (Path(__file__),WORKER,ROOT/'scripts/mori_shape.py',ROOT/'scripts/mori_crown_v2.py')}
         job = {'output':str(output),'cameras':cameras,'features':features,'patch':patch,'settings':{k:summary[k] for k in ('blender_version','device','width','height','samples','seed')}}
         job_path = output/'job.json'; write_json(job_path,job)
         for phase, blend in [('prepare',source),('validate-before',output/'before.blend'),('validate-after',output/'after.blend')]:

@@ -85,12 +85,16 @@ def prepare(job):
             if obj.animation_data or obj.constraints or obj.parent: raise ValueError('Translation adapter requires unanimated, unparented object without constraints')
             if op['op']=='translate_object':
                 for i,value in enumerate(op['translation_m']): obj.location[i]+=value
-            elif op['op']=='mori_shape_v1':
+            elif op['op'] in ('mori_shape_v1','mori_crown_v2'):
                 if obj.type!='MESH' or mesh_fingerprint(obj.data)!=op['expected_mesh_sha256']:
                     raise ValueError('Shape patch baseline mesh differs')
                 sys.path.insert(0,str(Path(__file__).resolve().parent))
-                import mori_shape
-                mori_shape.apply(obj)
+                if op['op']=='mori_crown_v2':
+                    import mori_crown_v2
+                    mori_crown_v2.apply(obj)
+                else:
+                    import mori_shape
+                    mori_shape.apply(obj)
             else: raise ValueError('Unsupported patch')
     bpy.ops.wm.save_as_mainfile(filepath=str(out/'after.blend'),compress=True)
     return {'ok':True,'mapped_objects':len(seen),'patch_applied':bool(patch)}
