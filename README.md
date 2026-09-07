@@ -6,9 +6,9 @@
 
 **状態：最初の現実差分修正について、人間の画像レビューとmainへの取り込みが完了しました。** 森JPタワーの頂部・外装・低層部・入口を修正し、レビューで見つかった屋根と壁の欠落も再修正しました。設計資料、日本語の報告フォーム、Blender検証・比較CLIと軽量CIを含みます。Issueからの自動修正・自動PR作成、都市の完全再構築は未実装です。既存モデルや動画は同梱していません。
 
-[採用した形状・検証結果・取り込み手順](docs/mori-review-acceptance.md) / [次の改善：植栽・手すり](https://github.com/OurJapan/open-tokyo-world/issues/5)
+[採用した形状・検証結果・取り込み手順](docs/mori-review-acceptance.md) / [現在の進捗と次の作業](docs/roadmap.md)
 
-[植栽・手すりの次候補](docs/mori-terrace-v1.md) / [比較CLIの実行方法と制約](docs/review-harness.md)
+[植栽・手すりの制作記録](docs/mori-terrace-v1.md) / [比較CLIの実行方法と制約](docs/review-harness.md)
 
 ## 自分のPCで試す
 
@@ -52,6 +52,7 @@ Blenderの操作経験は不要です。Observerは違いを発見し、Reporter
 - [Architecture・座標・metadata](docs/architecture.md)
 - [都市データ・PLATEAU・権利と容量](docs/data-sources.md)
 - [IssueからPRまでのAgent Workflow](docs/ai-workflow.md)
+- [運営の受付・AIへの引き継ぎ・判断の残し方](docs/maintainer-workflow.md)
 - [レンダリング・品質・Validation](docs/quality-guidelines.md)
 - [移行ロードマップと最初の受入条件](docs/roadmap.md)
 - [類似プロジェクト調査・再利用候補](docs/related-projects.md)
