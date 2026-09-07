@@ -23,6 +23,13 @@
         <div id="loading" role="status">3Dモデルを読み込んでいます…</div>
       </div>
 
+      <p id="capture-status" class="notice" role="status" aria-live="polite">写真を撮るだけで端末に保存します。場所・寸法の入力は不要です。</p>
+      <details id="session-controls" hidden><summary>撮影した写真を自動で送る</summary>
+        <p class="help">このページを開いている間、これから撮る写真と以前に同意して送信待ちになった写真を自動送信します。写真・位置・撮影情報は非公開で保存し、30日経過後に順次削除します。ページを開き直したら再設定してください。</p>
+        <label for="submission-token">参加用コード</label><input id="submission-token" type="password" autocomplete="off" />
+        <label><input id="submission-consent" type="checkbox" /> 写真・位置情報を運営が確認するために保存することに同意します。</label>
+        <button type="button" id="enable-upload">自動送信を開始・再試行</button><button type="button" id="disable-upload" hidden>自動送信を停止</button>
+      </details>
       <p id="offline-status" class="help" role="status">初回は通信できる場所で開いてください。</p>
       <p id="notice" class="notice" role="status" aria-live="polite">ドラッグで回転、ピンチで拡大できます。</p>
       <div class="actions"><button id="start" class="primary">カメラを開く</button><button id="stop" hidden>カメラを終了</button><button id="capture" disabled>写真を撮る</button></div>
@@ -37,25 +44,25 @@
 
       </section>
       <section aria-labelledby="saved-title"><h2 id="saved-title">端末に保存した写真</h2><p id="storage-status" class="help" role="status">読み込み中…</p><div id="saved-list"></div><button id="refresh-saved" type="button">一覧を更新</button></section>
-      <p class="privacy-note">撮影した写真とメモはこの端末のブラウザに保存します。送信を選ぶまで外部に送られません。ブラウザのデータ消去で失われるため、テスト終了後にZIPも保存してください。</p>
+      <p class="privacy-note">撮影した写真とメモはこの端末のブラウザに保存します。自動送信を有効にするか、個別の送信を選ぶまで外部に送られません。ブラウザのデータ消去で失われるため、テスト終了後にZIPも保存してください。</p>
       <details><summary>接続情報</summary>      <div class="sensor-strip"><span>カメラ <b id="camera-status">停止中</b></span><span>位置 <b id="location-status">未取得</b></span><span>方位 <b id="orientation-status">未取得</b></span></div><pre id="diagnostics">準備中</pre><p class="help">表示位置は概算です。自動の位置補正には対応していません。</p></details>
     </aside>
   </main>
 
 </div>
-<dialog id="draft-dialog" aria-labelledby="draft-title"><form id="draft-form">
-  <div class="dialog-heading"><div><h2 id="draft-title">写真にメモを追加</h2></div><button type="button" id="close-draft" aria-label="下書きを閉じる">×</button></div>
+<dialog id="draft-dialog" aria-labelledby="draft-title"><form id="draft-form" novalidate>
+  <div class="dialog-heading"><div><h2 id="draft-title">保存した写真</h2></div><button type="button" id="close-draft" aria-label="下書きを閉じる">×</button></div>
   <img id="photo-preview" alt="撮影した生写真。3Dモデルは含まれません" />
   <p id="capture-summary" class="help"></p>
-  <label for="observation-type">何を記録しますか？</label><select id="observation-type"><option value="reality_difference">現実と違う</option><option value="addition">Worldに追加したい</option><option value="outdated">情報が古い</option><option value="digital_correction">デジタル側を修正したい</option><option value="no_issue">問題なし・確認した</option></select>
+  <label for="observation-type">分類（任意）</label><select id="observation-type"><option value="reality_difference">現実と違う</option><option value="addition">写真素材の提供</option><option value="outdated">情報が古い</option><option value="digital_correction">デジタル側を修正したい</option><option value="no_issue">問題なし・確認した</option></select>
+  <p id="target-details" class="help">対象と寸法は未確定です。</p>
+  <p class="help">建物候補の出典：<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap contributors / ODbL</a>。地図上の寸法は写真からの実測ではありません。</p>
   <label for="description">メモ（任意）</label><textarea id="description" rows="3" maxlength="2000" placeholder="例：入口の屋根がモデルと違うように見える"></textarea>
   <p class="help">写真は撮影後に端末内へ保存します。メモは「端末に保存して次の写真へ」で確定します。ZIPとしても書き出せます。位置情報を含むため、共有前に内容をご確認ください。</p>
   <p id="draft-status" role="status" aria-live="polite">下書き</p>
   <fieldset id="submission-controls" hidden>
-    <legend>運営に送信</legend>
+    <legend>この写真を運営に送信</legend><p class="help">撮影画面で参加用コードと保存への同意を設定すると送信できます。</p>
     <p class="help">1枚5MBまで。全体で1日30件・月300件・保存合計2GB。写真と位置・撮影情報は非公開で保存し、30日経過後に順次削除します。AI処理は自動実行しません。</p>
-    <label for="submission-token">参加用コード</label><input id="submission-token" type="password" autocomplete="off" />
-    <label><input id="submission-consent" type="checkbox" /> 写真・位置情報・メモを運営が確認するために保存することに同意します。</label>
     <button type="button" id="send-observation">送信する</button>
   </fieldset>
   <div class="actions"><button type="button" id="next-photo" class="primary">端末に保存して次の写真へ</button><button type="submit" id="save-draft">ZIPをダウンロード</button><button type="button" id="share-draft">ZIPを共有・ファイルに保存</button><button type="button" id="delete-draft">下書きを削除</button></div>

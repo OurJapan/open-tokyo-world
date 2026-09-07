@@ -1,43 +1,38 @@
-const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const {chromium}=require('playwright');
 const assert=require('node:assert/strict');
-const fs=require('node:fs');
 (async()=>{
-const browser=await chromium.launch({...(process.env.BROWSER_CHANNEL?{channel:process.env.BROWSER_CHANNEL}:{}),headless:true,args:['--use-fake-ui-for-media-stream','--use-fake-device-for-media-stream']});
-try{
-const context=await browser.newContext({viewport:{width:390,height:844},geolocation:{latitude:35.7009,longitude:139.745},permissions:['camera','geolocation'],acceptDownloads:true});
-const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
-const base=process.env.TEST_URL||'http://127.0.0.1:4181/';
-const readRows=()=>page.evaluate(()=>new Promise((resolve,reject)=>{const r=indexedDB.open('otw-field-drafts',1);r.onsuccess=()=>{const d=r.result,t=d.transaction('drafts');const q=t.objectStore('drafts').getAll();q.onsuccess=()=>resolve(q.result.map(({id,draft,receipt,submissionSnapshot,photo})=>({id,draft,receipt,submissionSnapshot,bytes:photo.byteLength})));t.oncomplete=()=>d.close();};r.onerror=()=>reject(r.error);}));
-for(let i=0;i<10;i++){try{await page.goto(base+'?area=iidabashi');break;}catch(e){if(i===9)throw e;await new Promise(r=>setTimeout(r,200));}}await page.waitForFunction(()=>!document.querySelector('#start').disabled);
-await page.waitForFunction(()=>navigator.serviceWorker.controller!==null);
-await page.locator('#start').click();await page.waitForFunction(()=>document.querySelector('#camera').readyState>=2);
-await page.locator('#capture').click();await page.locator('#draft-dialog').waitFor();await page.locator('#description').fill('飯田橋の現地確認テスト');
-await page.locator('#next-photo').click();await page.waitForFunction(()=>!document.querySelector('#draft-dialog').open);
-let rows=await readRows();assert.equal(rows.length,1);assert.equal(rows[0].draft.area_id,'iidabashi');assert.equal(rows[0].draft.description,'飯田橋の現地確認テスト');assert.ok(rows[0].bytes>100);
-await page.locator('#capture').click();await page.locator('#draft-dialog').waitFor();await page.locator('#next-photo').click();await page.waitForFunction(()=>!document.querySelector('#draft-dialog').open);
-await page.reload();await page.waitForFunction(()=>document.querySelectorAll('.saved-record').length===2);
-await page.locator('.saved-record').filter({hasText:'飯田橋の現地確認テスト'}).click();await page.locator('#draft-dialog').waitFor();assert.equal(await page.locator('#description').inputValue(),'飯田橋の現地確認テスト');
-const downloadPromise=page.waitForEvent('download');await page.locator('#save-draft').click();const download=await downloadPromise;const filename=await download.path();assert.ok(fs.statSync(filename).size>100);
-await page.locator('#close-draft').click();await page.waitForFunction(()=>!document.querySelector('#draft-dialog').open);
-await context.setOffline(true);await page.reload();await page.waitForFunction(()=>!document.querySelector('#start').disabled);await page.waitForFunction(()=>document.querySelectorAll('.saved-record').length===2);
-await page.locator('#start').click();await page.waitForFunction(()=>document.querySelector('#camera').readyState>=2);await page.locator('#capture').click();await page.locator('#draft-dialog').waitFor();await page.locator('#description').fill('オフラインで撮影');await page.locator('#next-photo').click();await page.waitForFunction(()=>!document.querySelector('#draft-dialog').open);assert.equal((await readRows()).length,3);
-await context.setOffline(false);await page.locator('.saved-record').filter({hasText:'オフラインで撮影'}).click();await page.locator('#draft-dialog').waitFor();
-const payloads=[];let attempts=0;
-await page.route('https://otw-observation-api.open-tokyo-world-observation-api.workers.dev/v1/observations',async route=>{const body=route.request().postData();const raw=body.split('name="observation"\r\n\r\n')[1].split('\r\n--')[0];payloads.push(raw);attempts++;await route.fulfill({status:attempts===1?503:201,contentType:'application/json',headers:{'Access-Control-Allow-Origin':'*'},body:JSON.stringify(attempts===1?{error:'temporarily_unavailable'}:{observation_id:JSON.parse(raw).client_submission_id})});});
-await page.locator('#submission-consent').check();await page.locator('#submission-token').fill('test-only-not-real');await page.locator('#send-observation').click();await page.waitForFunction(()=>document.querySelector('#draft-status').textContent.includes('受付を確認できません'));
-await page.locator('#close-draft').click();await page.reload();await page.waitForFunction(()=>document.querySelectorAll('.saved-record').length===3);await page.locator('.saved-record').filter({hasText:'オフラインで撮影'}).click();await page.locator('#draft-dialog').waitFor();assert.equal(await page.locator('#description').isDisabled(),true);
-await page.locator('#submission-consent').check();await page.locator('#submission-token').fill('test-only-not-real');await page.locator('#send-observation').click();await page.waitForFunction(()=>document.querySelector('#draft-status').textContent.includes('受け付けました'));
-assert.equal(payloads.length,2);assert.equal(payloads[0],payloads[1]);rows=await readRows();assert.equal(rows.filter(r=>r.receipt).length,1);
-await page.locator('#close-draft').click();await page.reload();await page.waitForFunction(()=>document.querySelectorAll('.saved-record').length===3);await page.locator('.saved-record').filter({hasText:'送信済み'}).click();await page.locator('#draft-dialog').waitFor();assert.equal(await page.locator('#send-observation').isDisabled(),true);
-await page.locator('#close-draft').click();await page.locator('.saved-record').filter({hasText:'飯田橋の現地確認テスト'}).click();page.once('dialog',d=>d.accept());await page.locator('#delete-draft').click();await page.waitForFunction(()=>document.querySelectorAll('.saved-record').length===2);assert.equal((await readRows()).length,2);
-await page.locator('#start').click();await page.waitForFunction(()=>document.querySelector('#camera').readyState>=2);
-await page.evaluate(()=>{window.originalPut=IDBObjectStore.prototype.put;IDBObjectStore.prototype.put=function(){this.transaction.abort();throw new DOMException('Simulated full disk','QuotaExceededError');};});
-await page.locator('#capture').click();await page.locator('#draft-dialog').waitFor();assert.match(await page.locator('#draft-status').innerText(),/失敗/);
-await page.locator('#next-photo').click();assert.equal(await page.locator('#draft-dialog').isVisible(),true);assert.equal((await readRows()).length,2);
-const fallback=page.waitForEvent('download');await page.locator('#save-draft').click();assert.ok(await (await fallback).path());
-await page.evaluate(()=>{IDBObjectStore.prototype.put=window.originalPut;});await page.locator('#next-photo').click();await page.waitForFunction(()=>!document.querySelector('#draft-dialog').open);assert.equal((await readRows()).length,3);
-assert.deepEqual(errors,[]);
-await page.screenshot({path:process.env.SCREENSHOT_PATH||'field-test.png',fullPage:true});
-console.log(JSON.stringify({passed:true,checks:['capture and local photo bytes','memo and next capture','reload restore','ZIP download','offline reload and capture','failed upload retry after reload with identical metadata','receipt survives reload','delete only selected photo','storage failure preserves photo and allows ZIP fallback'],pageErrors:errors},null,2));
-}finally{await browser.close();}
+ const browser=await chromium.launch({...(process.env.BROWSER_CHANNEL?{channel:process.env.BROWSER_CHANNEL}:{}),headless:true,args:['--use-fake-ui-for-media-stream','--use-fake-device-for-media-stream']});
+ try {
+ const context=await browser.newContext({viewport:{width:390,height:844},geolocation:{latitude:35.7009,longitude:139.745},permissions:['camera','geolocation'],acceptDownloads:true});
+ const page=await context.newPage(),errors=[],payloads=[];let fail=true;
+ page.on('pageerror',e=>errors.push(e.message));
+ await context.route('https://otw-observation-api.open-tokyo-world-observation-api.workers.dev/**',async route=>{
+  const body=route.request().postData();if(!body)return route.fulfill({status:204,headers:{'Access-Control-Allow-Origin':'*','Access-Control-Allow-Headers':'authorization'}});
+  const raw=body.split('name="observation"\r\n\r\n')[1].split('\r\n--')[0];payloads.push(raw);
+  await route.fulfill({status:fail?503:201,contentType:'application/json',headers:{'Access-Control-Allow-Origin':'*'},body:JSON.stringify(fail?{error:'temporarily_unavailable'}:{observation_id:JSON.parse(raw).client_submission_id})});
+ });
+ const rows=()=>page.evaluate(()=>new Promise((resolve,reject)=>{const r=indexedDB.open('otw-field-drafts',1);r.onsuccess=()=>{const db=r.result,t=db.transaction('drafts'),q=t.objectStore('drafts').getAll();q.onsuccess=()=>resolve(q.result.map(r=>({...r,photoBytes:r.photo.byteLength,photo:null})));t.oncomplete=()=>db.close();};r.onerror=()=>reject(r.error);}));
+ const ready=()=>page.waitForFunction(()=>!document.querySelector('#start').disabled);
+ const start=async()=>{await page.locator('#start').click();await page.waitForFunction(()=>document.querySelector('#camera').readyState>=2);};
+ const capture=async count=>{await page.locator('#capture').click();await page.waitForFunction(n=>document.querySelectorAll('.saved-record').length===n,count);await page.waitForFunction(()=>!document.querySelector('#capture').disabled);assert.equal(await page.locator('#draft-dialog').isVisible(),false);};
+ await page.goto((process.env.TEST_URL||'http://127.0.0.1:4181/')+'?area=iidabashi');await ready();await page.waitForFunction(()=>navigator.serviceWorker.controller!==null);
+ await start();await capture(1);await capture(2);
+ let saved=await rows();assert.equal(payloads.length,0);assert.ok(saved.every(r=>r.photoBytes>100&&r.draft.observation_type==='addition'));assert.ok(saved[0].draft.target_evidence.candidates.length>0);assert.equal(saved[0].draft.target_evidence.dimension_status,'unresolved');assert.equal(saved[0].draft.feature_id,null);
+ await page.locator('#session-controls summary').click();await page.locator('#submission-token').fill('test-only-not-real');await page.locator('#submission-consent').check();await page.locator('#enable-upload').click();await capture(3);
+ await page.waitForFunction(()=>[...document.querySelectorAll('.saved-record')].some(b=>b.textContent.includes('受付を確認できません')));
+ assert.equal(payloads.length,1);saved=await rows();assert.equal(saved.filter(r=>r.autoUpload).length,1);
+ await page.reload();await ready();await page.locator('#session-controls summary').click();assert.equal(await page.locator('#submission-token').inputValue(),'');fail=false;
+ await page.locator('#submission-token').fill('test-only-not-real');await page.locator('#submission-consent').check();await page.locator('#enable-upload').click();await page.waitForFunction(()=>[...document.querySelectorAll('.saved-record')].some(b=>b.textContent.includes('送信済み')));
+ assert.equal(payloads.length,2);assert.equal(payloads[0],payloads[1]);
+ await context.setOffline(true);await page.reload();await ready();await start();await capture(4);saved=await rows();assert.equal(saved.length,4);assert.ok(saved.every(r=>!JSON.stringify(r).includes('test-only-not-real')));
+ await context.setOffline(false);await page.locator('#stop').click();await page.locator('.saved-record').first().click();await page.locator('#draft-dialog').waitFor();
+ const download=page.waitForEvent('download');await page.locator('#save-draft').click();assert.ok(await(await download).path());
+ await page.locator('#next-photo').click();await start();
+ await page.evaluate(()=>{window.originalPut=IDBObjectStore.prototype.put;IDBObjectStore.prototype.put=function(){this.transaction.abort();throw new DOMException('Full disk','QuotaExceededError');};});
+ await page.locator('#capture').click();await page.locator('#draft-dialog').waitFor();assert.match(await page.locator('#draft-status').innerText(),/失敗/);
+ const fallback=page.waitForEvent('download');await page.locator('#save-draft').click();assert.ok(await(await fallback).path());
+ await page.evaluate(()=>{IDBObjectStore.prototype.put=window.originalPut;});await page.locator('#next-photo').click();await page.waitForFunction(()=>!document.querySelector('#draft-dialog').open);assert.equal((await rows()).length,5);
+ assert.deepEqual(errors,[]);if(process.env.SCREENSHOT_PATH)await page.screenshot({path:process.env.SCREENSHOT_PATH,fullPage:true});
+ console.log('PASS: shutter-only repeated capture, consent boundaries, automatic upload, identical retry after reload, no persisted credentials, offline capture/catalogue, ZIP, storage-failure recovery');
+ }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exit(1)});

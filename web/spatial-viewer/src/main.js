@@ -1,6 +1,8 @@
 import './style.css';
 import { selectedArea } from './areas.js';
 import { createDraftStore } from './draft-store.js';
+import { buildingCandidates } from './target-evidence.js';
+import { createAutoUpload } from './auto-upload.js';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
@@ -21,6 +23,10 @@ let saveQueue=Promise.resolve();
 let memoTimer;
 let sending=false,submissionSnapshot=null;
 const submissionEndpoint=import.meta.env.VITE_OBSERVATION_API_URL||'';
+const consent={evidence_storage:true,public_display:false,visual_map:false,model_training:false,policy_revision:'private-poc-v1'};
+let catalogue=null;
+fetch(`${import.meta.env.BASE_URL}data/iidabashi-buildings.json`).then(r=>{if(!r.ok)throw Error();return r.json();}).then(d=>{catalogue=d;}).catch(()=>{});
+const autoUpload=createAutoUpload({store:draftStore,submit:args=>submitObservation({endpoint:submissionEndpoint,...args}),onChange:async error=>{if(error)$('capture-status').textContent='送信結果を端末に保存できませんでした。写真は削除せず再試行してください。';await refreshSaved();}});
 const testAnchor=new THREE.Vector3(0,0,-25);
 const sensors=new Sensors({onChange:()=>{
   for(const type of ['camera','location','orientation'])$(type+'-status').textContent=sensors.state[type];
@@ -73,7 +79,7 @@ async function start() {
 function clearDraft() {
   clearTimeout(memoTimer);
   receipt=null;localSaved=false;
-  submissionSnapshot=null;$('submission-consent').checked=false;$('submission-token').value='';$('send-observation').disabled=false;
+  submissionSnapshot=null;$('send-observation').disabled=false;
   $('description').disabled=false;$('observation-type').disabled=false;
   draftGeneration++;if(previewURL)URL.revokeObjectURL(previewURL);previewURL=null;
   photo=null;draft=null;packedFile=null;$('photo-preview').removeAttribute('src');$('description').value='';
@@ -99,8 +105,18 @@ async function capture() {
     $('description').value='';$('observation-type').value='reality_difference';
     $('capture-summary').textContent=`${new Date(now).toLocaleString('ja-JP')} · ${canvas.width} × ${canvas.height} · ${snapshot.location?'位置あり':'位置なし'} · 対象未指定`;
     receipt=null;localSaved=false;
+    draft.observation_type='addition';$('observation-type').value='addition';
+    draft.capture_intent='reference_material';
+    const candidates=catalogue?buildingCandidates(draft,catalogue):{items:[],reason:'建物データ未取得'};
+    draft.target_evidence={schema_version:'otw-target-evidence/0.1',status:'candidates_unverified',matching_method:'gps_compass_only',
+      image_analysis_performed:false,reason:candidates.reason,dimension_status:'unresolved',
+      candidates:candidates.items.map(({building,distance_m,angle_deg})=>({source_id:building.id,name:building.name,source_url:building.source_url,
+        distance_m,angle_deg,map_reference_dimensions:building.dimensions})),
+      dataset_version:catalogue?.version??null,attribution:catalogue?.attribution??null,license:catalogue?.license??null};
+    if(autoUpload.enabled)submissionSnapshot={...structuredClone(draft),consent:structuredClone(consent)};
     await persistDraft();
-    $('draft-status').textContent='端末に保存しました。写真に3Dモデルは含まれません。';$('capture').textContent='下書きを開く';$('draft-dialog').showModal();
+    $('capture-status').textContent=autoUpload.enabled?'保存しました。自動送信を待っています。次の写真を撮れます。':'端末に保存しました。次の写真を撮れます。';
+    clearDraft();if(navigator.onLine)void autoUpload.pump();
   } catch(e){say(e.message);if(draft){$('draft-status').textContent='端末保存に失敗しました。ZIPを保存してください。';$('draft-dialog').showModal();}}finally{capturing=false;$('capture').disabled=!active&&!draft;}
 }
 function packageDraft() {
@@ -176,11 +192,20 @@ $('area').addEventListener('change',()=>{
 });
 $('start').addEventListener('click',start);$('stop').addEventListener('click',()=>stop());$('reset-view').addEventListener('click',resetView);
 $('capture').addEventListener('click',()=>{if(draft)$('draft-dialog').showModal();else capture();});
-$('close-draft').addEventListener('click',async()=>{try{await persistDraft();$('draft-dialog').close();say('写真とメモを端末に保存しました。保存一覧から再開できます。');}catch(e){$('draft-status').textContent=e.message;}});
+$('close-draft').addEventListener('click',async()=>{try{await persistDraft();clearDraft();say('写真とメモを端末に保存しました。保存一覧から再開できます。');}catch(e){$('draft-status').textContent=e.message;}});
 $('draft-dialog').addEventListener('cancel',e=>{e.preventDefault();if(!sending)$('close-draft').click();});
-$('delete-draft').addEventListener('click',async()=>{if(sending||saving)return;if(!confirm('この端末の写真とメモを削除しますか？送信済みデータと書き出したZIPは残ります。'))return;try{await saveQueue.catch(()=>{});await draftStore.delete(draft.client_submission_id);clearDraft();await refreshSaved();say('端末内の写真を削除しました。');}catch(e){$('draft-status').textContent=e.message;}});
+$('delete-draft').addEventListener('click',async()=>{if(sending||saving||autoUpload.running)return;if(!confirm('この端末の写真とメモを削除しますか？送信済みデータと書き出したZIPは残ります。'))return;try{await saveQueue.catch(()=>{});await draftStore.delete(draft.client_submission_id);clearDraft();await refreshSaved();say('端末内の写真を削除しました。');}catch(e){$('draft-status').textContent=e.message;}});
 $('draft-form').addEventListener('submit',saveDraft);$('opacity').addEventListener('input',setOpacity);
 $('submission-controls').hidden=!submissionEndpoint;
+$('session-controls').hidden=!submissionEndpoint;
+$('enable-upload').addEventListener('click',()=>{
+  const token=$('submission-token').value.trim();
+  if(!token||!$('submission-consent').checked){$('capture-status').textContent='参加コードと写真・位置情報の保存への同意をご確認ください。';return;}
+  if(draft||sending||capturing)return;
+  void autoUpload.enable(token);$('capture-status').textContent='自動送信が有効です。あとは写真を撮るだけです。';$('disable-upload').hidden=false;
+});
+for(const id of ['submission-token','submission-consent'])$(id).addEventListener('input',()=>{if(autoUpload.enabled)$('disable-upload').click();});
+$('disable-upload').addEventListener('click',()=>{autoUpload.disable();$('disable-upload').hidden=true;$('capture-status').textContent='自動送信を停止しました。送信中の写真は受付が完了する場合があります。';});
 $('send-observation').addEventListener('click',async()=>{
   if(sending||!draft||!photo)return;
   if(!$('submission-consent').checked||!$('submission-token').value.trim()){
@@ -231,7 +256,7 @@ async function persistDraft() {
   if(!submissionSnapshot){draft.description=$('description').value;draft.observation_type=$('observation-type').value;}
   const record={id:draft.client_submission_id,draft:structuredClone(draft),photo:photo.slice(0),submissionSnapshot:submissionSnapshot?structuredClone(submissionSnapshot):null,receipt,updatedAt:Date.now()};
   saving=true;
-  const operation=saveQueue.catch(()=>{}).then(()=>draftStore.put(record));saveQueue=operation;
+  const operation=saveQueue.catch(()=>{}).then(async()=>{const existing=await draftStore.get(record.id);await draftStore.put({...existing,...record,autoUpload:existing?.autoUpload??(capturing&&autoUpload.enabled)});});saveQueue=operation;
   try{await operation;localSaved=draft?.client_submission_id===record.id&&$('description').value===record.draft.description&&$('observation-type').value===record.draft.observation_type;await refreshSaved();}finally{saving=false;}
 }
 async function refreshSaved() {
@@ -239,10 +264,10 @@ async function refreshSaved() {
     const records=await draftStore.list();$('saved-list').replaceChildren();
     $('storage-status').textContent=records.length+'件をこの端末に保存しています。';
     for(const record of records){
-      const button=document.createElement('button');button.type='button';button.className='saved-record';
-      button.textContent=new Date(record.draft.captured_at).toLocaleString('ja-JP')+' · '+record.draft.area_id+' · '+(record.receipt?'送信済み':'未送信')+' · '+(record.draft.description||'メモなし');
+      const button=document.createElement('button');button.type='button';button.className='saved-record';button.disabled=autoUpload.running;
+      button.textContent=new Date(record.draft.captured_at).toLocaleString('ja-JP')+' · '+record.draft.area_id+' · '+(record.receipt?'送信済み':record.uploadError?'送信待ち：'+record.uploadError:record.autoUpload?'送信待ち':'端末保存')+' · '+(record.draft.description||'メモなし');
       button.addEventListener('click',async()=>{
-        if(capturing||sending||saving)return;
+        if(capturing||sending||saving||autoUpload.running)return;
         try {
           await persistDraft();const row=await draftStore.get(record.id);if(!row)throw new Error('この写真は削除されています。');
           stop();clearDraft();draft=row.draft;photo=row.photo;receipt=row.receipt;submissionSnapshot=row.submissionSnapshot;localSaved=true;
@@ -250,6 +275,7 @@ async function refreshSaved() {
           $('description').value=draft.description;$('observation-type').value=draft.observation_type;
           $('description').disabled=$('observation-type').disabled=!!submissionSnapshot;
           $('send-observation').disabled=!!receipt;
+          $('target-details').textContent=`建物候補 ${draft.target_evidence?.candidates?.length??0}件。対象と寸法は未確定です。`;
           $('capture-summary').textContent=draft.area_id+' · '+new Date(draft.captured_at).toLocaleString('ja-JP')+' · '+(draft.location?'位置あり':'位置なし');
           $('draft-status').textContent=receipt?'送信済み。受付番号：'+receipt:submissionSnapshot?'送信結果の確認待ち。同じ内容で再送できます。':'端末に保存した写真です。';
           $('capture').disabled=false;$('capture').textContent='下書きを開く';$('draft-dialog').showModal();
@@ -278,7 +304,7 @@ $('share-draft').addEventListener('click',async()=>{
 
 function updateConnection(){if(!navigator.onLine)$('offline-status').textContent='オフラインです。写真は端末に保存し、通信が戻ってから送信できます。';}
 window.addEventListener('offline',updateConnection);
-window.addEventListener('online',()=>{$('offline-status').textContent='オンラインです。端末に保存した写真を送信できます。';});
+window.addEventListener('online',()=>{if(!draft)void autoUpload.pump();$('offline-status').textContent='オンラインです。端末に保存した写真を送信できます。';});
 if(import.meta.env.PROD&&'serviceWorker' in navigator){
   navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`).then(()=>navigator.serviceWorker.ready).then(()=>{
     $('offline-status').textContent='オフライン撮影の準備ができました。';updateConnection();
