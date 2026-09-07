@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "component": "plaza-starter",
+  "version": "0.1.0",
+  "tag": "plaza-starter-v0.1.0",
+  "stage": "preview",
+  "source_repository": "https://github.com/OurJapan/open-tokyo-world",
+  "source_commit": "31e2d3c12b9986e4f40831b3392d3b2173389f32",
+  "source_comparison": "All bundled source/ notices match this commit after CRLF -> LF normalization. Exact bundled bytes remain in inventory.json.",
+  "release_url": "https://github.com/OurJapan/open-tokyo-world/releases/tag/plaza-starter-v0.1.0",
+  "asset": {
+    "name": "ourjapan-plaza-starter-v0.1.0.zip",
+    "url": "https://github.com/OurJapan/open-tokyo-world/releases/download/plaza-starter-v0.1.0/ourjapan-plaza-starter-v0.1.0.zip",
+    "bytes": 1142240,
+    "sha256": "308eb5c1b8597b81a9bafbd3cec815c5bb38d5ac5b0cf7c0dd52cb92f3115116"
+  },
+  "parameters": {
+    "paving_brightness": 0.9
+  },
+  "toolchain": {
+    "python": "3.12.14",
+    "blender": "4.5.1 LTS",
+    "render_device": "CPU",
+    "os": "Windows"
+  },
+  "verification": {
+    "portable_tests": 42,
+    "package_tests": 7,
+    "zip_crc_and_inventory": true,
+    "bundled_source_reproduction": true,
+    "same_source_and_geometry_hashes_on_reproduction": true
+  },
+  "scope": "Six procedural plaza parts. Review previews and source recipe; no blend, city baseline or third-party images.",
+  "licenses": {
+    "code": "MIT for the files listed in bundled source/LICENSE.md",
+    "assets": "CC BY 4.0 as scoped by ASSET-LICENSE.md; third-party notices retained"
+  },
+  "retention": "Published tag and asset bytes are retained by project policy; immutable-release enforcement is not configured by this work.",
+  "limitations": [
+    "Preview, not full Tokyo/Japan data",
+    "Only material-parameter demonstration",
+    "Not surveyed accuracy",
+    "No independent nontechnical user or clean-OS test",
+    "Local copy is on the same PC, not an independent backup"
+  ]
+}
