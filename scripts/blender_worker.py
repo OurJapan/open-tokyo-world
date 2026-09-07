@@ -115,10 +115,12 @@ def prepare(job):
                 else:
                     import mori_podium_v2 as podium
                 podium.apply(obj,job['geometry_source'])
-            elif op['op'] in ('mori_plaza_v1','mori_plaza_link_v1'):
+            elif op['op'] in ('mori_plaza_v1','mori_plaza_link_v1','mori_plaza_edge_v1'):
                 if obj.type!='MESH' or mesh_fingerprint(obj.data)!=op['expected_mesh_sha256']:raise ValueError('Plaza anchor differs')
                 sys.path.insert(0,str(Path(__file__).resolve().parent))
-                if op['op']=='mori_plaza_link_v1':
+                if op['op']=='mori_plaza_edge_v1':
+                    import mori_plaza_edge_v1 as detail
+                elif op['op']=='mori_plaza_link_v1':
                     import mori_plaza_link_v1 as detail
                 else:
                     import mori_plaza_v1 as detail

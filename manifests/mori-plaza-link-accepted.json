@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "id": "mori-plaza-link-accepted-2026-09-07",
+  "source_repository": "https://github.com/OurJapan/open-tokyo-world",
+  "source_commit": "1f4daa76aacfa3e7ccf07f3c780340b5e06c1214",
+  "source_path": "local-only/mori-plaza-link-review/candidate.blend",
+  "bytes": 558756277,
+  "sha256": "0212627cd195fa582a481c4276d5c89da7722362002c2652f855258f33edfd7c",
+  "blender_version": "4.5.1 LTS",
+  "redistribution": "pending-asset-rights-review",
+  "coordinates": {
+    "latitude": 35.65858,
+    "longitude": 139.74543,
+    "vertical_datum": "unknown",
+    "note": "Legacy scene origin, not a surveyed control point."
+  }
+}
