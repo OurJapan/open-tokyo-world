@@ -43,6 +43,12 @@ def main():
             raise ValueError('The brightness experiment changed geometry')
         for name in ('ASSET-LICENSE.md','provenance.json'):
             shutil.copyfile(here/name,out/name)
+        report['output_sha256'] = {
+            name: hashlib.sha256((out/name).read_bytes()).hexdigest()
+            for name in ('before/preview.png', 'after/preview.png',
+                         'before/validation.json', 'after/validation.json',
+                         'ASSET-LICENSE.md', 'provenance.json')
+        }
         (out/'review.html').write_text('''<!doctype html><meta charset="utf-8"><title>OurJapan starter review</title>
 <style>body{background:#18212a;color:#eee;font:18px sans-serif;max-width:1050px;margin:36px auto;padding:16px}img{width:100%;height:auto}a{color:#9de}section{margin:28px 0}</style>
 <h1>OurJapan：6部品の参加用サンプル</h1><p>元の都市ファイルを使わず再生成。舗装の明るさだけを変える操作例です。実物との差分修正ではありません。</p>

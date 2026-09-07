@@ -1,0 +1,27 @@
+{
+  "ok": true,
+  "tests": 42,
+  "new_package_tests": 7,
+  "zip_source_reproduction": true,
+  "source_hashes_match": true,
+  "geometry_hashes_match": true,
+  "uploaded": false,
+  "package": {
+    "ok": true,
+    "zip": "review-package.zip",
+    "sha256": "308eb5c1b8597b81a9bafbd3cec815c5bb38d5ac5b0cf7c0dd52cb92f3115116",
+    "bytes": 1142240,
+    "file_count": 21,
+    "uploaded": false
+  },
+  "source_sha256": {
+    "starter/plaza/scene.py": "52bed9bca744615928232d524091caf9d8a7f98cd7b69314364e474ce236bd93",
+    "starter/plaza/run.py": "183c73b912764a013c1ae48e2b57c8313e5f592fd4ec6b48397ec384e5867b90",
+    "scripts/mori_plaza_v1.py": "5f92f0381ab16fd0bbef325db2200381a903723ab5418ecb51c0c64562131ef9",
+    "scripts/mori_plaza_link_v1.py": "9db234b625b99fe1ee5751b4f4da57445ea6122222377e8b2e9fe36105519ec3",
+    "scripts/mori_entrance_v1.py": "aeb7417803ebea8ac8af590aeca7a1e723d1591e1756eb07ad1078cd9e753c90",
+    "scripts/mori_terrace_v1.py": "26f9149e5889266caa7c62bbd8a0df886fb9713266751c0a69e6c6df24a036e5"
+  },
+  "packager_sha256": "8d672d2e8e1d7e3f1d5b005f53e6bf1c20d028618d5b28b3b41fec9467e71350",
+  "scope": "Windows, Python 3.12.14, Blender 4.5.1 LTS; existing PC; no independent user trial"
+}
