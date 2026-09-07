@@ -25,6 +25,10 @@ The original code in `starter/plaza/run.py` and `starter/plaza/scene.py`, marked
 
 The original six procedural parts, their materials, starter camera/lighting, previews, and documentation/metadata in `starter/plaza/` have the separate grant in [starter/plaza/ASSET-LICENSE.md](starter/plaza/ASSET-LICENSE.md). Preserve its source notices. Python code remains MIT.
 
+## MIT: pinned PLATEAU import trial
+
+The original implementations in `starter/plateau/run.py`, `starter/plateau/tile.py`, `starter/plateau/scene.py`, and `tests/test_plateau_tile.py` are licensed under the [MIT License](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This grant does not cover PLATEAU data, imagery, Blender or its installed Draco library. Keep the input-specific notices in `starter/plateau/NOTICE.md`; generated combined scenes do not receive a blanket MIT grant.
+
 ## Outside these grants
 
 Except for the separately identified starter above, no license is granted here for other repository files, legacy city scenes, generated models, reference photos, textures, music, trademarks, PLATEAU data, OpenStreetMap data, or other third-party content. Any separately applicable license remains in effect. Execution of the covered code does not itself grant rights to its inputs or outputs. This scope document adds no conditions to the MIT grant for the covered code.
