@@ -1,0 +1,163 @@
+{
+  "version": 1,
+  "status": "candidate-poses-human-review-pending",
+  "note": "Frozen legacy evaluated poses at frame 1. Interior viewpoint is not yet accepted as deck-to-Mori view.",
+  "views": [
+    {
+      "matrix_world": [
+        [
+          0.8198428153991699,
+          -0.0969376489520073,
+          0.564323365688324,
+          440.0
+        ],
+        [
+          0.5725886821746826,
+          0.13879705965518951,
+          -0.8080084323883057,
+          -630.0
+        ],
+        [
+          9.632788788849211e-09,
+          0.9855650663375854,
+          0.16929717361927032,
+          300.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 44.0,
+      "sensor_width_mm": 36.0,
+      "sensor_height_mm": 24.0,
+      "sensor_fit": "AUTO",
+      "shift_x": 0.0,
+      "shift_y": 0.0,
+      "clip_start": 2.0,
+      "clip_end": 8000.0,
+      "id": "tower-exterior",
+      "frame": 1,
+      "source_camera": "Review 02 • Tokyo Tower"
+    },
+    {
+      "matrix_world": [
+        [
+          0.7835501432418823,
+          -0.06646212190389633,
+          0.6177636384963989,
+          -55.0
+        ],
+        [
+          0.6213285326957703,
+          0.0838145986199379,
+          -0.7790545225143433,
+          -220.0
+        ],
+        [
+          3.0162805586542163e-09,
+          0.9942625164985657,
+          0.1069677546620369,
+          233.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 48.0,
+      "sensor_width_mm": 36.0,
+      "sensor_height_mm": 24.0,
+      "sensor_fit": "AUTO",
+      "shift_x": 0.0,
+      "shift_y": 0.0,
+      "clip_start": 2.0,
+      "clip_end": 8000.0,
+      "id": "mori-facade",
+      "frame": 1,
+      "source_camera": "Review 05 • Mori JP Tower"
+    },
+    {
+      "matrix_world": [
+        [
+          0.8069504499435425,
+          -0.13242238759994507,
+          0.5755825638771057,
+          680.0
+        ],
+        [
+          0.5906191468238831,
+          0.18092592060565948,
+          -0.7864062786102295,
+          -1070.0
+        ],
+        [
+          2.6652759999024056e-09,
+          0.9745410084724426,
+          0.22420944273471832,
+          490.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 50.0,
+      "sensor_width_mm": 36.0,
+      "sensor_height_mm": 24.0,
+      "sensor_fit": "AUTO",
+      "shift_x": 0.0,
+      "shift_y": 0.0,
+      "clip_start": 2.0,
+      "clip_end": 8000.0,
+      "id": "context",
+      "frame": 1,
+      "source_camera": "Review 01 • Both landmarks"
+    },
+    {
+      "matrix_world": [
+        [
+          -0.06237833946943283,
+          -0.031113147735595703,
+          0.9975674748420715,
+          11.0
+        ],
+        [
+          0.9980525970458984,
+          -0.0019445620710030198,
+          0.06234802305698395,
+          -11.0
+        ],
+        [
+          -1.1335506755472124e-08,
+          0.9995139837265015,
+          0.031173856928944588,
+          146.8000030517578
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 22.0,
+      "sensor_width_mm": 36.0,
+      "sensor_height_mm": 24.0,
+      "sensor_fit": "AUTO",
+      "shift_x": 0.0,
+      "shift_y": 0.0,
+      "clip_start": 0.03999999910593033,
+      "clip_end": 9000.0,
+      "id": "deck-interior",
+      "frame": 1,
+      "source_camera": "Lower deck interior"
+    }
+  ]
+}
