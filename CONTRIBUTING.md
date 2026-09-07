@@ -30,6 +30,8 @@ OurJapanは都市データを共同で育て、制作・更新・配信などの
 
 ## 直接編集する人とAIへ
 
+[初めての参加ガイド](starter/plaza/first-contribution.md)では、元の都市データなしに自分のAIと生成・比較を試し、結果の紹介を準備できます。最初はIssueでの相談で構いません。ソース差分のない練習でPRを作る必要はありません。
+
 一つのIssue・地物を基本単位とし、原本を変更せず、既存IDと対象外の形状・カメラ・照明を保持してください。PRにはbase/head、入力hash、根拠、再現手順、都市変更なら同条件Before/AfterとValidation結果を添付します。文書変更は内容とリンクを確認します。
 
 [実行方法](docs/review-harness.md) / [Agent指示](agents/instructions/AGENT.md)。受け取ったスクリプトやblendは、内容を確認せず実行しません。人間のレビュー後に取り込みます。
