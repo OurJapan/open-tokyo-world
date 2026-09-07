@@ -18,7 +18,7 @@
         <video id="camera" playsinline muted autoplay aria-label="背面カメラ映像" hidden></video>
         <div id="canvas-host" aria-label="3D検証モデル。ドラッグで回転、ピンチで拡大"></div>
         <div class="stage-label"><span id="mode-label">3Dビュー</span></div>
-        
+
         <div class="model-caption"><span>サンプルモデル · 実際の建物とは異なります</span></div>
         <div id="loading" role="status">3Dモデルを読み込んでいます…</div>
       </div>
@@ -32,7 +32,7 @@
         <p class="help" id="placement-help">カメラ前方に仮配置します。実際の位置とは一致しません。</p>
         <label for="opacity">モデルの濃さ <output id="opacity-label">75%</output></label><input id="opacity" type="range" min="0" max="100" value="75" />
         <label for="radius">表示範囲</label><select id="radius"><option value="50">50 m</option><option value="100" selected>100 m</option><option value="300">300 m</option></select>
-        
+
       </section>
       <p class="privacy-note">写真と位置情報は端末に保存されます。外部には送信されません。</p>
       <details><summary>接続情報</summary>      <div class="sensor-strip"><span>カメラ <b id="camera-status">停止中</b></span><span>位置 <b id="location-status">未取得</b></span><span>方位 <b id="orientation-status">未取得</b></span></div><pre id="diagnostics">準備中</pre><p class="help">表示位置は概算です。自動の位置補正には対応していません。</p></details>
