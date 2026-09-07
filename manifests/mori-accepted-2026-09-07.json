@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "id": "mori-accepted-2026-09-07",
+  "source_repository": "https://github.com/OurJapan/open-tokyo-world",
+  "source_commit": "e6846145424bfe91c65d2ae12dbe3ae6d58bcac8",
+  "source_path": "local-only/accepted-2026-09-07.blend",
+  "bytes": 553280443,
+  "sha256": "77752f9009a0f3a1979734e3374de50d933253a5408c99f38297765548969179",
+  "blender_version": "4.5.1 LTS",
+  "redistribution": "pending-asset-rights-review",
+  "coordinates": {
+    "latitude": 35.65858,
+    "longitude": 139.74543,
+    "vertical_datum": "unknown",
+    "note": "Legacy scene origin, not a surveyed control point."
+  }
+}
