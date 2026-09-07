@@ -64,4 +64,4 @@ Webからは上記Pythonや親directoryをimportしない。package一式だけ�
 `?area=iidabashi` で飯田橋駅付近を選択できます。[現地テスト手順](../../docs/iidabashi-field-test.md)を参照してください。
 
 飯田橋の現地運用では写真の端末保存・メモ保存・連続撮影・送信結果の再確認・ZIP共有を利用できます。ブラウザ検証は `pnpm test:browser`（ビルド済みpreviewを4181番で起動、Playwright Chromiumが必要）。詳細は[9月8日の手順](../../docs/iidabashi-field-test.md)を参照してください。
-撮影後の入力なしで写真を保存し、飯田橋の建物候補を自動添付します。セッション単位で同意すると自動送信できます。写真からの実寸推定は未実装です。[仕様と精度の限界](../../docs/iidabashi-target-evidence.md)を参照してください。
+撮影後の入力なしで写真を保存し、飯田橋の建物候補を自動添付します。セッション単位で同意すると自動送信できます。撮影後のZIPは[PC側の推定CLI](../../tools/photo_estimation/README.md)で対応点間距離の暫定推定に利用できます。[仕様と精度の限界](../../docs/iidabashi-target-evidence.md)を参照してください。
