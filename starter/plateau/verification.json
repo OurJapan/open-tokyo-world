@@ -1,0 +1,81 @@
+{
+  "verified_date": "2026-09-07",
+  "scope": "one official PLATEAU tile plus six licensed plaza parts",
+  "legacy_scene_input": false,
+  "fresh_network_download": true,
+  "portable_tests": 49,
+  "new_portable_tests": 7,
+  "blender": "4.5.1 LTS",
+  "os": "Windows",
+  "python": "3.12.14",
+  "render_device": "CPU",
+  "elapsed_seconds_single_run": 10.965603351593018,
+  "blend_bytes": 3883079,
+  "blend_sha256": "12202797a247992f708b2f6e17beb206204a2e489e6e650d372a95c1c9d9b770",
+  "inputs": {
+    "tileset.json": {
+      "url": "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/tileset.json",
+      "bytes": 412889,
+      "sha256": "edec4c24d137eaf08a8525cecea505a3f21a30823b9ef4fb530e10774cea1323"
+    },
+    "data221.b3dm": {
+      "url": "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data221.b3dm",
+      "bytes": 1246040,
+      "sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2"
+    }
+  },
+  "source_sha256": {
+    "starter/plateau/run.py": "2c778aa93ece95f848340c26c345648afe99dd361e2652562f88718d20228679",
+    "starter/plateau/scene.py": "54aef39d9517c9a1872ce7f38c95225b04b4d7867a169c068b8f054b5724fad9",
+    "starter/plateau/tile.py": "566c3426113935348be0bd26c6e06ced6bd4f3c6ef5028fd9895736e670fccda",
+    "starter/plaza/scene.py": "52bed9bca744615928232d524091caf9d8a7f98cd7b69314364e474ce236bd93",
+    "scripts/mori_plaza_v1.py": "5f92f0381ab16fd0bbef325db2200381a903723ab5418ecb51c0c64562131ef9",
+    "scripts/mori_plaza_link_v1.py": "9db234b625b99fe1ee5751b4f4da57445ea6122222377e8b2e9fe36105519ec3",
+    "scripts/mori_entrance_v1.py": "aeb7417803ebea8ac8af590aeca7a1e723d1591e1756eb07ad1078cd9e753c90",
+    "scripts/mori_terrace_v1.py": "26f9149e5889266caa7c62bbd8a0df886fb9713266751c0a69e6c6df24a036e5"
+  },
+  "validation": {
+    "ok": true,
+    "blender": "4.5.1 LTS",
+    "mesh_count": 30,
+    "source_feature_count": 24,
+    "source_triangles": 4804,
+    "packed_texture_verified": true,
+    "source_material_links_verified": true,
+    "overview_framing_verified": true,
+    "feature_ids_verified": true,
+    "mesh_uv_hashes_verified": true,
+    "renders": {
+      "overview": {
+        "sha256": "a2bbd0d77a03a1d13b5eae64da0ecf42addf07b9e8e66cb87e5a01ab73bc0198",
+        "width": 960,
+        "height": 720,
+        "rgb_std": 0.10691619664430618
+      },
+      "entrance": {
+        "sha256": "d0214985fa813b1e6b13da2d8f94edc8fbf48833d89299ed1c5f34e617ff03dd",
+        "width": 960,
+        "height": 720,
+        "rgb_std": 0.2115131914615631
+      }
+    }
+  },
+  "negative_checks": {
+    "missing-texture-link": {
+      "rejected": true,
+      "reason": "Missing source texture link"
+    },
+    "changed-feature-id": {
+      "rejected": true,
+      "reason": "Changed feature identity"
+    }
+  },
+  "visual_review": "Agent inspected source texture and entrance plaza; human review pending",
+  "limitations": [
+    "Not the previously refined Mori model",
+    "Legacy-compatible per-feature flattened height",
+    "No roads or terrain",
+    "Other OS and independent contributor untested",
+    "No new asset Release or automatic publication"
+  ]
+}
