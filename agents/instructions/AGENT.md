@@ -11,7 +11,7 @@
 7. 検証は保存candidateを別processで開き、read-onlyで行う。失敗を画像の見栄えで無視しない。
 8. base/headを同一camera・照明・seed・engineでrenderし、入力hashと測定値を添付する。
 9. PRには根拠、変更、Before/After、検証、推定、残課題を簡潔に記す。
-10. 人間の追加指示後は新headで再検証する。自己承認でmergeしない。
+10. 追加指示後は新headで再検証する。承認・マージは docs/main-governance.md に従い、アカウント保有者の責任と許可範囲で行う。本人PRの例外でも基本保護を迂回しない。
 
 本ファイルは提案運用です。実行コマンド・path・schemaはM1で実装された契約に合わせて追加します。未実装CLIが存在するように扱わないこと。
 

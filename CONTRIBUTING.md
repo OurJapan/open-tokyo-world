@@ -34,4 +34,4 @@ OurJapanは都市データを共同で育て、制作・更新・配信などの
 
 一つのIssue・地物を基本単位とし、原本を変更せず、既存IDと対象外の形状・カメラ・照明を保持してください。PRにはbase/head、入力hash、根拠、再現手順、都市変更なら同条件Before/AfterとValidation結果を添付します。文書変更は内容とリンクを確認します。
 
-[実行方法](docs/review-harness.md) / [Agent指示](agents/instructions/AGENT.md)。受け取ったスクリプトやblendは、内容を確認せず実行しません。人間のレビュー後に取り込みます。
+[実行方法](docs/review-harness.md) / [Agent指示](agents/instructions/AGENT.md)。受け取ったスクリプトやblendは、内容を確認せず実行しません。maintainersの責任で取り込みます。[mainの保護と承認責任](docs/main-governance.md)にAI操作の責任と本人PRの例外を定めます。

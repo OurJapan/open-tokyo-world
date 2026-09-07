@@ -17,9 +17,9 @@
 | building | 隔離checkoutでコード/parameter/assetを修正 | 再実行して同じ対象に適用可能 |
 | validating | candidate保存、別processで再open、検証 | hard failureなし |
 | rendering | 同じ条件でbase/headの画像と指標を作る | 入力hashとheadが一致 |
-| in-review | 根拠・Before/After・未確認点をPRとして提示 | 人間の承認、required checks成功 |
+| in-review | 根拠・Before/After・未確認点をPRとして提示 | maintainersの承認または本人PRの例外判断、required checks成功 |
 | changes-requested | 指示を構造化して修正、検証からやり直し | 新headの証拠を添付 |
-| merged | 人間がmerge。採用assetと結果を保管 | Issueとmodel versionを紐付け |
+| merged | 担当アカウント保有者の責任でmerge。採用assetと結果を保管 | Issueとmodel versionを紐付け |
 
 資料不足はneeds-evidence、対象曖昧はneeds-location、権利不明はrights-reviewとして明示します。勝手に既知建物へ決めつけたり、写真で見えない面をverifiedにしたりしません。
 
@@ -52,3 +52,7 @@ render workerにPR投稿tokenを渡さず、別のpublisherが出力manifestとs
 baseが進んだ場合は新baseへ適用し直し、検証と比較を再生成します。古いheadの承認や画像でmergeしません。同一featureの変更競合はどちらかを先にmergeして再生成します。異なるfeatureでも共有material変更なら両Areaを再検証します。
 
 失敗時は元baselineを残し、不完全assetを最新版として公開しません。merge後に問題が判明したらcode/manifest commitをrevertし、前のhash資産へ戻します。採用されたrunと比較画像は長期保管し、一時artifactの期限切れで変更の根拠が消えないようにします。
+
+## 承認とAI操作の責任
+
+[mainの保護と承認責任](main-governance.md)を適用します。AIによる変更・レビュー・承認・マージは、使用したアカウント保有者の責任と依頼・許可の範囲で行います。本人PRの例外でもCI等の基本保護は必須です。
