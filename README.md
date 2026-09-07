@@ -10,6 +10,8 @@
 
 [植栽・手すりの制作記録](docs/mori-terrace-v1.md) / [比較CLIの実行方法と制約](docs/review-harness.md)
 
+[建物・道路・植栽・設備を共通管理する台帳](docs/object-registry.md)：固定版と配置を分離し、追加・置換・抑制・材質変更の計画を検証できます。実都市Blender組立への接続は次段階です。
+
 ## 自分のPCで試す
 
 [東京タワーの許諾・独立ファイルへの切り出し](assets/tokyo-tower/README.md)：鉄骨・展望台・窓・ガラス床まわりの独自77部品をCC BY 4.0、対象コードをMITで提供。切り出しには固定した旧入力が必要です。
