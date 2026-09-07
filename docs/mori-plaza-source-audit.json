@@ -1,0 +1,82 @@
+{
+  "osm_local_snapshot_sha256": "f04e8e70ab24a61ca749375d1ef37401feb0fdc840cc506b670ef71454a6a8ab",
+  "way_id": 1443867470,
+  "tags": {
+    "area": "yes",
+    "highway": "pedestrian",
+    "name": "中央広場",
+    "name:en": "Central Green",
+    "surface": "paving_stones"
+  },
+  "source_timestamp": "2026-08-16T23:30:05Z",
+  "source_version": "4",
+  "live_osm_verified": false,
+  "source_url": "https://www.openstreetmap.org/way/1443867470",
+  "checks": [
+    {
+      "u": -8,
+      "v": 18,
+      "object": "asphalt 15s road detail",
+      "distance_to_pedestrian_area_outline_m": 0.7383,
+      "within_legacy_road_plus_pavement_halfwidth": true
+    },
+    {
+      "u": -8,
+      "v": 22,
+      "object": "pavement_0 unified road",
+      "distance_to_pedestrian_area_outline_m": 4.5566,
+      "within_legacy_road_plus_pavement_halfwidth": true
+    },
+    {
+      "u": 0,
+      "v": 14,
+      "object": "asphalt 15s road detail",
+      "distance_to_pedestrian_area_outline_m": 3.0035,
+      "within_legacy_road_plus_pavement_halfwidth": true
+    },
+    {
+      "u": 0,
+      "v": 18,
+      "object": "asphalt 15s road detail",
+      "distance_to_pedestrian_area_outline_m": 0.8668,
+      "within_legacy_road_plus_pavement_halfwidth": true
+    },
+    {
+      "u": 0,
+      "v": 22,
+      "object": "asphalt 15s road detail",
+      "distance_to_pedestrian_area_outline_m": 2.1734,
+      "within_legacy_road_plus_pavement_halfwidth": true
+    },
+    {
+      "u": 8,
+      "v": 14,
+      "object": "pavement_0 unified road",
+      "distance_to_pedestrian_area_outline_m": 5.2282,
+      "within_legacy_road_plus_pavement_halfwidth": true
+    },
+    {
+      "u": 8,
+      "v": 18,
+      "object": "asphalt 15s road detail",
+      "distance_to_pedestrian_area_outline_m": 1.7568,
+      "within_legacy_road_plus_pavement_halfwidth": true
+    },
+    {
+      "u": 8,
+      "v": 22,
+      "object": "asphalt 15s road detail",
+      "distance_to_pedestrian_area_outline_m": 1.1065,
+      "within_legacy_road_plus_pavement_halfwidth": true
+    },
+    {
+      "u": 14,
+      "v": 22,
+      "object": "asphalt 15s road detail",
+      "distance_to_pedestrian_area_outline_m": 2.0975,
+      "within_legacy_road_plus_pavement_halfwidth": true
+    }
+  ],
+  "legacy_code": "work/tokyo60/build_city.py:134-151 and work/twin_towers/clean_surfaces.py; area=yes is not handled separately from road centerlines",
+  "notes": "Local source inspection, not confirmation of current OSM data. Footprint dimensions and landscape design are inferred."
+}
