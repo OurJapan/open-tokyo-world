@@ -1,0 +1,27 @@
+{
+  "ok": true,
+  "xy_unchanged": true,
+  "all_vertices_below_318_32_unchanged": true,
+  "peaks": [
+    {
+      "expected_degrees": 18.28125,
+      "actual_peak_degrees": 18.281259536743164,
+      "height_m": 331.1000061035156
+    },
+    {
+      "expected_degrees": 109.6875,
+      "actual_peak_degrees": 109.6874771118164,
+      "height_m": 331.1000061035156
+    },
+    {
+      "expected_degrees": 198.28125,
+      "actual_peak_degrees": 198.28125,
+      "height_m": 331.10003662109375
+    },
+    {
+      "expected_degrees": 286.875,
+      "actual_peak_degrees": 286.87506103515625,
+      "height_m": 331.1000061035156
+    }
+  ]
+}
