@@ -10,6 +10,10 @@
 
 [植栽・手すりの次候補](docs/mori-terrace-v1.md) / [比較CLIの実行方法と制約](docs/review-harness.md)
 
+## 自分のPCで試す
+
+[6部品のスターター](starter/plaza/README.md)で、元の都市ファイルなしに生成・保存・検証・Before/After比較を実行できます。PythonとBlenderが必要です。独自部品はCC BY 4.0、対象の生成コードはMITで利用できます。
+
 ## 最初に実現すること
 
 一件の現実との差分について、次の流れを最後まで通します。
@@ -55,6 +59,6 @@ Blenderの操作経験は不要です。Observerは違いを発見し、Reporter
 
 ## ライセンスの状態
 
-**4つの独自生成コードにMITを適用しました。リポジトリ全体への適用ではありません。** 対象ファイルと版は [LICENSE.md](LICENSE.md)、許諾文は [MIT-LICENSE.txt](MIT-LICENSE.txt)、出典・依存関係は [NOTICE.md](NOTICE.md) を参照してください。
+**4つの独自生成コードと2つのスターター用コードにMIT、6部品のスターターにCC BY 4.0を適用しました。リポジトリ全体への適用ではありません。** 対象は [LICENSE.md](LICENSE.md)、コード許諾文は [MIT-LICENSE.txt](MIT-LICENSE.txt)、モデルの条件は [ASSET-LICENSE.md](starter/plaza/ASSET-LICENSE.md)、出典は [NOTICE.md](NOTICE.md) と [provenance.json](starter/plaza/provenance.json) を参照してください。
 
-独自モデルのCC BY 4.0配布は、対象と出典を確認した上で別途進めます。元の都市blend、生成モデル、PLATEAU・OSMデータ、参考写真・Texture・音楽、その他のコード・文書へ、この変更で一括したライセンスを付与するものではありません。第三者の条件は保持します。
+元の都市blend、その他の生成モデル、PLATEAU・OSMデータ、参考写真・Texture・音楽、その他のコード・文書へ一括したライセンスを付与するものではありません。第三者の条件は保持します。
