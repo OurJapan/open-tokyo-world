@@ -62,6 +62,6 @@ Blenderの操作経験は不要です。Observerは違いを発見し、Reporter
 
 ## ライセンスの状態
 
-**4つの独自生成コードと2つのスターター用コードにMIT、6部品のスターターにCC BY 4.0を適用しました。リポジトリ全体への適用ではありません。** 対象は [LICENSE.md](LICENSE.md)、コード許諾文は [MIT-LICENSE.txt](MIT-LICENSE.txt)、モデルの条件は [ASSET-LICENSE.md](starter/plaza/ASSET-LICENSE.md)、出典は [NOTICE.md](NOTICE.md) と [provenance.json](starter/plaza/provenance.json) を参照してください。
+**対象の独自生成コード・スターター用コード・梱包テストにMIT、6部品のスターターにCC BY 4.0を適用しました。リポジトリ全体への適用ではありません。** 対象は [LICENSE.md](LICENSE.md)、コード許諾文は [MIT-LICENSE.txt](MIT-LICENSE.txt)、モデルの条件は [ASSET-LICENSE.md](starter/plaza/ASSET-LICENSE.md)、出典は [NOTICE.md](NOTICE.md) と [provenance.json](starter/plaza/provenance.json) を参照してください。
 
 元の都市blend、その他の生成モデル、PLATEAU・OSMデータ、参考写真・Texture・音楽、その他のコード・文書へ一括したライセンスを付与するものではありません。第三者の条件は保持します。

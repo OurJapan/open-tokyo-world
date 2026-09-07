@@ -17,6 +17,8 @@ The independent code in the following four files, as present in baseline commit 
 
 ## MIT: starter runner
 
+The original `starter/plaza/package.py` and `tests/test_plaza_package.py` are also covered by MIT, copyright (c) 2026 ark4ez. These grants cover these named implementations, not unrelated repository files.
+
 The original code in `starter/plaza/run.py` and `starter/plaza/scene.py`, marked with SPDX-License-Identifier: MIT and copyright (c) 2026 ark4ez, is also licensed under [MIT](MIT-LICENSE.txt). This does not extend the four-file snapshot grant above to unrelated later modifications.
 
 ## CC BY 4.0: six-part starter
