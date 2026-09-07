@@ -32,6 +32,10 @@ jobs:
       - run: pnpm test
       - run: node --test ../observation-api/tests/*.test.mjs
       - run: python -m unittest discover -s ../observation-api/tests -p "test_*.py"
+      - run: pnpm --dir ../observation-api install --frozen-lockfile
+      - run: pnpm --dir ../observation-api check:deploy
+        env:
+          WRANGLER_SEND_METRICS: 'false'
       - run: pnpm build
       - uses: actions/upload-artifact@v4
         with:

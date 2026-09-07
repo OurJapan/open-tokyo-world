@@ -14,6 +14,8 @@ These limits are NOT a monetary billing cap. Rejected traffic, database operatio
 
 ## Deployment (not performed by adding these files)
 
+Run `pnpm install --frozen-lockfile` first. Wrangler is pinned in this package; use `pnpm exec wrangler` for the commands below. `pnpm check:deploy` validates the Worker bundle without publishing. Use `pnpm exec wrangler login` to authenticate in your browser; never paste account tokens into chat or source files.
+
 1. Use an authenticated Cloudflare Wrangler CLI to create D1 `otw-observations` and private R2 bucket `otw-observation-photos`. Set the returned database ID in `wrangler.jsonc`. Keep R2 public access disabled.
 2. Run `wrangler d1 migrations apply otw-observations --remote` from this directory.
 3. Set a random pilot code using `wrangler secret put SUBMISSION_TOKEN`. Keep it out of git and logs.
@@ -33,5 +35,11 @@ Operator deletion: delete `observations/<receipt-id>.jpg` from private R2 first,
 `python -m unittest discover -s tests -p "test_*.py"`
 
 SQLite tests exercise the real migration/trigger; Node tests cover request gates, streaming bounds, JST rollover and cleanup failure ordering. Cloudflare remote deployment and iPhone upload tests remain required.
+
+### Local integration smoke test
+
+On a fresh local database: apply migrations with `pnpm exec wrangler d1 migrations apply otw-observations --local`, then enable its limits row with `pnpm exec wrangler d1 execute otw-observations --local --command "UPDATE limits SET enabled=1 WHERE id=1"`. Start `pnpm exec wrangler dev --ip 127.0.0.1 --port 8787 --var INTAKE_ENABLED:true --var SUBMISSION_TOKEN:local-test-only` and run `node tests/local-smoke.mjs` in a second terminal. This test consumes the local daily quota; use fresh local state for another run. It never sends to a remote host.
+
+Verified with Wrangler 4.129.0/workerd: actual local D1 migration and trigger, R2 writes, unauthorized rejection, duplicate receipt reuse, and 36 unique submissions (35 concurrent after the first) accepting exactly 30 and rejecting six. Worker deployment dry-run also passes. These checks do not constitute a remote deployment or iPhone test.
 
 References: [D1 SQL](https://developers.cloudflare.com/d1/sql-api/sql-statements/), [R2 Worker API](https://developers.cloudflare.com/r2/api/workers/workers-api-reference/), [budget alerts](https://developers.cloudflare.com/billing/manage/budget-alerts/).
