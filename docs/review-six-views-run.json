@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "ok": true,
+  "mode": "baseline-capture",
+  "input_sha256": "f04b68c07d138b880576d511000b55a9fc3104d28cc9e3750b511023b10ab70d",
+  "blender_version": "4.5.1 LTS",
+  "cameras_sha256": "aed5df075f9f4b9527a754b91a1e243c8bb11554e4b07475d2bbb8facf62e0a8",
+  "features_sha256": "fcfc95ad12709e84dee10f4de1e807a7588da8fceb584adf70ba44101c420481",
+  "patch_sha256": null,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "device": "OPTIX",
+  "width": 960,
+  "height": 540,
+  "samples": 16,
+  "seed": 0,
+  "jobs": {
+    "prepare": {
+      "seconds": 12.297,
+      "report_sha256": "f5ba5845fb774042a12ed1c7d71c818870d1d958ed8c5e1c53061d605b52c70d"
+    },
+    "validate-before": {
+      "seconds": 35.609,
+      "report_sha256": "db6198dba42cdb928d227db655ee660fb04dfee4a6cd56ccbdb2182a0a2ba222"
+    },
+    "validate-after": {
+      "seconds": 39.438,
+      "report_sha256": "db6198dba42cdb928d227db655ee660fb04dfee4a6cd56ccbdb2182a0a2ba222"
+    },
+    "render-before": {
+      "seconds": 38.203,
+      "report_sha256": "648a7aaa26464ee9f362c6bffa54a225f0d289f04e0d0400089118b191df08a8"
+    },
+    "render-after": {
+      "seconds": 32.375,
+      "report_sha256": "e212e8de331d763ddbe14bb7f12b4510d9ec523d25272b2b64804b6a3d6ef5ba"
+    }
+  },
+  "limitations": [
+    "Human visual approval is required.",
+    "Peak RAM/VRAM and physical accuracy are not measured.",
+    "Timing is one run, not a warmed-up median.",
+    "Dependency audit and fingerprints cover documented initial checks, not all Blender features."
+  ],
+  "code_base_commit": "295b6190f29e552ef6007f6b41873fa5c6fd0545",
+  "code_files": {
+    "scripts/review.py": "6093f7260525ac455b608967b68052f418be79acc76402b1647b01b0eaf8bfb0",
+    "scripts/blender_worker.py": "43071c92d1f62b9a183b7df89963ee33590d5620e66bd5b8d3ab97d34541d916"
+  },
+  "changed_objects": [],
+  "output_blends": {
+    "before.blend": "6317917f1aa3aa37f88ed519fccc57a16e8fa38c363014fb157c28c1da962e7e",
+    "after.blend": "957a6b56322d55de5c41aa50d4791a17cc2d03cf97d6a1f8a110debaa44e651b"
+  }
+}

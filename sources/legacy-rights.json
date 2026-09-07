@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "status": "incomplete",
+  "assets": [
+    {
+      "kind": "packed-building-textures",
+      "source": "PLATEAU and legacy atlas; image-to-source mapping incomplete",
+      "redistribution": "pending"
+    },
+    {
+      "kind": "roads-and-layout",
+      "source": "OpenStreetMap contributors",
+      "declared_license": "ODbL",
+      "derivation_review": "pending"
+    },
+    {
+      "kind": "music",
+      "included_in_review": false,
+      "redistribution": "pending"
+    }
+  ]
+}

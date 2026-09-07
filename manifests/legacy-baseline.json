@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "id": "tokyo-tower-legacy-52s",
+  "source_repository": "https://github.com/DoiTakayoshi/tokyo-tower-blender",
+  "source_commit": "defac576e076f40bf3bc4fddcdcefe30f9a009f7",
+  "source_path": "outputs/Tokyo_Final_52s_Corrected/Tokyo_Final_52s_Corrected.blend",
+  "bytes": 977587171,
+  "sha256": "f04b68c07d138b880576d511000b55a9fc3104d28cc9e3750b511023b10ab70d",
+  "blender_version": "4.5.1 LTS",
+  "redistribution": "pending-asset-rights-review",
+  "coordinates": {
+    "latitude": 35.65858,
+    "longitude": 139.74543,
+    "vertical_datum": "unknown",
+    "note": "Legacy scene origin, not a surveyed control point."
+  }
+}

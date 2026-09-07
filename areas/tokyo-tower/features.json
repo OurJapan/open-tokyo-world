@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "features": [
+    {
+      "id": "otw:jp:tokyo:minato:tokyo-tower",
+      "collections": [
+        "Tokyo Tower structure",
+        "Tokyo Tower decks and interior",
+        "Photo based main deck"
+      ],
+      "status": "legacy-alias-mapping",
+      "last_verified": null
+    },
+    {
+      "id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "collections": [
+        "Mori JP curtain wall",
+        "Mori JP interior",
+        "Mori JP podium"
+      ],
+      "status": "legacy-alias-mapping",
+      "last_verified": null
+    }
+  ],
+  "waiver_input_sha256": "f04b68c07d138b880576d511000b55a9fc3104d28cc9e3750b511023b10ab70d",
+  "legacy_empty_objects": {
+    "Tokyo Tower decks and interior / wood": "Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Tokyo Tower decks and interior / stone": "Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Tokyo Tower decks and interior / soil": "Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Tokyo Tower decks and interior / leaf": "Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Tokyo Tower decks and interior / darkmetal": "Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target."
+  }
+}
