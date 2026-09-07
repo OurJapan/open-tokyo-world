@@ -1,0 +1,40 @@
+{
+  "ok": true,
+  "started": 1788785393.806327,
+  "validation": {
+    "ok": true,
+    "blender": "4.5.1 LTS",
+    "meshes": 77,
+    "triangles": 1740732,
+    "saved_reopened": true,
+    "external_images": 0,
+    "libraries": 0,
+    "texts": 0,
+    "sounds": 0,
+    "parts_match": true,
+    "renders": {
+      "tower": "95d2b8c4cf73e8602b7fdb6f5f3c926a1105f6ed51be689f4e748b50136128a3",
+      "glass-floor": "8d2b91931498e361bc134f0c0a896c7e83b1ad51a71c4f440c0cc377bfe0d438",
+      "interior": "551fe1b5b6b6fd325bc11c918e5f8aee6ab0b41a83991c96ccc45eb3f1802b3a"
+    },
+    "limitations": [
+      "Not full procedural rebuild",
+      "No real-world accuracy or complete topology certification",
+      "Modifier evaluation baked at frame 1"
+    ]
+  },
+  "source_unchanged": true,
+  "bytes": 25782699,
+  "elapsed_seconds": 38.72037386894226,
+  "exporter_sha256": "5a44b18f4fce6215b0660188319f08fb3213eb8e422ae5db19d2ee6519600f6d",
+  "portable_tests": {
+    "passed": 61
+  },
+  "baseline": {
+    "sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+    "bytes": 558751758,
+    "local_relative_path": "outputs/mori-plaza-edge-review/candidate.blend",
+    "redistribution": "This grant is not for the complete legacy city blend"
+  },
+  "artifact_publicly_uploaded": false
+}

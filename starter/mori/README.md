@@ -2,7 +2,7 @@
 
 固定した公式PLATEAUの2ファイルから、森JPタワーの断面と低層部を取得し、詳細外装・入口・テラス・床と屋根を生成する。旧都市blend、source_mori.npz、profiles.json、旧制作ディレクトリは不要。
 
-**技術的な独立再生成試験。詳細モデル全体の自由な再配布許諾が完了したスターターではない。** [出典と現在の許諾範囲](NOTICE.md)を確認する。既存の広場6部品・指定MITコードの許諾は保持する。
+**対象生成コードはMIT、13部品の独自追加部分・材質等はCC BY 4.0。PLATEAU等の第三者条件は保持します。** [出典と現在の許諾範囲](NOTICE.md)を確認する。既存の広場6部品・指定MITコードの許諾は保持する。
 
 ## 実行
 
@@ -41,3 +41,7 @@ python tests/mori_standalone_blender.py --blender BLENDER --run runs/mori-first 
 通常検証は保存後再open、入力画像pack/hash、部品集合、メッシュ・UV・主要材質node/links・transformの指紋、有限座標、ゼロ面積三角形、四隅の頂部、非発光ガラス、屋根面、対象の二重配置、周囲の不変性、全景カメラ枠、PNGを検査する。試験上限は200万三角形・100MB/scene。全node group・全modifier・実物の精度を保証するvalidatorではない。
 
 比較は「公式PLATEAUから詳細モデルへの置換」。旧承認済みシーンと完全に同じ画像になることを証明するものではない。昼光rigは今回の共通比較用。地形・道路の接続、屋上設備、推定内装の省略による見え方、別PC・別OS、人間の新画像レビューは残る。[実行記録](verification.json)
+
+## 生成物の許諾ファイル
+
+runnerはMIT-LICENSE.txt、CODE-LICENSE.md（対象一覧）、ASSET-LICENSE.md、provenance.json、PLATEAU-NOTICE.md、PLAZA-LICENSE.md、plaza-provenance.json、NOTICE.mdを同梱します。各bytesのhashをrun.jsonに保存し、生成13部品がprovenanceの対象と一致することを検査します。単一blendに異なる出典が混在するため、ファイル全体をMITまたは自分の独占物として表示しないでください。

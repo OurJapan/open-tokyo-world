@@ -9,8 +9,34 @@ import unittest
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('mori_profile',ROOT/'starter/mori/profile.py')
 profile=importlib.util.module_from_spec(spec);spec.loader.exec_module(profile)
+runner_spec=importlib.util.spec_from_file_location('mori_run',ROOT/'starter/mori/run.py')
+runner=importlib.util.module_from_spec(runner_spec);runner_spec.loader.exec_module(runner)
 
 class ReplacementContract(unittest.TestCase):
+    def test_all_notices_bundled_and_parts_matched(self):
+        import hashlib
+        with tempfile.TemporaryDirectory() as folder:
+            out=Path(folder);record=runner.bundle_notices(out)
+            self.assertEqual(len(record),8)
+            for name,h in record.items():self.assertEqual(hashlib.sha256((out/name).read_bytes()).hexdigest(),h)
+            scope=json.loads((out/'provenance.json').read_text(encoding='utf8'))
+            (out/'replacement.json').write_text(json.dumps({'parts':[p['object'] for p in scope['parts']]}))
+            self.assertTrue(runner.validate_part_scope(out))
+
+    def test_missing_license_file_fails(self):
+        with tempfile.TemporaryDirectory() as folder:
+            out=Path(folder)
+            with self.assertRaises(FileNotFoundError):runner.bundle_notices(out,here=out/'absent/starter/mori')
+            self.assertFalse((out/'NOTICE.md').exists())
+
+    def test_unlisted_part_rejected(self):
+        with tempfile.TemporaryDirectory() as folder:
+            out=Path(folder);runner.bundle_notices(out)
+            scope=json.loads((out/'provenance.json').read_text(encoding='utf8'))
+            parts=[p['object'] for p in scope['parts']];parts[-1]='unverified third-party part'
+            (out/'replacement.json').write_text(json.dumps({'parts':parts}))
+            with self.assertRaisesRegex(ValueError,'Generated parts'):runner.validate_part_scope(out)
+
     def test_index_is_resolved_by_id_not_batch_five(self):
         self.assertEqual(profile.target_index(['other',profile.FEATURE]),1)
 

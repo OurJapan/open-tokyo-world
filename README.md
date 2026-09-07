@@ -12,7 +12,9 @@
 
 ## 自分のPCで試す
 
-[森JPタワーの独立生成・置換試験](starter/mori/README.md)：旧都市ファイルなしで公式PLATEAUから詳細外装・低層部を生成し、4視点のBefore/Afterを作成します。技術試験であり、詳細モデル全体の配布許諾は未確定です。
+[東京タワーの許諾・独立ファイルへの切り出し](assets/tokyo-tower/README.md)：鉄骨・展望台・窓・ガラス床まわりの独自77部品をCC BY 4.0、対象コードをMITで提供。切り出しには固定した旧入力が必要です。
+
+[森JPタワーの独立生成・置換試験](starter/mori/README.md)：旧都市ファイルなしで公式PLATEAUから詳細外装・低層部を生成し、4視点のBefore/Afterを作成します。対象生成コードはMIT、詳細モデルの独自追加部分等はCC BY 4.0。PLATEAU等の第三者条件は保持します。
 
 [公式PLATEAU 1タイルの取込試験](starter/plateau/README.md)：固定した公式データを取得し、地物ID付きの建物24件と広場6部品を生成・保存・検証します。旧都市blendは不要。表示は旧座標に合わせた試験用です。
 
@@ -70,6 +72,6 @@ Blenderの操作経験は不要です。Observerは違いを発見し、Reporter
 
 ## ライセンスの状態
 
-**対象の独自生成コード・スターター用コード・梱包テストにMIT、6部品のスターターにCC BY 4.0を適用しました。リポジトリ全体への適用ではありません。** 対象は [LICENSE.md](LICENSE.md)、コード許諾文は [MIT-LICENSE.txt](MIT-LICENSE.txt)、モデルの条件は [ASSET-LICENSE.md](starter/plaza/ASSET-LICENSE.md)、出典は [NOTICE.md](NOTICE.md) と [provenance.json](starter/plaza/provenance.json) を参照してください。
+**対象の独自生成コード・スターター用コード・梱包テストにMIT、広場6部品・森JPタワーの特定の独自追加部分・東京タワーの指定77部品等にCC BY 4.0を適用しました。リポジトリ全体への適用ではありません。** 対象は [LICENSE.md](LICENSE.md)、コード許諾文は [MIT-LICENSE.txt](MIT-LICENSE.txt)、モデルの条件は [ASSET-LICENSE.md](starter/plaza/ASSET-LICENSE.md)、出典は [NOTICE.md](NOTICE.md) と [provenance.json](starter/plaza/provenance.json) を参照してください。
 
 元の都市blend、その他の生成モデル、PLATEAU・OSMデータ、参考写真・Texture・音楽、その他のコード・文書へ一括したライセンスを付与するものではありません。第三者の条件は保持します。
