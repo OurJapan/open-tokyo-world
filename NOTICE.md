@@ -21,3 +21,7 @@ No third-party data license is replaced by the MIT license for the four independ
 ## Standalone starter
 
 The two additional MIT scripts in `starter/plaza/` regenerate six original procedural parts without the legacy city input. See the [asset grant](starter/plaza/ASSET-LICENSE.md) and [machine-readable provenance](starter/plaza/provenance.json). This starter supplies a new viewing setup, not a reconstruction of the full legacy scene.
+
+## Standalone Mori consent and provenance
+
+On 2026-09-07 the account holder confirmed authority to license the eleven identified code snapshots, including incorporated legacy-derived implementation, under MIT and the identified original Mori contributions under CC BY 4.0. [Scope and consent](starter/mori/provenance.json) / [asset grant](starter/mori/ASSET-LICENSE.md). Existing four-file MIT snapshots were checked and match; no new consent was required for them. Third-party inputs keep their conditions. Code publication approval for PR #28 and this separate license consent are distinct records.
