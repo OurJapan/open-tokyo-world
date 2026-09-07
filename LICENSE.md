@@ -57,6 +57,10 @@ The nine historical code snapshots listed with SHA-256 and source ranges in [Tok
 
 The 77 original Tokyo Tower parts and their original materials, plus the new isolated review setup and previews, have the [CC BY 4.0 grant](assets/tokyo-tower/ASSET-LICENSE.md). Third-party rights and the rest of the legacy city remain outside that grant.
 
+## Generic object registry
+
+The original `scripts/object_registry.py`, `tests/test_object_registry.py`, `registry/example.json`, and `registry/example.lock.json` are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. The registry example is synthetic contract data, not a real city model or a grant for third-party inputs.
+
 ## Outside these grants
 
 Except for the separately identified starters and original additions above, no license is granted here for other repository files, legacy city scenes, generated models, reference photos, textures, music, trademarks, PLATEAU data, OpenStreetMap data, or other third-party content. Any separately applicable license remains in effect. Execution of the covered code does not itself grant rights to its inputs or outputs. This scope document adds no conditions to the MIT grant for the covered code.
