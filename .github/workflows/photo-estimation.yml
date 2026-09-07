@@ -1,0 +1,20 @@
+name: PC photo estimation
+on:
+  push:
+    paths: ['tools/photo_estimation/**', 'tests/test_photo_estimation.py', '.github/workflows/photo-estimation.yml']
+  pull_request:
+    paths: ['tools/photo_estimation/**', 'tests/test_photo_estimation.py', '.github/workflows/photo-estimation.yml']
+permissions:
+  contents: read
+jobs:
+  photo-estimation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r tools/photo_estimation/requirements.txt
+      - run: python -m unittest discover -s tests -p test_photo_estimation.py -v

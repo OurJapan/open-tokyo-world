@@ -16,7 +16,7 @@
 
 候補の距離と方位は順位付けの参考で、画像の内容や遮蔽物を認識していない。`image_analysis_performed:false`、`status:candidates_unverified` を保存する。地図の外形から求めた東西・南北の幅と存在する高さタグは `map_reference_dimensions` に出典付きで格納する。写真の対象物の実寸ではなく、欠落した高さを補完しない。`feature_id` と `camera_pose` は未確定のまま。
 
-写真からの画像照合・複数視点の復元・実寸推定はまだ実装していない。今回保存する写真とメタデータが、その後の検証の入力となる。寸法は `dimension_status:unresolved` とし、自動生成した数値を実測と表示しない。3Dモデル生成も起動しない。
+撮影時点では画像解析を行わない。保存したZIPを[PC側の推定CLI](../tools/photo_estimation/README.md)に渡すと、写真の対応点を照合し、GPS条件を満たす場合に点間距離を暫定推定できる。建物全体の実寸や地物の特定は未実装。寸法は `dimension_status:unresolved` とし、自動生成した数値を実測と表示しない。3Dモデル生成も起動しない。
 
 ## 出典と検証
 
