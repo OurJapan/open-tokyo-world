@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "registry_sha256": "b0fe9c6b210994fbbbabc030a59cc90eb4922adbfa05216d6ced04242af6d8fb",
+  "frame": "fixture:enu",
+  "profile": "review",
+  "selections": [
+    {
+      "feature": "fixture:building",
+      "revision": "v1"
+    },
+    {
+      "feature": "fixture:road",
+      "revision": "v1"
+    },
+    {
+      "feature": "fixture:tree",
+      "revision": "v1"
+    },
+    {
+      "feature": "fixture:bench-1",
+      "revision": "v1"
+    },
+    {
+      "feature": "fixture:bench-2",
+      "revision": "v1"
+    },
+    {
+      "feature": "fixture:terrain",
+      "revision": "v1"
+    },
+    {
+      "feature": "fixture:sign",
+      "revision": "v1"
+    }
+  ]
+}
