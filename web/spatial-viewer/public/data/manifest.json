@@ -1,0 +1,51 @@
+{
+  "schema_version": "otw-spatial-manifest/0.1",
+  "area_id": "tokyo-tower",
+  "fixture": true,
+  "origin": {
+    "latitude": 35.65858,
+    "longitude": 139.74543,
+    "vertical_datum": "unknown",
+    "note": "Legacy scene origin, not a surveyed control point."
+  },
+  "frame": {
+    "id": "tokyo-tower-legacy-display",
+    "revision": "fixture-1",
+    "registration_status": "unregistered",
+    "units": "meters",
+    "render_axes": "east-up-south"
+  },
+  "known_features": [
+    {
+      "feature_id": "otw:jp:tokyo:minato:tokyo-tower",
+      "status": "legacy-alias-mapping"
+    },
+    {
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "status": "legacy-alias-mapping"
+    }
+  ],
+  "source_refs": [
+    "manifests/legacy-baseline.json",
+    "areas/tokyo-tower/features.json"
+  ],
+  "assets": [
+    {
+      "id": "device-test-structure",
+      "url": "device-test.glb",
+      "sha256": "0bd314b3dc7e691f843293c490f4e27c6be3bc61bba28aad31dd12ed776d5f08",
+      "bytes": 3036,
+      "feature_id": null,
+      "fixture": true,
+      "model_version": "device-test-1",
+      "redistribution": "original-fixture-only",
+      "position_enu_m": [
+        0,
+        0,
+        0
+      ],
+      "triangles": 144
+    }
+  ],
+  "world_version": "sha256:30649c8edb902f260147032020eabd2b3abe482cab02bb7a5c60d8d911ed9deb"
+}
