@@ -1,0 +1,18 @@
+# Local credentials and caches
+.env
+.env.*
+!.env.example
+__pycache__/
+.venv/
+work/
+cache/
+.DS_Store
+Thumbs.db
+
+# Large assets are introduced separately after provenance/storage review
+*.blend
+*.blend1
+*.blend2
+*.mp4
+*.wav
+*.zip
