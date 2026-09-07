@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "ok": true,
+  "mode": "patch-review",
+  "input_sha256": "75b9cac251dd9a66c5779b41690cd56052c70db51512b9a8cd8fcc8e8f109c1d",
+  "blender_version": "4.5.1 LTS",
+  "cameras_sha256": "f6606792c5346c8f5b87f05ac84cd9ec8f6a5762d91592936c94af96efda222d",
+  "features_sha256": "3c7d5308fa34d2010e1ed5461f253b3163d52a687b702a24a358807154831419",
+  "patch_sha256": "d2088a99ef0b5b40263140278d1b61bf310ed82285edd103ad08bc6686530707",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "device": "CPU",
+  "width": 320,
+  "height": 180,
+  "samples": 4,
+  "seed": 0,
+  "jobs": {
+    "prepare": {
+      "seconds": 1.016,
+      "report_sha256": "27eb449c26b8cee864e4cfbe8054a3ed2fe28ed75c3f69a017cbfadd617375f2"
+    },
+    "validate-before": {
+      "seconds": 1.093,
+      "report_sha256": "3ca4aab59829f87acba6d3b3aee05b96a07f10a7b93be37e05f0cd325d4efbb1"
+    },
+    "validate-after": {
+      "seconds": 1.125,
+      "report_sha256": "493647b3f18069b30e65fc5abd0996ff9df3be9e20d38bff8c4ce82d2d63120e"
+    },
+    "render-before": {
+      "seconds": 2.156,
+      "report_sha256": "48d9134643f9b8cbcb1f522366f7ac5e14e2f27d43a7877dab076dd6ccae2a4b"
+    },
+    "render-after": {
+      "seconds": 2.125,
+      "report_sha256": "fbcbbf31e390584913be63ce89b942da668ec8def05039a999002f1911480c84"
+    }
+  },
+  "limitations": [
+    "Human visual approval is required.",
+    "Peak RAM/VRAM and physical accuracy are not measured.",
+    "Timing is one run, not a warmed-up median.",
+    "Dependency audit and fingerprints cover documented initial checks, not all Blender features."
+  ],
+  "code_base_commit": "e03f680ca0b424975a714cc2953e356d91f9c0a9",
+  "code_files": {
+    "scripts/review.py": "6093f7260525ac455b608967b68052f418be79acc76402b1647b01b0eaf8bfb0",
+    "scripts/blender_worker.py": "43071c92d1f62b9a183b7df89963ee33590d5620e66bd5b8d3ab97d34541d916"
+  },
+  "changed_objects": [
+    "Fixture building"
+  ],
+  "output_blends": {
+    "before.blend": "ef57997c818a99b352b706cf0c90ff613e2d0d8d4676480308abe839cf244c4a",
+    "after.blend": "9b90b29e9b6ce1b084108fecffdf469d9d31d0db44f090a6da5b246724dd656a"
+  }
+}

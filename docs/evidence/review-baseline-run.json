@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "ok": true,
+  "mode": "baseline-capture",
+  "input_sha256": "f04b68c07d138b880576d511000b55a9fc3104d28cc9e3750b511023b10ab70d",
+  "blender_version": "4.5.1 LTS",
+  "cameras_sha256": "4b3fcac16d8ed9ae0b6ae69b51189dfb87838e2d20a41c068a848765b546a2b4",
+  "features_sha256": "fcfc95ad12709e84dee10f4de1e807a7588da8fceb584adf70ba44101c420481",
+  "patch_sha256": null,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "device": "OPTIX",
+  "width": 640,
+  "height": 360,
+  "samples": 8,
+  "seed": 0,
+  "jobs": {
+    "prepare": {
+      "seconds": 13.094,
+      "report_sha256": "f5ba5845fb774042a12ed1c7d71c818870d1d958ed8c5e1c53061d605b52c70d"
+    },
+    "validate-before": {
+      "seconds": 35.109,
+      "report_sha256": "db6198dba42cdb928d227db655ee660fb04dfee4a6cd56ccbdb2182a0a2ba222"
+    },
+    "validate-after": {
+      "seconds": 37.188,
+      "report_sha256": "db6198dba42cdb928d227db655ee660fb04dfee4a6cd56ccbdb2182a0a2ba222"
+    },
+    "render-before": {
+      "seconds": 24.406,
+      "report_sha256": "c1f74b0f202ac0323b7a91f7050c34f836e72dc6c20734b5bd72b3ee1b0259fb"
+    },
+    "render-after": {
+      "seconds": 23.156,
+      "report_sha256": "4fc2a8cc605c8653e6490578f2b864b13709814574bfbfcbad68cdd0e3d269a3"
+    }
+  },
+  "limitations": [
+    "Human visual approval is required.",
+    "Peak RAM/VRAM and physical accuracy are not measured.",
+    "Timing is one run, not a warmed-up median.",
+    "Dependency audit and fingerprints cover documented initial checks, not all Blender features."
+  ],
+  "code_base_commit": "e03f680ca0b424975a714cc2953e356d91f9c0a9",
+  "code_files": {
+    "scripts/review.py": "6093f7260525ac455b608967b68052f418be79acc76402b1647b01b0eaf8bfb0",
+    "scripts/blender_worker.py": "43071c92d1f62b9a183b7df89963ee33590d5620e66bd5b8d3ab97d34541d916"
+  },
+  "changed_objects": [],
+  "output_blends": {
+    "before.blend": "4abff398717fa439f6a843ee28b8bb7ce25cebe722a431cb238328faf715a007",
+    "after.blend": "d8a88e2d83a56a973f4dcd6f7f6f761e61fae8204be52d1e838bda242a5d7f6f"
+  },
+  "counts": {
+    "objects": 3299,
+    "vertices": 51070948,
+    "polygons": 39294268
+  },
+  "validation_errors": [],
+  "validation_warning_count": 39,
+  "known_empty_legacy_objects": [
+    "Known empty legacy mesh: Tokyo Tower decks and interior / wood; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Known empty legacy mesh: Tokyo Tower decks and interior / stone; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Known empty legacy mesh: Tokyo Tower decks and interior / soil; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Known empty legacy mesh: Tokyo Tower decks and interior / leaf; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Known empty legacy mesh: Tokyo Tower decks and interior / darkmetal; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target."
+  ],
+  "review_camera_observations": {
+    "tower-exterior": "Tower visible; wide-context view.",
+    "mori-facade": "Facade detail visible; crown outside this frame.",
+    "deck-interior": "Interior visible; not the requested deck-to-Mori view yet.",
+    "context": "Human approval pending."
+  },
+  "pixel_comparison": [
+    {
+      "camera": "context",
+      "mean_absolute_8bit_difference": 3.363715277777778e-05,
+      "max_absolute_8bit_difference": 1.0
+    },
+    {
+      "camera": "deck-interior",
+      "mean_absolute_8bit_difference": 2.4956597222222224e-05,
+      "max_absolute_8bit_difference": 1.0
+    },
+    {
+      "camera": "mori-facade",
+      "mean_absolute_8bit_difference": 2.8211805555555554e-05,
+      "max_absolute_8bit_difference": 1.0
+    },
+    {
+      "camera": "tower-exterior",
+      "mean_absolute_8bit_difference": 3.90625e-05,
+      "max_absolute_8bit_difference": 1.0
+    }
+  ]
+}

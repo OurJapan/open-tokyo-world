@@ -1,0 +1,10 @@
+[
+  {
+    "case": "valid",
+    "passed": true
+  },
+  {
+    "case": "missing-image",
+    "passed": true
+  }
+]
