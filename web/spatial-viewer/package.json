@@ -6,10 +6,17 @@
   "packageManager": "pnpm@11.19.0",
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
-    "build": "vite build",
+    "build": "vite build && node scripts/build-offline.mjs",
     "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
-    "test": "node --test tests/*.test.js"
+    "test": "node --test tests/*.test.js",
+    "test:browser": "node tests/field-browser.cjs"
   },
-  "dependencies": {"three": "0.185.1", "fflate": "0.8.3"},
-  "devDependencies": {"vite": "8.2.2"}
+  "dependencies": {
+    "fflate": "0.8.3",
+    "three": "0.185.1"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1",
+    "vite": "8.2.2"
+  }
 }
