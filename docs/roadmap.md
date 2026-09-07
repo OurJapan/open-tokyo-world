@@ -1,14 +1,22 @@
 # 移行ロードマップ
 
-日程ではなく受入条件で段階を区切ります。M0の設計・一次棚卸し、M1のローカル検証・比較CLI、日本語Issue Formを用意しました。M2では森JPタワーの現実差分修正・追加指示・再修正・人間の画像レビューまで進み、mainへの取り込み待ちです。配布権の確定、別Contributorの環境での再現、都市全体の品質保証は未完です。[採用基準と取り込み手順](mori-review-acceptance.md)、[実行方法](review-harness.md)を参照してください。
+日程ではなく受入条件で段階を区切ります。以下の段階表は全体の目標です。実装した一部の機能をもって段階全体の完了とは扱いません。
 
-## 2026-09-07の到達点
+## 現在地（2026-09-07、PR #16取り込み後）
 
-- Issue #3 → AIの調査・Blender修正 → 8視点比較 → 人間の追加指示 → 屋根・壁の欠落修正 → 画像レビューを実施。
-- 採用する形状はモデルcommit `e6846145424bfe91c65d2ae12dbe3ae6d58bcac8`と[review reference](mori-reviewed-baseline.json)で固定。これはrunnerの入力lockの置き換えではない。
-- 次の取り込み順は[PR #2](https://github.com/OurJapan/open-tokyo-world/pull/2) → [PR #4](https://github.com/OurJapan/open-tokyo-world/pull/4)。両方の取り込み先をmainとし、#2の履歴を維持するmerge commitで進める。まだmerge済みとは扱わない。
-- 次のモデリングは[Issue #5：低層部の植栽・手すり](https://github.com/OurJapan/open-tokyo-world/issues/5)として独立させ、#4の取り込み後に着手する。
-- Issueの自動受付から無人でPRを作るサービスは未実装。現段階は人間と担当Agentが進めるローカルPoC。
+- 最初の現実差分修正は人間のレビュー・追加指示・再修正・mainへの取り込みまで実施済みです。[採用記録](mori-review-acceptance.md)。旧PR #2・#4の取り込み待ちではありません。
+- [PR #13](https://github.com/OurJapan/open-tokyo-world/pull/13)で参加・受付・許諾確認の案内を整備しました。
+- [PR #14](https://github.com/OurJapan/open-tokyo-world/pull/14)で独自4コードの対象限定MIT、[PR #15](https://github.com/OurJapan/open-tokyo-world/pull/15)で6部品スターターと追加2コード・対象資産の許諾を整備しました。[正式な適用範囲](../LICENSE.md)。全都市の配布権は解決していません。
+- [PR #16](https://github.com/OurJapan/open-tokyo-world/pull/16)で初参加者向けの実行・比較・投稿準備ガイドを整備しました。公開スターターを新しいフォルダに取得したローカル再現は成功しています。[確認範囲](../starter/plaza/first-contribution-check.json)。
+- **第三者による利用テストは保留**です。候補者が見つかった時点で運営者が再開します。別PCへの環境構築や非技術者の使い勝手は未検証であり、再現済みとは扱いません。
+- 都市の追加モデリングより共同開発の基盤を優先しています。Issue自動処理、隔離render worker、全都市の再生成は未実装です。
+
+## 直近の順序
+
+1. [運営の受付・AIへの引き継ぎ・判断記録](maintainer-workflow.md)を使い、一件の依頼の対象・入力・受入条件・担当を明確にする。
+2. 次の実装候補として、小さいレビュー成果物の選別・出典同梱を自動化する。まず公開スターターに範囲を限定し、巨大なblendや個人PCのログを自動公開しない。
+3. 候補者が見つかったら、上記と並行して第三者の利用テストを再開する。参加者を待つことは独立した基盤作業を止める条件ではない。
+4. 入力資産の取得・版固定・配布方法を対象ごとに整え、その後に次のQuality Areaへ進む。
 
 | 段階 | 作業 | 出口条件 |
 |---|---|---|
@@ -22,7 +30,7 @@
 
 M2はlegacy baseline依存でも合格とし、ソースからの完全再生成はM3の条件に分けます。これにより既存制作資産を保ちつつ、最短で共同開発の流れを検証できます。
 
-## M1の具体的な作業順
+## 初期計画：M1の具体的な作業順（達成状態は上記参照）
 
 1. legacy-baseline.jsonに既存commit、blend hash、ファイルサイズ、toolchainを登録。原本と完成動画は保持し、歴史を書き換えない。
 2. 埋め込み画像のsource対応・OSM派生・BGMを監査。未解決素材は公開buildから外す。既存にlicenseが無い状態で一括OSS宣言しない。
@@ -31,7 +39,7 @@ M2はlegacy baseline依存でも合格とし、ソースからの完全再生成
 5. scripts/render.pyを引数化し、検証はread-onlyの別processへ。少量fixtureと対象Areaで検証契約を確認。
 6. 管理対象pathsを `.gitignore` へ追加し、別ディレクトリへのclone・LFS/外部asset取得・hash照合を試験。
 
-## 最初のIssue案
+## 初期計画：最初のIssue案
 
 「東京タワー展望室から見た麻布台ヒルズ森JPタワー北寄りの外観について、投稿資料との違いを調査し、確認できた一箇所を修正する」。これは報告の具体化例で、現時点で特定の外観誤りを認定したものではありません。
 
@@ -50,7 +58,7 @@ M2はlegacy baseline依存でも合格とし、ソースからの完全再生成
 - 人間が追加指示でき、その場合は新headで再検証する。人間の承認後にmergeする。
 - 採用versionとrunを長期保存し、revertで元資産に戻せる。
 
-## 最初の実装backlog
+## 初期計画：実装backlog（現在の優先順は上記参照）
 
 | 優先 | 作業単位 | 担当 |
 |---|---|---|
@@ -67,4 +75,4 @@ M2はlegacy baseline依存でも合格とし、ソースからの完全再生成
 
 ## 2026-09-07：mainへの統合
 
-PR #2・#4をMaintainerがmergeし、main `d2235f2` で最初の現実差分修正を取り込みました。次はIssue #5、北東側テラス一か所の植栽・手すりです。新候補の人間レビュー、第三者環境の再現、素材権利確認は継続課題です。
+履歴：PR #2・#4をMaintainerがmergeし、main `d2235f2` で最初の現実差分修正を取り込みました。その後の参加基盤・ライセンス・スターターの進捗と残課題は本ページ冒頭に集約しています。
