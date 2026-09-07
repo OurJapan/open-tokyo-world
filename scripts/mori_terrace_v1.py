@@ -30,19 +30,20 @@ class Mesh:
         pts=[tuple(p[j]+r*(x[j]*math.cos(i*2*math.pi/sides)+y[j]*math.sin(i*2*math.pi/sides)) for j in range(3)) for p in (a,b) for i in range(sides)]
         self.poly(pts,[tuple(reversed(range(sides))),tuple(range(sides,2*sides))]+[(i,(i+1)%sides,(i+1)%sides+sides,i+sides) for i in range(sides)],mat,True)
     def crown(self,u,v,z,rx,ry,rz,mat):
-        # Closed faceted leaf clusters; distinct poles avoid degenerate triangles.
-        n=10;rows=5;pts=[point(u,v,z-rz)]
-        for j in range(1,rows):
-            lat=-math.pi/2+math.pi*j/rows
-            for i in range(n):
-                ang=i*2*math.pi/n;pts.append(point(u+rx*math.cos(lat)*math.cos(ang),v+ry*math.cos(lat)*math.sin(ang),z+rz*math.sin(lat)))
-        top=len(pts);pts.append(point(u,v,z+rz));faces=[]
-        for i in range(n):faces.append((0,1+(i+1)%n,1+i))
-        for j in range(rows-2):
-            a=1+j*n;b=a+n
-            for i in range(n):faces.append((a+i,a+(i+1)%n,b+(i+1)%n,b+i))
-        for i in range(n):faces.append((1+(rows-2)*n+i,1+(rows-2)*n+(i+1)%n,top))
-        self.poly(pts,faces,mat,True)
+        # Deterministic closed leaf diamonds within each crown volume.
+        # No downloaded textures, alpha planes or heavyweight tree assets.
+        rng=random.Random(round(u*10000)+round(v*1000)+round(z*100))
+        count=160 if max(rx,ry,rz)>.5 else 45
+        for _ in range(count):
+            az=rng.random()*2*math.pi;t=rng.uniform(-1,1);rad=rng.random()**(1/3)
+            horizontal=math.sqrt(1-t*t)
+            center=point(u+rx*rad*horizontal*math.cos(az),v+ry*rad*horizontal*math.sin(az),z+rz*rad*t)
+            angle=rng.random()*2*math.pi;tilt=rng.uniform(-.75,.75)
+            a=(math.cos(angle)*math.cos(tilt),math.sin(angle)*math.cos(tilt),math.sin(tilt));b=(-math.sin(angle),math.cos(angle),0)
+            n=(-math.sin(tilt)*math.cos(angle),-math.sin(tilt)*math.sin(angle),math.cos(tilt))
+            length=rng.uniform(.065,.14);width=length*.42;thickness=.006
+            offsets=[tuple(a[k]*length for k in range(3)),tuple(b[k]*width for k in range(3)),tuple(-a[k]*length for k in range(3)),tuple(-b[k]*width for k in range(3)),tuple(n[k]*thickness for k in range(3)),tuple(-n[k]*thickness for k in range(3))]
+            self.poly([tuple(center[k]+o[k] for k in range(3)) for o in offsets],[(0,1,4),(1,2,4),(2,3,4),(3,0,4),(1,0,5),(2,1,5),(3,2,5),(0,3,5)],rng.randrange(4),False)
 
 def geometry(part):
     m=Mesh();rng=random.Random(507)
