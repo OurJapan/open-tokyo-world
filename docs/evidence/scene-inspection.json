@@ -1,0 +1,311 @@
+{
+  "blender": "4.5.1 LTS",
+  "scene": "Tokyo Tower • Summer Morning • 15s",
+  "objects": 3299,
+  "mesh_objects": 3249,
+  "vertices": 51070948,
+  "polygons": 39294268,
+  "images": 384,
+  "unpacked_file_images": [],
+  "libraries": [],
+  "collections": [
+    "2019 reference window revision",
+    "Collection",
+    "Environment • park undergrowth",
+    "Flush glass floor surrounds",
+    "Mori continuous pearl glass",
+    "Mori JP curtain wall",
+    "Mori JP interior",
+    "Mori JP podium",
+    "Observation interior detail",
+    "Photo based main deck",
+    "PLATEAU 2025 • real building geometry and imagery",
+    "PLATEAU 2025 • real building geometry and imagery.001",
+    "Skywalk visible detail",
+    "Street close-up • added physical details",
+    "Tokyo Tower decks and interior",
+    "Tokyo Tower structure",
+    "Tokyo traffic and street trees"
+  ],
+  "cameras": [
+    {
+      "name": "01 • Tokyo Tower title hero",
+      "lens": 48.0,
+      "clip_start": 1.0,
+      "clip_end": 12000.0
+    },
+    {
+      "name": "02 • Approach and city reveal",
+      "lens": 55.0,
+      "clip_start": 5.0,
+      "clip_end": 10000.0
+    },
+    {
+      "name": "03 • City panorama",
+      "lens": 40.0,
+      "clip_start": 20.0,
+      "clip_end": 10000.0
+    },
+    {
+      "name": "Review • street height 2m",
+      "lens": 38.0,
+      "clip_start": 0.10000000149011612,
+      "clip_end": 15000.0
+    },
+    {
+      "name": "Review • pavement close-up",
+      "lens": 45.0,
+      "clip_start": 0.10000000149011612,
+      "clip_end": 15000.0
+    },
+    {
+      "name": "Review • low aerial",
+      "lens": 42.0,
+      "clip_start": 0.10000000149011612,
+      "clip_end": 15000.0
+    },
+    {
+      "name": "Review 01 • Both landmarks",
+      "lens": 50.0,
+      "clip_start": 2.0,
+      "clip_end": 8000.0
+    },
+    {
+      "name": "Review 02 • Tokyo Tower",
+      "lens": 44.0,
+      "clip_start": 2.0,
+      "clip_end": 8000.0
+    },
+    {
+      "name": "Review 03 • Main deck glass",
+      "lens": 48.0,
+      "clip_start": 2.0,
+      "clip_end": 8000.0
+    },
+    {
+      "name": "Review 04 • Top deck",
+      "lens": 60.0,
+      "clip_start": 2.0,
+      "clip_end": 8000.0
+    },
+    {
+      "name": "Review 05 • Mori JP Tower",
+      "lens": 48.0,
+      "clip_start": 2.0,
+      "clip_end": 8000.0
+    },
+    {
+      "name": "Review 06 • Mori glass detail",
+      "lens": 65.0,
+      "clip_start": 2.0,
+      "clip_end": 8000.0
+    },
+    {
+      "name": "Review 07 • Mori interior",
+      "lens": 33.0,
+      "clip_start": 2.0,
+      "clip_end": 8000.0
+    },
+    {
+      "name": "Review 08 • Tower interior",
+      "lens": 25.0,
+      "clip_start": 2.0,
+      "clip_end": 8000.0
+    },
+    {
+      "name": "Review 09 • Podium entrance",
+      "lens": 40.0,
+      "clip_start": 2.0,
+      "clip_end": 8000.0
+    },
+    {
+      "name": "01 Tower orbit",
+      "lens": 45.0,
+      "clip_start": 2.0,
+      "clip_end": 9000.0
+    },
+    {
+      "name": "02 Deck exterior",
+      "lens": 48.0,
+      "clip_start": 2.0,
+      "clip_end": 9000.0
+    },
+    {
+      "name": "03 Interior view",
+      "lens": 24.0,
+      "clip_start": 0.07999999821186066,
+      "clip_end": 9000.0
+    },
+    {
+      "name": "04 Two landmarks",
+      "lens": 45.0,
+      "clip_start": 2.0,
+      "clip_end": 9000.0
+    },
+    {
+      "name": "Walk from far side to Azabudai view",
+      "lens": 24.0,
+      "clip_start": 0.05000000074505806,
+      "clip_end": 9000.0
+    },
+    {
+      "name": "Skywalk lean and fly through",
+      "lens": 23.0,
+      "clip_start": 0.017999999225139618,
+      "clip_end": 9000.0
+    },
+    {
+      "name": "01 Slow glass floor",
+      "lens": 23.0,
+      "clip_start": 0.017999999225139618,
+      "clip_end": 9000.0
+    },
+    {
+      "name": "02 Interior to exterior",
+      "lens": 23.0,
+      "clip_start": 0.017999999225139618,
+      "clip_end": 9000.0
+    },
+    {
+      "name": "02 Straight through glass to Azabudai",
+      "lens": 12.0,
+      "clip_start": 0.017999999225139618,
+      "clip_end": 9000.0
+    },
+    {
+      "name": "Full 01 Tokyo Tower orbit",
+      "lens": 45.0,
+      "clip_start": 0.10000000149011612,
+      "clip_end": 9000.0
+    },
+    {
+      "name": "Full 02 Observation deck exterior",
+      "lens": 48.0,
+      "clip_start": 0.10000000149011612,
+      "clip_end": 9000.0
+    },
+    {
+      "name": "tower • cinematic camera",
+      "lens": 50.0,
+      "clip_start": 20.0,
+      "clip_end": 10000.0
+    },
+    {
+      "name": "CUT_01",
+      "lens": 45.0,
+      "clip_start": 20.0,
+      "clip_end": 10000.0
+    },
+    {
+      "name": "CUT_02",
+      "lens": 52.0,
+      "clip_start": 20.0,
+      "clip_end": 10000.0
+    },
+    {
+      "name": "CUT_03",
+      "lens": 95.0,
+      "clip_start": 20.0,
+      "clip_end": 10000.0
+    },
+    {
+      "name": "CUT_04",
+      "lens": 55.0,
+      "clip_start": 20.0,
+      "clip_end": 10000.0
+    },
+    {
+      "name": "Approach • pass tower • reveal city",
+      "lens": 55.0,
+      "clip_start": 5.0,
+      "clip_end": 10000.0
+    },
+    {
+      "name": "city_intro",
+      "lens": 48.0,
+      "clip_start": 20.0,
+      "clip_end": 10000.0
+    },
+    {
+      "name": "city_reveal",
+      "lens": 40.0,
+      "clip_start": 20.0,
+      "clip_end": 10000.0
+    },
+    {
+      "name": "Detail comparison camera",
+      "lens": 55.0,
+      "clip_start": 10.0,
+      "clip_end": 10000.0
+    },
+    {
+      "name": "Detail comparison camera.001",
+      "lens": 55.0,
+      "clip_start": 10.0,
+      "clip_end": 10000.0
+    },
+    {
+      "name": "Lower deck interior",
+      "lens": 22.0,
+      "clip_start": 0.03999999910593033,
+      "clip_end": 9000.0
+    },
+    {
+      "name": "Skywalk detail",
+      "lens": 38.0,
+      "clip_start": 0.03999999910593033,
+      "clip_end": 9000.0
+    }
+  ],
+  "frame_range": [
+    1,
+    1248
+  ],
+  "fps": 24,
+  "resolution": [
+    1920,
+    1080,
+    100
+  ],
+  "engine": "CYCLES",
+  "samples": 48,
+  "scene_properties": {
+    "origin_latitude": "35.65858",
+    "origin_longitude": "139.74543",
+    "data_source": "OpenStreetMap contributors, ODbL; unknown heights and distant urban context generalized",
+    "cycles": "<bpy id prop: owner=\"SCTokyo Tower • Summer Morning • 15s\", name=\"cycles\", address=0x000001696D673F60>",
+    "detail_upgrade": "PLATEAU Minato 2025 building geometry and source imagery; building bases individually flattened to existing road plane",
+    "upgraded_buildings": "20560",
+    "supplementary_street_lights": "308",
+    "sidewalk_height_added_m": "0.16",
+    "wide_detail_bounds": "<bpy id property array [4]>",
+    "wide_detail_building_count": "20560",
+    "camera_frames_coverage_checked": "720",
+    "title_rule": "TOKYO TOWER / 東京タワー appears only on frames 1–120, with the complete tower centered. No landmark name on city-only shots.",
+    "environment_update": "Procedural asphalt/paint/pavement/soil/grass/gravel only; mapped OSM land-use zones; geometric curb/gutter and irregular tree canopies. Aerial photos are reference only, excluded from rendering.",
+    "tree_canopy_update": "3313 trees rebuilt with 10 irregular foliage clusters each; original trunk locations retained.",
+    "aerial_display_policy": "NEVER use aerial or satellite photos, or derived photographic ground color maps, in final visible materials. Reference only. Existing source building facade imagery is retained.",
+    "street_detail_status": "Added physical roadside details and inferred window framing within 500–650 m of Tokyo Tower. Review cameras are separate from the 15-second title sequence.",
+    "tokyo_traffic": "OSM one-way direction, left-hand traffic, mixed right-hand-drive vehicles; static review layout.",
+    "street_tree_species": "Illustrative ginkgo and zelkova, green season; no opaque sphere roadside crowns.",
+    "visual_direction": "Bright post-rainy-season late morning, approximately 10–11am impression. Green foliage, dry roads, light humid distance haze. Artistic lighting, not an astronomical date reconstruction.",
+    "title_frames": "1–120 only; full tower centered.",
+    "landmark_rebuild": "Tokyo Tower + Mori JP Tower shell and perimeter interiors; reference-based visualization with inferred room layouts.",
+    "preview": "30s composition study, 12fps; simplified glazing, foliage, reflections; not final-quality rendering.",
+    "preview_glazing": "Clear transparent stand-in; physical reflection omitted for noise-free camera blocking.",
+    "camera_revision": "Start on southeast far side, move around the south/west corridor toward the northwest glazing. No sideways window tracking.",
+    "interior_reference": "https://mdr.tokyotower.co.jp/ — carpet and reflective dark inner walls; detailed fixtures and layout inferred.",
+    "photo_reference_status": "main.jpg, skywalk.jpg, wall.jpg visually inspected. No reference images used as texture.",
+    "window_revision": "Nominal ~1m glazing, separate transoms, double pane, polygonal corners, primary/secondary mullions; slope unverified 0deg placeholder.",
+    "window_slope_trial": "Upper edge outward 5deg, each floor pivots at its own sill. User-directed trial.",
+    "camera_story": "0–4s glass floor lean, 4–14s interior passage, 14–20s fly through west glass into Azabudai view. Main Deck 1F.",
+    "camera_edit": "28s preview: glass-floor look at existing red tower legs, stationary room sweep, 12mm wide accelerated flight to Mori, then 8s gentle turn back toward Tokyo Tower with deceleration.",
+    "skywalk_detail_note": "Added near-window support beams and fittings removed at user request. Existing glass floor surround retained. Ground and roof enhancements retained; inferred equipment layout, no aerial imagery.",
+    "flush_floor_note": "Glass, metal surround, continuous inner and outer gaskets, countersunk fixings and adjacent carpet share Z=145.1m. Carpet trimmed to avoid coplanar overlap.",
+    "facade_reference": "Pelli Clarke and Partners: pearl-gray glass and four-petal crown; Nihon Sekkei reference photos. Render glass coating parameters are visual approximations, not measured optical values.",
+    "full_preview": "52s. Moving cuts: linear motion through exterior and floor cut boundaries. Continuous translation during look-back, then 10s widening city orbit with no stop at the transition.",
+    "delivery": "Approved 52s camera path, 1920x1080 24fps, Cycles adaptive 48 samples maximum and denoising, shutter .3 frame. Supplied BGM in edit file.",
+    "camera_motion_correction": "18-34 seconds restored from approved Glass_Facade_Tower_Return; separate actions for transform and lens; every frame checked against source; all other camera poses retained."
+  },
+  "nonfinite_object_transforms": []
+}
