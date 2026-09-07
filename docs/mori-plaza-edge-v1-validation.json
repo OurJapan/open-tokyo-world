@@ -1,0 +1,121 @@
+{
+  "ok": true,
+  "contract_tests": 35,
+  "blender_smoke": [
+    {
+      "case": "valid",
+      "passed": true
+    },
+    {
+      "case": "missing-image",
+      "passed": true
+    }
+  ],
+  "geometry_audit": {
+    "ok": true,
+    "road_checks": {
+      "asphalt 15s road detail": {
+        "original_vertices_exact": true,
+        "unclipped_faces_preserved": 140557,
+        "removed_inside_area_m2": 201.6895175019373,
+        "remaining_inside_area_m2": 0.00017447968370417244,
+        "outside_area_error_m2": 7.840339094400406e-05
+      },
+      "gutter 15s road detail": {
+        "original_vertices_exact": true,
+        "unclipped_faces_preserved": 33693,
+        "removed_inside_area_m2": 15.375007791065165,
+        "remaining_inside_area_m2": 1.3119899769012971e-05,
+        "outside_area_error_m2": 9.726080315886065e-05
+      },
+      "paint_0 unified road": {
+        "original_vertices_exact": true,
+        "unclipped_faces_preserved": 29925,
+        "removed_inside_area_m2": 0,
+        "remaining_inside_area_m2": 0,
+        "outside_area_error_m2": 0.0
+      },
+      "pavement_0 unified road": {
+        "original_vertices_exact": true,
+        "unclipped_faces_preserved": 271766,
+        "removed_inside_area_m2": 37.8078323490504,
+        "remaining_inside_area_m2": 1.1440098505607514e-05,
+        "outside_area_error_m2": 3.614462912082672e-06
+      }
+    },
+    "new_objects": [],
+    "source_attribution": {
+      "source_sha256": "f04e8e70ab24a61ca749375d1ef37401feb0fdc840cc506b670ef71454a6a8ab",
+      "way_id": "1443867470",
+      "tags": {
+        "area": "yes",
+        "highway": "pedestrian",
+        "name": "中央広場",
+        "name:en": "Central Green",
+        "surface": "paving_stones"
+      },
+      "removed_fragment_centres": 209,
+      "max_distance_to_area_outline_m": 5.550556119148541,
+      "min_distance_to_other_surface_highway_m": 16.674481449282563,
+      "live_osm_verified": false,
+      "note": "Local saved source and fragment centres support attribution; not a direct original face ID mapping."
+    },
+    "saved_ground_rays": [
+      {
+        "u": -8,
+        "v": 30,
+        "z": 0.1100006103515625,
+        "object": "park mapped land use"
+      },
+      {
+        "u": -10,
+        "v": 32,
+        "z": 0.1100001335144043,
+        "object": "park mapped land use"
+      },
+      {
+        "u": -12,
+        "v": 34,
+        "z": 0.0,
+        "object": "ground"
+      },
+      {
+        "u": 8,
+        "v": 28,
+        "z": 4.76837158203125e-07,
+        "object": "ground"
+      },
+      {
+        "u": 10,
+        "v": 28,
+        "z": 4.76837158203125e-07,
+        "object": "ground"
+      },
+      {
+        "u": 14,
+        "v": 30,
+        "z": 0.0,
+        "object": "ground"
+      }
+    ],
+    "limitations": [
+      "Ground below removed sheets is inherited, not surveyed landscape.",
+      "Source road sheets are not asserted watertight solids.",
+      "Only two side polygons are repaired; out-of-scope road artifacts remain.",
+      "Exact real-world paving, steps and terrain remain unresolved."
+    ]
+  },
+  "changed_objects": [
+    "pavement_0 unified road",
+    "asphalt 15s road detail",
+    "gutter 15s road detail"
+  ],
+  "new_objects": 0,
+  "assets_unchanged": true,
+  "limitations": [
+    "Human visual approval is required.",
+    "Peak RAM/VRAM and physical accuracy are not measured.",
+    "Timing is one run, not a warmed-up median.",
+    "Dependency audit and fingerprints cover documented initial checks, not all Blender features."
+  ]
+}
