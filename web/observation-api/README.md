@@ -1,5 +1,13 @@
 # Observation intake
 
+## Deployment status — 2026-09-07
+
+Live API: `https://otw-observation-api.open-tokyo-world-observation-api.workers.dev/v1/observations`. Allowed Origin: `https://ourjapan.github.io`. Intake enabled with a deploy-time `--var INTAKE_ENABLED:true` override; checked-in configuration deliberately remains OFF, so a plain deploy pauses intake. D1 limits are enabled at 30/day, 300/month, 5MB/photo and 2GB total. R2 public access is disabled and the `observations/` prefix expires after 30 days. GitHub repository variable `OBSERVATION_API_URL` is set; frontend integration/publication is coordinated separately.
+
+Remote smoke passed: invalid credential 401, generated non-personal JPEG upload 201, identical retry 200, temporary one-post limit 429. The limit was restored to 30 afterward. One test post remains counted until normal retention expiry. No iPhone verification yet.
+
+Remote D1 required a SQL compatibility fix: use `SELECT RAISE(...) WHERE ...` in the quota trigger instead of `CASE ... END`; the remote migration splitter rejected the original form even though local workerd accepted it. The corrected migration was applied successfully to the new remote database.
+
 Existing-repository, independent Cloudflare Worker + D1 + private R2 package. No imports from Blender or the viewer. The HTTP boundary accepts the existing `otw-observation-draft/0.1` metadata, preserving world/asset versions, coordinate uncertainty and null feature IDs. Accepted observations are evidence awaiting human review; no AI job, Issue or PR is created automatically.
 
 ## Initial limits

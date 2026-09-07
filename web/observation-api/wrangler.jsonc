@@ -1,6 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "otw-observation-api",
+  "account_id": "7934f6087b472b4d61296b2746038365",
   "main": "src/worker.mjs",
   "compatibility_date": "2026-09-01",
   "workers_dev": true,
@@ -8,7 +9,7 @@
     "INTAKE_ENABLED": "false",
     "ALLOWED_ORIGIN": "https://ourjapan.github.io"
   },
-  "d1_databases": [{"binding": "DB", "database_name": "otw-observations", "database_id": "REPLACE_BEFORE_DEPLOY", "migrations_dir": "migrations"}],
+  "d1_databases": [{"binding": "DB", "database_name": "otw-observations", "database_id": "8633bf45-76ad-4b20-8148-d4ec2e97e39d", "migrations_dir": "migrations"}],
   "r2_buckets": [{"binding": "PHOTOS", "bucket_name": "otw-observation-photos"}],
   "triggers": {"crons": ["15 * * * *"]},
   "observability": {"enabled": false}
