@@ -1,0 +1,201 @@
+{
+  "ok": true,
+  "input_sha256": "a5ec1c138fda66cc30f0dbfbe3ef8945f4c62baa80b3c4e7184ed1248c722885",
+  "output_sha256": "c43523e8a54767117f4fbc85ffe2a50fa5a15e3709847e9a33ae195f95bb4b0a",
+  "changed_existing_objects": [
+    "pavement_0 unified road",
+    "asphalt 15s road detail",
+    "gutter 15s road detail"
+  ],
+  "added_objects": [
+    "OTW Mori entry plaza / paving",
+    "OTW Mori entry plaza / planters",
+    "OTW Mori entry plaza / planting"
+  ],
+  "all_other_existing_objects_unchanged": true,
+  "assets_unchanged": true,
+  "counts_before": {
+    "objects": 3299,
+    "vertices": 51137520,
+    "polygons": 39406400
+  },
+  "counts_after": {
+    "objects": 3302,
+    "vertices": 51210618,
+    "polygons": 39501648
+  },
+  "delta": {
+    "objects": 3,
+    "vertices": 73098,
+    "polygons": 95248
+  },
+  "geometry": {
+    "ok": true,
+    "road_checks": {
+      "asphalt 15s road detail": {
+        "original_vertices_exact": true,
+        "unclipped_faces_preserved": 140591,
+        "removed_inside_area_m2": 160.83240120095982,
+        "remaining_inside_area_m2": 0.00010956918303484281,
+        "outside_area_error_m2": 0.00011196080595254898
+      },
+      "gutter 15s road detail": {
+        "original_vertices_exact": true,
+        "unclipped_faces_preserved": 33748,
+        "removed_inside_area_m2": 9.802086210323976,
+        "remaining_inside_area_m2": 2.4549275810514174e-06,
+        "outside_area_error_m2": 3.101144829997793e-05
+      },
+      "paint_0 unified road": {
+        "original_vertices_exact": true,
+        "unclipped_faces_preserved": 29925,
+        "removed_inside_area_m2": 0,
+        "remaining_inside_area_m2": 0,
+        "outside_area_error_m2": 0.0
+      },
+      "pavement_0 unified road": {
+        "original_vertices_exact": true,
+        "unclipped_faces_preserved": 271855,
+        "removed_inside_area_m2": 27.46786631407757,
+        "remaining_inside_area_m2": 7.47008768574431e-06,
+        "outside_area_error_m2": 3.9815204218029976e-05
+      }
+    },
+    "new_objects": {
+      "OTW Mori entry plaza / paving": {
+        "vertices": 2408,
+        "polygons": 1806,
+        "triangles": 3612,
+        "min_triangle_area": 0.0014759388286620378,
+        "closed_oriented_edges": true,
+        "in_footprint": true
+      },
+      "OTW Mori entry plaza / planters": {
+        "vertices": 512,
+        "polygons": 384,
+        "triangles": 768,
+        "min_triangle_area": 0.0259923804551363,
+        "closed_oriented_edges": true,
+        "in_footprint": true
+      },
+      "OTW Mori entry plaza / planting": {
+        "vertices": 70064,
+        "polygons": 93104,
+        "triangles": 93584,
+        "min_triangle_area": 0.00020903762197121978,
+        "closed_oriented_edges": true,
+        "in_footprint": true
+      }
+    },
+    "entrance_join_height_m": 0.383,
+    "old_apron_height_m": 0.38,
+    "central_14m_corridor_unplanted": true,
+    "limitations": [
+      "Outside this small footprint, old pedestrian-outline road artifacts remain.",
+      "Source road sheets are clipped surfaces, not asserted watertight solids.",
+      "Inferred landscape layout, not surveyed or regulatory accessibility approval.",
+      "Outer edge continuity requires later adjacent-area work."
+    ]
+  },
+  "portable_tests": 28,
+  "blender_smoke_cases": 2,
+  "jobs": {
+    "prepare": {
+      "seconds": 18.281,
+      "report_sha256": "9e0032a0f476cad616b1287aac26102333779acd3e498070ed4918ffc1a963b5"
+    },
+    "validate-before": {
+      "seconds": 34.922,
+      "report_sha256": "e0e6940cf3f929de2b5548dd38aa4c5cb5d2065f015bdfa62d3393494d93c383"
+    },
+    "validate-after": {
+      "seconds": 34.594,
+      "report_sha256": "c58461ee8203453d4d99cd7361d62217716e0a2513e5be44ab76bbd0647f2288"
+    },
+    "render-before": {
+      "seconds": 46.625,
+      "report_sha256": "b89425d7f4bd51c99db9fa6940191c6feaa57df81fdef0c81a1cf7cfa0f5aefd"
+    },
+    "render-after": {
+      "seconds": 83.344,
+      "report_sha256": "4d87e33c2855f058d8ffd87e4f6e2e0d87b8a6de8c00534322df18dcf14e031d"
+    }
+  },
+  "human_review": "pending",
+  "timing_recheck": {
+    "sequential_without_concurrent_blender_audit": true,
+    "results": {
+      "before": {
+        "job_seconds": 53.297,
+        "views": [
+          {
+            "id": "plaza-overview",
+            "seconds": 6.094,
+            "sha256": "4f72195f1d2cea16e331f19615b387b9424d014ac789434b43204558189ac6ec"
+          },
+          {
+            "id": "plaza-approach",
+            "seconds": 5.203,
+            "sha256": "81ca8ba2b81a2842c48d777b2dc0066a56e84028d1ac24c8e5f4501db88df984"
+          },
+          {
+            "id": "terrace-overview",
+            "seconds": 7.75,
+            "sha256": "e2feaba18f3aff0371f0879519b92a4965bf4d29f175f05e3f8d59249777e7e6"
+          },
+          {
+            "id": "entrance-front",
+            "seconds": 8.234,
+            "sha256": "c02b360de60629b5009cfd7a1ad9778d05f9aa6307f2a63f4a174aa13735ed83"
+          },
+          {
+            "id": "mori-full",
+            "seconds": 5.344,
+            "sha256": "bf6b158736d1be11cd342db88c061ec921ba8f5d660c844aaee443194b080c63"
+          },
+          {
+            "id": "podium-northwest",
+            "seconds": 6.359,
+            "sha256": "a4f66577217810d9ec54920496a076fbd26fa6965520da1d045d4801e238e630"
+          }
+        ]
+      },
+      "after": {
+        "job_seconds": 38.25,
+        "views": [
+          {
+            "id": "plaza-overview",
+            "seconds": 7.641,
+            "sha256": "a472425abda6f292ebc7a41539322deccad25eb66ffbd69f85409415f79107d4"
+          },
+          {
+            "id": "plaza-approach",
+            "seconds": 3.812,
+            "sha256": "d0c8c05daceb259ec05fa511ac30f9075e5f39c8810072c5b25efe9bbfc1885c"
+          },
+          {
+            "id": "terrace-overview",
+            "seconds": 3.656,
+            "sha256": "f1ddb18193f5ac6cbdff83539836f2fc6aad6660b894eeb25941e0cae48dae3b"
+          },
+          {
+            "id": "entrance-front",
+            "seconds": 3.515,
+            "sha256": "a2bf7026dab6d7d36bd0d236c6f495856fb06cc889968e7eb1863bb60ea7027d"
+          },
+          {
+            "id": "mori-full",
+            "seconds": 2.937,
+            "sha256": "e546415776ec07b299a561f88ccb103d01becc37547fd49d4429ab5ca9ef0647"
+          },
+          {
+            "id": "podium-northwest",
+            "seconds": 3.234,
+            "sha256": "b13ef9bfba2671ef33f1b95cab0b426c189e6574fbb94f95de93fa35d638edae"
+          }
+        ]
+      }
+    },
+    "note": "First run after last view overlapped a separate Blender audit and took 44.797s. Rerendered both scenes sequentially in fresh processes; anomaly did not recur. Single repeats, not warmed-up medians."
+  }
+}
