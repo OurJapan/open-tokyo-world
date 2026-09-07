@@ -85,6 +85,12 @@ def validate_patch(patch):
             require(set(op) == {'op','feature_id','object','translation_m'}, 'Unexpected patch keys')
             v = op['translation_m']
             require(len(v) == 3 and all(isinstance(x,(int,float)) and math.isfinite(x) and abs(x) <= 100 for x in v), 'Invalid translation')
+        elif op['op'] == 'mori_crown_material_v1':
+            require(set(op) == {'op','feature_id','object','expected_mesh_sha256','expected_material_sha256'}, 'Unexpected material patch keys')
+            require(op['feature_id']=='otw:jp:tokyo:minato:azabudai-mori-jp' and op['object']=='Mori continuous pearl glass / pearl grey coated glass', 'Wrong crown material target')
+            for key in ('expected_mesh_sha256','expected_material_sha256'):
+                require(re.fullmatch('[0-9a-f]{64}',op[key]) is not None, 'Material patch requires hashes')
+            require(bool(patch['source_refs']), 'Material hypotheses require evidence')
         elif op['op'] in ('mori_shape_v1','mori_crown_v2'):
             require(set(op) == {'op','feature_id','object','expected_mesh_sha256'}, 'Unexpected shape patch keys')
             require(op['feature_id']=='otw:jp:tokyo:minato:azabudai-mori-jp', 'Wrong shape feature')
@@ -127,7 +133,7 @@ def make_html(output, cameras, summary):
     for v in cameras['views']:
         name = v['id']
         rows.append(f'<section><h2>{html.escape(name)}</h2><div><figure><img src="before-{name}.png"><figcaption>Before</figcaption></figure><figure><img src="after-{name}.png"><figcaption>After</figcaption></figure></div></section>')
-    page = '<!doctype html><meta charset="utf-8"><title>OurJapan review</title><style>body{font:16px system-ui;max-width:1400px;margin:32px auto;padding:16px;background:#16202b;color:#eee}section div{display:flex}figure{margin:8px;width:50%}img{width:100%}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style><h1>OurJapan — review evidence</h1><p>Technical comparison. Human review of real-world accuracy is still required.</p>'
+    page = '<!doctype html><meta charset="utf-8"><title>OurJapan review</title><style>body{font:16px system-ui;max-width:1400px;margin:32px auto;padding:16px;background:#16202b;color:#eee}section div{display:flex}figure{margin:8px;width:50%}img{width:100%}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style><h1>OurJapan â€” review evidence</h1><p>Technical comparison. Human review of real-world accuracy is still required.</p>'
     page += ''.join(rows) + '<h2>Run</h2><pre>' + html.escape(json.dumps(summary,ensure_ascii=False,indent=2)) + '</pre>'
     (output/'review.html').write_text(page,encoding='utf-8')
 
@@ -165,7 +171,7 @@ def main():
     try:
         revision = subprocess.run(['git','-c',f'safe.directory={ROOT.as_posix()}','-C',str(ROOT),'rev-parse','HEAD'],capture_output=True,text=True,check=True).stdout.strip()
         summary['code_base_commit'] = revision
-        summary['code_files'] = {f.relative_to(ROOT).as_posix():digest(f) for f in (Path(__file__),WORKER,ROOT/'scripts/mori_shape.py',ROOT/'scripts/mori_crown_v2.py')}
+        summary['code_files'] = {f.relative_to(ROOT).as_posix():digest(f) for f in (Path(__file__),WORKER,ROOT/'scripts/mori_shape.py',ROOT/'scripts/mori_crown_v2.py',ROOT/'scripts/mori_crown_material.py')}
         job = {'output':str(output),'cameras':cameras,'features':features,'patch':patch,'settings':{k:summary[k] for k in ('blender_version','device','width','height','samples','seed')}}
         job_path = output/'job.json'; write_json(job_path,job)
         for phase, blend in [('prepare',source),('validate-before',output/'before.blend'),('validate-after',output/'after.blend')]:

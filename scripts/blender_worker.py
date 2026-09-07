@@ -85,6 +85,14 @@ def prepare(job):
             if obj.animation_data or obj.constraints or obj.parent: raise ValueError('Translation adapter requires unanimated, unparented object without constraints')
             if op['op']=='translate_object':
                 for i,value in enumerate(op['translation_m']): obj.location[i]+=value
+            elif op['op']=='mori_crown_material_v1':
+                if obj.type!='MESH' or mesh_fingerprint(obj.data)!=op['expected_mesh_sha256']:
+                    raise ValueError('Crown material baseline mesh differs')
+                if len(obj.data.materials)!=1 or material_fingerprint(obj.data.materials[0])!=op['expected_material_sha256']:
+                    raise ValueError('Crown material baseline shader differs')
+                sys.path.insert(0,str(Path(__file__).resolve().parent))
+                import mori_crown_material
+                mori_crown_material.apply(obj)
             elif op['op'] in ('mori_shape_v1','mori_crown_v2'):
                 if obj.type!='MESH' or mesh_fingerprint(obj.data)!=op['expected_mesh_sha256']:
                     raise ValueError('Shape patch baseline mesh differs')
