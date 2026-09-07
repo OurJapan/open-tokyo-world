@@ -86,3 +86,7 @@ OptiXが使えない環境では明示的に`--device CPU`を選びます。自�
 ## 低層部の元形状復元
 
 `mori_podium_v2`は、固定hashのローカルgeometry archiveを`--geometry-source`で受け取り、削除されていたタワー側低層部だけを復元する。archiveは本repositoryに配布しない。[最新の低層部候補・再現手順](mori-podium-v2.md)を参照。
+
+## 入口の写真ベース詳細
+
+`mori_entrance_v1`は、既存の3つの非表示podium部品を限定targetとして、ガラス庇の三角格子・丸柱・入口フレームを生成する。累積patchでは低層部復元も行うため、引き続き`--geometry-source`が必要。[入口の根拠・推定寸法・再現手順](mori-entrance-v1.md)を参照。
