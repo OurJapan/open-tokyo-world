@@ -23,14 +23,9 @@ CREATE INDEX observations_month ON observations(month);
 CREATE INDEX observations_expiry ON observations(status, expires_at);
 -- Executed atomically with the INSERT. Failed uploads keep their post allowance.
 CREATE TRIGGER reserve_quota BEFORE INSERT ON observations BEGIN
-  SELECT CASE WHEN NOT EXISTS(SELECT 1 FROM limits WHERE id=1 AND enabled=1)
-    THEN RAISE(ABORT, 'intake_paused') END;
-  SELECT CASE WHEN NEW.bytes > (SELECT photo_bytes FROM limits WHERE id=1)
-    THEN RAISE(ABORT, 'photo_limit') END;
-  SELECT CASE WHEN (SELECT COUNT(*) FROM observations WHERE day=NEW.day) >= (SELECT daily_posts FROM limits WHERE id=1)
-    THEN RAISE(ABORT, 'daily_limit') END;
-  SELECT CASE WHEN (SELECT COUNT(*) FROM observations WHERE month=NEW.month) >= (SELECT monthly_posts FROM limits WHERE id=1)
-    THEN RAISE(ABORT, 'monthly_limit') END;
-  SELECT CASE WHEN NEW.bytes + COALESCE((SELECT SUM(bytes) FROM observations WHERE status!='deleted'),0) > (SELECT storage_bytes FROM limits WHERE id=1)
-    THEN RAISE(ABORT, 'storage_limit') END;
+  SELECT RAISE(ABORT, 'intake_paused') WHERE NOT EXISTS(SELECT 1 FROM limits WHERE id=1 AND enabled=1);
+  SELECT RAISE(ABORT, 'photo_limit') WHERE NEW.bytes > (SELECT photo_bytes FROM limits WHERE id=1);
+  SELECT RAISE(ABORT, 'daily_limit') WHERE (SELECT COUNT(*) FROM observations WHERE day=NEW.day) >= (SELECT daily_posts FROM limits WHERE id=1);
+  SELECT RAISE(ABORT, 'monthly_limit') WHERE (SELECT COUNT(*) FROM observations WHERE month=NEW.month) >= (SELECT monthly_posts FROM limits WHERE id=1);
+  SELECT RAISE(ABORT, 'storage_limit') WHERE NEW.bytes + COALESCE((SELECT SUM(bytes) FROM observations WHERE status!='deleted'),0) > (SELECT storage_bytes FROM limits WHERE id=1);
 END;
