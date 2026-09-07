@@ -99,7 +99,7 @@ def validate_patch(patch):
             require(set(op)=={'op','feature_id','object','expected_mesh_sha256'}, 'Unexpected entrance patch keys')
             require(op['feature_id']=='otw:jp:tokyo:minato:azabudai-mori-jp' and op['object'] in TARGETS, 'Wrong entrance target')
             require(re.fullmatch('[0-9a-f]{64}',op['expected_mesh_sha256']) is not None and bool(patch['source_refs']), 'Entrance patch requires hash and sources')
-        elif op['op']=='mori_podium_v2':
+        elif op['op'] in ('mori_podium_v2','mori_podium_v3'):
             require(set(op)=={'op','feature_id','object','expected_mesh_sha256'}, 'Unexpected podium patch keys')
             require(op['feature_id']=='otw:jp:tokyo:minato:azabudai-mori-jp' and op['object']=='Mori JP podium / stone', 'Wrong podium target')
             require(re.fullmatch('[0-9a-f]{64}',op['expected_mesh_sha256']) is not None and bool(patch['source_refs']), 'Podium patch requires hash and sources')
@@ -173,7 +173,7 @@ def main():
     validate_cameras(cameras); validate_features(features)
     patch = read_json(a.patch) if a.patch else None
     if patch: validate_patch(patch)
-    needs_geometry=bool(patch and any(op['op']=='mori_podium_v2' for op in patch['operations']))
+    needs_geometry=bool(patch and any(op['op'] in ('mori_podium_v2','mori_podium_v3') for op in patch['operations']))
     require(needs_geometry==bool(a.geometry_source), 'Podium operation requires exactly one geometry source')
     geometry_hash=None
     if needs_geometry:
@@ -192,7 +192,7 @@ def main():
     try:
         revision = subprocess.run(['git','-c',f'safe.directory={ROOT.as_posix()}','-C',str(ROOT),'rev-parse','HEAD'],capture_output=True,text=True,check=True).stdout.strip()
         summary['code_base_commit'] = revision
-        summary['code_files'] = {f.relative_to(ROOT).as_posix():digest(f) for f in (Path(__file__),WORKER,ROOT/'scripts/mori_shape.py',ROOT/'scripts/mori_crown_v2.py',ROOT/'scripts/mori_crown_material.py',ROOT/'scripts/mori_facade_v2.py',ROOT/'scripts/mori_podium_v2.py',ROOT/'scripts/mori_entrance_v1.py')}
+        summary['code_files'] = {f.relative_to(ROOT).as_posix():digest(f) for f in (Path(__file__),WORKER,ROOT/'scripts/mori_shape.py',ROOT/'scripts/mori_crown_v2.py',ROOT/'scripts/mori_crown_material.py',ROOT/'scripts/mori_facade_v2.py',ROOT/'scripts/mori_podium_v2.py',ROOT/'scripts/mori_entrance_v1.py',ROOT/'scripts/mori_podium_v3.py')}
         job = {'output':str(output),'cameras':cameras,'features':features,'patch':patch,'settings':{k:summary[k] for k in ('blender_version','device','width','height','samples','seed')}}
         if needs_geometry:
             job['geometry_source']=str(a.geometry_source.resolve())
