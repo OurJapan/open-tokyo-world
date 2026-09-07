@@ -12,6 +12,8 @@
 
 ## 自分のPCで試す
 
+[Web Spatial Viewer 実機検証版](web/spatial-viewer/README.md)：カメラ＋3D表示、GPS/方位の概略配置、写真と観測下書きの端末保存を実装しました。既存repo内の独立Web packageです。表示は独自の検証モデルで、実都市モデルの地理整合、VPS、サーバー投稿、iPhone実測は未完了です。[実装・検証記録](docs/web-spatial-p0-implementation.md)
+
 [固定版スターターのダウンロード・更新方法](starter/plaza/releases.md)：比較画像・検証・ソースをまとめた v0.1.0 プレビューを配布しています。画像を見るだけならBlenderは不要です。
 
 [初めての参加ガイド](starter/plaza/first-contribution.md)：画像を見る、AIと試す、結果を紹介するところまで順に案内します。

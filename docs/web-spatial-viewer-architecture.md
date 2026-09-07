@@ -2,6 +2,8 @@
 
 調査日：2026-09-07。対象：`OurJapan/open-tokyo-world`、調査基準main：`31e2d3c12b9986e4f40831b3392d3b2173389f32`。本書と関連5文書は調査・設計成果物であり、Webアプリ、API、VPS、実機検証は未実装・未実施。
 
+**調査後の更新：** 同じrepo内に[P0 Web実装](../web/spatial-viewer/README.md)を追加した。camera/3D/位置・方位/写真下書き保存を実装し、[検証記録](web-spatial-p0-implementation.md)を残した。以下のAPI/VPS等は引き続き将来設計で、調査時点の「docsのみ」という記述は初回調査の範囲を示す。
+
 ## 決定
 
 iPhone Safariでは、HTTPSページの背面カメラ映像にThree.js / WebGLの透明canvasを重ねる。GPSと端末姿勢で概略表示し、画像による補正は独立したLocalizerで検証する。WebXRはAndroid用の追加adapterに留める。利用者にランドマークを枠へ合わせさせる操作を必須にしない。初期PoCは停止して周囲を見る体験であり、歩行中の連続した6DoF追跡を保証しない。
