@@ -97,6 +97,12 @@ def prepare(job):
                 else:
                     import mori_crown_material
                     mori_crown_material.apply(obj)
+            elif op['op']=='mori_entrance_v1':
+                if obj.type!='MESH' or mesh_fingerprint(obj.data)!=op['expected_mesh_sha256']:
+                    raise ValueError('Entrance baseline mesh differs')
+                sys.path.insert(0,str(Path(__file__).resolve().parent))
+                import mori_entrance_v1
+                mori_entrance_v1.apply(obj)
             elif op['op']=='mori_podium_v2':
                 if obj.type!='MESH' or mesh_fingerprint(obj.data)!=op['expected_mesh_sha256']:
                     raise ValueError('Podium baseline mesh differs')

@@ -94,6 +94,11 @@ def validate_patch(patch):
             for key in ('expected_mesh_sha256','expected_material_sha256'):
                 require(re.fullmatch('[0-9a-f]{64}',op[key]) is not None, 'Material patch requires hashes')
             require(bool(patch['source_refs']), 'Material hypotheses require evidence')
+        elif op['op']=='mori_entrance_v1':
+            from mori_entrance_v1 import TARGETS
+            require(set(op)=={'op','feature_id','object','expected_mesh_sha256'}, 'Unexpected entrance patch keys')
+            require(op['feature_id']=='otw:jp:tokyo:minato:azabudai-mori-jp' and op['object'] in TARGETS, 'Wrong entrance target')
+            require(re.fullmatch('[0-9a-f]{64}',op['expected_mesh_sha256']) is not None and bool(patch['source_refs']), 'Entrance patch requires hash and sources')
         elif op['op']=='mori_podium_v2':
             require(set(op)=={'op','feature_id','object','expected_mesh_sha256'}, 'Unexpected podium patch keys')
             require(op['feature_id']=='otw:jp:tokyo:minato:azabudai-mori-jp' and op['object']=='Mori JP podium / stone', 'Wrong podium target')
@@ -187,7 +192,7 @@ def main():
     try:
         revision = subprocess.run(['git','-c',f'safe.directory={ROOT.as_posix()}','-C',str(ROOT),'rev-parse','HEAD'],capture_output=True,text=True,check=True).stdout.strip()
         summary['code_base_commit'] = revision
-        summary['code_files'] = {f.relative_to(ROOT).as_posix():digest(f) for f in (Path(__file__),WORKER,ROOT/'scripts/mori_shape.py',ROOT/'scripts/mori_crown_v2.py',ROOT/'scripts/mori_crown_material.py',ROOT/'scripts/mori_facade_v2.py',ROOT/'scripts/mori_podium_v2.py')}
+        summary['code_files'] = {f.relative_to(ROOT).as_posix():digest(f) for f in (Path(__file__),WORKER,ROOT/'scripts/mori_shape.py',ROOT/'scripts/mori_crown_v2.py',ROOT/'scripts/mori_crown_material.py',ROOT/'scripts/mori_facade_v2.py',ROOT/'scripts/mori_podium_v2.py',ROOT/'scripts/mori_entrance_v1.py')}
         job = {'output':str(output),'cameras':cameras,'features':features,'patch':patch,'settings':{k:summary[k] for k in ('blender_version','device','width','height','samples','seed')}}
         if needs_geometry:
             job['geometry_source']=str(a.geometry_source.resolve())
