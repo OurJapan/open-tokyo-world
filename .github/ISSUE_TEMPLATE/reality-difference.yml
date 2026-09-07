@@ -5,8 +5,8 @@ body:
   - type: markdown
     attributes:
       value: |
-        Blenderやプログラミングの知識は不要です。現在は設計・準備段階で、自動修正はまだ稼働していません。
-        写真は提供する権利があるものを添付してください。他者の資料はURLだけでも役立ちます。
+        Blenderやプログラミングの知識は不要です。運営とAIが調査します。完全自動の修正受付ではありません。
+        写真は公開してよいものだけを添付してください。他者の資料はURLだけでも役立ちます。参考資料の紹介を、Textureや配布素材としての利用許諾とは扱いません。
   - type: input
     id: location
     attributes:
@@ -28,7 +28,8 @@ body:
   - type: dropdown
     id: credit
     attributes:
-      label: 成果へのお名前の掲載
+      label: 貢献者紹介へのお名前の掲載
+      description: 公開Issueのアカウント表示は残ります。ライセンス上必要な作者・出典表示とは別の希望です。
       options:
         - 希望しない
         - GitHubの表示名で掲載してよい
