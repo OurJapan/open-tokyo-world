@@ -42,23 +42,23 @@ function anchorTest() {
   if(direction.length()<.1)direction.set(0,0,-1);direction.normalize();
   testAnchor.copy(direction.multiplyScalar(25));
 }
-function stop(message='カメラを終了しました。下書きはこのタブを閉じるまで保持されます。') {
+function stop(message='カメラを終了しました。') {
   active=false;busy=false;sensors.stop();video.pause();video.srcObject=null;video.hidden=true;
   stage.classList.remove('camera-active');$('start').hidden=false;$('start').disabled=!model;
   $('stop').hidden=true;$('capture').disabled=!draft;$('reset-view').disabled=false;
   if(model){model.position.set(0,0,0);model.visible=true;}if(grid)grid.visible=true;
   if(controls){controls.enabled=true;resetView();resize();}
-  $('mode-label').textContent='3D Viewer';viewPose=null;say(message);
+  $('mode-label').textContent='3Dビュー';viewPose=null;say(message);
 }
 async function start() {
   if(busy||active||!model)return;
-  busy=true;$('start').disabled=true;$('stop').hidden=false;say('カメラ・位置・方位の許可を確認してください。停止した場所でお試しください。');
+  busy=true;$('start').disabled=true;$('stop').hidden=false;say('カメラへのアクセスを許可してください。');
   try {
     const started=await sensors.start(video);if(!started)return;
     active=true;controls.enabled=false;grid.visible=false;video.hidden=false;
     stage.classList.add('camera-active');$('start').hidden=true;$('stop').hidden=false;
     $('capture').disabled=false;$('reset-view').disabled=true;anchorTest();resize();
-    $('mode-label').textContent='Camera / 概略表示';
+    $('mode-label').textContent='カメラ';
   } catch(e){stop(e.message);}finally{busy=false;if(!active)$('start').disabled=false;}
 }
 function clearDraft() {
@@ -84,8 +84,8 @@ async function capture() {
     if(previewURL)URL.revokeObjectURL(previewURL);
     draft=snapshot;photo=bytes;packedFile=null;previewURL=URL.createObjectURL(blob);$('photo-preview').src=previewURL;
     $('description').value='';$('observation-type').value='reality_difference';
-    $('capture-summary').textContent=`${new Date(now).toLocaleString('ja-JP')} · ${canvas.width} × ${canvas.height} · ${snapshot.location?'位置あり':'位置なし'} · 地物未確定`;
-    $('draft-status').textContent='未保存・未送信。3D表示を含まない写真です。';$('capture').textContent='下書きを開く';$('draft-dialog').showModal();
+    $('capture-summary').textContent=`${new Date(now).toLocaleString('ja-JP')} · ${canvas.width} × ${canvas.height} · ${snapshot.location?'位置あり':'位置なし'} · 対象未指定`;
+    $('draft-status').textContent='撮影した写真に3Dモデルは含まれません。';$('capture').textContent='下書きを開く';$('draft-dialog').showModal();
   } catch(e){say(e.message);}finally{capturing=false;$('capture').disabled=!active&&!draft;}
 }
 function packageDraft() {
@@ -100,7 +100,7 @@ function saveDraft(e) {
     packedFile=packageDraft();
     const url=URL.createObjectURL(packedFile),a=document.createElement('a');a.href=url;a.download=packedFile.name;
     document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);
-    $('draft-status').textContent='保存用ZIPを作成しました。ダウンロード先を確認してください。外部へは未送信です。';
+    $('draft-status').textContent='ZIPを作成しました。ダウンロード先をご確認ください。';
   } catch(e){$('draft-status').textContent=e.message;}
 }
 let lastDiagnostic=0;
@@ -115,10 +115,10 @@ function frame(now) {
         const gate=geoGate(sensors.location,sensors.orientation,manifest.origin,Number($('radius').value),time);
         model.visible=gate.ok;model.position.set(0,0,0);
         if(gate.ok){camera.position.set(gate.position.east,1.6,-gate.position.north);position=gate.position;}
-        message=gate.ok?'GPS・方位による概略配置です。地面高さとカメラ画角は仮定値です。':gate.reason;
+        message=gate.ok?'現在地に合わせて概略表示しています。':gate.reason;
       }else{
         camera.position.set(0,1.6,0);model.position.copy(testAnchor);model.visible=true;
-        message=orientation?'仮の配置で表示中。現実への固定精度は検証していません。':'方向センサー待ち。モデルは画面に固定したカメラ重畳テストです。';
+        message=orientation?'カメラ前方に仮配置しています。':'方位を取得中です。現在は画面に固定して表示しています。';
       }
       viewPose={frame:position?'tokyo-tower-legacy-display':'device-test-session',position_render_m:camera.position.toArray(),quaternion_xyzw:camera.quaternion.toArray(),timestamp:time,
         height_assumption_m:1.6,method:'display-only-estimate',orientation_measured:!!orientation};
@@ -142,7 +142,7 @@ async function init() {
     scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(48,1,.1,1500);
     controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.minDistance=10;controls.maxDistance=100;controls.maxPolarAngle=Math.PI*.49;
     scene.add(new THREE.HemisphereLight(0xd9edff,0x36536a,2.7));const sun=new THREE.DirectionalLight(0xffdbc4,3);sun.position.set(8,20,12);scene.add(sun);
-    grid=new THREE.GridHelper(80,40,0x648498,0x2d4c63);scene.add(grid);resetView();resize();requestAnimationFrame(frame);
+    grid=new THREE.GridHelper(60,12,0xd4d4d8,0xe7e7eb);grid.material.transparent=true;grid.material.opacity=.45;scene.add(grid);resetView();resize();requestAnimationFrame(frame);
     const response=await fetch(`${import.meta.env.BASE_URL}data/manifest.json`);if(!response.ok)throw new Error('表示データを取得できませんでした。');manifest=await response.json();
     if(manifest.schema_version!=='otw-spatial-manifest/0.1'||!manifest.fixture||manifest.assets.length!==1)throw new Error('未対応の表示データです。');
     const asset=manifest.assets[0];if(asset.bytes>5*1024*1024||!asset.fixture||asset.feature_id!==null)throw new Error('検証用assetの範囲を超えています。');
@@ -160,7 +160,7 @@ $('close-draft').addEventListener('click',()=>{$('draft-dialog').close();say('�
 $('delete-draft').addEventListener('click',()=>{clearDraft();say('下書きの写真と位置情報をこのタブから削除しました。保存済みZIPは端末側で削除してください。');});
 $('draft-form').addEventListener('submit',saveDraft);$('opacity').addEventListener('input',setOpacity);
 $('placement').addEventListener('change',()=>{
-  $('placement-help').textContent=$('placement').value==='geo'?'既存の東京タワー原点を使用します。300m圏内・位置誤差50m以下・北基準の方位が必要です。':'開始時のカメラ前方に検証モデルを置きます。現実の地物との位置合わせではありません。';
+  $('placement-help').textContent=$('placement').value==='geo'?'東京タワーから300m以内で利用できます。位置や方位が不明な場合は表示されません。':'カメラ前方に仮配置します。実際の位置とは一致しません。';
   if(active)anchorTest();
 });
 window.addEventListener('resize',resize);video.addEventListener('resize',resize);new ResizeObserver(resize).observe(stage);
