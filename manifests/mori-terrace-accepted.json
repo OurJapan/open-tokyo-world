@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "id": "mori-terrace-accepted-2026-09-07",
+  "source_repository": "https://github.com/OurJapan/open-tokyo-world",
+  "source_commit": "f780ff4bb925f35c5b1a3fda1ab6692ce83c0927",
+  "source_path": "local-only/mori-terrace-review/candidate.blend",
+  "bytes": 556267519,
+  "sha256": "a5ec1c138fda66cc30f0dbfbe3ef8945f4c62baa80b3c4e7184ed1248c722885",
+  "blender_version": "4.5.1 LTS",
+  "redistribution": "pending-asset-rights-review",
+  "coordinates": {
+    "latitude": 35.65858,
+    "longitude": 139.74543,
+    "vertical_datum": "unknown",
+    "note": "Legacy scene origin, not a surveyed control point."
+  }
+}
