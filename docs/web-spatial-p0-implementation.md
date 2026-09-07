@@ -26,7 +26,7 @@ unit testはAPIをmockしており、実際のiPhone sensor値の精度を示さ
 
 ## 配信とレビュー
 
-[Web CIテンプレート](../web/spatial-viewer/deployment/web-spatial.yml)はfixture再生成差分、tests、build、静的artifactを検証する定義。[Pagesテンプレート](../web/spatial-viewer/deployment/web-spatial-pages.yml)はmainに限る手動実行の定義。GitHubが現在のOAuth認証のworkflow scope不足を理由にpushを拒否したため、workflowの実設置は行わずテンプレートとして同梱した。Maintainerが権限のある認証で`.github/workflows/`へ設置し、既存Pagesサイトとの競合確認・人間review/mergeを経て公開する。テンプレートだけではCI/配信は起動しない。
+[Web CI](../.github/workflows/web-spatial.yml)を設置し、fixture再生成差分、tests、build、静的artifactを検証する。[Pages workflow](../.github/workflows/web-spatial-pages.yml)はmainに限る手動配信。最初はOAuth認証のworkflow scope不足で設置できなかったが、2026-09-07に本人承認で権限追加を確認し、既存PRに設置した。人間review/mergeと既存Pagesサイトの競合確認後に公開する。権限追加だけではmerge・サイト公開は行わない。
 
 Sitesのhosting手順は別のソースrepositoryを要求するため、今回の「新規repositoryを作らない」方針に合わせて採用しなかった。HTTP localhostのpreviewはPC用で、iPhoneのcamera検証には公開/アクセス制限付きのHTTPS配置が必要。公開URLを作成済みとは扱わない。
 

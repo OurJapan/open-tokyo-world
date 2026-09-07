@@ -17,7 +17,7 @@ pnpm dev
 
 **iPhoneではHTTPSが必要。** PCのlocalhostはiPhoneから参照できず、LANのHTTPもカメラの実機試験には使えない。`dist/`を信頼できるHTTPS static hostに配信する。自己署名certificateを自動インストールしたり、セキュリティ無効化を求める構成にはしない。
 
-既存repo向けに[手動Pages workflowの設置用テンプレート](deployment/web-spatial-pages.yml)と[Web CIテンプレート](deployment/web-spatial.yml)を用意した。現在のGitHub認証にworkflow更新権限がないため、`.github/workflows/`には未設置で自動実行されない。Maintainerがreview後、各ファイルを同名で`.github/workflows/`へ配置する。人間review/merge後、既存Pagesサイトとの競合を確認し、repository Settings → Pages → GitHub Actionsを選び、main上の`Publish web spatial viewer to Pages`を手動実行。公開されるのは検証コードと独自fixtureだけで、写真は含まれない。既存のPagesサイトがある場合は、このworkflowで置き換える前に配信先を調整する。今回公開実行は行っていない。
+既存repo向けに[手動Pages workflow](../../.github/workflows/web-spatial-pages.yml)と[Web CI](../../.github/workflows/web-spatial.yml)を用意した。本人承認によってworkflow権限を追加し、`.github/workflows/`へ設置済み。Web CIはpush/PRで実行され、Pages配信はmainからの手動操作に限定する。人間review/merge後、既存Pagesサイトとの競合を確認し、repository Settings → Pages → GitHub Actionsを選び、main上の`Publish web spatial viewer to Pages`を手動実行。公開されるのは検証コードと独自fixtureだけで、写真は含まれない。既存のPagesサイトがある場合は、このworkflowで置き換える前に配信先を調整する。今回公開実行は行っていない。
 
 ## 実装済みの操作
 

@@ -1,4 +1,3 @@
-# Installation template: maintainer copies to .github/workflows/web-spatial-pages.yml.
 name: Publish web spatial viewer to Pages
 # Intentional manual release after review, never on PR or arbitrary pushes.
 on:

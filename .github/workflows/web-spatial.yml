@@ -1,4 +1,3 @@
-# Installation template: maintainer copies to .github/workflows/web-spatial.yml.
 name: Web spatial viewer
 on:
   pull_request:
