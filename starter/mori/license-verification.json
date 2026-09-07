@@ -1,0 +1,48 @@
+{
+  "ok": true,
+  "tests_passed": 56,
+  "scope_code_snapshots_verified": 11,
+  "parts_verified": 13,
+  "mandatory_notices": {
+    "NOTICE.md": "6453cc54c21c465a1c21b0eeb89644413266033f201e09c077834f44b3709f87",
+    "ASSET-LICENSE.md": "a9f955534cd0907c8b5b4f1cffe22aa5899b4836fedc84ae32908b2e170fb3ac",
+    "provenance.json": "324f60663dcf054fd82613b855c8ea141fc9277f8500a4f9744cd79f2fe04a5f",
+    "MIT-LICENSE.txt": "ea868396a9901972b564835af3ab67857796566a7b1b5811e41d9fd1d6a920d4",
+    "CODE-LICENSE.md": "ad8cc3c65ca531397950c899300cd380a3a4de9b171a62d1906ee71052064c6e",
+    "PLATEAU-NOTICE.md": "60b6ceb21a5bed60367673e8791a8f3044f9ae7679fc37d880d24a74239e77d9",
+    "PLAZA-LICENSE.md": "baf41b2af4afd30f99ac7df8c15ee66ff1f27dceacaf68b3266cbbdcd2d9a767",
+    "plaza-provenance.json": "56c937995a63dbc12ed7ec4a59ddf7419230a6c74f89e57d68e787639c862a64"
+  },
+  "geometry_and_materials_unchanged": true,
+  "render_rgba_pixels_match_previous_run": {
+    "before-full": true,
+    "before-crown": true,
+    "before-podium": true,
+    "before-entrance": true,
+    "after-full": true,
+    "after-crown": true,
+    "after-podium": true,
+    "after-entrance": true
+  },
+  "elapsed_seconds": 47.672088623046875,
+  "runtime_code_sha256": {
+    "starter/mori/facade.py": "2dcfac5c2dae48fd893142b1d1fc524141ab95df4c144b4576035a466f945e4a",
+    "starter/mori/profile.py": "aaf29e2fefc5b2de6860da98215a89032f4e4dc66773baf41cc5ea37cd1fbcd8",
+    "starter/mori/run.py": "6016f6c90cf6a7a1efed2ad300c7f3d3c4f30571bc9ef0d779860ee63b9c9867",
+    "starter/mori/scene.py": "117fae7db10500a59d83c9cfa6327cd24036ff630a47c12929423280a73bc59f",
+    "starter/plateau/run.py": "766405fa9688345d8cf75e9fefce7074ea992b09129975df6adfd83f8aea60bf",
+    "starter/plateau/scene.py": "2f53a4bf52b63dfffd10de674ec080fdb546dbdbf213fdff6d2521c5ba377d3e",
+    "starter/plateau/tile.py": "540aa9b7e8d8efc482f4ef4cdcf0f890bac6102a905707e588f13ca60f2d7c11",
+    "starter/plaza/scene.py": "52bed9bca744615928232d524091caf9d8a7f98cd7b69314364e474ce236bd93",
+    "scripts/mori_shape.py": "e82b840819da692b1a0dd6b27f095c524706fce08c0e85db47b2236301f91411",
+    "scripts/mori_crown_v2.py": "9822f54cec4965881dc5838e5204f55fcf95fcf172620ebb56735101be98015b",
+    "scripts/mori_crown_material.py": "02e207032a4873ee75cf80991ab2066e3621e9a8ccbf4c014e2c5aee06bbc8b5",
+    "scripts/mori_facade_v2.py": "b962aeb523cb35cd242bad7f3a91409750219bda62eec1cd64ddcbf49a7ab26f",
+    "scripts/mori_podium_v3.py": "cec7699cb570248bfb4c121275044b0950a6bfcad128464455a2faabc9321790",
+    "scripts/mori_entrance_v1.py": "aeb7417803ebea8ac8af590aeca7a1e723d1591e1756eb07ad1078cd9e753c90",
+    "scripts/mori_terrace_v1.py": "26f9149e5889266caa7c62bbd8a0df886fb9713266751c0a69e6c6df24a036e5",
+    "scripts/mori_plaza_v1.py": "5f92f0381ab16fd0bbef325db2200381a903723ab5418ecb51c0c64562131ef9",
+    "scripts/mori_plaza_link_v1.py": "9db234b625b99fe1ee5751b4f4da57445ea6122222377e8b2e9fe36105519ec3"
+  },
+  "note": "Same PC integration; no new visual modeling. PNG file hashes differ because of path/date/timing metadata; decoded RGBA pixels match. License and provenance delivery verification, not third-party legal clearance."
+}
