@@ -1,0 +1,112 @@
+{
+  "ok": true,
+  "base_commit": "d2235f2045bdf4e6aef1223c34b5b715190e7d27",
+  "input_sha256": "77752f9009a0f3a1979734e3374de50d933253a5408c99f38297765548969179",
+  "after_sha256": "a5ec1c138fda66cc30f0dbfbe3ef8945f4c62baa80b3c4e7184ed1248c722885",
+  "changed_objects": [
+    "Mori JP podium / gasket",
+    "Mori JP podium / soil",
+    "Mori JP podium / wood",
+    "Mori JP podium / leaf"
+  ],
+  "target_only": true,
+  "assets_unchanged": true,
+  "counts_before": {
+    "objects": 3299,
+    "vertices": 51049222,
+    "polygons": 39273002
+  },
+  "counts_after": {
+    "objects": 3299,
+    "vertices": 51137520,
+    "polygons": 39406400
+  },
+  "count_delta": {
+    "objects": 0,
+    "vertices": 88298,
+    "polygons": 133398
+  },
+  "added_visible_geometry": {
+    "vertices": 114962,
+    "polygons": 151326,
+    "triangles": 154284
+  },
+  "geometry_audit": {
+    "ok": true,
+    "objects": {
+      "Mori JP podium / gasket": {
+        "vertices": 2320,
+        "polygons": 1530,
+        "triangles": 3900,
+        "minimum_triangle_area": 8.4669329226017e-05,
+        "closed_oriented_edges": true,
+        "generated_coordinates_exact_float32": true,
+        "emission_zero": true
+      },
+      "Mori JP podium / leaf": {
+        "vertices": 112050,
+        "polygons": 149400,
+        "triangles": 149400,
+        "minimum_triangle_area": 0.0009116033907048404,
+        "closed_oriented_edges": true,
+        "generated_coordinates_exact_float32": true,
+        "emission_zero": true
+      },
+      "Mori JP podium / soil": {
+        "vertices": 80,
+        "polygons": 60,
+        "triangles": 120,
+        "minimum_triangle_area": 0.026992037892341614,
+        "closed_oriented_edges": true,
+        "generated_coordinates_exact_float32": true,
+        "emission_zero": true
+      },
+      "Mori JP podium / wood": {
+        "vertices": 512,
+        "polygons": 336,
+        "triangles": 864,
+        "minimum_triangle_area": 0.00031498560565523803,
+        "closed_oriented_edges": true,
+        "generated_coordinates_exact_float32": true,
+        "emission_zero": true
+      }
+    },
+    "all_planter_and_railing_vertices_over_source_roof": true,
+    "limitations": [
+      "Source parapet retained; railing placement inferred",
+      "No whole-city manifold, measured accuracy or regulatory clearance",
+      "Source roof support test does not validate tree species or photo registration"
+    ]
+  },
+  "portable_tests": 24,
+  "blender_smoke_cases": 2,
+  "human_review": "pending",
+  "jobs": {
+    "prepare": {
+      "seconds": 13.781,
+      "report_sha256": "9e0032a0f476cad616b1287aac26102333779acd3e498070ed4918ffc1a963b5"
+    },
+    "validate-before": {
+      "seconds": 34.516,
+      "report_sha256": "b49d33bca6d36b96f33a081fd9ff482ca769a4493ad3dee9a3cc7bacf96b0fb1"
+    },
+    "validate-after": {
+      "seconds": 34.453,
+      "report_sha256": "e0e6940cf3f929de2b5548dd38aa4c5cb5d2065f015bdfa62d3393494d93c383"
+    },
+    "render-before": {
+      "seconds": 52.703,
+      "report_sha256": "7e40557372ae1362c9ef3393da061c8ebadca448c5d081f133d07dd13ce502d9"
+    },
+    "render-after": {
+      "seconds": 45.25,
+      "report_sha256": "33aed047c59e7696d8aea05da0cd212a0b08bbf509b9b443be2b8e2934414ddc"
+    }
+  },
+  "limitations": [
+    "Human visual approval is required.",
+    "Peak RAM/VRAM and physical accuracy are not measured.",
+    "Timing is one run, not a warmed-up median.",
+    "Dependency audit and fingerprints cover documented initial checks, not all Blender features."
+  ]
+}
