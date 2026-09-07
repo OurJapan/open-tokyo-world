@@ -13,7 +13,7 @@
 推定箇所・未検証事項：
 出典・利用条件・クレジットの変更：
 
-人間のレビュー後に取り込みます。
+maintainersの責任で取り込みます。本人PRの例外を使う場合は、理由・責任者・確認対象head SHA・検証結果・採用判断を記録してください。[運用規則](https://github.com/OurJapan/open-tokyo-world/blob/main/docs/main-governance.md)
 
 ## 成果物の許諾確認
 
