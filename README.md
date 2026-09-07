@@ -12,6 +12,8 @@
 
 ## 自分のPCで試す
 
+[森JPタワーの独立生成・置換試験](starter/mori/README.md)：旧都市ファイルなしで公式PLATEAUから詳細外装・低層部を生成し、4視点のBefore/Afterを作成します。技術試験であり、詳細モデル全体の配布許諾は未確定です。
+
 [公式PLATEAU 1タイルの取込試験](starter/plateau/README.md)：固定した公式データを取得し、地物ID付きの建物24件と広場6部品を生成・保存・検証します。旧都市blendは不要。表示は旧座標に合わせた試験用です。
 
 [Web Spatial Viewer 実機検証版](web/spatial-viewer/README.md)：カメラ＋3D表示、GPS/方位の概略配置、写真と観測下書きの端末保存を実装しました。既存repo内の独立Web packageです。表示は独自の検証モデルで、実都市モデルの地理整合、VPS、サーバー投稿、iPhone実測は未完了です。[実装・検証記録](docs/web-spatial-p0-implementation.md)
