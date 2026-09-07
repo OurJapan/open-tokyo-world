@@ -9,7 +9,7 @@ import mori_crown_material
 
 STRIP_ANGLES = tuple((a+b)/2 % 360 for a,b in zip(CORNER_DEGREES, CORNER_DEGREES[1:]+(CORNER_DEGREES[0]+360,)))
 STRIP_HALF_WIDTH = 0.65
-GLASS_COLOR = (0.30,0.43,0.48,1.0)
+GLASS_COLOR = (0.16,0.25,0.30,1.0)
 GLASS_VALUES = {'Metallic':0.45,'Roughness':0.16,'Transmission Weight':0.12,'Alpha':1.0}
 
 
@@ -75,3 +75,4 @@ def apply(obj):
                 color.inputs[1].default_value=GLASS_COLOR
             else:shader.inputs['Base Color'].default_value=GLASS_COLOR
         add_strips(material)
+
