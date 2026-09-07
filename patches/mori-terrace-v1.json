@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "purpose": "reviewed-change",
+  "reason": "Photo-informed planting and bronze vertical-bar railing on one northeast roof; visual hypothesis with estimated dimensions.",
+  "source_refs": [
+    "https://www.nihonsekkei.co.jp/projects/19811/",
+    "https://www.nihonsekkei.co.jp/wp-content/uploads/2025/03/1600x1066_092_71A3817.jpg",
+    "https://www.nihonsekkei.co.jp/wp-content/uploads/2025/05/b42c9dc63b47229435cdf2f81d78a72c.jpg"
+  ],
+  "operations": [
+    {
+      "op": "mori_terrace_v1",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "object": "Mori JP podium / gasket",
+      "expected_mesh_sha256": "afbf1ebae85fe8650c238ec2066037f4c93fe7be223f00aefbd9801b676d39f9"
+    },
+    {
+      "op": "mori_terrace_v1",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "object": "Mori JP podium / leaf",
+      "expected_mesh_sha256": "326e5701f2f3e87df30083abdda472411f6c62368070a6055019ce4d5537de03"
+    },
+    {
+      "op": "mori_terrace_v1",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "object": "Mori JP podium / soil",
+      "expected_mesh_sha256": "a77e4ba3f3e18dfec1c8cdcb526c9446ac8530693e4dcd2dc4e0352aa546f1fd"
+    },
+    {
+      "op": "mori_terrace_v1",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "object": "Mori JP podium / wood",
+      "expected_mesh_sha256": "29218c29621145e20270c25610fafd95fbeb9305643ce90b8d5d1e2b6596e9fe"
+    }
+  ]
+}
