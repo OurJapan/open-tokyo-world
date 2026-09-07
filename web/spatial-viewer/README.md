@@ -56,7 +56,7 @@ Webからは上記Pythonや親directoryをimportしない。package一式だけ�
 
 実都市GLBの権利確認・測地登録、VPS、画像照合、連続6DoF、正確なocclusion、校正済みintrinsicsは未実装。送信APIは公開済みで、公開用の接続設定を追加しました。iPhoneの権限/映像/方向/ZIP保存/送信、SNS内browser、横向き、10分の発熱とメモリは実機確認待ち。Desktopのmodule試験やbuildをSafari動作の証拠にしない。
 
-最小の実機手順：HTTPS URL→「カメラで試す」→許可→左右上下へ向ける→写真→分類/コメント→ZIP保存→camera終了→ZIPに生写真とJSONが入ることを確認。続いて位置/方位拒否、画面lock/復帰、下書き削除を試す。現地geo modeは最後に確認する。
+最小の実機手順：HTTPS URL→「カメラで試す」→許可→左右上下へ向ける→写真→入力せず連続撮影→保存一覧からZIP保存→camera終了→ZIPに生写真とJSONが入ることを確認。続いて位置/方位拒否、画面lock/復帰、下書き削除を試す。現地geo modeは最後に確認する。
 
 ## 写真の送信と利用枠
 
@@ -64,3 +64,4 @@ Webからは上記Pythonや親directoryをimportしない。package一式だけ�
 `?area=iidabashi` で飯田橋駅付近を選択できます。[現地テスト手順](../../docs/iidabashi-field-test.md)を参照してください。
 
 飯田橋の現地運用では写真の端末保存・メモ保存・連続撮影・送信結果の再確認・ZIP共有を利用できます。ブラウザ検証は `pnpm test:browser`（ビルド済みpreviewを4181番で起動、Playwright Chromiumが必要）。詳細は[9月8日の手順](../../docs/iidabashi-field-test.md)を参照してください。
+撮影後の入力なしで写真を保存し、飯田橋の建物候補を自動添付します。セッション単位で同意すると自動送信できます。写真からの実寸推定は未実装です。[仕様と精度の限界](../../docs/iidabashi-target-evidence.md)を参照してください。
