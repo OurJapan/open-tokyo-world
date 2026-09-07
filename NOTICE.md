@@ -25,3 +25,7 @@ The two additional MIT scripts in `starter/plaza/` regenerate six original proce
 ## Standalone Mori consent and provenance
 
 On 2026-09-07 the account holder confirmed authority to license the eleven identified code snapshots, including incorporated legacy-derived implementation, under MIT and the identified original Mori contributions under CC BY 4.0. [Scope and consent](starter/mori/provenance.json) / [asset grant](starter/mori/ASSET-LICENSE.md). Existing four-file MIT snapshots were checked and match; no new consent was required for them. Third-party inputs keep their conditions. Code publication approval for PR #28 and this separate license consent are distinct records.
+
+## Tokyo Tower
+
+The account holder also confirmed Tokyo Tower authorship and authority, and approved the same code MIT / original-model CC BY 4.0 policy. [Exact scope and source history](assets/tokyo-tower/provenance.json), [asset license](assets/tokyo-tower/ASSET-LICENSE.md), [extraction and limits](assets/tokyo-tower/README.md). Historical scripts remain dependent on earlier local scenes; this is not a complete procedural rebuild.
