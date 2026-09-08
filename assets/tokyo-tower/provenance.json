@@ -1,0 +1,999 @@
+{
+  "version": 1,
+  "status": "consent-confirmed",
+  "attribution": "ark4ez / OurJapan",
+  "feature_id": "otw:jp:tokyo:minato:tokyo-tower",
+  "consent": {
+    "date": "2026-09-07",
+    "authority_confirmed": true,
+    "statement": "はい、アダプタイヒルズと同じく私が作りました。権限も大丈夫です。同じ方針でよろしくお願いします。",
+    "scope": "Tokyo Tower original code MIT; original models/materials CC BY 4.0; third-party rights retained"
+  },
+  "baseline": {
+    "sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+    "bytes": 558751758,
+    "local_relative_path": "outputs/mori-plaza-edge-review/candidate.blend",
+    "redistribution": "This grant is not for the complete legacy city blend"
+  },
+  "parts": [
+    {
+      "object": "Inclined window head closure",
+      "collections": [
+        "Scene Collection"
+      ],
+      "vertices": 64,
+      "polygons": 64,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Continuous window joint seals",
+      "collections": [
+        "Scene Collection"
+      ],
+      "vertices": 8000,
+      "polygons": 6000,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Closed window sill perimeter",
+      "collections": [
+        "Scene Collection"
+      ],
+      "vertices": 64,
+      "polygons": 64,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Tokyo Tower structure / stone",
+      "collections": [
+        "Tokyo Tower structure"
+      ],
+      "vertices": 32,
+      "polygons": 24,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Tokyo Tower structure / orange",
+      "collections": [
+        "Tokyo Tower structure"
+      ],
+      "vertices": 75064,
+      "polygons": 55222,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Tokyo Tower structure / white",
+      "collections": [
+        "Tokyo Tower structure"
+      ],
+      "vertices": 18432,
+      "polygons": 13724,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Tokyo Tower structure / darkmetal",
+      "collections": [
+        "Tokyo Tower structure"
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Tokyo Tower decks and interior / white",
+      "collections": [
+        "Tokyo Tower decks and interior"
+      ],
+      "vertices": 240,
+      "polygons": 126,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Tokyo Tower decks and interior / aluminum",
+      "collections": [
+        "Tokyo Tower decks and interior"
+      ],
+      "vertices": 320,
+      "polygons": 240,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Tokyo Tower decks and interior / clear glass",
+      "collections": [
+        "Tokyo Tower decks and interior"
+      ],
+      "vertices": 320,
+      "polygons": 240,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Tokyo Tower decks and interior / gasket",
+      "collections": [
+        "Tokyo Tower decks and interior"
+      ],
+      "vertices": 320,
+      "polygons": 240,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Tokyo Tower decks and interior / floor",
+      "collections": [
+        "Tokyo Tower decks and interior"
+      ],
+      "vertices": 80,
+      "polygons": 42,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Tokyo Tower decks and interior / ceiling",
+      "collections": [
+        "Tokyo Tower decks and interior"
+      ],
+      "vertices": 80,
+      "polygons": 42,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Tokyo Tower decks and interior / warm light",
+      "collections": [
+        "Tokyo Tower decks and interior"
+      ],
+      "vertices": 80,
+      "polygons": 60,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Tokyo Tower decks and interior / mirror",
+      "collections": [
+        "Tokyo Tower decks and interior"
+      ],
+      "vertices": 60,
+      "polygons": 20,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Photo based main deck / carpet3",
+      "collections": [
+        "Photo based main deck"
+      ],
+      "vertices": 5632,
+      "polygons": 4224,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Photo based main deck / slab",
+      "collections": [
+        "Photo based main deck"
+      ],
+      "vertices": 28672,
+      "polygons": 21504,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Photo based main deck / carpet4",
+      "collections": [
+        "Photo based main deck"
+      ],
+      "vertices": 6072,
+      "polygons": 4554,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Photo based main deck / carpet0",
+      "collections": [
+        "Photo based main deck"
+      ],
+      "vertices": 5888,
+      "polygons": 4416,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Photo based main deck / carpet2",
+      "collections": [
+        "Photo based main deck"
+      ],
+      "vertices": 5528,
+      "polygons": 4146,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Photo based main deck / carpet1",
+      "collections": [
+        "Photo based main deck"
+      ],
+      "vertices": 5552,
+      "polygons": 4164,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Photo based main deck / white",
+      "collections": [
+        "Photo based main deck"
+      ],
+      "vertices": 896,
+      "polygons": 896,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Photo based main deck / ceiling",
+      "collections": [
+        "Photo based main deck"
+      ],
+      "vertices": 448,
+      "polygons": 228,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Photo based main deck / glass",
+      "collections": [
+        "Photo based main deck"
+      ],
+      "vertices": 32,
+      "polygons": 24,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Photo based main deck / frame",
+      "collections": [
+        "Photo based main deck"
+      ],
+      "vertices": 1728,
+      "polygons": 1296,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Photo based main deck / silver",
+      "collections": [
+        "Photo based main deck"
+      ],
+      "vertices": 320,
+      "polygons": 216,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Photo based main deck / rubber",
+      "collections": [
+        "Photo based main deck"
+      ],
+      "vertices": 128,
+      "polygons": 96,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Photo based main deck / wall",
+      "collections": [
+        "Photo based main deck"
+      ],
+      "vertices": 960,
+      "polygons": 720,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Photo based main deck / light",
+      "collections": [
+        "Photo based main deck"
+      ],
+      "vertices": 320,
+      "polygons": 240,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Photo based main deck / grid",
+      "collections": [
+        "Photo based main deck"
+      ],
+      "vertices": 22224,
+      "polygons": 16668,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "2019 reference window revision / black",
+      "collections": [
+        "2019 reference window revision"
+      ],
+      "vertices": 8032,
+      "polygons": 6024,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "2019 reference window revision / glass",
+      "collections": [
+        "2019 reference window revision"
+      ],
+      "vertices": 9600,
+      "polygons": 7200,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "2019 reference window revision / gasket",
+      "collections": [
+        "2019 reference window revision"
+      ],
+      "vertices": 19200,
+      "polygons": 14400,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "2019 reference window revision / aluminum",
+      "collections": [
+        "2019 reference window revision"
+      ],
+      "vertices": 4800,
+      "polygons": 3600,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "2019 reference window revision / white",
+      "collections": [
+        "2019 reference window revision"
+      ],
+      "vertices": 1664,
+      "polygons": 1264,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Skywalk visible detail steel",
+      "collections": [
+        "Skywalk visible detail"
+      ],
+      "vertices": 2320,
+      "polygons": 1564,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Skywalk visible detail dark",
+      "collections": [
+        "Skywalk visible detail"
+      ],
+      "vertices": 1864,
+      "polygons": 1098,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Skywalk visible detail seam",
+      "collections": [
+        "Skywalk visible detail"
+      ],
+      "vertices": 1136,
+      "polygons": 852,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Skywalk visible detail trunk",
+      "collections": [
+        "Skywalk visible detail"
+      ],
+      "vertices": 820,
+      "polygons": 492,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Skywalk visible detail leaf",
+      "collections": [
+        "Skywalk visible detail"
+      ],
+      "vertices": 41328,
+      "polygons": 36736,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Skywalk visible detail white",
+      "collections": [
+        "Skywalk visible detail"
+      ],
+      "vertices": 360,
+      "polygons": 270,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush metal surround",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 212,
+      "polygons": 124,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Continuous outer gasket",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 16,
+      "polygons": 16,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Continuous glass edge seal",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 16,
+      "polygons": 16,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.001",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.002",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.003",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.004",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.005",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush metal surround.001",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 212,
+      "polygons": 124,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Continuous outer gasket.001",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 16,
+      "polygons": 16,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Continuous glass edge seal.001",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 16,
+      "polygons": 16,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.006",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.007",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.008",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.009",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.010",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.011",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush metal surround.002",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 212,
+      "polygons": 124,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Continuous outer gasket.002",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 16,
+      "polygons": 16,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Continuous glass edge seal.002",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 16,
+      "polygons": 16,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.012",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.013",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.014",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.015",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.016",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.017",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush metal surround.003",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 212,
+      "polygons": 124,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Continuous outer gasket.003",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 16,
+      "polygons": 16,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Continuous glass edge seal.003",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 16,
+      "polygons": 16,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.018",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.019",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.020",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.021",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.022",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    },
+    {
+      "object": "Flush fixing.023",
+      "collections": [
+        "Flush glass floor surrounds"
+      ],
+      "vertices": 32,
+      "polygons": 18,
+      "license": "CC-BY-4.0",
+      "scope": "licensor-controlled original geometry and materials",
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+    }
+  ],
+  "excluded_empty_objects": [
+    "Tokyo Tower decks and interior / wood",
+    "Tokyo Tower decks and interior / stone",
+    "Tokyo Tower decks and interior / soil",
+    "Tokyo Tower decks and interior / leaf",
+    "Tokyo Tower decks and interior / darkmetal"
+  ],
+  "historical_code": [
+    {
+      "path": "assets/tokyo-tower/legacy-source/tower-base.fragment.py.txt",
+      "sha256_lf": "c354fd305293715b4f2a86de854870ecf81991d10d84d157402fa7fa024aadc8",
+      "license": "MIT",
+      "legacy_path": "work/landmark_rebuild/build.py",
+      "legacy_source_sha256_lf": "ed7a5d916efbad7db8ca35ed505d24ab303a84b1a5b8cb7720f989aeadf92dc3",
+      "source_lines_inclusive": [
+        12,
+        176
+      ],
+      "use": "historical source, not standalone entrypoint"
+    },
+    {
+      "path": "assets/tokyo-tower/legacy-source/interior_reference-model.py.txt",
+      "sha256_lf": "20dd72e099fba4270b1e5d34b0fc8577a4ea44d6fa1d9525d462dbd32b120f93",
+      "license": "MIT",
+      "legacy_path": "work/interior_reference/model.py",
+      "legacy_source_sha256_lf": "20dd72e099fba4270b1e5d34b0fc8577a4ea44d6fa1d9525d462dbd32b120f93",
+      "source_lines_inclusive": [
+        1,
+        95
+      ],
+      "use": "historical source, not standalone entrypoint"
+    },
+    {
+      "path": "assets/tokyo-tower/legacy-source/interior_reference-revise_windows.py.txt",
+      "sha256_lf": "93f5ad6535126010d08cff8accb3d723a806c39e4e945868ee42ce42559ff8cc",
+      "license": "MIT",
+      "legacy_path": "work/interior_reference/revise_windows.py",
+      "legacy_source_sha256_lf": "93f5ad6535126010d08cff8accb3d723a806c39e4e945868ee42ce42559ff8cc",
+      "source_lines_inclusive": [
+        1,
+        95
+      ],
+      "use": "historical source, not standalone entrypoint"
+    },
+    {
+      "path": "assets/tokyo-tower/legacy-source/interior_reference-tilt_five.py.txt",
+      "sha256_lf": "4aca2fdf121641d6d995374d29d9fb2cd5359c37dbdb1942d9149daa9ef9b1f4",
+      "license": "MIT",
+      "legacy_path": "work/interior_reference/tilt_five.py",
+      "legacy_source_sha256_lf": "4aca2fdf121641d6d995374d29d9fb2cd5359c37dbdb1942d9149daa9ef9b1f4",
+      "source_lines_inclusive": [
+        1,
+        49
+      ],
+      "use": "historical source, not standalone entrypoint"
+    },
+    {
+      "path": "assets/tokyo-tower/legacy-source/interior_reference-align_lights.py.txt",
+      "sha256_lf": "51fbb0e916b4d3ab1e78fb6ef50608b9b0b063b425c1cf87a0a7a7461fdd128d",
+      "license": "MIT",
+      "legacy_path": "work/interior_reference/align_lights.py",
+      "legacy_source_sha256_lf": "51fbb0e916b4d3ab1e78fb6ef50608b9b0b063b425c1cf87a0a7a7461fdd128d",
+      "source_lines_inclusive": [
+        1,
+        8
+      ],
+      "use": "historical source, not standalone entrypoint"
+    },
+    {
+      "path": "assets/tokyo-tower/legacy-source/interior_walk-skywalk_exit.py.txt",
+      "sha256_lf": "65081202d1398e7e31963030e6a51fc6a1e6b237d15950e18d197e4172165009",
+      "license": "MIT",
+      "legacy_path": "work/interior_walk/skywalk_exit.py",
+      "legacy_source_sha256_lf": "65081202d1398e7e31963030e6a51fc6a1e6b237d15950e18d197e4172165009",
+      "source_lines_inclusive": [
+        1,
+        74
+      ],
+      "use": "historical source, not standalone entrypoint"
+    },
+    {
+      "path": "assets/tokyo-tower/legacy-source/interior_walk-flush_skywalk.py.txt",
+      "sha256_lf": "e8b628d105a6c82b51fb9532812dd564d27944ee678324805e9613c09d7d1dc5",
+      "license": "MIT",
+      "legacy_path": "work/interior_walk/flush_skywalk.py",
+      "legacy_source_sha256_lf": "e8b628d105a6c82b51fb9532812dd564d27944ee678324805e9613c09d7d1dc5",
+      "source_lines_inclusive": [
+        1,
+        68
+      ],
+      "use": "historical source, not standalone entrypoint"
+    },
+    {
+      "path": "assets/tokyo-tower/legacy-source/interior_walk-enrich_below.py.txt",
+      "sha256_lf": "179c04b9fbe302ea414e719997fa78634062c21bfd50d1688a628906cd91a5c7",
+      "license": "MIT",
+      "legacy_path": "work/interior_walk/enrich_below.py",
+      "legacy_source_sha256_lf": "179c04b9fbe302ea414e719997fa78634062c21bfd50d1688a628906cd91a5c7",
+      "source_lines_inclusive": [
+        1,
+        102
+      ],
+      "use": "historical source, not standalone entrypoint"
+    },
+    {
+      "path": "assets/tokyo-tower/legacy-source/interior_walk-remove_added_supports.py.txt",
+      "sha256_lf": "f96ccfa6dcd0623ae1147578074964cee3b493ad7d764ca40a77612bf85772a0",
+      "license": "MIT",
+      "legacy_path": "work/interior_walk/remove_added_supports.py",
+      "legacy_source_sha256_lf": "f96ccfa6dcd0623ae1147578074964cee3b493ad7d764ca40a77612bf85772a0",
+      "source_lines_inclusive": [
+        1,
+        15
+      ],
+      "use": "historical source, not standalone entrypoint"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.tokyotower.co.jp/plan/towerpedia/img/img_001.jpg",
+      "role": "historical official exterior reference, not bundled"
+    },
+    {
+      "url": "https://www.tokyotower.co.jp/",
+      "role": "Tokyo Tower official site; no implied endorsement"
+    }
+  ],
+  "limitations": [
+    "Window outward tilt of five degrees is a user-directed visual hypothesis, not a verified real-world measurement",
+    "Existing scripts depend on legacy stages; full procedural recreation is not yet packaged",
+    "No reference images, city meshes, audio or legacy camera animation granted here"
+  ]
+}

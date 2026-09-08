@@ -1,0 +1,8 @@
+import bpy
+from pathlib import Path
+R=Path(__file__).resolve().parents[2];O=R/'outputs/Interior_Window_Revision'
+bpy.ops.wm.open_mainfile(filepath=str(O/'Tokyo_Tower_Window_Revision.blend'));s=bpy.context.scene
+for v in bpy.data.objects['Photo based main deck / light'].data.vertices:
+ if v.co.z>153:v.co.z+=.6
+bpy.context.preferences.filepaths.save_version=0;bpy.ops.wm.save_as_mainfile(filepath=str(O/'Tokyo_Tower_Window_Revision.blend'))
+s.render.filepath=str(O/'01_Interior.png');bpy.ops.render.render(write_still=True);print('LIGHTS_ALIGNED',flush=True)

@@ -1,0 +1,95 @@
+import bpy,bmesh,ast,math,json,numpy as np
+from pathlib import Path
+from mathutils import Vector
+R=Path(__file__).resolve().parents[2];O=R/'outputs/Interior_Window_Revision';O.mkdir(exist_ok=True)
+bpy.ops.wm.open_mainfile(filepath=str(R/'outputs/Interior_Photo_Based/Tokyo_Tower_Photo_Interior.blend'));s=bpy.context.scene
+floor_glass=bpy.data.objects['Photo based main deck / glass'];floor_signature=[tuple(v.co) for v in floor_glass.data.vertices if v.co.z<145.06]
+for key in ['glass','frame','silver']:
+ ob=bpy.data.objects['Photo based main deck / '+key];bm=bmesh.new();bm.from_mesh(ob.data);seen=set();remove=[]
+ for vert in bm.verts:
+  if vert in seen:continue
+  todo=[vert];seen.add(vert);comp=[]
+  while todo:
+   v=todo.pop();comp.append(v)
+   for e in v.link_edges:
+    w=e.other_vert(v)
+    if w not in seen:seen.add(w);todo.append(w)
+  window=(max(v.co.z for v in comp)>145.11) if key=='glass' else max(max(abs(v.co.x),abs(v.co.y)) for v in comp)>13.45
+  if window:remove.extend(comp)
+ bmesh.ops.delete(bm,geom=remove,context='VERTS');bm.to_mesh(ob.data);bm.free()
+# Raise the upper soffit to match the approximately 3.8m three-zone window assembly.
+ob=bpy.data.objects['Photo based main deck / frame']
+for v in ob.data.vertices:
+ if v.co.z>153:v.co.z+=.6
+ob=bpy.data.objects['Photo based main deck / ceiling']
+for v in bpy.data.objects['Photo based main deck / light'].data.vertices:
+ if v.co.z>153:v.co.z+=.6
+for v in ob.data.vertices:
+ if v.co.z>153:v.co.z+=.6
+for ob in bpy.data.collections['Photo based main deck'].objects:
+ if ob.type=='LIGHT' and ob.location.z>153:ob.location.z+=.6
+geo={};section='2019 reference window revision'
+tree=ast.parse((R/'work/landmark_rebuild/build.py').read_text(encoding='utf-8'))
+for node in tree.body:
+ if isinstance(node,ast.FunctionDef) and node.name in ['add','box','beam','band']:exec(compile(ast.Module(body=[node],type_ignores=[]),'<geometry>','exec'))
+materials={}
+for k,old in [('black','frame'),('gasket','rubber'),('aluminum','silver'),('white','white')]:materials[k]=bpy.data.materials['Photo interior / '+old]
+m=bpy.data.materials.new('Window revision / clear insulated glazing');m.use_nodes=True;p=m.node_tree.nodes.get('Principled BSDF');p.inputs['Base Color'].default_value=(.97,.99,1,1);p.inputs['Roughness'].default_value=.004;p.inputs['Transmission Weight'].default_value=1;p.inputs['IOR'].default_value=1.5;materials['glass']=m
+col=bpy.data.collections.new(section);s.collection.children.link(col)
+# Nominal 1m clear width from official 2019 announcement; overall plan remains inferred.
+corners=[(14.5,12.1),(12.1,14.5),(-12.1,14.5),(-14.5,12.1),(-14.5,-12.1),(-12.1,-14.5),(12.1,-14.5),(14.5,-12.1)]
+segments=[]
+for i,p in enumerate(corners):
+ q=corners[(i+1)%8];p=np.array(p);q=np.array(q);count=3 if i%2==0 else 22
+ for j in range(count):segments.append((p+(q-p)*j/count,p+(q-p)*(j+1)/count,j,count))
+for z in [145.1,150.1]:
+ H=3.8;levels=[.08,.84,3.012,3.80]
+ for p,q,j,count in segments:
+  delta=q-p;L=float(np.linalg.norm(delta));a=math.atan2(delta[1],delta[0]);mid=(p+q)/2;normal=np.array([delta[1],-delta[0]])/L
+  # Main mullions are deeper than the intermediate sash. Corner boundaries are reinforced.
+  primary=j%3==0 or j==0;w=.17 if primary else .075;depth=.32 if primary else .14
+  box('black',(*p,z+H/2),(w,depth,H),a)
+  for h in levels:box('black',(*mid,z+h),(L,.16,.065 if h not in [.08,H] else .10),a)
+  for bottom,top in zip(levels[:-1],levels[1:]):
+   lo=bottom+.036;hi=top-.036;clear=L-.09
+   # Two laminated leaves with a 12mm cavity; leaf gauges are modeling assumptions.
+   for offset,thickness in [(-.009,.006),(.009,.006)]:
+    if thickness==.002:continue
+    center=mid+normal*offset;box('glass',(*center,z+(lo+hi)/2),(clear,thickness,hi-lo),a)
+   for h in [lo,hi]:box('gasket',(*mid,z+h),(clear,.034,.012),a)
+   for endpoint in [p+delta*.045/L,q-delta*.045/L]:box('gasket',(*endpoint,z+(lo+hi)/2),(.015,.035,hi-lo),a)
+  box('aluminum',(*mid,z+.025),(L,.30,.028),a)
+  # Exterior white pressure cap and a simple section representing the documented cleaning rail.
+  outer=p+normal*(depth/2+.015);box('white',(*outer,z+H/2),(.065,.035,H),a)
+  rail=mid+normal*.20
+  for h in [H+.06,H+.13]:box('aluminum',(*rail,z+h),(L,.12,.025),a)
+ band('white',corners,z+H,.16,.34)
+ # Extend upper dark core finish to the new soffit; retain the existing eye-level cladding.
+ if z>150:
+  for side in range(4):
+   a=side*math.pi/2;box('black',(math.sin(a)*9.07,-math.cos(a)*9.07,z+3.51),(18,.055,.58),a)
+for (sect,k),(v,f) in geo.items():
+ me=bpy.data.meshes.new(sect+' / '+k);me.from_pydata(v,[],f);me.materials.append(materials[k]);me.update();ob=bpy.data.objects.new(me.name,me);col.objects.link(ob)
+ # An explicit shear parameter lets a later measured inclination update all window members.
+ ob['slope_degrees']=0.0;ob['slope_status']='Unverified. Vertical placeholder, not a measured real-world angle.'
+ if k in ['black','aluminum','white']:
+  bevel=ob.modifiers.new('Small edge radius','BEVEL');bevel.width=.002;bevel.segments=2
+ ob['reference']='LIXIL B190037 b/c/d photographs and 2019 official release. Bay widths nominal; plan, gauges, heights, slope inferred.'
+ # Basis shape is retained; positive key values move the upper edge outward by metres.
+ ob.shape_key_add(name='Vertical placeholder');key=ob.shape_key_add(name='Top outward offset in metres')
+ for v,kp in zip(ob.data.vertices,key.data):
+  zbase=145.1 if v.co.z<149.8 else 150.1;u=max(0,min(1,(v.co.z-zbase)/3.8));vec=Vector((v.co.x,v.co.y,0));vec.normalize();kp.co+=vec*u
+ key.value=0
+assert floor_signature==[tuple(v.co) for v in floor_glass.data.vertices],'Floor glass changed'
+walk=s.camera
+for f in range(1,193):
+ s.frame_set(f);assert not(abs(walk.location.x)<9.2 and abs(walk.location.y)<9.2)
+s.frame_set(1);s['window_revision']='Nominal ~1m glazing, separate transoms, double pane, polygonal corners, primary/secondary mullions; slope unverified 0deg placeholder.'
+s.render.resolution_x=1280;s.render.resolution_y=720;s.cycles.samples=32;s.cycles.max_bounces=14;s.cycles.transmission_bounces=12
+bpy.context.preferences.filepaths.save_version=0;bpy.ops.wm.save_as_mainfile(filepath=str(O/'Tokyo_Tower_Window_Revision.blend'))
+for name,cam in [('01_Interior',walk),('02_Lower_deck',bpy.data.objects['Lower deck interior'])]:
+ s.camera=cam;s.render.filepath=str(O/(name+'.png'));bpy.ops.render.render(write_still=True)
+# Orthographic isolated elevation is useful for judging proportions without camera perspective.
+d=bpy.data.cameras.new('Window proportion review');d.type='ORTHO';d.ortho_scale=9.4;cam=bpy.data.objects.new(d.name,d);col.objects.link(cam);cam.location=(0,-22,147.0);cam.rotation_euler=(Vector((0,-14.5,147.0))-cam.location).to_track_quat('-Z','Y').to_euler();s.camera=cam;s.render.filepath=str(O/'03_Window_elevation.png');bpy.ops.render.render(write_still=True)
+json.dump({'glass_clear_width_straight_m':24.2/22-.09,'glass_clear_height_main_m':3.012-.84-.072,'insulating_cavity_m':.012,'slope_degrees':0,'slope_verified':False,'floor_glass_preserved':True,'camera_core_clearance':True,'panels_per_floor':len(segments)},open(O/'verification.json','w'),indent=2)
+print('WINDOW_REVISION_VERIFIED',flush=True)

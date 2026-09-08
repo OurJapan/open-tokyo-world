@@ -1,0 +1,41 @@
+{
+  "schema_version": "otw-spatial-manifest/0.1",
+  "area_id": "iidabashi",
+  "fixture": true,
+  "origin": {
+    "latitude": 35.7009,
+    "longitude": 139.745,
+    "vertical_datum": "unknown",
+    "note": "Approximate test anchor on the Chiyoda side near Iidabashi station, manually selected; not a surveyed point or a building location."
+  },
+  "frame": {
+    "id": "iidabashi-test-display",
+    "revision": "fixture-1",
+    "registration_status": "unregistered",
+    "units": "meters",
+    "render_axes": "east-up-south"
+  },
+  "known_features": [],
+  "source_refs": [
+    "areas/iidabashi/field-test.json"
+  ],
+  "assets": [
+    {
+      "id": "device-test-structure",
+      "url": "device-test.glb",
+      "sha256": "0bd314b3dc7e691f843293c490f4e27c6be3bc61bba28aad31dd12ed776d5f08",
+      "bytes": 3036,
+      "feature_id": null,
+      "fixture": true,
+      "model_version": "device-test-1",
+      "redistribution": "original-fixture-only",
+      "position_enu_m": [
+        0,
+        0,
+        0
+      ],
+      "triangles": 144
+    }
+  ],
+  "world_version": "sha256:d1556071b5e97d5a7a5c04f263e2f54f2357b5407fa8bf2f3262e005a9ae07e1"
+}

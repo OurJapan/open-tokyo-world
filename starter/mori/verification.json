@@ -1,0 +1,294 @@
+{
+  "ok": true,
+  "started_at": 1788783012.4220881,
+  "legacy_scene_used": false,
+  "input_mode": "official-download",
+  "validation": {
+    "before": {
+      "ok": true,
+      "blender": "4.5.1 LTS",
+      "meshes": 30,
+      "triangles": 134700,
+      "blend_bytes": 3883062,
+      "saved_reopened": true,
+      "renders": {
+        "full": "8388d2fce5112e0279db134902f929503c69b88af961c62ea76cee20aaf395c1",
+        "crown": "0c51466e3187bb3164abfed83cbf1c00b910789c2c1cff720fa09a70bbc33616",
+        "podium": "195f3cdc41ee9d0639cbb0f02ee121317a2554da972fb5d26f16acc155503be7",
+        "entrance": "f124729a4cd956ef70ca7f28c00d2c75afe2774d6d7bbcff80ed69c0acafb62a"
+      },
+      "cameras": [
+        [
+          "full",
+          [
+            -430,
+            253,
+            165
+          ],
+          [
+            450,
+            600,
+            230
+          ],
+          520
+        ],
+        [
+          "crown",
+          [
+            -430,
+            253,
+            307
+          ],
+          [
+            180,
+            260,
+            120
+          ],
+          120
+        ],
+        [
+          "podium",
+          [
+            -440,
+            278,
+            20
+          ],
+          [
+            85,
+            140,
+            105
+          ],
+          175
+        ],
+        [
+          "entrance",
+          [
+            -409,
+            312,
+            1
+          ],
+          [
+            45,
+            9,
+            42
+          ],
+          60
+        ]
+      ],
+      "render_settings": {
+        "engine": "CYCLES",
+        "device": "CPU",
+        "samples": 16,
+        "seed": 0,
+        "resolution": [
+          960,
+          720
+        ]
+      },
+      "full_camera_bounds_checked": true
+    },
+    "after": {
+      "ok": true,
+      "blender": "4.5.1 LTS",
+      "meshes": 42,
+      "triangles": 1183474,
+      "blend_bytes": 19322113,
+      "saved_reopened": true,
+      "renders": {
+        "full": "6b703ca9ba3f0d0ae120b06472720a901d95db3916462cce9099bf0e598d5e5a",
+        "crown": "371844ba696c0549eda3d2c19294f7ae5281d5266677616479ee65b36b03ae13",
+        "podium": "1351a2ddf20e7b57a605e2319c8266d6eb5a53ee9af17b2a5e2450adc5249e75",
+        "entrance": "17e202b8e926db424373d4e6f6d4f54697e07ef21266c03a323d4add1fc51dfb"
+      },
+      "cameras": [
+        [
+          "full",
+          [
+            -430,
+            253,
+            165
+          ],
+          [
+            450,
+            600,
+            230
+          ],
+          520
+        ],
+        [
+          "crown",
+          [
+            -430,
+            253,
+            307
+          ],
+          [
+            180,
+            260,
+            120
+          ],
+          120
+        ],
+        [
+          "podium",
+          [
+            -440,
+            278,
+            20
+          ],
+          [
+            85,
+            140,
+            105
+          ],
+          175
+        ],
+        [
+          "entrance",
+          [
+            -409,
+            312,
+            1
+          ],
+          [
+            45,
+            9,
+            42
+          ],
+          60
+        ]
+      ],
+      "render_settings": {
+        "engine": "CYCLES",
+        "device": "CPU",
+        "samples": 16,
+        "seed": 0,
+        "resolution": [
+          960,
+          720
+        ]
+      },
+      "full_camera_bounds_checked": true
+    }
+  },
+  "code_sha256": {
+    "starter/mori/facade.py": "2dcfac5c2dae48fd893142b1d1fc524141ab95df4c144b4576035a466f945e4a",
+    "starter/mori/profile.py": "78767146deaa0dd7280eda01dfe3da09e69bcc6cce6e4bde812a14c5da220a9b",
+    "starter/mori/run.py": "9b5fe2d029e8debe02e950a73def5b3ba3ce6a4be86ab2cf22ce5c9765bc27c8",
+    "starter/mori/scene.py": "171b9658e2cc5028953b871b793209da83ee47e40a9b92998c937d819a9bf92e",
+    "starter/plateau/run.py": "766405fa9688345d8cf75e9fefce7074ea992b09129975df6adfd83f8aea60bf",
+    "starter/plateau/scene.py": "2f53a4bf52b63dfffd10de674ec080fdb546dbdbf213fdff6d2521c5ba377d3e",
+    "starter/plateau/tile.py": "540aa9b7e8d8efc482f4ef4cdcf0f890bac6102a905707e588f13ca60f2d7c11",
+    "starter/plaza/scene.py": "52bed9bca744615928232d524091caf9d8a7f98cd7b69314364e474ce236bd93",
+    "scripts/mori_shape.py": "e82b840819da692b1a0dd6b27f095c524706fce08c0e85db47b2236301f91411",
+    "scripts/mori_crown_v2.py": "9822f54cec4965881dc5838e5204f55fcf95fcf172620ebb56735101be98015b",
+    "scripts/mori_crown_material.py": "02e207032a4873ee75cf80991ab2066e3621e9a8ccbf4c014e2c5aee06bbc8b5",
+    "scripts/mori_facade_v2.py": "b962aeb523cb35cd242bad7f3a91409750219bda62eec1cd64ddcbf49a7ab26f",
+    "scripts/mori_podium_v3.py": "cec7699cb570248bfb4c121275044b0950a6bfcad128464455a2faabc9321790",
+    "scripts/mori_entrance_v1.py": "aeb7417803ebea8ac8af590aeca7a1e723d1591e1756eb07ad1078cd9e753c90",
+    "scripts/mori_terrace_v1.py": "26f9149e5889266caa7c62bbd8a0df886fb9713266751c0a69e6c6df24a036e5",
+    "scripts/mori_plaza_v1.py": "5f92f0381ab16fd0bbef325db2200381a903723ab5418ecb51c0c64562131ef9",
+    "scripts/mori_plaza_link_v1.py": "9db234b625b99fe1ee5751b4f4da57445ea6122222377e8b2e9fe36105519ec3"
+  },
+  "elapsed_seconds": 60.195521116256714,
+  "sources": {
+    "tileset.json": {
+      "url": "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/tileset.json",
+      "bytes": 412889,
+      "sha256": "edec4c24d137eaf08a8525cecea505a3f21a30823b9ef4fb530e10774cea1323"
+    },
+    "data221.b3dm": {
+      "url": "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data221.b3dm",
+      "bytes": 1246040,
+      "sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2"
+    }
+  },
+  "portable_tests": {
+    "passed": 53,
+    "command": "python -m unittest discover -s tests"
+  },
+  "negative_checks": {
+    "ok": true,
+    "cases": {
+      "roof-missing": {
+        "rejected": true,
+        "expected_error": "Object set mismatch",
+        "exit_code": 1
+      },
+      "neighbor-changed": {
+        "rejected": true,
+        "expected_error": "Object/material fingerprint mismatch",
+        "exit_code": 1
+      },
+      "glass-link-missing": {
+        "rejected": true,
+        "expected_error": "Object/material fingerprint mismatch",
+        "exit_code": 1
+      },
+      "duplicate-tower": {
+        "rejected": true,
+        "expected_error": "Object set mismatch",
+        "exit_code": 1
+      }
+    }
+  },
+  "input_audit": {
+    "ok": true,
+    "feature_id": "bldg_433bc5b3-db73-4644-ac24-a28d51b7ecd5",
+    "tile_sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2",
+    "decoder_sha256": "49630e97d24ca24a3c6fa44ffd06de0d58a27e450ceec248a9a69426c2839087",
+    "legacy_archive_sha256": "786c370507eeb819fe004be256d02a995cb08a2cc301bf742e057b1e89b5ed3d",
+    "triangle_comparison": {
+      "whole_feature": {
+        "triangles": 1644,
+        "bijective_triangle_match": true,
+        "max_vertex_error_m": 3.0405049008517074e-05
+      },
+      "podium": {
+        "triangles": 1070,
+        "bijective_triangle_match": true,
+        "max_vertex_error_m": 3.0405049008517074e-05
+      }
+    },
+    "profile": {
+      "height_m_display": 100,
+      "rays": 160,
+      "all_rays_hit": true,
+      "max_radius_error_m": 1.2899973597768621e-05
+    },
+    "legacy_sources": {
+      "work/landmark_rebuild/build.py": {
+        "bytes": 23867,
+        "sha256": "2190c358ef0811aa612767d6eb16797dab6ca3f1141b858d15baf5c92d165f80"
+      },
+      "work/landmark_rebuild/profiles.py": {
+        "bytes": 1296,
+        "sha256": "c7ad876ad2d0ecf2ab974aa9ed7a43c425a8eae8d3431f7b2e61b0d832866216"
+      },
+      "work/landmark_rebuild/profiles.json": {
+        "bytes": 50336,
+        "sha256": "f5a32c942b7ebd80a7c229e47f265728a3616b694b8025c9a846f61d53347ba2"
+      },
+      "work/interior_walk/glass_return.py": {
+        "bytes": 7220,
+        "sha256": "9bcdf10e8378c02dedf562db12b37adf476f5dce5fa985bd77d0d002c7426336"
+      }
+    },
+    "legacy_inputs_unchanged": true,
+    "legacy_blend_opened": false,
+    "high_detail_regenerated": false,
+    "license_scope_changed": false,
+    "limitations": [
+      "Comparison to legacy data, not survey accuracy",
+      "No full facade/material/interior reconstruction in this audit",
+      "Per-feature base flattening is display-only"
+    ]
+  },
+  "limitations": [
+    "Single Windows PC, not independently verified on another OS",
+    "Human review of these new images pending",
+    "Minimal floors/ceilings/roof only, no furniture or roof equipment",
+    "Legacy height display, no real terrain/road input",
+    "Partial license scope unchanged; full detailed model redistribution not granted"
+  ]
+}

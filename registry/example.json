@@ -1,0 +1,403 @@
+{
+  "schema_version": 1,
+  "purpose": "Synthetic contract fixture. Hashes identify placeholder labels, not downloadable mesh bytes. No real-world accuracy claim.",
+  "frames": [
+    {
+      "id": "fixture:enu",
+      "units": "m",
+      "axes": "east-north-up",
+      "definition": "Synthetic local frame; no geographic origin or survey datum."
+    }
+  ],
+  "sources": [
+    {
+      "id": "otw:fixture:source",
+      "revision": "1",
+      "sha256": "f0bf815893b231ded2372aedd9065f5a01f7d889f694560876c323e00bdb08a1",
+      "license": "MIT",
+      "attribution": "2026 ark4ez / OurJapan; synthetic test data, not surveyed geography",
+      "observed_at": null,
+      "object_ids": [
+        "building-1",
+        "road-1/segment-a",
+        "road-1/segment-b",
+        "terrain-1",
+        "old-sign-1"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "id": "fixture:building",
+      "version": "1",
+      "sha256": "4b203187338cd9bce4bdff92a2c2cdb335a6eab9d15aca651de11460da5d58b4",
+      "format": "mesh-json",
+      "locator": "fixture-only:building",
+      "license": "MIT",
+      "attribution": "2026 ark4ez / OurJapan; metadata fixture only",
+      "source_refs": [
+        "otw:fixture:source"
+      ]
+    },
+    {
+      "id": "fixture:road",
+      "version": "1",
+      "sha256": "a84147d9bbcd8ac00e95ec8d5d449954f43c56698fe02f9ca2f3eb82ed9c2cfe",
+      "format": "mesh-json",
+      "locator": "fixture-only:road",
+      "license": "MIT",
+      "attribution": "2026 ark4ez / OurJapan; metadata fixture only",
+      "source_refs": [
+        "otw:fixture:source"
+      ]
+    },
+    {
+      "id": "fixture:tree",
+      "version": "1",
+      "sha256": "0a3eb8cc42d879febc8fc289feb9b5f4f9fbc74584f1e70391268be12c5c826a",
+      "format": "mesh-json",
+      "locator": "fixture-only:tree",
+      "license": "MIT",
+      "attribution": "2026 ark4ez / OurJapan; metadata fixture only",
+      "source_refs": [
+        "otw:fixture:source"
+      ]
+    },
+    {
+      "id": "fixture:bench",
+      "version": "1",
+      "sha256": "351e9bcb1bb0e33d41764f4a02e56dea7bfd064c9150c6125ddebd464bef08d4",
+      "format": "mesh-json",
+      "locator": "fixture-only:bench",
+      "license": "MIT",
+      "attribution": "2026 ark4ez / OurJapan; metadata fixture only",
+      "source_refs": [
+        "otw:fixture:source"
+      ]
+    },
+    {
+      "id": "fixture:terrain",
+      "version": "1",
+      "sha256": "63654ec67329502b0693ca396efbc665447fe162c96fc474cf5112a2f975c7a7",
+      "format": "mesh-json",
+      "locator": "fixture-only:terrain",
+      "license": "MIT",
+      "attribution": "2026 ark4ez / OurJapan; metadata fixture only",
+      "source_refs": [
+        "otw:fixture:source"
+      ]
+    },
+    {
+      "id": "fixture:paving-material",
+      "version": "1",
+      "sha256": "c7412a8064a81b94c3fa8dc4f607523e6a75a5e525a49055b1aff5f639dd1478",
+      "format": "mesh-json",
+      "locator": "fixture-only:paving-material",
+      "license": "MIT",
+      "attribution": "2026 ark4ez / OurJapan; metadata fixture only",
+      "source_refs": [
+        "otw:fixture:source"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "id": "fixture:building",
+      "kind": "building",
+      "owner_area": "fixture:area",
+      "frame": "fixture:enu",
+      "source_refs": [
+        "otw:fixture:source"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "body",
+          "source_binding": {
+            "source": "otw:fixture:source",
+            "object_id": "building-1"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "v1",
+          "status": "accepted",
+          "requires": [],
+          "operations": [
+            {
+              "action": "replace",
+              "part": "body",
+              "models": {
+                "review": "fixture:building"
+              },
+              "position_m": [
+                0,
+                0,
+                0
+              ],
+              "yaw_degrees": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fixture:road",
+      "kind": "road",
+      "owner_area": "fixture:area",
+      "frame": "fixture:enu",
+      "source_refs": [
+        "otw:fixture:source"
+      ],
+      "parent": null,
+      "review_neighbors": [
+        "fixture:bench-1"
+      ],
+      "parts": [
+        {
+          "id": "segment-a",
+          "source_binding": {
+            "source": "otw:fixture:source",
+            "object_id": "road-1/segment-a"
+          }
+        },
+        {
+          "id": "segment-b",
+          "source_binding": {
+            "source": "otw:fixture:source",
+            "object_id": "road-1/segment-b"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "v1",
+          "status": "accepted",
+          "requires": [],
+          "operations": [
+            {
+              "action": "replace",
+              "part": "segment-a",
+              "models": {
+                "review": "fixture:road"
+              },
+              "position_m": [
+                0,
+                0,
+                0
+              ],
+              "yaw_degrees": 0
+            },
+            {
+              "action": "material",
+              "part": "segment-b",
+              "models": {
+                "review": "fixture:paving-material"
+              },
+              "slot": "paving"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fixture:tree",
+      "kind": "vegetation",
+      "owner_area": "fixture:area",
+      "frame": "fixture:enu",
+      "source_refs": [
+        "otw:fixture:source"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "whole",
+          "source_binding": null
+        }
+      ],
+      "revisions": [
+        {
+          "id": "v1",
+          "status": "accepted",
+          "requires": [],
+          "operations": [
+            {
+              "action": "add",
+              "part": "whole",
+              "models": {
+                "review": "fixture:tree"
+              },
+              "position_m": [
+                0,
+                0,
+                0
+              ],
+              "yaw_degrees": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fixture:bench-1",
+      "kind": "street-furniture",
+      "owner_area": "fixture:area",
+      "frame": "fixture:enu",
+      "source_refs": [
+        "otw:fixture:source"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "whole",
+          "source_binding": null
+        }
+      ],
+      "revisions": [
+        {
+          "id": "v1",
+          "status": "accepted",
+          "requires": [
+            {
+              "feature": "fixture:road",
+              "revision": "v1"
+            }
+          ],
+          "operations": [
+            {
+              "action": "add",
+              "part": "whole",
+              "models": {
+                "review": "fixture:bench"
+              },
+              "position_m": [
+                0,
+                0,
+                0
+              ],
+              "yaw_degrees": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fixture:bench-2",
+      "kind": "street-furniture",
+      "owner_area": "fixture:area",
+      "frame": "fixture:enu",
+      "source_refs": [
+        "otw:fixture:source"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "whole",
+          "source_binding": null
+        }
+      ],
+      "revisions": [
+        {
+          "id": "v1",
+          "status": "accepted",
+          "requires": [],
+          "operations": [
+            {
+              "action": "add",
+              "part": "whole",
+              "models": {
+                "review": "fixture:bench"
+              },
+              "position_m": [
+                3,
+                0,
+                0
+              ],
+              "yaw_degrees": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fixture:terrain",
+      "kind": "terrain",
+      "owner_area": "fixture:area",
+      "frame": "fixture:enu",
+      "source_refs": [
+        "otw:fixture:source"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "surface",
+          "source_binding": {
+            "source": "otw:fixture:source",
+            "object_id": "terrain-1"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "v1",
+          "status": "accepted",
+          "requires": [],
+          "operations": [
+            {
+              "action": "replace",
+              "part": "surface",
+              "models": {
+                "review": "fixture:terrain"
+              },
+              "position_m": [
+                0,
+                0,
+                0
+              ],
+              "yaw_degrees": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fixture:sign",
+      "kind": "signage",
+      "owner_area": "fixture:area",
+      "frame": "fixture:enu",
+      "source_refs": [
+        "otw:fixture:source"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "whole",
+          "source_binding": {
+            "source": "otw:fixture:source",
+            "object_id": "old-sign-1"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "v1",
+          "status": "accepted",
+          "requires": [],
+          "operations": [
+            {
+              "action": "suppress",
+              "part": "whole"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+import bpy, math, ast, random, numpy as np
+from mathutils import Vector
+from pathlib import Path
+P=Path(__file__).resolve().parent; R=P.parents[1]
+geo={}; materials={}; section='Skywalk visible detail'; stats={'structural_members':0}; rng=random.Random(906)
+for node in ast.parse((R/'work/landmark_rebuild/build.py').read_text(encoding='utf-8')).body:
+ if isinstance(node,ast.FunctionDef) and node.name in ['add','box','beam','girder']:
+  exec(compile(ast.Module(body=[node],type_ignores=[]),'<geometry>','exec'))
+def mat(k,c,metal=0,rough=.6):
+ m=bpy.data.materials.new('Skywalk detail / '+k);m.use_nodes=True;m.diffuse_color=(*c,1)
+ bs=m.node_tree.nodes.get('Principled BSDF');bs.inputs['Base Color'].default_value=(*c,1);bs.inputs['Metallic'].default_value=metal;bs.inputs['Roughness'].default_value=rough
+ n=m.node_tree.nodes.new('ShaderNodeTexNoise');n.inputs['Scale'].default_value=18
+ bump=m.node_tree.nodes.new('ShaderNodeBump');bump.inputs['Strength'].default_value=.18;bump.inputs['Distance'].default_value=.007
+ m.node_tree.links.new(n.outputs['Fac'],bump.inputs['Height']);m.node_tree.links.new(bump.outputs['Normal'],bs.inputs['Normal']);materials[k]=m
+for k,c,metal in [('orange',(.54,.045,.012),.4),('steel',(.34,.38,.39),.7),('dark',(.055,.063,.066),.3),('seam',(.22,.235,.23),0),('white',(.7,.69,.63),0),('leaf',(.045,.11,.023),0),('trunk',(.12,.065,.028),0)]:mat(k,c,metal)
+# Preserve the existing glass surround: no invented support frame near the pane.
+s=bpy.context.scene;dg=bpy.context.evaluated_depsgraph_get()
+def hit(x,y):
+ ok,p,n,idx,ob,m=s.ray_cast(dg,Vector((x,y,110)),Vector((0,0,-1)))
+ return (p.z,ob.name,n.z) if ok else None
+def flat(x,y,z,word):
+ h=hit(x,y);return h and word in h[1].lower() and abs(h[0]-z)<.08 and abs(h[2])>.99
+counts={'roof_units':0,'roof_seams':0,'paving_joints':0,'parking_marks':0,'trees':0}
+for x in range(-110,61,5):
+ for y in range(-175,-39,5):
+  h=hit(x,y)
+  if not h:continue
+  z,name,nz=h; name=name.lower()
+  if 'roof' in name and z>5 and abs(nz)>.99:
+   for dx,dy in [(4.8,0),(0,4.8)]:
+    if flat(x+dx,y+dy,z,'roof'):
+     box('seam',(x+dx/2,y+dy/2,z+.026),(dx+.035,dy+.035,.025));counts['roof_seams']+=1
+   if x%15==0 and y%15==0 and all(flat(x+dx,y+dy,z,'roof') for dx,dy in [(-2,-2),(2,-2),(-2,2),(2,2)]):
+    box('dark',(x,y,z+.12),(3.2,2,.20));box('steel',(x,y,z+.65),(2.8,1.65,1.05))
+    for fx in [-.7,.7]:
+     beam('dark',(x+fx,y,z+1.17),(x+fx,y,z+1.22),.52,24)
+     for a in np.linspace(0,math.tau,9,endpoint=False):
+      beam('steel',(x+fx,y,z+1.235),(x+fx+.47*math.cos(a),y+.47*math.sin(a),z+1.235),.016,6)
+    for dz in [.25,.4,.55,.7,.85]:box('dark',(x,y-.837,z+dz),(2.55,.018,.026))
+    beam('steel',(x+1.45,y,z+.40),(x+3,y,z+.40),.09,12)
+    counts['roof_units']+=1
+  elif 'pavement' in name and abs(nz)>.99 and z<3:
+   if flat(x+4.8,y,z,'pavement'):
+    box('seam',(x+2.4,y,z+.025),(4.8,.04,.022));counts['paving_joints']+=1
+  elif 'parking mapped' in name:
+   if y%15==0 and all(flat(x+dx,y+dy,z,'parking mapped') for dx,dy in [(0,0),(2.4,0),(0,4.5),(2.4,4.5)]):
+    for dx in [0,2.4]:box('white',(x+dx,y+2.25,z+.027),(.10,4.5,.022))
+    box('white',(x+1.2,y+4.5,z+.027),(2.5,.10,.022));counts['parking_marks']+=1
+  elif ('asphalt' in name or 'road' in name) and x%15==0 and y%15==0 and z<3:
+   beam('dark',(x,y,z+.021),(x,y,z+.044),.35,24)
+   for dy in [-.15,0,.15]:box('steel',(x,y+dy,z+.047),(.45,.018,.012))
+   if all(flat(x+dx,y+dy,z,'asphalt') for dx,dy in [(1,1),(3.5,1),(1,2.5),(3.5,2.5)]):box('dark',(x+2.25,y+1.75,z+.020),(2.5,1.5,.014))
+  elif 'park mapped' in name and x%10==0 and y%10==0:
+   beam('trunk',(x,y,z),(x,y,z+4),.16,10)
+   # Multi-lobed crown; not a single low-poly cone.
+   for j in range(7):
+    cx=x+rng.uniform(-1.3,1.3);cy=y+rng.uniform(-1.3,1.3);cz=z+rng.uniform(3.4,5.6);rad=rng.uniform(.9,1.6)
+    vs=[]
+    for lat in range(9):
+     a=math.pi*lat/8
+     for lon in range(16):
+      b=math.tau*lon/16;rr=rad*(1+.09*math.sin(5*b+lat))
+      vs.append((cx+rr*math.sin(a)*math.cos(b),cy+rr*math.sin(a)*math.sin(b),cz+rr*math.cos(a)))
+    faces=[(i*16+j,i*16+(j+1)%16,(i+1)*16+(j+1)%16,(i+1)*16+j) for i in range(8) for j in range(16)]
+    add('leaf',vs,faces)
+   counts['trees']+=1
+surface_counts={'asphalt':0,'grass':0}
+for ob in list(s.objects):
+ name=ob.name.lower()
+ kind='grass' if any(k in name for k in ['park mapped','grass','lawn']) else ('asphalt' if any(k in name for k in ['asphalt','parking mapped']) else None)
+ if not kind or ob.type!='MESH':continue
+ for slot in ob.material_slots:
+  if not slot.material or not slot.material.use_nodes:continue
+  m=slot.material.copy();slot.material=m;nodes=m.node_tree.nodes;links=m.node_tree.links
+  bs=next((n for n in nodes if n.type=='BSDF_PRINCIPLED'),None)
+  if bs is None:continue
+  pos=nodes.new('ShaderNodeNewGeometry');broad=nodes.new('ShaderNodeTexNoise');broad.inputs['Scale'].default_value=.32 if kind=='grass' else .10;broad.inputs['Detail'].default_value=4
+  grain=nodes.new('ShaderNodeTexNoise');grain.inputs['Scale'].default_value=85 if kind=='grass' else 160;grain.inputs['Detail'].default_value=3
+  for n in [broad,grain]:links.new(pos.outputs['Position'],n.inputs['Vector'])
+  ramp=nodes.new('ShaderNodeValToRGB');ramp.color_ramp.elements[0].position=.17;ramp.color_ramp.elements[1].position=.83
+  ramp.color_ramp.elements[0].color=(.033,.075,.014,1) if kind=='grass' else (.038,.042,.044,1)
+  ramp.color_ramp.elements[1].color=(.17,.22,.055,1) if kind=='grass' else (.105,.111,.115,1)
+  links.new(broad.outputs['Fac'],ramp.inputs[0]);links.new(ramp.outputs['Color'],bs.inputs['Base Color'])
+  bump=nodes.new('ShaderNodeBump');bump.inputs['Strength'].default_value=.35 if kind=='grass' else .22;bump.inputs['Distance'].default_value=.035 if kind=='grass' else .004
+  links.new(grain.outputs['Fac'],bump.inputs['Height']);links.new(bump.outputs['Normal'],bs.inputs['Normal']);bs.inputs['Roughness'].default_value=.91 if kind=='grass' else .83
+  surface_counts[kind]+=1
+for i in range(3000):
+ x=rng.uniform(-110,60);y=rng.uniform(-175,-40);h=hit(x,y)
+ if not h or 'park mapped' not in h[1].lower():continue
+ z=h[0]+.015
+ for j in range(5):
+  a=rng.uniform(0,math.tau);px=x+rng.uniform(-.18,.18);py=y+rng.uniform(-.18,.18);height=rng.uniform(.08,.19);w=.018
+  add('leaf',[(px-w*math.cos(a),py-w*math.sin(a),z),(px+w*math.cos(a),py+w*math.sin(a),z),(px+.055*math.sin(a),py+.055*math.cos(a),z+height)],[(0,1,2)])
+print('SURFACE_DETAIL_COUNTS',surface_counts,flush=True)
+col=bpy.data.collections.new(section);s.collection.children.link(col)
+for (sect,k),(v,f) in geo.items():
+ me=bpy.data.meshes.new(sect+' '+k);me.from_pydata(v,[],f);me.materials.append(materials[k]);me.update()
+ ob=bpy.data.objects.new(me.name,me);col.objects.link(ob)
+ if k=='leaf':
+  for p in me.polygons:p.use_smooth=True
+s['skywalk_detail_note']='Inferred rooftop equipment and surface detail on existing geometry; no aerial imagery. These details are not a surveyed equipment layout.'
+print('BELOW_DETAIL_COUNTS',counts,flush=True)

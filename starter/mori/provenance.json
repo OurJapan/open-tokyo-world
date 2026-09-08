@@ -1,0 +1,180 @@
+{
+  "status": "approved",
+  "version": "mori-license-proposal-v1",
+  "commit": "e349a7dafd788224f9b7b203e71f170fc19637ed",
+  "code": [
+    {
+      "path": "starter/mori/facade.py",
+      "sha256_lf": "e0422fc6998ad3791ecf3122ccd3e509a540559e791cd415b7578a8cf054f4f4",
+      "source_url": "https://github.com/OurJapan/open-tokyo-world/blob/e349a7dafd788224f9b7b203e71f170fc19637ed/starter/mori/facade.py",
+      "proposed_license": "MIT"
+    },
+    {
+      "path": "starter/mori/profile.py",
+      "sha256_lf": "78767146deaa0dd7280eda01dfe3da09e69bcc6cce6e4bde812a14c5da220a9b",
+      "source_url": "https://github.com/OurJapan/open-tokyo-world/blob/e349a7dafd788224f9b7b203e71f170fc19637ed/starter/mori/profile.py",
+      "proposed_license": "MIT"
+    },
+    {
+      "path": "starter/mori/run.py",
+      "sha256_lf": "9b5fe2d029e8debe02e950a73def5b3ba3ce6a4be86ab2cf22ce5c9765bc27c8",
+      "source_url": "https://github.com/OurJapan/open-tokyo-world/blob/e349a7dafd788224f9b7b203e71f170fc19637ed/starter/mori/run.py",
+      "proposed_license": "MIT"
+    },
+    {
+      "path": "starter/mori/scene.py",
+      "sha256_lf": "171b9658e2cc5028953b871b793209da83ee47e40a9b92998c937d819a9bf92e",
+      "source_url": "https://github.com/OurJapan/open-tokyo-world/blob/e349a7dafd788224f9b7b203e71f170fc19637ed/starter/mori/scene.py",
+      "proposed_license": "MIT"
+    },
+    {
+      "path": "scripts/mori_shape.py",
+      "sha256_lf": "5588ac6e1409944faf1d686baffa7230b7a95a0b939c21502686b0a96d80df5a",
+      "source_url": "https://github.com/OurJapan/open-tokyo-world/blob/e349a7dafd788224f9b7b203e71f170fc19637ed/scripts/mori_shape.py",
+      "proposed_license": "MIT"
+    },
+    {
+      "path": "scripts/mori_crown_v2.py",
+      "sha256_lf": "8bb386b4429575c4c37b914c71b63629fb844c84c0399e943706b34fd10e64a7",
+      "source_url": "https://github.com/OurJapan/open-tokyo-world/blob/e349a7dafd788224f9b7b203e71f170fc19637ed/scripts/mori_crown_v2.py",
+      "proposed_license": "MIT"
+    },
+    {
+      "path": "scripts/mori_crown_material.py",
+      "sha256_lf": "25d8ae26b7c5b2ba38f6db5fd5baa507f18c3965a83a3e09996d71fceb2d1959",
+      "source_url": "https://github.com/OurJapan/open-tokyo-world/blob/e349a7dafd788224f9b7b203e71f170fc19637ed/scripts/mori_crown_material.py",
+      "proposed_license": "MIT"
+    },
+    {
+      "path": "scripts/mori_facade_v2.py",
+      "sha256_lf": "5df83c9acf790bbfc1491f133445221174644663e2c041ec860a2900a81e7b9e",
+      "source_url": "https://github.com/OurJapan/open-tokyo-world/blob/e349a7dafd788224f9b7b203e71f170fc19637ed/scripts/mori_facade_v2.py",
+      "proposed_license": "MIT"
+    },
+    {
+      "path": "scripts/mori_podium_v3.py",
+      "sha256_lf": "b202252d78763d965213c30a8c85260b0ce550e32128a7dbef05107d9e639dfb",
+      "source_url": "https://github.com/OurJapan/open-tokyo-world/blob/e349a7dafd788224f9b7b203e71f170fc19637ed/scripts/mori_podium_v3.py",
+      "proposed_license": "MIT"
+    },
+    {
+      "path": "tests/test_mori_standalone.py",
+      "sha256_lf": "2c6992a1b2555083ae61811b441d73b0adc9690a4ac5d80863ac567d1485e9b1",
+      "source_url": "https://github.com/OurJapan/open-tokyo-world/blob/e349a7dafd788224f9b7b203e71f170fc19637ed/tests/test_mori_standalone.py",
+      "proposed_license": "MIT"
+    },
+    {
+      "path": "tests/mori_standalone_blender.py",
+      "sha256_lf": "b080f2f5ef20fd8ad65e8b7ca76e9bc33fc3cb254cebb26f2ad4bcad680ac6cc",
+      "source_url": "https://github.com/OurJapan/open-tokyo-world/blob/e349a7dafd788224f9b7b203e71f170fc19637ed/tests/mori_standalone_blender.py",
+      "proposed_license": "MIT"
+    }
+  ],
+  "parts": [
+    {
+      "object": "Mori JP podium / aluminum",
+      "scope": "OurJapan original additions only; underlying PLATEAU-derived shape retains its source terms",
+      "proposed_license": "CC-BY-4.0",
+      "classification": "procedural entrance or terrace with inherited placement"
+    },
+    {
+      "object": "Mori JP podium / ceiling",
+      "scope": "OurJapan original additions only; underlying PLATEAU-derived shape retains its source terms",
+      "proposed_license": "CC-BY-4.0",
+      "classification": "procedural entrance or terrace with inherited placement"
+    },
+    {
+      "object": "Mori JP podium / clear glass",
+      "scope": "OurJapan original additions only; underlying PLATEAU-derived shape retains its source terms",
+      "proposed_license": "CC-BY-4.0",
+      "classification": "procedural entrance or terrace with inherited placement"
+    },
+    {
+      "object": "Mori JP podium / gasket",
+      "scope": "OurJapan original additions only; underlying PLATEAU-derived shape retains its source terms",
+      "proposed_license": "CC-BY-4.0",
+      "classification": "procedural entrance or terrace with inherited placement"
+    },
+    {
+      "object": "Mori JP podium / leaf",
+      "scope": "OurJapan original additions only; underlying PLATEAU-derived shape retains its source terms",
+      "proposed_license": "CC-BY-4.0",
+      "classification": "procedural entrance or terrace with inherited placement"
+    },
+    {
+      "object": "Mori JP podium / soil",
+      "scope": "OurJapan original additions only; underlying PLATEAU-derived shape retains its source terms",
+      "proposed_license": "CC-BY-4.0",
+      "classification": "procedural entrance or terrace with inherited placement"
+    },
+    {
+      "object": "Mori JP podium / stone",
+      "scope": "OurJapan original additions only; underlying PLATEAU-derived shape retains its source terms",
+      "proposed_license": "CC-BY-4.0",
+      "classification": "PLATEAU lowrise mesh with inferred OurJapan materials"
+    },
+    {
+      "object": "Mori JP podium / wood",
+      "scope": "OurJapan original additions only; underlying PLATEAU-derived shape retains its source terms",
+      "proposed_license": "CC-BY-4.0",
+      "classification": "procedural entrance or terrace with inherited placement"
+    },
+    {
+      "object": "Mori continuous pearl glass / pearl grey coated glass",
+      "scope": "OurJapan original additions only; underlying PLATEAU-derived shape retains its source terms",
+      "proposed_license": "CC-BY-4.0",
+      "classification": "PLATEAU-profile-derived procedural geometry"
+    },
+    {
+      "object": "Mori continuous pearl glass / recessed spandrel",
+      "scope": "OurJapan original additions only; underlying PLATEAU-derived shape retains its source terms",
+      "proposed_license": "CC-BY-4.0",
+      "classification": "PLATEAU-profile-derived procedural geometry"
+    },
+    {
+      "object": "Mori continuous pearl glass / sealing joint",
+      "scope": "OurJapan original additions only; underlying PLATEAU-derived shape retains its source terms",
+      "proposed_license": "CC-BY-4.0",
+      "classification": "PLATEAU-profile-derived procedural geometry"
+    },
+    {
+      "object": "Mori continuous pearl glass / slender mullion",
+      "scope": "OurJapan original additions only; underlying PLATEAU-derived shape retains its source terms",
+      "proposed_license": "CC-BY-4.0",
+      "classification": "PLATEAU-profile-derived procedural geometry"
+    },
+    {
+      "object": "Mori independent / floors and roof",
+      "scope": "OurJapan original additions only; underlying PLATEAU-derived shape retains its source terms",
+      "proposed_license": "CC-BY-4.0",
+      "classification": "PLATEAU-profile-derived procedural geometry"
+    }
+  ],
+  "attribution": "ark4ez / OurJapan",
+  "existing_mit_snapshot_match": {
+    "mori_plaza_v1": true,
+    "mori_plaza_link_v1": true,
+    "mori_entrance_v1": true,
+    "mori_terrace_v1": true
+  },
+  "asset_reference": {
+    "path": "mori-standalone-final/after.blend",
+    "bytes": 19322113,
+    "sha256": "ab5a227006772243d80831a301b931558c2988e765c83c6d4353879cd5f9193f",
+    "note": "Reference for part identification only; no blanket grant for the combined blend"
+  },
+  "official_source": {
+    "gml_id": "bldg_433bc5b3-db73-4644-ac24-a28d51b7ecd5",
+    "terms": "https://www.mlit.go.jp/plateau/site-policy/",
+    "status": "Site policy rechecked; resource page unavailable in this review; previous source record retained"
+  },
+  "rights_authority_confirmed": true,
+  "license_grant_effective": true,
+  "consent": {
+    "date": "2026-09-07",
+    "account_holder": "ark4ez",
+    "scope_version": "mori-license-proposal-v1",
+    "response": "はい、大丈夫です。",
+    "context": "Explicit confirmation of authority including legacy-derived code, MIT for eleven code snapshots, CC BY 4.0 for identified original additions, and permission to create license-update PR. Not a transfer of third-party rights."
+  }
+}

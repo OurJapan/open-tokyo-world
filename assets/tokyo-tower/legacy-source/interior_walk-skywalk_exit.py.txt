@@ -1,0 +1,74 @@
+import bpy,ast,math,json,numpy as np
+from pathlib import Path
+from mathutils import Vector
+P=Path(__file__).resolve().parent;R=P.parents[1];O=R/'outputs/Skywalk_Exit_Preview';O.mkdir(exist_ok=True);F=P/'frames_exit';F.mkdir(exist_ok=True)
+bpy.ops.wm.open_mainfile(filepath=str(R/'outputs/Interior_Window_Tilt_5deg/Tokyo_Tower_Windows_5deg.blend'));s=bpy.context.scene;s.timeline_markers.clear()
+geo={};section='Continuous window joint seals'
+tree=ast.parse((R/'work/landmark_rebuild/build.py').read_text(encoding='utf-8'))
+for node in tree.body:
+ if isinstance(node,ast.FunctionDef) and node.name in ['add','box','band']:exec(compile(ast.Module(body=[node],type_ignores=[]),'<geometry>','exec'))
+corners=np.array([(14.5,12.1),(12.1,14.5),(-12.1,14.5),(-14.5,12.1),(-14.5,-12.1),(-12.1,-14.5),(12.1,-14.5),(14.5,-12.1)])
+directions=np.sign(corners)*np.where(np.abs(corners)>14,1,math.sqrt(2)-1)
+tree=ast.parse((R/'work/interior_reference/tilt_five.py').read_text(encoding='utf-8'))
+for node in tree.body:
+ if isinstance(node,ast.FunctionDef) and node.name=='direction':exec(compile(ast.Module(body=[node],type_ignores=[]),'<offset>','exec'))
+floor=bpy.data.objects['Photo based main deck / glass'];signature=[tuple(v.co) for v in floor.data.vertices]
+for z in [145.1,150.1]:
+ # Continuous opaque backing closes glazing-to-mullion edges without coincident faces.
+ for i,a in enumerate(corners):
+  b=corners[(i+1)%8];N=3 if i%2==0 else 22;d=(b-a)/N;ang=math.atan2(d[1],d[0]);normal=np.array([d[1],-d[0]])/np.linalg.norm(d)
+  for j in range(N):
+   p=a+j*d;box('seal',(*p,z+1.9),(.108,.075,3.82),ang)
+   mid=p+d/2
+   for h in [.08,.84,3.012,3.80]:box('seal',(*mid,z+h),(np.linalg.norm(d)+.012,.075,.079),ang)
+ # Window sill surround lies below finished carpet and bridges the former perimeter void.
+ section='Closed window sill perimeter';band('sill',corners,z-.055,.04,1.25);section='Continuous window joint seals'
+for (sect,k),(v,f) in geo.items():
+ if k=='seal':
+  v2=[]
+  for x,y,z in v:
+   zbase=145.1 if z<149.8 else 150.1;d=direction(x,y)*max(0,z-zbase)*math.tan(math.radians(5));v2.append((x+d[0],y+d[1],z))
+  v=v2
+ me=bpy.data.meshes.new(sect);me.from_pydata(v,[],f);me.materials.append(bpy.data.materials['Photo interior / rubber' if k=='seal' else 'Photo interior / frame']);me.update();ob=bpy.data.objects.new(sect,me);s.collection.objects.link(ob)
+assert signature==[tuple(v.co) for v in floor.data.vertices]
+data=bpy.data.cameras.new('Skywalk lean and fly through');cam=bpy.data.objects.new(data.name,data);s.collection.objects.link(cam);s.camera=cam;data.lens=23;data.clip_start=.018;data.clip_end=9000;cam.rotation_mode='QUATERNION'
+def smooth(t):return t*t*(3-2*t)
+def aim(loc,target):return (Vector(target)-Vector(loc)).to_track_quat('-Z','Y')
+# First four seconds: lean over the glass floor; then follow the south/west corridor.
+route=[(6,-11.65,146.55),(1,-11.2,146.8),(-7.6,-11.2,146.8),(-11,-10.7,146.8),(-11.7,-5,146.9),(-11.65,4.3,147.1)]
+route=[np.array(x,float) for x in route];samples=[]
+for i in range(len(route)-1):
+ p0=route[max(0,i-1)];p1=route[i];p2=route[i+1];p3=route[min(i+2,len(route)-1)]
+ for t in np.linspace(0,1,100,endpoint=False):samples.append(.5*((2*p1)+(-p0+p2)*t+(2*p0-5*p1+4*p2-p3)*t*t+(-p0+3*p1-3*p2+p3)*t*t*t))
+samples.append(route[-1]);samples=np.array(samples);arc=np.r_[0,np.cumsum(np.linalg.norm(np.diff(samples,axis=0),axis=1))]
+records=[];cross=[]
+for f in range(1,201):
+ sec=(f-1)/199*20
+ if sec<=4:
+  u=smooth(sec/4);loc=np.array((6.55-.55*u,-10.8-.85*u,146.8-.25*u));target=np.array((6,-12.25,144.55));rot=aim(loc,target)
+ elif sec<14:
+  t=(sec-4)/10;u=.85*t+.15*smooth(t);pos=arc[-1]*u;loc=np.array([np.interp(pos,arc,samples[:,j]) for j in range(3)])
+  yaw=math.pi+(math.radians(149)-math.pi)*smooth(t);forward=loc+np.array([math.cos(yaw)*100,math.sin(yaw)*100,3])
+  rot=aim(loc,forward)
+  if sec<6.2:rot=aim(loc,(6,-12.25,144.55)).slerp(rot,smooth((sec-4)/2.2))
+ else:
+  t=(sec-14)/6;u=.9*t+.1*smooth(t);loc=route[-1]*(1-u)+np.array((-22,10.5,148.1))*u
+  rot=aim(loc,(-430,253,191));prior=aim(loc,loc+np.array([math.cos(math.radians(149))*100,math.sin(math.radians(149))*100,3]))
+  rot=prior.slerp(rot,smooth(min(1,(sec-14)/1.5)))
+ # Preserve world-up throughout the look-down to forward transition.
+ rot=(rot@Vector((0,0,-1))).to_track_quat('-Z','Y')
+ cam.location=loc;cam.rotation_quaternion=rot;cam.keyframe_insert(data_path='location',frame=f);cam.keyframe_insert(data_path='rotation_quaternion',frame=f)
+ assert not(abs(loc[0])<9.2 and abs(loc[1])<9.2),(f,loc)
+ signed=loc[0]+14.5+(loc[2]-145.1)*math.tan(math.radians(5));records.append([f,*map(float,loc),float(signed)])
+ if records and len(records)>1 and records[-2][-1]>0 and signed<=0:cross.append(f)
+for fc in cam.animation_data.action.fcurves:
+ for k in fc.keyframe_points:k.interpolation='LINEAR'
+assert len(cross)==1,cross
+f=cross[0];point=records[f-1];assert 5.5<point[2]<6.7,point
+s.frame_start=1;s.frame_end=200;s.render.fps=10;s.render.resolution_x=768;s.render.resolution_y=432;s.render.resolution_percentage=100;s.render.engine='CYCLES';s.cycles.samples=8;s.cycles.use_denoising=True;s.cycles.max_bounces=10;s.cycles.transmission_bounces=8;s.render.image_settings.file_format='PNG';s.render.image_settings.color_mode='RGB'
+s.frame_set(1);s['camera_story']='0–4s glass floor lean, 4–14s interior passage, 14–20s fly through west glass into Azabudai view. Main Deck 1F.'
+bpy.context.preferences.filepaths.save_version=0;bpy.ops.wm.save_as_mainfile(filepath=str(O/'Skywalk_Exit.blend'))
+json.dump({'duration':20,'fps':10,'crossing_frame':cross[0],'positions':records,'floor_glass_preserved':True},open(O/'verification.json','w'),indent=2)
+for f in [35,135,200]:
+ s.frame_set(f);s.render.filepath=str(O/f'check_{f:03d}.png');bpy.ops.render.render(write_still=True)
+s.render.filepath=str(F)+'/';bpy.ops.render.render(animation=True);print('SKYWALK_EXIT_FRAMES_COMPLETE',flush=True)
