@@ -1,0 +1,49 @@
+import bpy,math,json,ast,numpy as np
+from pathlib import Path
+from mathutils import Vector
+R=Path(__file__).resolve().parents[2];O=R/'outputs/Interior_Window_Tilt_5deg';O.mkdir(exist_ok=True)
+bpy.ops.wm.open_mainfile(filepath=str(R/'outputs/Interior_Window_Revision/Tokyo_Tower_Window_Revision.blend'));s=bpy.context.scene
+angle=5.;tan=math.tan(math.radians(angle));H=3.8;offset=H*tan
+corners=np.array([(14.5,12.1),(12.1,14.5),(-12.1,14.5),(-14.5,12.1),(-14.5,-12.1),(-12.1,-14.5),(12.1,-14.5),(14.5,-12.1)])
+# Offset each octagonal face by the same normal distance, retaining closed corners.
+directions=np.sign(corners)*np.where(np.abs(corners)>14,1,math.sqrt(2)-1)
+def direction(x,y):
+ p=np.array([x,y]);best=(1e30,None)
+ for i,a in enumerate(corners):
+  j=(i+1)%8;b=corners[j];v=b-a;t=np.clip(np.dot(p-a,v)/np.dot(v,v),0,1);dist=np.linalg.norm(p-(a+t*v))
+  if dist<best[0]:best=(dist,directions[i]*(1-t)+directions[j]*t)
+ return best[1]
+floor=bpy.data.objects['Photo based main deck / glass'];signature=[tuple(v.co) for v in floor.data.vertices]
+col=bpy.data.collections['2019 reference window revision']
+for ob in col.objects:
+ if ob.type!='MESH':continue
+ basis=ob.data.shape_keys.key_blocks[0];key=ob.data.shape_keys.key_blocks[1]
+ for base,point in zip(basis.data,key.data):
+  p=base.co.copy();point.co=p
+  if max(abs(p.x),abs(p.y))<12:continue
+  zbase=145.1 if p.z<149.8 else 150.1;delta=max(0,p.z-zbase)*tan;v=direction(p.x,p.y);point.co.x+=float(v[0]*delta);point.co.y+=float(v[1]*delta)
+ key.name='Outward slope 5 degrees';key.value=1
+ ob['slope_degrees']=5.;ob['slope_status']='User-requested visual trial, not measured real-world inclination.'
+# Extend the ceiling edge to cover the displaced heads of the glazing.
+ob=bpy.data.objects['Photo based main deck / ceiling']
+for p in ob.data.vertices:
+ if max(abs(p.co.x),abs(p.co.y))>12:
+  v=direction(p.co.x,p.co.y);p.co.x+=float(v[0]*(offset+.05));p.co.y+=float(v[1]*(offset+.05))
+geo={};section='Inclined window head closure'
+tree=ast.parse((R/'work/landmark_rebuild/build.py').read_text(encoding='utf-8'))
+for node in tree.body:
+ if isinstance(node,ast.FunctionDef) and node.name in ['add','band']:exec(compile(ast.Module(body=[node],type_ignores=[]),'<geometry>','exec'))
+for z,ceiling in [(145.1,149.2),(150.1,154.0)]:
+ band('black',corners+directions*(offset+.012),z+H-.012,ceiling-(z+H)+.045,.38)
+for (sect,k),(v,f) in geo.items():
+ me=bpy.data.meshes.new(sect);me.from_pydata(v,[],f);me.materials.append(bpy.data.materials['Photo interior / frame']);ob=bpy.data.objects.new(sect,me);s.collection.objects.link(ob)
+assert signature==[tuple(v.co) for v in floor.data.vertices]
+# Face-normal angle verification independent of camera perspective.
+assert abs(math.degrees(math.atan(offset/H))-5)<1e-8
+s['window_slope_trial']='Upper edge outward 5deg, each floor pivots at its own sill. User-directed trial.'
+s.frame_set(1);s.cycles.samples=32;s.render.resolution_x=1280;s.render.resolution_y=720
+bpy.context.preferences.filepaths.save_version=0;bpy.ops.wm.save_as_mainfile(filepath=str(O/'Tokyo_Tower_Windows_5deg.blend'))
+for name,cam in [('01_Interior_5deg',s.camera),('02_Lower_deck_5deg',bpy.data.objects['Lower deck interior'])]:
+ s.camera=cam;s.render.filepath=str(O/(name+'.png'));bpy.ops.render.render(write_still=True)
+json.dump({'angle_from_vertical_degrees':5,'direction':'upper edge outward','window_vertical_height_m':H,'upper_offset_m':offset,'floor_glass_unchanged':True,'real_world_angle_verified':False},open(O/'verification.json','w'),indent=2)
+print('FIVE_DEGREE_TRIAL_VERIFIED',flush=True)

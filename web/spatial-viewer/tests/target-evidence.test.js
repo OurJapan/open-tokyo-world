@@ -1,0 +1,10 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {buildingCandidates} from '../src/target-evidence.js';
+const building=(id,lat,lon)=>({id,name:id,center:[lat,lon],outline:[[lat-.00004,lon-.00004],[lat-.00004,lon+.00004],[lat+.00004,lon+.00004],[lat+.00004,lon-.00004],[lat-.00004,lon-.00004]],source_url:'https://www.openstreetmap.org/way/1',dimensions:{east_west_m:7,north_south_m:9,height_m:null}});
+const dataset={bbox:[35.69,139.73,35.71,139.76],version:'test',attribution:'© OpenStreetMap contributors',license:'ODbL-1.0',buildings:[building('north',35.7019,139.745),building('south',35.6999,139.745)]};
+const draft={location:{latitude:35.7009,longitude:139.745,accuracy_m:5},orientation:{reference:'webkit-compass',heading_deg:359}};
+test('GPS and compass rank a north target across the 0/360 boundary without asserting identity',()=>{const r=buildingCandidates(draft,dataset);assert.equal(r.items[0].building.id,'north');});
+test('missing, invalid, inaccurate and out-of-area location produce no candidates',()=>{for(const location of [null,{...draft.location,latitude:NaN},{...draft.location,accuracy_m:51},{...draft.location,latitude:36}])assert.equal(buildingCandidates({...draft,location},dataset).items.length,0);});
+test('relative orientation is not treated as a compass and no location is inferred from area_id',()=>{const r=buildingCandidates({...draft,orientation:{reference:'relative',alpha:0}},dataset);assert.equal(r.items[0].angle_deg,null);assert.equal(buildingCandidates({area_id:'iidabashi'},dataset).items.length,0);});
+test('real catalogue is bounded, attributed, closed geometry and preserves absent heights',()=>{const d=JSON.parse(readFileSync(new URL('../public/data/iidabashi-buildings.json',import.meta.url)));assert.ok(d.buildings.length>100);assert.equal(d.license,'ODbL-1.0');assert.ok(d.buildings.some(b=>b.name.includes('飯田橋駅')));assert.ok(d.buildings.some(b=>b.dimensions.height_m===null));assert.ok(d.buildings.every(b=>b.outline.length>=4&&JSON.stringify(b.outline[0])===JSON.stringify(b.outline.at(-1))));assert.ok(buildingCandidates(draft,d).items.length>0);});

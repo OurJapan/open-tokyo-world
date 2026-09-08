@@ -29,10 +29,42 @@ The original six procedural parts, their materials, starter camera/lighting, pre
 
 The original implementations in `starter/plateau/run.py`, `starter/plateau/tile.py`, `starter/plateau/scene.py`, and `tests/test_plateau_tile.py` are licensed under the [MIT License](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This grant does not cover PLATEAU data, imagery, Blender or its installed Draco library. Keep the input-specific notices in `starter/plateau/NOTICE.md`; generated combined scenes do not receive a blanket MIT grant.
 
+## MIT: standalone Mori generation and adapters
+
+The independent implementations in the eleven files below, at commit `e349a7dafd788224f9b7b203e71f170fc19637ed`, are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This includes licensor-controlled legacy-derived code incorporated into these files, not unrelated legacy files. The licensor confirmed authority and consent on 2026-09-07; see [provenance](starter/mori/provenance.json). Hashes identify the snapshot (CRLF normalized to LF) and do not restrict modification or redistribution under MIT. The original license-bundling updates to `starter/mori/run.py` and `tests/test_mori_standalone.py` in this change are also MIT.
+
+| File | SHA-256 (LF) |
+|---|---|
+| `starter/mori/facade.py` | `e0422fc6998ad3791ecf3122ccd3e509a540559e791cd415b7578a8cf054f4f4` |
+| `starter/mori/profile.py` | `78767146deaa0dd7280eda01dfe3da09e69bcc6cce6e4bde812a14c5da220a9b` |
+| `starter/mori/run.py` | `9b5fe2d029e8debe02e950a73def5b3ba3ce6a4be86ab2cf22ce5c9765bc27c8` |
+| `starter/mori/scene.py` | `171b9658e2cc5028953b871b793209da83ee47e40a9b92998c937d819a9bf92e` |
+| `scripts/mori_shape.py` | `5588ac6e1409944faf1d686baffa7230b7a95a0b939c21502686b0a96d80df5a` |
+| `scripts/mori_crown_v2.py` | `8bb386b4429575c4c37b914c71b63629fb844c84c0399e943706b34fd10e64a7` |
+| `scripts/mori_crown_material.py` | `25d8ae26b7c5b2ba38f6db5fd5baa507f18c3965a83a3e09996d71fceb2d1959` |
+| `scripts/mori_facade_v2.py` | `5df83c9acf790bbfc1491f133445221174644663e2c041ec860a2900a81e7b9e` |
+| `scripts/mori_podium_v3.py` | `b202252d78763d965213c30a8c85260b0ce550e32128a7dbef05107d9e639dfb` |
+| `tests/test_mori_standalone.py` | `2c6992a1b2555083ae61811b441d73b0adc9690a4ac5d80863ac567d1485e9b1` |
+| `tests/mori_standalone_blender.py` | `b080f2f5ef20fd8ad65e8b7ca76e9bc33fc3cb254cebb26f2ad4bcad680ac6cc` |
+
+## CC BY 4.0: original Mori additions
+
+The original contributions within thirteen detailed Mori parts, their original materials, standalone camera/lighting, and original documentation/metadata in `starter/mori/` have the grant in [ASSET-LICENSE.md](starter/mori/ASSET-LICENSE.md). Underlying PLATEAU-derived geometry and other third-party components retain their source terms. This is not a blanket license for the combined scene.
+
+## Tokyo Tower: MIT code and CC BY 4.0 original assets
+
+The nine historical code snapshots listed with SHA-256 and source ranges in [Tokyo Tower provenance](assets/tokyo-tower/provenance.json), plus the original `assets/tokyo-tower/export.py` and `tests/test_tower_license.py`, are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. Source ranges cover only the archived text, not unrelated portions of the legacy files. The account holder explicitly confirmed authorship, authority and the same MIT/CC BY policy on 2026-09-07. Snapshot hashes identify the grant and do not restrict modifications allowed by MIT.
+
+The 77 original Tokyo Tower parts and their original materials, plus the new isolated review setup and previews, have the [CC BY 4.0 grant](assets/tokyo-tower/ASSET-LICENSE.md). Third-party rights and the rest of the legacy city remain outside that grant.
+
+## Generic object registry
+
+The original `scripts/object_registry.py`, `tests/test_object_registry.py`, `registry/example.json`, and `registry/example.lock.json` are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. The registry example is synthetic contract data, not a real city model or a grant for third-party inputs.
+
 ## Outside these grants
 
-Except for the separately identified starter above, no license is granted here for other repository files, legacy city scenes, generated models, reference photos, textures, music, trademarks, PLATEAU data, OpenStreetMap data, or other third-party content. Any separately applicable license remains in effect. Execution of the covered code does not itself grant rights to its inputs or outputs. This scope document adds no conditions to the MIT grant for the covered code.
+Except for the separately identified starters and original additions above, no license is granted here for other repository files, legacy city scenes, generated models, reference photos, textures, music, trademarks, PLATEAU data, OpenStreetMap data, or other third-party content. Any separately applicable license remains in effect. Execution of the covered code does not itself grant rights to its inputs or outputs. This scope document adds no conditions to the MIT grant for the covered code.
 
-6部品のスターターに限ってCC BY 4.0を適用します。全都市モデルや他のコード・文書が一括してMIT／CC BYになったとは扱わないでください。
+広場6部品、森JPタワーの独自追加部分等、および東京タワーの指定独自部分等にCC BY 4.0を適用します。全都市モデルや他のコード・文書が一括してMIT／CC BYになったとは扱わないでください。
 
 See [NOTICE](NOTICE.md) for provenance and operational dependencies. Attribution required by a third-party license must be retained when that data is used; those requirements are not additional restrictions on the independent MIT code.

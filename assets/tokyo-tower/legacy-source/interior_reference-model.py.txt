@@ -1,0 +1,95 @@
+import bpy,bmesh,math,ast,random,numpy as np,json
+from pathlib import Path
+from mathutils import Vector
+P=Path(__file__).resolve().parent;R=P.parents[1];O=R/'outputs/Interior_Photo_Based';O.mkdir(exist_ok=True)
+bpy.ops.wm.open_mainfile(filepath=str(R/'outputs/Interior_Walk_Detailed/Interior_Walk_Detailed.blend'));s=bpy.context.scene
+for ob in bpy.data.collections['Observation interior detail'].objects:ob.hide_render=True;ob.hide_viewport=True
+# Remove the former approximate main-deck interior, retaining the top deck.
+for ob in list(bpy.data.collections['Tokyo Tower decks and interior'].objects):
+ if ob.type!='MESH':continue
+ bm=bmesh.new();bm.from_mesh(ob.data);bmesh.ops.delete(bm,geom=[v for v in bm.verts if v.co.z<160],context='VERTS');bm.to_mesh(ob.data);bm.free()
+geo={};section='Photo based main deck';materials={};rng=random.Random(9626)
+tree=ast.parse((R/'work/landmark_rebuild/build.py').read_text(encoding='utf-8'))
+for node in tree.body:
+ if isinstance(node,ast.FunctionDef) and node.name in ['add','box','beam','ring','band','rounded','resample']:exec(compile(ast.Module(body=[node],type_ignores=[]),'<geometry>','exec'))
+def mat(k,c,metal=0,rough=.5):
+ m=bpy.data.materials.new('Photo interior / '+k);m.use_nodes=True;m.diffuse_color=(*c,1);p=m.node_tree.nodes.get('Principled BSDF');p.inputs['Base Color'].default_value=(*c,1);p.inputs['Metallic'].default_value=metal;p.inputs['Roughness'].default_value=rough;materials[k]=m;return m
+mat('frame',(.018,.023,.027),.65,.28);mat('rubber',(.008,.009,.01),0,.8);mat('silver',(.45,.49,.51),.85,.25);mat('wall',(.045,.049,.052),.55,.12);mat('ceiling',(.026,.029,.033),.2,.65);mat('slab',(.25,.26,.27),0,.85);mat('white',(.78,.79,.76),.2,.35);mat('grid',(.68,.7,.68),0,.85)
+m=mat('glass',(.96,.99,1),0,.035);p=m.node_tree.nodes.get('Principled BSDF');p.inputs['Transmission Weight'].default_value=1;p.inputs['IOR'].default_value=1.46
+m=mat('light',(1,.93,.82),0,.3);p=m.node_tree.nodes.get('Principled BSDF');p.inputs['Emission Color'].default_value=(1,.93,.82,1);p.inputs['Emission Strength'].default_value=3
+for i in range(5):
+ m=mat('carpet'+str(i),(.13+i*.008,.132+i*.008,.133+i*.008),0,.94);n=m.node_tree.nodes;l=m.node_tree.links;p=n.get('Principled BSDF');g=n.new('ShaderNodeNewGeometry');tex=n.new('ShaderNodeTexNoise');tex.inputs['Scale'].default_value=60;tex.inputs['Detail'].default_value=2;l.new(g.outputs['Position'],tex.inputs['Vector']);r=n.new('ShaderNodeValToRGB');r.color_ramp.elements[0].position=.2;r.color_ramp.elements[0].color=(.065,.07,.073,1);r.color_ramp.elements[1].position=.8;r.color_ramp.elements[1].color=(.23+i*.009,.235+i*.009,.24+i*.009,1);l.new(tex.outputs['Fac'],r.inputs[0]);l.new(r.outputs[0],p.inputs['Base Color']);fine=n.new('ShaderNodeTexNoise');fine.inputs['Scale'].default_value=900;l.new(g.outputs['Position'],fine.inputs['Vector']);b=n.new('ShaderNodeBump');b.inputs['Strength'].default_value=.22;b.inputs['Distance'].default_value=.0006;l.new(fine.outputs['Fac'],b.inputs['Height']);l.new(b.outputs[0],p.inputs['Normal'])
+col=bpy.data.collections.new(section);s.collection.children.link(col)
+holes=[(x,y) for x in [-6,6] for y in [-12.25,12.25]]
+def hole(x,y):return any(abs(x-hx)<1 and abs(y-hy)<.75 for hx,hy in holes)
+outline=resample(rounded(29,29,3.4,24),112)
+for z in [145.1,150.1]:
+ # Separate closed tile solids leave genuine openings in both finish and slab.
+ for ix in range(56):
+  for iy in range(56):
+   x=-13.75+ix*.5;y=-13.75+iy*.5
+   if abs(x)>11.1 and abs(y)>11.1 and (abs(x)-11.1)**2+(abs(y)-11.1)**2>3.0**2:continue
+   if z<146 and hole(x,y):continue
+   if abs(x)<9 and abs(y)<9:continue
+   box('carpet'+str(rng.randrange(5)),(x,y,z-.015),(.5,.5,.03));box('slab',(x,y,z-.16),(.5,.5,.26))
+ band('white',outline,z-.4,.28,.32);ring('ceiling',outline,z+(4.1 if z<146 else 3.3),.10,inset=.25)
+ # Closed glazing with dark structural mullions and horizontal transoms.
+ top=z+(4.0 if z<146 else 3.2)
+ for p,q in zip(outline,np.roll(outline,-1,axis=0)):
+  d=q-p;ang=math.atan2(d[1],d[0]);mid=(p+q)/2;L=np.linalg.norm(d)
+  box('glass',(*mid,(z+top)/2),(L-.075,.022,top-z),ang)
+  box('frame',(*p,(z+top)/2),(.12,.24,top-z),ang)
+  for h in [.12,.75,top-z-.65,top-z]:box('frame',(*mid,z+h),(L,.18,.085),ang)
+  box('silver',(*mid,z+.025),(L,.34,.035),ang)
+ # Reflective dark central enclosure, panel joints, restrained recessed lighting.
+ for side in range(4):
+  a=side*math.pi/2;c=math.cos(a);t=math.sin(a)
+  def B(k,u,v,h,sz):box(k,(c*u-t*v,t*u+c*v,z+h),sz,a)
+  B('rubber',0,-8.99,1.62,(18,.12,3.24))
+  for j in range(15):B('wall',-8.4+j*1.2,-9.07,1.61,(1.188,.035,3.19))
+  B('frame',0,-9.10,.07,(18,.10,.14))
+  for u in [-7,-3,1,5,9]:
+   B('frame',u,-11.3,top-z-.13,(.18,.18,.08));B('light',u,-11.3,top-z-.18,(.105,.105,.017))
+  for j in range(16):B('frame',0,-9.35-j*.06,top-z-.04,(16,.024,.05))
+  for u in [-4,4]:
+   B('silver',u,-9.105,1.2,(1.6,.04,2.35));B('frame',u,-9.135,1.2,(.012,.02,2.35))
+  for u in [-12.7,12.7]:B('frame',u,-12.7,(top-z)/2,(.35,.35,top-z))
+ # Gentle interior fill preserves the approved bright morning exposure.
+ for x,y in [(0,-11.3),(-11.3,0),(11.3,0),(0,11.3)]:
+  d=bpy.data.lights.new('Soft daylight bounce','AREA');d.energy=110;d.shape='DISK';d.size=5;ob=bpy.data.objects.new(d.name,d);col.objects.link(ob);ob.location=(x,y,top-.2)
+# Glass floor: aperture, polished surround, gasket, bolts, thick pane and edge reveal.
+z=145.1
+for hx,hy in holes:
+ box('glass',(hx,hy,z-.075),(1.85,1.35,.055))
+ for x in [hx-1,hx+1]:
+  box('silver',(x,hy,z+.003),(.15,1.64,.024));box('frame',(x,hy,z-.16),(.10,1.5,.32))
+  for y in [hy-.58,hy,hy+.58]:beam('rubber',(x,y,z+.015),(x,y,z+.019),.018,12)
+ for y in [hy-.75,hy+.75]:box('silver',(hx,y,z+.003),(2,.15,.024));box('rubber',(hx,y,z-.08),(1.9,.045,.045))
+ # The grille lies below the glass, without covering the view with a solid surface.
+ for x in [hx-.5,hx,hx+.5]:beam('silver',(x,hy-.7,z-.20),(x,hy+.7,z-.20),.008,8)
+# Recreate the photographed optical grid as geometry on one carpet zone.
+for direction in [0,1]:
+ for a in np.arange(-3,3.01,.25):
+  last=None
+  for b in np.linspace(-2,2,65):
+   u,v=(a,b) if direction==0 else (b*1.5,a*2/3)
+   x=-6+u;y=-11.9+v;dist=((u/2)**2+(v/1.5)**2);x+=.13*math.sin(v*2)*math.exp(-dist/3);y+=.13*math.sin(u*2)*math.exp(-dist/3)
+   if y<-13.95 or hole(x,y):last=None;continue
+   now=(x,y,z+.001)
+   if last:beam('grid',last,now,.006,4)
+   last=now
+for (sect,k),(v,f) in geo.items():
+ me=bpy.data.meshes.new(sect+' / '+k);me.from_pydata(v,[],f);me.materials.append(materials[k]);me.update();ob=bpy.data.objects.new(me.name,me);col.objects.link(ob)
+ if k in ['frame','silver','wall']:
+  mod=ob.modifiers.new('Edge radii','BEVEL');mod.width=.003;mod.segments=2
+ ob['reference']='Official main-deck photos visually inspected; dimensions and complete plan inferred.'
+s['photo_reference_status']='main.jpg, skywalk.jpg, wall.jpg visually inspected. No reference images used as texture.'
+s.render.engine='CYCLES';s.cycles.samples=48;s.cycles.use_denoising=True;s.cycles.max_bounces=10;s.cycles.transmission_bounces=8;s.render.resolution_x=1280;s.render.resolution_y=720;s.render.resolution_percentage=100
+s.frame_set(1);walk=s.camera
+def camera(name,loc,target,lens):
+ d=bpy.data.cameras.new(name);d.lens=lens;d.clip_start=.04;d.clip_end=9000;ob=bpy.data.objects.new(name,d);col.objects.link(ob);ob.location=loc;ob.rotation_euler=(Vector(target)-ob.location).to_track_quat('-Z','Y').to_euler();return ob
+views=[('01_Upper_interior',walk),('02_Lower_interior',camera('Lower deck interior',(11,-11,146.8),(-5,-12,146.3),22)),('03_Skywalk',camera('Skywalk detail',(-4.3,-10.4,147),(-6,-12.25,144.3),30))]
+bpy.context.preferences.filepaths.save_version=0;s.camera=walk;bpy.ops.wm.save_as_mainfile(filepath=str(O/'Tokyo_Tower_Photo_Interior.blend'))
+for name,cam in views:
+ s.camera=cam;s.render.filepath=str(O/(name+'.png'));bpy.ops.render.render(write_still=True)
+print('PHOTO_INTERIOR_COMPLETE',flush=True)
