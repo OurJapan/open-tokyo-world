@@ -40,7 +40,7 @@ PowerShellスクリプトを実行できない環境や、Pythonを自分で指�
 python scripts/workspace.py doctor --blender 'C:\Tools\Blender-4.5.1\blender.exe'
 ```
 
-共通CLIは他OSの実行ファイルパスも受け付けますが、現在の実機確認はWindowsです。新しいOS、別PC、初参加者による完了確認は別途必要です。
+共通CLIは他OSの実行ファイルパスも受け付けます。個人の実機確認はWindowsで行っています。別PCを用意できない場合は[新しいWindows／Linux仮想マシンでの参加環境検証](contributor-environment-check.md)を使えます。初参加者による対話操作の確認は別途必要です。
 
 ## 2. 対象を準備する
 
