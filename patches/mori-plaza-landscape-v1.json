@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "purpose": "reviewed-change",
+  "reason": "Restore the saved grass and garden footprints where the proven incorrect road removed them; add mapped pedestrian-area paving and an explicitly inferred short entrance connection at the inherited lawn height.",
+  "source_refs": [
+    "https://www.openstreetmap.org/way/1443867470",
+    "https://www.openstreetmap.org/way/1443867471",
+    "https://www.azabudai-hills.com/floor_map/mori-jp_tower-plaza_1f.html",
+    "https://www.nihonsekkei.co.jp/projects/19811/"
+  ],
+  "operations": [
+    {
+      "op": "mori_plaza_landscape_v1",
+      "object": "Mori JP podium / stone",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "expected_mesh_sha256": "4f4cfbc17a08f91e35ea5787b9bc062a51c0df8ffdee5a4017c9ed85da16ccf6",
+      "park_mesh_sha256": "607d8e5c7e9d0bd92a04361864ed10dbd747ad706f779de722025d503ef30d25",
+      "plan_sha256": "b1b6776b7cf60c9e5e4a342bac5a27624b0c743dd950358af8607fb3b5c589a8",
+      "added_objects": ["OTW Mori Central Green / paving"]
+    }
+  ]
+}

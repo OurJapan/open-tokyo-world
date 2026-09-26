@@ -1,0 +1,6 @@
+{
+  "bytes": 558818952,
+  "sha256": "1141a1408727d04860d5f722681e92fa63c363efe8da67b9c5e12f4b12d8f9a8",
+  "blender_version": "4.5.1 LTS",
+  "description": "PR39 output reviewed by the user on 2026-09-27. Fixed input for the next local landscape review; not a change to the common city profile."
+}
