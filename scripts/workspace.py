@@ -292,12 +292,14 @@ def main(argv=None):
     common.add_argument("--workspace", type=Path, default=ROOT / "data/local")
     common.add_argument("--blender", type=Path)
     sub = parser.add_subparsers(dest="command", required=True)
-    for name in ("status", "doctor", "fetch", "setup", "import-city", "verify", "edit", "review"):
+    for name in ("status", "doctor", "fetch", "fetch-production", "setup", "import-city", "verify", "edit", "review"):
         command = sub.add_parser(name, parents=[common])
         if name in {"setup", "verify", "edit"}:
             command.add_argument("--profile", choices=["city", "mori"], default="city")
         if name in {"fetch", "setup"}:
             command.add_argument("--inputs", type=Path, help="Explicit directory containing the two exact official files")
+        if name == "fetch-production":
+            command.add_argument("--inputs", type=Path, help="Explicit directory containing the pinned historical source files")
         if name == "import-city":
             command.add_argument("--input", required=True, type=Path)
         if name == "edit":
@@ -317,6 +319,10 @@ def main(argv=None):
                     result["profiles"][profile] = {"ready_locally": False, "reason": str(error)}
         elif args.command == "fetch":
             result = {"sources": str(fetch_sources(workspace, catalog, args.inputs))}
+        elif args.command == "fetch-production":
+            from fetch_legacy_production import fetch
+            result = {"sources": str(fetch(inside(workspace, "sources/legacy-production-defac576"), args.inputs)),
+                      "purpose": "Source inspection; no legacy code execution or city generation"}
         elif args.command == "setup" and args.profile == "city":
             # Do this first: never quietly build a different city when this is unavailable.
             if args.inputs:

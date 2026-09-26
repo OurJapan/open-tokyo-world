@@ -1,0 +1,618 @@
+{
+  "version": 1,
+  "checked_on": "2026-09-27",
+  "status": "source-recovered-partial-geometry-match-inputs-missing",
+  "baseline": {
+    "bytes": 558751758,
+    "sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+    "catalog_record": "sources/city-pr12-catalog-summary.json",
+    "catalog_record_commit": "f1e35433fc60a9282880c350daead2d49e0a01a0"
+  },
+  "upstream": {
+    "repository": "https://github.com/ark4ez/tokyo-tower-blender",
+    "previous_url": "https://github.com/DoiTakayoshi/tokyo-tower-blender",
+    "visibility_checked_on": "2026-09-27",
+    "visibility": "private",
+    "access": "GitHub authentication and upstream read permission required.",
+    "commit": "defac576e076f40bf3bc4fddcdcefe30f9a009f7",
+    "tree_truncated": false
+  },
+  "source_manifest": "manifests/legacy-production-sources.json",
+  "source_manifest_sha256": "e034f5583919438ca9057a9319a63df9f0264ed600257d13f656582be2654e18",
+  "source_files_verified": 22,
+  "source_bytes_verified": 96714,
+  "method": "Read-only scene metadata, manual static inspection of pinned code, and isolated replay of reviewed prototype-only ranges.",
+  "groups": [
+    {
+      "id": "park-trees",
+      "mesh_objects": 4,
+      "scope_sha256": "aefe9a3f8df51204f8e5e40685f979146e4b77689224c32a8ecf9f74684bc29a",
+      "code_correspondence": "static-code-and-scene-clues",
+      "local_mesh_geometry_matches": 0,
+      "static_only_mesh_objects": 4,
+      "source_ranges": [
+        {
+          "path": "work/tokyo60/build_city.py",
+          "start": 92,
+          "end": 111
+        },
+        {
+          "path": "work/tower15_env/refine_canopies.py",
+          "start": 5,
+          "end": 23
+        },
+        {
+          "path": "work/tokyo_traffic/build.py",
+          "start": 11,
+          "end": 19
+        }
+      ],
+      "placement_and_prior_inputs": [
+        "work/osm.xml",
+        "prior canopy blend",
+        "work/tokyo_traffic/tree_keep.json"
+      ],
+      "catalog_referenced_images": [],
+      "placement_verified": false,
+      "material_nodes_verified": false
+    },
+    {
+      "id": "street-trees",
+      "mesh_objects": 1316,
+      "scope_sha256": "3c8b27d30bb87058b29a528521a377d72b1e14d3c03a2e493f1b95c9f930ec41",
+      "code_correspondence": "prototype-local-mesh-match",
+      "local_mesh_geometry_matches": 1314,
+      "static_only_mesh_objects": 2,
+      "source_ranges": [
+        {
+          "path": "work/tokyo_traffic/build.py",
+          "start": 59,
+          "end": 86
+        },
+        {
+          "path": "work/tokyo_traffic/layout.py",
+          "start": 6,
+          "end": 42
+        },
+        {
+          "path": "work/tokyo_traffic/tree_filter.py",
+          "start": 1,
+          "end": 7
+        }
+      ],
+      "placement_and_prior_inputs": [
+        "work/tokyo_traffic/layout.json",
+        "work/osm.xml",
+        "work/wide_detail/wide_roads.npz",
+        "PLATEAU footprint records"
+      ],
+      "catalog_referenced_images": [],
+      "placement_verified": false,
+      "material_nodes_verified": false
+    },
+    {
+      "id": "shrubs",
+      "mesh_objects": 1333,
+      "scope_sha256": "7d1cf853de5b23d0991944a622a6d73b89892601a43b4434068051081b7f3c38",
+      "code_correspondence": "prototype-local-mesh-match",
+      "local_mesh_geometry_matches": 1333,
+      "static_only_mesh_objects": 0,
+      "source_ranges": [
+        {
+          "path": "work/tower15_env/build_environment.py",
+          "start": 60,
+          "end": 70
+        },
+        {
+          "path": "work/tower15_env/surfaces.py",
+          "start": 22,
+          "end": 44
+        }
+      ],
+      "placement_and_prior_inputs": [
+        "work/tower15_env/shrubs.json",
+        "work/osm.xml",
+        "work/wide_detail/wide_roads.npz",
+        "PLATEAU footprint records"
+      ],
+      "catalog_referenced_images": [],
+      "placement_verified": false,
+      "material_nodes_verified": false
+    },
+    {
+      "id": "vehicles",
+      "mesh_objects": 14,
+      "scope_sha256": "467b3855f55aac781c14cace10c6133a42b13639ee7ca9ca89cdca7d87dc7779",
+      "code_correspondence": "static-code-and-scene-clues",
+      "local_mesh_geometry_matches": 0,
+      "static_only_mesh_objects": 14,
+      "source_ranges": [
+        {
+          "path": "work/tokyo_traffic/build.py",
+          "start": 20,
+          "end": 57
+        },
+        {
+          "path": "work/tokyo_traffic/layout.py",
+          "start": 18,
+          "end": 33
+        }
+      ],
+      "placement_and_prior_inputs": [
+        "work/tokyo_traffic/layout.json",
+        "work/osm.xml",
+        "work/wide_detail/wide_roads.npz",
+        "PLATEAU footprint records"
+      ],
+      "catalog_referenced_images": [],
+      "placement_verified": false,
+      "material_nodes_verified": false
+    },
+    {
+      "id": "lights",
+      "mesh_objects": 1,
+      "scope_sha256": "76192880fb027847afda0612e862e451f6d52f16039f7a605f4ad0233200dfc4",
+      "code_correspondence": "static-code-and-scene-clues",
+      "local_mesh_geometry_matches": 0,
+      "static_only_mesh_objects": 1,
+      "source_ranges": [
+        {
+          "path": "work/detail_upgrade/finish_detail.py",
+          "start": 21,
+          "end": 41
+        }
+      ],
+      "placement_and_prior_inputs": [
+        "work/osm.xml",
+        "work/detail_upgrade/imported_features.json"
+      ],
+      "catalog_referenced_images": [],
+      "placement_verified": false,
+      "material_nodes_verified": false
+    },
+    {
+      "id": "equipment",
+      "mesh_objects": 8,
+      "scope_sha256": "bbc0f27fef569922ac80f9f88f4807d78b80c75c295684d0455a0c065ffaac0a",
+      "code_correspondence": "static-code-and-scene-clues",
+      "local_mesh_geometry_matches": 0,
+      "static_only_mesh_objects": 8,
+      "source_ranges": [
+        {
+          "path": "work/street_detail/build.py",
+          "start": 18,
+          "end": 84
+        },
+        {
+          "path": "work/street_detail/prepare.py",
+          "start": 6,
+          "end": 32
+        },
+        {
+          "path": "work/street_detail/facade_layout.py",
+          "start": 7,
+          "end": 14
+        }
+      ],
+      "placement_and_prior_inputs": [
+        "work/street_detail/placements.json",
+        "work/street_detail/facade_layouts.json",
+        "prior blend with PLATEAU geometry and images"
+      ],
+      "catalog_referenced_images": [],
+      "placement_verified": false,
+      "material_nodes_verified": false
+    }
+  ],
+  "prototype_verification": {
+    "version": 1,
+    "input_sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+    "blender_version": "4.5.1 LTS",
+    "code_sha256_lf": {
+      "scripts/verify_tree_prototypes.py": "06ecc0ee237166b71dda56b7a01252ed1acc50e334e6839e6cc896147d7355dc",
+      "scripts/blender_worker.py": "413aef20acde7aaefa2c8466b0f11b2c321609f347117b12a1c616867411654f"
+    },
+    "approved_code_ranges": {
+      "work/street_detail/build.py": [
+        "263764443a32bf0f8dc3282fc6ec1685a3e3abe162cff086a35ab12a4a48ef48",
+        [
+          [
+            8,
+            9
+          ]
+        ]
+      ],
+      "work/tokyo_traffic/build.py": [
+        "cac0d9630e17930608fc2947e1fb26e6230cc7033ab5240d9322c670c5377bba",
+        [
+          [
+            24,
+            27
+          ],
+          [
+            30,
+            31
+          ],
+          [
+            60,
+            79
+          ]
+        ]
+      ],
+      "work/tower15_env/build_environment.py": [
+        "18075ad06cd96fef2600ba13a321a22458a06b16538bc78d1dba42f585604344",
+        [
+          [
+            62,
+            67
+          ]
+        ]
+      ]
+    },
+    "groups": [
+      {
+        "prefix": "Street tree ",
+        "objects": 1314,
+        "geometry_matches": 1314,
+        "mismatches": [],
+        "unique_saved_geometry": 12,
+        "prototypes": [
+          {
+            "species": "ginkgo",
+            "variant": 0,
+            "vertices": 592,
+            "polygons": 370,
+            "mesh_sha256": "deb77d8ea286fd18a1609e0954cd950fda8c887a865801d07829f88436c6cd97"
+          },
+          {
+            "species": "ginkgo",
+            "variant": 0,
+            "vertices": 73080,
+            "polygons": 62640,
+            "mesh_sha256": "d3a6407e75ea45cbfa9e811963ea986c373595d3b84d2c995c722e653f42f6fb"
+          },
+          {
+            "species": "ginkgo",
+            "variant": 1,
+            "vertices": 592,
+            "polygons": 370,
+            "mesh_sha256": "7e38e06ed4c8ffd90d79ba26d29aad10232b2d43b5b30283607645401d1133fd"
+          },
+          {
+            "species": "ginkgo",
+            "variant": 1,
+            "vertices": 73080,
+            "polygons": 62640,
+            "mesh_sha256": "655dedabc859505ef9739665ac39abede4dc0dd1dc35b0acaafdb2c670315e9f"
+          },
+          {
+            "species": "ginkgo",
+            "variant": 2,
+            "vertices": 592,
+            "polygons": 370,
+            "mesh_sha256": "adb447796668fcaa91bb4205975148551cc5d9410cbdbd125f2f7a974c90d64d"
+          },
+          {
+            "species": "ginkgo",
+            "variant": 2,
+            "vertices": 73080,
+            "polygons": 62640,
+            "mesh_sha256": "0a389088cdcc97328e250f212ed80828ec203a08e0a9dbfcf76938c5f09333f8"
+          },
+          {
+            "species": "zelkova",
+            "variant": 0,
+            "vertices": 592,
+            "polygons": 370,
+            "mesh_sha256": "d5b97ac85d4fd42c30afadef08ed9c577d6274fcca70158632bceea4bef9aead"
+          },
+          {
+            "species": "zelkova",
+            "variant": 0,
+            "vertices": 52200,
+            "polygons": 41760,
+            "mesh_sha256": "7ec58e3ceebf4cb160ccdc4bed28ebc25b9d1795aa4f84ca56456c93e4841ee8"
+          },
+          {
+            "species": "zelkova",
+            "variant": 1,
+            "vertices": 592,
+            "polygons": 370,
+            "mesh_sha256": "3954f5f9d2749d7bb39b1e510651745671258f0a1aa0dd66b238eac9f52a26d2"
+          },
+          {
+            "species": "zelkova",
+            "variant": 1,
+            "vertices": 52200,
+            "polygons": 41760,
+            "mesh_sha256": "310260f1d13ff91e3b3fe6ed9ac465ae304dc75c91cb7ab5e50234850095abc3"
+          },
+          {
+            "species": "zelkova",
+            "variant": 2,
+            "vertices": 592,
+            "polygons": 370,
+            "mesh_sha256": "efb048dc4142f79182251a8425fd426d3500d42767aaa81446617b92d4add1f4"
+          },
+          {
+            "species": "zelkova",
+            "variant": 2,
+            "vertices": 52200,
+            "polygons": 41760,
+            "mesh_sha256": "a7444df5a481605d813a61add81eb4e94dae19b141eeb73ba3952c1d6e9ab7bc"
+          }
+        ]
+      },
+      {
+        "prefix": "Park shrub ",
+        "objects": 1333,
+        "geometry_matches": 1333,
+        "mismatches": [],
+        "unique_saved_geometry": 4,
+        "prototypes": [
+          {
+            "variant": 0,
+            "vertices": 42,
+            "polygons": 80,
+            "mesh_sha256": "b5e9f77e4f4f7f55cfccfa4707550d97475f351f57729f089eda145085a09643"
+          },
+          {
+            "variant": 1,
+            "vertices": 42,
+            "polygons": 80,
+            "mesh_sha256": "cb1241bb9db40edf24ad255c47356b35f05f1a69eccbf5465b48270ca5898c91"
+          },
+          {
+            "variant": 2,
+            "vertices": 42,
+            "polygons": 80,
+            "mesh_sha256": "39d130782d8c4f3208e056131801109c4c9f414089f8388f84abe34885a8a598"
+          },
+          {
+            "variant": 3,
+            "vertices": 42,
+            "polygons": 80,
+            "mesh_sha256": "4297a83cca660865e41b824084bcc114fa5f867b537a0cbbcdee4f573a8386f3"
+          }
+        ]
+      }
+    ],
+    "input_unchanged": true,
+    "scope": "Local mesh coordinates, topology, polygon material indices and UVs only. No placement, material nodes, modifiers or rights confirmation.",
+    "ok": true
+  },
+  "street_tree_pairs": 657,
+  "street_tree_pairs_by_species": {
+    "ginkgo": 223,
+    "zelkova": 434
+  },
+  "embedded_audit": {
+    "objects": 2676,
+    "objects_with_custom_properties": 0,
+    "libraries": 0,
+    "text_blocks": [
+      {
+        "name": "READ ME • Rebuilt landmarks",
+        "use_module": false,
+        "utf8_bytes": 604,
+        "utf8_sha256": "68f7fa760e9fbab6ae0188a6b600cd327605771c487d9bff7957cfe9861f8666"
+      },
+      {
+        "name": "Street detail • progress and scope",
+        "use_module": false,
+        "utf8_bytes": 470,
+        "utf8_sha256": "de52e786033b20bfa7e3aa0148fb018d9cee8d2ac9f8e900eca3b51a22f3b6df"
+      },
+      {
+        "name": "制作メモ.md",
+        "use_module": false,
+        "utf8_bytes": 3287,
+        "utf8_sha256": "a00c40c12c3cb4b490ec756c14fa9bf0eeb3c971cdcd2a395d4e733186a7b44b"
+      }
+    ],
+    "text_inspection": "All three are production/progress notes, not saved Python generators.",
+    "local_report_sha256": "2b00af2b6f97ec370ff195ffe2a6b5917780449a411d0482c749d359e07dadfa",
+    "inspector_code_sha256_lf": "451a043ab0a39e411eb50375162ca644a8bcc986cf954e8ce498abbfcb250289",
+    "input_unchanged": true
+  },
+  "missing_inputs_at_checked_paths": [
+    {
+      "path": "work/osm.xml",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "work/wide_detail/selected_tiles.json",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "work/wide_detail/roads.json",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "work/twin_towers/tower_surfaces.json",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "work/wide_detail/wide_roads.npz",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "work/wide_detail/road_checks.json",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "work/wide_detail/imported_features.json",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "work/detail_upgrade/imported_features.json",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "work/tower15_env/shrubs.json",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "work/tower15_env/road_detail.npz",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "work/tower15_env/surface_checks.json",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "work/tower15_env/landuse.npz",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "work/tower15_env/landuse_areas.json",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "work/tokyo_traffic/layout.json",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "work/tokyo_traffic/tree_centers.json",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "work/tokyo_traffic/tree_keep.json",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "work/tokyo_traffic/road_boundary.wkb.npy",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "work/street_detail/placements.json",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "work/street_detail/facade_input.json",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "work/street_detail/facade_layouts.json",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "outputs/Tokyo60/tower.blend",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "outputs/Detail_Upgrade/Tokyo_Tower_Detailed_District.blend",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "outputs/Tokyo_Cinematic_Final/tower.blend",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "outputs/Tokyo_Tower_15s_Preparation/Tokyo_Tower_Environment_Updated.blend",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    },
+    {
+      "path": "outputs/Tokyo_Tower_Street_Detail/Tokyo_Tower_Street_Detail.blend",
+      "present_in_upstream_tree": false,
+      "present_at_legacy_path": false,
+      "present_at_current_repository_path": false
+    }
+  ],
+  "search_scope": "Pinned upstream tree and exact expected paths in the user-supplied legacy folder and current repository; not all local storage.",
+  "map_input_routes": [
+    {
+      "input": "work/osm.xml",
+      "role": "Original roads, land use and placement constraints",
+      "snapshot_recovered": false,
+      "historical_saved_osm_sha256": "f04e8e70ab24a61ca749375d1ef37401feb0fdc840cc506b670ef71454a6a8ab",
+      "historical_hash_to_this_path_verified": false,
+      "historical_record": "docs/mori-plaza-edge-v1.md"
+    },
+    {
+      "input": "work/wide_detail/roads.json",
+      "role": "Separate Overpass road response for selected tile bounds",
+      "producer": "work/wide_detail/fetch_roads.py",
+      "bounds_input": "work/wide_detail/selected_tiles.json",
+      "snapshot_recovered": false,
+      "acquisition_time_verified": false,
+      "response_sha256": null
+    }
+  ],
+  "generation_seeds": {
+    "initial_city": 842,
+    "old_canopies": 1809,
+    "shrub_prototypes": 1560,
+    "shrub_placement": 260906,
+    "traffic_and_street_tree_placement": 90619,
+    "ginkgo_prototypes": [
+      1000,
+      1001,
+      1002
+    ],
+    "zelkova_prototypes": [
+      1100,
+      1101,
+      1102
+    ]
+  },
+  "constraints": [
+    "Private upstream access is required; anonymous download failed with HTTP 404.",
+    "Only prototype local mesh coordinates, topology, polygon material indices and UVs were matched.",
+    "Placement transforms, material nodes, the remaining 29 meshes and a complete city rebuild remain unverified.",
+    "No external tree/vehicle/equipment model import was found in the inspected generators; prior scenes and map/building inputs remain dependencies.",
+    "Near-facade details use prior PLATEAU imagery as inference input despite image-free current materials.",
+    "Historical scripts use local runtime paths and unpinned libraries; the old complete pipelines were not executed.",
+    "No new authorship determination or license grant. Original scene and redistribution status unchanged."
+  ],
+  "new_license_grant": null,
+  "city_redistribution": "pending"
+}

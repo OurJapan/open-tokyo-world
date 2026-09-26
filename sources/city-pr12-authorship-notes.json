@@ -61,13 +61,14 @@
   ],
   "candidate_mesh_objects": 2676,
   "external_model_use": "not-established",
-  "source_code_correspondence": "pending",
+  "source_code_correspondence": "partial-local-mesh-match",
   "map_input_and_placement_provenance": "pending",
   "new_license_grant": null,
   "city_redistribution": "pending",
   "next_evidence": [
-    "Locate production scripts, saved project files or creation records for the candidate groups.",
-    "Match their outputs and any external model/material inputs to the pinned city parts.",
-    "Keep map-derived placement and input terms separate from original mesh authorship."
-  ]
+    "Recover the two pinned OSM inputs and PLATEAU footprint records or prepare a separately versioned replacement input.",
+    "Verify remaining 29 meshes, placement transforms and materials against the recovered production chain.",
+    "Confirm authorship/license scope separately from matching procedural geometry."
+  ],
+  "production_audit": "sources/city-pr12-production-audit.json"
 }
