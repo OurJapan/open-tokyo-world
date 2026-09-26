@@ -48,7 +48,7 @@ python -m unittest discover -s tests
 
 ## 配布候補を分ける
 
-最初の候補は、街路樹6バリエーションの幹・葉12メッシュと低木4メッシュ、数式材質31種です。基本形状のローカル座標と新しい展示用配置だけを取り出し、街の配置座標・地図・建物・旧スクリプトを含めません。2026-09-27、この限定範囲へのCC BY 4.0適用に同意があり、[正式な許諾記録とZIP](../assets/procedural-components/README.md)を用意しました。公開URLは未登録です。
+最初の候補は、街路樹6バリエーションの幹・葉12メッシュと低木4メッシュ、数式材質31種です。基本形状のローカル座標と新しい展示用配置だけを取り出し、街の配置座標・地図・建物・旧スクリプトを含めません。2026-09-27、この限定範囲へのCC BY 4.0適用に同意があり、[正式な許諾記録と公開ZIP](../assets/procedural-components/README.md)を用意しました。
 
 [承認前の候補台帳](../manifests/procedural-components-distribution.draft.json)は履歴として保持し、現行の許諾は[確定した対象台帳](../assets/procedural-components/provenance.json)を参照します。2026-09-27に作成した `data/local/candidates/procedural-components-20260927/kit.blend` は9,844,090 bytes、SHA-256 `78ea637f9b154274c62fd20160995b649139c191a09056f8696ec5baee10595a` です。別プロセスで16形状・31材質を照合し、画像・外部library参照・埋め込みTextがすべて0件で、1200×850の確認画像も生成できました。6種類の木と4種類の低木が画面内に収まることを確認しています。残りの塗装・灯具等の材質は、対応する街の集約形状を含めず材質データだけ保持しています。
 

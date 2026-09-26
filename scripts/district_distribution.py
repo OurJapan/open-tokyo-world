@@ -144,6 +144,17 @@ def code_hash(path):
     return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
 
 
+def check_mori_contract(district, runtime, catalog):
+    # Pin the settings used by the adapter, not unrelated distribution URLs in
+    # contributor-workspace.json. Moving a download must not invalidate a build.
+    profile = catalog["profiles"]["mori"]
+    expected = {key: profile[key] for key in ("runner", "scene", "expected_meshes", "distribution")}
+    expected["source_notice"] = catalog["sources"]["plateau-minato-2025"]["notice"]
+    require(district.get("adapter_contract") == expected and runtime == {
+        key: catalog[key] for key in ("blender_version", "runner_python_versions")},
+        "Mori adapter configuration differs from lock/catalog; review the recipe version")
+
+
 def plan(catalog, districts, common, root=ROOT):
     validate_catalog(catalog)
     require(districts or common, "Select --district and/or --common; use district list to see choices")
@@ -155,6 +166,8 @@ def plan(catalog, districts, common, root=ROOT):
     packages = {key: copy.deepcopy(catalog["packages"][key]) for key in closure(catalog["packages"], roots)}
     paths = set(catalog["tool_files"])
     for district in selected.values():
+        if district["adapter"] == "mori-v1":
+            check_mori_contract(district, catalog["runtime"], ws.load_catalog())
         paths.update(district["recipe_files"])
     code = {name: code_hash(ws.inside(root, portable_path(name))) for name in sorted(paths)}
     return {"schema_version": 1, "runtime": copy.deepcopy(catalog["runtime"]), "districts": selected,
@@ -408,6 +421,7 @@ def setup(workspace, lock, blender, directories=(), offline=False, current=None)
         package = lock["packages"][district["input_package"]]
         if district["adapter"] == "mori-v1":
             require(key == "mori", "Mori adapter is specific to the Mori district")
+            check_mori_contract(district, lock["runtime"], catalog)
             reference = catalog["sources"]["plateau-minato-2025"]["files"]
             require(set(package["files"]) == set(reference) and all(
                 all(package["files"][name][field] == reference[name][field] for field in ("bytes", "sha256"))

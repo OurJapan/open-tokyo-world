@@ -107,7 +107,7 @@ open-tokyo-world/
 
 [回収した入力の取り込み・再実行](city-input-recovery.md)を追加しました。`.\otw.ps1 import-production-inputs --input 'C:\Received\legacy-project'` で地図・配置20ファイルを登録できます。道路・配置の12出力と、街路樹・低木2,647メッシュの形状・変換を照合済みです。入力の公開配布先、街全体を最初から生成する工程は未整備です。
 
-`--include-scenes` を付けると前段モデル5本も登録できます。そのうち3本を使い、[残る29メッシュ・31材質の照合](city-component-verification.md)を完了しました。基本形状16部品と31材質には[CC BY 4.0を適用し、配布用ZIPを検証](../assets/procedural-components/README.md)しました。公開URLは未登録で、現在のcloneにはモデルを同梱していません。
+`--include-scenes` を付けると前段モデル5本も登録できます。そのうち3本を使い、[残る29メッシュ・31材質の照合](city-component-verification.md)を完了しました。基本形状16部品と31材質には[CC BY 4.0を適用し、配布用ZIPを公開](../assets/procedural-components/README.md)しました。cloneにはモデルを同梱せず、`.\otw.ps1 district setup --common procedural-components` で公開版を取得できます。
 
 [画像付き部品一覧](city-catalog.md)で、既存の街の3,255メッシュを13分類から確認できます。非表示の部品も含めて部品名・出典記録を調べ、制作元メモを書き出せます。元のblendには保存しません。
 

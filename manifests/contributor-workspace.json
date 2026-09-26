@@ -81,13 +81,14 @@
       "component_verification": "sources/city-pr12-component-verification.json"
     },
     "procedural-components-candidate": {
-      "distribution": "licensed-package-verified-public-release-pending",
+      "distribution": "published-prerelease-download-verified",
       "manifest": "assets/procedural-components/provenance.json",
       "scope": "assets/procedural-components/README.md",
-      "public_url": null,
-      "availability_note": "CC BY 4.0 for the named 16 prototypes and 31 materials. A self-contained ZIP has been verified locally; public Release URL and independent PC validation are pending.",
+      "public_url": "https://github.com/OurJapan/open-tokyo-world/releases/download/procedural-components-v0.1.0/procedural-components-v0.1.0.zip",
+      "availability_note": "CC BY 4.0 for the named 16 prototypes and 31 materials. The self-contained ZIP is public; anonymous download and Blender reopen/render were verified on the same Windows PC. Independent PC validation remains pending.",
       "license": "assets/procedural-components/ASSET-LICENSE.md",
-      "package": "assets/procedural-components/package-v0.1.0.json"
+      "package": "assets/procedural-components/package-v0.1.0.json",
+      "release": "assets/procedural-components/release-v0.1.0.json"
     }
   }
 }

@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "component": "procedural-components",
+  "version": "0.1.0",
+  "tag": "procedural-components-v0.1.0",
+  "stage": "preview",
+  "source_repository": "https://github.com/OurJapan/open-tokyo-world",
+  "source_commit": "338aa2b248af1e12b0d1fd4f46eefe5fdcefc99b",
+  "release_url": "https://github.com/OurJapan/open-tokyo-world/releases/tag/procedural-components-v0.1.0",
+  "asset": {
+    "name": "procedural-components-v0.1.0.zip",
+    "url": "https://github.com/OurJapan/open-tokyo-world/releases/download/procedural-components-v0.1.0/procedural-components-v0.1.0.zip",
+    "bytes": 10405562,
+    "sha256": "8c78dcce8ba43c5d4e28cb92936b0a1569dc1fe8f68042efce49fbfe4f6197c6"
+  },
+  "scope": {
+    "prototype_meshes": 16,
+    "procedural_materials": 31,
+    "tree_variants": 6,
+    "shrub_variants": 4,
+    "excluded": [
+      "full city",
+      "original geographic placement",
+      "maps",
+      "third-party images",
+      "legacy source code"
+    ]
+  },
+  "license": "CC-BY-4.0 for the exact licensor-controlled scope in the bundled ASSET-LICENSE.md and provenance.json",
+  "attribution": "ark4ez / OurJapan",
+  "toolchain": {
+    "blender": "4.5.1 LTS",
+    "python": "3.11.11",
+    "os": "Windows"
+  },
+  "verification": {
+    "zip_crc_and_inventory": true,
+    "extracted_model_opened_and_rendered": true,
+    "approved_preview_pixels_equal": true,
+    "images": 0,
+    "linked_libraries": 0,
+    "embedded_texts": 0,
+    "packager_sha256_lf": "ab2c8ac1b92d79e2d9f41e97545162e4b3c354960d163e120a2372b8aa99ca90",
+    "source_comparison": "Bundled license, notice, README and provenance match the merged source commit after CRLF to LF normalization. The reviewed ZIP bytes are unchanged.",
+    "public_download": "Verify after publication; this file records pre-publication checks."
+  },
+  "model": {
+    "bytes": 9844037,
+    "sha256": "09328b7da383f8bdd6dfbf8173a5000105c9aee3f5484ccad2ee866bbaee59a7"
+  },
+  "archive_members": [
+    "ASSET-LICENSE.md",
+    "NOTICE.md",
+    "README.md",
+    "inventory.json",
+    "kit.blend",
+    "preview.png",
+    "provenance.json",
+    "verification.json"
+  ],
+  "limitations": [
+    "Same Windows PC only; no independent PC or other-OS test.",
+    "Prototype vegetation and materials, not measured representations of actual trees.",
+    "No full-city reconstruction, geographic placement or shared-library automatic placement.",
+    "Published versions are retained by project policy; this release does not configure immutable releases or an independent backup."
+  ]
+}

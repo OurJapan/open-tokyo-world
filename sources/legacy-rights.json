@@ -38,7 +38,7 @@
       "source": "Pinned historical procedural generators match the selected local geometry and shader graphs.",
       "scope": "assets/procedural-components/provenance.json",
       "verification": "sources/city-pr12-component-verification.json",
-      "redistribution": "licensed-package-verified-public-release-pending",
+      "redistribution": "published-prerelease-download-verified",
       "new_license_grant": {
         "license": "CC-BY-4.0",
         "date": "2026-09-27",
@@ -46,7 +46,8 @@
         "scope": "16 named prototype meshes and 31 procedural materials, plus their dedicated preview only."
       },
       "excludes": "Original city coordinates, mapped aggregate geometry, third-party data, imagery and legacy source code.",
-      "package": "assets/procedural-components/package-v0.1.0.json"
+      "package": "assets/procedural-components/package-v0.1.0.json",
+      "release_record": "assets/procedural-components/release-v0.1.0.json"
     }
   ],
   "geometry_inventory": "sources/city-pr12-geometry-audit.json",

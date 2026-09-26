@@ -30,7 +30,6 @@
       "recipe_files": [
         "LICENSE.md",
         "MIT-LICENSE.txt",
-        "manifests/contributor-workspace.json",
         "scripts/mori_crown_material.py",
         "scripts/mori_crown_v2.py",
         "scripts/mori_entrance_v1.py",
@@ -69,6 +68,13 @@
           "original full city placement"
         ],
         "note": "An existing limited build scope, not a newly cut administrative/geographic district."
+      },
+      "adapter_contract": {
+        "runner": "starter/mori/run.py",
+        "scene": "after.blend",
+        "expected_meshes": 42,
+        "distribution": "rebuild-from-pinned-official-inputs",
+        "source_notice": "starter/plateau/NOTICE.md"
       }
     }
   },
@@ -101,14 +107,16 @@
       "version": "0.1.0",
       "kind": "shared",
       "requires": [],
-      "availability": "local-only",
+      "availability": "public",
       "license": "CC-BY-4.0",
       "notice": "assets/procedural-components/NOTICE.md",
       "files": {
         "procedural-components-v0.1.0.zip": {
           "bytes": 10405562,
           "sha256": "8c78dcce8ba43c5d4e28cb92936b0a1569dc1fe8f68042efce49fbfe4f6197c6",
-          "urls": []
+          "urls": [
+            "https://github.com/OurJapan/open-tokyo-world/releases/download/procedural-components-v0.1.0/procedural-components-v0.1.0.zip"
+          ]
         }
       },
       "archive": "procedural-components-v0.1.0.zip",
