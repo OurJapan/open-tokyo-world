@@ -32,5 +32,6 @@
   ],
   "geometry_inventory": "sources/city-pr12-geometry-audit.json",
   "distribution_review": "docs/city-distribution-plan.md",
-  "notice_draft": "sources/city-distribution-NOTICE.draft.md"
+  "notice_draft": "sources/city-distribution-NOTICE.draft.md",
+  "authorship_notes": "sources/city-pr12-authorship-notes.json"
 }
