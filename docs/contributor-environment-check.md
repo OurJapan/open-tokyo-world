@@ -4,7 +4,7 @@
 
 ## 確認する内容
 
-1. コードを取得し、公式のBlender 4.5.1をダウンロードします。配布アーカイブのSHA-256を[公式チェックサム](https://download.blender.org/release/Blender4.5/blender-4.5.1.sha256)で固定しています。
+1. コードを取得し、[公式ミラーサービス](https://mirror.blender.org/)からBlender 4.5.1をダウンロードします。配布アーカイブのSHA-256を[公式チェックサム](https://download.blender.org/release/Blender4.5/blender-4.5.1.sha256)で固定しています。
 2. 空の作業先と専用のBlender設定フォルダーを作ります。制作データのキャッシュは復元せず、GitHub認証情報・Pythonユーザーパッケージ・個人のBlender設定に依存しない実行条件を用います。
 3. 地区CLIで森JP周辺と共通素材を公開URLから取得し、サイズ・ハッシュを照合します。森JP周辺42メッシュと共通素材16メッシュを開き、CPUで4視点のBefore/Afterを描画します。
 4. オフライン再実行で取得0 bytes・同じ生成済みモデルの再利用を確認します。
