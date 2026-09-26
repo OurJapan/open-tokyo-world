@@ -25,7 +25,8 @@
       "polygons": 64,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-001"
     },
     {
       "object": "Continuous window joint seals",
@@ -36,7 +37,8 @@
       "polygons": 6000,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-002"
     },
     {
       "object": "Closed window sill perimeter",
@@ -47,7 +49,8 @@
       "polygons": 64,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-003"
     },
     {
       "object": "Tokyo Tower structure / stone",
@@ -58,7 +61,8 @@
       "polygons": 24,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-004"
     },
     {
       "object": "Tokyo Tower structure / orange",
@@ -69,7 +73,8 @@
       "polygons": 55222,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-005"
     },
     {
       "object": "Tokyo Tower structure / white",
@@ -80,7 +85,8 @@
       "polygons": 13724,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-006"
     },
     {
       "object": "Tokyo Tower structure / darkmetal",
@@ -91,7 +97,8 @@
       "polygons": 6,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-007"
     },
     {
       "object": "Tokyo Tower decks and interior / white",
@@ -102,7 +109,8 @@
       "polygons": 126,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-008"
     },
     {
       "object": "Tokyo Tower decks and interior / aluminum",
@@ -113,7 +121,8 @@
       "polygons": 240,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-009"
     },
     {
       "object": "Tokyo Tower decks and interior / clear glass",
@@ -124,7 +133,8 @@
       "polygons": 240,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-010"
     },
     {
       "object": "Tokyo Tower decks and interior / gasket",
@@ -135,7 +145,8 @@
       "polygons": 240,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-011"
     },
     {
       "object": "Tokyo Tower decks and interior / floor",
@@ -146,7 +157,8 @@
       "polygons": 42,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-012"
     },
     {
       "object": "Tokyo Tower decks and interior / ceiling",
@@ -157,7 +169,8 @@
       "polygons": 42,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-013"
     },
     {
       "object": "Tokyo Tower decks and interior / warm light",
@@ -168,7 +181,8 @@
       "polygons": 60,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-014"
     },
     {
       "object": "Tokyo Tower decks and interior / mirror",
@@ -179,7 +193,8 @@
       "polygons": 20,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-015"
     },
     {
       "object": "Photo based main deck / carpet3",
@@ -190,7 +205,8 @@
       "polygons": 4224,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-016"
     },
     {
       "object": "Photo based main deck / slab",
@@ -201,7 +217,8 @@
       "polygons": 21504,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-017"
     },
     {
       "object": "Photo based main deck / carpet4",
@@ -212,7 +229,8 @@
       "polygons": 4554,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-018"
     },
     {
       "object": "Photo based main deck / carpet0",
@@ -223,7 +241,8 @@
       "polygons": 4416,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-019"
     },
     {
       "object": "Photo based main deck / carpet2",
@@ -234,7 +253,8 @@
       "polygons": 4146,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-020"
     },
     {
       "object": "Photo based main deck / carpet1",
@@ -245,7 +265,8 @@
       "polygons": 4164,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-021"
     },
     {
       "object": "Photo based main deck / white",
@@ -256,7 +277,8 @@
       "polygons": 896,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-022"
     },
     {
       "object": "Photo based main deck / ceiling",
@@ -267,7 +289,8 @@
       "polygons": 228,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-023"
     },
     {
       "object": "Photo based main deck / glass",
@@ -278,7 +301,8 @@
       "polygons": 24,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-024"
     },
     {
       "object": "Photo based main deck / frame",
@@ -289,7 +313,8 @@
       "polygons": 1296,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-025"
     },
     {
       "object": "Photo based main deck / silver",
@@ -300,7 +325,8 @@
       "polygons": 216,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-026"
     },
     {
       "object": "Photo based main deck / rubber",
@@ -311,7 +337,8 @@
       "polygons": 96,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-027"
     },
     {
       "object": "Photo based main deck / wall",
@@ -322,7 +349,8 @@
       "polygons": 720,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-028"
     },
     {
       "object": "Photo based main deck / light",
@@ -333,7 +361,8 @@
       "polygons": 240,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-029"
     },
     {
       "object": "Photo based main deck / grid",
@@ -344,7 +373,8 @@
       "polygons": 16668,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-030"
     },
     {
       "object": "2019 reference window revision / black",
@@ -355,7 +385,8 @@
       "polygons": 6024,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-031"
     },
     {
       "object": "2019 reference window revision / glass",
@@ -366,7 +397,8 @@
       "polygons": 7200,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-032"
     },
     {
       "object": "2019 reference window revision / gasket",
@@ -377,7 +409,8 @@
       "polygons": 14400,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-033"
     },
     {
       "object": "2019 reference window revision / aluminum",
@@ -388,7 +421,8 @@
       "polygons": 3600,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-034"
     },
     {
       "object": "2019 reference window revision / white",
@@ -399,7 +433,8 @@
       "polygons": 1264,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-035"
     },
     {
       "object": "Skywalk visible detail steel",
@@ -410,7 +445,8 @@
       "polygons": 1564,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-036"
     },
     {
       "object": "Skywalk visible detail dark",
@@ -421,7 +457,8 @@
       "polygons": 1098,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-037"
     },
     {
       "object": "Skywalk visible detail seam",
@@ -432,7 +469,8 @@
       "polygons": 852,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-038"
     },
     {
       "object": "Skywalk visible detail trunk",
@@ -443,7 +481,8 @@
       "polygons": 492,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-039"
     },
     {
       "object": "Skywalk visible detail leaf",
@@ -454,7 +493,8 @@
       "polygons": 36736,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-040"
     },
     {
       "object": "Skywalk visible detail white",
@@ -465,7 +505,8 @@
       "polygons": 270,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-041"
     },
     {
       "object": "Flush metal surround",
@@ -476,7 +517,8 @@
       "polygons": 124,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-042"
     },
     {
       "object": "Continuous outer gasket",
@@ -487,7 +529,8 @@
       "polygons": 16,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-043"
     },
     {
       "object": "Continuous glass edge seal",
@@ -498,7 +541,8 @@
       "polygons": 16,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-044"
     },
     {
       "object": "Flush fixing",
@@ -509,7 +553,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-045"
     },
     {
       "object": "Flush fixing.001",
@@ -520,7 +565,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-046"
     },
     {
       "object": "Flush fixing.002",
@@ -531,7 +577,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-047"
     },
     {
       "object": "Flush fixing.003",
@@ -542,7 +589,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-048"
     },
     {
       "object": "Flush fixing.004",
@@ -553,7 +601,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-049"
     },
     {
       "object": "Flush fixing.005",
@@ -564,7 +613,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-050"
     },
     {
       "object": "Flush metal surround.001",
@@ -575,7 +625,8 @@
       "polygons": 124,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-051"
     },
     {
       "object": "Continuous outer gasket.001",
@@ -586,7 +637,8 @@
       "polygons": 16,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-052"
     },
     {
       "object": "Continuous glass edge seal.001",
@@ -597,7 +649,8 @@
       "polygons": 16,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-053"
     },
     {
       "object": "Flush fixing.006",
@@ -608,7 +661,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-054"
     },
     {
       "object": "Flush fixing.007",
@@ -619,7 +673,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-055"
     },
     {
       "object": "Flush fixing.008",
@@ -630,7 +685,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-056"
     },
     {
       "object": "Flush fixing.009",
@@ -641,7 +697,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-057"
     },
     {
       "object": "Flush fixing.010",
@@ -652,7 +709,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-058"
     },
     {
       "object": "Flush fixing.011",
@@ -663,7 +721,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-059"
     },
     {
       "object": "Flush metal surround.002",
@@ -674,7 +733,8 @@
       "polygons": 124,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-060"
     },
     {
       "object": "Continuous outer gasket.002",
@@ -685,7 +745,8 @@
       "polygons": 16,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-061"
     },
     {
       "object": "Continuous glass edge seal.002",
@@ -696,7 +757,8 @@
       "polygons": 16,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-062"
     },
     {
       "object": "Flush fixing.012",
@@ -707,7 +769,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-063"
     },
     {
       "object": "Flush fixing.013",
@@ -718,7 +781,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-064"
     },
     {
       "object": "Flush fixing.014",
@@ -729,7 +793,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-065"
     },
     {
       "object": "Flush fixing.015",
@@ -740,7 +805,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-066"
     },
     {
       "object": "Flush fixing.016",
@@ -751,7 +817,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-067"
     },
     {
       "object": "Flush fixing.017",
@@ -762,7 +829,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-068"
     },
     {
       "object": "Flush metal surround.003",
@@ -773,7 +841,8 @@
       "polygons": 124,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-069"
     },
     {
       "object": "Continuous outer gasket.003",
@@ -784,7 +853,8 @@
       "polygons": 16,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-070"
     },
     {
       "object": "Continuous glass edge seal.003",
@@ -795,7 +865,8 @@
       "polygons": 16,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-071"
     },
     {
       "object": "Flush fixing.018",
@@ -806,7 +877,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-072"
     },
     {
       "object": "Flush fixing.019",
@@ -817,7 +889,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-073"
     },
     {
       "object": "Flush fixing.020",
@@ -828,7 +901,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-074"
     },
     {
       "object": "Flush fixing.021",
@@ -839,7 +913,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-075"
     },
     {
       "object": "Flush fixing.022",
@@ -850,7 +925,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-076"
     },
     {
       "object": "Flush fixing.023",
@@ -861,7 +937,8 @@
       "polygons": 18,
       "license": "CC-BY-4.0",
       "scope": "licensor-controlled original geometry and materials",
-      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates"
+      "accuracy": "procedural/photo-guided; dimensions and interior layout include estimates",
+      "part_id": "tokyo-tower-part-077"
     }
   ],
   "excluded_empty_objects": [
@@ -995,5 +1072,6 @@
     "Window outward tilt of five degrees is a user-directed visual hypothesis, not a verified real-world measurement",
     "Existing scripts depend on legacy stages; full procedural recreation is not yet packaged",
     "No reference images, city meshes, audio or legacy camera animation granted here"
-  ]
+  ],
+  "part_id_policy": "Persistent IDs assigned once; retain across object renames and revisions. Never renumber or reuse retired IDs. Historical source_object aliases remain pinned to this baseline."
 }

@@ -1,0 +1,64 @@
+{
+  "ok": true,
+  "base_commit": "9d5f1ff",
+  "environment": "Windows-10-10.0.26200-SP0",
+  "blender": "4.5.1 LTS",
+  "python": "3.11.11",
+  "input_sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+  "provenance_sha256": "8c09bf9cb67aeaecce38418e8cc44cb769062e69d22e78791390c097e3bf17e4",
+  "exporter_sha256": "e5a60f30d87ad8313da4a042f935c223f9d4bb87d44e1f7d35a5e9b4f92cb1b6",
+  "before_exporter_sha256": "5a44b18f4fce6215b0660188319f08fb3213eb8e422ae5db19d2ee6519600f6d",
+  "before_after_meshes_identical": 77,
+  "pixel_comparison": {
+    "tower": {
+      "size": [
+        960,
+        720
+      ],
+      "identical": true,
+      "max_pixel_difference": 0.0,
+      "mean_pixel_difference": 0.0
+    },
+    "glass-floor": {
+      "size": [
+        960,
+        720
+      ],
+      "identical": true,
+      "max_pixel_difference": 0.0,
+      "mean_pixel_difference": 0.0
+    },
+    "interior": {
+      "size": [
+        960,
+        720
+      ],
+      "identical": true,
+      "max_pixel_difference": 0.0,
+      "mean_pixel_difference": 0.0
+    }
+  },
+  "part_ids_match": true,
+  "saved_reopened": true,
+  "source_unchanged": true,
+  "triangles": 1740732,
+  "render_settings": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "width": 960,
+    "height": 720,
+    "samples": 16,
+    "seed": 0
+  },
+  "local_results": "data/local/checks/tower-part-ids-20260927",
+  "portable_tests": {
+    "run": 202,
+    "passed": 197,
+    "skipped": 5
+  },
+  "limitations": [
+    "No geometry changes or new real-world accuracy claim",
+    "Pinned old baseline used only for standalone tower export; current city baseline unchanged",
+    "No public download or registry assembly integration"
+  ]
+}
