@@ -10,7 +10,7 @@
 
 [植栽・手すりの制作記録](docs/mori-terrace-v1.md) / [比較CLIの実行方法と制約](docs/review-harness.md)
 
-[中央広場の芝生・園路の修正候補](docs/mori-plaza-landscape-v1.md)：誤った道路で切り欠かれた芝生を戻し、広場の舗装と入口からの推定接続を追加しています。景観案は画像レビュー待ちです。前段の[道路輪郭の修正](docs/mori-plaza-outline-v1.md)はPR #39でmainへ取り込み済みです。
+[中央広場の芝生・園路の修正](docs/mori-plaza-landscape-v1.md)：誤った道路で切り欠かれた芝生を戻し、広場の舗装と入口からの推定接続を追加しました。前段の[道路輪郭の修正](docs/mori-plaza-outline-v1.md)とともにPR #39・#40で採用済みです。[共通city基準版への反映と更新手順](docs/city-baseline-pr40.md)を用意しました。
 
 [建物・道路・植栽・設備を共通管理する台帳](docs/object-registry.md)：固定版と配置を分離し、追加・置換・抑制・材質変更の計画を検証できます。実都市Blender組立への接続は次段階です。
 

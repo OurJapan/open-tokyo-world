@@ -26,7 +26,7 @@ RGBA8の一致は、浮動小数点画素やPNG/WebPファイル全体の一致�
 
 ## 再確認する
 
-採用版を[共通の制作環境](contributor-workspace.md)へ登録済みであることを前提にします。以下の出力先は毎回新しい名前にしてください。Blenderは4.5.1 LTSを使います。
+PR #12の固定版を保持していることを前提にします。[共通city基準版の更新](city-baseline-pr40.md)後も、この照合は `manifests/mori-plaza-edge-accepted.json` のPR #12 hashに固定します。現行cityや別の版のinventoryは受け入れません。現在のモデルの画像調査には、その版に対応した別の入力・出典lock・検証記録が必要です。以下の出力先は毎回新しい名前にしてください。Blenderは4.5.1 LTSを使います。
 
 ```powershell
 $blender = 'C:\Program Files\Blender Foundation\Blender 4.5\blender.exe'

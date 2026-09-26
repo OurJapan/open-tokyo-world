@@ -30,7 +30,7 @@ Blender 4.5.1 LTSで作成し、保存したBefore/Afterをそれぞれ別プロ
 
 ## 再作成
 
-[共通環境](contributor-workspace.md)に街全体の固定版を登録済みの場合に実行できます。出力フォルダーは新しい名前にしてください。入力hashが違う場合、既存出力がある場合、対象外の変更がある場合は失敗します。再実行で編集済み候補を上書きしません。
+PR #12の固定版を保持している場合に実行できます。[共通city基準版の更新](city-baseline-pr40.md)後も、この比較候補は旧PR #12を入力にします。出力フォルダーは新しい名前にしてください。入力hashが違う場合、既存出力がある場合、対象外の変更がある場合は失敗します。再実行で編集済み候補を上書きしません。
 
 ```powershell
 $blender = 'C:\Program Files\Blender Foundation\Blender 4.5\blender.exe'

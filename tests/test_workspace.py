@@ -41,6 +41,75 @@ class WorkspaceContract(unittest.TestCase):
         evidence = workspace.read_json(ROOT / catalog["profiles"]["city"]["evidence"])
         self.assertEqual(catalog["profiles"]["city"]["asset"]["sha256"], evidence["output_blends"]["after.blend"])
         self.assertIsNone(catalog["profiles"]["city"]["public_url"])
+        features = workspace.read_json(ROOT / catalog["profiles"]["city"]["features"])
+        self.assertEqual(features["waiver_input_sha256"], catalog["profiles"]["city"]["asset"]["sha256"])
+        accepted = workspace.read_json(ROOT / "manifests/mori-plaza-landscape-accepted.json")
+        for field in ("bytes", "sha256"):
+            self.assertEqual(catalog["profiles"]["city"]["asset"][field], accepted[field])
+
+    def test_city_upgrade_preserves_old_model_and_existing_edits(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            old = root / "assets/tokyo-city-pr12/city.blend"
+            old.parent.mkdir(parents=True)
+            old.write_bytes(b"old city")
+            edit = root / "edits/my-city/scene.blend"
+            edit.parent.mkdir(parents=True)
+            edit.write_bytes(b"my ongoing edit")
+            relative = old.relative_to(root).as_posix()
+            workspace.save_profile(root, "city", {"scene": relative, "files": {relative: expected(b"old city")}})
+            source = root / "approved.blend"
+            source.write_bytes(b"new city")
+            catalog = workspace.load_catalog()
+            catalog["profiles"]["city"]["asset"] = expected(b"new city")
+            with patch.object(workspace, "blender_check", return_value={}) as check:
+                record = workspace.import_city(root, source, Path("blender"), catalog)
+                repeated = workspace.import_city(root, source, Path("blender"), catalog)
+                self.assertEqual(check.call_count, 2)
+            _, current = workspace.registered_profile(root, "city", catalog)
+            self.assertEqual(current.read_bytes(), b"new city")
+            self.assertNotEqual(current, old)
+            self.assertEqual(record["scene"], repeated["scene"])
+            self.assertEqual(old.read_bytes(), b"old city")
+            self.assertEqual(edit.read_bytes(), b"my ongoing edit")
+            self.assertEqual(source.read_bytes(), b"new city")
+
+    def test_stale_city_reports_update_required_and_blocks_edit(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            source = root / "city.blend"
+            source.write_bytes(b"old city")
+            workspace.save_profile(root, "city", {"scene": "city.blend", "files": {"city.blend": expected(b"old city")}})
+            catalog = workspace.load_catalog()
+            catalog["profiles"]["city"]["asset"] = expected(b"new city")
+            with self.assertRaises(workspace.CityUpdateRequired):
+                workspace.prepare_edit(root, "city", catalog)
+            with patch.object(workspace, "load_catalog", return_value=catalog), contextlib.redirect_stdout(io.StringIO()) as out:
+                self.assertEqual(workspace.main(["status", "--workspace", folder]), 0)
+            status = json.loads(out.getvalue())["profiles"]["city"]
+            self.assertFalse(status["ready_locally"])
+            self.assertTrue(status["update_required"])
+            self.assertIn("import-city", status["reason"])
+            self.assertFalse((root / "edits").exists())
+            self.assertEqual(source.read_bytes(), b"old city")
+
+    def test_failed_city_upgrade_preserves_previous_registration(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            old = root / "old.blend"
+            old.write_bytes(b"old city")
+            workspace.save_profile(root, "city", {"scene": "old.blend", "files": {"old.blend": expected(b"old city")}})
+            previous_state = (root / "workspace.json").read_bytes()
+            source = root / "approved.blend"
+            source.write_bytes(b"new city")
+            catalog = workspace.load_catalog()
+            catalog["profiles"]["city"]["asset"] = expected(b"new city")
+            with patch.object(workspace, "blender_check", side_effect=ValueError("invalid scene")):
+                with self.assertRaisesRegex(ValueError, "invalid scene"):
+                    workspace.import_city(root, source, Path("blender"), catalog)
+            self.assertEqual((root / "workspace.json").read_bytes(), previous_state)
+            self.assertEqual(old.read_bytes(), b"old city")
+            self.assertEqual(source.read_bytes(), b"new city")
 
     def test_import_rejects_wrong_scene_before_blender(self):
         with tempfile.TemporaryDirectory() as folder:

@@ -75,11 +75,11 @@ class FacadeScope(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Scene validation failed'):
             facade.compare(self.before, self.after, self.config)
 
-    def test_pinned_manifest_matches_registered_city_and_audit(self):
+    def test_pinned_manifest_matches_historical_city_and_audit(self):
         config = facade.read_json(facade.CONFIG)
-        catalog = facade.read_json(ROOT / 'manifests/contributor-workspace.json')
-        self.assertEqual(config['input']['sha256'], catalog['profiles']['city']['asset']['sha256'])
-        self.assertEqual(config['input']['bytes'], catalog['profiles']['city']['asset']['bytes'])
+        city = facade.read_json(ROOT / 'manifests/mori-plaza-edge-accepted.json')
+        self.assertEqual(config['input']['sha256'], city['sha256'])
+        self.assertEqual(config['input']['bytes'], city['bytes'])
         self.assertEqual(set(config['targets']), {'wall' + str(i) for i in range(8)})
         self.assertFalse(config['public_city_distribution'])
         self.assertFalse(set(config['legacy_empty_objects']) & set(config['targets']))

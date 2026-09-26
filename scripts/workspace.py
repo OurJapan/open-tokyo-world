@@ -191,6 +191,10 @@ def save_profile(workspace, profile, record):
     write_json(path, state)
 
 
+class CityUpdateRequired(ValueError):
+    """The registered full-city scene differs from the current accepted asset."""
+
+
 def registered_profile(workspace, profile, catalog):
     state_path = inside(workspace, "workspace.json")
     record = read_json(state_path).get("profiles", {}).get(profile) if state_path.exists() else None
@@ -198,13 +202,17 @@ def registered_profile(workspace, profile, catalog):
         if profile == "city":
             raise ValueError("Full city is unavailable: public distribution is not ready. Obtain the approved scene from an authorized provider and run import-city --input PATH. Mori is a separate limited profile.")
         raise ValueError("Mori is not built. Run setup --profile mori.")
+    if record["scene"] not in record["files"]:
+        raise ValueError("Scene is missing from the workspace integrity record")
+    if profile == "city" and record["files"][record["scene"]] != catalog["profiles"]["city"]["asset"]:
+        raise CityUpdateRequired("Registered city differs from the current accepted version. "
+                                 "Run import-city --input PATH with the current approved scene. "
+                                 "Previous models and edits are preserved.")
     for relative, expected in record["files"].items():
         verify_file(inside(workspace, relative), expected)
     scene = inside(workspace, record["scene"])
     if profile == "city":
         verify_file(scene, catalog["profiles"]["city"]["asset"])
-    if record["scene"] not in record["files"]:
-        raise ValueError("Scene is missing from the workspace integrity record")
     return record, scene
 
 
@@ -214,7 +222,7 @@ def file_specs(workspace, paths):
 
 def import_city(workspace, source, blender, catalog):
     profile = catalog["profiles"]["city"]
-    scene = inside(workspace, "assets/tokyo-city-pr12/city.blend")
+    scene = inside(workspace, f"assets/tokyo-city/{profile['asset']['sha256']}/city.blend")
     copy_verified(source, scene, profile["asset"])
     check = blender_check(workspace, blender, catalog, scene, profile["expected_meshes"])
     verify_file(scene, profile["asset"])
@@ -326,6 +334,9 @@ def main(argv=None):
                     result["profiles"][profile] = {"ready_locally": True, "scene": str(scene)}
                 except (ValueError, OSError, KeyError) as error:
                     result["profiles"][profile] = {"ready_locally": False, "reason": str(error)}
+                    if isinstance(error, CityUpdateRequired):
+                        result["profiles"][profile]["update_required"] = True
+                result["profiles"][profile]["label"] = catalog["profiles"][profile]["label"]
         elif args.command == "fetch":
             result = {"sources": str(fetch_sources(workspace, catalog, args.inputs))}
         elif args.command == "fetch-production":
