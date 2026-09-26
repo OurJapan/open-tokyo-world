@@ -83,6 +83,10 @@ The original `scripts/district_distribution.py` and `tests/test_district_distrib
 
 The original `tests/contributor_smoke.py` and `tests/contributor_edit_blender.py` are also licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This covers the isolated onboarding and disposable edit verification code, not the downloaded Blender binaries, source datasets or generated scenes.
 
+## MIT: plaza outline correction and verification
+
+The original implementations in `scripts/mori_plaza_outline_v1.py`, `scripts/validate_mori_plaza_outline.py`, and `tests/test_mori_plaza_outline.py` are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This covers the named correction and verification code, not the saved OSM data, legacy road seeds, city scenes, images or other third-party inputs.
+
 ## CC BY 4.0: tree/shrub prototypes and procedural materials
 
 On 2026-09-27 the account holder approved CC BY 4.0 for the 16 prototype meshes and 31 procedural materials identified in [provenance](assets/procedural-components/provenance.json), together with their dedicated preview setup and image, to the extent the licensor controls those rights. See the [asset grant](assets/procedural-components/ASSET-LICENSE.md). The original city placement, mapped aggregate meshes, third-party inputs and historical code remain outside this grant.

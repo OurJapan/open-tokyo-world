@@ -98,3 +98,9 @@ OptiXが使えない環境では明示的に`--device CPU`を選びます。自�
 ## 採用済み入力からのテラス増分
 
 `mori_terrace_v1` は採用済みblend専用の別lock・feature mappingから4つの非表示slotを置換します。旧累積patchと混用しません。[根拠・固定入力・再実行](mori-terrace-v1.md)を参照。
+
+## 保存した道路入力による中央広場の輪郭修正
+
+`mori_plaza_outline_v1` はPR #12採用版専用の独立した増分です。`--road-inputs` に回収済み制作入力のルートを指定し、固定した `work/osm.xml` と `work/twin_towers/tower_surfaces.json` のサイズ・hash・道路面の一致を確認します。この引数は同operationにだけ必須で、他のpatchと混用できません。外部入力が不足・不一致なら変更前に停止します。
+
+変更は道路3objectの対象面に限定され、独立した `validate_mori_plaza_outline.py` が保存後の面積・対象外の面・地表を検査します。追加validatorのみ、Python 3.12と `requirements-production.txt` の固定NumPy／Shapelyを必要とします。[根拠・再実行・検証の範囲](mori-plaza-outline-v1.md)を参照してください。
