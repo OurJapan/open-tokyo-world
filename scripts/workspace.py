@@ -264,6 +264,8 @@ def prepare_edit(workspace, profile, catalog):
             shutil.copyfile(item, output / item.name)
     write_json(output / "edit.json", {"profile": profile, "reference_scene": record["scene"],
                "reference_sha256": digest(source), "scene": "scene.blend", "validated_edit": False,
+               "distribution_lock": record.get("distribution_lock"),
+               "district_build_id": record.get("district_build_id"),
                "note": "This is an editable copy. Reference validation does not validate later edits. Use evidence-backed changes and a matching review configuration."})
     return destination
 
@@ -287,11 +289,16 @@ def review_city(workspace, blender, catalog, device):
 
 
 def main(argv=None):
+    argv = list(sys.argv[1:] if argv is None else argv)
+    if argv and argv[0] == "district":
+        from district_distribution import main as district_main
+        return district_main(argv[1:])
     parser = argparse.ArgumentParser(description=__doc__)
     common = argparse.ArgumentParser(add_help=False)
     common.add_argument("--workspace", type=Path, default=ROOT / "data/local")
     common.add_argument("--blender", type=Path)
     sub = parser.add_subparsers(dest="command", required=True)
+    sub.add_parser("district", help="Select, lock, fetch and build districts/shared packages (district --help)")
     for name in ("status", "doctor", "fetch", "fetch-production", "import-production-inputs", "setup", "import-city", "verify", "edit", "review"):
         command = sub.add_parser(name, parents=[common])
         if name in {"setup", "verify", "edit"}:

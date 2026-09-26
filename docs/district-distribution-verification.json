@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-27",
+  "ok": true,
+  "scope": "Fresh local workspace on the same Windows PC; final implementation and explicit selected packages only",
+  "runtime": {
+    "blender": "4.5.1 LTS",
+    "python": "3.11.11",
+    "platform": "win32"
+  },
+  "lock_id": "a774fa5c0be2d51ce70ccd3be4ecedbeb8ce3e17dc9ce85dcf0400fab66737d4",
+  "packages": {
+    "plateau-minato-tile221": {
+      "version": "2025.1.0",
+      "content_id": "f7011511f795529bca7b3e75164d54579c5d3d1fa9bed05497077b6595b3ae5d",
+      "files": {
+        "tileset.json": {
+          "bytes": 412889,
+          "sha256": "edec4c24d137eaf08a8525cecea505a3f21a30823b9ef4fb530e10774cea1323"
+        },
+        "data221.b3dm": {
+          "bytes": 1246040,
+          "sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2"
+        }
+      }
+    },
+    "procedural-components": {
+      "version": "0.1.0",
+      "content_id": "39aba273079a466402e2ed1eb8aacfb893c4c25bc0eb37652b6c1c8dc9a0ec8b",
+      "files": {
+        "procedural-components-v0.1.0.zip": {
+          "bytes": 10405562,
+          "sha256": "8c78dcce8ba43c5d4e28cb92936b0a1569dc1fe8f68042efce49fbfe4f6197c6"
+        }
+      }
+    }
+  },
+  "first_setup": {
+    "official_input_download_bytes": 1658929,
+    "explicit_local_zip_bytes": 10405562,
+    "mori_meshes": 42,
+    "saved_scene_validation": true,
+    "comparison_pngs": [
+      "after-crown.png",
+      "after-entrance.png",
+      "after-full.png",
+      "after-podium.png",
+      "before-crown.png",
+      "before-entrance.png",
+      "before-full.png",
+      "before-podium.png"
+    ],
+    "source_notices_bundled": true,
+    "shared_library_meshes": 16,
+    "shared_library_external_images": [],
+    "shared_library_linked_libraries": 0,
+    "legacy_scene_used": false
+  },
+  "second_setup": {
+    "offline": true,
+    "download_bytes": 0,
+    "local_copy_bytes": 0,
+    "same_generated_scene_reused": true,
+    "scene_reopened": true,
+    "installer_and_reuse_executor_accounts_differed": true,
+    "windows_inherited_directory_acl_verified_by_successful_reuse": true
+  },
+  "verification": {
+    "package_hashes_and_exact_member_lists": true,
+    "generated_files_hashes": true,
+    "original_shared_zip_unchanged": true
+  },
+  "edit": {
+    "fresh_copy": true,
+    "reference_bytes_equal": true,
+    "attribution_preserved": true,
+    "subsequent_edits_validated": false
+  },
+  "code_sha256_lf": {
+    "LICENSE.md": "96325b86c8226448c09bfe9afcb6a4f66cc7b0e3e31e90ee0e849dcbec2217f9",
+    "MIT-LICENSE.txt": "b3483b1ce13b6d2fee4b6b59a687cafa9d4f968c6ce3493bbd3c6c0b7a7d1048",
+    "manifests/contributor-workspace.json": "7a51569ed7945715caf8a8507ba7d6cdded98de2f8568ec7030c94d8b9ab2009",
+    "scripts/district_distribution.py": "859517cf22af6a2e525a3e22a2abe50c30f58d6e5cd6c03a51e9c932be876b54",
+    "scripts/mori_crown_material.py": "25d8ae26b7c5b2ba38f6db5fd5baa507f18c3965a83a3e09996d71fceb2d1959",
+    "scripts/mori_crown_v2.py": "8bb386b4429575c4c37b914c71b63629fb844c84c0399e943706b34fd10e64a7",
+    "scripts/mori_entrance_v1.py": "f9ab6f5aa0ad9a1cd201c8b021e9893a411e9556afbc7bb877f558e6faa2fede",
+    "scripts/mori_facade_v2.py": "5df83c9acf790bbfc1491f133445221174644663e2c041ec860a2900a81e7b9e",
+    "scripts/mori_plaza_link_v1.py": "c5e15978e47a7e4816001b175ead98d7445bf37828f48945f15915db639f4d37",
+    "scripts/mori_plaza_v1.py": "b16a1179b14f9e56b615d818c06da11c7be77959c199e2d93c6ee4544076fc2c",
+    "scripts/mori_podium_v3.py": "b202252d78763d965213c30a8c85260b0ce550e32128a7dbef05107d9e639dfb",
+    "scripts/mori_shape.py": "5588ac6e1409944faf1d686baffa7230b7a95a0b939c21502686b0a96d80df5a",
+    "scripts/mori_terrace_v1.py": "2056674560bbcd92503db2a5e8491eca0f2f21ab782ba9d332820b70a74d1a9d",
+    "scripts/workspace.py": "95b82fddc6642e1315ff3e4a909386972bf946e6c7340b5edac4980b5a3fbd0c",
+    "scripts/workspace_blender.py": "e7fc7978c2b2f09d769bc66925b0e40f0e89e3087961a70389db60602350ba1a",
+    "starter/mori/ASSET-LICENSE.md": "273fe7f1e36cd69ef4d239d8f964add0a12762685b08b6c9895ba372e5bf3fbf",
+    "starter/mori/NOTICE.md": "f3030780f62e765857cd291a8c7cdd31f6a331acd8b67f93f4b890692a3e8ec5",
+    "starter/mori/facade.py": "e0422fc6998ad3791ecf3122ccd3e509a540559e791cd415b7578a8cf054f4f4",
+    "starter/mori/profile.py": "78767146deaa0dd7280eda01dfe3da09e69bcc6cce6e4bde812a14c5da220a9b",
+    "starter/mori/provenance.json": "2d136b465d026cc07fd256d4fb54e807dacfdab5ef29b361deef30ddccfe4d91",
+    "starter/mori/run.py": "fbd3ac5d7557efc87a4eb012c51232d0a02f948e3239012439e3a605a1d8f796",
+    "starter/mori/scene.py": "171b9658e2cc5028953b871b793209da83ee47e40a9b92998c937d819a9bf92e",
+    "starter/plateau/NOTICE.md": "406a0edf0563a6a36064ceed8d7a74b35dabbdbadacdda7b1f20ffa8fb8bb18c",
+    "starter/plateau/run.py": "2c778aa93ece95f848340c26c345648afe99dd361e2652562f88718d20228679",
+    "starter/plateau/scene.py": "54aef39d9517c9a1872ce7f38c95225b04b4d7867a169c068b8f054b5724fad9",
+    "starter/plateau/tile.py": "566c3426113935348be0bd26c6e06ced6bd4f3c6ef5028fd9895736e670fccda",
+    "starter/plaza/ASSET-LICENSE.md": "a55fdf61bf805e7e8d4811a0d57e2ab553ce47cfec5296ab439fe081cc15e07f",
+    "starter/plaza/provenance.json": "4931b7b01c1ea2e60192685d21a4af595f94ae94a3f8e890751043410bb7fb0c",
+    "starter/plaza/scene.py": "272f5b50a7d6953c67ec2a0b9acb209a4124b7120b4db21c225292c4b86cf751"
+  },
+  "portable_checks": {
+    "tests": 176,
+    "passed": 171,
+    "skipped": 5,
+    "failed": 0
+  },
+  "limitations": [
+    "No independent PC or other-OS scene execution; the separate sandbox executor is on the same Windows host.",
+    "Shared component Release URL remains unpublished; this run used the exact local licensed ZIP.",
+    "No full-city spatial partition, automatic object-registry assembly, shared-asset placement or geographic seam validation.",
+    "Multiple-district dependency selection and the generic prebuilt adapter were checked with synthetic fixtures; only Mori is a real registered district.",
+    "No gigabyte-scale download/render benchmark or real-world accuracy certification."
+  ]
+}
