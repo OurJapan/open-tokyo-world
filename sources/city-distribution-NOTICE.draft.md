@@ -9,8 +9,11 @@
 - [港区2025年度](https://www.geospatial.jp/ckan/dataset/plateau-13103-minato-ku-2025)：LOD3配信。
 - [千代田区2025年度](https://www.geospatial.jp/ckan/dataset/plateau-13101-chiyoda-ku-2025)：LOD2配信。
 - [中央区2025年度](https://www.geospatial.jp/ckan/dataset/plateau-13102-chuo-ku-2025)：LOD2配信。
+- [渋谷区2025年度](https://www.geospatial.jp/ckan/dataset/plateau-13113-shibuya-ku-2025)：形状metadataにLOD2配信24ファイルへの参照。元形状との対応と個別条件は未確認。
 
 [PLATEAUサイトポリシー](https://www.mlit.go.jp/plateau/site-policy/)を参照。入力のURL・固定hashは [image source lock](city-pr12-image-source-lock.json)、画像同一性の照合は [image audit](city-pr12-image-audit.json) に記録しています。3区の個別条件・例外の最終確認は未完了です。
+
+上記の画像照合とsource lockは港区・千代田区・中央区を対象とします。渋谷区は[形状の出典記録](city-pr12-geometry-audit.json)で見つかった参照で、同じ照合を済ませたとは扱いません。
 
 確認した加工：画像のBlender材質への利用、168画像の縮小後RGBA8一致。形状側の座標変換・底面移動等の既存記録はありますが、街全体の全メッシュを元形状へ照合したものではありません。本モデルはOurJapanによる加工物であり、公式モデルや国土交通省の承認を意味しません。
 

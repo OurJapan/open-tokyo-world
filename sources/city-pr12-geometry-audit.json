@@ -4,6 +4,29 @@
   "blender_version": "4.5.1 LTS",
   "mesh_objects": 3255,
   "with_source_url_claim": 428,
+  "unique_source_url_claims": 365,
+  "source_dataset_claims": [
+    {
+      "source_base_claim": "https://assets.cms.plateau.reearth.io/assets/09/83a3f6-6605-477c-84dc-a973008b5a27/13102_chuo-ku_pref_2025_citygml_1_op_bldg_3dtiles_13102_chuo-ku_lod2/",
+      "mesh_objects": 1,
+      "unique_source_urls": 1
+    },
+    {
+      "source_base_claim": "https://assets.cms.plateau.reearth.io/assets/16/b016d3-42ef-4428-ad99-d229310b39fd/13113_shibuya-ku_pref_2025_citygml_1_op_bldg_3dtiles_13113_shibuya-ku_lod2/",
+      "mesh_objects": 24,
+      "unique_source_urls": 24
+    },
+    {
+      "source_base_claim": "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/",
+      "mesh_objects": 65,
+      "unique_source_urls": 65
+    },
+    {
+      "source_base_claim": "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/",
+      "mesh_objects": 338,
+      "unique_source_urls": 275
+    }
+  ],
   "source_claim_counts": {
     "(none)": 2827,
     "PLATEAU 2025, source detail LOD2 or LOD3": 365,
@@ -36,8 +59,8 @@
   ],
   "checked_at": "2026-09-26",
   "script": "scripts/audit_city_geometry.py",
-  "script_sha256_lf": "6bc725510790228cc6e65f5a555bdf0da2e7d05c1a55feb86dd010328f284e6f",
-  "inventory_sha256": "2fd8f77fe9377723c0077ceb7f9354004b9f930d115e2101eb9a40b2b1e571c0",
+  "script_sha256_lf": "c0cf82c8ea38f9abed841502f931d21d95174b74398e24e09cabfab7e5de7aaa",
+  "inventory_sha256": "d67e721c59954e479030972f3a7e43eb02c1816a658b4ff9c5469268eec375cb",
   "without_source_url_claim": 2827,
   "full_city_distribution_ready": false,
   "review": "docs/city-distribution-plan.md",
