@@ -69,6 +69,8 @@ The original implementations in `scripts/verify_city_images.py`, `scripts/check_
 
 The original implementations in `scripts/city_facades.py`, `scripts/review_city_facades.py`, `scripts/audit_city_geometry.py`, and `tests/test_city_facades.py` are also licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This grant covers the named procedural material, comparison and inventory code. It does not grant new rights to legacy geometry, remaining textures or the combined city scene.
 
+The original implementations in `scripts/city_catalog.py`, `scripts/city_catalog_blender.py`, `scripts/city_catalog_template.html`, and `tests/test_city_catalog.py` are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This grant covers the named catalogue code and interface, not the legacy scenes, images or third-party content shown by it.
+
 ## Outside these grants
 
 Except for the separately identified starters and original additions above, no license is granted here for other repository files, legacy city scenes, generated models, reference photos, textures, music, trademarks, PLATEAU data, OpenStreetMap data, or other third-party content. Any separately applicable license remains in effect. Execution of the covered code does not itself grant rights to its inputs or outputs. This scope document adds no conditions to the MIT grant for the covered code.
