@@ -45,6 +45,8 @@ Get-Content .\SHA256SUMS.txt
 
 GitHub Releasesの添付は1ファイル2 GiB未満で、リリースごとの添付数などにも上限があります。[公式の制限](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)を公開前に確認します。都市データ配布が必要になった段階で、地域・部品・版ごとの分割、外部オブジェクトストレージ、取得量と保存期間の予算を設計します。
 
+地区・共通素材の選択と、保存先URLを内容の版から分離する仕組みは[地区別配布](../../docs/district-distribution.md)に追加しました。森JP周辺を最初の対象にしています。ストレージ契約・大規模配布量の実測・保存期間の運用は引き続き別途判断します。
+
 「既存版を差し替えない」は現在の運用方針です。この作業ではGitHubのimmutable release設定を有効化していません。通常のReleaseは管理者が編集・削除できるため、技術的な改変不能を保証しません。[GitHubのリリース管理](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)を参照してください。
 
 公開した3ファイルはローカルにも保存しますが、同じPC上のコピーは独立したバックアップではありません。別媒体・別サービスへのバックアップと復元訓練は今後の課題です。

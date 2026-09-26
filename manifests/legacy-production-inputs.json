@@ -1,0 +1,136 @@
+{
+  "version": 1,
+  "recovered_on": "2026-09-27",
+  "description": "Recovered historical city inputs; fixed local import, not a public download or new grant.",
+  "code_manifest": "manifests/legacy-production-sources.json",
+  "city_sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+  "distribution": "local-recovered-public-distribution-pending",
+  "discovery": "Historical work/create_edge_audit.py referenced a separate original production folder.",
+  "files": {
+    "work/osm.xml": {
+      "bytes": 10528704,
+      "sha256": "f04e8e70ab24a61ca749375d1ef37401feb0fdc840cc506b670ef71454a6a8ab",
+      "kind": "production-input"
+    },
+    "work/wide_detail/selected_tiles.json": {
+      "bytes": 242365,
+      "sha256": "5f2a10655c52c6b59181ad5bfb40586d2c01c758e6458c411bc30431af3563d9",
+      "kind": "production-input"
+    },
+    "work/wide_detail/roads.json": {
+      "bytes": 8350657,
+      "sha256": "c993a46169721a55af6d369762d982114a5ebe17859b4f691ed86b0369c5d57a",
+      "kind": "production-input"
+    },
+    "work/twin_towers/tower_surfaces.json": {
+      "bytes": 4429925,
+      "sha256": "184875e48426ba84b0dddb169f2dc2a414798ac42ee3b7c0047b572991013531",
+      "kind": "production-input"
+    },
+    "work/wide_detail/wide_roads.npz": {
+      "bytes": 4644764,
+      "sha256": "e68613f299376fb2081a6278547820cb689a6febde1c207c0eaf7c6a44f40dd0",
+      "kind": "production-input"
+    },
+    "work/wide_detail/road_checks.json": {
+      "bytes": 196,
+      "sha256": "b9468aae7d613e46646259a9105e14bab21e9a3bd559bbe0397b152c42694f32",
+      "kind": "production-input"
+    },
+    "work/wide_detail/imported_features.json": {
+      "bytes": 7275296,
+      "sha256": "68420a116f54ec3451ef9a12db1a6eaf2d2c5357a38dcfd2c11b31d332cf98e0",
+      "kind": "production-input"
+    },
+    "work/detail_upgrade/imported_features.json": {
+      "bytes": 1163295,
+      "sha256": "68a8d746ad85cfacd655722b64f1cefc3e1b483ca8f8f33e7e3499dd64015184",
+      "kind": "production-input"
+    },
+    "work/tower15_env/shrubs.json": {
+      "bytes": 81972,
+      "sha256": "917bd65959fea3abf1fc174da549cd172c4c7a11ee698920f9198c2ac2ec33b7",
+      "kind": "production-input"
+    },
+    "work/tower15_env/road_detail.npz": {
+      "bytes": 2881099,
+      "sha256": "9a60909d2221055c57e5a83fc3c9345aaf98c0c82cb1a5a7d0389bfefb141a08",
+      "kind": "production-input"
+    },
+    "work/tower15_env/surface_checks.json": {
+      "bytes": 449,
+      "sha256": "a94c6cfee3e69cfa7eccc67d34360b179b89277ff00859a2398446170b48e02b",
+      "kind": "production-input"
+    },
+    "work/tower15_env/landuse.npz": {
+      "bytes": 90409,
+      "sha256": "8aed717b555ac8593146afd9d8a7fd4ba3a93c51c60ab05e982ab866878434a8",
+      "kind": "production-input"
+    },
+    "work/tower15_env/landuse_areas.json": {
+      "bytes": 161,
+      "sha256": "ffe7cd4d57ee5c06ed9f1818cd887d6187134783e6175102b57a698004ab970c",
+      "kind": "production-input"
+    },
+    "work/tokyo_traffic/layout.json": {
+      "bytes": 294064,
+      "sha256": "451a8c95accc72f7f265e56a2f2c67f71f9f83dda8eabae6d9c750be6e88ca3f",
+      "kind": "production-input"
+    },
+    "work/tokyo_traffic/tree_centers.json": {
+      "bytes": 199084,
+      "sha256": "119787ae05fef919f24c31367b9e6fe8ca56237101677f1a66ba926c33b7dbd1",
+      "kind": "production-input"
+    },
+    "work/tokyo_traffic/tree_keep.json": {
+      "bytes": 21153,
+      "sha256": "2cc6cab4c22696f20382742268852fae5bc76135b0788c2a2c1f6db777cd0776",
+      "kind": "production-input"
+    },
+    "work/tokyo_traffic/road_boundary.wkb.npy": {
+      "bytes": 789205,
+      "sha256": "4d4457fa34d3420287e9f4e16444eb63c57ca92137983937924bcd2c430a237a",
+      "kind": "production-input"
+    },
+    "work/street_detail/placements.json": {
+      "bytes": 455778,
+      "sha256": "28614414f052a1a43dbf64929f12f68ee95bfdb441ad12a40dd3b4951e99afdc",
+      "kind": "production-input"
+    },
+    "work/street_detail/facade_input.json": {
+      "bytes": 38740,
+      "sha256": "638872d1b443a50849d1aacdc110b27ba7054b9c35193404189be8fb0231c252",
+      "kind": "production-input"
+    },
+    "work/street_detail/facade_layouts.json": {
+      "bytes": 56342,
+      "sha256": "010fff5c38fe71a7a99e1af5a56492f8a7ecb83cb3f98c2fa3281d88cc8b43e4",
+      "kind": "production-input"
+    },
+    "outputs/Tokyo60/tower.blend": {
+      "bytes": 62394712,
+      "sha256": "0e25e76e87c8f75a49a171d7f649e1f710757c2fad9e1acb9d705fab50beeea6",
+      "kind": "intermediate-scene"
+    },
+    "outputs/Detail_Upgrade/Tokyo_Tower_Detailed_District.blend": {
+      "bytes": 153369759,
+      "sha256": "62a683abbe926d7c10981553e290249aa25eddccc61bc60177965fb9f2fb32ae",
+      "kind": "intermediate-scene"
+    },
+    "outputs/Tokyo_Cinematic_Final/tower.blend": {
+      "bytes": 656634002,
+      "sha256": "a2e0134a66b3e0d7a70e8efd786c98e6481bc8d5010a858bda0eb6b2805004a1",
+      "kind": "intermediate-scene"
+    },
+    "outputs/Tokyo_Tower_15s_Preparation/Tokyo_Tower_Environment_Updated.blend": {
+      "bytes": 787215641,
+      "sha256": "2da2c2d85379440b7a80109e05d36d95ff8c2e2d7d9d50c1a299ca6d8a13d5d3",
+      "kind": "intermediate-scene"
+    },
+    "outputs/Tokyo_Tower_Street_Detail/Tokyo_Tower_Street_Detail.blend": {
+      "bytes": 1097259926,
+      "sha256": "7be2018933069765eacf62ca81099372820cc1b4316a623681a6b9647f6bedc8",
+      "kind": "intermediate-scene"
+    }
+  }
+}

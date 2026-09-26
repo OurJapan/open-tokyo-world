@@ -1,0 +1,457 @@
+{
+  "version": 1,
+  "recorded_on": "2026-09-27",
+  "status": "local-input-recovery-data-replay-and-tree-transform-match",
+  "baseline": {
+    "bytes": 558751758,
+    "sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+    "unchanged": true
+  },
+  "previous_audit": "sources/city-pr12-production-audit.json",
+  "discovery": {
+    "method": "Followed the explicit osm.xml source path in historical work/create_edge_audit.py to a separate original project folder.",
+    "expected_paths_found": 25,
+    "input_manifest": "manifests/legacy-production-inputs.json",
+    "input_manifest_sha256_lf": "ccef17c35d8374606c3827c31f95958ee67808cf277f5bdff180834c69e54583",
+    "original_files_rehashed_after_verification": 25,
+    "original_files_unchanged": true,
+    "data_inputs": {
+      "files": 20,
+      "bytes": 41543658,
+      "copied_to": "data/local/sources/legacy-production-inputs-v1",
+      "all_hashes_match": true
+    },
+    "intermediate_scenes": {
+      "files": 5,
+      "bytes": 2756874040,
+      "located_and_hashed": true,
+      "copied_during_this_verification": false,
+      "opened_or_rebuilt_during_this_verification": false
+    }
+  },
+  "original_folder_code_comparison": {
+    "reference_manifest": "manifests/legacy-production-sources.json",
+    "pinned_commit": "defac576e076f40bf3bc4fddcdcefe30f9a009f7",
+    "files": 22,
+    "raw_bytes_match": 18,
+    "lf_normalized_bytes_match": 22,
+    "details": [
+      {
+        "path": ".gitignore",
+        "raw_bytes_match": true,
+        "lf_normalized_bytes_match": true
+      },
+      {
+        "path": "work/detail_upgrade/finish_detail.py",
+        "raw_bytes_match": true,
+        "lf_normalized_bytes_match": true
+      },
+      {
+        "path": "work/sky_detail/finish.py",
+        "raw_bytes_match": false,
+        "lf_normalized_bytes_match": true
+      },
+      {
+        "path": "work/street_detail/build.py",
+        "raw_bytes_match": true,
+        "lf_normalized_bytes_match": true
+      },
+      {
+        "path": "work/street_detail/closeup_finish.py",
+        "raw_bytes_match": true,
+        "lf_normalized_bytes_match": true
+      },
+      {
+        "path": "work/street_detail/facade_layout.py",
+        "raw_bytes_match": true,
+        "lf_normalized_bytes_match": true
+      },
+      {
+        "path": "work/street_detail/prepare.py",
+        "raw_bytes_match": true,
+        "lf_normalized_bytes_match": true
+      },
+      {
+        "path": "work/tokyo60/build_city.py",
+        "raw_bytes_match": true,
+        "lf_normalized_bytes_match": true
+      },
+      {
+        "path": "work/tokyo_traffic/build.py",
+        "raw_bytes_match": true,
+        "lf_normalized_bytes_match": true
+      },
+      {
+        "path": "work/tokyo_traffic/layout.py",
+        "raw_bytes_match": true,
+        "lf_normalized_bytes_match": true
+      },
+      {
+        "path": "work/tokyo_traffic/tree_filter.py",
+        "raw_bytes_match": true,
+        "lf_normalized_bytes_match": true
+      },
+      {
+        "path": "work/tower15_env/build_environment.py",
+        "raw_bytes_match": false,
+        "lf_normalized_bytes_match": true
+      },
+      {
+        "path": "work/tower15_env/fetch_ground.py",
+        "raw_bytes_match": false,
+        "lf_normalized_bytes_match": true
+      },
+      {
+        "path": "work/tower15_env/landuse.py",
+        "raw_bytes_match": true,
+        "lf_normalized_bytes_match": true
+      },
+      {
+        "path": "work/tower15_env/refine_canopies.py",
+        "raw_bytes_match": true,
+        "lf_normalized_bytes_match": true
+      },
+      {
+        "path": "work/tower15_env/remove_aerial_display.py",
+        "raw_bytes_match": true,
+        "lf_normalized_bytes_match": true
+      },
+      {
+        "path": "work/tower15_env/scene_inventory_export.py",
+        "raw_bytes_match": false,
+        "lf_normalized_bytes_match": true
+      },
+      {
+        "path": "work/tower15_env/surfaces.py",
+        "raw_bytes_match": true,
+        "lf_normalized_bytes_match": true
+      },
+      {
+        "path": "work/twin_towers/export_surfaces.py",
+        "raw_bytes_match": true,
+        "lf_normalized_bytes_match": true
+      },
+      {
+        "path": "work/wide_detail/fetch_roads.py",
+        "raw_bytes_match": true,
+        "lf_normalized_bytes_match": true
+      },
+      {
+        "path": "work/wide_detail/finish.py",
+        "raw_bytes_match": true,
+        "lf_normalized_bytes_match": true
+      },
+      {
+        "path": "work/wide_detail/roads.py",
+        "raw_bytes_match": true,
+        "lf_normalized_bytes_match": true
+      }
+    ],
+    "execution_source": "Pinned GitHub byte snapshots, not newline-modified local versions."
+  },
+  "map_snapshots": {
+    "osm_xml": {
+      "path": "work/osm.xml",
+      "sha256": "f04e8e70ab24a61ca749375d1ef37401feb0fdc840cc506b670ef71454a6a8ab",
+      "matches_historical_plaza_audit": true,
+      "historical_record": "docs/mori-plaza-edge-v1.md",
+      "declared_header": {
+        "version": "0.6",
+        "generator": "openstreetmap-cgimap 2.1.0 (2023207 spike-07.openstreetmap.org)",
+        "copyright": "OpenStreetMap and contributors",
+        "attribution": "http://www.openstreetmap.org/copyright",
+        "license": "http://opendatacommons.org/licenses/odbl/1-0/"
+      },
+      "bounds": {
+        "minlat": "35.6514000",
+        "minlon": "139.7367000",
+        "maxlat": "35.6658000",
+        "maxlon": "139.7544000"
+      },
+      "element_counts": {
+        "bounds": 1,
+        "node": 34848,
+        "way": 6507,
+        "relation": 254
+      },
+      "plaza_way_id": 1443867470,
+      "plaza_tags": {
+        "area": "yes",
+        "highway": "pedestrian",
+        "name": "中央広場",
+        "name:en": "Central Green",
+        "surface": "paving_stones"
+      },
+      "snapshot_time": null,
+      "acquisition_time": null,
+      "time_note": "No snapshot meta timestamp was present; no download timestamp inferred from filesystem times."
+    },
+    "overpass_roads": {
+      "path": "work/wide_detail/roads.json",
+      "sha256": "c993a46169721a55af6d369762d982114a5ebe17859b4f691ed86b0369c5d57a",
+      "generator": "Overpass API 0.7.62.11 87bfad18",
+      "timestamp_osm_base": "2026-09-05T18:00:49Z",
+      "declared_notice": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+      "elements": 12267,
+      "acquisition_time": null,
+      "selection_scene_xy_bounds": [
+        -2349.3408203125,
+        -1409.32666015625,
+        1288.0107421875,
+        2403.887939453125
+      ],
+      "time_note": "OSM database base time, not a verified download time."
+    }
+  },
+  "saved_layout_record_counts": {
+    "street_trees": 657,
+    "cars": 593,
+    "cars_by_type": {
+      "compact": 157,
+      "delivery": 53,
+      "minivan": 93,
+      "sedan": 187,
+      "taxi": 103
+    },
+    "shrubs": 1333,
+    "equipment": {
+      "covers": 327,
+      "grates": 896,
+      "bollards": 3503,
+      "tactile": 64
+    },
+    "facade_layout_groups": 144
+  },
+  "footprint_record_counts": {
+    "detail_upgrade": 3497,
+    "wide_detail": 17063
+  },
+  "count_scope": "Inferred illustrative placements and records; not surveyed counts, unique buildings or current rendered object counts.",
+  "data_replay": {
+    "script": "scripts/replay_production_inputs.py",
+    "code_sha256_lf": "28c7bcacd2dff7144024b025033e9bcca879cc072828d75136d4150bd95e9a93",
+    "runtime": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "shapely": "2.1.2",
+      "geos": "3.13.1",
+      "platform": "win32"
+    },
+    "requirements": "requirements-production.txt",
+    "requirements_sha256_lf": "2dba0fd64df0159704e56c73ad963f587654d24002ad44ec98999218ab78af22",
+    "new_venv_install_verified": true,
+    "fresh_packages": [
+      {
+        "name": "numpy",
+        "version": "2.3.5",
+        "url": "https://files.pythonhosted.org/packages/2d/57/8aeaf160312f7f489dea47ab61e430b5cb051f59a98ae68b7133ce8fa06a/numpy-2.3.5-cp312-cp312-win_amd64.whl",
+        "sha256": "86945f2ee6d10cdfd67bcb4069c1662dd711f7e2a4343db5cecec06b87cf31aa"
+      },
+      {
+        "name": "shapely",
+        "version": "2.1.2",
+        "url": "https://files.pythonhosted.org/packages/ec/bf/cb6c1c505cb31e818e900b9312d514f381fbfa5c4363edfce0fcc4f8c1a4/shapely-2.1.2-cp312-cp312-win_amd64.whl",
+        "sha256": "743044b4cfb34f9a67205cee9279feaf60ba7d02e69febc2afc609047cb49179"
+      }
+    ],
+    "seed_files": [
+      "work/detail_upgrade/imported_features.json",
+      "work/osm.xml",
+      "work/street_detail/facade_input.json",
+      "work/tokyo_traffic/tree_centers.json",
+      "work/twin_towers/tower_surfaces.json",
+      "work/wide_detail/imported_features.json",
+      "work/wide_detail/roads.json",
+      "work/wide_detail/selected_tiles.json"
+    ],
+    "expected_output_files_preseeded": 0,
+    "stages": [
+      {
+        "script": "work/wide_detail/roads.py",
+        "code_sha256": "32a4b939bf1d4dfac44f5549477d363ecfc4113374fa62da5835b46ee670cc93",
+        "outputs": [
+          {
+            "path": "work/wide_detail/wide_roads.npz",
+            "bytes": 4644764,
+            "sha256": "e68613f299376fb2081a6278547820cb689a6febde1c207c0eaf7c6a44f40dd0",
+            "raw_bytes_match": true,
+            "content_match": true
+          },
+          {
+            "path": "work/wide_detail/road_checks.json",
+            "bytes": 196,
+            "sha256": "b9468aae7d613e46646259a9105e14bab21e9a3bd559bbe0397b152c42694f32",
+            "raw_bytes_match": true,
+            "content_match": true
+          }
+        ]
+      },
+      {
+        "script": "work/tower15_env/surfaces.py",
+        "code_sha256": "2e781f8224a28f83f0611a4d2d4d5750e6544598240a511e444a5a5fc0937df8",
+        "outputs": [
+          {
+            "path": "work/tower15_env/road_detail.npz",
+            "bytes": 2881099,
+            "sha256": "9a60909d2221055c57e5a83fc3c9345aaf98c0c82cb1a5a7d0389bfefb141a08",
+            "raw_bytes_match": true,
+            "content_match": true
+          },
+          {
+            "path": "work/tower15_env/shrubs.json",
+            "bytes": 81972,
+            "sha256": "917bd65959fea3abf1fc174da549cd172c4c7a11ee698920f9198c2ac2ec33b7",
+            "raw_bytes_match": true,
+            "content_match": true
+          },
+          {
+            "path": "work/tower15_env/surface_checks.json",
+            "bytes": 449,
+            "sha256": "a94c6cfee3e69cfa7eccc67d34360b179b89277ff00859a2398446170b48e02b",
+            "raw_bytes_match": true,
+            "content_match": true
+          }
+        ]
+      },
+      {
+        "script": "work/tower15_env/landuse.py",
+        "code_sha256": "f3366a0057dea02dd5b0b6d3a74b721061226f669f41b30c2f95018f45e90c37",
+        "outputs": [
+          {
+            "path": "work/tower15_env/landuse.npz",
+            "bytes": 90409,
+            "sha256": "8aed717b555ac8593146afd9d8a7fd4ba3a93c51c60ab05e982ab866878434a8",
+            "raw_bytes_match": true,
+            "content_match": true
+          },
+          {
+            "path": "work/tower15_env/landuse_areas.json",
+            "bytes": 161,
+            "sha256": "ffe7cd4d57ee5c06ed9f1818cd887d6187134783e6175102b57a698004ab970c",
+            "raw_bytes_match": true,
+            "content_match": true
+          }
+        ]
+      },
+      {
+        "script": "work/street_detail/prepare.py",
+        "code_sha256": "261aa24afdc3ed7c24782a752ab046beb4cd280ea0dd1544dcaeca67e7370f9d",
+        "outputs": [
+          {
+            "path": "work/street_detail/placements.json",
+            "bytes": 455778,
+            "sha256": "28614414f052a1a43dbf64929f12f68ee95bfdb441ad12a40dd3b4951e99afdc",
+            "raw_bytes_match": true,
+            "content_match": true
+          }
+        ]
+      },
+      {
+        "script": "work/tokyo_traffic/layout.py",
+        "code_sha256": "f5b779c16cd313efb4c7a3ee5b210990f7738c387e955053e92364e2a4088958",
+        "outputs": [
+          {
+            "path": "work/tokyo_traffic/layout.json",
+            "bytes": 294064,
+            "sha256": "451a8c95accc72f7f265e56a2f2c67f71f9f83dda8eabae6d9c750be6e88ca3f",
+            "raw_bytes_match": true,
+            "content_match": true
+          },
+          {
+            "path": "work/tokyo_traffic/road_boundary.wkb.npy",
+            "bytes": 789205,
+            "sha256": "4d4457fa34d3420287e9f4e16444eb63c57ca92137983937924bcd2c430a237a",
+            "raw_bytes_match": true,
+            "content_match": true
+          }
+        ]
+      },
+      {
+        "script": "work/tokyo_traffic/tree_filter.py",
+        "code_sha256": "4238b16ac0a857c9683a216653783609663631e2a835df486edce5fc041cbca9",
+        "outputs": [
+          {
+            "path": "work/tokyo_traffic/tree_keep.json",
+            "bytes": 21153,
+            "sha256": "2cc6cab4c22696f20382742268852fae5bc76135b0788c2a2c1f6db777cd0776",
+            "raw_bytes_match": true,
+            "content_match": true
+          }
+        ]
+      },
+      {
+        "script": "work/street_detail/facade_layout.py",
+        "code_sha256": "53e9f21604184009df83e923f8b82d0eea5f1ad099c095bea3329cb97181cee2",
+        "outputs": [
+          {
+            "path": "work/street_detail/facade_layouts.json",
+            "bytes": 56342,
+            "sha256": "010fff5c38fe71a7a99e1af5a56492f8a7ecb83cb3f98c2fa3281d88cc8b43e4",
+            "raw_bytes_match": true,
+            "content_match": true
+          }
+        ]
+      }
+    ],
+    "stage_count": 7,
+    "content_matches": 12,
+    "raw_byte_matches": 12,
+    "inputs_unchanged": true,
+    "source_code_unchanged": true,
+    "local_reports": [
+      {
+        "path": "data/local/replays/production-20260927/replay.json",
+        "sha256": "5fc2c0ff1f9db2cbae056ab66b38e5abe6574ac56b09912d0aa4643039245ec4",
+        "environment": "bundled Python/NumPy plus isolated fresh Shapely",
+        "ok": true
+      },
+      {
+        "path": "data/local/replays/production-clean-20260927/replay.json",
+        "sha256": "d0e9b08f27fe17038372bb95353e003deb60dd3b5d7e4316f463ac1a06c4f6e6",
+        "environment": "fresh venv",
+        "ok": true
+      }
+    ],
+    "platform_scope": "Both runs used this Windows PC. Other PCs and operating systems were not tested."
+  },
+  "tree_placement_verification": {
+    "script": "scripts/verify_city_tree_placements.py",
+    "code_sha256_lf": "661b4ffeb920184f8a19d9cb36bc1bd6676a64ad917807ae06f1e12d4c1222e0",
+    "blender_version": "4.5.1 LTS",
+    "local_report": "data/local/audits/tree-placements-20260927.json",
+    "report_sha256": "8c7849d65eec1cab25a7f8738c4cf016461c66c000079e44382a6dc549551bae",
+    "matched_mesh_objects": {
+      "street-trees": 1314,
+      "shrubs": 1333
+    },
+    "matched_total": 2647,
+    "mismatches": 0,
+    "comparison": "Exact Blender float32 location/Euler/scale plus expected prototype geometry hash; no extra transform dependencies.",
+    "prototype_evidence": "sources/city-pr12-production-audit.json#prototype_verification",
+    "input_unchanged": true,
+    "layouts_unchanged": true
+  },
+  "utility_verification": {
+    "portable_tests_run": 145,
+    "passed": 140,
+    "skipped": 5,
+    "failed": 0,
+    "python": "3.11.11",
+    "command": "python -m unittest discover -s tests",
+    "import_script_sha256_lf": "d744337a817485682bbb86a20526ef2e6889123e9845cd6f5740afda5b5f2687"
+  },
+  "limitations": [
+    "Only the seven data processors were replayed. Eight seed records include existing footprints, surfaces, canopy locations and facade observations; their production from primary sources is unverified.",
+    "The five intermediate blends were only located and hashed. A complete city rebuild has not been performed.",
+    "Tree/shrub prototype geometry and local transforms match; material node graphs, visibility and the remaining 29 candidate objects are not covered.",
+    "Recovered historical data and code remain local. Upstream code access is private, and public input/scene distribution is pending.",
+    "Technical equality does not establish surveyed accuracy, full authorship or redistribution rights."
+  ],
+  "new_license_grant": null,
+  "city_redistribution": "pending",
+  "subsequent_component_verification": {
+    "record": "sources/city-pr12-component-verification.json",
+    "note": "Earlier limitations and the 22-source-file snapshot above are historical. The follow-up imports five blends, reads three, adds two pinned render scripts, and matches the remaining 29 components, 31 materials and 2676 assignments after the documented render preset. This is not a new license grant.",
+    "distribution_candidate": "manifests/procedural-components-distribution.draft.json"
+  }
+}

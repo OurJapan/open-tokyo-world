@@ -4,19 +4,54 @@
   "assets": [
     {
       "kind": "packed-building-textures",
-      "source": "PLATEAU and legacy atlas; image-to-source mapping incomplete",
-      "redistribution": "pending"
+      "source": "382 PLATEAU images matched by encoded bytes or exact resized RGBA8; one legacy atlas remains unresolved",
+      "image_identity_audit": "sources/city-pr12-image-audit.json",
+      "unresolved_image": "facade_atlas.png",
+      "remaining_review": "Dataset-specific conditions, attribution and the legacy atlas; identity checks do not grant rights",
+      "redistribution": "pending",
+      "atlas_replacement_candidate": {
+        "review": "docs/city-facades-v1.md",
+        "verification": "docs/city-facades-v1-verification.json",
+        "status": "local-candidate-human-review-pending",
+        "accepted_city_unchanged": true
+      }
     },
     {
       "kind": "roads-and-layout",
       "source": "OpenStreetMap contributors",
       "declared_license": "ODbL",
-      "derivation_review": "pending"
+      "derivation_review": "pending",
+      "saved_osm_sha256": "f04e8e70ab24a61ca749375d1ef37401feb0fdc840cc506b670ef71454a6a8ab",
+      "saved_osm_snapshot_reproducible": false,
+      "snapshot_status": "recovered-and-local-hash-verified-public-retrieval-unavailable",
+      "reproducibility_scope": "The legacy flag remains false for public retrieval; local seven-stage data replay matches all 12 saved outputs.",
+      "recovered_input_manifest": "manifests/legacy-production-inputs.json",
+      "input_recovery": "sources/city-pr12-input-recovery.json"
     },
     {
       "kind": "music",
       "included_in_review": false,
       "redistribution": "pending"
+    },
+    {
+      "kind": "procedural-tree-shrub-prototypes-and-materials",
+      "source": "Pinned historical procedural generators match the selected local geometry and shader graphs.",
+      "scope": "assets/procedural-components/provenance.json",
+      "verification": "sources/city-pr12-component-verification.json",
+      "redistribution": "licensed-package-verified-public-release-pending",
+      "new_license_grant": {
+        "license": "CC-BY-4.0",
+        "date": "2026-09-27",
+        "record": "assets/procedural-components/provenance.json",
+        "scope": "16 named prototype meshes and 31 procedural materials, plus their dedicated preview only."
+      },
+      "excludes": "Original city coordinates, mapped aggregate geometry, third-party data, imagery and legacy source code.",
+      "package": "assets/procedural-components/package-v0.1.0.json"
     }
-  ]
+  ],
+  "geometry_inventory": "sources/city-pr12-geometry-audit.json",
+  "distribution_review": "docs/city-distribution-plan.md",
+  "notice_draft": "sources/city-distribution-NOTICE.draft.md",
+  "authorship_notes": "sources/city-pr12-authorship-notes.json",
+  "production_audit": "sources/city-pr12-production-audit.json"
 }

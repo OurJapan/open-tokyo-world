@@ -1,0 +1,690 @@
+{
+  "version": 1,
+  "checked_on": "2026-09-26",
+  "purpose": "Local illustrated source-identification inventory; not distribution approval.",
+  "input": {
+    "bytes": 558751758,
+    "sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+    "blender_version": "4.5.1 LTS"
+  },
+  "run": {
+    "version": 1,
+    "ok": true,
+    "input_sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+    "config_sha256": "35c6a3fd310870681fd34dc0fe5abfc57a11bbf2f9f1523bbd392d42f685bce7",
+    "output_kind": "local-illustrated-inventory-no-blend",
+    "jobs": {
+      "inventory": {
+        "seconds": 42.093,
+        "report_sha256": "782be53c41089789251d39b9b805744145df480cfb1db4d17763379ca85e5136"
+      },
+      "render": {
+        "seconds": 115.094,
+        "report_sha256": "1193c7b3bf473ce7649031523cc344f83783d48a9f81b6633525eae0defad857"
+      }
+    },
+    "settings": {
+      "device": "OPTIX",
+      "width": 900,
+      "height": 560,
+      "samples": 16,
+      "seed": 0,
+      "frame": 1
+    },
+    "code_files_sha256_lf": {
+      "scripts/city_catalog.py": "f443c598e8d4c2897e17ef9e9d531834003d46ab7c546437976216dc74915d55",
+      "scripts/city_catalog_blender.py": "1f852b0cc58c45b9e374d6b5c0582bcddac7e2db2bd39251556904b1a05c27e2",
+      "scripts/city_catalog_template.html": "e8218eab712a24d88e4b3d09a3148e171c6f436c03db4d589637165a9a180bf0",
+      "scripts/blender_worker.py": "413aef20acde7aaefa2c8466b0f11b2c321609f347117b12a1c616867411654f",
+      "scripts/audit_image_sources.py": "fdc5aba7579edf9aa5e4a6e1214519c526bc285dd823b3505727043f4d2250cd"
+    },
+    "record_files_sha256_lf": {
+      "assets/tokyo-tower/provenance.json": "9a6c885d99a9c83237a943a70db1519e11d8d1503b9e276415bec615b941b524",
+      "starter/mori/provenance.json": "2d136b465d026cc07fd256d4fb54e807dacfdab5ef29b361deef30ddccfe4d91",
+      "starter/plaza/provenance.json": "4931b7b01c1ea2e60192685d21a4af595f94ae94a3f8e890751043410bb7fb0c"
+    },
+    "mesh_objects": 3255,
+    "groups": 13,
+    "image_count": 26,
+    "counts": {
+      "visible_meshes": 513,
+      "empty_meshes": 55,
+      "referenced_images": 383,
+      "record_kinds": {
+        "same-input-record": 77,
+        "unconfirmed": 2732,
+        "same-name-record": 18,
+        "source-claim": 428
+      }
+    },
+    "input_unchanged": true
+  },
+  "groups": [
+    {
+      "id": "roads",
+      "objects": 7,
+      "visible": 7,
+      "empty": 0,
+      "records": {
+        "unconfirmed": 7
+      },
+      "scope_sha256": "85ab7edb457dd1354751df72ccdf40b0050251d76e7c7ef2fe8f7a5aa042bdeb",
+      "referenced_image_count": 0
+    },
+    {
+      "id": "land",
+      "objects": 7,
+      "visible": 7,
+      "empty": 0,
+      "records": {
+        "unconfirmed": 7
+      },
+      "scope_sha256": "2b3b6af90d86bcfddab1f262064317de2efc7c2c871fbd4f33f0ebb6aefcd148",
+      "referenced_image_count": 0
+    },
+    {
+      "id": "buildings",
+      "objects": 12,
+      "visible": 9,
+      "empty": 3,
+      "records": {
+        "unconfirmed": 12
+      },
+      "scope_sha256": "8261843e2b73a6ee637397757e4005b1834da22dc86b0060e4cf42b98fa5277d",
+      "referenced_image_count": 1
+    },
+    {
+      "id": "park-trees",
+      "objects": 4,
+      "visible": 0,
+      "empty": 0,
+      "records": {
+        "unconfirmed": 4
+      },
+      "scope_sha256": "aefe9a3f8df51204f8e5e40685f979146e4b77689224c32a8ecf9f74684bc29a",
+      "referenced_image_count": 0
+    },
+    {
+      "id": "street-trees",
+      "objects": 1316,
+      "visible": 0,
+      "empty": 0,
+      "records": {
+        "unconfirmed": 1316
+      },
+      "scope_sha256": "3c8b27d30bb87058b29a528521a377d72b1e14d3c03a2e493f1b95c9f930ec41",
+      "referenced_image_count": 0
+    },
+    {
+      "id": "shrubs",
+      "objects": 1333,
+      "visible": 0,
+      "empty": 0,
+      "records": {
+        "unconfirmed": 1333
+      },
+      "scope_sha256": "7d1cf853de5b23d0991944a622a6d73b89892601a43b4434068051081b7f3c38",
+      "referenced_image_count": 0
+    },
+    {
+      "id": "vehicles",
+      "objects": 14,
+      "visible": 0,
+      "empty": 0,
+      "records": {
+        "unconfirmed": 14
+      },
+      "scope_sha256": "467b3855f55aac781c14cace10c6133a42b13639ee7ca9ca89cdca7d87dc7779",
+      "referenced_image_count": 0
+    },
+    {
+      "id": "lights",
+      "objects": 1,
+      "visible": 1,
+      "empty": 0,
+      "records": {
+        "unconfirmed": 1
+      },
+      "scope_sha256": "76192880fb027847afda0612e862e451f6d52f16039f7a605f4ad0233200dfc4",
+      "referenced_image_count": 0
+    },
+    {
+      "id": "equipment",
+      "objects": 8,
+      "visible": 0,
+      "empty": 0,
+      "records": {
+        "unconfirmed": 8
+      },
+      "scope_sha256": "bbc0f27fef569922ac80f9f88f4807d78b80c75c295684d0455a0c065ffaac0a",
+      "referenced_image_count": 0
+    },
+    {
+      "id": "plateau",
+      "objects": 428,
+      "visible": 381,
+      "empty": 47,
+      "records": {
+        "source-claim": 428
+      },
+      "scope_sha256": "1deeb4d63e2362cd1106d867421be303388c5c5698c97f38746521ed12bb9b9d",
+      "referenced_image_count": 382
+    },
+    {
+      "id": "tower",
+      "objects": 82,
+      "visible": 77,
+      "empty": 5,
+      "records": {
+        "same-input-record": 77,
+        "unconfirmed": 5
+      },
+      "scope_sha256": "c553f8fffa2c0a5451aff2cb91d40ba630cfd13333288c14dc7dc7787ec6e035",
+      "referenced_image_count": 0
+    },
+    {
+      "id": "mori",
+      "objects": 35,
+      "visible": 30,
+      "empty": 0,
+      "records": {
+        "unconfirmed": 17,
+        "same-name-record": 18
+      },
+      "scope_sha256": "4169cd66cc7c3d4f7b9c63d0f2be9eba2038b853a7cd661ec0a80610d40e51c8",
+      "referenced_image_count": 0
+    },
+    {
+      "id": "other",
+      "objects": 8,
+      "visible": 1,
+      "empty": 0,
+      "records": {
+        "unconfirmed": 8
+      },
+      "scope_sha256": "56ed6b347ea42146f507d33b3a1f7a640c9c6fc14d6e1cfaa731b27197bc822a",
+      "referenced_image_count": 0
+    }
+  ],
+  "render_evidence": {
+    "ok": true,
+    "groups": [
+      {
+        "id": "roads",
+        "images": {
+          "isolated": {
+            "file": "roads-isolated.png",
+            "sha256": "100b25f693f5ab4f40b9766ad4d532960def9dbeaf2d41d3d7a65525dabfbca0",
+            "alpha_coverage": 0.40500992063492064
+          },
+          "context": {
+            "file": "roads-context.png",
+            "sha256": "ae79f6009482dcfeda34e3689e725be2614d1a8d47551e3bc9a358bc55bcae1b",
+            "alpha_coverage": 1.0
+          }
+        },
+        "originally_visible_meshes": 7,
+        "camera_eye": [
+          141.90493774414062,
+          -333.9208984375,
+          128.28591918945312
+        ],
+        "camera_target": [
+          35.0,
+          -170.0,
+          0.0
+        ],
+        "lens_mm": 42,
+        "representatives": [],
+        "temporarily_revealed": 0,
+        "coverage": "Selected camera view of this category, not every instance.",
+        "selected_objects_count": 7,
+        "selected_object_names_sha256": "4952280ff437ced435544d68f739ddbfe2730eb26a7fc16d32db0e8213ba8cff"
+      },
+      {
+        "id": "land",
+        "images": {
+          "isolated": {
+            "file": "land-isolated.png",
+            "sha256": "211137518c693642a0c231e92873b132d665af7022cbeca31329fa795b2e7c5e",
+            "alpha_coverage": 1.0
+          },
+          "context": {
+            "file": "land-context.png",
+            "sha256": "7c9acfafe32b3f4ac06f0b9f8808f96a303422c75275956b23d24db99a956e1f",
+            "alpha_coverage": 1.0
+          }
+        },
+        "originally_visible_meshes": 7,
+        "camera_eye": [
+          684.524658203125,
+          -1269.6044921875,
+          641.4295654296875
+        ],
+        "camera_target": [
+          150.0,
+          -450.0,
+          0.0
+        ],
+        "lens_mm": 42,
+        "representatives": [],
+        "temporarily_revealed": 0,
+        "coverage": "Selected camera view of this category, not every instance.",
+        "selected_objects_count": 7,
+        "selected_object_names_sha256": "96149c754e92937ea491f32510c56a5fb087145db2425080cc05b4f5f55049f3"
+      },
+      {
+        "id": "buildings",
+        "images": {
+          "isolated": {
+            "file": "buildings-isolated.png",
+            "sha256": "d11a75857e4b8b3b564ad1e9c39b2157aa2c6ea3c93334b274447d537d3e3ed7",
+            "alpha_coverage": 0.8835853174603174
+          },
+          "context": {
+            "file": "buildings-context.png",
+            "sha256": "6afce3e33dd3e41f7d06d51f7a52124a66c8f3eacf019e89ce9839f027ffc5bc",
+            "alpha_coverage": 1.0
+          }
+        },
+        "originally_visible_meshes": 9,
+        "camera_eye": [
+          -48.0,
+          -31.0,
+          32.0
+        ],
+        "camera_target": [
+          -27.0,
+          -87.0,
+          12.0
+        ],
+        "lens_mm": 46,
+        "representatives": [],
+        "temporarily_revealed": 0,
+        "coverage": "Selected camera view of this category, not every instance.",
+        "selected_objects_count": 9,
+        "selected_object_names_sha256": "134851dc6f675581b2160ea12ba797bb7110c5adb9ede1e54bb03f50ad93a154"
+      },
+      {
+        "id": "park-trees",
+        "images": {
+          "isolated": {
+            "file": "park-trees-isolated.png",
+            "sha256": "c1256ce1246a8643d847d897870d7e84058ab51ba512f510bb3e8e4d1d151977",
+            "alpha_coverage": 0.16813492063492064
+          },
+          "context": {
+            "file": "park-trees-context.png",
+            "sha256": "cb6f4ff47e6e499b783875820bbe924471b2549e90cc32460e1f4b4e82569743",
+            "alpha_coverage": 1.0
+          }
+        },
+        "originally_visible_meshes": 0,
+        "camera_eye": [
+          85.85899353027344,
+          2.096607208251953,
+          45.29774856567383
+        ],
+        "camera_target": [
+          52.965171813964844,
+          52.53380584716797,
+          5.825160980224609
+        ],
+        "lens_mm": 42,
+        "representatives": [
+          "leaf0"
+        ],
+        "temporarily_revealed": 4,
+        "coverage": "Selected camera view of this category, not every instance.",
+        "selected_objects_count": 4,
+        "selected_object_names_sha256": "5c1841a2c5808a256f340b621213693e02c4d3bc55e8bb92177d4d9a5bc8be6c"
+      },
+      {
+        "id": "street-trees",
+        "images": {
+          "isolated": {
+            "file": "street-trees-isolated.png",
+            "sha256": "396481280f5d794d52d097941c528e224f0a13542bb46c18c36bea8ecc5f80f4",
+            "alpha_coverage": 0.1282123015873016
+          },
+          "context": {
+            "file": "street-trees-context.png",
+            "sha256": "9126a3aa1c382d1fc7ec02eea9b3b46c26a23a360e6a8276241c31e52a7e1932",
+            "alpha_coverage": 1.0
+          }
+        },
+        "originally_visible_meshes": 0,
+        "camera_eye": [
+          37.88267135620117,
+          20.619670867919922,
+          16.770950317382812
+        ],
+        "camera_target": [
+          28.014522552490234,
+          35.750831604003906,
+          4.929172992706299
+        ],
+        "lens_mm": 42,
+        "representatives": [
+          "Street tree ginkgo 165",
+          "Street tree ginkgo 165.001"
+        ],
+        "temporarily_revealed": 2,
+        "coverage": "Selected camera view of this category, not every instance.",
+        "selected_objects_count": 2,
+        "selected_object_names_sha256": "6333c2d864bcc9ccd377cecb0b4a714e351c3e4f7708b847584f00ca036845fd"
+      },
+      {
+        "id": "shrubs",
+        "images": {
+          "isolated": {
+            "file": "shrubs-isolated.png",
+            "sha256": "8cc7210aafa9e43fd3806d89e2324fd5dfdba3768c7a5f4c09d1b78ab88bf660",
+            "alpha_coverage": 0.07756349206349206
+          },
+          "context": {
+            "file": "shrubs-context.png",
+            "sha256": "13503b067354ee656a3d028c3a4a7409d7edbb4554366536c1b5c753c2559772",
+            "alpha_coverage": 1.0
+          }
+        },
+        "originally_visible_meshes": 0,
+        "camera_eye": [
+          -81.72254180908203,
+          21.965116500854492,
+          2.776763439178467
+        ],
+        "camera_target": [
+          -83.69617462158203,
+          24.991348266601562,
+          0.408407986164093
+        ],
+        "lens_mm": 42,
+        "representatives": [
+          "Park shrub 686"
+        ],
+        "temporarily_revealed": 1,
+        "coverage": "Selected camera view of this category, not every instance.",
+        "selected_objects_count": 1,
+        "selected_object_names_sha256": "1c189b0bf69fc5a6c192d9f8027a3043e978264b54c805841136115fb85b6cd4"
+      },
+      {
+        "id": "vehicles",
+        "images": {
+          "isolated": {
+            "file": "vehicles-isolated.png",
+            "sha256": "4ec70f82586160cea6d4d379cc613d09a810470f8ccbb9c158637e151c2faf22",
+            "alpha_coverage": 0.06518253968253969
+          },
+          "context": {
+            "file": "vehicles-context.png",
+            "sha256": "7fac34a770698af71f9fa4e4c504957f96397cae29b781059687e1b817230358",
+            "alpha_coverage": 1.0
+          }
+        },
+        "originally_visible_meshes": 0,
+        "camera_eye": [
+          -51.184906005859375,
+          -0.43367528915405273,
+          7.706795692443848
+        ],
+        "camera_target": [
+          -56.5301513671875,
+          7.762369632720947,
+          1.2925000190734863
+        ],
+        "lens_mm": 42,
+        "representatives": [
+          "Tokyo traffic • white"
+        ],
+        "temporarily_revealed": 14,
+        "coverage": "Selected camera view of this category, not every instance.",
+        "selected_objects_count": 14,
+        "selected_object_names_sha256": "fc902472e94778359c9e6b1b145628ffb711662e2d3fdab324c8f1721d8d2cc6"
+      },
+      {
+        "id": "lights",
+        "images": {
+          "isolated": {
+            "file": "lights-isolated.png",
+            "sha256": "170161a8ce3348c2f7989f56b006eba4a20e6eb8a6ec238fea1d33a1ec3ff990",
+            "alpha_coverage": 0.006958333333333334
+          },
+          "context": {
+            "file": "lights-context.png",
+            "sha256": "ae8fd8e9a1197794d031a60716289bca0ef6f5b82ae965c4ab12ac6541d5a58e",
+            "alpha_coverage": 1.0
+          }
+        },
+        "originally_visible_meshes": 1,
+        "camera_eye": [
+          -69.0663070678711,
+          87.150146484375,
+          15.776777267456055
+        ],
+        "camera_target": [
+          -78.93445587158203,
+          102.28130340576172,
+          3.934999942779541
+        ],
+        "lens_mm": 42,
+        "representatives": [
+          "Street lights • illustrative placement"
+        ],
+        "temporarily_revealed": 0,
+        "coverage": "Selected camera view of this category, not every instance.",
+        "selected_objects_count": 1,
+        "selected_object_names_sha256": "e3761ed052e4aab50bec625af0c242a7befc8e989fe93aa3aae65f8b4ec72a9e"
+      },
+      {
+        "id": "equipment",
+        "images": {
+          "isolated": {
+            "file": "equipment-isolated.png",
+            "sha256": "b3b6de3cf3230477875018be4e2948b874545a08fc5f83f41eeaa5513aeefaf0",
+            "alpha_coverage": 0.012081349206349207
+          },
+          "context": {
+            "file": "equipment-context.png",
+            "sha256": "493244e2f6776c449c2224d46d1253f68b02cb8e34ffb0c07a730ac9293cc87d",
+            "alpha_coverage": 1.0
+          }
+        },
+        "originally_visible_meshes": 0,
+        "camera_eye": [
+          -20.352802276611328,
+          -33.70260238647461,
+          3.2483553886413574
+        ],
+        "camera_target": [
+          -22.326431274414062,
+          -30.67637062072754,
+          0.8799999952316284
+        ],
+        "lens_mm": 42,
+        "representatives": [
+          "Close detail silver"
+        ],
+        "temporarily_revealed": 8,
+        "coverage": "Selected camera view of this category, not every instance.",
+        "selected_objects_count": 8,
+        "selected_object_names_sha256": "21539891f5be1e9880a19be308fbcdce3c586233679e5493e422adaf427130fa"
+      },
+      {
+        "id": "plateau",
+        "images": {
+          "isolated": {
+            "file": "plateau-isolated.png",
+            "sha256": "afb2ce76e2d76dd58f898bd9a5f5176a9fc2c9be9582c9a0e6bf88e9b3e81083",
+            "alpha_coverage": 0.5357103174603175
+          },
+          "context": {
+            "file": "plateau-context.png",
+            "sha256": "92b7e922333649a8b5087cea2eb775abd25e3580224bbd6ab233bac047915c4a",
+            "alpha_coverage": 1.0
+          }
+        },
+        "originally_visible_meshes": 381,
+        "camera_eye": [
+          71.57530212402344,
+          -501.748779296875,
+          172.89035034179688
+        ],
+        "camera_target": [
+          -60.0,
+          -300.0,
+          15.0
+        ],
+        "lens_mm": 42,
+        "representatives": [],
+        "temporarily_revealed": 0,
+        "coverage": "Selected camera view of this category, not every instance.",
+        "selected_objects_count": 381,
+        "selected_object_names_sha256": "b56240f480a4ce5ea4906645a3be111dde8e17f63ad51cf2ed5cad601ff529f6"
+      },
+      {
+        "id": "tower",
+        "images": {
+          "isolated": {
+            "file": "tower-isolated.png",
+            "sha256": "130845876915d8218c857f1648cfad87d58b359dd2e72fbc88f69f0e64a6ac28",
+            "alpha_coverage": 0.03223412698412698
+          },
+          "context": {
+            "file": "tower-context.png",
+            "sha256": "2c856dd96940e84c7e86520069b4059c0439688792def09d86d0035bcb00f196",
+            "alpha_coverage": 1.0
+          }
+        },
+        "originally_visible_meshes": 77,
+        "camera_eye": [
+          361.83209228515625,
+          -554.8092041015625,
+          589.198486328125
+        ],
+        "camera_target": [
+          0.0,
+          0.0,
+          155.0
+        ],
+        "lens_mm": 42,
+        "representatives": [],
+        "temporarily_revealed": 0,
+        "coverage": "Selected camera view of this category, not every instance.",
+        "selected_objects_count": 77,
+        "selected_object_names_sha256": "3409c17f26e1ec946f67ba0b4910e2f3ad68e5e9a69756c3acf27b4238692dc7"
+      },
+      {
+        "id": "mori",
+        "images": {
+          "isolated": {
+            "file": "mori-isolated.png",
+            "sha256": "0fd15b78be989ca784765d118899dc31db95086a9ca8ed6e4aec36ab6f6bc4f5",
+            "alpha_coverage": 0.1140436507936508
+          },
+          "context": {
+            "file": "mori-context.png",
+            "sha256": "c88ecb49fb33d53ec7d437b0463dc60b813faf6011af83f84736cfbe5ab5c34b",
+            "alpha_coverage": 1.0
+          }
+        },
+        "originally_visible_meshes": 30,
+        "camera_eye": [
+          -68.16790771484375,
+          -301.8092041015625,
+          594.198486328125
+        ],
+        "camera_target": [
+          -430.0,
+          253.0,
+          160.0
+        ],
+        "lens_mm": 42,
+        "representatives": [],
+        "temporarily_revealed": 0,
+        "coverage": "Selected camera view of this category, not every instance.",
+        "selected_objects_count": 30,
+        "selected_object_names_sha256": "0ad46e16745d77a8dd2c7f1ea3bbd0c44da54639f7436a39c39741112d409247"
+      },
+      {
+        "id": "other",
+        "images": {
+          "isolated": {
+            "file": "other-isolated.png",
+            "sha256": "94102e416caa70731db5ff8b3677e5a48699c28212317119779d2b0f0c7cb988",
+            "alpha_coverage": 0.036583333333333336
+          },
+          "context": {
+            "file": "other-context.png",
+            "sha256": "682818b8acbb7c295887f00846a907595f953655a1b596a56b048b06560f5a00",
+            "alpha_coverage": 1.0
+          }
+        },
+        "originally_visible_meshes": 1,
+        "camera_eye": [
+          361.83209228515625,
+          -554.8092041015625,
+          589.198486328125
+        ],
+        "camera_target": [
+          0.0,
+          0.0,
+          155.0
+        ],
+        "lens_mm": 42,
+        "representatives": [],
+        "temporarily_revealed": 7,
+        "coverage": "Selected camera view of this category, not every instance.",
+        "selected_objects_count": 8,
+        "selected_object_names_sha256": "0ba105fd25a0eb41ae55da5e7c06d08ebecabd146ac566f059f65a9e1c7f34b6"
+      }
+    ],
+    "devices": [
+      "NVIDIA GeForce RTX 3060 Ti"
+    ],
+    "scene_saved": false,
+    "limitations": [
+      "Named nonempty samples can be temporarily revealed; original eligibility is separately recorded.",
+      "Isolation changes occlusion and lighting; these are identification views, not change comparisons."
+    ]
+  },
+  "inventory_sha256": "782be53c41089789251d39b9b805744145df480cfb1db4d17763379ca85e5136",
+  "gallery_html_sha256": "9197b46d5b61da5a7b286ac44d5f354652726947f2c2fa07d3187f48d72251b1",
+  "publication": {
+    "contains_scene_or_image_bytes": false,
+    "contains_full_object_inventory": false,
+    "city_redistribution_approved": false
+  },
+  "validation": {
+    "portable_tests": {
+      "total": 132,
+      "passed": 127,
+      "skipped": 5,
+      "failed": 0
+    },
+    "compileall": true,
+    "visual_review": "26 category views inspected locally; selected views do not cover all instances.",
+    "browser": [
+      "Category and object-name filters",
+      "Empty search results",
+      "Image toggle and detail table",
+      "Memo retained after reload",
+      "Export JSON preview; input and category fingerprints retained"
+    ],
+    "browser_limits": [
+      "Automatic download was not observed in the in-app browser; copyable JSON is provided.",
+      "No separate mobile-device verification."
+    ]
+  },
+  "limitations": [
+    "Object counts are not building, tree or vehicle instance counts.",
+    "Same-name grant matches do not prove identical geometry or materials.",
+    "Fingerprints do not fully cover modifiers, animations or nested node groups.",
+    "Render eligibility reflects the active view layer at frame 1.",
+    "Named nonempty samples can be temporarily revealed; original eligibility is separately recorded.",
+    "Isolation changes occlusion and lighting; these are identification views, not change comparisons.",
+    "Neither classification nor source records grant new rights.",
+    "No new authorship assertion, external model clearance, or geometry-source match is inferred.",
+    "One workstation only; no claim of cross-device image byte identity."
+  ]
+}

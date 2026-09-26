@@ -61,10 +61,34 @@ The 77 original Tokyo Tower parts and their original materials, plus the new iso
 
 The original `scripts/object_registry.py`, `tests/test_object_registry.py`, `registry/example.json`, and `registry/example.lock.json` are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. The registry example is synthetic contract data, not a real city model or a grant for third-party inputs.
 
+## MIT: contributor workspace
+
+The original implementations in `scripts/workspace.py`, `scripts/workspace_blender.py`, `otw.ps1`, and `tests/test_workspace.py` are licensed under the [MIT License](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This grant covers these named workspace implementations; it does not grant new rights to the city scenes or other inputs they handle.
+
+The original implementations in `scripts/verify_city_images.py`, `scripts/check_city_image_pixels.py`, and `tests/test_city_images.py` are also licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This grant covers the named image verification code, not the third-party images or city scenes being checked.
+
+The original implementations in `scripts/city_facades.py`, `scripts/review_city_facades.py`, `scripts/audit_city_geometry.py`, and `tests/test_city_facades.py` are also licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This grant covers the named procedural material, comparison and inventory code. It does not grant new rights to legacy geometry, remaining textures or the combined city scene.
+
+The original implementations in `scripts/city_catalog.py`, `scripts/city_catalog_blender.py`, `scripts/city_catalog_template.html`, and `tests/test_city_catalog.py` are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This grant covers the named catalogue code and interface, not the legacy scenes, images or third-party content shown by it.
+
+The original implementations in `scripts/fetch_legacy_production.py`, `scripts/audit_city_production.py`, `scripts/verify_tree_prototypes.py`, and `tests/test_legacy_production.py` are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This covers the new inspection utilities, not the historical source files they retrieve, embedded scene text, or the city assets.
+
+The original implementations in `scripts/import_legacy_inputs.py`, `scripts/replay_production_inputs.py`, `scripts/verify_city_tree_placements.py`, and `tests/test_production_inputs.py` are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This covers the new import, replay and verification utilities. It does not grant new rights to the historical scripts, recovered map/layout data, intermediate scenes, or third-party Python packages.
+
+The original implementations in `scripts/component_contracts.py`, `scripts/verify_city_components.py`, `scripts/prepare_procedural_candidate.py`, `tests/test_city_components.py`, and `tests/components_blender.py` are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This covers the new comparison and local candidate preparation utilities, not historical source fragments executed from separately supplied files. The extracted assets have the separate grant below.
+
+The original `scripts/package_procedural_components.py` and `tests/test_procedural_package.py` are also licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This covers the new license-annotation, verification and packaging implementations; it does not relicense Blender or historical source code.
+
+The original `scripts/district_distribution.py` and `tests/test_district_distribution.py` are also licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This covers district selection, content verification, local caching and workspace integration, not the models, source datasets or third-party content they retrieve.
+
+## CC BY 4.0: tree/shrub prototypes and procedural materials
+
+On 2026-09-27 the account holder approved CC BY 4.0 for the 16 prototype meshes and 31 procedural materials identified in [provenance](assets/procedural-components/provenance.json), together with their dedicated preview setup and image, to the extent the licensor controls those rights. See the [asset grant](assets/procedural-components/ASSET-LICENSE.md). The original city placement, mapped aggregate meshes, third-party inputs and historical code remain outside this grant.
+
 ## Outside these grants
 
 Except for the separately identified starters and original additions above, no license is granted here for other repository files, legacy city scenes, generated models, reference photos, textures, music, trademarks, PLATEAU data, OpenStreetMap data, or other third-party content. Any separately applicable license remains in effect. Execution of the covered code does not itself grant rights to its inputs or outputs. This scope document adds no conditions to the MIT grant for the covered code.
 
-広場6部品、森JPタワーの独自追加部分等、および東京タワーの指定独自部分等にCC BY 4.0を適用します。全都市モデルや他のコード・文書が一括してMIT／CC BYになったとは扱わないでください。
+広場6部品、森JPタワーの独自追加部分等、東京タワーの指定独自部分等、および植栽の指定16部品・31材質等にCC BY 4.0を適用します。全都市モデルや他のコード・文書が一括してMIT／CC BYになったとは扱わないでください。
 
 See [NOTICE](NOTICE.md) for provenance and operational dependencies. Attribution required by a third-party license must be retained when that data is used; those requirements are not additional restrictions on the independent MIT code.

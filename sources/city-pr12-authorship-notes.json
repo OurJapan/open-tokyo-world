@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "recorded_on": "2026-09-27",
+  "status": "historical-owner-recollection-with-subsequent-scoped-license-grant",
+  "statement": {
+    "speaker": "project account holder",
+    "text_ja": "自分とAIだと思うよ",
+    "question_context_ja": "植栽・車両・設備について、ご自身とAIで制作したものか、外部モデルを使ったものか、分かる範囲で教えてください。",
+    "interpretation_ja": "ご本人とAIで制作したと思われる、という記憶に基づく回答。外部素材を使っていないことや、部品ごとの制作元を確定した回答ではない。"
+  },
+  "baseline": {
+    "bytes": 558751758,
+    "sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+    "catalog_record": "sources/city-pr12-catalog-summary.json",
+    "catalog_record_commit": "f1e35433fc60a9282880c350daead2d49e0a01a0"
+  },
+  "scope_basis": "Provisional category mapping from the preceding question; not object-by-object confirmation.",
+  "candidate_groups": [
+    {
+      "id": "park-trees",
+      "title_ja": "公園等の樹冠（旧部品）",
+      "mesh_objects": 4,
+      "scope_sha256": "aefe9a3f8df51204f8e5e40685f979146e4b77689224c32a8ecf9f74684bc29a",
+      "authorship_status": "tentative-owner-and-ai"
+    },
+    {
+      "id": "street-trees",
+      "title_ja": "街路樹・植樹帯",
+      "mesh_objects": 1316,
+      "scope_sha256": "3c8b27d30bb87058b29a528521a377d72b1e14d3c03a2e493f1b95c9f930ec41",
+      "authorship_status": "tentative-owner-and-ai"
+    },
+    {
+      "id": "shrubs",
+      "title_ja": "低木・下草",
+      "mesh_objects": 1333,
+      "scope_sha256": "7d1cf853de5b23d0991944a622a6d73b89892601a43b4434068051081b7f3c38",
+      "authorship_status": "tentative-owner-and-ai"
+    },
+    {
+      "id": "vehicles",
+      "title_ja": "車両・交通の部品",
+      "mesh_objects": 14,
+      "scope_sha256": "467b3855f55aac781c14cace10c6133a42b13639ee7ca9ca89cdca7d87dc7779",
+      "authorship_status": "tentative-owner-and-ai"
+    },
+    {
+      "id": "lights",
+      "title_ja": "街灯",
+      "mesh_objects": 1,
+      "scope_sha256": "76192880fb027847afda0612e862e451f6d52f16039f7a605f4ad0233200dfc4",
+      "authorship_status": "tentative-owner-and-ai"
+    },
+    {
+      "id": "equipment",
+      "title_ja": "近景の設備・細部",
+      "mesh_objects": 8,
+      "scope_sha256": "bbc0f27fef569922ac80f9f88f4807d78b80c75c295684d0455a0c065ffaac0a",
+      "authorship_status": "tentative-owner-and-ai"
+    }
+  ],
+  "candidate_mesh_objects": 2676,
+  "external_model_use": "not-established",
+  "source_code_correspondence": "all-six-candidate-groups-have-documented-geometry-transform-and-procedural-material-correspondence",
+  "map_input_and_placement_provenance": "recovered-inputs-and-verified-tree-placement",
+  "new_license_grant": {
+    "license": "CC-BY-4.0",
+    "date": "2026-09-27",
+    "record": "assets/procedural-components/provenance.json",
+    "scope": "16 named prototype meshes and 31 procedural materials, plus their dedicated preview only."
+  },
+  "city_redistribution": "pending",
+  "next_evidence": [
+    "Publish the licensed prototype/material package after the reviewed PR is merged, then verify its public download.",
+    "Trace remaining footprint, road and starting-canopy inputs to primary sources before distributing mapped aggregates.",
+    "Validate with another participant/PC and keep the full-city distribution review separate."
+  ],
+  "production_audit": "sources/city-pr12-production-audit.json",
+  "input_recovery": "sources/city-pr12-input-recovery.json",
+  "component_verification": "sources/city-pr12-component-verification.json",
+  "distribution_candidate": "manifests/procedural-components-distribution.draft.json",
+  "approved_distribution_scope": "assets/procedural-components/provenance.json"
+}

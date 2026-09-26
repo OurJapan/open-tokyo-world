@@ -1,0 +1,317 @@
+{
+  "version": 1,
+  "recorded_on": "2026-09-27",
+  "status": "local-review-license-decision-pending",
+  "purpose": "Concrete scope for an account-holder license decision; not a published package or license grant.",
+  "proposed_license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "scope": "Only rights the account holder can grant for these named original prototypes, procedural materials and new preview setup."
+  },
+  "new_license_grant": null,
+  "public_download_url": null,
+  "authorship_record": "sources/city-pr12-authorship-notes.json",
+  "component_verification": "sources/city-pr12-component-verification.json",
+  "source_city_sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+  "package_file": {
+    "path": "kit.blend",
+    "bytes": 9844090,
+    "sha256": "78ea637f9b154274c62fd20160995b649139c191a09056f8696ec5baee10595a",
+    "local_path": "data/local/candidates/procedural-components-20260927/kit.blend"
+  },
+  "scope_counts": {
+    "tree_variants": 6,
+    "tree_bark_meshes": 6,
+    "tree_foliage_meshes": 6,
+    "shrub_meshes": 4,
+    "total_prototype_meshes": 16,
+    "procedural_materials": 31
+  },
+  "prototype_meshes": [
+    {
+      "id": "ginkgo-0-bark",
+      "mesh_sha256": "deb77d8ea286fd18a1609e0954cd950fda8c887a865801d07829f88436c6cd97",
+      "location": [
+        -10,
+        0,
+        0
+      ],
+      "source_mesh_name": "ginkgo 0 bark",
+      "materials": [
+        "Street tree textured bark"
+      ]
+    },
+    {
+      "id": "ginkgo-0-foliage",
+      "mesh_sha256": "d3a6407e75ea45cbfa9e811963ea986c373595d3b84d2c995c722e653f42f6fb",
+      "location": [
+        -10,
+        0,
+        0
+      ],
+      "source_mesh_name": "ginkgo 0 foliage_ginkgo",
+      "materials": [
+        "Tokyo ginkgo foliage"
+      ]
+    },
+    {
+      "id": "ginkgo-1-bark",
+      "mesh_sha256": "7e38e06ed4c8ffd90d79ba26d29aad10232b2d43b5b30283607645401d1133fd",
+      "location": [
+        0,
+        0,
+        0
+      ],
+      "source_mesh_name": "ginkgo 1 bark",
+      "materials": [
+        "Street tree textured bark"
+      ]
+    },
+    {
+      "id": "ginkgo-1-foliage",
+      "mesh_sha256": "655dedabc859505ef9739665ac39abede4dc0dd1dc35b0acaafdb2c670315e9f",
+      "location": [
+        0,
+        0,
+        0
+      ],
+      "source_mesh_name": "ginkgo 1 foliage_ginkgo",
+      "materials": [
+        "Tokyo ginkgo foliage"
+      ]
+    },
+    {
+      "id": "ginkgo-2-bark",
+      "mesh_sha256": "adb447796668fcaa91bb4205975148551cc5d9410cbdbd125f2f7a974c90d64d",
+      "location": [
+        10,
+        0,
+        0
+      ],
+      "source_mesh_name": "ginkgo 2 bark",
+      "materials": [
+        "Street tree textured bark"
+      ]
+    },
+    {
+      "id": "ginkgo-2-foliage",
+      "mesh_sha256": "0a389088cdcc97328e250f212ed80828ec203a08e0a9dbfcf76938c5f09333f8",
+      "location": [
+        10,
+        0,
+        0
+      ],
+      "source_mesh_name": "ginkgo 2 foliage_ginkgo",
+      "materials": [
+        "Tokyo ginkgo foliage"
+      ]
+    },
+    {
+      "id": "zelkova-0-bark",
+      "mesh_sha256": "d5b97ac85d4fd42c30afadef08ed9c577d6274fcca70158632bceea4bef9aead",
+      "location": [
+        -10,
+        12,
+        0
+      ],
+      "source_mesh_name": "zelkova 0 bark",
+      "materials": [
+        "Street tree textured bark"
+      ]
+    },
+    {
+      "id": "zelkova-0-foliage",
+      "mesh_sha256": "7ec58e3ceebf4cb160ccdc4bed28ebc25b9d1795aa4f84ca56456c93e4841ee8",
+      "location": [
+        -10,
+        12,
+        0
+      ],
+      "source_mesh_name": "zelkova 0 foliage_zelkova",
+      "materials": [
+        "Tokyo zelkova foliage"
+      ]
+    },
+    {
+      "id": "zelkova-1-bark",
+      "mesh_sha256": "3954f5f9d2749d7bb39b1e510651745671258f0a1aa0dd66b238eac9f52a26d2",
+      "location": [
+        0,
+        12,
+        0
+      ],
+      "source_mesh_name": "zelkova 1 bark",
+      "materials": [
+        "Street tree textured bark"
+      ]
+    },
+    {
+      "id": "zelkova-1-foliage",
+      "mesh_sha256": "310260f1d13ff91e3b3fe6ed9ac465ae304dc75c91cb7ab5e50234850095abc3",
+      "location": [
+        0,
+        12,
+        0
+      ],
+      "source_mesh_name": "zelkova 1 foliage_zelkova",
+      "materials": [
+        "Tokyo zelkova foliage"
+      ]
+    },
+    {
+      "id": "zelkova-2-bark",
+      "mesh_sha256": "efb048dc4142f79182251a8425fd426d3500d42767aaa81446617b92d4add1f4",
+      "location": [
+        10,
+        12,
+        0
+      ],
+      "source_mesh_name": "zelkova 2 bark",
+      "materials": [
+        "Street tree textured bark"
+      ]
+    },
+    {
+      "id": "zelkova-2-foliage",
+      "mesh_sha256": "a7444df5a481605d813a61add81eb4e94dae19b141eeb73ba3952c1d6e9ab7bc",
+      "location": [
+        10,
+        12,
+        0
+      ],
+      "source_mesh_name": "zelkova 2 foliage_zelkova",
+      "materials": [
+        "Tokyo zelkova foliage"
+      ]
+    },
+    {
+      "id": "shrub-0",
+      "mesh_sha256": "b5e9f77e4f4f7f55cfccfa4707550d97475f351f57729f089eda145085a09643",
+      "location": [
+        -7.5,
+        -9,
+        1.25
+      ],
+      "source_mesh_name": "Shrub crown 0",
+      "materials": [
+        "leaf0"
+      ]
+    },
+    {
+      "id": "shrub-1",
+      "mesh_sha256": "cb1241bb9db40edf24ad255c47356b35f05f1a69eccbf5465b48270ca5898c91",
+      "location": [
+        -2.5,
+        -9,
+        1.25
+      ],
+      "source_mesh_name": "Shrub crown 1",
+      "materials": [
+        "leaf1"
+      ]
+    },
+    {
+      "id": "shrub-2",
+      "mesh_sha256": "39d130782d8c4f3208e056131801109c4c9f414089f8388f84abe34885a8a598",
+      "location": [
+        2.5,
+        -9,
+        1.25
+      ],
+      "source_mesh_name": "Shrub crown 2",
+      "materials": [
+        "leaf2"
+      ]
+    },
+    {
+      "id": "shrub-3",
+      "mesh_sha256": "4297a83cca660865e41b824084bcc114fa5f867b537a0cbbcdee4f573a8386f3",
+      "location": [
+        7.5,
+        -9,
+        1.25
+      ],
+      "source_mesh_name": "Shrub crown 3",
+      "materials": [
+        "leaf3"
+      ]
+    }
+  ],
+  "material_signatures": {
+    "Japan commercial green plate": "b7d2cbee51c5d2821d0fd074e53877395127c27009264bb9b607a6d0dabe7e37",
+    "Japan kei yellow plate": "8d3c3950118933971f23071ce97f9a45121e609fee35ecfb99ce829ed3a950e0",
+    "Japan white plate": "d7590dbcbfd4f6a4c105e09eff9bd7d31c7fce989296216e81ca123790ab91f4",
+    "Street furniture • painted metal": "b513867a3aeec535ff4279c188b00509793443a1c85e3d87f3ed28dc7fc72508",
+    "Street tree pit soil": "2240cbd9948392035cdcd4e49341a219c3da21f66389da88e2878ed99a403d8b",
+    "Street tree textured bark": "9382a40bdf055b7770508422af7df22667c05bdef32e30ae59da6a1c19a0cf66",
+    "Street • aluminum window frame": "1e9caa91e3a5012f56c7dcc028754b03056807cdaffd1f161cb347a4846c073a",
+    "Street • bollard": "59f3fdf15dce8dd0046c0e25cde44c2f075bf29d9e79d67e46722e1c60982921",
+    "Street • polished rim": "51824a6118f2d183ecd1050e22cd7c7722ccc525e8583c5716c5eddcdac9ad5f",
+    "Street • recessed glazing": "97cf114098e128efb2bfb4c8deecace8636c1c5ba5927ab753c480af00fa1e58",
+    "Street • recessed shadow": "2b3d3d78792fa4b08f99c1cb84ba94c5098d44f8a3a3d0f58b30a33155c560a0",
+    "Street • reflective band": "3a28af50514ba442edda0e1b1115860b29afef746f2d513688ecf0665fccb092",
+    "Street • tactile ochre": "e83b0f101e28f19a74e1296243b7b29f5e17699b84a7abde2801b81610c5d4ff",
+    "Street • weathered iron": "58b35c2a5fc599bfe00a8bc43083fd6f0494db7334b8e2ff69e64859408ca82d",
+    "Tokyo alloy": "d8c1fb44e239b07347c0c2b8d06bea065d9c579f352210bff8fb0c65272d5143",
+    "Tokyo ginkgo foliage": "db827b621067bdb6540453a2a9bd1ff3ad57acfacb94799c20998835b6d8c8af",
+    "Tokyo glazing": "7fad2902cd2ba6c6f05d434a72b407dbc66f3c532035d09ebc692631f9b70bf8",
+    "Tokyo lamp": "b2e2021183390c44ca18a2627acd4557522447a227543d548d478cddc04f545a",
+    "Tokyo paint black": "e839c7cc29dc37e85ed3f0b7d6585c051c1c8a99cd8b4542bf39ddfd3c5d6c1c",
+    "Tokyo paint blue": "f1d8405bb719a52772122b346f4707d70e582b21a6b65cf6feeccabd9fd8b26c",
+    "Tokyo paint red": "e62cb36667942a9a37feb485f211bb8bba3ad994203235daa0f2a811bddbca70",
+    "Tokyo paint silver": "2b1abe36af797240ae04a52e0ddf5bded113aa415f476648bb561af5fe1d5d8e",
+    "Tokyo paint white": "17a02b87ee4749de78cb37e7ae22fec99f7f4952d6f2ada1ea39631a55072ec9",
+    "Tokyo tail lamp": "ae0d900ede6ed900179877b8c3ae66233607c041e9ddfa4bbdc2628a36542614",
+    "Tokyo tire": "6818429d97090867d75c6563148002375e0aabfd104f8c5aa1027983f9d24c87",
+    "Tokyo zelkova foliage": "f19b239eefe57181df1d3811864dbc48f386ddd94f953428e4198049793f7b8f",
+    "Tree pit edging": "4d88ef4b2af14027b288564e86058a6a4aa53c8a5302878a96608d35f133b815",
+    "leaf0": "4fae2a7b80fca4da7a32c8653634925c166d5929d803cabe9c4f47284ae28899",
+    "leaf1": "7b9a218d6d1a1bc80122b7c15fd8bcefbacd60f55b334ecaca7c467a968180b0",
+    "leaf2": "f19ad3e56ec7b5f1647d162c4964c5a668a11051b301fa9c125dcc3990cc7396",
+    "leaf3": "2b90a1cd45457157964dda94a552659772691f3b45ffef272e8e52c68c41c96c"
+  },
+  "preview_setup": {
+    "objects": [
+      "Preview camera",
+      "Key",
+      "Fill",
+      "Rim"
+    ],
+    "description": "New local demo positions, world, camera and three lights. No city placement coordinates."
+  },
+  "excluded": [
+    "city layout/coordinates",
+    "OSM and PLATEAU data",
+    "aggregated mapped geometry",
+    "building imagery",
+    "legacy source code",
+    "legacy embedded scripts"
+  ],
+  "verification": {
+    "ok": true,
+    "mesh_prototypes": 16,
+    "procedural_materials": 31,
+    "images": 0,
+    "libraries": 0,
+    "embedded_texts": 0,
+    "candidate_sha256": "78ea637f9b154274c62fd20160995b649139c191a09056f8696ec5baee10595a",
+    "preview": {
+      "path": "preview.png",
+      "bytes": 818671,
+      "sha256": "e80c0d0f559b98f302e8db6208fbb860401717b413f4816dd84faf466dd47508"
+    },
+    "file_unchanged": true,
+    "local_record_sha256": "3d28f7833e5345a1c8037fc6039264449bdb00a10e401779256d05b9f5c303ce",
+    "separate_blender_process": true,
+    "blender": "4.5.1 LTS",
+    "visual_review": "All six tree variants and four shrubs are visible without cropping in the local preview.",
+    "builder_sha256_lf": "c34d89c3993bf960c9fca58a301af8b3d7bf7c4676cdcd7b11075b1d4571b073",
+    "source_city_unchanged": true
+  },
+  "remaining": [
+    "Account holder confirmation of the scope they can license and the chosen asset license.",
+    "Final attribution/notice and immutable public download location after a grant.",
+    "Independent participant/PC validation; the current open/render check ran on the same Windows PC."
+  ],
+  "city_redistribution": "pending-outside-this-candidate"
+}

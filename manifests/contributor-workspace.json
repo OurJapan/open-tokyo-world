@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "blender_version": "4.5.1",
+  "runner_python_versions": [[3, 11], [3, 12]],
+  "default_profile": "city",
+  "sources": {
+    "plateau-minato-2025": {
+      "notice": "starter/plateau/NOTICE.md",
+      "files": {
+        "tileset.json": {
+          "url": "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/tileset.json",
+          "bytes": 412889,
+          "sha256": "edec4c24d137eaf08a8525cecea505a3f21a30823b9ef4fb530e10774cea1323"
+        },
+        "data221.b3dm": {
+          "url": "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data221.b3dm",
+          "bytes": 1246040,
+          "sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2"
+        }
+      }
+    }
+  },
+  "profiles": {
+    "city": {
+      "label": "Tokyo Tower area: accepted city after PR 12",
+      "mode": "import",
+      "distribution": "blocked-pending-rights-and-download-location",
+      "public_url": null,
+      "asset": {
+        "bytes": 558751758,
+        "sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926"
+      },
+      "expected_meshes": 3255,
+      "evidence": "docs/mori-plaza-edge-v1-run.json",
+      "cameras": "areas/tokyo-tower/mori-plaza-edge-cameras.json",
+      "features": "areas/tokyo-tower/mori-plaza-edge-features.json",
+      "availability_note": "A clone does not contain this scene. Import the exact approved file from an authorized provider. No automatic substitution with the Mori profile."
+    },
+    "mori": {
+      "label": "Mori JP Tower, 23 neighboring buildings and six plaza parts",
+      "mode": "generate",
+      "distribution": "rebuild-from-pinned-official-inputs",
+      "source": "plateau-minato-2025",
+      "runner": "starter/mori/run.py",
+      "scene": "after.blend",
+      "expected_meshes": 42,
+      "notice": "starter/mori/NOTICE.md",
+      "availability_note": "A limited neighborhood, not the accepted full city. Tokyo Tower, roads and terrain are not included."
+    }
+  },
+  "other_components": {
+    "tokyo-tower": {
+      "distribution": "original-77-parts-licensed-package-url-not-published",
+      "scope": "assets/tokyo-tower/provenance.json",
+      "license": "assets/tokyo-tower/ASSET-LICENSE.md",
+      "generation_dependency": "The exporter still requires the exact legacy baseline."
+    },
+    "plaza": {
+      "distribution": "published-starter",
+      "release": "starter/plaza/release-v0.1.0.json",
+      "scope": "starter/plaza/provenance.json"
+    },
+    "legacy-road-sources": {
+      "distribution": "local-pinned-inputs-public-distribution-pending",
+      "scope": "docs/city-input-recovery.md",
+      "manifest": "manifests/legacy-production-inputs.json",
+      "availability_note": "Both saved OSM routes and intermediate layout inputs were recovered and pinned. No public download or complete city reconstruction recipe is supplied."
+    },
+    "legacy-production-code": {
+      "distribution": "private-upstream-read-access-required",
+      "manifest": "manifests/legacy-production-sources.json",
+      "command": "fetch-production",
+      "availability_note": "Pinned legacy source retrieval requires read access. Seven reviewed data processors can be replayed with recovered inputs; a complete city reconstruction remains unverified."
+    },
+    "legacy-production-inputs": {
+      "distribution": "local-recovered-public-distribution-pending",
+      "manifest": "manifests/legacy-production-inputs.json",
+      "command": "import-production-inputs",
+      "verification": "sources/city-pr12-input-recovery.json",
+      "availability_note": "Import 20 exact map/layout inputs from an authorized provider. With --include-scenes, import the five pinned intermediate blends; three were read for component/material replay.",
+      "component_verification": "sources/city-pr12-component-verification.json"
+    },
+    "procedural-components-candidate": {
+      "distribution": "licensed-package-verified-public-release-pending",
+      "manifest": "assets/procedural-components/provenance.json",
+      "scope": "assets/procedural-components/README.md",
+      "public_url": null,
+      "availability_note": "CC BY 4.0 for the named 16 prototypes and 31 materials. A self-contained ZIP has been verified locally; public Release URL and independent PC validation are pending.",
+      "license": "assets/procedural-components/ASSET-LICENSE.md",
+      "package": "assets/procedural-components/package-v0.1.0.json"
+    }
+  }
+}

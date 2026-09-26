@@ -1,0 +1,458 @@
+{
+  "version": 1,
+  "input": {
+    "bytes": 558751758,
+    "sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+    "blender_version": "4.5.1 LTS"
+  },
+  "expected_mesh_objects": 3255,
+  "reference_commit": "105c58727649193178cee53ce21b7916dea3b68f",
+  "groups": [
+    {
+      "id": "roads",
+      "title": "道路・歩道・路面表示",
+      "selector": {
+        "names": [
+          "asphalt 15s road detail",
+          "asphalt_7 unified road",
+          "gutter 15s road detail",
+          "paint_0 unified road",
+          "paint_7 unified road",
+          "pavement_0 unified road",
+          "pavement_7 unified road"
+        ]
+      },
+      "preview": {
+        "anchor": [
+          35,
+          -170,
+          0
+        ],
+        "span": 130,
+        "primary": null
+      },
+      "evidence": "OSM由来との記録と、森JP広場の局所修正記録があります。",
+      "missing": "固定した元OSM、全体の生成コード、加工・配布の範囲。",
+      "references": [
+        "docs/mori-plaza-edge-v1.md",
+        "sources/legacy-rights.json"
+      ]
+    },
+    {
+      "id": "land",
+      "title": "地面・緑地・水面",
+      "selector": {
+        "names": [
+          "ground",
+          "water",
+          "court mapped land use",
+          "gravel mapped land use",
+          "park mapped land use",
+          "parking mapped land use",
+          "soil mapped land use"
+        ]
+      },
+      "preview": {
+        "anchor": [
+          150,
+          -450,
+          0
+        ],
+        "span": 650,
+        "primary": null
+      },
+      "evidence": "保存シーンにOSMの土地利用と数式材質の記載があります。",
+      "missing": "元データとの対応、形状と配置の生成元。",
+      "references": [
+        "docs/evidence/scene-inspection.json"
+      ]
+    },
+    {
+      "id": "buildings",
+      "title": "簡易建物・外壁・屋根",
+      "selector": {
+        "names": [
+          "wall0",
+          "wall1",
+          "wall2",
+          "wall3",
+          "wall4",
+          "wall5",
+          "wall6",
+          "wall7",
+          "roof",
+          "glass0",
+          "glass3",
+          "glass4"
+        ]
+      },
+      "preview": {
+        "anchor": [
+          -27,
+          -87,
+          12
+        ],
+        "span": 48,
+        "primary": null
+      },
+      "evidence": "8つの外壁メッシュ等で多数の建物を表します。原版には未確認の外壁画像があります。",
+      "missing": "建物の元入力・高さの推定方法。材質の別候補は見た目の採用判断が残ります。",
+      "references": [
+        "docs/city-facades-v1.md",
+        "docs/city-image-audit.md"
+      ]
+    },
+    {
+      "id": "park-trees",
+      "title": "公園等の樹冠（旧部品）",
+      "selector": {
+        "names": [
+          "leaf0",
+          "leaf1",
+          "leaf2",
+          "leaf3"
+        ]
+      },
+      "preview": {
+        "anchor": [
+          0,
+          0,
+          0
+        ],
+        "span": 40,
+        "primary": "leaf0"
+      },
+      "evidence": "元の幹位置を保ち、樹冠を作り直したとのシーン内記録があります。",
+      "missing": "形状の作者、樹木配置の元入力、既存記録との対応。",
+      "references": [
+        "docs/evidence/scene-inspection.json"
+      ]
+    },
+    {
+      "id": "street-trees",
+      "title": "街路樹・植樹帯",
+      "selector": {
+        "prefixes": [
+          "Street tree "
+        ],
+        "names": [
+          "Tokyo traffic • bark",
+          "Tokyo traffic • soil"
+        ]
+      },
+      "preview": {
+        "anchor": [
+          0,
+          0,
+          0
+        ],
+        "span": 12,
+        "primary": "Street tree "
+      },
+      "evidence": "イチョウ・ケヤキの名前を持つ幹と樹冠、植樹帯の部品です。画像では対応する名前の幹と樹冠を表示します。",
+      "missing": "造形の作者、外部モデルの使用有無、配置に使った地図データ。",
+      "references": [
+        "docs/evidence/scene-inspection.json"
+      ]
+    },
+    {
+      "id": "shrubs",
+      "title": "低木・下草",
+      "selector": {
+        "collections": [
+          "Environment • park undergrowth"
+        ]
+      },
+      "preview": {
+        "anchor": [
+          0,
+          0,
+          0
+        ],
+        "span": 2.4,
+        "primary": "Park shrub "
+      },
+      "evidence": "公園の下草collectionに属する部品です。1メッシュを1株とは数えません。",
+      "missing": "造形の作者、配置方法、外部素材の使用有無。",
+      "references": [
+        "docs/evidence/scene-inspection.json"
+      ]
+    },
+    {
+      "id": "vehicles",
+      "title": "車両・交通の部品",
+      "selector": {
+        "names": [
+          "Tokyo traffic • black",
+          "Tokyo traffic • blue",
+          "Tokyo traffic • glass",
+          "Tokyo traffic • guard",
+          "Tokyo traffic • head",
+          "Tokyo traffic • kei_plate",
+          "Tokyo traffic • plate",
+          "Tokyo traffic • red",
+          "Tokyo traffic • rim",
+          "Tokyo traffic • silver",
+          "Tokyo traffic • tail",
+          "Tokyo traffic • taxi_plate",
+          "Tokyo traffic • tire",
+          "Tokyo traffic • white"
+        ]
+      },
+      "preview": {
+        "anchor": [
+          0,
+          0,
+          0
+        ],
+        "span": 6.5,
+        "primary": "Tokyo traffic • white",
+        "focus_radius": 5.28
+      },
+      "evidence": "車両等は色・材質ごとに統合されています。メッシュ数は車の台数ではありません。",
+      "missing": "車の造形の作者、外部モデル・標章の使用、道路上の配置方法。",
+      "references": [
+        "docs/evidence/scene-inspection.json"
+      ]
+    },
+    {
+      "id": "lights",
+      "title": "街灯",
+      "selector": {
+        "names": [
+          "Street lights • illustrative placement"
+        ]
+      },
+      "preview": {
+        "anchor": [
+          0,
+          0,
+          0
+        ],
+        "span": 12,
+        "primary": "Street lights • illustrative placement",
+        "focus_radius": 4.4
+      },
+      "evidence": "街灯のオブジェクト名に演出上の配置との記載があります。",
+      "missing": "造形の作者、外部部品の使用、実在位置と推定位置の区別。",
+      "references": [
+        "docs/evidence/scene-inspection.json"
+      ]
+    },
+    {
+      "id": "equipment",
+      "title": "近景の設備・細部",
+      "selector": {
+        "collections": [
+          "Street close-up • added physical details"
+        ]
+      },
+      "preview": {
+        "anchor": [
+          0,
+          0,
+          0
+        ],
+        "span": 2.4,
+        "primary": "Close detail silver",
+        "focus_radius": 1.7
+      },
+      "evidence": "近景用の細部が材質ごとに統合されています。",
+      "missing": "何の設備か、作者・参照資料、既存建物との対応。",
+      "references": [
+        "docs/evidence/scene-inspection.json"
+      ]
+    },
+    {
+      "id": "plateau",
+      "title": "PLATEAUの建物",
+      "selector": {
+        "collections": [
+          "PLATEAU 2025 • real building geometry and imagery",
+          "PLATEAU 2025 • real building geometry and imagery.001"
+        ]
+      },
+      "preview": {
+        "anchor": [
+          -60,
+          -300,
+          15
+        ],
+        "span": 160,
+        "primary": null
+      },
+      "evidence": "428メッシュに4区の配信URL記録があります。画像382枚は3区の配信と照合済みです。",
+      "missing": "元形状・地物ID・座標変換の照合、各区の個別条件。",
+      "references": [
+        "sources/city-pr12-geometry-audit.json",
+        "docs/city-image-audit.md"
+      ]
+    },
+    {
+      "id": "tower",
+      "title": "東京タワー",
+      "selector": {
+        "names": [
+          "Inclined window head closure",
+          "Continuous window joint seals",
+          "Closed window sill perimeter",
+          "Tokyo Tower structure / stone",
+          "Tokyo Tower structure / orange",
+          "Tokyo Tower structure / white",
+          "Tokyo Tower structure / darkmetal",
+          "Tokyo Tower decks and interior / white",
+          "Tokyo Tower decks and interior / aluminum",
+          "Tokyo Tower decks and interior / clear glass",
+          "Tokyo Tower decks and interior / gasket",
+          "Tokyo Tower decks and interior / floor",
+          "Tokyo Tower decks and interior / ceiling",
+          "Tokyo Tower decks and interior / warm light",
+          "Tokyo Tower decks and interior / mirror",
+          "Photo based main deck / carpet3",
+          "Photo based main deck / slab",
+          "Photo based main deck / carpet4",
+          "Photo based main deck / carpet0",
+          "Photo based main deck / carpet2",
+          "Photo based main deck / carpet1",
+          "Photo based main deck / white",
+          "Photo based main deck / ceiling",
+          "Photo based main deck / glass",
+          "Photo based main deck / frame",
+          "Photo based main deck / silver",
+          "Photo based main deck / rubber",
+          "Photo based main deck / wall",
+          "Photo based main deck / light",
+          "Photo based main deck / grid",
+          "2019 reference window revision / black",
+          "2019 reference window revision / glass",
+          "2019 reference window revision / gasket",
+          "2019 reference window revision / aluminum",
+          "2019 reference window revision / white",
+          "Skywalk visible detail steel",
+          "Skywalk visible detail dark",
+          "Skywalk visible detail seam",
+          "Skywalk visible detail trunk",
+          "Skywalk visible detail leaf",
+          "Skywalk visible detail white",
+          "Flush metal surround",
+          "Continuous outer gasket",
+          "Continuous glass edge seal",
+          "Flush fixing",
+          "Flush fixing.001",
+          "Flush fixing.002",
+          "Flush fixing.003",
+          "Flush fixing.004",
+          "Flush fixing.005",
+          "Flush metal surround.001",
+          "Continuous outer gasket.001",
+          "Continuous glass edge seal.001",
+          "Flush fixing.006",
+          "Flush fixing.007",
+          "Flush fixing.008",
+          "Flush fixing.009",
+          "Flush fixing.010",
+          "Flush fixing.011",
+          "Flush metal surround.002",
+          "Continuous outer gasket.002",
+          "Continuous glass edge seal.002",
+          "Flush fixing.012",
+          "Flush fixing.013",
+          "Flush fixing.014",
+          "Flush fixing.015",
+          "Flush fixing.016",
+          "Flush fixing.017",
+          "Flush metal surround.003",
+          "Continuous outer gasket.003",
+          "Continuous glass edge seal.003",
+          "Flush fixing.018",
+          "Flush fixing.019",
+          "Flush fixing.020",
+          "Flush fixing.021",
+          "Flush fixing.022",
+          "Flush fixing.023",
+          "Tokyo Tower decks and interior / wood",
+          "Tokyo Tower decks and interior / stone",
+          "Tokyo Tower decks and interior / soil",
+          "Tokyo Tower decks and interior / leaf",
+          "Tokyo Tower decks and interior / darkmetal"
+        ]
+      },
+      "preview": {
+        "anchor": [
+          0,
+          0,
+          155
+        ],
+        "span": 440,
+        "primary": null
+      },
+      "evidence": "同じ入力版の77部品に、独自部分の許諾記録があります。空メッシュ5件は許諾対象から除外されています。",
+      "missing": "第三者の権利や街全体に許諾を広げず、指定範囲を保持します。",
+      "references": [
+        "assets/tokyo-tower/provenance.json",
+        "assets/tokyo-tower/ASSET-LICENSE.md"
+      ]
+    },
+    {
+      "id": "mori",
+      "title": "森JPタワー・広場",
+      "selector": {
+        "collections": [
+          "Mori JP curtain wall",
+          "Mori JP interior",
+          "Mori JP podium",
+          "Mori continuous pearl glass"
+        ]
+      },
+      "preview": {
+        "anchor": [
+          -430,
+          253,
+          160
+        ],
+        "span": 440,
+        "primary": null
+      },
+      "evidence": "森JPと広場の独自部品に別の許諾台帳があります。同名であることと形状一致は区別します。",
+      "missing": "同名部品の形状・素材と許諾済み版の照合。旧部品への一括許諾はありません。",
+      "references": [
+        "starter/mori/provenance.json",
+        "starter/plaza/provenance.json"
+      ]
+    },
+    {
+      "id": "other",
+      "title": "その他の旧部品",
+      "selector": {
+        "names": [
+          "Observation interior detail / black",
+          "Observation interior detail / brushed steel",
+          "Observation interior detail / ceiling",
+          "Observation interior detail / charcoal glass",
+          "Observation interior detail / white",
+          "red",
+          "steel",
+          "white"
+        ]
+      },
+      "preview": {
+        "anchor": [
+          0,
+          0,
+          155
+        ],
+        "span": 440,
+        "primary": null
+      },
+      "evidence": "他の分類に割り当てていない旧部品です。名前だけで用途を断定しません。",
+      "missing": "用途、表示状態、作者・元データとの対応。",
+      "references": [
+        "docs/evidence/scene-inspection.json"
+      ]
+    }
+  ],
+  "limitations": [
+    "Images show selected views, not every building or instance.",
+    "Classification and existing records do not grant redistribution rights."
+  ]
+}

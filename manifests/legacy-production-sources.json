@@ -1,0 +1,184 @@
+{
+  "version": 1,
+  "purpose": "Pinned historical source text for inspection, not a complete city build.",
+  "upstream": {
+    "repository": "https://github.com/ark4ez/tokyo-tower-blender",
+    "previous_url": "https://github.com/DoiTakayoshi/tokyo-tower-blender",
+    "visibility_checked_on": "2026-09-27",
+    "visibility": "private",
+    "access": "GitHub authentication and upstream read permission required.",
+    "commit": "defac576e076f40bf3bc4fddcdcefe30f9a009f7",
+    "tree_truncated": false
+  },
+  "license_scope": "No new grant for historical code, external inputs or generated assets.",
+  "files": {
+    ".gitignore": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/35db1c47e5a92f62be92be874ffa98298bb92a06",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/.gitignore",
+      "bytes": 612,
+      "sha256": "7a69850d22c517b2fdf341e019617b0c680ee8fea2eed84e9484f7906cff9009",
+      "git_blob_sha1": "35db1c47e5a92f62be92be874ffa98298bb92a06"
+    },
+    "work/camera_options/render.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/8996a72fbe78a0c4a184b520ae7658414f340562",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/camera_options/render.py",
+      "bytes": 2932,
+      "sha256": "0770a3922a4c9ca9f7e465f7eba6e3c408f91119ea255be670398bcda9893f82",
+      "git_blob_sha1": "8996a72fbe78a0c4a184b520ae7658414f340562"
+    },
+    "work/detail_upgrade/finish_detail.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/54928c81cda6a651b9d0a6034ba20b919d563942",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/detail_upgrade/finish_detail.py",
+      "bytes": 4624,
+      "sha256": "b8f3bcc5a920e754664b393e69bd49348924e7d4cb87e32dba9cdf6f072a965e",
+      "git_blob_sha1": "54928c81cda6a651b9d0a6034ba20b919d563942"
+    },
+    "work/preview30/render.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/68867fa5238003dcb8427b1c3fa3d2fd6a3690ed",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/preview30/render.py",
+      "bytes": 3323,
+      "sha256": "1025ad7d88768c76d713ac41b60585734a1a79bd8340ba9821ca35be298564f4",
+      "git_blob_sha1": "68867fa5238003dcb8427b1c3fa3d2fd6a3690ed"
+    },
+    "work/sky_detail/finish.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/842d64acd5508ed9c80a953086e09a2dc9b555a2",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/sky_detail/finish.py",
+      "bytes": 2886,
+      "sha256": "8215c5bb35e91f5fc9f57dccfc3a15b41452fcc6f8edff277229e66fad073bff",
+      "git_blob_sha1": "842d64acd5508ed9c80a953086e09a2dc9b555a2"
+    },
+    "work/street_detail/build.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/4b569f097c02c0d7db687052aa387663e3d3cab5",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/street_detail/build.py",
+      "bytes": 8385,
+      "sha256": "263764443a32bf0f8dc3282fc6ec1685a3e3abe162cff086a35ab12a4a48ef48",
+      "git_blob_sha1": "4b569f097c02c0d7db687052aa387663e3d3cab5"
+    },
+    "work/street_detail/closeup_finish.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/572b6b0544ea364cb105428f9b87a9c9e4e2325a",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/street_detail/closeup_finish.py",
+      "bytes": 6832,
+      "sha256": "0e714ab334764ce919e307ae6aeab2dd53c5bf461f28c44d00250b730f5879a9",
+      "git_blob_sha1": "572b6b0544ea364cb105428f9b87a9c9e4e2325a"
+    },
+    "work/street_detail/facade_layout.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/8c769620e9b7edd8305517ef06b9044ad09a8150",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/street_detail/facade_layout.py",
+      "bytes": 759,
+      "sha256": "53e9f21604184009df83e923f8b82d0eea5f1ad099c095bea3329cb97181cee2",
+      "git_blob_sha1": "8c769620e9b7edd8305517ef06b9044ad09a8150"
+    },
+    "work/street_detail/prepare.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/c365a1edd60cd08ef2386384edf0049b1ad2c3e1",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/street_detail/prepare.py",
+      "bytes": 2178,
+      "sha256": "261aa24afdc3ed7c24782a752ab046beb4cd280ea0dd1544dcaeca67e7370f9d",
+      "git_blob_sha1": "c365a1edd60cd08ef2386384edf0049b1ad2c3e1"
+    },
+    "work/tokyo60/build_city.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/22962d92fc998481ca72ce7ba8d6dbd48abf86dc",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/tokyo60/build_city.py",
+      "bytes": 19204,
+      "sha256": "7ad68498792753110a455649f80e02c195a827af61b7add24652fc70861986aa",
+      "git_blob_sha1": "22962d92fc998481ca72ce7ba8d6dbd48abf86dc"
+    },
+    "work/tokyo_traffic/build.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/9420418e6d506b8a9c2402a246ad96d53a99f719",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/tokyo_traffic/build.py",
+      "bytes": 10407,
+      "sha256": "cac0d9630e17930608fc2947e1fb26e6230cc7033ab5240d9322c670c5377bba",
+      "git_blob_sha1": "9420418e6d506b8a9c2402a246ad96d53a99f719"
+    },
+    "work/tokyo_traffic/layout.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/8d13e287b6a838ad8ef28524df8a43ea00885ee3",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/tokyo_traffic/layout.py",
+      "bytes": 4688,
+      "sha256": "f5b779c16cd313efb4c7a3ee5b210990f7738c387e955053e92364e2a4088958",
+      "git_blob_sha1": "8d13e287b6a838ad8ef28524df8a43ea00885ee3"
+    },
+    "work/tokyo_traffic/tree_filter.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/25d89f76641144d03d6fa715de70d1059ff9932e",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/tokyo_traffic/tree_filter.py",
+      "bytes": 415,
+      "sha256": "4238b16ac0a857c9683a216653783609663631e2a835df486edce5fc041cbca9",
+      "git_blob_sha1": "25d89f76641144d03d6fa715de70d1059ff9932e"
+    },
+    "work/tower15_env/build_environment.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/83adf2b0e638d874ea250b70ae1e0c41a9cab157",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/tower15_env/build_environment.py",
+      "bytes": 12097,
+      "sha256": "18075ad06cd96fef2600ba13a321a22458a06b16538bc78d1dba42f585604344",
+      "git_blob_sha1": "83adf2b0e638d874ea250b70ae1e0c41a9cab157"
+    },
+    "work/tower15_env/fetch_ground.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/cdea13cef254abc73a8ef118e81ce0bcccefff3b",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/tower15_env/fetch_ground.py",
+      "bytes": 1968,
+      "sha256": "d80cee33c9296f6d2b85bd77b59e443cebb5d2fdbbe401349492c9282a64f5c7",
+      "git_blob_sha1": "cdea13cef254abc73a8ef118e81ce0bcccefff3b"
+    },
+    "work/tower15_env/landuse.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/e83ffec9b38bd4d15222b9b0ed34d18709897761",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/tower15_env/landuse.py",
+      "bytes": 2368,
+      "sha256": "f3366a0057dea02dd5b0b6d3a74b721061226f669f41b30c2f95018f45e90c37",
+      "git_blob_sha1": "e83ffec9b38bd4d15222b9b0ed34d18709897761"
+    },
+    "work/tower15_env/refine_canopies.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/f44133b7be50db9de8f867dbb802100d766cd8ea",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/tower15_env/refine_canopies.py",
+      "bytes": 2954,
+      "sha256": "03e2f78af4f164c3af08e1a1dc7da528d1dc79fef255295a2dcab0ab1ef22bd9",
+      "git_blob_sha1": "f44133b7be50db9de8f867dbb802100d766cd8ea"
+    },
+    "work/tower15_env/remove_aerial_display.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/6c4b12d4414e15ebebc2c2394791bb7973f21479",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/tower15_env/remove_aerial_display.py",
+      "bytes": 5099,
+      "sha256": "faf44e297ef610cc4f81bf5174f53d4484c5d9305a9a37dc4dd773cfca744dd4",
+      "git_blob_sha1": "6c4b12d4414e15ebebc2c2394791bb7973f21479"
+    },
+    "work/tower15_env/scene_inventory_export.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/65e077d4c50ff7b3fc05b4bb4f5a069905032a60",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/tower15_env/scene_inventory_export.py",
+      "bytes": 961,
+      "sha256": "02afb657e42666ef7b60169449276ad810da34e58996c2f22afa924c8e86e08a",
+      "git_blob_sha1": "65e077d4c50ff7b3fc05b4bb4f5a069905032a60"
+    },
+    "work/tower15_env/surfaces.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/dcd0e0d020871a8e98eb67b83a7a1d1ed5fd0a81",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/tower15_env/surfaces.py",
+      "bytes": 2671,
+      "sha256": "2e781f8224a28f83f0611a4d2d4d5750e6544598240a511e444a5a5fc0937df8",
+      "git_blob_sha1": "dcd0e0d020871a8e98eb67b83a7a1d1ed5fd0a81"
+    },
+    "work/twin_towers/export_surfaces.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/c35f23522f0dcf44f9e07e921a0dc420cbc5092b",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/twin_towers/export_surfaces.py",
+      "bytes": 779,
+      "sha256": "639a99459872375c04061850535765a5b7ef28b536e98615a299ebc27f1c17af",
+      "git_blob_sha1": "c35f23522f0dcf44f9e07e921a0dc420cbc5092b"
+    },
+    "work/wide_detail/fetch_roads.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/3b7de4d36c75923bec89e01117c1eb70f083d97c",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/wide_detail/fetch_roads.py",
+      "bytes": 835,
+      "sha256": "1b7f87143a80ffa54a0849179a17c990001b7d21912e0a6e8fcdfb78f3b59730",
+      "git_blob_sha1": "3b7de4d36c75923bec89e01117c1eb70f083d97c"
+    },
+    "work/wide_detail/finish.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/96c0822a4616ff3713363c960bf9ef744c1bbf08",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/wide_detail/finish.py",
+      "bytes": 3052,
+      "sha256": "4e11979f84faf7998a0ae30be189f716461566e1c7bf5d1895dbadb2dfad1b6e",
+      "git_blob_sha1": "96c0822a4616ff3713363c960bf9ef744c1bbf08"
+    },
+    "work/wide_detail/roads.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/6e57efc819c18e1cc7f5eb71fa119bacc81efff3",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/wide_detail/roads.py",
+      "bytes": 2940,
+      "sha256": "32a4b939bf1d4dfac44f5549477d363ecfc4113374fa62da5835b46ee670cc93",
+      "git_blob_sha1": "6e57efc819c18e1cc7f5eb71fa119bacc81efff3"
+    }
+  }
+}

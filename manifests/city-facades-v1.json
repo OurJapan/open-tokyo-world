@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "status": "local-candidate-human-review-pending",
+  "purpose": "Replace only the unprovenanced packed atlas with original image-free procedural materials.",
+  "input": {
+    "bytes": 558751758,
+    "sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+    "blender_version": "4.5.1 LTS"
+  },
+  "removed_image": {
+    "type": "image",
+    "name": "facade_atlas.png",
+    "source": "FILE",
+    "packed_sha256": "6f7991ed6d5a1c19d55d7d3dd95821f5cfa11040e2ff065a1531aacb7ea2424c",
+    "size": [
+      1254,
+      1254
+    ]
+  },
+  "targets": {
+    "wall0": {
+      "mesh": "e05bd9879684897c7602740ccead406925663525fd2c4c1dacd8ea791a8b3384",
+      "material": "2031d654de2b094c0da178ef6f437c4b8418b23df1f32803d6741a82bfd442b4"
+    },
+    "wall1": {
+      "mesh": "fd922c3a5fedb8a6b085f1e829589bd18562bffe1575b54f69c1bb86b1e44227",
+      "material": "ae306a8b4b07a17bf30b963ca8d094b23680261d2924f232845a9b007b877bce"
+    },
+    "wall2": {
+      "mesh": "ad7d725ef5d882172efa3bee4fbe0ad752f99ffb764abe6f78294c3ae6d94527",
+      "material": "d38761cf23cac660cfc70db18be15434f4b295ce66683f91f5277ca14e52a941"
+    },
+    "wall3": {
+      "mesh": "3d756eddbac1f46c3cc1c82a2c4087b1b93d56e4ccb3f5daa6f31bd96130cc55",
+      "material": "08924c58331eb2ba2a88640256470aa15ce1f4957bf136cf1130463e882294d4"
+    },
+    "wall4": {
+      "mesh": "ed948a3b2e32713a551ea2f2fd75b65d2e890e700edffd4d6c6596d1efbb0786",
+      "material": "281b3d5daae320bf3ec31cf3cfc1560931ab3ea094864ce8cfbe583109ccdfdc"
+    },
+    "wall5": {
+      "mesh": "af4ed7f70d7dc5e700f364264d5364ceb539bf40861a52b3e5b6f4d68b3dcdf9",
+      "material": "12130d20dde4fb46f3ec713897cc851316f1c0de1ba1eb8b9713cbb1f32023ae"
+    },
+    "wall6": {
+      "mesh": "3aeaa133e96e677181562d18d9667e27000620e3014607b17eeefcfeb35875c3",
+      "material": "91cfe76f0a25eeb0ec82dc9c5dc6aa5bc3d6246a83fa2bd7e9c71f4970657ddf"
+    },
+    "wall7": {
+      "mesh": "c862fc6481289a7960f89b6d30981ec6e9a86baf93ac3fe3a40570b0009b5918",
+      "material": "9cf092ba6c5c51f797622ee9c1bd56160aacd909c89b16f053a58b386c76e6ea"
+    }
+  },
+  "legacy_empty_objects": {
+    "Tokyo Tower decks and interior / wood": "Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Tokyo Tower decks and interior / stone": "Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Tokyo Tower decks and interior / soil": "Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Tokyo Tower decks and interior / leaf": "Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Tokyo Tower decks and interior / darkmetal": "Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target."
+  },
+  "geometry_policy": "Preserve all vertices, topology, UVs, transforms and objects.",
+  "visual_assumptions": [
+    "Eight aggregated city meshes, not eight individual buildings.",
+    "Original illustrative window pattern; approximately 2.5 m bays and 3.2 m floors.",
+    "Existing walls and roof geometry remain legacy inputs with their original provenance status."
+  ],
+  "public_city_distribution": false
+}

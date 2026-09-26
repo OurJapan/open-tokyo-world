@@ -1,0 +1,830 @@
+{
+  "version": 1,
+  "recorded_on": "2026-09-27",
+  "status": "remaining-components-and-procedural-materials-match-after-recorded-render-preset",
+  "baseline": {
+    "bytes": 558751758,
+    "sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+    "unchanged": true
+  },
+  "method": "Recreate reviewed generator statements using pinned inputs, then apply the recorded BEVEL render-disable rule only to scratch objects. Compare raw geometry, transforms, smoothing, modifiers, materials and assignments.",
+  "report": {
+    "local_path": "data/local/audits/city-components-final-20260927.json",
+    "sha256": "a1356c5882383835610eb952915aaaed011832388dfc1403bd1c73fab10b3bfb",
+    "public_selection": "Hashes, counts and provenance only; raw node graphs and city coordinates are omitted."
+  },
+  "runtime": {
+    "blender": "4.5.1 LTS",
+    "python": "3.11.11",
+    "numpy": "1.26.4",
+    "platform": "Windows; this PC only"
+  },
+  "source_manifest": "manifests/legacy-production-sources.json",
+  "upstream_commit": "defac576e076f40bf3bc4fddcdcefe30f9a009f7",
+  "source_files_available": 24,
+  "source_bytes_available": 102969,
+  "verified_source_pins": {
+    "work/tokyo60/build_city.py": "7ad68498792753110a455649f80e02c195a827af61b7add24652fc70861986aa",
+    "work/tower15_env/build_environment.py": "18075ad06cd96fef2600ba13a321a22458a06b16538bc78d1dba42f585604344",
+    "work/tower15_env/refine_canopies.py": "03e2f78af4f164c3af08e1a1dc7da528d1dc79fef255295a2dcab0ab1ef22bd9",
+    "work/street_detail/closeup_finish.py": "0e714ab334764ce919e307ae6aeab2dd53c5bf461f28c44d00250b730f5879a9",
+    "work/street_detail/build.py": "263764443a32bf0f8dc3282fc6ec1685a3e3abe162cff086a35ab12a4a48ef48",
+    "work/tokyo_traffic/build.py": "cac0d9630e17930608fc2947e1fb26e6230cc7033ab5240d9322c670c5377bba",
+    "work/detail_upgrade/finish_detail.py": "b8f3bcc5a920e754664b393e69bd49348924e7d4cb87e32dba9cdf6f072a965e",
+    "work/camera_options/render.py": "0770a3922a4c9ca9f7e465f7eba6e3c408f91119ea255be670398bcda9893f82"
+  },
+  "executed_ranges": {
+    "work/tokyo60/build_city.py": [
+      [
+        20,
+        25
+      ],
+      [
+        32,
+        34
+      ]
+    ],
+    "work/tower15_env/build_environment.py": [
+      [
+        14,
+        15
+      ],
+      [
+        21,
+        22
+      ],
+      [
+        46,
+        55
+      ]
+    ],
+    "work/tower15_env/refine_canopies.py": [
+      [
+        5,
+        22
+      ]
+    ],
+    "work/street_detail/build.py": [
+      [
+        8,
+        17
+      ],
+      [
+        18,
+        34
+      ],
+      [
+        48,
+        62
+      ],
+      [
+        66,
+        79
+      ],
+      [
+        81,
+        84
+      ]
+    ],
+    "work/tokyo_traffic/build.py": [
+      [
+        11,
+        13
+      ],
+      [
+        15,
+        18
+      ],
+      [
+        21,
+        57
+      ],
+      [
+        59,
+        79
+      ]
+    ],
+    "work/detail_upgrade/finish_detail.py": [
+      [
+        13,
+        40
+      ]
+    ],
+    "work/camera_options/render.py": [
+      [
+        14,
+        17
+      ]
+    ]
+  },
+  "adapted_formula": {
+    "source": "work/street_detail/closeup_finish.py",
+    "range": [
+      40,
+      56
+    ],
+    "description": "Replay only float32 in-place cluster shrink; discarded individual leaves and their random draws are not generated."
+  },
+  "verification_code_sha256_lf": {
+    "scripts/verify_city_components.py": "8f7f99602879e4fab77cfc2ef860c95f430a4d01542ed2fa1d576874012c9307",
+    "scripts/component_contracts.py": "3998de9a34746aec078ef9f4da79171cbdb843b50d247a1fb99030ea1e767bbb",
+    "scripts/blender_worker.py": "413aef20acde7aaefa2c8466b0f11b2c321609f347117b12a1c616867411654f"
+  },
+  "input_manifest": "manifests/legacy-production-inputs.json",
+  "local_inputs": {
+    "imported_files": 25,
+    "imported_bytes": 2798417698,
+    "intermediate_blends_imported": 5,
+    "intermediate_blends_read": 3,
+    "all_imported_hashes_match": true
+  },
+  "verified_inputs": {
+    "outputs/Tokyo_Cinematic_Final/tower.blend": {
+      "bytes": 656634002,
+      "sha256": "a2e0134a66b3e0d7a70e8efd786c98e6481bc8d5010a858bda0eb6b2805004a1",
+      "kind": "intermediate-scene"
+    },
+    "outputs/Tokyo_Tower_15s_Preparation/Tokyo_Tower_Environment_Updated.blend": {
+      "bytes": 787215641,
+      "sha256": "2da2c2d85379440b7a80109e05d36d95ff8c2e2d7d9d50c1a299ca6d8a13d5d3",
+      "kind": "intermediate-scene"
+    },
+    "outputs/Tokyo_Tower_Street_Detail/Tokyo_Tower_Street_Detail.blend": {
+      "bytes": 1097259926,
+      "sha256": "7be2018933069765eacf62ca81099372820cc1b4316a623681a6b9647f6bedc8",
+      "kind": "intermediate-scene"
+    },
+    "work/osm.xml": {
+      "bytes": 10528704,
+      "sha256": "f04e8e70ab24a61ca749375d1ef37401feb0fdc840cc506b670ef71454a6a8ab",
+      "kind": "production-input"
+    },
+    "work/detail_upgrade/imported_features.json": {
+      "bytes": 1163295,
+      "sha256": "68a8d746ad85cfacd655722b64f1cefc3e1b483ca8f8f33e7e3499dd64015184",
+      "kind": "production-input"
+    },
+    "work/tokyo_traffic/layout.json": {
+      "bytes": 294064,
+      "sha256": "451a8c95accc72f7f265e56a2f2c67f71f9f83dda8eabae6d9c750be6e88ca3f",
+      "kind": "production-input"
+    },
+    "work/tokyo_traffic/tree_centers.json": {
+      "bytes": 199084,
+      "sha256": "119787ae05fef919f24c31367b9e6fe8ca56237101677f1a66ba926c33b7dbd1",
+      "kind": "production-input"
+    },
+    "work/tokyo_traffic/tree_keep.json": {
+      "bytes": 21153,
+      "sha256": "2cc6cab4c22696f20382742268852fae5bc76135b0788c2a2c1f6db777cd0776",
+      "kind": "production-input"
+    },
+    "work/street_detail/placements.json": {
+      "bytes": 455778,
+      "sha256": "28614414f052a1a43dbf64929f12f68ee95bfdb441ad12a40dd3b4951e99afdc",
+      "kind": "production-input"
+    },
+    "work/street_detail/facade_input.json": {
+      "bytes": 38740,
+      "sha256": "638872d1b443a50849d1aacdc110b27ba7054b9c35193404189be8fb0231c252",
+      "kind": "production-input"
+    },
+    "work/street_detail/facade_layouts.json": {
+      "bytes": 56342,
+      "sha256": "010fff5c38fe71a7a99e1af5a56492f8a7ecb83cb3f98c2fa3281d88cc8b43e4",
+      "kind": "production-input"
+    }
+  },
+  "intermediate_checks": {
+    "initial_leaf_materials": true,
+    "environment_canopies": {
+      "leaf0": true,
+      "leaf1": true,
+      "leaf2": true,
+      "leaf3": true
+    },
+    "street_canopies": {
+      "leaf0": true,
+      "leaf1": true,
+      "leaf2": true,
+      "leaf3": true
+    },
+    "tree_centers": true,
+    "facade_input": true
+  },
+  "generator_counts": {
+    "original_canopies": 3313,
+    "near_canopies_shrunk": 479,
+    "retained_park_trees": 2082,
+    "cars": 593,
+    "windows": 1632,
+    "lights": 308,
+    "facade_groups": 144
+  },
+  "render_preset": {
+    "source": "work/camera_options/render.py",
+    "range": [
+      14,
+      17
+    ],
+    "interpretation": "This later recorded rule reproduces the stored BEVEL render flags. It does not prove which historical script was run.",
+    "changes": [
+      {
+        "object": "Tokyo traffic • silver",
+        "modifier": "Panel edges",
+        "property": "show_render",
+        "before": true,
+        "after": false
+      },
+      {
+        "object": "Tokyo traffic • white",
+        "modifier": "Panel edges",
+        "property": "show_render",
+        "before": true,
+        "after": false
+      },
+      {
+        "object": "Tokyo traffic • blue",
+        "modifier": "Panel edges",
+        "property": "show_render",
+        "before": true,
+        "after": false
+      },
+      {
+        "object": "Tokyo traffic • black",
+        "modifier": "Panel edges",
+        "property": "show_render",
+        "before": true,
+        "after": false
+      },
+      {
+        "object": "Tokyo traffic • red",
+        "modifier": "Panel edges",
+        "property": "show_render",
+        "before": true,
+        "after": false
+      },
+      {
+        "object": "Close detail rim",
+        "modifier": "Real edge highlights",
+        "property": "show_render",
+        "before": true,
+        "after": false
+      },
+      {
+        "object": "Close detail iron",
+        "modifier": "Real edge highlights",
+        "property": "show_render",
+        "before": true,
+        "after": false
+      },
+      {
+        "object": "Close detail silver",
+        "modifier": "Real edge highlights",
+        "property": "show_render",
+        "before": true,
+        "after": false
+      },
+      {
+        "object": "Close detail frame",
+        "modifier": "Real edge highlights",
+        "property": "show_render",
+        "before": true,
+        "after": false
+      }
+    ],
+    "original_generation_only_matches": 20,
+    "original_generation_only_mismatches": 9,
+    "corroborating_source": {
+      "path": "work/preview30/render.py",
+      "sha256": "1025ad7d88768c76d713ac41b60585734a1a79bd8340ba9821ca35be298564f4",
+      "range": [
+        12,
+        14
+      ]
+    },
+    "scene_visibility_replayed": false
+  },
+  "matched_objects": 29,
+  "matched_materials": 31,
+  "matched_material_assignments": 2676,
+  "object_mismatches": 0,
+  "material_mismatches": 0,
+  "assignment_mismatches": 0,
+  "objects": {
+    "Close detail dark": {
+      "mesh_sha256": "50d0df5184fd5ea9aa13b897762cb8c78a19c86dcd34348acd56dab47f968958",
+      "vertices": 13056,
+      "polygons": 9792,
+      "smooth_sha256": "b9823fb510bca6884b43f0003eaa962061e4c3ee5b87b5af48ba687fa882b4b8",
+      "materials": [
+        "Street • recessed shadow"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_comparison_sha256": "c59145a2178f781a5b869a0e121f7e9e9bb7fc05c02d5b0001616755281600de"
+    },
+    "Close detail frame": {
+      "mesh_sha256": "c16b08c8fe3b5af814551ff3e98ac9155dfd81b8c20368eb635110483556eca2",
+      "vertices": 78336,
+      "polygons": 58752,
+      "smooth_sha256": "2e15f88103d3ffd66aa396f220ff3be46f321bf18d21df1d82c859c7c4f14101",
+      "materials": [
+        "Street • aluminum window frame"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "e36e993fd8f91a477981a7db81e8ca92eb9b969b77f525721bcf71032ef0266c",
+      "complete_comparison_sha256": "b0d101d86ed086aa9363b6756d6035b0c4cca9b344243300a9af648c7a2095b6"
+    },
+    "Close detail glass": {
+      "mesh_sha256": "735d1e0f29a141492794b156d2d6d3ee7c17f1fe5a0db1a02226611ac294a6a3",
+      "vertices": 13056,
+      "polygons": 9792,
+      "smooth_sha256": "b9823fb510bca6884b43f0003eaa962061e4c3ee5b87b5af48ba687fa882b4b8",
+      "materials": [
+        "Street • recessed glazing"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_comparison_sha256": "4de165dabbadae2b9231c2b160472c9996982946e551b49c295c6401e5b11098"
+    },
+    "Close detail iron": {
+      "mesh_sha256": "956f1585df9e0c31b566a284da8269ba967c034f5e58ca95e31032af78875e85",
+      "vertices": 206704,
+      "polygons": 112804,
+      "smooth_sha256": "ae7e25ca79d1ff1dbe1b31a1edb6d06eddb48227e3533707fbf67c2a997f9a67",
+      "materials": [
+        "Street • weathered iron"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "e36e993fd8f91a477981a7db81e8ca92eb9b969b77f525721bcf71032ef0266c",
+      "complete_comparison_sha256": "45406b8d3ecfc4f6eaa2f9518e3edb5de0337637ac629775fc93d429d6f7cc2c"
+    },
+    "Close detail rim": {
+      "mesh_sha256": "1faa235b1fc6452d43bbef35ae7eda31186de8a994223df0da02abb492ede60c",
+      "vertices": 386320,
+      "polygons": 247516,
+      "smooth_sha256": "c8dc6010ea250137e491086d30f022313f95dcffc292df22ec30426fba3e3b4d",
+      "materials": [
+        "Street • polished rim"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "e36e993fd8f91a477981a7db81e8ca92eb9b969b77f525721bcf71032ef0266c",
+      "complete_comparison_sha256": "136da2cd2efcdecfc6018534104343029c2cce9c65b8fc6a6758b8d662219b29"
+    },
+    "Close detail silver": {
+      "mesh_sha256": "bd52aa7e135b58a35b2bf58e988407315ea9d7acc9cfba5acba24564f556d228",
+      "vertices": 168144,
+      "polygons": 91078,
+      "smooth_sha256": "7560a98e12f720fc6f407ffb040f8debc06713c376e2881cf288b3a2617322a0",
+      "materials": [
+        "Street • bollard"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "e36e993fd8f91a477981a7db81e8ca92eb9b969b77f525721bcf71032ef0266c",
+      "complete_comparison_sha256": "1fb90b6fc05339076b429c38abdb5ebfdd7b1d983b27fbcd39db6b537d3d4c66"
+    },
+    "Close detail white": {
+      "mesh_sha256": "2e807d71e3e5067e29a19b09b100a31f12e9c267f7c7370a0a90ab67bef968c2",
+      "vertices": 168144,
+      "polygons": 91078,
+      "smooth_sha256": "7560a98e12f720fc6f407ffb040f8debc06713c376e2881cf288b3a2617322a0",
+      "materials": [
+        "Street • reflective band"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_comparison_sha256": "b4cf8660d86b584c7f50c8d395a347e2c65214b24c99f0db02ab2def191ec228"
+    },
+    "Close detail yellow": {
+      "mesh_sha256": "333987c935ec2be62c3bec08109cf6956a5582443f7df240d78c3c4ba716d520",
+      "vertices": 101376,
+      "polygons": 63744,
+      "smooth_sha256": "35dc71622375d07097f2e4da869a232a9271cec7f82634c9fab088853c7044fc",
+      "materials": [
+        "Street • tactile ochre"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_comparison_sha256": "99ed96ee78861776d6c6b7ab31c264c13d59524fa87bef9880fb93fdbc741007"
+    },
+    "Street lights • illustrative placement": {
+      "mesh_sha256": "d99ca04e83b608c0786aa7dd0088630a7af6f1d78bfbbda82a652a0b223572ea",
+      "vertices": 14784,
+      "polygons": 8316,
+      "smooth_sha256": "2d05667ce3ce903b374a8a49f814d552d481918ef3183b8e9068088531df8e36",
+      "materials": [
+        "Street furniture • painted metal"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_comparison_sha256": "806c4235303fcf639569548677415686e2660e88e718ad174d2c8852cb1f6eb0"
+    },
+    "Tokyo traffic • bark": {
+      "mesh_sha256": "9119746043ef4c1c5ad76abfb8dd0482ac5821c9ce9a3ad2d188a3f72b11e74e",
+      "vertices": 33312,
+      "polygons": 20820,
+      "smooth_sha256": "f80c5c35e7c01ec648b620d2e5f64ec3ed776848076cdbd5c2d35c36821f6874",
+      "materials": [
+        "Street tree textured bark"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_comparison_sha256": "c428f9844e6a66184c53445df05a416ae2c9756772973934f5fbd68d516ef29d"
+    },
+    "Tokyo traffic • black": {
+      "mesh_sha256": "7ed5b5c09f041e2704eedc001acacb6342663bddba1a7386bfc9dd1d8884a62f",
+      "vertices": 19184,
+      "polygons": 14388,
+      "smooth_sha256": "7dbe4e2a39873d6af19047e86284328ed6fc72f41da7732fa0d3444aac24c5f7",
+      "materials": [
+        "Tokyo paint black"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "99e2f77eef92350753295b08840063a084304381073468dad355212594ed8cf9",
+      "complete_comparison_sha256": "12f018f47fb1055d83d945a480a68eae02e30d34f1038bae8f8c4f0e862b9607"
+    },
+    "Tokyo traffic • blue": {
+      "mesh_sha256": "5575e051e7de65d4623297b2044a01cee6b8f07a4e7d6629d05c13a47867ca5d",
+      "vertices": 3520,
+      "polygons": 2640,
+      "smooth_sha256": "855745003e7c964f375554a7448241e5e6235fe78dac1d20fa85956421bdf0a1",
+      "materials": [
+        "Tokyo paint blue"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "99e2f77eef92350753295b08840063a084304381073468dad355212594ed8cf9",
+      "complete_comparison_sha256": "c7cfc5006e5a463b7e6cdab721f1976c2eb3c89a169cf988f7b3180d1b97c4dc"
+    },
+    "Tokyo traffic • glass": {
+      "mesh_sha256": "95a4957f848c5ff9b29783c56d32e36707f92de8eef7c935b5eef6f5d78e93ca",
+      "vertices": 4744,
+      "polygons": 2372,
+      "smooth_sha256": "8e4836f8a30a63ba539243c5add8d7ec556375139944f5f18b59313692910b56",
+      "materials": [
+        "Tokyo glazing"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_comparison_sha256": "9d3e5920c5bf9c14434c6faaf6adf5623d683e0b34e39101fc8c84a3f9be5897"
+    },
+    "Tokyo traffic • guard": {
+      "mesh_sha256": "6375b5c3c471f479ca2c6ca909354c4d4734e596d1a2dd75e4592a5f34f644a7",
+      "vertices": 21024,
+      "polygons": 15768,
+      "smooth_sha256": "7597ba2c083142b86e1df35e3e3e4740fcfa67c107f84326d0131e6c85a624e9",
+      "materials": [
+        "Tree pit edging"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_comparison_sha256": "030ff18a04e636ff40c587f4251cd780399ec8abc5dcbffe1fb02f23ae1914ae"
+    },
+    "Tokyo traffic • head": {
+      "mesh_sha256": "8399f959a24ff2b5666e41ae1ebd4fc532d99a694377f542f7c8249358f652cd",
+      "vertices": 10312,
+      "polygons": 7734,
+      "smooth_sha256": "61b01b84e135a94dfb940d67889ba1e4769c16452f7fbd38de1182ec9341785e",
+      "materials": [
+        "Tokyo lamp"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_comparison_sha256": "892ee0b5ff5510a18bb286c264aad1c794c50abc10778a81fd334ea4aed337b8"
+    },
+    "Tokyo traffic • kei_plate": {
+      "mesh_sha256": "d963c8f94d0fa017aeed2760b49996ca2f95314962478d5b3de4c8453e5bacf1",
+      "vertices": 2512,
+      "polygons": 1884,
+      "smooth_sha256": "2d2866396343e1af5ae396f5fc7d03f40bb50e53061dabfd4f301131494c00de",
+      "materials": [
+        "Japan kei yellow plate"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_comparison_sha256": "a891cc54a4b8aa577c906e70e627547527be62709354c4dfd3e6a241dcf55619"
+    },
+    "Tokyo traffic • plate": {
+      "mesh_sha256": "f442849f3180b2b46b23e8aefc2ddd054f166e48994e217b2da1b65f887e36db",
+      "vertices": 4480,
+      "polygons": 3360,
+      "smooth_sha256": "9b00b8930d66b11eb3cc96e31d08b2889160b0e617f1f6c229fa37c92578c23c",
+      "materials": [
+        "Japan white plate"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_comparison_sha256": "1f5fa5418e34b74f0689e4d7eb5df96103543673fd9704d1b31ac66e86a2e438"
+    },
+    "Tokyo traffic • red": {
+      "mesh_sha256": "8294879c9a224d70f7ca31ba2cd29be6afef92eb8403786a5045ce9a045c11d8",
+      "vertices": 1056,
+      "polygons": 792,
+      "smooth_sha256": "52f033ec34066343ced3a1bed745100fe4efe6577154125a6d9483c6b482219a",
+      "materials": [
+        "Tokyo paint red"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "99e2f77eef92350753295b08840063a084304381073468dad355212594ed8cf9",
+      "complete_comparison_sha256": "3290c22d46e6b9ae7e4a68c2ce24444190be0f4d347ce29a093b07b7e929ecc0"
+    },
+    "Tokyo traffic • rim": {
+      "mesh_sha256": "83eadc0b1ae1509660117566965eb74083f839a6f9e0a336926287f73e12fc60",
+      "vertices": 94880,
+      "polygons": 52184,
+      "smooth_sha256": "26271a535f910b1d9db1214896491fdbd1cacef4c1eb10f642030e5928b9cd87",
+      "materials": [
+        "Tokyo alloy"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_comparison_sha256": "c1a7e8f831fd84c670a5365efdfb21f39631f3d643198a208deb45056869a718"
+    },
+    "Tokyo traffic • silver": {
+      "mesh_sha256": "619ccc3d525476bf2ad825cfb95864523c47863bfdc280fb9813f7941f6086c6",
+      "vertices": 10912,
+      "polygons": 8184,
+      "smooth_sha256": "46320d3181f7095d77f31e79c87ba0f20a79b9322791a72695d5f81c5c4803df",
+      "materials": [
+        "Tokyo paint silver"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "99e2f77eef92350753295b08840063a084304381073468dad355212594ed8cf9",
+      "complete_comparison_sha256": "aae8dfd0f88f25577a954413612c9234c862d50efd93e87a53b55ca3e551826f"
+    },
+    "Tokyo traffic • soil": {
+      "mesh_sha256": "13e03c3a7f525264f295199565ebd71bfd0e957abe0e658aedaca4d174cf7cd5",
+      "vertices": 5256,
+      "polygons": 3942,
+      "smooth_sha256": "b8be5da149efe6a9d154e8a22921df9b723b94fcaa109988e8266b70b65578fe",
+      "materials": [
+        "Street tree pit soil"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_comparison_sha256": "398ee8588db3ef9fa01744aca0605b17fb46199f677e4eae03c7b24597abad2f"
+    },
+    "Tokyo traffic • tail": {
+      "mesh_sha256": "0af998399c0f7080b2d6cccbaf2a9f0ae589a23d67ef022edcd44fe02f4652cf",
+      "vertices": 9488,
+      "polygons": 7116,
+      "smooth_sha256": "08ac5470ea3bb69a242bbf16bef51e78e12d3cdcd6f7fbc390e907af65069ff0",
+      "materials": [
+        "Tokyo tail lamp"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_comparison_sha256": "3b0cf2101a7a27a8f822730c7b74cf1e6282db490d6c0dcb8cd89843cdaaf24e"
+    },
+    "Tokyo traffic • taxi_plate": {
+      "mesh_sha256": "a1a69fe979717f70debea858a277dad66087c80ad864fdb753fd99752a474f16",
+      "vertices": 2496,
+      "polygons": 1872,
+      "smooth_sha256": "e3dd750851eba7858adfb137b83d9e071e938c668ba3fe36d54f8fd68fff10d4",
+      "materials": [
+        "Japan commercial green plate"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_comparison_sha256": "0b1999686350baf35bfc429e70bcb702204535dab449d0a21eee324ec2a8d5d9"
+    },
+    "Tokyo traffic • tire": {
+      "mesh_sha256": "3b4abf4a863b1583c4acf4c9422e22d48ff589447d8bfcc3c3fcc8194dc836a1",
+      "vertices": 113856,
+      "polygons": 62858,
+      "smooth_sha256": "7e33c484d47bfd599d9b9fa5a5e508bdc2397598b3478e3a39f80ac9973182ec",
+      "materials": [
+        "Tokyo tire"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_comparison_sha256": "ac3170ef270156ccd6815af875025099b3ddce91f013f99d1b022ca91e55c9f9"
+    },
+    "Tokyo traffic • white": {
+      "mesh_sha256": "0ce7b6eec0da32da12a9618eb70c98af7608493e80d13eda6b24f8fa74f5858d",
+      "vertices": 17936,
+      "polygons": 13452,
+      "smooth_sha256": "002dab08a6217973b37fd9783afb4ad01bbefd28d7190cedbef377a3332bb045",
+      "materials": [
+        "Tokyo paint white"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "99e2f77eef92350753295b08840063a084304381073468dad355212594ed8cf9",
+      "complete_comparison_sha256": "fb13d529d88f503277d028875253c010bd7b601ab3e3e17eb1963d4f77167eea"
+    },
+    "leaf0": {
+      "mesh_sha256": "850cffacb8d0eadcd2014a6c760b7e2b3b5130992ed2c9657b12564b6af5db5f",
+      "vertices": 213360,
+      "polygons": 406400,
+      "smooth_sha256": "b4e28412c55fd4a832f96a8ebe5031f63186f4d5e2cf93f51ec08ee6dfd2ea3c",
+      "materials": [
+        "leaf0"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_comparison_sha256": "4fff3043a4af715e3a87dad6aaad98151f1e78138af54f2b115a1d3bfeae496c"
+    },
+    "leaf1": {
+      "mesh_sha256": "ff07b401114e6808e464ccfc1ce3938e9e9a9147488bc997f492ff93895c2e15",
+      "vertices": 234360,
+      "polygons": 446400,
+      "smooth_sha256": "9c063e69ebde21174dbc2e3a13e51e0c53b8950828ef26a31f5fef65ab931a02",
+      "materials": [
+        "leaf1"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_comparison_sha256": "36147c5b9d25e802efc4007ccd4a1c7b21fbd851bd6601e24781d3abf1f6d150"
+    },
+    "leaf2": {
+      "mesh_sha256": "b9b09103a47dbc320499e7afc0f59ba392be7f4b8f5af6608831f8f341e647bd",
+      "vertices": 227220,
+      "polygons": 432800,
+      "smooth_sha256": "67793ed40310117398a24b5b0d58ffe645e8af4734dabd9eda720612cf11d20a",
+      "materials": [
+        "leaf2"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_comparison_sha256": "4d2548bcc85ab985574f64765dd38297647f402caa420678f1d6dc08dd86f0a8"
+    },
+    "leaf3": {
+      "mesh_sha256": "70728437a8f5105abbac10d62dc0fca9c8f792328cb8f81cb1b019171853ba78",
+      "vertices": 199500,
+      "polygons": 380000,
+      "smooth_sha256": "6bb0494bc56460beb05462da0cd7da6b7aca965972c789e039df61e2832da7e8",
+      "materials": [
+        "leaf3"
+      ],
+      "world_transform_sha256": "bec390d7d89d2fd82783a1022dedab9c79736c27fe490d2a0462e8c3443843eb",
+      "modifiers_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_comparison_sha256": "dd3dd79e54f30f6e9557cac35cac7d9d776d27804330016716ebb9f16c59b1a7"
+    }
+  },
+  "material_signatures": {
+    "Japan commercial green plate": {
+      "baseline": "b7d2cbee51c5d2821d0fd074e53877395127c27009264bb9b607a6d0dabe7e37",
+      "rebuilt": "b7d2cbee51c5d2821d0fd074e53877395127c27009264bb9b607a6d0dabe7e37"
+    },
+    "Japan kei yellow plate": {
+      "baseline": "8d3c3950118933971f23071ce97f9a45121e609fee35ecfb99ce829ed3a950e0",
+      "rebuilt": "8d3c3950118933971f23071ce97f9a45121e609fee35ecfb99ce829ed3a950e0"
+    },
+    "Japan white plate": {
+      "baseline": "d7590dbcbfd4f6a4c105e09eff9bd7d31c7fce989296216e81ca123790ab91f4",
+      "rebuilt": "d7590dbcbfd4f6a4c105e09eff9bd7d31c7fce989296216e81ca123790ab91f4"
+    },
+    "Street furniture • painted metal": {
+      "baseline": "b513867a3aeec535ff4279c188b00509793443a1c85e3d87f3ed28dc7fc72508",
+      "rebuilt": "b513867a3aeec535ff4279c188b00509793443a1c85e3d87f3ed28dc7fc72508"
+    },
+    "Street tree pit soil": {
+      "baseline": "2240cbd9948392035cdcd4e49341a219c3da21f66389da88e2878ed99a403d8b",
+      "rebuilt": "2240cbd9948392035cdcd4e49341a219c3da21f66389da88e2878ed99a403d8b"
+    },
+    "Street tree textured bark": {
+      "baseline": "9382a40bdf055b7770508422af7df22667c05bdef32e30ae59da6a1c19a0cf66",
+      "rebuilt": "9382a40bdf055b7770508422af7df22667c05bdef32e30ae59da6a1c19a0cf66"
+    },
+    "Street • aluminum window frame": {
+      "baseline": "1e9caa91e3a5012f56c7dcc028754b03056807cdaffd1f161cb347a4846c073a",
+      "rebuilt": "1e9caa91e3a5012f56c7dcc028754b03056807cdaffd1f161cb347a4846c073a"
+    },
+    "Street • bollard": {
+      "baseline": "59f3fdf15dce8dd0046c0e25cde44c2f075bf29d9e79d67e46722e1c60982921",
+      "rebuilt": "59f3fdf15dce8dd0046c0e25cde44c2f075bf29d9e79d67e46722e1c60982921"
+    },
+    "Street • polished rim": {
+      "baseline": "51824a6118f2d183ecd1050e22cd7c7722ccc525e8583c5716c5eddcdac9ad5f",
+      "rebuilt": "51824a6118f2d183ecd1050e22cd7c7722ccc525e8583c5716c5eddcdac9ad5f"
+    },
+    "Street • recessed glazing": {
+      "baseline": "97cf114098e128efb2bfb4c8deecace8636c1c5ba5927ab753c480af00fa1e58",
+      "rebuilt": "97cf114098e128efb2bfb4c8deecace8636c1c5ba5927ab753c480af00fa1e58"
+    },
+    "Street • recessed shadow": {
+      "baseline": "2b3d3d78792fa4b08f99c1cb84ba94c5098d44f8a3a3d0f58b30a33155c560a0",
+      "rebuilt": "2b3d3d78792fa4b08f99c1cb84ba94c5098d44f8a3a3d0f58b30a33155c560a0"
+    },
+    "Street • reflective band": {
+      "baseline": "3a28af50514ba442edda0e1b1115860b29afef746f2d513688ecf0665fccb092",
+      "rebuilt": "3a28af50514ba442edda0e1b1115860b29afef746f2d513688ecf0665fccb092"
+    },
+    "Street • tactile ochre": {
+      "baseline": "e83b0f101e28f19a74e1296243b7b29f5e17699b84a7abde2801b81610c5d4ff",
+      "rebuilt": "e83b0f101e28f19a74e1296243b7b29f5e17699b84a7abde2801b81610c5d4ff"
+    },
+    "Street • weathered iron": {
+      "baseline": "58b35c2a5fc599bfe00a8bc43083fd6f0494db7334b8e2ff69e64859408ca82d",
+      "rebuilt": "58b35c2a5fc599bfe00a8bc43083fd6f0494db7334b8e2ff69e64859408ca82d"
+    },
+    "Tokyo alloy": {
+      "baseline": "d8c1fb44e239b07347c0c2b8d06bea065d9c579f352210bff8fb0c65272d5143",
+      "rebuilt": "d8c1fb44e239b07347c0c2b8d06bea065d9c579f352210bff8fb0c65272d5143"
+    },
+    "Tokyo ginkgo foliage": {
+      "baseline": "db827b621067bdb6540453a2a9bd1ff3ad57acfacb94799c20998835b6d8c8af",
+      "rebuilt": "db827b621067bdb6540453a2a9bd1ff3ad57acfacb94799c20998835b6d8c8af"
+    },
+    "Tokyo glazing": {
+      "baseline": "7fad2902cd2ba6c6f05d434a72b407dbc66f3c532035d09ebc692631f9b70bf8",
+      "rebuilt": "7fad2902cd2ba6c6f05d434a72b407dbc66f3c532035d09ebc692631f9b70bf8"
+    },
+    "Tokyo lamp": {
+      "baseline": "b2e2021183390c44ca18a2627acd4557522447a227543d548d478cddc04f545a",
+      "rebuilt": "b2e2021183390c44ca18a2627acd4557522447a227543d548d478cddc04f545a"
+    },
+    "Tokyo paint black": {
+      "baseline": "e839c7cc29dc37e85ed3f0b7d6585c051c1c8a99cd8b4542bf39ddfd3c5d6c1c",
+      "rebuilt": "e839c7cc29dc37e85ed3f0b7d6585c051c1c8a99cd8b4542bf39ddfd3c5d6c1c"
+    },
+    "Tokyo paint blue": {
+      "baseline": "f1d8405bb719a52772122b346f4707d70e582b21a6b65cf6feeccabd9fd8b26c",
+      "rebuilt": "f1d8405bb719a52772122b346f4707d70e582b21a6b65cf6feeccabd9fd8b26c"
+    },
+    "Tokyo paint red": {
+      "baseline": "e62cb36667942a9a37feb485f211bb8bba3ad994203235daa0f2a811bddbca70",
+      "rebuilt": "e62cb36667942a9a37feb485f211bb8bba3ad994203235daa0f2a811bddbca70"
+    },
+    "Tokyo paint silver": {
+      "baseline": "2b1abe36af797240ae04a52e0ddf5bded113aa415f476648bb561af5fe1d5d8e",
+      "rebuilt": "2b1abe36af797240ae04a52e0ddf5bded113aa415f476648bb561af5fe1d5d8e"
+    },
+    "Tokyo paint white": {
+      "baseline": "17a02b87ee4749de78cb37e7ae22fec99f7f4952d6f2ada1ea39631a55072ec9",
+      "rebuilt": "17a02b87ee4749de78cb37e7ae22fec99f7f4952d6f2ada1ea39631a55072ec9"
+    },
+    "Tokyo tail lamp": {
+      "baseline": "ae0d900ede6ed900179877b8c3ae66233607c041e9ddfa4bbdc2628a36542614",
+      "rebuilt": "ae0d900ede6ed900179877b8c3ae66233607c041e9ddfa4bbdc2628a36542614"
+    },
+    "Tokyo tire": {
+      "baseline": "6818429d97090867d75c6563148002375e0aabfd104f8c5aa1027983f9d24c87",
+      "rebuilt": "6818429d97090867d75c6563148002375e0aabfd104f8c5aa1027983f9d24c87"
+    },
+    "Tokyo zelkova foliage": {
+      "baseline": "f19b239eefe57181df1d3811864dbc48f386ddd94f953428e4198049793f7b8f",
+      "rebuilt": "f19b239eefe57181df1d3811864dbc48f386ddd94f953428e4198049793f7b8f"
+    },
+    "Tree pit edging": {
+      "baseline": "4d88ef4b2af14027b288564e86058a6a4aa53c8a5302878a96608d35f133b815",
+      "rebuilt": "4d88ef4b2af14027b288564e86058a6a4aa53c8a5302878a96608d35f133b815"
+    },
+    "leaf0": {
+      "baseline": "4fae2a7b80fca4da7a32c8653634925c166d5929d803cabe9c4f47284ae28899",
+      "rebuilt": "4fae2a7b80fca4da7a32c8653634925c166d5929d803cabe9c4f47284ae28899"
+    },
+    "leaf1": {
+      "baseline": "7b9a218d6d1a1bc80122b7c15fd8bcefbacd60f55b334ecaca7c467a968180b0",
+      "rebuilt": "7b9a218d6d1a1bc80122b7c15fd8bcefbacd60f55b334ecaca7c467a968180b0"
+    },
+    "leaf2": {
+      "baseline": "f19ad3e56ec7b5f1647d162c4964c5a668a11051b301fa9c125dcc3990cc7396",
+      "rebuilt": "f19ad3e56ec7b5f1647d162c4964c5a668a11051b301fa9c125dcc3990cc7396"
+    },
+    "leaf3": {
+      "baseline": "2b90a1cd45457157964dda94a552659772691f3b45ffef272e8e52c68c41c96c",
+      "rebuilt": "2b90a1cd45457157964dda94a552659772691f3b45ffef272e8e52c68c41c96c"
+    }
+  },
+  "combined_geometry_and_placement_evidence": {
+    "previous_2647": "sources/city-pr12-input-recovery.json#tree_placement_verification",
+    "additional_29": "sources/city-pr12-component-verification.json#objects",
+    "total": 2676
+  },
+  "immutable_inputs_unchanged": true,
+  "utility_verification": {
+    "portable_tests_run": 150,
+    "passed": 145,
+    "skipped": 5,
+    "failed": 0,
+    "blender_fixture": "tests/components_blender.py",
+    "blender_fixture_passed": true,
+    "fixture_detects": [
+      "noise-mode",
+      "ramp-color",
+      "socket-default",
+      "bevel-width",
+      "bevel-render-toggle",
+      "smooth-face",
+      "world-transform"
+    ]
+  },
+  "limitations": [
+    "The later render preset reproduces stored flags; this is not proof of the exact historical execution sequence.",
+    "Object/collection visibility, all viewing angles and real-world accuracy are not verified.",
+    "The 2647 previous prototype/placement checks and 29 new aggregate checks have different documented comparison scopes; this is not a full dependency audit of every city object.",
+    "Facade groups match the saved predecessor, but the six photograph-inferred building wall palette materials are excluded.",
+    "The cinematic canopy starting geometry and remaining footprint/road inputs have not all been regenerated from primary sources.",
+    "Geometry or shader correspondence does not establish ownership or grant redistribution rights."
+  ],
+  "distribution_candidate": "manifests/procedural-components-distribution.draft.json",
+  "new_license_grant": null,
+  "city_redistribution": "pending",
+  "subsequent_license_grant": {
+    "license": "CC-BY-4.0",
+    "date": "2026-09-27",
+    "record": "assets/procedural-components/provenance.json",
+    "scope": "16 named prototype meshes and 31 procedural materials, plus their dedicated preview only."
+  }
+}

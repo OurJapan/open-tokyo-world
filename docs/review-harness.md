@@ -16,7 +16,7 @@
 
 ## 要件と実行例
 
-Python 3.12とBlender 4.5.1 LTS。runnerはPython標準ライブラリのみ、workerはBlender同梱のbpy・NumPyを使用します。CLIのPythonとBlenderのPythonは別processです。
+Python 3.11/3.12とBlender 4.5.1 LTS。runnerはPython標準ライブラリのみ、workerはBlender同梱のbpy・NumPyを使用します。CLIのPythonとBlenderのPythonは別processです。Windowsでは[共通の制作環境](contributor-workspace.md)の `otw.ps1` からBlender付属Pythonを利用できます。
 
 以下の`BLENDER`は実行ファイルの絶対パスに置き換えてください。出力ディレクトリは毎回新しくし、既存の結果を上書きしません。
 

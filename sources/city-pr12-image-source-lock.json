@@ -1,0 +1,1006 @@
+{
+  "version": 1,
+  "input_sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+  "sources": {
+    "https://assets.cms.plateau.reearth.io/assets/09/83a3f6-6605-477c-84dc-a973008b5a27/13102_chuo-ku_pref_2025_citygml_1_op_bldg_3dtiles_13102_chuo-ku_lod2/data/data199.b3dm": {
+      "bytes": 5872480,
+      "sha256": "0dffd78815302c731751293edf85cab3eee8fa84be97546a7ed7383acfa24fad"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data479.b3dm": {
+      "bytes": 41276,
+      "sha256": "110839e2e958c1fe49b607e6b2d652c2b691ab60d7e288b6a617299a02a409a1"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data486.b3dm": {
+      "bytes": 32944,
+      "sha256": "2f80d691a29690b3d2eab42bb802c0e3acb6d80bd59767361a6ea628892dab66"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data487.b3dm": {
+      "bytes": 85096,
+      "sha256": "207e2a0b66e8481e2e7a8b7f042551307afeb76d1a93b0517a61b356b58e8d67"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data488.b3dm": {
+      "bytes": 1724260,
+      "sha256": "7446cb695374f09a5f69be37adaab5655b850d3a2070649db6d6947aeee090ac"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data489.b3dm": {
+      "bytes": 53160,
+      "sha256": "b2976b9f636624abc7eb80cc5198452c9256d4f00a3cf28ae57e46668678985a"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data494.b3dm": {
+      "bytes": 2041536,
+      "sha256": "0351d20200d213b4c1cc1c7db09d20d03c9cd6654446e01a34406bbc660219db"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data497.b3dm": {
+      "bytes": 755504,
+      "sha256": "d3469fdddecc9bb5c1187b80ea4725eac814eab34f3764fbb46d84e20b189a66"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data498.b3dm": {
+      "bytes": 102624,
+      "sha256": "f502cd5f148ce6a4621ccfb3f73b3397518858ac39f987aa05dc1a6274b16b2c"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data499.b3dm": {
+      "bytes": 1853476,
+      "sha256": "91ed84865728a96e3e2b2d666e8472f8ba394188a8681d057b3453fb71958ab3"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data500.b3dm": {
+      "bytes": 484460,
+      "sha256": "c57008d863d2b40fdbbff6f5a3854f8b53eeaf34d26fd68bdb7b97a401a1c197"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data502.b3dm": {
+      "bytes": 1325076,
+      "sha256": "b152bdfd556e6a36d922b18d0281836b7d999e99c3b8753206232cf6f003142f"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data503.b3dm": {
+      "bytes": 364748,
+      "sha256": "6c4b67d61ee94dc6abbcab4c52f8fe9eb2a82aa0197d4ac85bce6873ccad1bd0"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data504.b3dm": {
+      "bytes": 19180,
+      "sha256": "084f5bd7fa6937e417417442d56799c4c86087d0bb34a0ab00cfdefe74fe1435"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data505.b3dm": {
+      "bytes": 816324,
+      "sha256": "5c865b1fdeb84446150689bc2fc700892f85ce1fcc8896e4712f8d4a614e7571"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data515.b3dm": {
+      "bytes": 164704,
+      "sha256": "444f19e33e1d1bf6ae7ff929037c3b75182ef8e4d6ae170f71ce3bae46bc757a"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data570.b3dm": {
+      "bytes": 146776,
+      "sha256": "8990911047f5b1d25bb7717a94a510b96fdb1b225cb4d9480487623b6c476d02"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data571.b3dm": {
+      "bytes": 138292,
+      "sha256": "c4361fe8bf52de44a5d1880de90945a1ea14f7123e6734f5424befda42e90b40"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data573.b3dm": {
+      "bytes": 125532,
+      "sha256": "8f236e4ff834478dcef13f355d51f109ed73171738e26c083917e4fc206f4cae"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data584.b3dm": {
+      "bytes": 117424,
+      "sha256": "ed37ffb999b72308ca12398bac61355ad2be8390c9a94be603e823bc2f2a3c97"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data585.b3dm": {
+      "bytes": 462184,
+      "sha256": "ce85cfd2cc58d28f1ecbcd6cd332344afdbf1eee6fa38e2dd183e5c4fc7ed7b7"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data586.b3dm": {
+      "bytes": 40568,
+      "sha256": "1c2dbb80306e068ac02762cdd23e89e057aecc3ba7df88f5dd7751a891b70f7b"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data587.b3dm": {
+      "bytes": 38560,
+      "sha256": "6d356ca66d29f2ae61e178205912770876197186bd5c80a18926f867fec3c527"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data588.b3dm": {
+      "bytes": 74932,
+      "sha256": "5faedebcbad2aa52d95d65a429794c78b5f92788237d2dbdfb718bedd0863f68"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data589.b3dm": {
+      "bytes": 171208,
+      "sha256": "e5550356142b6ae3d9e8a6de7ef1c5a001989b6d2a2078ba21b5d429f22129ed"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data591.b3dm": {
+      "bytes": 286608,
+      "sha256": "ed754ea41ab33fa15306b50325c087f6a9ef8fdc1e09943a3ed674eda9947470"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data593.b3dm": {
+      "bytes": 155660,
+      "sha256": "27540261ef31130bc8fd6ae2583a99613f8cf92fc1bd17964986acaccd17db43"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data594.b3dm": {
+      "bytes": 41480,
+      "sha256": "6f8cca4f3d37bc117edbd5bf25d0d2899c7394ec6289412ab75589e66c2bf261"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data595.b3dm": {
+      "bytes": 100420,
+      "sha256": "27080408380f332431be6716c1f4d89b13d2786a9d80538c04a5b8ed2e744b80"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data596.b3dm": {
+      "bytes": 126700,
+      "sha256": "7304c60257d4a561a9a419220f092d47cbdec201cdfdaae0553d17161ec89455"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data597.b3dm": {
+      "bytes": 249496,
+      "sha256": "5f469b47a4c099455d965052ff0fb9609561317796b939979331b300a9dc107a"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data599.b3dm": {
+      "bytes": 155800,
+      "sha256": "7d439028c2840d83f1c868b633b56c3edd9eb8ebed51d4e45a0e7912631deaa9"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data600.b3dm": {
+      "bytes": 617844,
+      "sha256": "5f018bab395cae27fb8c8676b1ec5093ddd32170dba97947db500ba80112d076"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data601.b3dm": {
+      "bytes": 1228896,
+      "sha256": "c822e7c4733de6b6b022e6949dbcc1eae3a4f446ea916437252eb1f8a2c9ad30"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data602.b3dm": {
+      "bytes": 260288,
+      "sha256": "bcd2204454c433fc834d20f07e30e43160df3c051d3933a94f6a5ec46a8987cf"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data603.b3dm": {
+      "bytes": 15012,
+      "sha256": "2365dd972da2f65fafbf721ae7b7ded3f52a13d972ce95d5398008b0551046bc"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data605.b3dm": {
+      "bytes": 546600,
+      "sha256": "5034b0e5a49d2b106ce562088f725968592998c86276f483b4a002c52031520e"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data606.b3dm": {
+      "bytes": 392048,
+      "sha256": "c82ca3ff88e8a51998739b184a56451fcb18cbe239dc8f064d8d2a5c067ca42f"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data607.b3dm": {
+      "bytes": 80660,
+      "sha256": "93db1169d5a0199e8ff1df00f74a5476c06bee4433e4b1d49dfa3713d3ba448d"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data610.b3dm": {
+      "bytes": 375672,
+      "sha256": "51b479fe016833f0d96c65f3396a3f309f7742eed55e47856cba498e62693bdf"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data611.b3dm": {
+      "bytes": 57692,
+      "sha256": "6c3591f8c91074bae680f4ebbd418f77673e74f547b664460741816d3a6b8ff1"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data612.b3dm": {
+      "bytes": 11524,
+      "sha256": "18e840b6b1c8bf091487bac9e483b1b120b42efb6c3bb9b06dc4042e934cd8e7"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data613.b3dm": {
+      "bytes": 1030556,
+      "sha256": "139cb9b620a8b689de7d166ccce0158944a5a5c49ef5fdf8a3205e14b083d3f3"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data614.b3dm": {
+      "bytes": 556148,
+      "sha256": "3dc04b0194cf9e67e4151546c8bb4a0f717588bb809b90285400fc1c44b4c7f3"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data616.b3dm": {
+      "bytes": 1043116,
+      "sha256": "b2ec967607d19ac72e6ebb545405d46cf43c8e90e82d56f8d26c71ee23d542f2"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data617.b3dm": {
+      "bytes": 861012,
+      "sha256": "7f905888dbaa48d3ffc36a8bf6c5f98bb2323582a642cbc2235bb8864758c387"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data620.b3dm": {
+      "bytes": 447968,
+      "sha256": "4b57991649bb960ffc864bf51bd678593b394200e5654632de49500d961e7ee6"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data621.b3dm": {
+      "bytes": 425684,
+      "sha256": "dc96140c65a058dbc9f47933e7905e11aa8e809e12b0062be93a62b9cdee7b82"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data622.b3dm": {
+      "bytes": 83916,
+      "sha256": "310c0710a8c5eda196d938b59ee4d1f79b95e63ecd53da56a3aadbd4ed205424"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data623.b3dm": {
+      "bytes": 238024,
+      "sha256": "373459ee9270fd38d5e4da76111caf75a7bbdb8b84d30eed92c5a73572b6fdeb"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data624.b3dm": {
+      "bytes": 14620,
+      "sha256": "1f1753d0282481c54ec877499b1da489ecaed2c4df0fb4500e769a0275b1480b"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data625.b3dm": {
+      "bytes": 242668,
+      "sha256": "22c0fd323b02833d9946ea4929623d79e6d529c73d5942a90d714455c130009c"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data627.b3dm": {
+      "bytes": 401636,
+      "sha256": "e745d2c9f3aa4e5c98d6647b113bb5caeb58073feaaa11382b6b86f24e1f2b56"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/28/07d0a1-b6be-46ef-bd87-4f0683b5ef6e/13101_chiyoda-ku_pref_2025_citygml_1_op_bldg_3dtiles_13101_chiyoda-ku_lod2/data/data629.b3dm": {
+      "bytes": 570060,
+      "sha256": "0855ef3152d9a62d58e8d0ea361e9c5e09ab1c931f53aa64bc9cedc6c5732bb7"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data1.b3dm": {
+      "bytes": 1438000,
+      "sha256": "cd7a978cd5d60a56334881a832dc200fca4e7252e5dfb1c305bc7bc5f3fe3a10"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data10.b3dm": {
+      "bytes": 3719504,
+      "sha256": "557c682896eefce0bc3d62e6cab12456a03613675f444556cf732eaa3da7044b"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data104.b3dm": {
+      "bytes": 893720,
+      "sha256": "d376e22b7bf7ff0205f6f025a0f41da1616aeaf5f1e9a855eaae4350d793833f"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data105.b3dm": {
+      "bytes": 3948420,
+      "sha256": "c5ef041813b1091fbfca61781cecbbffdb464de2fe9593280fe2e555b54b214b"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data108.b3dm": {
+      "bytes": 31852,
+      "sha256": "0b1e1096ceae6647a408d681fdc5b5a43e39ecd152e8ebe36ba4c9ed0d44f538"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data11.b3dm": {
+      "bytes": 3194492,
+      "sha256": "ddfeb0c19de45283b00b098d5fdfdad8fe880d136d6b0af749cac16ed535e149"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data114.b3dm": {
+      "bytes": 2047488,
+      "sha256": "00df2ce9db09db1227239f97c51350006c62601eb794f73e1f6b1162191ff7bc"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data115.b3dm": {
+      "bytes": 1210552,
+      "sha256": "44c81c136b302608099d0bb3b0c6ce9b1f22b20041fcbbfc39f9977899f67a39"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data116.b3dm": {
+      "bytes": 4673880,
+      "sha256": "a7eb158dc9b64abb12f30b422063cb00e45847d094f39f3d0b43f63f15fe9140"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data117.b3dm": {
+      "bytes": 2053040,
+      "sha256": "8681da916f95c96cc8433eae0ae0d350cb80dbcd8b65eaca13e0a5437a9c4184"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data119.b3dm": {
+      "bytes": 210304,
+      "sha256": "bd5e36c40d894e8c824c0ca55cb722721de119d3b00243dbc4120d7e45285479"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data12.b3dm": {
+      "bytes": 5385984,
+      "sha256": "206bdd93d166b2b4afffdf8e41d813fc827075569cfd6a99f7cd6b4c6e2a66eb"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data121.b3dm": {
+      "bytes": 557892,
+      "sha256": "d2e3e1d461676ab4dc21e01e925129a67e3bdd7ec2c2bf37b37b68198fb8cdc9"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data122.b3dm": {
+      "bytes": 1178396,
+      "sha256": "ac95e68a39008f33902f65d3c3883b3de930c57717cdf3f58bcb9fcc246de921"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data124.b3dm": {
+      "bytes": 853612,
+      "sha256": "f420cda2df97165d26127e14f6a28d283bfee37b4151c2addc53d9c75079fe64"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data125.b3dm": {
+      "bytes": 5478712,
+      "sha256": "7100802ad59b8250476ffd731451ee2dc800f386ae6c3a4868a5dccaa7fb2f25"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data126.b3dm": {
+      "bytes": 4500180,
+      "sha256": "5be37c338b988f1c61acfcc4179ad2a7b3392285d4f146d44be253cf6fdff081"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data127.b3dm": {
+      "bytes": 4822088,
+      "sha256": "87bfd8a110253e3915c7d892c7228c02679543daadb2d6bf83bef2a2277bfc4f"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data129.b3dm": {
+      "bytes": 2955248,
+      "sha256": "47aa485a38b1eff1d5d633e067fbadcc7c0f8aa47b5c11a4633c7478e37f3e1d"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data13.b3dm": {
+      "bytes": 4568652,
+      "sha256": "9e9b0fdf65acd4a30428886ce74523595e3d3cdda876f5fc3222f6b3ac558783"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data130.b3dm": {
+      "bytes": 3649104,
+      "sha256": "b81fbc260b08545824bd95ed7793593c4d5ccdd4de2f552f7408a4c727a79f24"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data131.b3dm": {
+      "bytes": 1442376,
+      "sha256": "fb61ad6ffafccfe7702526b35dd440b507b8705566314af1a20225dd754b867c"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data132.b3dm": {
+      "bytes": 1560472,
+      "sha256": "a3583df0a60bff76f5ccd827ff3784c29504a02e803a1d8bf68670466af77a34"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data134.b3dm": {
+      "bytes": 3377068,
+      "sha256": "ed789737fcb07d4e87b69c10dccdba550c3e60e6f56fbc73291ea0a52f1d662c"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data135.b3dm": {
+      "bytes": 4641772,
+      "sha256": "d20936cbdfd70006e3dd4d358539c6ee287fc8c77812037079a80c3e504d1a2e"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data136.b3dm": {
+      "bytes": 2961644,
+      "sha256": "453fed110badbacdfe44413a993a4aa410d6097d0cb370ae3e4a80a34b62eb45"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data137.b3dm": {
+      "bytes": 2248516,
+      "sha256": "b5b86320d9875508485f1eb7af7d0160b23fa27c2e9b75dd3b50b4c49e2ec827"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data140.b3dm": {
+      "bytes": 2660976,
+      "sha256": "d22e75a3b04c50db77aa3a639c30efe0f0a76895dd13b0a26f8aa954c0b8b9fc"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data141.b3dm": {
+      "bytes": 2311956,
+      "sha256": "dda00d8ed7228b6d92dfbc9039560d26d7dae8ed34bc07faf3effa1b31d3731a"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data142.b3dm": {
+      "bytes": 2678580,
+      "sha256": "9878b0a9c59a401e40b5d72b22f9430a37e6c31dd73c5c5d6cf4bb702e2511fc"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data143.b3dm": {
+      "bytes": 1335896,
+      "sha256": "067c9cfdac5c79c71fe4ebf3667349808aa470551d88cce3981e92882020f36e"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data145.b3dm": {
+      "bytes": 1806336,
+      "sha256": "e3d728dc9a82c2b2d08ad974b86842ec0e0eaa8b2ba895739345e02f1d2934dd"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data146.b3dm": {
+      "bytes": 871004,
+      "sha256": "b4da812d4d50c9ef176752bc7af5fde8350ad960b9724a6fb9f313af4aee2c69"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data147.b3dm": {
+      "bytes": 3218212,
+      "sha256": "1ce3903319762b7a93d9fe572add6e70a3d4bfc412f62a695a171c1d1da20913"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data148.b3dm": {
+      "bytes": 2883664,
+      "sha256": "27b73eaf57664c5fe16f190b8cba1a13c04fdc286f17f01dd2b6b821d23fceaf"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data15.b3dm": {
+      "bytes": 2864764,
+      "sha256": "6b6c2f13b90ec721fc719c63b13396cbfcb8b9132f2be2d28de4738583bb71a9"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data150.b3dm": {
+      "bytes": 3136364,
+      "sha256": "1027d1b7fda35f39fca723b6e30ef31d504716c90ebfc4423d91aabb7b318ada"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data151.b3dm": {
+      "bytes": 3775568,
+      "sha256": "1937c915c58d0543b5042f464cd66c227c1169a6cdac84e9263b294998f4315f"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data152.b3dm": {
+      "bytes": 862944,
+      "sha256": "ae1a2d833b44b0578e59648a80c01b40a93a650eb475cf080f7910152a6f7158"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data153.b3dm": {
+      "bytes": 2787464,
+      "sha256": "2cde71e6f648ed11ba6a038c2b408387ebfafb8ff18a194ec898ec9c0d7243fa"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data155.b3dm": {
+      "bytes": 3049396,
+      "sha256": "49aef0a21f13c3b14c1ddfee6168b8c166b11a25ac815fa48aec9d1437931e4d"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data156.b3dm": {
+      "bytes": 2725112,
+      "sha256": "0359ac3cb206700f76d4277588f13c62a7fa431c04221c905b0ec07a2c75cf8b"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data157.b3dm": {
+      "bytes": 884160,
+      "sha256": "e3f6a53b96f83117e0ccf07af9a5e122f88d55d6623ab33e81aff6fa8f44245e"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data158.b3dm": {
+      "bytes": 2368284,
+      "sha256": "430b5fb8d6de8124b13894e946c6a6fd75ba7515370421724340c70ebaf67992"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data16.b3dm": {
+      "bytes": 2243656,
+      "sha256": "7c18a57dda0038bd58d23507756f0ebd59c97dd8b631de34dff3e80edadcc50e"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data164.b3dm": {
+      "bytes": 41320,
+      "sha256": "4359a554e843ccfcfacc407603164963e3ef8d3422e86f6c1e139480ee1725d4"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data167.b3dm": {
+      "bytes": 138732,
+      "sha256": "c6ebe3e57e76c786d2428ab2fe3ecdc75e3ad162908d436d6bf543e2f846f4fe"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data168.b3dm": {
+      "bytes": 217116,
+      "sha256": "c61b9b01b24ee84ee571b0bc9ce0bbd1f6d741c45695560b5e781f8104a38ec7"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data169.b3dm": {
+      "bytes": 18608,
+      "sha256": "344d096432dff06b21338469cb5d99efe6bdc03da4d454e860a3e522d7657704"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data17.b3dm": {
+      "bytes": 3034188,
+      "sha256": "fb99fb819f6b415102f723aa93117332bb5450593852384ddef220d890a7a3eb"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data172.b3dm": {
+      "bytes": 663120,
+      "sha256": "43374201607ca4cb2a9683a3538cf28b39022ecb73a912e5e524dd46710826e6"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data173.b3dm": {
+      "bytes": 276356,
+      "sha256": "7d3beb108bdd93719a7779e33b6249492c41a3d4d5ab86eb4b3db9d53969e263"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data174.b3dm": {
+      "bytes": 2223068,
+      "sha256": "9e15c1e97b57551c07d61fdde89a6c8c224108f8fc522b65e3691151ce339500"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data175.b3dm": {
+      "bytes": 1249104,
+      "sha256": "cb3392967bd29a8350ee975c0435e9374668716d26cbc30e0ef9006309603f33"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data177.b3dm": {
+      "bytes": 921140,
+      "sha256": "0a934e11f3cb70486e21c3cf5e10e6495c9cd19cd249e1480a44b5692398bbd5"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data178.b3dm": {
+      "bytes": 220272,
+      "sha256": "6471f1d0e1046d3c48c6ff95f15d6e770cdbe27c0b80a287ede05664510a46f2"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data179.b3dm": {
+      "bytes": 1067388,
+      "sha256": "29e4d1b33ee0242b95453dccb1d54974c4c7f45406140ff536c682a497df764d"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data18.b3dm": {
+      "bytes": 3057516,
+      "sha256": "784e5cd31301e43f6306c9e9059a909c3c3a0af238b1797144f2fce58f3a2217"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data180.b3dm": {
+      "bytes": 1058592,
+      "sha256": "ad48ab1518be53b9d59714907736f8b68126567d7cc82a3e9960f65e519640aa"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data182.b3dm": {
+      "bytes": 2528788,
+      "sha256": "a03505ba3f8c82b1d4b87853b96895960f32eef1a37f2611cd108554d1aea91a"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data183.b3dm": {
+      "bytes": 578120,
+      "sha256": "fe5825b624f1b03018130ba0d953b23c3e02644bb0219ed07cd904565501eea1"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data184.b3dm": {
+      "bytes": 3056716,
+      "sha256": "21ff72f15f50b6932ce2d09dba3da39a8d7f291a1b1db10a5287d3b1989194d8"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data185.b3dm": {
+      "bytes": 394568,
+      "sha256": "1ec624321923d7fdf1e26f6055359ac2cbd32068f3e229a5781d359fc2eca06f"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data206.b3dm": {
+      "bytes": 1008832,
+      "sha256": "c9d0dc4d885d13da4d9b8b978189bac78065006537b3bca65cba7563a88701f4"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data207.b3dm": {
+      "bytes": 1228400,
+      "sha256": "c97ae3673bd07da31a7f833b3796f155e83c090177e929e0303253334af49d37"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data208.b3dm": {
+      "bytes": 2140060,
+      "sha256": "de18d70fc770fb9accfafa2b027b3b972f971be1652f67c103269f34ed9b176c"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data209.b3dm": {
+      "bytes": 1362200,
+      "sha256": "ebe9cfc2e3f552a09ecc10b60e5b8939e8433a153530f6a6092022a180b2e24e"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data211.b3dm": {
+      "bytes": 908072,
+      "sha256": "fcd482bca6752d95254eab4f35d5cfbb53bebf674720a6689aea4ae459cfffa2"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data212.b3dm": {
+      "bytes": 1773556,
+      "sha256": "de2dba8bd4c66e457ad10da9bde134ab1b0d330e3247dfb38d6f9a1d918408c4"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data213.b3dm": {
+      "bytes": 1341676,
+      "sha256": "795be46021e5619b0ed8de4df7fa6a1e3197eb31cfac8aca4dd80f229a208796"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data214.b3dm": {
+      "bytes": 2249908,
+      "sha256": "5af9bd8e6470dd9f61f7f727e09b7b805610ae028f9c99678fc7a949f32e7e96"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data216.b3dm": {
+      "bytes": 1153528,
+      "sha256": "671b69a8d7acbf4287fc53662c21f5072b9abd6a497cc483c93354c53489bb52"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data217.b3dm": {
+      "bytes": 742376,
+      "sha256": "3022ebbe1e8a0e76055ca93150a04a724673855b32f7e8a05f68818c833957de"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data218.b3dm": {
+      "bytes": 1536260,
+      "sha256": "9f5e451b589694342e58e3c87913703feedca0a8488dac3754c652d0faedb425"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data219.b3dm": {
+      "bytes": 2190224,
+      "sha256": "c307ec789f99a20593fc230f03a844b0d1c9b0aa155730a89338db95a13777e4"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data221.b3dm": {
+      "bytes": 1246040,
+      "sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data222.b3dm": {
+      "bytes": 2352036,
+      "sha256": "2e0b958c45b331f3ba6dc759ce435c3b1ed3da5320ff4f66c9d540526324d27e"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data223.b3dm": {
+      "bytes": 1733968,
+      "sha256": "9dd847d089ad05dfdb0df63b0de9448f7a430799b7f54f00887d239a2b1b61d1"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data224.b3dm": {
+      "bytes": 2510816,
+      "sha256": "7e64cdf077ab2ffd52424527ccc84130f77c79008128acf10bdfd61ee0fd86c0"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data227.b3dm": {
+      "bytes": 1727024,
+      "sha256": "97a635a9d2a59038c8dc7e0f65570ce83e4cde3261687a38278f6c3341e6797b"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data228.b3dm": {
+      "bytes": 2043276,
+      "sha256": "3ec60744bd5d421e8e4322aa2eaf784dfedb4d03f5878820ffc1abe4d2374c93"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data229.b3dm": {
+      "bytes": 2414856,
+      "sha256": "a7a0b10c0476b32e338eaf3b866a6eb653c0ed962cb09d49d449b330d724ef26"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data23.b3dm": {
+      "bytes": 3095012,
+      "sha256": "bd9e2f67037074eab9ce07a9e073254e7a8b96ef0a26158aadd081aa866e3ce4"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data230.b3dm": {
+      "bytes": 3194476,
+      "sha256": "19218b5efaaa5b2a4ddee45e508d25feedd2f200652c583856b9d4479e00ae1e"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data232.b3dm": {
+      "bytes": 2090944,
+      "sha256": "b4ec72e61ccd9ee4a6cf0f29456e76f5fa65cb90200c0764dbb2deffd92c42a9"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data233.b3dm": {
+      "bytes": 2682920,
+      "sha256": "1ddb64061c4d8a00a0b7c169fc5eccfb00ece742de1d290f2c6651f846016660"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data234.b3dm": {
+      "bytes": 3629992,
+      "sha256": "c9d66b1f320947d818534725376640a5d37c0285b2137eab9d7f134d3458e3d4"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data235.b3dm": {
+      "bytes": 3711560,
+      "sha256": "ca77cff9ab6ba285cace6c2d94631dcfbbab6a5af7dc5eecb9c50ea679e32fa5"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data237.b3dm": {
+      "bytes": 2678480,
+      "sha256": "0f60e2193f7725bad42b78f5342aa5b8fee6ab188c71f38899d079fd14d9362f"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data238.b3dm": {
+      "bytes": 2940480,
+      "sha256": "c79c979caa2ccdaf1ef4da83444f8a26a331761a626679def7521d8a4b6bc283"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data239.b3dm": {
+      "bytes": 1734056,
+      "sha256": "f1172cc04d6d44bf667a44983865e855106fe26622e24365c614e7ab423a7013"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data240.b3dm": {
+      "bytes": 918276,
+      "sha256": "72bcfeb3d516a91f08830df591ecbe3a995c78308866b0fff7b27852d9d37cbb"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data242.b3dm": {
+      "bytes": 2076520,
+      "sha256": "aaec43756a25f30a7ec0918febeb962488e75a6dba0e663a1bdb17765bee6379"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data243.b3dm": {
+      "bytes": 1657168,
+      "sha256": "00cba6903f6a8a30a8aebf00647b082bc60ce83669fa4355335bf7da400b48e1"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data244.b3dm": {
+      "bytes": 201172,
+      "sha256": "e31b85905fb1abfafdd0c40be1bbf0df681e5f8cfe9137d09f08308d77432491"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data245.b3dm": {
+      "bytes": 1059912,
+      "sha256": "c85cd36c5d7cf0a3cda077b450ceab0416d2f61934894865c2128eba847346d1"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data248.b3dm": {
+      "bytes": 2306880,
+      "sha256": "1e198d6ba3ab238eadd36a00e55600c927c40f6e7f40f3d62456ab3141bb4ff8"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data249.b3dm": {
+      "bytes": 3123536,
+      "sha256": "39ee6f261293acda04fc6fe5937afb5b6e778abe0dcbd9f8a543d8f4525e3775"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data25.b3dm": {
+      "bytes": 3226760,
+      "sha256": "360639a82cfbfb4c5591989d6d40b479e053d9b9e5fe57f2616328fc3f852f10"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data250.b3dm": {
+      "bytes": 2009868,
+      "sha256": "f977efff46b87f6ac56a771fb26ff2185b6f0fadf0ac0d2d2d6c0d23cdc7838c"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data251.b3dm": {
+      "bytes": 2765544,
+      "sha256": "6098247a80befc92ebdc3a48512cc208aa669cc926724e8523ccc7d26fe0836e"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data253.b3dm": {
+      "bytes": 3489860,
+      "sha256": "ba39cdc89443355c4b999552aa1b02710576edf9b9692508c57f45a95d34ab9a"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data254.b3dm": {
+      "bytes": 2478068,
+      "sha256": "e386f9ba06903e0a831dc14f551b46fa8a07197457d1fd034b032fbb1b3d4616"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data255.b3dm": {
+      "bytes": 1619092,
+      "sha256": "6a0541a7400308a5c3be78b7db18c3b1fb24d007d60f190e71eb7e0018fffa0b"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data256.b3dm": {
+      "bytes": 957620,
+      "sha256": "5d4a153113af7f8f9fefa511e1ffbffaee58196df9299f875ff0d564fd1088df"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data258.b3dm": {
+      "bytes": 445768,
+      "sha256": "d1880dfa16670557b9c6a977f5e78a8464ff0141969e3662b7eb2a5fe28e4357"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data260.b3dm": {
+      "bytes": 939792,
+      "sha256": "b808386e914153b8d462ad61bceec08bb7b7aa0f8c961e78e8b68126da1e438c"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data269.b3dm": {
+      "bytes": 2666432,
+      "sha256": "cdbad927e9ed7d00cd5cb6dbc3659e4f227c94226730e3f9fb889747f76e5527"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data27.b3dm": {
+      "bytes": 4527696,
+      "sha256": "0750534d2f740b31e33841226b36472f171097c8bb722b66c77c78ecfc10c5bd"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data270.b3dm": {
+      "bytes": 1196052,
+      "sha256": "9032e6aa202db975b0cc32379b3cc678750ae1314da62c91479ae09d3c81b102"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data271.b3dm": {
+      "bytes": 1195708,
+      "sha256": "8c2d26db1d3db44474c53a6fcd1b4912850f49c35363d0fa6d840394047c76cd"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data28.b3dm": {
+      "bytes": 5754328,
+      "sha256": "b7fe022002e2bc821a26d84aa90dd6cc83c0e3525521229f5b416cee9aa48df9"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data29.b3dm": {
+      "bytes": 3228728,
+      "sha256": "43027e09272048e36d816c851da5b358536136008ddd5909bfb6e17a0474d0f6"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data291.b3dm": {
+      "bytes": 1417408,
+      "sha256": "b89469120f27d763e30d6f13736e57d38cc2b2424527b7f98b75e81675e3409a"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data292.b3dm": {
+      "bytes": 138852,
+      "sha256": "1a6c18e24663410509d69fbf52decc4a67970e32c98501aea82c67b9c69cd92c"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data293.b3dm": {
+      "bytes": 229984,
+      "sha256": "3c821d1b22fb02fc6247973a30bde156e872f4e862618e293f7ec00dca294676"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data3.b3dm": {
+      "bytes": 380708,
+      "sha256": "d7fb18098029962c8de535394571e78af7f7d46cf73c447ba589d26949314a55"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data30.b3dm": {
+      "bytes": 5633048,
+      "sha256": "f0f735333e17ed641b76559e3efd7d664a0b8b7b77309f68e8d9bbbd0096edab"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data301.b3dm": {
+      "bytes": 1127620,
+      "sha256": "a4b67177b4472ce34bd804ada2b140d72437e1f74737cee668bd71b121b00946"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data32.b3dm": {
+      "bytes": 2332476,
+      "sha256": "163f6eb28340a5d7760a6bb4c38c4c7bb70800dc5671e641f02c1f55a9b99930"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data33.b3dm": {
+      "bytes": 2855528,
+      "sha256": "bf8986671a2a28669b49a5d807428572a47b6ed021aed43ddbfe8aa1b63eceab"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data34.b3dm": {
+      "bytes": 4524656,
+      "sha256": "c435282d9f9accbe8977471ab0be1189fbd0a2ce10eb630150fee2dd68f95b1e"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data35.b3dm": {
+      "bytes": 733808,
+      "sha256": "35f18b7383f249034e0c3eb66ec260ec62fd15d41f8c9b787696d0c4b3e71c1e"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data36.b3dm": {
+      "bytes": 4405696,
+      "sha256": "82f659c38ee8fce4b3cc52d5be50110a9d36ebbde5a4655ab554c9420406e52b"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data360.b3dm": {
+      "bytes": 95316,
+      "sha256": "68a26ca6b48bb87231a9129949fcaab717832b91471f7b78c6ec23b175a6a0c8"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data361.b3dm": {
+      "bytes": 331456,
+      "sha256": "7433492dd878bbe4954eef17e6b7def28098e29655c28ac06c9bd94c3d86835c"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data362.b3dm": {
+      "bytes": 1386352,
+      "sha256": "14d135e34d82663dfef07da828e596888848954b6193700ab2685e7092768c9d"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data363.b3dm": {
+      "bytes": 247652,
+      "sha256": "64c2d5231507b46d9cc18b3c3393daf56f6cbb628e2f0a221fce4664536f8bca"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data364.b3dm": {
+      "bytes": 202564,
+      "sha256": "11fda0a679549777a26355410e59621ef3fec25e36bd2064ee794495c41a0ece"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data367.b3dm": {
+      "bytes": 242928,
+      "sha256": "10e6b3859902d60827a5d3ea835a5ad87a32d132c7f5e2f7d7151e1a5db75df0"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data368.b3dm": {
+      "bytes": 481124,
+      "sha256": "62f8f1114194be97efaea29a8728fa85c3cecbed904443e5b071501ab87aa1b7"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data373.b3dm": {
+      "bytes": 1045304,
+      "sha256": "7bc07d58705a3ad5570b7f87340c809249a412b0fac32da3d459a0e671e10fe2"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data374.b3dm": {
+      "bytes": 1642116,
+      "sha256": "ecda6fb0d42a7a0d25a32cb921d66c28398c905c9c62601400d13905aac72210"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data375.b3dm": {
+      "bytes": 919700,
+      "sha256": "634f30a21e8df12f901ed8284a256b4c172ad7108709fe2c89e860fbd49fdd19"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data376.b3dm": {
+      "bytes": 709804,
+      "sha256": "3ffed3e404a3a2a2b0965c8cb20321d7f7290fa1cdbf6856681621566de66ab0"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data378.b3dm": {
+      "bytes": 364716,
+      "sha256": "c7283c93b6691ae4ce65a43e78f6cb0f620a3c4a02a72abd0cfcf0b8ab8cbbc3"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data379.b3dm": {
+      "bytes": 1152536,
+      "sha256": "24a1eb19819e46d73502463d332f9b4b1b10e04d9198a8740523c69b50864e88"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data380.b3dm": {
+      "bytes": 829624,
+      "sha256": "136ba61934ba525450e4c4e65ca66dc3ebbad378b84256ae7b692225438042a3"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data381.b3dm": {
+      "bytes": 1856844,
+      "sha256": "30eb111b69988f2d3ceec8987e65cd4ed51e621ba53e8c0de7b255e3184eb443"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data383.b3dm": {
+      "bytes": 595336,
+      "sha256": "adb067b693cefe48296c7c4b771ad05ba92c1c04a6d0d5ba70503485dbe05723"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data384.b3dm": {
+      "bytes": 1249716,
+      "sha256": "54198f793956119562c5d6474bd93be90240a0ce1f4e338cb1b8bfa2e1658622"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data388.b3dm": {
+      "bytes": 1345260,
+      "sha256": "dd02d1d4033b466649c39df526a09b86c2fd1117fd14da3f732e79c6b018d171"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data389.b3dm": {
+      "bytes": 1549052,
+      "sha256": "e0b28d6b76fcdc078fee4ff8d5ab91378884c76410e406da5008bed7fda8bc55"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data39.b3dm": {
+      "bytes": 4181664,
+      "sha256": "14106f1f3db90fa8e96f6279fc765a8fdec7910cf685719273ac610757952627"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data4.b3dm": {
+      "bytes": 1072872,
+      "sha256": "17829adbf9bd96b1acdc2c817b2d3ffc377e1c727ed2b9f2e80715e4a67a73e8"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data40.b3dm": {
+      "bytes": 5598296,
+      "sha256": "d46fa4a18219049201a3af976d34e883f04aa7d9d6e1ff9a145beaf088b4ab00"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data41.b3dm": {
+      "bytes": 5240776,
+      "sha256": "e8f44fa03c7f88f08884537e13405a5dea86a48625265d982fe7796481467aa0"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data42.b3dm": {
+      "bytes": 4180796,
+      "sha256": "aa16411e8a182597c7b85fb0774e314e1ba843d4c244c40d4dbc3ffa87779d15"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data44.b3dm": {
+      "bytes": 2450172,
+      "sha256": "d00c825ab9029e9510ea6443491b8d205edd384dbe32e4e57b0365bbb2eb4633"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data45.b3dm": {
+      "bytes": 1770044,
+      "sha256": "130a55f007fbc9fc7aa95b3e72793d5a6dd48612f4edf2a5c8cfb66e7f8b67eb"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data46.b3dm": {
+      "bytes": 1530552,
+      "sha256": "60fc45a3da9e4e3395cbd25056fbdbeb9be4bf0b6683930f059f9772d31624d2"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data47.b3dm": {
+      "bytes": 2678788,
+      "sha256": "fcf2903d3b8458d7304f59ba300c890fb598aa2e196238adbfbe3147571585a9"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data49.b3dm": {
+      "bytes": 4900284,
+      "sha256": "56909f1dc8ac5b8d12771df17f23936ea403a3deab8e9bae25a0b8c53bf431ae"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data5.b3dm": {
+      "bytes": 1754640,
+      "sha256": "5a5cab8a3e165cffd93a430fa264ed4b18a5972531a98e205d708ca4df67a492"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data50.b3dm": {
+      "bytes": 3844720,
+      "sha256": "645b9fb312e539a00b1b9db8bfb0c6e2c071074918036cc61eb608bc49c1de09"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data507.b3dm": {
+      "bytes": 1127316,
+      "sha256": "dafe0c750a86eb00d7dc427985ea7d3ac20ccfc184176483ca94943146ad7fbf"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data509.b3dm": {
+      "bytes": 1889772,
+      "sha256": "ee672c24c196cbf10ac2c6effb9ab38b07ddf14d12f12d1ce062d147237b2c98"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data51.b3dm": {
+      "bytes": 4388304,
+      "sha256": "9886d07d42cbd4585e6492a23f33d1b5af9b1bcec8769bb186d3ee0beb74902d"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data517.b3dm": {
+      "bytes": 1917480,
+      "sha256": "2942edde47a905967c49970c134ca4c157803f8383a2c911309120e2cc22d102"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data518.b3dm": {
+      "bytes": 1833972,
+      "sha256": "599a0786b52e86cb19cfc46c44c6d85372f33c1ec918174cb638e6719058c8d7"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data52.b3dm": {
+      "bytes": 2975356,
+      "sha256": "dbe82c483b3d08c40b5e3c55ae862a3654d517b8b8ae3cc09f99deba0f708598"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data522.b3dm": {
+      "bytes": 905832,
+      "sha256": "4ef856c6c79cd67b56b1c7678cb001cb1b0c5c103f61b12983592e72df0c327b"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data523.b3dm": {
+      "bytes": 1517412,
+      "sha256": "ecac7a595438f72ac700997d72862deb3b59714656e383d2085efa88431e0ff6"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data54.b3dm": {
+      "bytes": 1486344,
+      "sha256": "ba513f6fa0a670eafbab9d5a6ac87c77daeaa8a95da9dcc9e83d43e906d0d3da"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data55.b3dm": {
+      "bytes": 1726912,
+      "sha256": "5f04b0cc307ba280179da5d8ab08bfb36b266f969b63d0cb3389620d9afaf559"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data56.b3dm": {
+      "bytes": 614480,
+      "sha256": "1beb3be9cf20ca798cf0703635d30ba7b7e3b54123ecf57e7ce76a822a06ef1e"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data57.b3dm": {
+      "bytes": 994048,
+      "sha256": "12eb163a5d32c3beee623a55b67775bdb9033d28d58694a5dbfe51bccccd9bb9"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data6.b3dm": {
+      "bytes": 5758608,
+      "sha256": "b0259142c43b902d778c430c1888c6d2dfed83723f63e071de6fe08e3599a7cb"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data61.b3dm": {
+      "bytes": 625912,
+      "sha256": "28a37a1b45d138d25f4295e5962c84da5a08945e02d15413624899e1c5bf1218"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data63.b3dm": {
+      "bytes": 1641064,
+      "sha256": "1de832c1d080cee49ecc5744fd5c6fed63010f93bc8361f1163f2f3ab2a4f6b8"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data65.b3dm": {
+      "bytes": 2947772,
+      "sha256": "0dad385d6580826b97567b3514b71ee9b1f1ebe7e11cb7221604fe1a1fb19cc0"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data66.b3dm": {
+      "bytes": 5045424,
+      "sha256": "ae0ef48366fa3ba5272f4a8aeb8a80007fb585568fddd01f5a1ba8e81d6695ca"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data67.b3dm": {
+      "bytes": 768300,
+      "sha256": "2215095e1b35a3aae493fe60af7271eda4e51f2aa76d849e1836c6bf535e879f"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data68.b3dm": {
+      "bytes": 2758356,
+      "sha256": "90df789b8bcb28fd273d917ce7076d0d127f53f638fd14393b5deb50169b979a"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data71.b3dm": {
+      "bytes": 1071444,
+      "sha256": "0b655e2ff158ed97c99ff26ac6d5986cdd720afa9d666ab3df41a060fa63556f"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data75.b3dm": {
+      "bytes": 522144,
+      "sha256": "4ad76b671c4f0355f35c80b352fcafe2b029f9f3de8909a9cf29a683b6ce26a7"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data76.b3dm": {
+      "bytes": 3113472,
+      "sha256": "75cf4cf69fe80d1dd195ac35a635c3a393bb9b2671c92e48cdd98fed68ca6c29"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data77.b3dm": {
+      "bytes": 900460,
+      "sha256": "3fe3268fc5c719393065e9941939dfb05ab92bdd8b7f1eabd71c15851403c2e4"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data78.b3dm": {
+      "bytes": 705492,
+      "sha256": "ffddc64f5c2c5b9eaf6bab1bf23aca64e583ecf680e2d80571c916279257c909"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data81.b3dm": {
+      "bytes": 3929316,
+      "sha256": "3844e16064eb98c4e04488142d6394ce794ee34f4f271015a6000c5f099bd56e"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data82.b3dm": {
+      "bytes": 2750572,
+      "sha256": "c4fc4cfdaa4563f57cf72bc5a486cc95d26df13baf6f9bb96445593b56910dc1"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data83.b3dm": {
+      "bytes": 4516536,
+      "sha256": "fb6f912eb53ef79ac6be988212a1ce5533175b86338031d9849d31534e532e78"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data84.b3dm": {
+      "bytes": 2009256,
+      "sha256": "c5902cb12f8c0ac7224dbb505f411ffe60b6d2bd34540d94833810698e5ac250"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data86.b3dm": {
+      "bytes": 1430608,
+      "sha256": "a7ca636a65cab9c04bf0f0b93ea414b6c10e3b6d4c10f0fa1e01e268e499bb82"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data87.b3dm": {
+      "bytes": 263532,
+      "sha256": "f2e49c4ee7e2cffb89b590a6d4ad5f8ad3038676a85c75dcdf4cb2aadbd11a14"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data88.b3dm": {
+      "bytes": 274924,
+      "sha256": "92143311122aa24c29d8042ddc47ad59e719e3c5328ca81c8a55f9d1c9367f6a"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data89.b3dm": {
+      "bytes": 407656,
+      "sha256": "8a6bb4ffc97ca141ac6500edb3d84b980499ebf537e374f3ae3afc73e46994a0"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data9.b3dm": {
+      "bytes": 20660,
+      "sha256": "2b81de31bfacec155e84a228991ec327e3f1b3101e7f02875f581e23a38b7dcb"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data91.b3dm": {
+      "bytes": 3496080,
+      "sha256": "bdd0c75be8cbc252166ef7b3666c3548a630dafb73e4ca55229e1749ab2e58b7"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data92.b3dm": {
+      "bytes": 1622372,
+      "sha256": "74650efd032c7c71c95f504bae6b993b84e9fa2870f12a7ef91f120b6b18e231"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data93.b3dm": {
+      "bytes": 1553896,
+      "sha256": "050620f4931ad51c42328850c8fc6a4214440d5f59d8c1b2b9d6c03e8ab48bf5"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data94.b3dm": {
+      "bytes": 2429680,
+      "sha256": "9321c1502cf56db309600e4f1c5ba86efaa4501217ad9a992d2e47b73def4c10"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data96.b3dm": {
+      "bytes": 292980,
+      "sha256": "09cd9d482bfcf73679fde12ca1f6c0477d07236394078439f5dbfdd9a88f434c"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data97.b3dm": {
+      "bytes": 575500,
+      "sha256": "5ece8fbdfb7fde023fe5992dfc3625cbc61837ad2781b245b1854c8d45cacc75"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data98.b3dm": {
+      "bytes": 705452,
+      "sha256": "9409e3ff0bf4a372702f62f692a8d8226accbb35fd2dfd888417670f73c7d9af"
+    },
+    "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data99.b3dm": {
+      "bytes": 1932372,
+      "sha256": "d2d33a44e6278a41ed21b3b03ae3b38b4e0c995f2e031e79d6dd4b0fad9a6a5b"
+    }
+  }
+}

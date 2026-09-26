@@ -14,7 +14,17 @@
 
 ## 自分のPCで試す
 
+[外部協力者の制作環境](docs/contributor-workspace.md)：環境確認、公式入力の取得、森JP周辺の再生成、採用済み街の登録、編集コピー作成を共通CLIから実行できます。必要なローカルデータは `data/local/` にまとめます。**街全体の公開配布は未整備です。** 森JP周辺の再生成と街全体の取得は別の状態として表示します。[資産ごとの配布準備状況](docs/asset-distribution-readiness.md)
+
+[地区ごとの取得と構成の共有](docs/district-distribution.md)：森JP周辺と共通素材を選び、必要なファイルだけを取得できます。版・入力・コードをlockに固定し、取得済みデータや生成済みモデルを再利用します。樹木・材質ZIPは明示したローカルファイルから取り込めます。公開URL、旧都市全体の空間分割・自動組立は未整備です。
+
 [東京タワーの許諾・独立ファイルへの切り出し](assets/tokyo-tower/README.md)：鉄骨・展望台・窓・ガラス床まわりの独自77部品をCC BY 4.0、対象コードをMITで提供。切り出しには固定した旧入力が必要です。
+
+[既存の街の画像付き部品一覧](docs/city-catalog.md)：道路・植栽・車両・建物など13分類から、部品名・原版の表示状態・出典記録を確認できます。制作元のメモも残せます。画像は手元の固定版からローカルに生成します。
+
+[旧制作入力の取り込みと再実行](docs/city-input-recovery.md)：回収した地図・配置20ファイルをhash付きで集約します。道路・配置12出力の再生成と、街路樹・低木2,647メッシュの形状・変換を照合済みです。入力の公開配布と街全体の再構築は未完了です。
+
+[植栽・車両・設備の追加照合](docs/city-component-verification.md)：残る29メッシュと31材質・2,676部品の材質割当を照合しました。[樹木・低木の基本形状16部品と31材質](assets/procedural-components/README.md)にはCC BY 4.0を適用し、旧都市なしで開けるZIPを作成・検証済みです。公開URLは未登録です。
 
 [森JPタワーの独立生成・置換試験](starter/mori/README.md)：旧都市ファイルなしで公式PLATEAUから詳細外装・低層部を生成し、4視点のBefore/Afterを作成します。対象生成コードはMIT、詳細モデルの独自追加部分等はCC BY 4.0。PLATEAU等の第三者条件は保持します。
 
@@ -76,6 +86,6 @@ Blenderの操作経験は不要です。Observerは違いを発見し、Reporter
 
 ## ライセンスの状態
 
-**対象の独自生成コード・スターター用コード・梱包テストにMIT、広場6部品・森JPタワーの特定の独自追加部分・東京タワーの指定77部品等にCC BY 4.0を適用しました。リポジトリ全体への適用ではありません。** 対象は [LICENSE.md](LICENSE.md)、コード許諾文は [MIT-LICENSE.txt](MIT-LICENSE.txt)、モデルの条件は [ASSET-LICENSE.md](starter/plaza/ASSET-LICENSE.md)、出典は [NOTICE.md](NOTICE.md) と [provenance.json](starter/plaza/provenance.json) を参照してください。
+**対象の独自生成コード・スターター用コード・梱包テストにMIT、広場6部品・森JPタワーの特定の独自追加部分・東京タワーの指定77部品・植栽の指定16部品と31材質等にCC BY 4.0を適用しました。リポジトリ全体への適用ではありません。** 対象は [LICENSE.md](LICENSE.md)、コード許諾文は [MIT-LICENSE.txt](MIT-LICENSE.txt)、モデルの条件は [ASSET-LICENSE.md](starter/plaza/ASSET-LICENSE.md)、出典は [NOTICE.md](NOTICE.md) と [provenance.json](starter/plaza/provenance.json) を参照してください。
 
 元の都市blend、その他の生成モデル、PLATEAU・OSMデータ、参考写真・Texture・音楽、その他のコード・文書へ一括したライセンスを付与するものではありません。第三者の条件は保持します。
