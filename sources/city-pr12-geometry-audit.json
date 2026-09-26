@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "input_sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+  "blender_version": "4.5.1 LTS",
+  "mesh_objects": 3255,
+  "with_source_url_claim": 428,
+  "source_claim_counts": {
+    "(none)": 2827,
+    "PLATEAU 2025, source detail LOD2 or LOD3": 365,
+    "PLATEAU Minato 2025, LOD3 dataset; mixed source detail": 63
+  },
+  "collections": {
+    "2019 reference window revision": 5,
+    "Collection": 21,
+    "Environment • park undergrowth": 1333,
+    "Flush glass floor surrounds": 36,
+    "Mori JP curtain wall": 4,
+    "Mori JP interior": 12,
+    "Mori JP podium": 15,
+    "Mori continuous pearl glass": 4,
+    "Observation interior detail": 5,
+    "PLATEAU 2025 • real building geometry and imagery": 63,
+    "PLATEAU 2025 • real building geometry and imagery.001": 365,
+    "Photo based main deck": 15,
+    "Scene Collection": 16,
+    "Skywalk visible detail": 6,
+    "Street close-up • added physical details": 8,
+    "Tokyo Tower decks and interior": 13,
+    "Tokyo Tower structure": 4,
+    "Tokyo traffic and street trees": 1330
+  },
+  "limits": [
+    "Embedded claims have not been verified against source geometry or permission records.",
+    "Collection membership can overlap; collection counts must not be summed as unique objects.",
+    "No material, modifier, animation, dependency or real-world accuracy certification."
+  ],
+  "checked_at": "2026-09-26",
+  "script": "scripts/audit_city_geometry.py",
+  "script_sha256_lf": "6bc725510790228cc6e65f5a555bdf0da2e7d05c1a55feb86dd010328f284e6f",
+  "inventory_sha256": "2fd8f77fe9377723c0077ceb7f9354004b9f930d115e2101eb9a40b2b1e571c0",
+  "without_source_url_claim": 2827,
+  "full_city_distribution_ready": false,
+  "review": "docs/city-distribution-plan.md",
+  "note": "Missing embedded source metadata is not evidence of missing rights. Match separately granted original parts to their provenance records."
+}

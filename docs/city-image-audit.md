@@ -45,6 +45,8 @@ $python = 'C:\Program Files\Blender Foundation\Blender 4.5\4.5\python\bin\python
 
 ## 残る画像と配布条件
 
+続く作業で、未確認の1枚を参照しない[数式材質の比較候補](city-facades-v1.md)を作成しました。候補では画像の除去を保存後に確認しました。ここに記録した採用版・画像監査結果は変更していません。
+
 `facade_atlas.png` のpacked SHA-256は `6f7991ed6d5a1c19d55d7d3dd95821f5cfa11040e2ff065a1531aacb7ea2424c` です。既存の文書にはAI生成の外壁アトラスとの記載がありますが、利用可能な旧作業フォルダー内に `work/sky_detail/atlas_finish.py` や対応する生成記録は見つかりませんでした。生成者、参照入力、生成物の採用条件を示す記録を復元するか、公開候補の8オブジェクトだけを出典の明確な材質へ差し替える必要があります。
 
 [PLATEAUサイトポリシー](https://www.mlit.go.jp/plateau/site-policy/)は2026-09-26に再確認しました。対象コンテンツには条件と例外があり、出典・加工の表示が必要です。[港区の個別resourceページ](https://www.geospatial.jp/ckan/dataset/plateau-13103-minato-ku-2025/resource/08755b94-7b2e-4c9c-bf35-6c4d0768a463)は今回の取得ではHTTP 403でした。以前の確認記録は保持しますが、全datasetの個別条件を再確認できたとは扱いません。

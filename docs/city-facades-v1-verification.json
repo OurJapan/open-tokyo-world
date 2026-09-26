@@ -1,0 +1,326 @@
+{
+  "version": 1,
+  "ok": true,
+  "status": "local-candidate-human-review-pending",
+  "input_sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+  "config_sha256": "cc0216616e4e43e4b3cdf503b8288db1621807c48ef5c9f23c10172ac4f34cff",
+  "cameras_sha256": "d3acd7db71f536e7eac61941666e40f90c414c7f82b5efb1d7ced16b95d539c3",
+  "jobs": {
+    "prepare": {
+      "seconds": 17.094,
+      "report_sha256": "14bc53d8337aa0ded17dbd50defd0a195cbd4987ab65512b77dbd51e2d38e906"
+    },
+    "validate-before": {
+      "seconds": 34.109,
+      "report_sha256": "cc5b1ba3bc47d80c80148fd4a5c54c4b2566ad86816d302ad34a54a9b7f53067"
+    },
+    "validate-after": {
+      "seconds": 33.782,
+      "report_sha256": "89aee3dd27ee6825493f154334133d5ed6556b21ca628a8f97b231cdd18f7cce"
+    },
+    "render-before": {
+      "seconds": 24.89,
+      "report_sha256": "0bdc41ee957ccaf30b46eda5497b596ab76fba0368f2cbf347e8fb94d12f66f2"
+    },
+    "render-after": {
+      "seconds": 27.641,
+      "report_sha256": "795c133130a82ecd4bfb901d5847c036a8094d0b4c94ad80d56cb32c6b6ba71a"
+    }
+  },
+  "blender_version": "4.5.1 LTS",
+  "device": "OPTIX",
+  "width": 960,
+  "height": 540,
+  "samples": 32,
+  "seed": 0,
+  "code_files": {
+    "scripts/review_city_facades.py": "c50b75fb7a85bf800fd17b18e8b94873f80f7f97ecd27498214c0ff3e225cdbc",
+    "scripts/city_facades.py": "5d80321d15d5f0043be5a7f256e77def5bef5b2c4960834320f60365741e6c90",
+    "scripts/review.py": "32ffe86cab6a546d3675a3444062b3f3c65af13ae2f0d150e529f90dc7949d6d",
+    "scripts/blender_worker.py": "2c05c39852d2dd4b90906932e4e772d87d55697c37b9ac57a02114b8e0ccafd7"
+  },
+  "limitations": [
+    "Illustrative window placement; no real-world accuracy claim.",
+    "Original scene and full-city redistribution approval remain unchanged.",
+    "Checks use the review harness mesh/material/asset fingerprints; no complete modifier, animation or node-group audit."
+  ],
+  "changed_objects": [
+    "wall0",
+    "wall1",
+    "wall2",
+    "wall3",
+    "wall4",
+    "wall5",
+    "wall6",
+    "wall7"
+  ],
+  "counts": {
+    "objects": 3305,
+    "vertices": 51234867,
+    "polygons": 39532616
+  },
+  "remaining_packed_images": 382,
+  "output_blends": {
+    "before.blend": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+    "after.blend": "b6925b773606403202da8821f908573151b04afae685ec26a27713e6e2177b20"
+  },
+  "checked_at": "2026-09-26",
+  "code_base_commit": "9e9f3ce926500cc438ede6dd9310d0e904b4af0c",
+  "code_files_sha256_lf": {
+    "scripts/review_city_facades.py": "c50b75fb7a85bf800fd17b18e8b94873f80f7f97ecd27498214c0ff3e225cdbc",
+    "scripts/city_facades.py": "5d80321d15d5f0043be5a7f256e77def5bef5b2c4960834320f60365741e6c90",
+    "scripts/review.py": "50628b947491a74a755deedcbadc135d37defe5bff420abdf91d91103452d64b",
+    "scripts/blender_worker.py": "413aef20acde7aaefa2c8466b0f11b2c321609f347117b12a1c616867411654f"
+  },
+  "hash_note": "code_files are executed local file bytes; code_files_sha256_lf normalizes Windows newlines for checkout comparison.",
+  "config_sha256_lf": "50b21ccc656ab1eb9a7f653fbf84f9acc8bd10d32087590b3208401bcd1b46cf",
+  "cameras_sha256_lf": "87a558c29ff535a88fc720cfcfdec5bfcc682bd72a699670c8e5e39476c80697",
+  "mesh_objects": 3255,
+  "input_unchanged": true,
+  "atlas_removed_from_saved_candidate": true,
+  "other_assets_equal": true,
+  "visual_observations": [
+    "All three before/after pairs inspected; close view loses balcony, tile and air-conditioner image details.",
+    "Illustrative grid produces partial windows at some roof edges and corners; visual acceptance is pending."
+  ],
+  "material_graph_hashes": {
+    "wall0": "eb1c4a748106b79d6edb5ca0aaac1a749cefeff13a25ae10d4e78f783a54ce3b",
+    "wall1": "8040d88eae03eb10aa41769e7e8517be69aa8344434860a8f0361c2bc15300c7",
+    "wall2": "4e6d6c058bb3a3715801997b1ccde31abf6d38e32c7d68f7dd21e3f4c99ae960",
+    "wall3": "81d90587b773e0708e7bbf3d0332ddd24decceb7635e0c22b83d757febb3a92f",
+    "wall4": "5c7b948dd84c5e0e8cec19ae9c38ca44726c9b2947ec0823d48a0c00f07b1c62",
+    "wall5": "4aa7a6c27949f261929b47eec903906d764bb3495f7baa8ab870a34c40829c8a",
+    "wall6": "7d565dc5f73facdcf5ebffa2d6ced7bc72b5cd017cad37cca3b5bd215d6bd727",
+    "wall7": "c520bb3ec72f870b0eee8e4488fd898622b9e25475203c06705089d4253da949"
+  },
+  "renders": {
+    "render-before": {
+      "ok": true,
+      "views": [
+        {
+          "id": "facade-near",
+          "seconds": 7.562,
+          "sha256": "bc9c155949203a6c2e58f1934e587283f7c7109a0cc044476f8c7e95eff058a9",
+          "pixel_sha256": "47265a0349f7f4880d46523e4370189df852e998f577cfc9660cd02a09bc7c9b",
+          "rgb_min": 0.07058823853731155,
+          "rgb_max": 0.8588235974311829,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              -0.9363291263580322,
+              0.11135562509298325,
+              -0.33299797773361206,
+              -48.0
+            ],
+            [
+              -0.35112351179122925,
+              -0.29694825410842896,
+              0.8879943490028381,
+              -31.0
+            ],
+            [
+              5.722547768982622e-09,
+              0.9483784437179565,
+              0.3171408772468567,
+              32.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "neighbourhood",
+          "seconds": 2.969,
+          "sha256": "19081a0ca410a37cccafb1b98b4afd6e756bfdd705e944d21b096c3e4ef1f781",
+          "pixel_sha256": "6c5bbebd3a99ea6bf8c8e241b156c21232e477b2d5871a894690570749eefed0",
+          "rgb_min": 0.011764707043766975,
+          "rgb_max": 0.8862745761871338,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              0.7831107974052429,
+              0.2707836925983429,
+              -0.5598335862159729,
+              -195.0
+            ],
+            [
+              -0.6218822002410889,
+              0.3409867584705353,
+              -0.7049756050109863,
+              -470.0
+            ],
+            [
+              -3.704350248767696e-08,
+              0.9002245664596558,
+              0.4354259669780731,
+              120.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "city-context",
+          "seconds": 2.797,
+          "sha256": "e455546dc5d3b46880fd99093dfe14104abdf926f9bc039ff6e5d5a985f66510",
+          "pixel_sha256": "325aa3e443c5eaddb6bed44c1c823c88a3c8151aaba413d1fef572c3be8a2aab",
+          "rgb_min": 0.003921568859368563,
+          "rgb_max": 0.8980392813682556,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              0.6643637418746948,
+              -0.3355467915534973,
+              0.6678541302680969,
+              900.0
+            ],
+            [
+              0.7474094033241272,
+              0.29826369881629944,
+              -0.5936480164527893,
+              -900.0
+            ],
+            [
+              2.1600152777523363e-08,
+              0.8935586810112,
+              0.44894641637802124,
+              650.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "devices": [
+        "NVIDIA GeForce RTX 3060 Ti"
+      ],
+      "human_camera_acceptance": "pending"
+    },
+    "render-after": {
+      "ok": true,
+      "views": [
+        {
+          "id": "facade-near",
+          "seconds": 8.844,
+          "sha256": "f62aaaf2bc280036396e1f23a0cc4d999fec1508500c5eb49de53fcffea500c3",
+          "pixel_sha256": "0f550591af366de5e8c040d6d2cc94331676fa7426646d10f265866cde43ea8d",
+          "rgb_min": 0.07058823853731155,
+          "rgb_max": 0.847058892250061,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              -0.9363291263580322,
+              0.11135562509298325,
+              -0.33299797773361206,
+              -48.0
+            ],
+            [
+              -0.35112351179122925,
+              -0.29694825410842896,
+              0.8879943490028381,
+              -31.0
+            ],
+            [
+              5.722547768982622e-09,
+              0.9483784437179565,
+              0.3171408772468567,
+              32.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "neighbourhood",
+          "seconds": 3.64,
+          "sha256": "89fd356861a427a62baa871e36c727c339518ed96eccd3abfe7b50c5f44c0ec9",
+          "pixel_sha256": "440d5313df3f2d3c867fb87dff9de1314de4e130761a5ac86f8f94204206796d",
+          "rgb_min": 0.011764707043766975,
+          "rgb_max": 0.8862745761871338,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              0.7831107974052429,
+              0.2707836925983429,
+              -0.5598335862159729,
+              -195.0
+            ],
+            [
+              -0.6218822002410889,
+              0.3409867584705353,
+              -0.7049756050109863,
+              -470.0
+            ],
+            [
+              -3.704350248767696e-08,
+              0.9002245664596558,
+              0.4354259669780731,
+              120.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "city-context",
+          "seconds": 3.265,
+          "sha256": "6dddeb7388ece239d75ed52885c077141160c44f36233d27c6f7cb4c1caea7fa",
+          "pixel_sha256": "17430b67aac7b408fb836755da732e729f3bae7f8ad4c9b225721c27ac9f92a4",
+          "rgb_min": 0.003921568859368563,
+          "rgb_max": 0.8980392813682556,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              0.6643637418746948,
+              -0.3355467915534973,
+              0.6678541302680969,
+              900.0
+            ],
+            [
+              0.7474094033241272,
+              0.29826369881629944,
+              -0.5936480164527893,
+              -900.0
+            ],
+            [
+              2.1600152777523363e-08,
+              0.8935586810112,
+              0.44894641637802124,
+              650.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "devices": [
+        "NVIDIA GeForce RTX 3060 Ti"
+      ],
+      "human_camera_acceptance": "pending"
+    }
+  }
+}

@@ -8,18 +8,29 @@
       "image_identity_audit": "sources/city-pr12-image-audit.json",
       "unresolved_image": "facade_atlas.png",
       "remaining_review": "Dataset-specific conditions, attribution and the legacy atlas; identity checks do not grant rights",
-      "redistribution": "pending"
+      "redistribution": "pending",
+      "atlas_replacement_candidate": {
+        "review": "docs/city-facades-v1.md",
+        "verification": "docs/city-facades-v1-verification.json",
+        "status": "local-candidate-human-review-pending",
+        "accepted_city_unchanged": true
+      }
     },
     {
       "kind": "roads-and-layout",
       "source": "OpenStreetMap contributors",
       "declared_license": "ODbL",
-      "derivation_review": "pending"
+      "derivation_review": "pending",
+      "saved_osm_sha256": "f04e8e70ab24a61ca749375d1ef37401feb0fdc840cc506b670ef71454a6a8ab",
+      "saved_osm_snapshot_reproducible": false
     },
     {
       "kind": "music",
       "included_in_review": false,
       "redistribution": "pending"
     }
-  ]
+  ],
+  "geometry_inventory": "sources/city-pr12-geometry-audit.json",
+  "distribution_review": "docs/city-distribution-plan.md",
+  "notice_draft": "sources/city-distribution-NOTICE.draft.md"
 }
