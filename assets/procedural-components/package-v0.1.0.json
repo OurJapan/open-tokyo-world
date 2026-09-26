@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "status": "licensed-package-verified-public-release-pending",
+  "license": "CC-BY-4.0",
+  "asset_id": "otw:procedural-components:0.1.0",
+  "package": {
+    "file": "procedural-components-v0.1.0.zip",
+    "bytes": 10405562,
+    "sha256": "8c78dcce8ba43c5d4e28cb92936b0a1569dc1fe8f68042efce49fbfe4f6197c6"
+  },
+  "model": {
+    "bytes": 9844037,
+    "sha256": "09328b7da383f8bdd6dfbf8173a5000105c9aee3f5484ccad2ee866bbaee59a7"
+  },
+  "verification": {
+    "ok": true,
+    "license": "CC-BY-4.0",
+    "blender": "4.5.1 LTS",
+    "mesh_prototypes": 16,
+    "procedural_materials": 31,
+    "images": 0,
+    "libraries": 0,
+    "embedded_texts": 0,
+    "state_sha256": "aee1818bc087f2377cdb0382fe3edb623ba7c362ceb3183cd3e95497588b333f",
+    "file_sha256": "09328b7da383f8bdd6dfbf8173a5000105c9aee3f5484ccad2ee866bbaee59a7",
+    "file_unchanged": true,
+    "approved_preview_pixels_equal": true,
+    "verifier_sha256_lf": "ab2c8ac1b92d79e2d9f41e97545162e4b3c354960d163e120a2372b8aa99ca90"
+  },
+  "source_candidate_unchanged": true,
+  "archive_members": [
+    "ASSET-LICENSE.md",
+    "NOTICE.md",
+    "README.md",
+    "inventory.json",
+    "kit.blend",
+    "preview.png",
+    "provenance.json",
+    "verification.json"
+  ],
+  "zip_crc_and_hashes_verified": true,
+  "reopened_after_extraction": true,
+  "public_download_url": null,
+  "platform_scope": "Same Windows PC, fresh extraction directory; no legacy city input was opened.",
+  "packager_sha256_lf": "ab2c8ac1b92d79e2d9f41e97545162e4b3c354960d163e120a2372b8aa99ca90",
+  "recorded_on": "2026-09-27",
+  "consent_record": "assets/procedural-components/provenance.json",
+  "inventory": {
+    "version": 1,
+    "license": "CC-BY-4.0",
+    "packager_sha256_lf": "ab2c8ac1b92d79e2d9f41e97545162e4b3c354960d163e120a2372b8aa99ca90",
+    "files": {
+      "ASSET-LICENSE.md": {
+        "bytes": 1600,
+        "sha256": "e4e6943fa490d095f5d2ee33518300053d125329f20ff060246f7d7e0b64226f"
+      },
+      "NOTICE.md": {
+        "bytes": 1703,
+        "sha256": "c4bce516816558f920b778dcbef8550308d6c3b58018b7b1871987bf3b75830c"
+      },
+      "README.md": {
+        "bytes": 1975,
+        "sha256": "24bd5a770ec273d643b8ddbbd153dde543ccd09db405ea8be185848ae76192e6"
+      },
+      "kit.blend": {
+        "bytes": 9844037,
+        "sha256": "09328b7da383f8bdd6dfbf8173a5000105c9aee3f5484ccad2ee866bbaee59a7"
+      },
+      "preview.png": {
+        "bytes": 818671,
+        "sha256": "e80c0d0f559b98f302e8db6208fbb860401717b413f4816dd84faf466dd47508"
+      },
+      "provenance.json": {
+        "bytes": 10140,
+        "sha256": "232f871447e68c9bfed6b1dcbc523ef077bfcfc25faa5c54a5ccb9eb0d7b6d6d"
+      },
+      "verification.json": {
+        "bytes": 525,
+        "sha256": "fbcc148035a4c7d794a9f2c9de9fe6dd4e7bf7e4b19e17271b3b25a88ad6da3d"
+      }
+    }
+  },
+  "portable_checks": {
+    "tests": 155,
+    "passed": 150,
+    "skipped": 5,
+    "failed": 0
+  }
+}

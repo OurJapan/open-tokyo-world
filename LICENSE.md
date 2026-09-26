@@ -75,12 +75,18 @@ The original implementations in `scripts/fetch_legacy_production.py`, `scripts/a
 
 The original implementations in `scripts/import_legacy_inputs.py`, `scripts/replay_production_inputs.py`, `scripts/verify_city_tree_placements.py`, and `tests/test_production_inputs.py` are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This covers the new import, replay and verification utilities. It does not grant new rights to the historical scripts, recovered map/layout data, intermediate scenes, or third-party Python packages.
 
-The original implementations in `scripts/component_contracts.py`, `scripts/verify_city_components.py`, `scripts/prepare_procedural_candidate.py`, `tests/test_city_components.py`, and `tests/components_blender.py` are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This covers the new comparison and local candidate preparation utilities. It does not grant rights to historical source fragments executed from separately supplied files, or to the extracted asset candidate; the latter's proposed scope remains subject to the account holder's license decision.
+The original implementations in `scripts/component_contracts.py`, `scripts/verify_city_components.py`, `scripts/prepare_procedural_candidate.py`, `tests/test_city_components.py`, and `tests/components_blender.py` are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This covers the new comparison and local candidate preparation utilities, not historical source fragments executed from separately supplied files. The extracted assets have the separate grant below.
+
+The original `scripts/package_procedural_components.py` and `tests/test_procedural_package.py` are also licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This covers the new license-annotation, verification and packaging implementations; it does not relicense Blender or historical source code.
+
+## CC BY 4.0: tree/shrub prototypes and procedural materials
+
+On 2026-09-27 the account holder approved CC BY 4.0 for the 16 prototype meshes and 31 procedural materials identified in [provenance](assets/procedural-components/provenance.json), together with their dedicated preview setup and image, to the extent the licensor controls those rights. See the [asset grant](assets/procedural-components/ASSET-LICENSE.md). The original city placement, mapped aggregate meshes, third-party inputs and historical code remain outside this grant.
 
 ## Outside these grants
 
 Except for the separately identified starters and original additions above, no license is granted here for other repository files, legacy city scenes, generated models, reference photos, textures, music, trademarks, PLATEAU data, OpenStreetMap data, or other third-party content. Any separately applicable license remains in effect. Execution of the covered code does not itself grant rights to its inputs or outputs. This scope document adds no conditions to the MIT grant for the covered code.
 
-広場6部品、森JPタワーの独自追加部分等、および東京タワーの指定独自部分等にCC BY 4.0を適用します。全都市モデルや他のコード・文書が一括してMIT／CC BYになったとは扱わないでください。
+広場6部品、森JPタワーの独自追加部分等、東京タワーの指定独自部分等、および植栽の指定16部品・31材質等にCC BY 4.0を適用します。全都市モデルや他のコード・文書が一括してMIT／CC BYになったとは扱わないでください。
 
 See [NOTICE](NOTICE.md) for provenance and operational dependencies. Attribution required by a third-party license must be retained when that data is used; those requirements are not additional restrictions on the independent MIT code.

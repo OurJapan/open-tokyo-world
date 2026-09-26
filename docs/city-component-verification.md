@@ -48,9 +48,9 @@ python -m unittest discover -s tests
 
 ## 配布候補を分ける
 
-最初の候補は、街路樹6バリエーションの幹・葉12メッシュと低木4メッシュ、数式材質31種です。基本形状のローカル座標と新しい展示用配置だけを取り出し、街の配置座標・地図・建物・旧スクリプトを含めません。これはローカル確認用の候補で、許諾確定や公開済みパッケージではありません。
+最初の候補は、街路樹6バリエーションの幹・葉12メッシュと低木4メッシュ、数式材質31種です。基本形状のローカル座標と新しい展示用配置だけを取り出し、街の配置座標・地図・建物・旧スクリプトを含めません。2026-09-27、この限定範囲へのCC BY 4.0適用に同意があり、[正式な許諾記録とZIP](../assets/procedural-components/README.md)を用意しました。公開URLは未登録です。
 
-[候補の固定台帳](../manifests/procedural-components-distribution.draft.json)に全16部品・31材質の名前とhash、除外範囲を記録しました。2026-09-27に作成した `data/local/candidates/procedural-components-20260927/kit.blend` は9,844,090 bytes、SHA-256 `78ea637f9b154274c62fd20160995b649139c191a09056f8696ec5baee10595a` です。別プロセスで16形状・31材質を照合し、画像・外部library参照・埋め込みTextがすべて0件で、1200×850の確認画像も生成できました。6種類の木と4種類の低木が画面内に収まることを確認しています。残りの塗装・灯具等の材質は、対応する街の集約形状を含めず材質データだけ保持しています。
+[承認前の候補台帳](../manifests/procedural-components-distribution.draft.json)は履歴として保持し、現行の許諾は[確定した対象台帳](../assets/procedural-components/provenance.json)を参照します。2026-09-27に作成した `data/local/candidates/procedural-components-20260927/kit.blend` は9,844,090 bytes、SHA-256 `78ea637f9b154274c62fd20160995b649139c191a09056f8696ec5baee10595a` です。別プロセスで16形状・31材質を照合し、画像・外部library参照・埋め込みTextがすべて0件で、1200×850の確認画像も生成できました。6種類の木と4種類の低木が画面内に収まることを確認しています。残りの塗装・灯具等の材質は、対応する街の集約形状を含めず材質データだけ保持しています。
 
 この確認は同じWindows PCで行いました。通常テストは150件中145件成功・5件スキップ、上記のBlender fixtureも成功しています。
 
@@ -65,4 +65,4 @@ python -m unittest discover -s tests
 
 一方、29の集約メッシュは地図から推定した位置や前段の建物形状を含みます。基本形状と同じ配布範囲には含めず、地図・建物入力と加工経路の整理を続けます。OSMの利用には出典とODbLへの案内が必要です。[OSM公式案内](https://www.openstreetmap.org/copyright)
 
-候補の独自部分は、既存の独自資産と同じCC BY 4.0を提案します。この条件では出典・変更表示を伴う改変や商用再配布が可能です。適用には、ご本人が許諾できる範囲であることと、その範囲への許諾意思を確認します。[CC BY 4.0公式案内](https://creativecommons.org/licenses/by/4.0/)
+対象の独自部分には、ご本人が許諾できる範囲でCC BY 4.0を適用しました。作者表示・変更表示等を伴う改変や商用再配布が可能です。[許諾文](../assets/procedural-components/ASSET-LICENSE.md)。候補生成スクリプトの旧「許諾待ち」表示は承認前の段階を表します。配布用コピーでは梱包スクリプトが許諾表示を更新し、形状・材質と描画の一致を再確認しています。[CC BY 4.0公式案内](https://creativecommons.org/licenses/by/4.0/)

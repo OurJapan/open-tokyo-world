@@ -29,3 +29,7 @@ On 2026-09-07 the account holder confirmed authority to license the eleven ident
 ## Tokyo Tower
 
 The account holder also confirmed Tokyo Tower authorship and authority, and approved the same code MIT / original-model CC BY 4.0 policy. [Exact scope and source history](assets/tokyo-tower/provenance.json), [asset license](assets/tokyo-tower/ASSET-LICENSE.md), [extraction and limits](assets/tokyo-tower/README.md). Historical scripts remain dependent on earlier local scenes; this is not a complete procedural rebuild.
+
+## Procedural tree/shrub components
+
+On 2026-09-27 the account holder approved CC BY 4.0 for the reviewed 16 prototype meshes and 31 procedural materials, including their dedicated preview, within the rights they can license. [Consent and exact scope](assets/procedural-components/provenance.json), [asset license](assets/procedural-components/ASSET-LICENSE.md), [package and checks](assets/procedural-components/README.md). Original city placement, maps, aggregate geometry, images and historical source code are excluded. The former tentative authorship recollection remains a separate historical statement.

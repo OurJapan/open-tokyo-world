@@ -81,11 +81,13 @@
       "component_verification": "sources/city-pr12-component-verification.json"
     },
     "procedural-components-candidate": {
-      "distribution": "local-review-license-decision-pending",
-      "manifest": "manifests/procedural-components-distribution.draft.json",
-      "scope": "docs/city-component-verification.md",
+      "distribution": "licensed-package-verified-public-release-pending",
+      "manifest": "assets/procedural-components/provenance.json",
+      "scope": "assets/procedural-components/README.md",
       "public_url": null,
-      "availability_note": "16 local-coordinate tree/shrub prototype meshes and 31 procedural materials. City coordinates, maps, images and legacy scripts are excluded. No new asset license grant yet."
+      "availability_note": "CC BY 4.0 for the named 16 prototypes and 31 materials. A self-contained ZIP has been verified locally; public Release URL and independent PC validation are pending.",
+      "license": "assets/procedural-components/ASSET-LICENSE.md",
+      "package": "assets/procedural-components/package-v0.1.0.json"
     }
   }
 }

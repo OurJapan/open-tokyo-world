@@ -36,11 +36,17 @@
     {
       "kind": "procedural-tree-shrub-prototypes-and-materials",
       "source": "Pinned historical procedural generators match the selected local geometry and shader graphs.",
-      "scope": "manifests/procedural-components-distribution.draft.json",
+      "scope": "assets/procedural-components/provenance.json",
       "verification": "sources/city-pr12-component-verification.json",
-      "redistribution": "pending-account-holder-license-decision",
-      "new_license_grant": null,
-      "excludes": "Original city coordinates, mapped aggregate geometry, third-party data, imagery and legacy source code."
+      "redistribution": "licensed-package-verified-public-release-pending",
+      "new_license_grant": {
+        "license": "CC-BY-4.0",
+        "date": "2026-09-27",
+        "record": "assets/procedural-components/provenance.json",
+        "scope": "16 named prototype meshes and 31 procedural materials, plus their dedicated preview only."
+      },
+      "excludes": "Original city coordinates, mapped aggregate geometry, third-party data, imagery and legacy source code.",
+      "package": "assets/procedural-components/package-v0.1.0.json"
     }
   ],
   "geometry_inventory": "sources/city-pr12-geometry-audit.json",
