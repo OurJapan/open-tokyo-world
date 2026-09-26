@@ -22,7 +22,11 @@
       "declared_license": "ODbL",
       "derivation_review": "pending",
       "saved_osm_sha256": "f04e8e70ab24a61ca749375d1ef37401feb0fdc840cc506b670ef71454a6a8ab",
-      "saved_osm_snapshot_reproducible": false
+      "saved_osm_snapshot_reproducible": false,
+      "snapshot_status": "recovered-and-local-hash-verified-public-retrieval-unavailable",
+      "reproducibility_scope": "The legacy flag remains false for public retrieval; local seven-stage data replay matches all 12 saved outputs.",
+      "recovered_input_manifest": "manifests/legacy-production-inputs.json",
+      "input_recovery": "sources/city-pr12-input-recovery.json"
     },
     {
       "kind": "music",

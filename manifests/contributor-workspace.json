@@ -61,15 +61,23 @@
       "scope": "starter/plaza/provenance.json"
     },
     "legacy-road-sources": {
-      "distribution": "not-bundled",
-      "scope": "docs/mori-plaza-edge-v1.md",
-      "availability_note": "The original saved OSM and full city reconstruction recipe are not supplied by this workspace."
+      "distribution": "local-pinned-inputs-public-distribution-pending",
+      "scope": "docs/city-input-recovery.md",
+      "manifest": "manifests/legacy-production-inputs.json",
+      "availability_note": "Both saved OSM routes and intermediate layout inputs were recovered and pinned. No public download or complete city reconstruction recipe is supplied."
     },
     "legacy-production-code": {
       "distribution": "private-upstream-read-access-required",
       "manifest": "manifests/legacy-production-sources.json",
       "command": "fetch-production",
-      "availability_note": "Pinned source inspection only. Map snapshots, intermediate inputs and a complete city reconstruction recipe remain unavailable."
+      "availability_note": "Pinned legacy source retrieval requires read access. Seven reviewed data processors can be replayed with recovered inputs; a complete city reconstruction remains unverified."
+    },
+    "legacy-production-inputs": {
+      "distribution": "local-recovered-public-distribution-pending",
+      "manifest": "manifests/legacy-production-inputs.json",
+      "command": "import-production-inputs",
+      "verification": "sources/city-pr12-input-recovery.json",
+      "availability_note": "Import 20 exact map/layout inputs from an authorized provider. Five pinned intermediate blends are optional and were only hashed during recovery."
     }
   }
 }

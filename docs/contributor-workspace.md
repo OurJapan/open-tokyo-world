@@ -17,7 +17,7 @@ GitHubからリポジトリをclone、または全体のZIPを展開します。
 
 参照版は **Blender 4.5.1 LTS** です。[Blender公式の4.5配布一覧](https://download.blender.org/release/Blender4.5/)から4.5.1を選んでください。別バージョンのインストールをこのコマンドが変更することはありません。
 
-WindowsではBlenderに付属するPythonを使う `otw.ps1` を用意しています。Pythonを別にインストールする必要はありません。Blenderの既定のインストール先かPATHを確認します。別の場所へ展開した場合は、現在のPowerShellで指定します。
+通常の共通CLIには、WindowsでBlenderに付属するPythonを使う `otw.ps1` を用意しています。これにはPythonを別にインストールする必要はありません。旧制作の道路・配置を再実行する追加手順のみ、別途Python 3.12を使います。Blenderの既定のインストール先かPATHを確認します。別の場所へ展開した場合は、現在のPowerShellで指定します。
 
 ```powershell
 $env:OTW_BLENDER = 'C:\Tools\Blender-4.5.1\blender.exe'
@@ -85,11 +85,14 @@ open-tokyo-world/
   scripts/・starter/・manifests/・docs/  コード・台帳・手順（Git）
   data/local/                           制作用データ（Git対象外）
     sources/                            固定した公式入力・出典
+      legacy-production-defac576/        閲覧権限が必要な旧制作コード
+      legacy-production-inputs-v1/       回収した地図・配置等の固定入力
     assets/tokyo-city-pr12/              採用済みの街全体
     builds/                             再生成した森JP周辺と比較画像
     edits/                              編集用コピー
     reviews/・review-configs/            街全体の比較結果と実行設定
     catalogs/                           画像付き部品一覧と出典照合結果
+    replays/・runtime/                    道路・配置の再実行結果と専用Python環境
     checks/                             環境・読み込み確認
     workspace.json                      このPCで使えるモデルの台帳
 ```
@@ -98,7 +101,9 @@ open-tokyo-world/
 
 ## 出典の整理と材質の比較
 
-[街の制作コードと不足入力](city-production-sources.md)に、植栽・車両・設備の固定コード22ファイルと部品の対応を整理しました。`.\otw.ps1 fetch-production` で調査用コードを取得・hash検証できます。元リポジトリは非公開で閲覧権限が必要です。配置の元データが不足しているため、このコマンドによる街全体の再生成はまだできません。
+[街の制作コードと入力の対応](city-production-sources.md)に、植栽・車両・設備の固定コード22ファイルを整理しました。`.\otw.ps1 fetch-production` でコードを取得・hash検証できます。元リポジトリは非公開で閲覧権限が必要です。
+
+[回収した入力の取り込み・再実行](city-input-recovery.md)を追加しました。`.\otw.ps1 import-production-inputs --input 'C:\Received\legacy-project'` で地図・配置20ファイルを登録できます。道路・配置の12出力と、街路樹・低木2,647メッシュの形状・変換を照合済みです。入力の公開配布先、街全体を最初から生成する工程は未整備です。
 
 [画像付き部品一覧](city-catalog.md)で、既存の街の3,255メッシュを13分類から確認できます。非表示の部品も含めて部品名・出典記録を調べ、制作元メモを書き出せます。元のblendには保存しません。
 

@@ -614,5 +614,9 @@
     "No new authorship determination or license grant. Original scene and redistribution status unchanged."
   ],
   "new_license_grant": null,
-  "city_redistribution": "pending"
+  "city_redistribution": "pending",
+  "subsequent_input_recovery": {
+    "record": "sources/city-pr12-input-recovery.json",
+    "note": "The missing-input and prototype-only observations above describe the initial audit. A separate historical project folder subsequently supplied all 25 expected inputs; data replay and tree transforms are verified in this follow-up record."
+  }
 }

@@ -1,6 +1,8 @@
-# 街の制作コードと不足入力
+# 街の制作コードと入力の対応
 
-2026-09-27、元プロジェクトの固定コミット `defac576e076f40bf3bc4fddcdcefe30f9a009f7` に、植栽・車両・設備の生成コードが見つかりました。21本のPythonと `.gitignore`、計22ファイル・96,714 bytesを[取得台帳](../manifests/legacy-production-sources.json)に固定しました。街路樹と低木は基本形状を再生成し、現行の2,647メッシュすべてで形状hashが一致しました。配置・材質と、残る29メッシュの再生成照合は未完了です。
+2026-09-27、元プロジェクトの固定コミット `defac576e076f40bf3bc4fddcdcefe30f9a009f7` に、植栽・車両・設備の生成コードが見つかりました。21本のPythonと `.gitignore`、計22ファイル・96,714 bytesを[取得台帳](../manifests/legacy-production-sources.json)に固定しました。街路樹と低木は基本形状を再生成し、現行の2,647メッシュすべてで形状hashが一致しました。
+
+その後、別の制作フォルダーから不足していた25入力を回収し、道路・配置の12出力を同じバイト列で再生成できました。2,647メッシュの位置・回転・拡縮も一致しています。[入力の取り込み・再実行手順](city-input-recovery.md)を参照してください。材質と、残る29メッシュの再生成照合は未完了です。
 
 元URL `DoiTakayoshi/tokyo-tower-blender` は、現在 [ark4ez/tokyo-tower-blender](https://github.com/ark4ez/tokyo-tower-blender) に転送されます。GitHub APIで確認した公開範囲は **private** です。通常の匿名ダウンロードは404となりました。外部協力者が全員取得できる入口ではありません。
 
@@ -43,7 +45,7 @@
 
 固定した3ファイルのうち、確認済みの形状生成部分だけを別のBlenderプロセスで実行しました。街路樹の12種類の幹・葉、低木の4種類の基本形状を生成し、元の1,314＋1,333メッシュと照合しています。頂点のローカル座標、面の構成、面の材質番号、UVを含むhashが全件一致しました。低木の基本形状はそれぞれ42頂点・80面です。
 
-位置・回転・拡縮、材質ノード、実在との精度、配布許諾を確認したものではありません。街路樹分類の残り2メッシュ（樹皮・土の集約部品）、旧樹冠4メッシュ、車両14メッシュ、街灯1メッシュ、設備8メッシュは生成処理との静的対応に留まります。
+この形状照合とは別に、回収した入力から位置・回転・拡縮を確認しました（[追加の記録](../sources/city-pr12-input-recovery.json)）。材質ノード、実在との精度、配布許諾は未確認です。街路樹分類の残り2メッシュ（樹皮・土の集約部品）、旧樹冠4メッシュ、車両14メッシュ、街灯1メッシュ、設備8メッシュは生成処理との静的対応に留まります。
 
 固定コードを取得済みなら、照合を再実行できます。ソース全体のhashが変わっていれば実行前に停止します。旧コードのファイル入出力・外部プロセス・保存処理や、blend内のTextは実行対象に含めません。
 
@@ -51,22 +53,22 @@
 & 'C:\Program Files\Blender Foundation\Blender 4.5\blender.exe' --factory-startup --disable-autoexec --background data/local/assets/tokyo-city-pr12/city.blend --python-exit-code 1 --python scripts/verify_tree_prototypes.py -- --output data/local/audits/tree-prototypes-new.json
 ```
 
-## まだ不足している入力
+## 初回調査で不足していた入力
 
-元の `.gitignore` は `work/` のPython等を選んで保存し、XML・配置JSON・NPZ等を対象外にしています。固定コミットにも、確認した旧フォルダーの対応パスにも、以下の入力はありませんでした。
+元の `.gitignore` は `work/` のPython等を選んで保存し、XML・配置JSON・NPZ等を対象外にしています。固定コミットにも、初回に確認した旧フォルダーの対応パスにも、以下の入力はありませんでした。この初回調査の結果は監査記録に残し、別フォルダーからの回収を[追加記録](../sources/city-pr12-input-recovery.json)で補足しています。
 
-| 復元するもの | 役割・生成元 |
+| 回収したもの | 役割・今回の確認 |
 |---|---|
-| `work/osm.xml` | 初期の道路・植栽・土地利用。過去の広場調査には保存OSMのhashがあるが、今回そのファイル本体との対応を検証できていない |
-| `work/wide_detail/selected_tiles.json`、`roads.json` | 別の道路取得経路。範囲を指定してOverpassから取得する。固定日時・応答hashが不足 |
+| `work/osm.xml` | 初期の道路・植栽・土地利用。回収したファイルが過去の広場調査のhashと一致。取得日時は未確認 |
+| `work/wide_detail/selected_tiles.json`、`roads.json` | 別の道路取得経路。選択範囲・応答hashとOSM基準時刻を固定 |
 | `work/twin_towers/tower_surfaces.json`、`work/wide_detail/wide_roads.npz` | 旧 `outputs/Tokyo60/` の道路面と上記道路入力から統合した道路。`wide_detail/roads.py` に生成処理あり |
 | `work/{detail_upgrade,wide_detail}/imported_features.json` | PLATEAU建物の範囲。植栽・車両・灯具の配置判定に使用 |
-| `work/tower15_env/shrubs.json`、`work/tokyo_traffic/layout.json`、`work/street_detail/placements.json` 等 | 元入力から生成する配置・中間データ。生成コードはあるが、過去の出力と再生成結果の照合が必要 |
-| 前段blend・依存ライブラリの版 | 生成処理が読む途中段階の街、Shapely等の環境。現行の街を前段の代用品として実行しない |
+| `work/tower15_env/shrubs.json`、`work/tokyo_traffic/layout.json`、`work/street_detail/placements.json` 等 | 配置・中間データ。7段階・12出力の再生成で保存版とバイト単位一致 |
+| 前段blend・依存ライブラリの版 | 前段blend5本の所在とhashを固定。今回はコピー・読み込みなし。データ処理はPython 3.12、NumPy 2.3.5、Shapely 2.1.2、GEOS 3.13.1で一致 |
 
 `work/osm.xml` と `wide_detail/roads.json` は別入力です。現在のOSMを取得して過去版と同一とは扱いません。配置用の乱数seedはコードにありますが、道路・建物の入力やライブラリの版が異なれば同じ配置になるとは限りません。
 
-次の復元対象は、上記2系統の保存OSMとPLATEAU建物の中間台帳です。入手できれば固定hashを付け、道路→配置→部品の順で別の作業フォルダーに再生成して現行版と照合します。元データを復元できない場合は、新しい入力から生成する版を別候補として管理します。[森JP周辺の公開入力からの生成](contributor-workspace.md)は引き続き利用できます。
+次に確認するのは、回収した建物範囲・道路面等の中間台帳と原資料の対応、残る部品と材質の生成過程です。街全体の再構築と公開配布は未完了です。[森JP周辺の公開入力からの生成](contributor-workspace.md)は引き続き利用できます。
 
 ## シーン内の制作情報を再確認する
 

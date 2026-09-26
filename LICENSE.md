@@ -73,6 +73,8 @@ The original implementations in `scripts/city_catalog.py`, `scripts/city_catalog
 
 The original implementations in `scripts/fetch_legacy_production.py`, `scripts/audit_city_production.py`, `scripts/verify_tree_prototypes.py`, and `tests/test_legacy_production.py` are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This covers the new inspection utilities, not the historical source files they retrieve, embedded scene text, or the city assets.
 
+The original implementations in `scripts/import_legacy_inputs.py`, `scripts/replay_production_inputs.py`, `scripts/verify_city_tree_placements.py`, and `tests/test_production_inputs.py` are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This covers the new import, replay and verification utilities. It does not grant new rights to the historical scripts, recovered map/layout data, intermediate scenes, or third-party Python packages.
+
 ## Outside these grants
 
 Except for the separately identified starters and original additions above, no license is granted here for other repository files, legacy city scenes, generated models, reference photos, textures, music, trademarks, PLATEAU data, OpenStreetMap data, or other third-party content. Any separately applicable license remains in effect. Execution of the covered code does not itself grant rights to its inputs or outputs. This scope document adds no conditions to the MIT grant for the covered code.

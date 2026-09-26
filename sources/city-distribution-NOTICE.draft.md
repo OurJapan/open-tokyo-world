@@ -21,7 +21,7 @@
 
 地図データ：© [OpenStreetMap contributors](https://www.openstreetmap.org/copyright)。[Open Database License 1.0](https://opendatacommons.org/licenses/odbl/1-0/)。
 
-保存OSMとその加工経路、配布する派生データの範囲・取得先は未確定です。最終配布物では該当データのNOTICE・ライセンスと、公開形態に必要な表示を保持します。
+2系統の保存OSMと地図・配置等の入力を[固定台帳](../manifests/legacy-production-inputs.json)へ登録し、道路・配置12出力の再生成を確認しました（[検証記録](city-pr12-input-recovery.json)）。全加工経路と、配布する派生データの範囲・取得先は未確定です。最終配布物では該当データのNOTICE・ライセンスと、公開形態に必要な表示を保持します。
 
 ## 個別に許諾を記録した独自部品
 

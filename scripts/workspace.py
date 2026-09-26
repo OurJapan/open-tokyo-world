@@ -292,7 +292,7 @@ def main(argv=None):
     common.add_argument("--workspace", type=Path, default=ROOT / "data/local")
     common.add_argument("--blender", type=Path)
     sub = parser.add_subparsers(dest="command", required=True)
-    for name in ("status", "doctor", "fetch", "fetch-production", "setup", "import-city", "verify", "edit", "review"):
+    for name in ("status", "doctor", "fetch", "fetch-production", "import-production-inputs", "setup", "import-city", "verify", "edit", "review"):
         command = sub.add_parser(name, parents=[common])
         if name in {"setup", "verify", "edit"}:
             command.add_argument("--profile", choices=["city", "mori"], default="city")
@@ -300,8 +300,10 @@ def main(argv=None):
             command.add_argument("--inputs", type=Path, help="Explicit directory containing the two exact official files")
         if name == "fetch-production":
             command.add_argument("--inputs", type=Path, help="Explicit directory containing the pinned historical source files")
-        if name == "import-city":
+        if name in {"import-city", "import-production-inputs"}:
             command.add_argument("--input", required=True, type=Path)
+        if name == "import-production-inputs":
+            command.add_argument("--include-scenes", action="store_true", help="Also copy the five intermediate blends (about 2.76 GB)")
         if name == "edit":
             command.add_argument("--open", action="store_true", help="Open the new editable copy in Blender")
         if name == "review":
@@ -323,6 +325,9 @@ def main(argv=None):
             from fetch_legacy_production import fetch
             result = {"sources": str(fetch(inside(workspace, "sources/legacy-production-defac576"), args.inputs)),
                       "purpose": "Source inspection; no legacy code execution or city generation"}
+        elif args.command == "import-production-inputs":
+            from import_legacy_inputs import import_inputs
+            result = import_inputs(args.input, inside(workspace, "sources/legacy-production-inputs-v1"), args.include_scenes)
         elif args.command == "setup" and args.profile == "city":
             # Do this first: never quietly build a different city when this is unavailable.
             if args.inputs:

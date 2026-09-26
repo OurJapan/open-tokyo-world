@@ -61,14 +61,15 @@
   ],
   "candidate_mesh_objects": 2676,
   "external_model_use": "not-established",
-  "source_code_correspondence": "partial-local-mesh-match",
-  "map_input_and_placement_provenance": "pending",
+  "source_code_correspondence": "partial-geometry-and-transform-match",
+  "map_input_and_placement_provenance": "recovered-inputs-and-verified-tree-placement",
   "new_license_grant": null,
   "city_redistribution": "pending",
   "next_evidence": [
-    "Recover the two pinned OSM inputs and PLATEAU footprint records or prepare a separately versioned replacement input.",
-    "Verify remaining 29 meshes, placement transforms and materials against the recovered production chain.",
+    "Trace recovered footprint, surface, canopy and facade records to their original inputs.",
+    "Verify remaining 29 meshes and materials against the recovered production chain.",
     "Confirm authorship/license scope separately from matching procedural geometry."
   ],
-  "production_audit": "sources/city-pr12-production-audit.json"
+  "production_audit": "sources/city-pr12-production-audit.json",
+  "input_recovery": "sources/city-pr12-input-recovery.json"
 }
