@@ -11,6 +11,7 @@ Thumbs.db
 build/
 runs/
 data/cache/
+data/local/
 
 # Large assets are introduced separately after provenance/storage review
 *.blend

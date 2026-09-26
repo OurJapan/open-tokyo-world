@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "blender_version": "4.5.1",
+  "runner_python_versions": [[3, 11], [3, 12]],
+  "default_profile": "city",
+  "sources": {
+    "plateau-minato-2025": {
+      "notice": "starter/plateau/NOTICE.md",
+      "files": {
+        "tileset.json": {
+          "url": "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/tileset.json",
+          "bytes": 412889,
+          "sha256": "edec4c24d137eaf08a8525cecea505a3f21a30823b9ef4fb530e10774cea1323"
+        },
+        "data221.b3dm": {
+          "url": "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data221.b3dm",
+          "bytes": 1246040,
+          "sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2"
+        }
+      }
+    }
+  },
+  "profiles": {
+    "city": {
+      "label": "Tokyo Tower area: accepted city after PR 12",
+      "mode": "import",
+      "distribution": "blocked-pending-rights-and-download-location",
+      "public_url": null,
+      "asset": {
+        "bytes": 558751758,
+        "sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926"
+      },
+      "expected_meshes": 3255,
+      "evidence": "docs/mori-plaza-edge-v1-run.json",
+      "cameras": "areas/tokyo-tower/mori-plaza-edge-cameras.json",
+      "features": "areas/tokyo-tower/mori-plaza-edge-features.json",
+      "availability_note": "A clone does not contain this scene. Import the exact approved file from an authorized provider. No automatic substitution with the Mori profile."
+    },
+    "mori": {
+      "label": "Mori JP Tower, 23 neighboring buildings and six plaza parts",
+      "mode": "generate",
+      "distribution": "rebuild-from-pinned-official-inputs",
+      "source": "plateau-minato-2025",
+      "runner": "starter/mori/run.py",
+      "scene": "after.blend",
+      "expected_meshes": 42,
+      "notice": "starter/mori/NOTICE.md",
+      "availability_note": "A limited neighborhood, not the accepted full city. Tokyo Tower, roads and terrain are not included."
+    }
+  },
+  "other_components": {
+    "tokyo-tower": {
+      "distribution": "original-77-parts-licensed-package-url-not-published",
+      "scope": "assets/tokyo-tower/provenance.json",
+      "license": "assets/tokyo-tower/ASSET-LICENSE.md",
+      "generation_dependency": "The exporter still requires the exact legacy baseline."
+    },
+    "plaza": {
+      "distribution": "published-starter",
+      "release": "starter/plaza/release-v0.1.0.json",
+      "scope": "starter/plaza/provenance.json"
+    },
+    "legacy-road-sources": {
+      "distribution": "not-bundled",
+      "scope": "docs/mori-plaza-edge-v1.md",
+      "availability_note": "The original saved OSM and full city reconstruction recipe are not supplied by this workspace."
+    }
+  }
+}

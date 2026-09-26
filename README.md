@@ -14,6 +14,8 @@
 
 ## 自分のPCで試す
 
+[外部協力者の制作環境](docs/contributor-workspace.md)：環境確認、公式入力の取得、森JP周辺の再生成、採用済み街の登録、編集コピー作成を共通CLIから実行できます。必要なローカルデータは `data/local/` にまとめます。**街全体の公開配布は未整備です。** 森JP周辺の再生成と街全体の取得は別の状態として表示します。[資産ごとの配布準備状況](docs/asset-distribution-readiness.md)
+
 [東京タワーの許諾・独立ファイルへの切り出し](assets/tokyo-tower/README.md)：鉄骨・展望台・窓・ガラス床まわりの独自77部品をCC BY 4.0、対象コードをMITで提供。切り出しには固定した旧入力が必要です。
 
 [森JPタワーの独立生成・置換試験](starter/mori/README.md)：旧都市ファイルなしで公式PLATEAUから詳細外装・低層部を生成し、4視点のBefore/Afterを作成します。対象生成コードはMIT、詳細モデルの独自追加部分等はCC BY 4.0。PLATEAU等の第三者条件は保持します。

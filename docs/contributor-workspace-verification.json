@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-09-26",
+  "code_base_commit": "ac3876b716c496258ddce515ec97f513632a8e19",
+  "uncommitted_implementation_identified_by_sha256_lf": {
+    "scripts/workspace.py": "49c38d56a043b89c32efc4fee0b1c92997aada665c2a539b26c634f4a49b9b53",
+    "scripts/workspace_blender.py": "bee8824e1beb16b33a0a835c5b66495edf73316160ed2d468ac82f56e8ceb925",
+    "otw.ps1": "36f27512c45bc3cfab9db1799b76c2a05607ca67fe56b15f48b0c70ccd6a4af7",
+    "tests/test_workspace.py": "6cdb8cf14f7711a61c331607e87a31f2a53a9d59d6ff293764383e161ca94236"
+  },
+  "host": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "blender": "4.5.1 LTS",
+    "python": "3.11.11",
+    "separate_machine": false
+  },
+  "portable_checks": {
+    "tests": 103,
+    "passed": 98,
+    "skipped": 5,
+    "failed": 0,
+    "compileall_scripts_tests": true,
+    "blender_checks_run_separately": true
+  },
+  "clean_directory_mori": {
+    "code_only_copy": true,
+    "initial_source_file_count": 265,
+    "git_directory_present": false,
+    "filesystem_isolation_enforced": false,
+    "official_inputs_freshly_downloaded": true,
+    "input_sources": {
+      "tileset.json": {
+        "url": "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/tileset.json",
+        "bytes": 412889,
+        "sha256": "edec4c24d137eaf08a8525cecea505a3f21a30823b9ef4fb530e10774cea1323"
+      },
+      "data221.b3dm": {
+        "url": "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data221.b3dm",
+        "bytes": 1246040,
+        "sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2"
+      }
+    },
+    "legacy_scene_used": false,
+    "commands": [
+      "otw.ps1 fetch",
+      "otw.ps1 setup --profile mori",
+      "otw.ps1 verify --profile mori",
+      "otw.ps1 edit --profile mori"
+    ],
+    "ok": true,
+    "licensed_part_scope_verified": true,
+    "meshes": 42,
+    "triangles": 1183474,
+    "saved_reopened": true,
+    "views": [
+      "full",
+      "crown",
+      "podium",
+      "entrance"
+    ],
+    "image_count": 8,
+    "generation_elapsed_seconds": 48.213,
+    "build_directory_bytes": 36273193,
+    "edit_blend_bytes": 19322430,
+    "attribution_files_copied_with_edit": 8,
+    "edit_matches_reference": true,
+    "default_full_city_setup_without_city_exits_1": true,
+    "source_code_sha256_as_executed": {
+      "starter/mori/facade.py": "2dcfac5c2dae48fd893142b1d1fc524141ab95df4c144b4576035a466f945e4a",
+      "starter/mori/profile.py": "aaf29e2fefc5b2de6860da98215a89032f4e4dc66773baf41cc5ea37cd1fbcd8",
+      "starter/mori/run.py": "6016f6c90cf6a7a1efed2ad300c7f3d3c4f30571bc9ef0d779860ee63b9c9867",
+      "starter/mori/scene.py": "117fae7db10500a59d83c9cfa6327cd24036ff630a47c12929423280a73bc59f",
+      "starter/plateau/run.py": "766405fa9688345d8cf75e9fefce7074ea992b09129975df6adfd83f8aea60bf",
+      "starter/plateau/scene.py": "2f53a4bf52b63dfffd10de674ec080fdb546dbdbf213fdff6d2521c5ba377d3e",
+      "starter/plateau/tile.py": "540aa9b7e8d8efc482f4ef4cdcf0f890bac6102a905707e588f13ca60f2d7c11",
+      "starter/plaza/scene.py": "52bed9bca744615928232d524091caf9d8a7f98cd7b69314364e474ce236bd93",
+      "scripts/mori_shape.py": "e82b840819da692b1a0dd6b27f095c524706fce08c0e85db47b2236301f91411",
+      "scripts/mori_crown_v2.py": "9822f54cec4965881dc5838e5204f55fcf95fcf172620ebb56735101be98015b",
+      "scripts/mori_crown_material.py": "02e207032a4873ee75cf80991ab2066e3621e9a8ccbf4c014e2c5aee06bbc8b5",
+      "scripts/mori_facade_v2.py": "b962aeb523cb35cd242bad7f3a91409750219bda62eec1cd64ddcbf49a7ab26f",
+      "scripts/mori_podium_v3.py": "cec7699cb570248bfb4c121275044b0950a6bfcad128464455a2faabc9321790",
+      "scripts/mori_entrance_v1.py": "aeb7417803ebea8ac8af590aeca7a1e723d1591e1756eb07ad1078cd9e753c90",
+      "scripts/mori_terrace_v1.py": "26f9149e5889266caa7c62bbd8a0df886fb9713266751c0a69e6c6df24a036e5",
+      "scripts/mori_plaza_v1.py": "5f92f0381ab16fd0bbef325db2200381a903723ab5418ecb51c0c64562131ef9",
+      "scripts/mori_plaza_link_v1.py": "9db234b625b99fe1ee5751b4f4da57445ea6122222377e8b2e9fe36105519ec3"
+    }
+  },
+  "local_full_city": {
+    "imported_asset": {
+      "bytes": 558751758,
+      "sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926"
+    },
+    "runtime_check": {
+      "opened": true,
+      "objects": 3305,
+      "meshes": 3255,
+      "packed_images": 383,
+      "missing_images": [],
+      "unsupported_images": [],
+      "missing_libraries": [],
+      "references_ok": true,
+      "scope": "Opening and image/library references only; not a full geometry, external dependency or accuracy audit."
+    },
+    "original_external_asset_hash_unchanged": true,
+    "edit_matches_reference": true,
+    "edit_blend_bytes": 558751758,
+    "baseline_review": {
+      "ok": true,
+      "mode": "baseline-capture",
+      "input_sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+      "cameras_sha256": "23090a38f95022ce2c60febf52fc9af28c7906326efcfcded3ab444ba746afd9",
+      "features_sha256": "142ec8a27c0979cfe89e8db3c6a2729839e003f8b00c28cc332813c030052d3c",
+      "device": "OPTIX",
+      "width": 640,
+      "height": 360,
+      "samples": 8,
+      "jobs": {
+        "prepare": {
+          "seconds": 18.188,
+          "report_sha256": "715f174489c098c7a441d7161917674d362fcb9ba55039339e437186ff00b846"
+        },
+        "validate-before": {
+          "seconds": 33.765,
+          "report_sha256": "cc5b1ba3bc47d80c80148fd4a5c54c4b2566ad86816d302ad34a54a9b7f53067"
+        },
+        "validate-after": {
+          "seconds": 33.657,
+          "report_sha256": "cc5b1ba3bc47d80c80148fd4a5c54c4b2566ad86816d302ad34a54a9b7f53067"
+        },
+        "render-before": {
+          "seconds": 26.359,
+          "report_sha256": "231720f25aed95be664c2d1e320c7a9be73eaacbaa4fd8770db2fb721b6c5525"
+        },
+        "render-after": {
+          "seconds": 27.031,
+          "report_sha256": "373553e155882358ab31dc950fc4d1d3f140aede77f5a7a1d8ccc439efb1059b"
+        }
+      },
+      "changed_objects": []
+    },
+    "baseline_view_count": 6,
+    "baseline_image_count": 12,
+    "baseline_directory_bytes": 1130100923,
+    "full_city_public_distribution_ready": false
+  },
+  "limits": [
+    "Same Windows PC and installed Blender; not a separate contributor or operating system.",
+    "Raw run logs and city/texture bytes remain local and are not included.",
+    "Blend/render byte identity across machines is not claimed.",
+    "Peak memory, minimum hardware and physical accuracy are not measured.",
+    "Full city redistribution rights and a public download location are unresolved.",
+    "No general reconstruction of the full city from source inputs."
+  ]
+}
