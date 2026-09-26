@@ -65,6 +65,8 @@ The original `scripts/object_registry.py`, `tests/test_object_registry.py`, `reg
 
 The original implementations in `scripts/workspace.py`, `scripts/workspace_blender.py`, `otw.ps1`, and `tests/test_workspace.py` are licensed under the [MIT License](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This grant covers these named workspace implementations; it does not grant new rights to the city scenes or other inputs they handle.
 
+The original implementations in `scripts/verify_city_images.py`, `scripts/check_city_image_pixels.py`, and `tests/test_city_images.py` are also licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This grant covers the named image verification code, not the third-party images or city scenes being checked.
+
 ## Outside these grants
 
 Except for the separately identified starters and original additions above, no license is granted here for other repository files, legacy city scenes, generated models, reference photos, textures, music, trademarks, PLATEAU data, OpenStreetMap data, or other third-party content. Any separately applicable license remains in effect. Execution of the covered code does not itself grant rights to its inputs or outputs. This scope document adds no conditions to the MIT grant for the covered code.

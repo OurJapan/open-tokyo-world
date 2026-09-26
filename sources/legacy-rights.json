@@ -4,7 +4,10 @@
   "assets": [
     {
       "kind": "packed-building-textures",
-      "source": "PLATEAU and legacy atlas; image-to-source mapping incomplete",
+      "source": "382 PLATEAU images matched by encoded bytes or exact resized RGBA8; one legacy atlas remains unresolved",
+      "image_identity_audit": "sources/city-pr12-image-audit.json",
+      "unresolved_image": "facade_atlas.png",
+      "remaining_review": "Dataset-specific conditions, attribution and the legacy atlas; identity checks do not grant rights",
       "redistribution": "pending"
     },
     {
