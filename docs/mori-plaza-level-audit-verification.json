@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-09-27",
+  "ok": true,
+  "purpose": "Read-only diagnosis; no geometry correction or acceptance claim.",
+  "code_base_commit": "7492c9eca8326a8e66c3027d67a892488fc29530",
+  "input_sha256": "2e2cce08aa581ef6a99d60c9fe993b8c4e53ff7f5cffb687f9d9c4cee19dc544",
+  "input_unchanged": true,
+  "scene_saved": false,
+  "code_and_lock_sha256_lf": {
+    "scripts/audit_mori_plaza_levels.py": "1936a5e5ac040b5de0aa1ca841625da1141cc0c4768aed19b22a573f14beb35f",
+    "scripts/mori_plaza_landscape_v1.py": "bae87e622bc9b9c678a1491c3fc6897b294addf3f08400b3a02f3bca9ee2ce29",
+    "scripts/mori_plaza_outline_v1.py": "bf32df1b459cf5851f7aefd6ad6a92f9f81fe3867cba3d40a322f749ec2aa3c6",
+    "manifests/mori-plaza-landscape-accepted.json": "901c4f1717ff80ff7ed2daf2dcdbad4a3065d8d089a3e5639fb258d81f05c98e"
+  },
+  "portable_checks": {
+    "tests": 206,
+    "passed": 201,
+    "skipped": 5,
+    "failures": 0,
+    "compileall": true
+  },
+  "diagnosis": {
+    "version": 1,
+    "ok": true,
+    "saved_scene": false,
+    "frame": 1,
+    "blender_version": "4.5.1 LTS",
+    "input_sha256": "2e2cce08aa581ef6a99d60c9fe993b8c4e53ff7f5cffb687f9d9c4cee19dc544",
+    "settings": {
+      "spacing_m": 0.5,
+      "side_offset_m": 0.02,
+      "ray_start_z_m": 2,
+      "ray_end_z_m": -2,
+      "maximum_hidden_hits": 24
+    },
+    "paving_top_faces": 297,
+    "boundary_edges": 313,
+    "boundary_samples": 1820,
+    "road_pairs": 569,
+    "neighbor_counts": {
+      "OTW Mori entry plaza / paving": 8,
+      "OTW Mori plaza link / paving": 17,
+      "asphalt 15s road detail": 508,
+      "ground": 519,
+      "gutter 15s road detail": 31,
+      "park mapped land use": 652,
+      "pavement_0 unified road": 30
+    },
+    "height_groups": [
+      {
+        "object": "asphalt 15s road detail",
+        "road_z_m": 0.3,
+        "rise_m": 0.19,
+        "samples": 508
+      },
+      {
+        "object": "gutter 15s road detail",
+        "road_z_m": 0.3,
+        "rise_m": 0.19,
+        "samples": 31
+      },
+      {
+        "object": "pavement_0 unified road",
+        "road_z_m": 0.46,
+        "rise_m": 0.35,
+        "samples": 30
+      }
+    ],
+    "limits": [
+      "Model-space diagnostic, not surveyed terrain or an accessibility assessment.",
+      "Samples are not unique joins, continuous coverage, or an edge-length estimate.",
+      "Rays start at z=2m; overhead obstructions and hidden geometry are outside the diagnosis.",
+      "Only the fixed accepted paving boundary is sampled; other streets and grass boundaries are not covered.",
+      "No geometry, materials, registration or source file are saved."
+    ]
+  },
+  "priority_samples": {
+    "near-connector-road": {
+      "entrance_local_uv_m": [
+        -21.864186737978322,
+        50.2447274376262
+      ],
+      "paving_z_m": 0.11000001430511475,
+      "road": "asphalt 15s road detail",
+      "road_z_m": 0.30000007152557373,
+      "rise_m": 0.19000005722045898,
+      "distance_from_inferred_connector_end_xy_m": 4.6360439184493245
+    },
+    "near-connector-sidewalk": {
+      "entrance_local_uv_m": [
+        -22.75472606452176,
+        49.80043092724036
+      ],
+      "paving_z_m": 0.10999977588653564,
+      "road": "pavement_0 unified road",
+      "road_z_m": 0.4599999189376831,
+      "rise_m": 0.35000014305114746,
+      "distance_from_inferred_connector_end_xy_m": 4.693803460231434
+    }
+  },
+  "legacy_fixed_height_code": {
+    "source_commit": "defac576e076f40bf3bc4fddcdcefe30f9a009f7",
+    "files": {
+      "work/wide_detail/roads.py": {
+        "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/wide_detail/roads.py",
+        "bytes": 2940,
+        "sha256": "32a4b939bf1d4dfac44f5549477d363ecfc4113374fa62da5835b46ee670cc93",
+        "git_blob_sha1": "6e57efc819c18e1cc7f5eb71fa119bacc81efff3"
+      },
+      "work/tower15_env/surfaces.py": {
+        "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/tower15_env/surfaces.py",
+        "bytes": 2671,
+        "sha256": "2e781f8224a28f83f0611a4d2d4d5750e6544598240a511e444a5a5fc0937df8",
+        "git_blob_sha1": "dcd0e0d020871a8e98eb67b83a7a1d1ed5fd0a81"
+      }
+    },
+    "execution_for_this_audit": false
+  },
+  "external_evidence": [
+    {
+      "url": "https://www.nihonsekkei.co.jp/think/ideas/case-study_20892/",
+      "checked_at": "2026-09-27",
+      "claim": "About 18m east-west elevation difference across the overall development site.",
+      "not_established": "A surveyed elevation or correct curb/stair/ramp geometry at the selected samples."
+    },
+    {
+      "url": "https://www.mori.co.jp/projects/azabudaihills/concept/",
+      "checked_at": "2026-09-27",
+      "claim": "The landscape design uses the existing terrain differences.",
+      "not_established": "The elevations of the two measured model boundaries."
+    }
+  ],
+  "inspection": {
+    "blender": "4.5.1 LTS",
+    "device": "OPTIX",
+    "width": 960,
+    "height": 540,
+    "samples": 24,
+    "seed": 0,
+    "saved_scene": false,
+    "input_unchanged": true,
+    "cameras": "areas/tokyo-tower/mori-plaza-level-cameras.json",
+    "cameras_sha256_lf": "f145079902c8299f62fdcd520a52766f7096512e2ff0431975bb1b7bf0828f9e",
+    "blender_worker_sha256_lf": "32bce0c26e678b6d078249ee52a72d79bb154ad8f5a50382f479c0a1d3c0f5ab",
+    "views": [
+      {
+        "id": "near-connector-road",
+        "sha256": "5d5955e204a39c5925d84b1426a07575358141db4301c7e5ed34de27b67a469b",
+        "pixel_sha256": "fb1bb0e81f8fd2f609aa9084bf467fdc06dd93a804c301e92b7136978c8b67ee"
+      },
+      {
+        "id": "near-connector-sidewalk",
+        "sha256": "9a63d578f4e548a2218eca68d9a416e690b7f41da1f05870c10d6d6adf10f62d",
+        "pixel_sha256": "03bf638064aec6371708ec77c1e07498dc11be3fc4f651e90af838dcfd529dd4"
+      }
+    ]
+  },
+  "local_records": {
+    "run.json": "42e4e75ffd13e0a5135f20c9d63c3d51bcbef07b002ceaf6c214470a8d70d873",
+    "summary.json": "97bd9496913d9e32c6f35c98221253435e3c9daa894cef974ca5107bf5a045fa",
+    "samples.json": "0cd272de43b4a0b8097b013f5532611666219d0c2ce9f439ee1b14ff7c6304ed",
+    "contacts.json": "ea57de5a5a18c388f72ed8c6d1069abd33e4c5d7ddff21392467715e17392c74"
+  },
+  "limits": [
+    "569 pairs are nearby samples, not 569 independent defects or surveyed curb dimensions.",
+    "The diagnosis does not decide which boundaries should be flush pedestrian connections.",
+    "Existing downward-facing road surfaces were measured, not repaired.",
+    "Full scene topology, overhead obstructions, physical accuracy and redistribution rights are not certified.",
+    "Only the pinned PR 40 input is supported by this diagnostic version; sample coordinates are saved locally for future candidate comparisons."
+  ]
+}

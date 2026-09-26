@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "views": [
+    {
+      "id": "near-connector-road",
+      "frame": 1,
+      "matrix_world": [
+        [
+          0.9323214888572693,
+          -0.09063446521759033,
+          0.35008862614631653,
+          -415.48895263671875
+        ],
+        [
+          0.36163055896759033,
+          0.23366504907608032,
+          -0.9025653004646301,
+          341.9369812011719
+        ],
+        [
+          1.1333781912981067e-08,
+          0.9680837392807007,
+          0.2506271302700043,
+          1.25
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 28,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.05,
+      "clip_end": 9000,
+      "source_camera": "Local inspection of a measured paving-boundary height difference"
+    },
+    {
+      "id": "near-connector-sidewalk",
+      "frame": 1,
+      "matrix_world": [
+        [
+          0.9323214888572693,
+          -0.09063446521759033,
+          0.35008862614631653,
+          -416.4841613769531
+        ],
+        [
+          0.36163055896759033,
+          0.23366504907608032,
+          -0.9025653004646301,
+          341.9378662109375
+        ],
+        [
+          1.1333781912981067e-08,
+          0.9680837392807007,
+          0.2506271302700043,
+          1.25
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 28,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.05,
+      "clip_end": 9000,
+      "source_camera": "Local inspection of a measured paving-boundary height difference"
+    }
+  ]
+}
