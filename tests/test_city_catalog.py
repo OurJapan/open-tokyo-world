@@ -58,7 +58,8 @@ class CityCatalog(unittest.TestCase):
 
     def test_manifest_is_pinned_and_references_exist(self):
         config = catalog.read(catalog.CONFIG)
-        city = catalog.read(ROOT / 'manifests/contributor-workspace.json')['profiles']['city']['asset']
+        # This historical inventory remains pinned to PR 12 as the shared city advances.
+        city = catalog.read(ROOT / 'manifests/mori-plaza-edge-accepted.json')
         self.assertEqual(config['input']['sha256'], city['sha256'])
         self.assertEqual(config['input']['bytes'], city['bytes'])
         ids = [g['id'] for g in config['groups']]

@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 ark4ez
 import importlib.util
+import contextlib
 import io
 import json
 from pathlib import Path
@@ -113,6 +114,30 @@ class ImageProvenanceTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "differs from the source lock"):
                 audit.get_source(URL, Path(folder), True, audit.DownloadBudget(), {"bytes": len(raw), "sha256": "0" * 64})
             self.assertEqual(list(Path(folder).iterdir()), [])
+
+    def test_historical_audit_remains_replayable_after_city_upgrade(self):
+        historical = audit.read_json(ROOT / "manifests/mori-plaza-edge-accepted.json")["sha256"]
+        current = audit.read_json(ROOT / "manifests/contributor-workspace.json")["profiles"]["city"]["asset"]["sha256"]
+        self.assertNotEqual(historical, current)
+        image_hash = audit.sha(b"picture")
+        source = {"ok": True, "bytes": 1, "sha256": "a" * 64, "images": [{"sha256": image_hash}]}
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            inventory = root / "inventory.json"
+            record = {"version": 1, "input_sha256": historical, "images": [image_record(packed=image_hash)]}
+            inventory.write_text(json.dumps(record))
+            args = ["--inventory", str(inventory), "--output", str(root / "report")]
+            with patch.object(audit, "get_source", return_value=source), contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(audit.main(args), 0)
+            report = audit.read_json(root / "report/report.json")
+            self.assertEqual(report["input_sha256"], historical)
+            self.assertEqual(report["summary"], {"matched-claimed-source": 1})
+            record["input_sha256"] = current
+            inventory.write_text(json.dumps(record))
+            with patch.object(audit, "get_source") as fetch:
+                with self.assertRaisesRegex(ValueError, "pinned PR 12"):
+                    audit.main(args)
+                fetch.assert_not_called()
 
     def test_identity_does_not_grant_redistribution(self):
         image_hash = audit.sha(b"picture")

@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-09-27",
+  "ok": true,
+  "code_base_commit": "85abf0aac59cad57ca97836ac458115ccbfa28d0",
+  "uncommitted_implementation_identified_by_sha256_lf": {
+    "scripts/workspace.py": "4aff2f7b379264cf46ab8a4cc79d2345450c40053f341e09cdb79b4d4203ec70",
+    "scripts/workspace_blender.py": "e7fc7978c2b2f09d769bc66925b0e40f0e89e3087961a70389db60602350ba1a",
+    "scripts/verify_city_images.py": "5acaa30360dc5a834cf140c8dd7ea23c55363ed4094e393e7ce59de32ff81b29",
+    "otw.ps1": "36f27512c45bc3cfab9db1799b76c2a05607ca67fe56b15f48b0c70ccd6a4af7",
+    "tests/test_workspace.py": "68b2ff09d949909a2ca9432955a73f8c1080326b5a589f36b0b5e492dbbce369",
+    "tests/test_city_catalog.py": "22205da5c3f92eb245ef0851f55987fad003c1a8ebe88ff6b2c006f596719901",
+    "tests/test_city_facades.py": "8e610ae56277b2132bd525dd15a3ba02ff1e40d624afce2d887397180a3ac778",
+    "tests/test_city_images.py": "b1256718935c471c5a24154604f07eeb78184a55bf8bc7cf347ffa0dec322c4e",
+    "manifests/contributor-workspace.json": "329ba4e169f0b0223155ca7745df7d07260c5f01572792605760d835a97ff872",
+    "manifests/mori-plaza-landscape-accepted.json": "901c4f1717ff80ff7ed2daf2dcdbad4a3065d8d089a3e5639fb258d81f05c98e",
+    "areas/tokyo-tower/mori-plaza-landscape-accepted-features.json": "6605544ed43f6a8e28a0e5529fd6abd432ec93ebed7f950fb3a27255589106c3"
+  },
+  "accepted_model": {
+    "pull_request": "https://github.com/OurJapan/open-tokyo-world/pull/40",
+    "merge_commit": "85abf0aac59cad57ca97836ac458115ccbfa28d0",
+    "bytes": 558877024,
+    "sha256": "2e2cce08aa581ef6a99d60c9fe993b8c4e53ff7f5cffb687f9d9c4cee19dc544",
+    "evidence": "docs/mori-plaza-landscape-v1-run.json"
+  },
+  "host": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "blender": "4.5.1 LTS",
+    "python": "3.11.11",
+    "separate_machine": false
+  },
+  "portable_checks": {
+    "tests": 199,
+    "passed": 194,
+    "skipped": 5,
+    "failed": 0,
+    "compileall_scripts_tests": true,
+    "blender_checks_run_separately": true
+  },
+  "migration": {
+    "old_registration_reported_update_required": true,
+    "current_registered": true,
+    "old_model_unchanged": true,
+    "accepted_source_unchanged": true,
+    "editable_copy_matches_reference": true,
+    "editable_copy_marked_unvalidated": true
+  },
+  "runtime_scene": {
+    "opened": true,
+    "objects": 3306,
+    "meshes": 3256,
+    "packed_images": 383,
+    "missing_images": [],
+    "unsupported_images": [],
+    "missing_libraries": [],
+    "external_images": [],
+    "linked_libraries": 0,
+    "self_contained_images_libraries": true,
+    "references_ok": true,
+    "scope": "Opening and image/library references only; not a full geometry, external dependency or accuracy audit."
+  },
+  "regression_cases": [
+    "Old model and existing edit are preserved when importing and re-importing a new city version.",
+    "Old registration reports update_required and refuses an edit under the new catalog.",
+    "A failed Blender check preserves the prior registration byte for byte.",
+    "The historical PR 12 image audit accepts its original input and rejects the current city inventory."
+  ],
+  "baseline_capture": {
+    "ok": true,
+    "mode": "baseline-capture",
+    "input_sha256": "2e2cce08aa581ef6a99d60c9fe993b8c4e53ff7f5cffb687f9d9c4cee19dc544",
+    "device": "OPTIX",
+    "width": 640,
+    "height": 360,
+    "samples": 8,
+    "seed": 0,
+    "cameras_sha256": "932358dc284b6f21b88817cb2229fd29ec31f5dfc574df8ef06cbe04a8faffc3",
+    "features_sha256": "9ef52c6046c075cf5a7a6ac98defaa2123bf2898bab964a78bb2590000432f20",
+    "patch_sha256": null,
+    "code_files": {
+      "scripts/review.py": "88adb807f48439a98e02337ddd4296cafe9d88aaaf51eed54df55fd24044be97",
+      "scripts/blender_worker.py": "97965299ffa827d797797a89df4e6481fa1a9e7f6fbce8812bf6ffa6ba0af121",
+      "scripts/mori_shape.py": "e82b840819da692b1a0dd6b27f095c524706fce08c0e85db47b2236301f91411",
+      "scripts/mori_crown_v2.py": "9822f54cec4965881dc5838e5204f55fcf95fcf172620ebb56735101be98015b",
+      "scripts/mori_crown_material.py": "02e207032a4873ee75cf80991ab2066e3621e9a8ccbf4c014e2c5aee06bbc8b5",
+      "scripts/mori_facade_v2.py": "b962aeb523cb35cd242bad7f3a91409750219bda62eec1cd64ddcbf49a7ab26f",
+      "scripts/mori_podium_v2.py": "f5de3f66b97bd63d55e91820ccbddf7bd99b0a290d65bc4c0f2eb5f91168d8ca",
+      "scripts/mori_entrance_v1.py": "aeb7417803ebea8ac8af590aeca7a1e723d1591e1756eb07ad1078cd9e753c90",
+      "scripts/mori_podium_v3.py": "cec7699cb570248bfb4c121275044b0950a6bfcad128464455a2faabc9321790",
+      "scripts/mori_terrace_v1.py": "26f9149e5889266caa7c62bbd8a0df886fb9713266751c0a69e6c6df24a036e5",
+      "scripts/mori_plaza_v1.py": "5f92f0381ab16fd0bbef325db2200381a903723ab5418ecb51c0c64562131ef9",
+      "scripts/mori_plaza_link_v1.py": "9db234b625b99fe1ee5751b4f4da57445ea6122222377e8b2e9fe36105519ec3",
+      "scripts/mori_plaza_edge_v1.py": "a04401be2c0eae5031df1348258d50e433f0a5168b736c890e5823e22b138414",
+      "scripts/mori_plaza_outline_v1.py": "bf32df1b459cf5851f7aefd6ad6a92f9f81fe3867cba3d40a322f749ec2aa3c6"
+    },
+    "changed_objects": [],
+    "output_blends": {
+      "before.blend": "0efca5aa92401b9f3a5570db437a6dbe34ca07047fcb2532dc344830ae155b03",
+      "after.blend": "a1158275162916179c395e36aa3a701c07bb1a5612a0bfac3b920a8877328f85"
+    },
+    "local_run_json_sha256": "c6755305f54b90ae35c9c5facbbd04a957f820825673d3d34f6325d2c9b9c5cd",
+    "saved_scene_validation": {
+      "before_ok": true,
+      "after_ok": true,
+      "reports_identical": true,
+      "counts": {
+        "objects": 3306,
+        "vertices": 51238297,
+        "polygons": 39532518
+      },
+      "known_empty_mesh_waivers": 5,
+      "unfingerprinted_modifier_warnings": 31
+    },
+    "views": {
+      "link-overview": {
+        "before_png_sha256": "264fa8a9bfaac2b76f051e1178c16ab438e8e3dc8caddba22388708fe51106b2",
+        "after_png_sha256": "f3ec72bad1209798ef590b2b06fa195cb158293472785e8a37fd6da4c935ac0f",
+        "before_pixel_sha256": "2cedea6e4fdb14cb478915ad500017cd41d87399053753d336a8867e6dc3f825",
+        "after_pixel_sha256": "d3f772c592dc30370109b2f88128408a5178a0c0bb4a9a1c11f294ae38e8f962",
+        "camera_identical": true,
+        "rgba8_comparison": {
+          "pixels": 230400,
+          "different_pixels_rgba8": 29,
+          "max_channel_difference_rgba8": 1,
+          "mean_channel_difference_rgba8": 3.146701388888889e-05
+        }
+      },
+      "link-approach": {
+        "before_png_sha256": "0261c6fed18ca20a4203821c35fd45cbac6a7c03998de2abb47f2782a8ea7f28",
+        "after_png_sha256": "316cb52db3137abf91876acc46ac72af4c95d6773401b42eb2e6df509088224f",
+        "before_pixel_sha256": "ed89e28e18b61b27d5a9a5eb5305572b0c28a812758e24989d1eba22852f82c2",
+        "after_pixel_sha256": "ef9b6f0128cb7ed6f85a8cc8cb5a27706934a650f53057a981262246682913fa",
+        "camera_identical": true,
+        "rgba8_comparison": {
+          "pixels": 230400,
+          "different_pixels_rgba8": 35,
+          "max_channel_difference_rgba8": 1,
+          "mean_channel_difference_rgba8": 3.7977430555555556e-05
+        }
+      },
+      "entrance-front": {
+        "before_png_sha256": "3590a71a4335c4eda5ef1444c0065cf70e56d54f44df65f90b81541ebefa45bf",
+        "after_png_sha256": "9e59a154712368764fdbc6d08e692cc0c2958c337d16b1a66b0d2420df6f3941",
+        "before_pixel_sha256": "a46b0bbd0a2f21c546fe7a5915644a5e09c32a6e734161c1792818127be071ad",
+        "after_pixel_sha256": "ad94d739881de0409bd15123689c8ebfa2f93719e8a752c794ddb3f464e848da",
+        "camera_identical": true,
+        "rgba8_comparison": {
+          "pixels": 230400,
+          "different_pixels_rgba8": 21,
+          "max_channel_difference_rgba8": 1,
+          "mean_channel_difference_rgba8": 2.2786458333333334e-05
+        }
+      },
+      "plaza-outward": {
+        "before_png_sha256": "62079db12cfe6b49924ab9765a6ee510b656f2843b757e6331853b8692694bfd",
+        "after_png_sha256": "0a63cffa2ab8d795bdaaa89fb98b38e16694fd230f1e02bc3a5d92a9b99508ad",
+        "before_pixel_sha256": "dddd6e39ed31139d99223776c6254d9926f85a47c3c6f21b931c9a98880f0502",
+        "after_pixel_sha256": "f5f63f70a2e6e4dc66b0e62ea970030ef2f4248acd5bfceef8efa0b7ec469c89",
+        "camera_identical": true,
+        "rgba8_comparison": {
+          "pixels": 230400,
+          "different_pixels_rgba8": 21,
+          "max_channel_difference_rgba8": 1,
+          "mean_channel_difference_rgba8": 2.2786458333333334e-05
+        }
+      },
+      "plaza-context": {
+        "before_png_sha256": "8e0dcc2ee5caa55eb7772530748e93f511fc523552f24145aab557c0ea9d2ce3",
+        "after_png_sha256": "e69f6f07c8b3744d59d4ce1ca081bacfadd094d1558df2cc86dca456cd536c1a",
+        "before_pixel_sha256": "1c9cfa1ab3e2f590bedbd52e551ae51f4d891581ae86020922303455716f5a17",
+        "after_pixel_sha256": "6b34860009e1b29c4d02dfff9116ec2a3b7183b6aba697b560f3672f07a7be8a",
+        "camera_identical": true,
+        "rgba8_comparison": {
+          "pixels": 230400,
+          "different_pixels_rgba8": 31,
+          "max_channel_difference_rgba8": 1,
+          "mean_channel_difference_rgba8": 3.363715277777778e-05
+        }
+      },
+      "plaza-edge": {
+        "before_png_sha256": "14303655126f24dbaa0abfc63b5bebbd65bf3043083563fb4aff18a2ff6c491d",
+        "after_png_sha256": "94a63d80ab9d24777f410c6e9bbd0022f899f160951517d84b6f864205ff10c7",
+        "before_pixel_sha256": "a4b6f49c9fbb580f8112a1c1b30418d85c495f0534a3f488fc0ab8d7b3b7d2c6",
+        "after_pixel_sha256": "24f6d83d95250fd3a524ea597fac51608bdbed0d9c8abecafee3f9e6fcbc71d2",
+        "camera_identical": true,
+        "rgba8_comparison": {
+          "pixels": 230400,
+          "different_pixels_rgba8": 25,
+          "max_channel_difference_rgba8": 1,
+          "mean_channel_difference_rgba8": 2.712673611111111e-05
+        }
+      },
+      "protected-street-context": {
+        "before_png_sha256": "cc9e3ac449fe601b50e518e4526fd78a4e64d0f3a0618dd9c546debb14cb8310",
+        "after_png_sha256": "1419e5802b37d9e8e484a69e9e8b305e68640b25cb45d7832056ecfc21c41ced",
+        "before_pixel_sha256": "ded54dc488136ca956ccfdf5f8fe302d3501062a5810ca6947fffd465dd667d8",
+        "after_pixel_sha256": "25772a402a6b105a6ba46e0849b05f03728d8516e12df0b564e438eab58111fc",
+        "camera_identical": true,
+        "rgba8_comparison": {
+          "pixels": 230400,
+          "different_pixels_rgba8": 30,
+          "max_channel_difference_rgba8": 1,
+          "mean_channel_difference_rgba8": 3.255208333333333e-05
+        }
+      }
+    },
+    "pixel_comparison_method": "Reopen PNG with Blender, round each RGBA float channel * 255 to integer, compare absolute differences.",
+    "pixel_comparison_script_sha256_lf": "e1a4efefbfef1ae437507b50ca269fc0c1b7f1af47889edccc1c394f866f3da3"
+  },
+  "full_city_public_distribution_ready": false,
+  "limits": [
+    "Local Windows verification only; not an independent contributor or full-city download test.",
+    "Input byte identity and baseline capture do not prove real-world accuracy or redistribution rights.",
+    "Modifier stacks, animation and all external dependency types are not fully fingerprinted.",
+    "Images are not byte-identical even on this host: 21-35 of 230400 pixels differ per view, by at most 1 in an RGBA8 channel.",
+    "Actual stairs, terrain grades, road transitions and legacy building alignment remain unresolved.",
+    "PR 12 inventory and provenance reports remain historical and are not reattributed to PR 40."
+  ]
+}

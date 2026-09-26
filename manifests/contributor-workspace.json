@@ -22,18 +22,18 @@
   },
   "profiles": {
     "city": {
-      "label": "Tokyo Tower area: accepted city after PR 12",
+      "label": "Tokyo Tower area: accepted city after PR 40",
       "mode": "import",
       "distribution": "blocked-pending-rights-and-download-location",
       "public_url": null,
       "asset": {
-        "bytes": 558751758,
-        "sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926"
+        "bytes": 558877024,
+        "sha256": "2e2cce08aa581ef6a99d60c9fe993b8c4e53ff7f5cffb687f9d9c4cee19dc544"
       },
-      "expected_meshes": 3255,
-      "evidence": "docs/mori-plaza-edge-v1-run.json",
-      "cameras": "areas/tokyo-tower/mori-plaza-edge-cameras.json",
-      "features": "areas/tokyo-tower/mori-plaza-edge-features.json",
+      "expected_meshes": 3256,
+      "evidence": "docs/mori-plaza-landscape-v1-run.json",
+      "cameras": "areas/tokyo-tower/mori-plaza-outline-cameras.json",
+      "features": "areas/tokyo-tower/mori-plaza-landscape-accepted-features.json",
       "availability_note": "A clone does not contain this scene. Import the exact approved file from an authorized provider. No automatic substitution with the Mori profile."
     },
     "mori": {

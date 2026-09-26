@@ -4,7 +4,7 @@
 
 ## 作成と閲覧
 
-[制作環境](contributor-workspace.md)の手順で街を登録してから、リポジトリのルートで実行します。Blender 4.5.1 LTS、通常のPython 3.11以降が必要です。追加のpipパッケージは不要です。`python` はBlender付属Pythonの実行ファイルへ置き換えられます。
+PR #12の固定版を手元に保持している場合に、リポジトリのルートで実行します。[制作環境の基準更新](city-baseline-pr40.md)後もこの調査の入力はPR #12のままで、以前の登録ファイルは保持されます。新規参加者が現行cityだけを登録しても、この歴史的なカタログの入力は揃いません。Blender 4.5.1 LTS、通常のPython 3.11以降が必要です。追加のpipパッケージは不要です。`python` はBlender付属Pythonの実行ファイルへ置き換えられます。
 
 ```powershell
 python scripts/city_catalog.py --blender 'C:\Program Files\Blender Foundation\Blender 4.5\blender.exe' --input data/local/assets/tokyo-city-pr12/city.blend --output data/local/catalogs/my-city

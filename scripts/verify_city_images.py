@@ -204,9 +204,11 @@ def main(argv=None):
     parser.add_argument("--source-lock", type=Path, help="Check upstream bytes against an earlier source-lock.json")
     args = parser.parse_args(argv)
     inventory = read_json(args.inventory)
-    pinned = read_json(ROOT / "manifests/contributor-workspace.json")["profiles"]["city"]["asset"]["sha256"]
+    # The published image audit and source lock describe PR 12, independently
+    # of the city version currently registered for editing.
+    pinned = read_json(ROOT / "manifests/mori-plaza-edge-accepted.json")["sha256"]
     if inventory.get("version") != 1 or inventory.get("input_sha256") != pinned:
-        raise ValueError("Inventory must belong to the pinned accepted city")
+        raise ValueError("Inventory must belong to the pinned PR 12 city image audit")
     names = [i["image"] for i in inventory["images"]]
     if len(set(names)) != len(names) or not names:
         raise ValueError("Empty inventory or duplicate image names")
