@@ -1,0 +1,251 @@
+{
+  "ok": true,
+  "contract_tests": {
+    "run": 195,
+    "passed": 190,
+    "skipped": 5,
+    "failed": 0,
+    "command": "python -m unittest discover -s tests",
+    "python": "3.11.11"
+  },
+  "blender_smoke": [
+    {
+      "case": "valid",
+      "passed": true
+    },
+    {
+      "case": "missing-image",
+      "passed": true
+    }
+  ],
+  "compileall_ok": true,
+  "changed_objects": [
+    "park mapped land use",
+    "OTW Mori Central Green / paving"
+  ],
+  "new_objects": 1,
+  "object_count_before": 3305,
+  "object_count_after": 3306,
+  "assets_unchanged": true,
+  "geometry_audit": {
+    "ok": true,
+    "park_matches_pinned_source_vertices_and_triangles": true,
+    "original_park_vertices_unchanged": true,
+    "outside_park_faces_and_attributes_exact": 6427,
+    "park_symmetric_difference_m2": 0.00034042181142164666,
+    "paving_symmetric_difference_m2": 0.0,
+    "park_paving_overlap_m2": 5.438229936479898e-06,
+    "new_surface_protected_overlap_m2": 0.0,
+    "paving_closed_consistently_oriented": true,
+    "paving_volume_m3": 142.61176062230066,
+    "new_degenerate_faces": 0,
+    "inherited_degenerate_park_faces_exact": 34,
+    "retained_entry_samples": 9,
+    "continuous_connector_samples": 24,
+    "connector_width_clearance_samples": 96,
+    "seam_samples": [
+      {
+        "uv": [
+          0,
+          31.99
+        ],
+        "before_object": "OTW Mori plaza link / paving",
+        "before_z": 0.11018955707550049,
+        "after_object": "OTW Mori plaza link / paving",
+        "after_z": 0.11018955707550049
+      },
+      {
+        "uv": [
+          0,
+          32.01
+        ],
+        "before_object": "park mapped land use",
+        "before_z": 0.1100001335144043,
+        "after_object": "OTW Mori Central Green / paving",
+        "after_z": 0.11000001430511475
+      },
+      {
+        "uv": [
+          0,
+          63.4
+        ],
+        "before_object": "park mapped land use",
+        "before_z": 0.11000001430511475,
+        "after_object": "park mapped land use",
+        "after_z": 0.11000001430511475
+      },
+      {
+        "uv": [
+          0,
+          63.5
+        ],
+        "before_object": "ground",
+        "before_z": 0.0,
+        "after_object": "park mapped land use",
+        "after_z": 0.1100001335144043
+      },
+      {
+        "uv": [
+          0,
+          65
+        ],
+        "before_object": "ground",
+        "before_z": 0.0,
+        "after_object": "park mapped land use",
+        "after_z": 0.1100001335144043
+      },
+      {
+        "uv": [
+          0,
+          70
+        ],
+        "before_object": "ground",
+        "before_z": 0.0,
+        "after_object": "park mapped land use",
+        "after_z": 0.11000001430511475
+      }
+    ],
+    "limitations": [
+      "Source footprints are mapped approximations, not a survey.",
+      "Connector geometry and flat 0.11m elevation are inferred; real stairs and grades remain unresolved.",
+      "Existing higher road interfaces outside the entrance-to-west-path connection remain unchanged.",
+      "Garden areas retain the inherited grass representation; individual landscape planting is not reconstructed.",
+      "Exactly inherited zero-area lawn faces remain; they are excluded only from area unions."
+    ],
+    "inputs_unchanged": true,
+    "input_sha256": {
+      "before": "c67109764aa1d54dd00a7e55d86ac9aac672a623f24c5d164536b1e5e10f766e",
+      "after": "2e2cce08aa581ef6a99d60c9fe993b8c4e53ff7f5cffb687f9d9c4cee19dc544",
+      "plan": "b1b6776b7cf60c9e5e4a342bac5a27624b0c743dd950358af8607fb3b5c589a8"
+    },
+    "validator_sha256": "504f1967c03fd02a606715b0a1c53c38ea31ac671c1c9f72072138358a7c952a"
+  },
+  "patch_audit": {
+    "original_park_vertices_retained": 19302,
+    "park_cut_area_m2": 82.69077491501774,
+    "park_cut_faces": 7,
+    "paving_faces": 907,
+    "paving_vertices": 626,
+    "plan": {
+      "connector_basis": "Inferred short turn to the mapped west path; no source-way ID or survey claimed.",
+      "coordinate_grid_m": 0.001,
+      "elevation_basis": "Inherited 0.11m lawn and adopted entrance-link end, not surveyed terrain.",
+      "inferred_connector_area_m2": 121.45471549999979,
+      "lawn_paving_overlap_m2": 0.0,
+      "old_lawn_cut_for_connector_m2": 82.69069453627145,
+      "paving_area_m2": 1188.4320089999987,
+      "protected_overlap_m2": 0.0,
+      "restored_lawn_area_m2": 1070.0641995000003,
+      "runtime": {
+        "geos": "3.13.1",
+        "numpy": "2.3.5",
+        "python": "3.12",
+        "shapely": "2.1.2"
+      },
+      "source_records": [
+        {
+          "area_m2": 1715.6107394499977,
+          "tags": {
+            "area": "yes",
+            "highway": "pedestrian",
+            "name": "中央広場",
+            "name:en": "Central Green",
+            "surface": "paving_stones"
+          },
+          "timestamp": "2026-08-16T23:30:05Z",
+          "version": "4",
+          "way_id": "1443867470"
+        },
+        {
+          "area_m2": 1062.6557470442153,
+          "tags": {
+            "landuse": "grass"
+          },
+          "timestamp": "2025-10-22T06:30:02Z",
+          "version": "1",
+          "way_id": "1443867471"
+        },
+        {
+          "area_m2": 230.71403379751695,
+          "tags": {
+            "landuse": "grass"
+          },
+          "timestamp": "2025-10-22T06:30:02Z",
+          "version": "1",
+          "way_id": "1443867472"
+        },
+        {
+          "area_m2": 78.8151652372419,
+          "tags": {
+            "leisure": "garden"
+          },
+          "timestamp": "2025-10-22T06:30:02Z",
+          "version": "1",
+          "way_id": "1443867473"
+        },
+        {
+          "area_m2": 222.7450704283899,
+          "tags": {
+            "leisure": "garden"
+          },
+          "timestamp": "2025-10-22T06:30:02Z",
+          "version": "1",
+          "way_id": "1443867474"
+        },
+        {
+          "area_m2": 74.31693076265634,
+          "tags": {
+            "leisure": "garden"
+          },
+          "timestamp": "2025-10-22T06:30:02Z",
+          "version": "1",
+          "way_id": "1443867475"
+        },
+        {
+          "area_m2": 168.8725297632464,
+          "tags": {
+            "leisure": "garden"
+          },
+          "timestamp": "2025-10-22T06:30:02Z",
+          "version": "1",
+          "way_id": "1443867476"
+        },
+        {
+          "area_m2": 293.2398390765218,
+          "tags": {
+            "leisure": "garden"
+          },
+          "timestamp": "2025-10-22T06:30:02Z",
+          "version": "1",
+          "way_id": "1443867479"
+        }
+      ],
+      "top_z_m": 0.11
+    },
+    "plan_sha256": "b1b6776b7cf60c9e5e4a342bac5a27624b0c743dd950358af8607fb3b5c589a8",
+    "restored_lawn_triangles": 218
+  },
+  "visual_review": {
+    "agent_compared_all_seven_views": true,
+    "human_approval": "pending",
+    "accepted_city_updated": false,
+    "remaining_issues": [
+      "Actual grades and stairs are unresolved; flat height and entrance connector are inferred.",
+      "Higher protected-road interfaces and inconsistent older PLATEAU building footprints remain.",
+      "Gardens still use inherited grass representation; detailed planting remains."
+    ]
+  },
+  "dependency": {
+    "pull_request": 39,
+    "reviewed_head": "b395204099da3aea7040ce3921eb265c02560bc2",
+    "human_adoption_approved": true,
+    "merged_to_main": false
+  },
+  "limitations": [
+    "Human visual approval is required.",
+    "Peak RAM/VRAM and physical accuracy are not measured.",
+    "Timing is one run, not a warmed-up median.",
+    "Dependency audit and fingerprints cover documented initial checks, not all Blender features."
+  ],
+  "plan_regeneration_bytes_identical": true
+}

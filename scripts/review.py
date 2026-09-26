@@ -106,6 +106,13 @@ def validate_patch(patch):
             require(set(op)=={'op','feature_id','object','expected_mesh_sha256'}, 'Unexpected podium patch keys')
             require(op['feature_id']=='otw:jp:tokyo:minato:azabudai-mori-jp' and op['object']=='Mori JP podium / stone', 'Wrong podium target')
             require(re.fullmatch('[0-9a-f]{64}',op['expected_mesh_sha256']) is not None and bool(patch['source_refs']), 'Podium patch requires hash and sources')
+        elif op['op']=='mori_plaza_landscape_v1':
+            from mori_plaza_landscape_v1 import ANCHOR,FEATURE,PARK_HASH,ADDED
+            require(set(op)=={'op','feature_id','object','expected_mesh_sha256','park_mesh_sha256','plan_sha256','added_objects'}, 'Unexpected landscape patch keys')
+            require(op['object']==ANCHOR and op['feature_id']==FEATURE and op['park_mesh_sha256']==PARK_HASH, 'Wrong landscape target')
+            require(set(op['added_objects'])==ADDED and len(op['added_objects'])==len(ADDED), 'Wrong landscape additions')
+            require(all(re.fullmatch('[0-9a-f]{64}',op[k]) for k in ('expected_mesh_sha256','park_mesh_sha256','plan_sha256')), 'Landscape requires hashes')
+            require(bool(patch['source_refs']) and len(ops)==1, 'Landscape must be a standalone increment')
         elif op['op'] in ('mori_plaza_v1','mori_plaza_link_v1','mori_plaza_edge_v1','mori_plaza_outline_v1'):
             if op['op']=='mori_plaza_outline_v1':
                 from mori_plaza_outline_v1 import ANCHOR,FEATURE,ROADS,ADDED
@@ -178,6 +185,7 @@ def main():
     p.add_argument('--patch', type=Path)
     p.add_argument('--geometry-source', type=Path, help='Pinned source_mori.npz, only for podium recovery')
     p.add_argument('--road-inputs', type=Path, help='Pinned production-input directory, only for Mori plaza outline correction')
+    p.add_argument('--landscape-plan', type=Path, help='Pinned local geometry plan, only for Mori plaza landscape correction')
     p.add_argument('--output', required=True, type=Path, help='Must not already exist')
     p.add_argument('--device', choices=['CPU','OPTIX'], default='CPU')
     p.add_argument('--width', type=int, default=640)
@@ -199,6 +207,13 @@ def main():
     if needs_roads:
         from mori_plaza_outline_v1 import verify_sources, SOURCE_FILES
         verify_sources(a.road_inputs)
+    needs_landscape=bool(patch and any(op['op']=='mori_plaza_landscape_v1' for op in patch['operations']))
+    require(needs_landscape==bool(a.landscape_plan), 'Landscape operation requires exactly one local plan')
+    if needs_landscape:
+        from mori_plaza_landscape_v1 import load_plan, INPUT_SHA256
+        landscape_hash=patch['operations'][0]['plan_sha256']
+        load_plan(a.landscape_plan,landscape_hash)
+        require(digest(a.input)==INPUT_SHA256, 'Landscape requires the reviewed outline scene')
     geometry_hash=None
     if needs_geometry:
         from mori_podium_v2 import SOURCE_BYTES,SOURCE_SHA256
@@ -217,6 +232,8 @@ def main():
         revision = subprocess.run(['git','-c',f'safe.directory={ROOT.as_posix()}','-C',str(ROOT),'rev-parse','HEAD'],capture_output=True,text=True,check=True).stdout.strip()
         summary['code_base_commit'] = revision
         summary['code_files'] = {f.relative_to(ROOT).as_posix():digest(f) for f in (Path(__file__),WORKER,ROOT/'scripts/mori_shape.py',ROOT/'scripts/mori_crown_v2.py',ROOT/'scripts/mori_crown_material.py',ROOT/'scripts/mori_facade_v2.py',ROOT/'scripts/mori_podium_v2.py',ROOT/'scripts/mori_entrance_v1.py',ROOT/'scripts/mori_podium_v3.py',ROOT/'scripts/mori_terrace_v1.py',ROOT/'scripts/mori_plaza_v1.py',ROOT/'scripts/mori_plaza_link_v1.py',ROOT/'scripts/mori_plaza_edge_v1.py',ROOT/'scripts/mori_plaza_outline_v1.py')}
+        if needs_landscape:
+            summary['code_files'].update({f.relative_to(ROOT).as_posix():digest(f) for f in (ROOT/'scripts/mori_plaza_landscape_v1.py',ROOT/'scripts/prepare_mori_plaza_landscape.py')})
         job = {'output':str(output),'cameras':cameras,'features':features,'patch':patch,'settings':{k:summary[k] for k in ('blender_version','device','width','height','samples','seed')}}
         if needs_geometry:
             job['geometry_source']=str(a.geometry_source.resolve())
@@ -224,6 +241,9 @@ def main():
         if needs_roads:
             job['road_inputs']=str(a.road_inputs.resolve())
             summary['road_source_sha256']={name:spec[1] for name,spec in SOURCE_FILES.items()}
+        if needs_landscape:
+            job['landscape_plan']=str(a.landscape_plan.resolve())
+            summary['landscape_plan_sha256']=landscape_hash
         job_path = output/'job.json'; write_json(job_path,job)
         for phase, blend in [('prepare',source),('validate-before',output/'before.blend'),('validate-after',output/'after.blend')]:
             summary['jobs'][phase] = run_job(a.blender,phase,output,job_path,blend,a.timeout)
@@ -242,6 +262,9 @@ def main():
         if needs_roads:
             from mori_plaza_outline_v1 import ROADS,ADDED
             allowed=sorted(ROADS);added=sorted(ADDED)
+        if needs_landscape:
+            from mori_plaza_landscape_v1 import CHANGED,ADDED
+            allowed=sorted(CHANGED);added=sorted(ADDED)
         summary['changed_objects'] = compare_reports(before,after,allowed,added)
         if patch: require(bool(summary['changed_objects']), 'Patch produced no recorded change')
         for phase in ('render-before','render-after'):
@@ -250,6 +273,7 @@ def main():
         require(digest(source) == input_hash, 'Source changed during review')
         if needs_geometry: require(digest(a.geometry_source)==geometry_hash, 'Geometry source changed during review')
         if needs_roads: verify_sources(a.road_inputs)
+        if needs_landscape: require(digest(a.landscape_plan)==landscape_hash, 'Landscape plan changed during review')
         summary['ok'] = True
         make_html(output,cameras,summary)
     except Exception as error:

@@ -104,3 +104,9 @@ OptiXが使えない環境では明示的に`--device CPU`を選びます。自�
 `mori_plaza_outline_v1` はPR #12採用版専用の独立した増分です。`--road-inputs` に回収済み制作入力のルートを指定し、固定した `work/osm.xml` と `work/twin_towers/tower_surfaces.json` のサイズ・hash・道路面の一致を確認します。この引数は同operationにだけ必須で、他のpatchと混用できません。外部入力が不足・不一致なら変更前に停止します。
 
 変更は道路3objectの対象面に限定され、独立した `validate_mori_plaza_outline.py` が保存後の面積・対象外の面・地表を検査します。追加validatorのみ、Python 3.12と `requirements-production.txt` の固定NumPy／Shapelyを必要とします。[根拠・再実行・検証の範囲](mori-plaza-outline-v1.md)を参照してください。
+
+## 中央広場の芝生・園路
+
+`mori_plaza_landscape_v1` はPR #39の画像確認済み出力専用の独立した増分です。固定した地図・道路seed・土地利用の制作入力から `prepare_mori_plaza_landscape.py` でローカルplanを生成し、`--landscape-plan` に指定します。入力sceneとplanのhashがpatch・lockに一致しなければ停止します。他のoperationとは混用しません。
+
+既存芝生1objectと新しい舗装1objectだけを変更し、`validate_mori_plaza_landscape.py` が保存後の面積・対象外の面・舗装の閉形状・入口と通路を検査します。plan生成と独立validatorには固定したPython 3.12／NumPy／Shapely環境が必要で、runner内のBlender適用は標準ライブラリを使います。[根拠・再実行・推定箇所](mori-plaza-landscape-v1.md)を参照してください。
