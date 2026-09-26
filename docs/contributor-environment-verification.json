@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-27",
+  "local_check": {
+    "public_source_url": "https://codeload.github.com/OurJapan/open-tokyo-world/zip/dc976e08f8c0527d12f9df0d24eaf066a8a362c3",
+    "source_commit": "dc976e08f8c0527d12f9df0d24eaf066a8a362c3",
+    "source_zip_sha256": "8651e34ecce0d0acee3e5f514365499fbc465d69a7ae24ad652383e7b7c32abe",
+    "source_zip_bytes": 2934168,
+    "authentication": "none",
+    "local_sources_or_city_files_copied": false,
+    "output_path_contains_japanese_and_space": true,
+    "result": {
+      "schema_version": 1,
+      "ok": true,
+      "platform": "win32",
+      "runner_python": "3.11.11",
+      "github_actions": false,
+      "run_url": null,
+      "fresh_workspace": true,
+      "isolated_blender_user_directories": true,
+      "explicit_local_source_directories": [],
+      "automatic_script_execution": false,
+      "scope": "Mori neighborhood and published shared components; automated headless checks",
+      "limitations": [
+        "No interactive desktop/GPU performance or first-time human usability test.",
+        "No full-city distribution, geographic accuracy or cross-host byte-identical render claim.",
+        "On a local run, file/profile isolation is not an OS or hardware sandbox."
+      ],
+      "lock_id": "7a8df09f125b3e1fda6c60bcd9ce7ea9e30985e08bb1c9f0c38f29160c910a09",
+      "code_sha256_lf": {
+        "LICENSE.md": "96325b86c8226448c09bfe9afcb6a4f66cc7b0e3e31e90ee0e849dcbec2217f9",
+        "MIT-LICENSE.txt": "b3483b1ce13b6d2fee4b6b59a687cafa9d4f968c6ce3493bbd3c6c0b7a7d1048",
+        "scripts/district_distribution.py": "3693dd0bcd336ac9880f6b38d1c6cdee5aed215407439564a883fa18f86d908d",
+        "scripts/mori_crown_material.py": "25d8ae26b7c5b2ba38f6db5fd5baa507f18c3965a83a3e09996d71fceb2d1959",
+        "scripts/mori_crown_v2.py": "8bb386b4429575c4c37b914c71b63629fb844c84c0399e943706b34fd10e64a7",
+        "scripts/mori_entrance_v1.py": "f9ab6f5aa0ad9a1cd201c8b021e9893a411e9556afbc7bb877f558e6faa2fede",
+        "scripts/mori_facade_v2.py": "5df83c9acf790bbfc1491f133445221174644663e2c041ec860a2900a81e7b9e",
+        "scripts/mori_plaza_link_v1.py": "c5e15978e47a7e4816001b175ead98d7445bf37828f48945f15915db639f4d37",
+        "scripts/mori_plaza_v1.py": "b16a1179b14f9e56b615d818c06da11c7be77959c199e2d93c6ee4544076fc2c",
+        "scripts/mori_podium_v3.py": "b202252d78763d965213c30a8c85260b0ce550e32128a7dbef05107d9e639dfb",
+        "scripts/mori_shape.py": "5588ac6e1409944faf1d686baffa7230b7a95a0b939c21502686b0a96d80df5a",
+        "scripts/mori_terrace_v1.py": "2056674560bbcd92503db2a5e8491eca0f2f21ab782ba9d332820b70a74d1a9d",
+        "scripts/workspace.py": "95b82fddc6642e1315ff3e4a909386972bf946e6c7340b5edac4980b5a3fbd0c",
+        "scripts/workspace_blender.py": "e7fc7978c2b2f09d769bc66925b0e40f0e89e3087961a70389db60602350ba1a",
+        "starter/mori/ASSET-LICENSE.md": "273fe7f1e36cd69ef4d239d8f964add0a12762685b08b6c9895ba372e5bf3fbf",
+        "starter/mori/NOTICE.md": "f3030780f62e765857cd291a8c7cdd31f6a331acd8b67f93f4b890692a3e8ec5",
+        "starter/mori/facade.py": "e0422fc6998ad3791ecf3122ccd3e509a540559e791cd415b7578a8cf054f4f4",
+        "starter/mori/profile.py": "78767146deaa0dd7280eda01dfe3da09e69bcc6cce6e4bde812a14c5da220a9b",
+        "starter/mori/provenance.json": "2d136b465d026cc07fd256d4fb54e807dacfdab5ef29b361deef30ddccfe4d91",
+        "starter/mori/run.py": "fbd3ac5d7557efc87a4eb012c51232d0a02f948e3239012439e3a605a1d8f796",
+        "starter/mori/scene.py": "171b9658e2cc5028953b871b793209da83ee47e40a9b92998c937d819a9bf92e",
+        "starter/plateau/NOTICE.md": "406a0edf0563a6a36064ceed8d7a74b35dabbdbadacdda7b1f20ffa8fb8bb18c",
+        "starter/plateau/run.py": "2c778aa93ece95f848340c26c345648afe99dd361e2652562f88718d20228679",
+        "starter/plateau/scene.py": "54aef39d9517c9a1872ce7f38c95225b04b4d7867a169c068b8f054b5724fad9",
+        "starter/plateau/tile.py": "566c3426113935348be0bd26c6e06ced6bd4f3c6ef5028fd9895736e670fccda",
+        "starter/plaza/ASSET-LICENSE.md": "a55fdf61bf805e7e8d4811a0d57e2ab553ce47cfec5296ab439fe081cc15e07f",
+        "starter/plaza/provenance.json": "4931b7b01c1ea2e60192685d21a4af595f94ae94a3f8e890751043410bb7fb0c",
+        "starter/plaza/scene.py": "272f5b50a7d6953c67ec2a0b9acb209a4124b7120b4db21c225292c4b86cf751"
+      },
+      "downloads": [
+        {
+          "package": "plateau-minato-tile221",
+          "version": "2025.1.0",
+          "file": "tileset.json",
+          "bytes": 412889,
+          "sha256": "edec4c24d137eaf08a8525cecea505a3f21a30823b9ef4fb530e10774cea1323",
+          "state": "download"
+        },
+        {
+          "package": "plateau-minato-tile221",
+          "version": "2025.1.0",
+          "file": "data221.b3dm",
+          "bytes": 1246040,
+          "sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2",
+          "state": "download"
+        },
+        {
+          "package": "procedural-components",
+          "version": "0.1.0",
+          "file": "procedural-components-v0.1.0.zip",
+          "bytes": 10405562,
+          "sha256": "8c78dcce8ba43c5d4e28cb92936b0a1569dc1fe8f68042efce49fbfe4f6197c6",
+          "state": "download"
+        }
+      ],
+      "download_bytes": 12064491,
+      "local_copy_bytes": 0,
+      "offline_download_bytes": 0,
+      "generated_reference_reused": true,
+      "mori_meshes": 42,
+      "comparison_pngs": [
+        "after-crown.png",
+        "after-entrance.png",
+        "after-full.png",
+        "after-podium.png",
+        "before-crown.png",
+        "before-entrance.png",
+        "before-full.png",
+        "before-podium.png"
+      ],
+      "shared_meshes": 16,
+      "edit_roundtrip": {
+        "ok": true,
+        "blender": "4.5.1 LTS",
+        "meshes": 42,
+        "test_only": true,
+        "changed_meshes": [
+          "Mori independent / floors and roof"
+        ],
+        "edited_vertex_persisted": true,
+        "mesh_uv_transform_material_slots_preserved": true,
+        "packed_images_preserved": true,
+        "separate_process_reopen": true
+      },
+      "reference_unchanged": true,
+      "shared_kit_unchanged": true,
+      "notices_preserved": [
+        "ASSET-LICENSE.md",
+        "CODE-LICENSE.md",
+        "MIT-LICENSE.txt",
+        "NOTICE.md",
+        "PLATEAU-NOTICE.md",
+        "PLAZA-LICENSE.md"
+      ],
+      "legacy_scene_used": false,
+      "elapsed_seconds": 67.969
+    }
+  },
+  "verification_code_sha256_lf": {
+    "tests/contributor_smoke.py": "c38585b5e0586f379d138fc6068cdf7f7a5064eb23ad9518e925be4ad769740c",
+    "tests/contributor_edit_blender.py": "b736b68d3e30293a5c851c2c0f758da8a143bb12a5248ff25a5021bff1083e1a"
+  },
+  "hosted_workflow": ".github/workflows/contributor-environment.yml",
+  "hosted_results": "Each Actions run retains its own report with the run URL. This local record is not evidence of a hosted run.",
+  "portable_checks": {
+    "tests": 178,
+    "passed": 173,
+    "skipped": 5,
+    "failed": 0
+  }
+}
