@@ -4,7 +4,7 @@
 
 現在登録している地区は **森JP周辺** です。公式PLATEAUの固定1タイルを使い、森JPの詳細モデル・周囲23棟・広場6部品を再生成します。採用済みの街全体を切断したものではありません。東京タワー、道路、地形、旧都市の植栽配置は含みません。範囲は既存の生成対象に基づき、地理的な境界ポリゴンは未確定です。
 
-共通素材として、許諾済みの樹木・低木16部品と31材質を登録しました。ZIPはローカルで検証済みで、公開URLはまだありません。地区を選んだだけでは自動取得しません。
+共通素材として、許諾済みの樹木・低木16部品と31材質を登録し、[v0.1.0プレリリース](https://github.com/OurJapan/open-tokyo-world/releases/tag/procedural-components-v0.1.0)で公開しました。`--common procedural-components` を指定すると取得できます。地区を選んだだけでは自動取得しません。
 
 ## 森JP周辺を準備する
 
@@ -30,16 +30,16 @@ Blenderを起動せず取得だけ先に行う場合は、`setup` を `sync` に
 
 ## 共通素材を追加する
 
-正当な提供元から許諾済みのZIPを受け取った場合、保存したフォルダーを明示します。
+森JP周辺と共通素材を公開URLからまとめて取得する場合：
 
 ```powershell
-.\otw.ps1 district plan --district mori --common procedural-components --source-dir 'C:\Received\packages' --output build/locks/mori-with-trees.json
-.\otw.ps1 district setup --lock build/locks/mori-with-trees.json --source-dir 'C:\Received\packages'
+.\otw.ps1 district plan --district mori --common procedural-components --output build/locks/mori-with-trees.json
+.\otw.ps1 district setup --lock build/locks/mori-with-trees.json
 ```
 
-探すファイル名は `procedural-components-v0.1.0.zip` です。指定フォルダーの直下、または `procedural-components/` 配下だけを調べます。無関係なフォルダーを検索しません。複数の入力フォルダーは `--source-dir` を繰り返して指定できます。
+共通素材だけなら `--district mori` を省略できます。取得済みZIPを使う場合は `--source-dir 'C:\Received\packages'` を追加します。探すファイル名は `procedural-components-v0.1.0.zip` です。指定フォルダーの直下、または `procedural-components/` 配下だけを調べます。無関係なフォルダーを検索しません。複数の入力フォルダーは `--source-dir` を繰り返して指定できます。
 
-公開URLも明示したローカルファイルもなく、キャッシュにもないパッケージを選ぶと、**ダウンロード開始前に停止**します。共通素材を省略して成功したように表示することはありません。Releaseを公開した後にURLを台帳へ追加すれば、同じコマンドでネットワークから取得できます。
+今後、公開URLも明示したローカルファイルもなく、キャッシュにもないパッケージを選ぶと、**ダウンロード開始前に停止**します。共通素材を省略して成功したように表示することはありません。URLは台帳で管理し、認証不要のHTTPS取得と固定ハッシュの照合を行います。
 
 森JPと共通素材を両方初めて用意する場合、固定入力・ZIPの合計は **12,064,491 bytes** です。ZIPを手元から指定すれば、その10,405,562 bytesはローカルコピーとして扱います。共通素材の `kit.blend` は独立したライブラリとして表示し、BlenderのAppendで利用できます。街への自動配置や地区間の自動結合は行いません。
 
@@ -54,7 +54,7 @@ Blenderを起動せず取得だけ先に行う場合は、`setup` を `sync` に
 
 取得先URLをコンテンツの識別とは分離しています。GitHub Releasesから別のHTTPSストレージへ移す場合も、同じ版・内容・ファイルハッシュならキャッシュと構成IDを再利用できます。新しい台帳に登録された取得先も、旧lockの内容と一致する場合だけ使用します。内容が違うURLからの取得は照合で停止します。lockのIDは署名や配布許諾の証明ではありません。
 
-コード・データ・Blender版を揃える仕組みです。別PCで生成したblendや描画結果のバイト単位一致、GPU性能、地理精度を保証するものではありません。
+森JPの実行設定は、runner・出力名・メッシュ数・入力のNOTICE・実行環境を明示して固定します。取得先の公開情報など、生成に使わない台帳項目の更新では地区の構成IDを変えません。コード・データ・Blender版を揃える仕組みで、別PCで生成したblendや描画結果のバイト単位一致、GPU性能、地理精度を保証するものではありません。
 
 ## 保存先と拡張
 
@@ -85,4 +85,4 @@ data/local/edits/                    個別の編集用コピー
 python -m unittest discover -s tests
 ```
 
-地区選択、共通依存、循環検出、部分取得、オフライン再利用、破損・中断、ZIP照合、旧版保持、URL移行、コード不一致、生成済み地区の再利用、編集コピーを検査します。実データの実行結果は[検証記録](district-distribution-verification.json)に残します。
+地区選択、共通依存、循環検出、部分取得、オフライン再利用、破損・中断、ZIP照合、旧版保持、URL移行、コード・実行設定の不一致、生成済み地区の再利用、編集コピーを検査します。初版の実データ実行は[検証記録](district-distribution-verification.json)、公開後の匿名取得と地区セットアップは[公開取得の検証](../assets/procedural-components/public-download-verification.json)に残します。

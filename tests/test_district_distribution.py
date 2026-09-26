@@ -302,8 +302,13 @@ class DistrictDistributionContracts(unittest.TestCase):
         self.assertEqual(set(package["members"]), set(record["archive_members"]))
         for name, expected in record["inventory"]["files"].items():
             self.assertEqual(package["members"][name], expected)
-        self.assertEqual(package["availability"], "local-only")
-        self.assertFalse(package["files"][package["archive"]]["urls"])
+        url = record["public_download_url"]
+        self.assertEqual(package["availability"], "public" if url else "local-only")
+        self.assertEqual(package["files"][package["archive"]]["urls"], [url] if url else [])
+        if url:
+            release = dist.ws.read_json(ROOT / "assets/procedural-components/release-v0.1.0.json")
+            self.assertEqual(release["asset"]["url"], url)
+            self.assertEqual(release["asset"]["sha256"], record["package"]["sha256"])
         self.assertEqual(catalog["districts"]["mori"]["scope"]["expected_meshes"], 42)
         self.assertIsNone(catalog["districts"]["mori"]["scope"]["geographic_boundary"])
 
@@ -400,6 +405,27 @@ class DistrictDistributionContracts(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "adapter inputs differ"):
                 dist.setup(Path(folder), lock, Path("blender"))
             sync.assert_not_called()
+
+    def test_unrelated_publication_metadata_does_not_change_mori_lock(self):
+        catalog = dist.ws.read_json(dist.CATALOG)
+        before = dist.plan(catalog, ["mori"], [])
+        workspace_catalog = dist.ws.load_catalog()
+        workspace_catalog["other_components"]["procedural-components-candidate"]["public_url"] = "https://new-storage.invalid/kit.zip"
+        with patch.object(dist.ws, "load_catalog", return_value=workspace_catalog):
+            after = dist.plan(catalog, ["mori"], [])
+        self.assertEqual(dist.lock_id(before), dist.lock_id(after))
+        self.assertNotIn("manifests/contributor-workspace.json", after["code_sha256_lf"])
+
+    def test_changed_adapter_settings_stop_before_generation_or_download(self):
+        lock = dist.plan(dist.ws.read_json(dist.CATALOG), ["mori"], [])
+        workspace_catalog = dist.ws.load_catalog()
+        workspace_catalog["profiles"]["mori"]["runner"] = "scripts/different-recipe.py"
+        with tempfile.TemporaryDirectory() as folder, patch.object(dist.ws, "load_catalog", return_value=workspace_catalog), \
+                patch.object(dist, "sync") as sync, patch.object(dist.ws, "blender_check") as check:
+            with self.assertRaisesRegex(ValueError, "adapter configuration differs"):
+                dist.setup(Path(folder), lock, Path("blender"))
+            sync.assert_not_called()
+            check.assert_not_called()
 
 
 if __name__ == "__main__":

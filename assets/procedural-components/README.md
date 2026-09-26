@@ -8,15 +8,17 @@
 
 ## 配布物の状態
 
-`procedural-components-v0.1.0.zip` をローカルで作成・検証済みです。ZIPを新しいフォルダーへ展開し、Blender 4.5.1 LTSで `kit.blend` を開けます。追加アドオンや旧都市ファイルは不要です。[同梱の使い方](PACKAGE-README.md)
+**[v0.1.0 プレリリース](https://github.com/OurJapan/open-tokyo-world/releases/tag/procedural-components-v0.1.0)を公開しました。** [モデル入りZIP（約10.4MB）](https://github.com/OurJapan/open-tokyo-world/releases/download/procedural-components-v0.1.0/procedural-components-v0.1.0.zip)を新しいフォルダーへ展開し、Blender 4.5.1 LTSで `kit.blend` を開いてください。追加アドオンや旧都市ファイルは不要です。[同梱の使い方](PACKAGE-README.md)
 
-**公開URLは未登録です。** [配布物と検証の記録](package-v0.1.0.json)にサイズ・SHA-256・内容を固定しています。公開Releaseは[既存の順序](../../starter/plaza/releases.md)に従い、PR取り込み後のcommitを記録して作成します。今回の許諾記録をmainへの取り込み承認とは扱いません。
+[配布物と梱包の記録](package-v0.1.0.json)、[版情報](release-v0.1.0.json)、[公開取得の検証](public-download-verification.json)にサイズ・SHA-256・内容・採用済みソースcommitを固定しています。ReleaseにはZIP、`release.json`、`SHA256SUMS.txt` の3ファイルがあります。GitHubが自動生成するSource code ZIPとは別です。
+
+共通CLIからは `.\otw.ps1 district setup --common procedural-components` で取得・展開・Blender読み込み確認まで実行できます。森JP周辺も必要な場合は `--district mori` を加えてください。[地区別の詳しい手順](../../docs/district-distribution.md)
 
 ## 確認した内容
 
 元候補から許諾表示と描画出力先だけを更新し、形状・smooth・変換・材質と専用カメラ・照明の設定を比較しました。別プロセスで再読み込み・描画し、ZIPのCRC・全ファイルhashを確認後、新しいフォルダーへの展開物も再読み込み・描画しました。16メッシュ・31材質は一致し、画像・library参照・埋め込みTextは0件、プレビューの全画素は元候補と同じでした。元候補は変更していません。
 
-同じWindows PCでの検査です。別PC・他OSや、公開URLからの取得は未確認です。全都市モデルの配布は別の作業です。
+公開した3ファイルをGitHubの認証情報なしで新規取得し、手元とバイト単位で一致することを確認しました。取得したZIPからの再読み込み・描画でも16部品・31材質とプレビュー全画素が一致しています。同じWindows PCでの検査です。別PC・他OS、全都市モデルの配布は別の作業です。
 
 ## メンテナー向けの梱包
 
