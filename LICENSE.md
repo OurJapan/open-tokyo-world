@@ -79,6 +79,8 @@ The original implementations in `scripts/component_contracts.py`, `scripts/verif
 
 The original `scripts/package_procedural_components.py` and `tests/test_procedural_package.py` are also licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This covers the new license-annotation, verification and packaging implementations; it does not relicense Blender or historical source code.
 
+The original `scripts/district_distribution.py` and `tests/test_district_distribution.py` are also licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This covers district selection, content verification, local caching and workspace integration, not the models, source datasets or third-party content they retrieve.
+
 ## CC BY 4.0: tree/shrub prototypes and procedural materials
 
 On 2026-09-27 the account holder approved CC BY 4.0 for the 16 prototype meshes and 31 procedural materials identified in [provenance](assets/procedural-components/provenance.json), together with their dedicated preview setup and image, to the extent the licensor controls those rights. See the [asset grant](assets/procedural-components/ASSET-LICENSE.md). The original city placement, mapped aggregate meshes, third-party inputs and historical code remain outside this grant.

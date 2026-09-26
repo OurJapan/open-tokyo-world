@@ -13,7 +13,7 @@ from io_scene_gltf2.io.com.draco import dll_path
 
 def inspect_scene(path):
     bpy.ops.wm.open_mainfile(filepath=str(path), use_scripts=False)
-    missing, unsupported = [], []
+    missing, unsupported, external_images = [], [], []
     packed = 0
     for image in bpy.data.images:
         if image.source in {"GENERATED", "VIEWER"} or image.type in {"RENDER_RESULT", "COMPOSITING"}:
@@ -24,6 +24,8 @@ def inspect_scene(path):
             unsupported.append(image.name)
         elif not image.filepath or not Path(bpy.path.abspath(image.filepath, library=image.library)).is_file():
             missing.append(image.name)
+        else:
+            external_images.append(image.name)
     libraries = [lib.name for lib in bpy.data.libraries if not Path(bpy.path.abspath(lib.filepath)).is_file()]
     return {
         "opened": True,
@@ -33,6 +35,9 @@ def inspect_scene(path):
         "missing_images": missing,
         "unsupported_images": unsupported,
         "missing_libraries": libraries,
+        "external_images": external_images,
+        "linked_libraries": len(bpy.data.libraries),
+        "self_contained_images_libraries": not (missing or unsupported or external_images or bpy.data.libraries),
         "references_ok": not (missing or unsupported or libraries),
         "scope": "Opening and image/library references only; not a full geometry, external dependency or accuracy audit.",
     }

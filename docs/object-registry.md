@@ -33,6 +33,8 @@ python -m unittest discover -s tests
 
 モデル版の登録はファイルを配布する許諾の証明ではない。出典・観測時点・権利・承認は従来のprovenance/claims台帳へ残す。本plannerはsource/modelの最低限の許諾欄を必須にするが、法的審査や配布可否の自動認定を行わない。
 
+[地区別配布](district-distribution.md)で、別途ファイル単位の固定・部分取得・共通キャッシュ・森JP生成への接続を用意した。object registryのfeature選択から配布パッケージへの自動変換は未接続で、ここでの配置・所有地区・変更影響の契約を置き換えるものではない。
+
 ## 操作
 
 - `replace`：既存の部位を指定モデルに置換する。元sourceを変更せず、その部位の描画を抑制する指示を出す。

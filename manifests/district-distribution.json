@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "runtime": {
+    "blender_version": "4.5.1",
+    "runner_python_versions": [
+      [
+        3,
+        11
+      ],
+      [
+        3,
+        12
+      ]
+    ]
+  },
+  "tool_files": [
+    "scripts/district_distribution.py",
+    "scripts/workspace.py",
+    "scripts/workspace_blender.py"
+  ],
+  "districts": {
+    "mori": {
+      "label": "森JPタワー周辺（公式入力からの再生成）",
+      "version": "0.1.0",
+      "adapter": "mori-v1",
+      "input_package": "plateau-minato-tile221",
+      "packages": [
+        "plateau-minato-tile221"
+      ],
+      "recipe_files": [
+        "LICENSE.md",
+        "MIT-LICENSE.txt",
+        "manifests/contributor-workspace.json",
+        "scripts/mori_crown_material.py",
+        "scripts/mori_crown_v2.py",
+        "scripts/mori_entrance_v1.py",
+        "scripts/mori_facade_v2.py",
+        "scripts/mori_plaza_link_v1.py",
+        "scripts/mori_plaza_v1.py",
+        "scripts/mori_podium_v3.py",
+        "scripts/mori_shape.py",
+        "scripts/mori_terrace_v1.py",
+        "starter/mori/ASSET-LICENSE.md",
+        "starter/mori/NOTICE.md",
+        "starter/mori/facade.py",
+        "starter/mori/profile.py",
+        "starter/mori/provenance.json",
+        "starter/mori/run.py",
+        "starter/mori/scene.py",
+        "starter/plateau/NOTICE.md",
+        "starter/plateau/run.py",
+        "starter/plateau/scene.py",
+        "starter/plateau/tile.py",
+        "starter/plaza/ASSET-LICENSE.md",
+        "starter/plaza/provenance.json",
+        "starter/plaza/scene.py"
+      ],
+      "frame": "legacy-tokyo-display-v1",
+      "scope": {
+        "selection": "PLATEAU Minato 2025 data221.b3dm: Mori replacement, 23 neighboring buildings and six plaza parts",
+        "feature_id": "bldg_433bc5b3-db73-4644-ac24-a28d51b7ecd5",
+        "expected_meshes": 42,
+        "geographic_boundary": null,
+        "coordinates": "Local metres, east/north/up; legacy per-building visual height offsets, not survey heights",
+        "excludes": [
+          "Tokyo Tower",
+          "roads",
+          "terrain",
+          "original full city placement"
+        ],
+        "note": "An existing limited build scope, not a newly cut administrative/geographic district."
+      }
+    }
+  },
+  "packages": {
+    "plateau-minato-tile221": {
+      "version": "2025.1.0",
+      "kind": "source",
+      "requires": [],
+      "availability": "public",
+      "license": "PLATEAU source-specific terms; retain NOTICE",
+      "notice": "starter/plateau/NOTICE.md",
+      "files": {
+        "tileset.json": {
+          "bytes": 412889,
+          "sha256": "edec4c24d137eaf08a8525cecea505a3f21a30823b9ef4fb530e10774cea1323",
+          "urls": [
+            "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/tileset.json"
+          ]
+        },
+        "data221.b3dm": {
+          "bytes": 1246040,
+          "sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2",
+          "urls": [
+            "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data221.b3dm"
+          ]
+        }
+      }
+    },
+    "procedural-components": {
+      "version": "0.1.0",
+      "kind": "shared",
+      "requires": [],
+      "availability": "local-only",
+      "license": "CC-BY-4.0",
+      "notice": "assets/procedural-components/NOTICE.md",
+      "files": {
+        "procedural-components-v0.1.0.zip": {
+          "bytes": 10405562,
+          "sha256": "8c78dcce8ba43c5d4e28cb92936b0a1569dc1fe8f68042efce49fbfe4f6197c6",
+          "urls": []
+        }
+      },
+      "archive": "procedural-components-v0.1.0.zip",
+      "members": {
+        "ASSET-LICENSE.md": {
+          "bytes": 1600,
+          "sha256": "e4e6943fa490d095f5d2ee33518300053d125329f20ff060246f7d7e0b64226f"
+        },
+        "NOTICE.md": {
+          "bytes": 1703,
+          "sha256": "c4bce516816558f920b778dcbef8550308d6c3b58018b7b1871987bf3b75830c"
+        },
+        "README.md": {
+          "bytes": 1975,
+          "sha256": "24bd5a770ec273d643b8ddbbd153dde543ccd09db405ea8be185848ae76192e6"
+        },
+        "inventory.json": {
+          "bytes": 1092,
+          "sha256": "4307833dfe023867b79ca0c5c96b276fcbdb43dcf9907915caf7d0160d599e9e"
+        },
+        "kit.blend": {
+          "bytes": 9844037,
+          "sha256": "09328b7da383f8bdd6dfbf8173a5000105c9aee3f5484ccad2ee866bbaee59a7"
+        },
+        "preview.png": {
+          "bytes": 818671,
+          "sha256": "e80c0d0f559b98f302e8db6208fbb860401717b413f4816dd84faf466dd47508"
+        },
+        "provenance.json": {
+          "bytes": 10140,
+          "sha256": "232f871447e68c9bfed6b1dcbc523ef077bfcfc25faa5c54a5ccb9eb0d7b6d6d"
+        },
+        "verification.json": {
+          "bytes": 525,
+          "sha256": "fbcc148035a4c7d794a9f2c9de9fe6dd4e7bf7e4b19e17271b3b25a88ad6da3d"
+        }
+      },
+      "scene": "kit.blend",
+      "expected_meshes": 16
+    }
+  }
+}
