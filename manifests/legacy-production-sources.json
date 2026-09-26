@@ -19,12 +19,26 @@
       "sha256": "7a69850d22c517b2fdf341e019617b0c680ee8fea2eed84e9484f7906cff9009",
       "git_blob_sha1": "35db1c47e5a92f62be92be874ffa98298bb92a06"
     },
+    "work/camera_options/render.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/8996a72fbe78a0c4a184b520ae7658414f340562",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/camera_options/render.py",
+      "bytes": 2932,
+      "sha256": "0770a3922a4c9ca9f7e465f7eba6e3c408f91119ea255be670398bcda9893f82",
+      "git_blob_sha1": "8996a72fbe78a0c4a184b520ae7658414f340562"
+    },
     "work/detail_upgrade/finish_detail.py": {
       "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/54928c81cda6a651b9d0a6034ba20b919d563942",
       "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/detail_upgrade/finish_detail.py",
       "bytes": 4624,
       "sha256": "b8f3bcc5a920e754664b393e69bd49348924e7d4cb87e32dba9cdf6f072a965e",
       "git_blob_sha1": "54928c81cda6a651b9d0a6034ba20b919d563942"
+    },
+    "work/preview30/render.py": {
+      "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/68867fa5238003dcb8427b1c3fa3d2fd6a3690ed",
+      "source_url": "https://github.com/ark4ez/tokyo-tower-blender/blob/defac576e076f40bf3bc4fddcdcefe30f9a009f7/work/preview30/render.py",
+      "bytes": 3323,
+      "sha256": "1025ad7d88768c76d713ac41b60585734a1a79bd8340ba9821ca35be298564f4",
+      "git_blob_sha1": "68867fa5238003dcb8427b1c3fa3d2fd6a3690ed"
     },
     "work/sky_detail/finish.py": {
       "url": "https://api.github.com/repos/ark4ez/tokyo-tower-blender/git/blobs/842d64acd5508ed9c80a953086e09a2dc9b555a2",

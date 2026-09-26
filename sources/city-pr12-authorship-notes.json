@@ -61,15 +61,17 @@
   ],
   "candidate_mesh_objects": 2676,
   "external_model_use": "not-established",
-  "source_code_correspondence": "partial-geometry-and-transform-match",
+  "source_code_correspondence": "all-six-candidate-groups-have-documented-geometry-transform-and-procedural-material-correspondence",
   "map_input_and_placement_provenance": "recovered-inputs-and-verified-tree-placement",
   "new_license_grant": null,
   "city_redistribution": "pending",
   "next_evidence": [
-    "Trace recovered footprint, surface, canopy and facade records to their original inputs.",
-    "Verify remaining 29 meshes and materials against the recovered production chain.",
-    "Confirm authorship/license scope separately from matching procedural geometry."
+    "Confirm the grantable rights and chosen license for the concrete 16-prototype/31-material candidate.",
+    "Trace the remaining footprint, road and starting-canopy inputs to primary sources before distributing mapped aggregates.",
+    "Keep correspondence evidence separate from ownership, real-world accuracy and city redistribution approval."
   ],
   "production_audit": "sources/city-pr12-production-audit.json",
-  "input_recovery": "sources/city-pr12-input-recovery.json"
+  "input_recovery": "sources/city-pr12-input-recovery.json",
+  "component_verification": "sources/city-pr12-component-verification.json",
+  "distribution_candidate": "manifests/procedural-components-distribution.draft.json"
 }

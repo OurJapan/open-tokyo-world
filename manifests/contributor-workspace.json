@@ -77,7 +77,15 @@
       "manifest": "manifests/legacy-production-inputs.json",
       "command": "import-production-inputs",
       "verification": "sources/city-pr12-input-recovery.json",
-      "availability_note": "Import 20 exact map/layout inputs from an authorized provider. Five pinned intermediate blends are optional and were only hashed during recovery."
+      "availability_note": "Import 20 exact map/layout inputs from an authorized provider. With --include-scenes, import the five pinned intermediate blends; three were read for component/material replay.",
+      "component_verification": "sources/city-pr12-component-verification.json"
+    },
+    "procedural-components-candidate": {
+      "distribution": "local-review-license-decision-pending",
+      "manifest": "manifests/procedural-components-distribution.draft.json",
+      "scope": "docs/city-component-verification.md",
+      "public_url": null,
+      "availability_note": "16 local-coordinate tree/shrub prototype meshes and 31 procedural materials. City coordinates, maps, images and legacy scripts are excluded. No new asset license grant yet."
     }
   }
 }

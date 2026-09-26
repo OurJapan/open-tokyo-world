@@ -448,5 +448,10 @@
     "Technical equality does not establish surveyed accuracy, full authorship or redistribution rights."
   ],
   "new_license_grant": null,
-  "city_redistribution": "pending"
+  "city_redistribution": "pending",
+  "subsequent_component_verification": {
+    "record": "sources/city-pr12-component-verification.json",
+    "note": "Earlier limitations and the 22-source-file snapshot above are historical. The follow-up imports five blends, reads three, adds two pinned render scripts, and matches the remaining 29 components, 31 materials and 2676 assignments after the documented render preset. This is not a new license grant.",
+    "distribution_candidate": "manifests/procedural-components-distribution.draft.json"
+  }
 }
