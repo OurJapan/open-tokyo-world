@@ -1,0 +1,216 @@
+{
+  "ok": true,
+  "contract_tests": {
+    "run": 187,
+    "passed": 182,
+    "skipped": 5,
+    "failed": 0,
+    "command": "python -m unittest discover -s tests",
+    "python": "3.11.11"
+  },
+  "blender_smoke": [
+    {
+      "case": "valid",
+      "passed": true
+    },
+    {
+      "case": "missing-image",
+      "passed": true
+    }
+  ],
+  "compileall_ok": true,
+  "changed_objects": [
+    "pavement_0 unified road",
+    "asphalt 15s road detail",
+    "gutter 15s road detail"
+  ],
+  "new_objects": 0,
+  "object_count": 3305,
+  "assets_unchanged": true,
+  "original_city_unchanged": true,
+  "geometry_audit": {
+    "ok": true,
+    "source_attribution": {
+      "way_id": "1443867470",
+      "way_version": "4",
+      "way_timestamp": "2026-08-16T23:30:05Z",
+      "tags": {
+        "area": "yes",
+        "highway": "pedestrian",
+        "name": "中央広場",
+        "name:en": "Central Green",
+        "surface": "paving_stones"
+      },
+      "source_sha256": {
+        "work/osm.xml": "f04e8e70ab24a61ca749375d1ef37401feb0fdc840cc506b670ef71454a6a8ab",
+        "work/twin_towers/tower_surfaces.json": "184875e48426ba84b0dddb169f2dc2a414798ac42ee3b7c0047b572991013531"
+      },
+      "matched_seed_faces": {
+        "asphalt": 111,
+        "pavement": 111
+      },
+      "matched_records_sha256": "7550d4d3cf6e86d5c807bcb64723f32e81a5ce68bd06318664fba6cc14a9fff1",
+      "protected_seed_faces": 67,
+      "remove_padding_m": 0.003,
+      "protect_padding_m": 0.005,
+      "attribution": "Exact float32 XY ring and top-Z match to 222 exported legacy road-box tops; not merely distance to the OSM outline.",
+      "scope": "Exclusive target contribution; overlapping non-target seed surfaces remain protected."
+    },
+    "road_checks": {
+      "asphalt 15s road detail": {
+        "original_vertices_exact": true,
+        "outside_faces_and_attributes_exact": 140205,
+        "expected_removed_top_area_m2": 2683.3415855677504,
+        "saved_xy_symmetric_difference_m2": 0.0023818591945182588,
+        "remaining_inside_mask_m2": 0.0008985379786371952,
+        "protected_xy_symmetric_difference_m2": 0.0014833205968657697,
+        "new_degenerate_faces": 0
+      },
+      "gutter 15s road detail": {
+        "original_vertices_exact": true,
+        "outside_faces_and_attributes_exact": 33134,
+        "expected_removed_top_area_m2": 203.2769092313444,
+        "saved_xy_symmetric_difference_m2": 0.0006413005971559985,
+        "remaining_inside_mask_m2": 4.046620442354506e-05,
+        "protected_xy_symmetric_difference_m2": 0.0006008343881921982,
+        "new_degenerate_faces": 0
+      },
+      "pavement_0 unified road": {
+        "original_vertices_exact": true,
+        "outside_faces_and_attributes_exact": 270956,
+        "expected_removed_top_area_m2": 395.2798214505292,
+        "saved_xy_symmetric_difference_m2": 0.0002198338231668728,
+        "remaining_inside_mask_m2": 3.925359884650138e-05,
+        "protected_xy_symmetric_difference_m2": 0.0001805802243614651,
+        "new_degenerate_faces": 0
+      }
+    },
+    "independent_mask_area_m2": 3761.80113381416,
+    "saved_ground_rays": [
+      {
+        "u": 0,
+        "v": 32.01,
+        "before_object": "park mapped land use",
+        "before_z": 0.1100001335144043,
+        "after_object": "park mapped land use",
+        "after_z": 0.1100001335144043
+      },
+      {
+        "u": 0,
+        "v": 63.4,
+        "before_object": "park mapped land use",
+        "before_z": 0.11000001430511475,
+        "after_object": "park mapped land use",
+        "after_z": 0.11000001430511475
+      },
+      {
+        "u": 0,
+        "v": 63.5,
+        "before_object": "pavement_0 unified road",
+        "before_z": 0.45999979972839355,
+        "after_object": "ground",
+        "after_z": 0.0
+      },
+      {
+        "u": 0,
+        "v": 65,
+        "before_object": "pavement_0 unified road",
+        "before_z": 0.4600001573562622,
+        "after_object": "ground",
+        "after_z": 0.0
+      },
+      {
+        "u": 0,
+        "v": 68,
+        "before_object": "gutter 15s road detail",
+        "before_z": 0.2999999523162842,
+        "after_object": "ground",
+        "after_z": 0.0
+      },
+      {
+        "u": 0,
+        "v": 70,
+        "before_object": "asphalt 15s road detail",
+        "before_z": 0.2999999523162842,
+        "after_object": "ground",
+        "after_z": 0.0
+      },
+      {
+        "u": 0,
+        "v": 80,
+        "before_object": "asphalt 15s road detail",
+        "before_z": 0.30000007152557373,
+        "after_object": "ground",
+        "after_z": 0.0
+      },
+      {
+        "u": 0,
+        "v": 90,
+        "before_object": "pavement_0 unified road",
+        "before_z": 0.4600001573562622,
+        "after_object": "ground",
+        "after_z": 1.1920928955078125e-07
+      }
+    ],
+    "retained_entry_samples": 12,
+    "retained_other_road_samples": 60,
+    "verification_method": "Independent Shapely planar boolean comparison; exact vertex/face/attribute checks; Blender ray casts after reopening both saved scenes.",
+    "runtime": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "shapely": "2.1.2",
+      "geos": "3.13.1"
+    },
+    "limitations": [
+      "Existing ground and overlapping legitimate road surfaces are inherited.",
+      "No survey, navigation, accessibility or real-world grade certification.",
+      "Road shells are inherited thin surfaces, not watertight solids.",
+      "Only the exclusively attributed area-outline contribution is removed."
+    ],
+    "saved_blends_unchanged": true,
+    "input_blend_sha256": {
+      "before": "71c54fe2a9ec94ef5aa0a45da322fee2131fa7cc37b80e8a6d84e0def2ad2e92",
+      "after": "1141a1408727d04860d5f722681e92fa63c363efe8da67b9c5e12f4b12d8f9a8"
+    },
+    "validator_sha256": "2c70ec41828fd596202aedd43c5c7108abe0aa2afcb0913f32f3f536460b92c6"
+  },
+  "patch_audit": {
+    "asphalt 15s road detail": {
+      "cut_faces": 376,
+      "new_vertices": 959,
+      "original_vertices_retained": 422014,
+      "removed_surface_area_m2": 2683.3416070375324,
+      "rounding_area_error_m2": 0.00309741799990466
+    },
+    "gutter 15s road detail": {
+      "cut_faces": 580,
+      "new_vertices": 464,
+      "original_vertices_retained": 101461,
+      "removed_surface_area_m2": 203.27691122083496,
+      "rounding_area_error_m2": 0.000641009622771958
+    },
+    "pavement_0 unified road": {
+      "cut_faces": 841,
+      "new_vertices": 398,
+      "original_vertices_retained": 278340,
+      "removed_surface_area_m2": 590.2519605277714,
+      "rounding_area_error_m2": 0.00023752942034288918
+    }
+  },
+  "visual_review": {
+    "agent_compared_all_seven_views": true,
+    "human_approval": "pending",
+    "accepted_city_updated": false,
+    "remaining_issues": [
+      "Jagged inherited grass boundary and retained road overlaps.",
+      "Inherited 0.11m grass-to-ground drop at the former 0.35m upward step.",
+      "Entrance paving still ends at local v=32m; garden paths and actual grades remain unmodeled."
+    ]
+  },
+  "limitations": [
+    "Human visual approval is required.",
+    "Peak RAM/VRAM and physical accuracy are not measured.",
+    "Timing is one run, not a warmed-up median.",
+    "Dependency audit and fingerprints cover documented initial checks, not all Blender features."
+  ]
+}

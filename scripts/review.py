@@ -106,8 +106,10 @@ def validate_patch(patch):
             require(set(op)=={'op','feature_id','object','expected_mesh_sha256'}, 'Unexpected podium patch keys')
             require(op['feature_id']=='otw:jp:tokyo:minato:azabudai-mori-jp' and op['object']=='Mori JP podium / stone', 'Wrong podium target')
             require(re.fullmatch('[0-9a-f]{64}',op['expected_mesh_sha256']) is not None and bool(patch['source_refs']), 'Podium patch requires hash and sources')
-        elif op['op'] in ('mori_plaza_v1','mori_plaza_link_v1','mori_plaza_edge_v1'):
-            if op['op']=='mori_plaza_edge_v1':
+        elif op['op'] in ('mori_plaza_v1','mori_plaza_link_v1','mori_plaza_edge_v1','mori_plaza_outline_v1'):
+            if op['op']=='mori_plaza_outline_v1':
+                from mori_plaza_outline_v1 import ANCHOR,FEATURE,ROADS,ADDED
+            elif op['op']=='mori_plaza_edge_v1':
                 from mori_plaza_edge_v1 import ANCHOR,FEATURE,ROADS,ADDED
             elif op['op']=='mori_plaza_link_v1':
                 from mori_plaza_link_v1 import ANCHOR,FEATURE,ROADS,ADDED
@@ -175,6 +177,7 @@ def main():
     p.add_argument('--features', required=True, type=Path)
     p.add_argument('--patch', type=Path)
     p.add_argument('--geometry-source', type=Path, help='Pinned source_mori.npz, only for podium recovery')
+    p.add_argument('--road-inputs', type=Path, help='Pinned production-input directory, only for Mori plaza outline correction')
     p.add_argument('--output', required=True, type=Path, help='Must not already exist')
     p.add_argument('--device', choices=['CPU','OPTIX'], default='CPU')
     p.add_argument('--width', type=int, default=640)
@@ -191,6 +194,11 @@ def main():
     if patch: validate_patch(patch)
     needs_geometry=bool(patch and any(op['op'] in ('mori_podium_v2','mori_podium_v3') for op in patch['operations']))
     require(needs_geometry==bool(a.geometry_source), 'Podium operation requires exactly one geometry source')
+    needs_roads=bool(patch and any(op['op']=='mori_plaza_outline_v1' for op in patch['operations']))
+    require(needs_roads==bool(a.road_inputs), 'Plaza outline operation requires exactly one road-input directory')
+    if needs_roads:
+        from mori_plaza_outline_v1 import verify_sources, SOURCE_FILES
+        verify_sources(a.road_inputs)
     geometry_hash=None
     if needs_geometry:
         from mori_podium_v2 import SOURCE_BYTES,SOURCE_SHA256
@@ -208,11 +216,14 @@ def main():
     try:
         revision = subprocess.run(['git','-c',f'safe.directory={ROOT.as_posix()}','-C',str(ROOT),'rev-parse','HEAD'],capture_output=True,text=True,check=True).stdout.strip()
         summary['code_base_commit'] = revision
-        summary['code_files'] = {f.relative_to(ROOT).as_posix():digest(f) for f in (Path(__file__),WORKER,ROOT/'scripts/mori_shape.py',ROOT/'scripts/mori_crown_v2.py',ROOT/'scripts/mori_crown_material.py',ROOT/'scripts/mori_facade_v2.py',ROOT/'scripts/mori_podium_v2.py',ROOT/'scripts/mori_entrance_v1.py',ROOT/'scripts/mori_podium_v3.py',ROOT/'scripts/mori_terrace_v1.py',ROOT/'scripts/mori_plaza_v1.py',ROOT/'scripts/mori_plaza_link_v1.py',ROOT/'scripts/mori_plaza_edge_v1.py')}
+        summary['code_files'] = {f.relative_to(ROOT).as_posix():digest(f) for f in (Path(__file__),WORKER,ROOT/'scripts/mori_shape.py',ROOT/'scripts/mori_crown_v2.py',ROOT/'scripts/mori_crown_material.py',ROOT/'scripts/mori_facade_v2.py',ROOT/'scripts/mori_podium_v2.py',ROOT/'scripts/mori_entrance_v1.py',ROOT/'scripts/mori_podium_v3.py',ROOT/'scripts/mori_terrace_v1.py',ROOT/'scripts/mori_plaza_v1.py',ROOT/'scripts/mori_plaza_link_v1.py',ROOT/'scripts/mori_plaza_edge_v1.py',ROOT/'scripts/mori_plaza_outline_v1.py')}
         job = {'output':str(output),'cameras':cameras,'features':features,'patch':patch,'settings':{k:summary[k] for k in ('blender_version','device','width','height','samples','seed')}}
         if needs_geometry:
             job['geometry_source']=str(a.geometry_source.resolve())
             summary['geometry_source_sha256']=geometry_hash
+        if needs_roads:
+            job['road_inputs']=str(a.road_inputs.resolve())
+            summary['road_source_sha256']={name:spec[1] for name,spec in SOURCE_FILES.items()}
         job_path = output/'job.json'; write_json(job_path,job)
         for phase, blend in [('prepare',source),('validate-before',output/'before.blend'),('validate-after',output/'after.blend')]:
             summary['jobs'][phase] = run_job(a.blender,phase,output,job_path,blend,a.timeout)
@@ -228,6 +239,9 @@ def main():
         if patch and any(op['op']=='mori_plaza_edge_v1' for op in patch['operations']):
             from mori_plaza_edge_v1 import ROADS,ADDED
             allowed=sorted(ROADS);added=sorted(ADDED)
+        if needs_roads:
+            from mori_plaza_outline_v1 import ROADS,ADDED
+            allowed=sorted(ROADS);added=sorted(ADDED)
         summary['changed_objects'] = compare_reports(before,after,allowed,added)
         if patch: require(bool(summary['changed_objects']), 'Patch produced no recorded change')
         for phase in ('render-before','render-after'):
@@ -235,6 +249,7 @@ def main():
         summary['output_blends'] = {n:digest(output/n) for n in ('before.blend','after.blend')}
         require(digest(source) == input_hash, 'Source changed during review')
         if needs_geometry: require(digest(a.geometry_source)==geometry_hash, 'Geometry source changed during review')
+        if needs_roads: verify_sources(a.road_inputs)
         summary['ok'] = True
         make_html(output,cameras,summary)
     except Exception as error:

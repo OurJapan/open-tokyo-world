@@ -1,0 +1,6 @@
+{
+  "bytes": 558751758,
+  "sha256": "98a3932e6dc972d4ae702d264c1e894d77765a9a3a5e57c8a75591eafd42e926",
+  "blender_version": "4.5.1 LTS",
+  "description": "Accepted city after PR12; immutable input for the plaza outline correction."
+}

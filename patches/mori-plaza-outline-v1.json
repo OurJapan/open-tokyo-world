@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "purpose": "reviewed-change",
+  "reason": "Remove only the exclusive surface contribution of the Central Green area outline, matched to 222 exported legacy road-box top faces. Protect every non-target seed surface and all adopted plaza objects.",
+  "source_refs": [
+    "https://www.openstreetmap.org/way/1443867470",
+    "https://wiki.openstreetmap.org/wiki/Tag:highway%3Dpedestrian#Squares_and_plazas",
+    "https://www.azabudai-hills.com/floor_map/mori-jp_tower-plaza_1f.html"
+  ],
+  "operations": [
+    {
+      "op": "mori_plaza_outline_v1",
+      "object": "Mori JP podium / stone",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "expected_mesh_sha256": "4f4cfbc17a08f91e35ea5787b9bc062a51c0df8ffdee5a4017c9ed85da16ccf6",
+      "road_mesh_sha256": {
+        "asphalt 15s road detail": "2162ab60362b57edc77f4dd28b60992e17a27a7b74f2d7234e02b70c7638c486",
+        "gutter 15s road detail": "1d882f97cd6a759a8fc23f0d26a2d9150c46f5120220c03bf51ce987436500f0",
+        "pavement_0 unified road": "47014a7a8470961b20e1fb34cbf799ef5409b4ee0408189499669df9f9631967"
+      },
+      "added_objects": []
+    }
+  ]
+}
