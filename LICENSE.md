@@ -95,6 +95,10 @@ The original implementations in `scripts/mori_plaza_landscape_v1.py`, `scripts/p
 
 On 2026-09-27 the account holder approved CC BY 4.0 for the 16 prototype meshes and 31 procedural materials identified in [provenance](assets/procedural-components/provenance.json), together with their dedicated preview setup and image, to the extent the licensor controls those rights. See the [asset grant](assets/procedural-components/ASSET-LICENSE.md). The original city placement, mapped aggregate meshes, third-party inputs and historical code remain outside this grant.
 
+## Local plaza connection correction
+
+The original implementations in `scripts/mori_plaza_connection_v1.py`, `scripts/prepare_mori_plaza_connection.py`, `scripts/validate_mori_plaza_connection.py`, and `tests/test_mori_plaza_connection.py` are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This covers the named correction and verification code, not the legacy scene, saved OSM, local geometry plans, images or other third-party inputs.
+
 ## Outside these grants
 
 Except for the separately identified starters and original additions above, no license is granted here for other repository files, legacy city scenes, generated models, reference photos, textures, music, trademarks, PLATEAU data, OpenStreetMap data, or other third-party content. Any separately applicable license remains in effect. Execution of the covered code does not itself grant rights to its inputs or outputs. This scope document adds no conditions to the MIT grant for the covered code.

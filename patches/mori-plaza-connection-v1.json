@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "purpose": "reviewed-change",
+  "reason": "Remove the inherited 19cm and 35cm rises at the entrance-side footway junction with a bounded model-space height correction. The flat core and continuous outer transitions are provisional, not surveyed terrain.",
+  "source_refs": [
+    "docs/mori-plaza-level-audit.md",
+    "https://www.openstreetmap.org/way/1443867478",
+    "https://www.openstreetmap.org/way/1443867470"
+  ],
+  "operations": [
+    {
+      "op": "mori_plaza_connection_v1",
+      "object": "Mori JP podium / stone",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "expected_mesh_sha256": "4f4cfbc17a08f91e35ea5787b9bc062a51c0df8ffdee5a4017c9ed85da16ccf6",
+      "road_mesh_sha256": {
+        "asphalt 15s road detail": "db58fc2b56491732163c23fe2a8fed1f9bef7696a073dd2270b6bf5f95344f59",
+        "gutter 15s road detail": "30fae516f89d20e9192f88674c0c1f9ca432decf505f7c7779e9cb563dd00b65",
+        "pavement_0 unified road": "9859d1942f5148443ef4409480e7f857b48a016219c65d3750c59426e61d7de3"
+      },
+      "plan_sha256": "8f3380d31e9f12bc6e81709b544ec1a917d40cd5e9d9520e62bc581de1c2b9bb",
+      "added_objects": ["OTW Mori entrance junction / seam fill"]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "ok": true,
+  "road_checks": {
+    "asphalt 15s road detail": {
+      "original_vertices_exact": true,
+      "outside_faces_and_attributes_exact": 140451,
+      "xy_symmetric_difference_m2": 0.00011594402459853565,
+      "new_top_faces": 28,
+      "maximum_height_error_m": 7.809349236859164e-07,
+      "new_degenerate_faces": 0
+    },
+    "gutter 15s road detail": {
+      "original_vertices_exact": true,
+      "outside_faces_and_attributes_exact": 33235,
+      "xy_symmetric_difference_m2": 1.215469092130661e-05,
+      "new_top_faces": 35,
+      "maximum_height_error_m": 7.809349236859164e-07,
+      "new_degenerate_faces": 0
+    },
+    "pavement_0 unified road": {
+      "original_vertices_exact": true,
+      "outside_faces_and_attributes_exact": 271014,
+      "xy_symmetric_difference_m2": 0.0,
+      "new_top_faces": 25,
+      "maximum_height_error_m": 1.8347645125427192e-08,
+      "new_degenerate_faces": 0
+    }
+  },
+  "ray_checks": {
+    "filled_gap_samples": 6,
+    "road_samples": 878,
+    "unchanged_outside_road_samples": 565,
+    "flat_core_road_samples": 142,
+    "core_clearance_samples": 243,
+    "entry_samples": 12
+  },
+  "priority_pairs": {
+    "0": [
+      {
+        "before_object": "OTW Mori Central Green / paving",
+        "before_z_m": 0.11000001430511475,
+        "after_z_m": 0.11000001430511475
+      },
+      {
+        "before_object": "asphalt 15s road detail",
+        "before_z_m": 0.30000007152557373,
+        "after_z_m": 0.11000001430511475
+      }
+    ],
+    "1": [
+      {
+        "before_object": "OTW Mori Central Green / paving",
+        "before_z_m": 0.10999977588653564,
+        "after_z_m": 0.10999977588653564
+      },
+      {
+        "before_object": "pavement_0 unified road",
+        "before_z_m": 0.4599999189376831,
+        "after_z_m": 0.1100001335144043
+      }
+    ]
+  },
+  "seam_fill": {
+    "closed_oriented_slab": true,
+    "area_m2": 0.04280265746638179,
+    "xy_symmetric_difference_m2": 3.0022694970938153e-05,
+    "overlap_existing_m2": 5.500330622443782e-06
+  },
+  "maximum_ray_height_error_m": 1.4584904837466883e-06,
+  "priority_seam_nonflush_samples_2mm_spacing": {},
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "shapely": "2.1.2",
+    "geos": "3.13.1"
+  },
+  "saved_blends_unchanged": true,
+  "input_blend_sha256": {
+    "before": "68366f423d5b53a523f4d83b489481ab335210ff36add020d0d40b3fb1dc3505",
+    "after": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4"
+  },
+  "code_sha256": {
+    "validate_mori_plaza_connection.py": "12091bbfe06e4a2169d08c8c216f1a14de8fcc04aad57e5c82be99bb3a408696",
+    "mori_plaza_connection_v1.py": "798ce27187a3a6f38e6ddd4822c78f47632b8e2fd17795140f3e7edb1fa58f8a",
+    "audit_mori_plaza_levels.py": "ccd9bffff36ff5f0e96e3c951f97c16142a180cfc8e827ec76ed9e9b73c4b02b"
+  },
+  "checked_at": "2026-09-27",
+  "source_attribution": {
+    "basis": "Exact float32 ring and height match. Height transitions are provisional model-space choices.",
+    "matched_seed_faces_by_width_m": {
+      "2.0": 15,
+      "4.1": 15
+    },
+    "source_sha256": {
+      "work/osm.xml": "f04e8e70ab24a61ca749375d1ef37401feb0fdc840cc506b670ef71454a6a8ab",
+      "work/twin_towers/tower_surfaces.json": "184875e48426ba84b0dddb169f2dc2a414798ac42ee3b7c0047b572991013531"
+    },
+    "tags": {
+      "highway": "footway",
+      "surface": "paving_stones"
+    },
+    "timestamp": "2026-03-07T08:44:14Z",
+    "version": "3",
+    "way_id": "1443867478"
+  },
+  "changed_faces": {
+    "asphalt 15s road detail": {
+      "changed_original_faces": 17,
+      "collapsed_riser_fragments": 0,
+      "new_vertices": 107,
+      "original_vertices_retained": 422973
+    },
+    "gutter 15s road detail": {
+      "changed_original_faces": 33,
+      "collapsed_riser_fragments": 0,
+      "new_vertices": 126,
+      "original_vertices_retained": 101925
+    },
+    "pavement_0 unified road": {
+      "changed_original_faces": 51,
+      "collapsed_riser_fragments": 19,
+      "new_vertices": 111,
+      "original_vertices_retained": 278738
+    }
+  },
+  "limitations": [
+    "Inferred model-space adjustment, not surveyed terrain or accessibility certification.",
+    "Remaining inherited steps beyond the flat core, other streets, full topology and redistribution rights are outside this result.",
+    "Ray samples are finite coverage; maximum height errors reflect numeric comparison, not physical accuracy."
+  ]
+}

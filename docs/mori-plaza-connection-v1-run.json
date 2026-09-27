@@ -1,0 +1,788 @@
+{
+  "version": 1,
+  "ok": true,
+  "mode": "patch-review",
+  "input_sha256": "2e2cce08aa581ef6a99d60c9fe993b8c4e53ff7f5cffb687f9d9c4cee19dc544",
+  "blender_version": "4.5.1 LTS",
+  "cameras_sha256": "0e6ac9d5e941c77b9f5bc49bc6bb30314029c4a5c9cc1fbb95716f93722fd970",
+  "features_sha256": "9ef52c6046c075cf5a7a6ac98defaa2123bf2898bab964a78bb2590000432f20",
+  "patch_sha256": "6015daffe552f38cc5a82930b18a9ba88ef35a2594a5c8b7c8b16b2746f90677",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "device": "OPTIX",
+  "width": 1280,
+  "height": 720,
+  "samples": 32,
+  "seed": 0,
+  "jobs": {
+    "prepare": {
+      "seconds": 20.484,
+      "report_sha256": "c766cc066199b82ee3f35aa9ef3500d56de21daf5d48ce056aa387b478897f6b"
+    },
+    "validate-before": {
+      "seconds": 34.453,
+      "report_sha256": "55834bef958993b6214d25f968f9f208b334774d479bc5f4519eadc58f7d1ff7"
+    },
+    "validate-after": {
+      "seconds": 33.453,
+      "report_sha256": "e757aa4f61a07e19dfbde96db5bbd94faf45f57af7bb7a274165f121e7a155db"
+    },
+    "render-before": {
+      "seconds": 58.578,
+      "report_sha256": "d005128403f2077f37b007f109c274c9960bacf8b5c0111a8620d391f4226922"
+    },
+    "render-after": {
+      "seconds": 54.641,
+      "report_sha256": "30f90285b6a6276e5cd08eb6ec0eaa0348b9c8fa40ecaad510cf0ff91812e4fd"
+    }
+  },
+  "limitations": [
+    "Human visual approval is required.",
+    "Peak RAM/VRAM and physical accuracy are not measured.",
+    "Timing is one run, not a warmed-up median.",
+    "Dependency audit and fingerprints cover documented initial checks, not all Blender features."
+  ],
+  "code_base_commit": "9ff6650a8307eb383c8fd33db2f203c415f87b41",
+  "code_files": {
+    "scripts/review.py": "dc1386d57b9ec24e62ce12784c75b72f8d9e021a1af6cd9e27b62452bca6b5b1",
+    "scripts/blender_worker.py": "6e099ce6f4a86226299146be7ed0b77c9d5919b6e68b27a1f700e83ceece33ae",
+    "scripts/mori_shape.py": "e82b840819da692b1a0dd6b27f095c524706fce08c0e85db47b2236301f91411",
+    "scripts/mori_crown_v2.py": "9822f54cec4965881dc5838e5204f55fcf95fcf172620ebb56735101be98015b",
+    "scripts/mori_crown_material.py": "02e207032a4873ee75cf80991ab2066e3621e9a8ccbf4c014e2c5aee06bbc8b5",
+    "scripts/mori_facade_v2.py": "b962aeb523cb35cd242bad7f3a91409750219bda62eec1cd64ddcbf49a7ab26f",
+    "scripts/mori_podium_v2.py": "f5de3f66b97bd63d55e91820ccbddf7bd99b0a290d65bc4c0f2eb5f91168d8ca",
+    "scripts/mori_entrance_v1.py": "aeb7417803ebea8ac8af590aeca7a1e723d1591e1756eb07ad1078cd9e753c90",
+    "scripts/mori_podium_v3.py": "cec7699cb570248bfb4c121275044b0950a6bfcad128464455a2faabc9321790",
+    "scripts/mori_terrace_v1.py": "26f9149e5889266caa7c62bbd8a0df886fb9713266751c0a69e6c6df24a036e5",
+    "scripts/mori_plaza_v1.py": "5f92f0381ab16fd0bbef325db2200381a903723ab5418ecb51c0c64562131ef9",
+    "scripts/mori_plaza_link_v1.py": "9db234b625b99fe1ee5751b4f4da57445ea6122222377e8b2e9fe36105519ec3",
+    "scripts/mori_plaza_edge_v1.py": "a04401be2c0eae5031df1348258d50e433f0a5168b736c890e5823e22b138414",
+    "scripts/mori_plaza_outline_v1.py": "7fc8cf44dc466ff9fe0031c4cf99bd6358291b161125465a02abe33416656c69",
+    "scripts/mori_plaza_connection_v1.py": "798ce27187a3a6f38e6ddd4822c78f47632b8e2fd17795140f3e7edb1fa58f8a",
+    "scripts/mori_plaza_landscape_v1.py": "929de7aa975559892048fd3fa41e9c63a7a3a44ef617fcc1029e0cf1ce2f9906",
+    "scripts/prepare_mori_plaza_connection.py": "13a12cbdecc1725973be3ceabb4fe1209c2083a00fae6f021e6e9e56ea433191"
+  },
+  "road_source_sha256": {
+    "work/osm.xml": "f04e8e70ab24a61ca749375d1ef37401feb0fdc840cc506b670ef71454a6a8ab",
+    "work/twin_towers/tower_surfaces.json": "184875e48426ba84b0dddb169f2dc2a414798ac42ee3b7c0047b572991013531"
+  },
+  "connection_plan_sha256": "8f3380d31e9f12bc6e81709b544ec1a917d40cd5e9d9520e62bc581de1c2b9bb",
+  "changed_objects": [
+    "pavement_0 unified road",
+    "asphalt 15s road detail",
+    "gutter 15s road detail",
+    "OTW Mori entrance junction / seam fill"
+  ],
+  "output_blends": {
+    "before.blend": "68366f423d5b53a523f4d83b489481ab335210ff36add020d0d40b3fb1dc3505",
+    "after.blend": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4"
+  },
+  "checked_at": "2026-09-27",
+  "adopted_as_city_baseline": false,
+  "human_visual_approval": false,
+  "dependency": {
+    "pull_request": 43,
+    "head_sha": "9ff6650a8307eb383c8fd33db2f203c415f87b41",
+    "merged_to_main": false
+  },
+  "code_sha256_lf": {
+    "scripts/audit_mori_plaza_levels.py": "1936a5e5ac040b5de0aa1ca841625da1141cc0c4768aed19b22a573f14beb35f",
+    "scripts/blender_worker.py": "e6a29cbfd4aad31114e116979ae34f3596f509058982a311f11f4228fecd9d98",
+    "scripts/mori_crown_material.py": "25d8ae26b7c5b2ba38f6db5fd5baa507f18c3965a83a3e09996d71fceb2d1959",
+    "scripts/mori_crown_v2.py": "8bb386b4429575c4c37b914c71b63629fb844c84c0399e943706b34fd10e64a7",
+    "scripts/mori_entrance_v1.py": "f9ab6f5aa0ad9a1cd201c8b021e9893a411e9556afbc7bb877f558e6faa2fede",
+    "scripts/mori_facade_v2.py": "5df83c9acf790bbfc1491f133445221174644663e2c041ec860a2900a81e7b9e",
+    "scripts/mori_plaza_connection_v1.py": "798ce27187a3a6f38e6ddd4822c78f47632b8e2fd17795140f3e7edb1fa58f8a",
+    "scripts/mori_plaza_edge_v1.py": "1741fbb697d015a9f29e542daa5d4bf1759681508f8f2d670765e4bd29968a5d",
+    "scripts/mori_plaza_landscape_v1.py": "bae87e622bc9b9c678a1491c3fc6897b294addf3f08400b3a02f3bca9ee2ce29",
+    "scripts/mori_plaza_link_v1.py": "c5e15978e47a7e4816001b175ead98d7445bf37828f48945f15915db639f4d37",
+    "scripts/mori_plaza_outline_v1.py": "bf32df1b459cf5851f7aefd6ad6a92f9f81fe3867cba3d40a322f749ec2aa3c6",
+    "scripts/mori_plaza_v1.py": "b16a1179b14f9e56b615d818c06da11c7be77959c199e2d93c6ee4544076fc2c",
+    "scripts/mori_podium_v2.py": "821a8ee485ff39757d97ee29a2678083a850c5b714eda7698457105b5745520e",
+    "scripts/mori_podium_v3.py": "b202252d78763d965213c30a8c85260b0ce550e32128a7dbef05107d9e639dfb",
+    "scripts/mori_shape.py": "5588ac6e1409944faf1d686baffa7230b7a95a0b939c21502686b0a96d80df5a",
+    "scripts/mori_terrace_v1.py": "2056674560bbcd92503db2a5e8491eca0f2f21ab782ba9d332820b70a74d1a9d",
+    "scripts/prepare_mori_plaza_connection.py": "13a12cbdecc1725973be3ceabb4fe1209c2083a00fae6f021e6e9e56ea433191",
+    "scripts/review.py": "4ce554901ab56f54d52f73037f587f49f73543b5e506c9eb2ee6303122c6eb7f",
+    "scripts/validate_mori_plaza_connection.py": "12091bbfe06e4a2169d08c8c216f1a14de8fcc04aad57e5c82be99bb3a408696",
+    "tests/test_mori_plaza_connection.py": "beae66df7a71d2f601aa68ce0ee36d850cdaea1b221a69c45602ac92dd9edb08"
+  },
+  "portable_checks": {
+    "python": "3.12.14",
+    "tests": 214,
+    "passed": 209,
+    "skipped": 5,
+    "failures": 0,
+    "compileall": true
+  },
+  "connection_tests_with_shapely": {
+    "tests": 8,
+    "passed": 8
+  },
+  "blender_smoke": [
+    {
+      "case": "valid",
+      "passed": true
+    },
+    {
+      "case": "missing-image",
+      "passed": true
+    }
+  ],
+  "unchanged_warnings": {
+    "before": 36,
+    "after": 36,
+    "new": 0,
+    "scope": "Inherited modifier/constraint fingerprint limitations and fixed legacy placeholders."
+  },
+  "visual_review": {
+    "reviewer": "AI assistant",
+    "all_nine_before_after_pairs_inspected": true,
+    "notes": [
+      "The large risers at the selected join disappear.",
+      "The entrance, grass and surrounding street views retain their layout.",
+      "Irregular inherited materials and curb pieces beyond the flat core remain. Human landscape acceptance is pending."
+    ]
+  },
+  "render_evidence": {
+    "before": [
+      {
+        "id": "link-overview",
+        "seconds": 7.031,
+        "sha256": "7b59bffae8e34ba28c2954a00cabddb53ebc8320945cce06cceb356e9ed9b5ac",
+        "pixel_sha256": "c92a204e23d27c834e7dff98ac6207061c87d9072f9d96d9e5530b196fcb34a6",
+        "rgb_min": 0.019607843831181526,
+        "rgb_max": 0.7568628191947937,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            -0.19302181899547577,
+            -0.6560567617416382,
+            0.7296108603477478,
+            -381.3396301269531
+          ],
+          [
+            0.9811943769454956,
+            -0.1290602833032608,
+            0.14353002607822418,
+            318.5472412109375
+          ],
+          [
+            -7.108094735031045e-08,
+            0.7435944676399231,
+            0.6686307787895203,
+            25.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "link-approach",
+        "seconds": 5.469,
+        "sha256": "0f11dcca7b871af2c1cb8eeaacf1711c85612cdc72c45555605a60bab25dc307",
+        "pixel_sha256": "17683cbe31c2f87be925785ca5592c76fb36525151ce8a1bbfc02a9d1a18c7e9",
+        "rgb_min": 0.003921568859368563,
+        "rgb_max": 0.9921569228172302,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            -0.8944271802902222,
+            0.00425903033465147,
+            0.4471932351589203,
+            -403.7003173828125
+          ],
+          [
+            0.44721347093582153,
+            0.008518114686012268,
+            0.8943866491317749,
+            323.0193786621094
+          ],
+          [
+            -2.3309059571374746e-08,
+            0.9999546408653259,
+            -0.009523529559373856,
+            1.7999999523162842
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "entrance-front",
+        "seconds": 5.422,
+        "sha256": "6b5da0c53fe048807de30f7ea823a87eacde2de1ff0c7348ca0431ccb65e21cc",
+        "pixel_sha256": "1d5942f3da47e9433a1529958bf5d34c9ef14bcc9d159e28bd4d26a541ab0a49",
+        "rgb_min": 0.007843137718737125,
+        "rgb_max": 1.0,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            -0.8944271802902222,
+            -0.04048885405063629,
+            0.4453769028186798,
+            -409.9613037109375
+          ],
+          [
+            0.44721347093582153,
+            -0.0809776559472084,
+            0.890753984451294,
+            310.4974060058594
+          ],
+          [
+            -3.04548493090806e-08,
+            0.995893120765686,
+            0.09053578972816467,
+            8.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "plaza-outward",
+        "seconds": 4.531,
+        "sha256": "d59e620e3e12f0a947bb70b20026d4d637192e67666096a2049f55db171a0baa",
+        "pixel_sha256": "b8ad242d3f5598da4e7c464b5bc99e59c0d8275301300d46c2cf1c9c79610922",
+        "rgb_min": 0.003921568859368563,
+        "rgb_max": 0.9372549653053284,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            0.8944271802902222,
+            -9.324937622068319e-08,
+            -0.44721361994743347,
+            -409.0668640136719
+          ],
+          [
+            -0.4472135603427887,
+            -1.355261929347762e-07,
+            -0.8944272994995117,
+            312.2862548828125
+          ],
+          [
+            2.279561961415766e-08,
+            1.0000001192092896,
+            -1.6292069915380125e-07,
+            1.8200000524520874
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "plaza-context",
+        "seconds": 4.625,
+        "sha256": "0465e702440f9361dc46eac61cac1dc39e36bb1501c20dff890f896e756778dc",
+        "pixel_sha256": "72c082fa29c1b891170a008ff4f44bf8d39272bc72192e826a69358e7781a988",
+        "rgb_min": 0.027450982481241226,
+        "rgb_max": 0.9529412388801575,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            -0.3972230851650238,
+            -0.5120211839675903,
+            0.7616087794303894,
+            -339.748779296875
+          ],
+          [
+            0.9177219271659851,
+            -0.22162112593650818,
+            0.32965174317359924,
+            357.0075988769531
+          ],
+          [
+            -8.432481735098918e-08,
+            0.8298904895782471,
+            0.5579261779785156,
+            44.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "plaza-edge",
+        "seconds": 4.469,
+        "sha256": "d727bf7ab6ae0727a990d6be3c85cb7fabde1ef606e5ad33a3d04debaaf00a27",
+        "pixel_sha256": "b3ad33474d9d00d680aef31ab95dbe93357d81d71389314d4311d63cdf57168c",
+        "rgb_min": 0.007843137718737125,
+        "rgb_max": 0.9254902601242065,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            -0.382352739572525,
+            -1.7733638912886818e-07,
+            -0.9240164160728455,
+            -401.01702880859375
+          ],
+          [
+            -0.9240164160728455,
+            -2.4612178961547215e-09,
+            0.382352739572525,
+            328.3859558105469
+          ],
+          [
+            -7.007925972857265e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            1.7100000381469727
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "protected-street-context",
+        "seconds": 4.344,
+        "sha256": "234941d9f7dd929ec8e431d78c67d69bca88fa5371f36edebbb1a7fd5a81c49a",
+        "pixel_sha256": "d921ead25dd6c9285c998e46e85e5b7b2c57d6ff2df6ada06ca06cec74b85767",
+        "rgb_min": 0.027450982481241226,
+        "rgb_max": 0.8666667342185974,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            -0.1559625267982483,
+            -0.5618962645530701,
+            0.8123719692230225,
+            -287.8719787597656
+          ],
+          [
+            0.987762987613678,
+            -0.08872045576572418,
+            0.12826921045780182,
+            398.1512756347656
+          ],
+          [
+            1.9652119931379275e-08,
+            0.8224361538887024,
+            0.5688574314117432,
+            60.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "near-connector-road",
+        "seconds": 4.485,
+        "sha256": "dabdde7d5643c2f83e4ba04209baeac81535b7187b7c518fef7eb3f2b52f7df1",
+        "pixel_sha256": "e6b0451cbf53d651f82b3db80aea4d96b027e5860e6ed9f041cd522c3235082c",
+        "rgb_min": 0.04313725605607033,
+        "rgb_max": 0.7960785031318665,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            0.9323214888572693,
+            -0.09063439816236496,
+            0.3500886857509613,
+            -415.48895263671875
+          ],
+          [
+            0.3616305887699127,
+            0.2336648553609848,
+            -0.9025652408599854,
+            341.9369812011719
+          ],
+          [
+            3.6864381769419197e-08,
+            0.9680837392807007,
+            0.25062692165374756,
+            1.25
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "near-connector-sidewalk",
+        "seconds": 4.375,
+        "sha256": "f7422fd35462af2e8e4cf1098c87fede27f508ca879ca0ed81a276373fb911d9",
+        "pixel_sha256": "8580bd692ae092f415fbe7c0fd870f2525d6df43985fadab9717614fe754238d",
+        "rgb_min": 0.0470588281750679,
+        "rgb_max": 0.7960785031318665,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            0.9323214888572693,
+            -0.09063439816236496,
+            0.3500886857509613,
+            -416.4841613769531
+          ],
+          [
+            0.3616305887699127,
+            0.2336648553609848,
+            -0.9025652408599854,
+            341.9378662109375
+          ],
+          [
+            3.6864381769419197e-08,
+            0.9680837392807007,
+            0.25062692165374756,
+            1.25
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    ],
+    "after": [
+      {
+        "id": "link-overview",
+        "seconds": 6.297,
+        "sha256": "cb452e35d71cddd008bc44e643f6627cca99ab329d41d0f648acd4ab1d140a1b",
+        "pixel_sha256": "3345d3e84712a22a0511af7519145c590a74e966fe0d91e50cc720bd7596e752",
+        "rgb_min": 0.019607843831181526,
+        "rgb_max": 0.7568628191947937,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            -0.19302181899547577,
+            -0.6560567617416382,
+            0.7296108603477478,
+            -381.3396301269531
+          ],
+          [
+            0.9811943769454956,
+            -0.1290602833032608,
+            0.14353002607822418,
+            318.5472412109375
+          ],
+          [
+            -7.108094735031045e-08,
+            0.7435944676399231,
+            0.6686307787895203,
+            25.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "link-approach",
+        "seconds": 4.656,
+        "sha256": "3d1419ad63d1996a54f0d805130658a7361fefe59b7e976ddf9523fd44d56785",
+        "pixel_sha256": "5592285073eaa5909c174b157c4a86da21e78d4a07870277cdab6d742e3904c5",
+        "rgb_min": 0.003921568859368563,
+        "rgb_max": 0.9921569228172302,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            -0.8944271802902222,
+            0.00425903033465147,
+            0.4471932351589203,
+            -403.7003173828125
+          ],
+          [
+            0.44721347093582153,
+            0.008518114686012268,
+            0.8943866491317749,
+            323.0193786621094
+          ],
+          [
+            -2.3309059571374746e-08,
+            0.9999546408653259,
+            -0.009523529559373856,
+            1.7999999523162842
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "entrance-front",
+        "seconds": 5.094,
+        "sha256": "b23918801b20a2a2bb33680eb18db583f67728ac397cba1598c339bef7e0566e",
+        "pixel_sha256": "5ffcef9fdf028794e2108f5851fa681a7956215325b431afa168d717d4452a1b",
+        "rgb_min": 0.007843137718737125,
+        "rgb_max": 1.0,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            -0.8944271802902222,
+            -0.04048885405063629,
+            0.4453769028186798,
+            -409.9613037109375
+          ],
+          [
+            0.44721347093582153,
+            -0.0809776559472084,
+            0.890753984451294,
+            310.4974060058594
+          ],
+          [
+            -3.04548493090806e-08,
+            0.995893120765686,
+            0.09053578972816467,
+            8.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "plaza-outward",
+        "seconds": 4.312,
+        "sha256": "e88a9738a2edff151ebfcd7faaee8f3e37cf536b43edd071cd4245b0cc3ae6d1",
+        "pixel_sha256": "d203f9ff07ec5b193df849cd2f982db8a32f7904e17d21d7d4c701023635775a",
+        "rgb_min": 0.003921568859368563,
+        "rgb_max": 0.9372549653053284,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            0.8944271802902222,
+            -9.324937622068319e-08,
+            -0.44721361994743347,
+            -409.0668640136719
+          ],
+          [
+            -0.4472135603427887,
+            -1.355261929347762e-07,
+            -0.8944272994995117,
+            312.2862548828125
+          ],
+          [
+            2.279561961415766e-08,
+            1.0000001192092896,
+            -1.6292069915380125e-07,
+            1.8200000524520874
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "plaza-context",
+        "seconds": 4.375,
+        "sha256": "303866154d8685fd3f92e51ead36894fe6e78af5a8001e10297f48c7afb448c3",
+        "pixel_sha256": "2e3fe836f57a80959d3a19dce6c8abc0f6f452343dbeac64cc537ed3aecf0ad1",
+        "rgb_min": 0.027450982481241226,
+        "rgb_max": 0.9529412388801575,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            -0.3972230851650238,
+            -0.5120211839675903,
+            0.7616087794303894,
+            -339.748779296875
+          ],
+          [
+            0.9177219271659851,
+            -0.22162112593650818,
+            0.32965174317359924,
+            357.0075988769531
+          ],
+          [
+            -8.432481735098918e-08,
+            0.8298904895782471,
+            0.5579261779785156,
+            44.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "plaza-edge",
+        "seconds": 4.328,
+        "sha256": "d6035730c909a9f9b57db37fe8a49cab0438350186fd8ae337e4991489ef5a85",
+        "pixel_sha256": "ee45be3c99d7fdccc5b923fc000de9e93c321e1b8c9105b4bbcccde01a444c52",
+        "rgb_min": 0.007843137718737125,
+        "rgb_max": 0.9254902601242065,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            -0.382352739572525,
+            -1.7733638912886818e-07,
+            -0.9240164160728455,
+            -401.01702880859375
+          ],
+          [
+            -0.9240164160728455,
+            -2.4612178961547215e-09,
+            0.382352739572525,
+            328.3859558105469
+          ],
+          [
+            -7.007925972857265e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            1.7100000381469727
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "protected-street-context",
+        "seconds": 4.281,
+        "sha256": "71e05811a26c9007e034a2b87fc904f347378069d8d9beed08318d1505ad0753",
+        "pixel_sha256": "efb831835fc59876982ad57c6fe147ae4053a78e2e113583a2e2130cf2cf3d1d",
+        "rgb_min": 0.027450982481241226,
+        "rgb_max": 0.8666667342185974,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            -0.1559625267982483,
+            -0.5618962645530701,
+            0.8123719692230225,
+            -287.8719787597656
+          ],
+          [
+            0.987762987613678,
+            -0.08872045576572418,
+            0.12826921045780182,
+            398.1512756347656
+          ],
+          [
+            1.9652119931379275e-08,
+            0.8224361538887024,
+            0.5688574314117432,
+            60.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "near-connector-road",
+        "seconds": 4.36,
+        "sha256": "c44cbb00c297d12a72b4014448b74f6b979cd096e82805dea4fefd4058387435",
+        "pixel_sha256": "a85363d3ee08e10a590ea3cf4ab61815594fdc36ca764b288929f3f47ae0305a",
+        "rgb_min": 0.04313725605607033,
+        "rgb_max": 0.7960785031318665,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            0.9323214888572693,
+            -0.09063439816236496,
+            0.3500886857509613,
+            -415.48895263671875
+          ],
+          [
+            0.3616305887699127,
+            0.2336648553609848,
+            -0.9025652408599854,
+            341.9369812011719
+          ],
+          [
+            3.6864381769419197e-08,
+            0.9680837392807007,
+            0.25062692165374756,
+            1.25
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "near-connector-sidewalk",
+        "seconds": 4.344,
+        "sha256": "cc99d8cfb6e04e75a1fa511fce2620481a3c8726a82eaa2cac414f672057e234",
+        "pixel_sha256": "e28388e43679304b7d1f14ced54334edc730b89e4e96cae99c42cf470cb526d5",
+        "rgb_min": 0.0470588281750679,
+        "rgb_max": 0.7960785031318665,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            0.9323214888572693,
+            -0.09063439816236496,
+            0.3500886857509613,
+            -416.4841613769531
+          ],
+          [
+            0.3616305887699127,
+            0.2336648553609848,
+            -0.9025652408599854,
+            341.9378662109375
+          ],
+          [
+            3.6864381769419197e-08,
+            0.9680837392807007,
+            0.25062692165374756,
+            1.25
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    ]
+  },
+  "input_unchanged": true,
+  "local_outputs": {
+    "review": "data/local/reviews/connection-final-02",
+    "validation": "data/local/audits/connection-final-02",
+    "plan": "data/local/connection-plan-02"
+  }
+}
