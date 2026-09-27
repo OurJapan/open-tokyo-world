@@ -11,6 +11,43 @@ def digest_file(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def source_check(path,record):
     if path.stat().st_size!=record['bytes'] or digest_file(path)!=record['sha256']:raise ValueError('Wrong legacy baseline')
 
+def part_index(scope):
+    """Read persistent IDs from the manifest; never derive them from names/order."""
+    import re
+    result={};sources=set()
+    for part in scope['parts']:
+        ident=part.get('part_id','')
+        if not re.fullmatch(r'tokyo-tower-part-[0-9]{3}',ident):
+            raise ValueError('Missing or invalid tower part ID')
+        if ident in result or part['object'] in sources:
+            raise ValueError('Duplicate tower part ID or source object')
+        result[ident]=part;sources.add(part['object'])
+    if len(result)!=77:raise ValueError('Expected 77 tower part IDs')
+    return result
+
+def validate_part_identity(objects,records,scope):
+    expected=part_index(scope);saved={}
+    for record in records.values():
+        ident=record.get('part_id')
+        if ident not in expected or ident in saved:
+            raise ValueError('Unknown or duplicate saved part ID')
+        if record['source_object']!=expected[ident]['object']:
+            raise ValueError('Saved part ID/source mismatch')
+        saved[ident]=record
+    seen=set()
+    for obj in objects:
+        ident=obj.get('otw_part_id')
+        if ident not in expected or ident in seen:
+            raise ValueError('Unknown or duplicate mesh part ID')
+        if obj.get('source_object')!=expected[ident]['object']:
+            raise ValueError('Mesh part ID/source mismatch')
+        if obj.get('otw_feature_id')!=scope['feature_id'] or obj.get('license')!='CC-BY-4.0':
+            raise ValueError('Mesh feature or license mismatch')
+        seen.add(ident)
+    if seen!=set(expected) or set(saved)!=set(expected):
+        raise ValueError('Incomplete tower part ID coverage')
+    return saved
+
 def material_check(material,seen=None):
     if not material or not material.use_nodes:raise ValueError('Expected procedural material')
     seen=set() if seen is None else seen
@@ -46,8 +83,8 @@ def build(source,out,scope):
         mesh=bpy.data.meshes.new_from_object(o.evaluated_get(graph),preserve_all_data_layers=True,depsgraph=graph)
         mesh.transform(o.matrix_world);mesh.update()
         copy=bpy.data.objects.new(o.name+' / licensed',mesh);scene.collection.objects.link(copy)
-        copy['otw_feature_id']=scope['feature_id'];copy['source_object']=o.name;copy['license']='CC-BY-4.0'
-        records[copy.name]={'source_object':o.name,'mesh_sha256':mesh_hash(copy),'vertices':len(mesh.vertices),'polygons':len(mesh.polygons)}
+        copy['otw_feature_id']=scope['feature_id'];copy['source_object']=o.name;copy['license']='CC-BY-4.0';copy['otw_part_id']=part['part_id']
+        records[copy.name]={'part_id':part['part_id'],'source_object':o.name,'mesh_sha256':mesh_hash(copy),'vertices':len(mesh.vertices),'polygons':len(mesh.polygons)}
     camera=bpy.data.objects.new('Tower review camera',bpy.data.cameras.new('Tower review camera'));scene.collection.objects.link(camera);scene.camera=camera;camera.data.clip_end=2000;camera.data.clip_start=.02
     sun=bpy.data.objects.new('Tower review sun',bpy.data.lights.new('Tower review sun','SUN'));scene.collection.objects.link(sun);sun.data.energy=3;sun.rotation_euler=(.4,-.4,-.3)
     world=bpy.data.worlds.new('Tower neutral world');world.use_nodes=True;world.node_tree.nodes['Background'].inputs['Color'].default_value=(.6,.68,.78,1);scene.world=world
@@ -69,10 +106,11 @@ def validate(out,scope):
     if len(meshes)!=77 or len(bpy.data.scenes)!=1:raise ValueError('Wrong isolated scene count')
     if bpy.data.images or bpy.data.libraries or bpy.data.texts or bpy.data.sounds:raise ValueError('Unexpected external/legacy dependency')
     if {o.get('source_object') for o in meshes}!={p['object'] for p in scope['parts']}:raise ValueError('Part coverage mismatch')
+    by_id=validate_part_identity(meshes,parts,scope)
     triangles=0
     for o in meshes:
         if o.modifiers or o.constraints or o.parent or o.animation_data:raise ValueError('Unbaked object dependency')
-        if mesh_hash(o)!=parts[o.name]['mesh_sha256']:raise ValueError('Saved mesh mismatch')
+        if mesh_hash(o)!=by_id[o['otw_part_id']]['mesh_sha256']:raise ValueError('Saved mesh mismatch')
         if not all(math.isfinite(c) for v in o.data.vertices for c in v.co):raise ValueError('Invalid vertex')
         for m in o.data.materials:material_check(m)
         o.data.calc_loop_triangles();triangles+=len(o.data.loop_triangles)
@@ -85,11 +123,12 @@ def validate(out,scope):
         im=bpy.data.images.load(scene.render.filepath);px=np.array(im.pixels[:]);
         if tuple(im.size)!=(960,720) or not np.isfinite(px).all() or px.reshape(-1,4)[:,:3].std()<.01:raise ValueError('Invalid preview')
         bpy.data.images.remove(im);pictures[name]=digest_file(out/(name+'.png'))
-    (out/'validation.json').write_text(json.dumps({'ok':True,'blender':bpy.app.version_string,'meshes':len(meshes),'triangles':triangles,'saved_reopened':True,'external_images':0,'libraries':0,'texts':0,'sounds':0,'parts_match':True,'renders':pictures,'limitations':['Not full procedural rebuild','No real-world accuracy or complete topology certification','Modifier evaluation baked at frame 1']},indent=2)+'\n')
+    (out/'validation.json').write_text(json.dumps({'ok':True,'blender':bpy.app.version_string,'meshes':len(meshes),'triangles':triangles,'saved_reopened':True,'external_images':0,'libraries':0,'texts':0,'sounds':0,'parts_match':True,'part_ids_match':True,'part_ids':sorted(by_id),'renders':pictures,'limitations':['Not full procedural rebuild','No real-world accuracy or complete topology certification','Modifier evaluation baked at frame 1']},indent=2)+'\n')
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--input',required=True,type=Path);ap.add_argument('--output',required=True,type=Path);ap.add_argument('--blender',type=Path);ap.add_argument('--phase',choices=['build','validate'])
     a=ap.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else None);source=a.input.resolve();out=a.output.resolve();scope=json.loads((HERE/'provenance.json').read_text(encoding='utf8'))
+    part_index(scope)
     if a.phase:
         import bpy
         if bpy.app.version!=(4,5,1):raise ValueError('Blender 4.5.1 required')
@@ -97,7 +136,7 @@ def main():
         else:validate(out,scope)
         return
     if not a.blender or not a.blender.is_file():ap.error('Supply Blender executable')
-    source_check(source,scope['baseline']);out.mkdir(parents=True,exist_ok=False);record={'ok':False,'started':time.time()}
+    source_check(source,scope['baseline']);out.mkdir(parents=True,exist_ok=False);record={'ok':False,'started':time.time(),'input_sha256':scope['baseline']['sha256'],'provenance_sha256':digest_file(HERE/'provenance.json')}
     try:
         for name,path in {'ASSET-LICENSE.md':HERE/'ASSET-LICENSE.md','NOTICE.md':HERE/'NOTICE.md','provenance.json':HERE/'provenance.json','MIT-LICENSE.txt':HERE.parents[1]/'MIT-LICENSE.txt'}.items():(out/name).write_bytes(path.read_bytes())
         for phase in ['build','validate']:
