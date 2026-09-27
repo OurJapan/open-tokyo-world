@@ -110,3 +110,7 @@ OptiXが使えない環境では明示的に`--device CPU`を選びます。自�
 `mori_plaza_landscape_v1` はPR #39の画像確認済み出力専用の独立した増分です。固定した地図・道路seed・土地利用の制作入力から `prepare_mori_plaza_landscape.py` でローカルplanを生成し、`--landscape-plan` に指定します。入力sceneとplanのhashがpatch・lockに一致しなければ停止します。他のoperationとは混用しません。
 
 既存芝生1objectと新しい舗装1objectだけを変更し、`validate_mori_plaza_landscape.py` が保存後の面積・対象外の面・舗装の閉形状・入口と通路を検査します。plan生成と独立validatorには固定したPython 3.12／NumPy／Shapely環境が必要で、runner内のBlender適用は標準ライブラリを使います。[根拠・再実行・推定箇所](mori-plaza-landscape-v1.md)を参照してください。
+
+## 入口側の接続高さ
+
+`mori_plaza_connection_v1` はPR #40採用版専用の局所修正候補です。`--road-inputs` と、`prepare_mori_plaza_connection.py` で作る `--connection-plan` を指定します。道路3objectの16m四方以内を段階的に下げ、数mmの隙間を埋める閉じた舗装1objectを追加します。他operationとは混用しません。現地の測量値や実在するスロープの復元とは区別します。[変更範囲・保存後検査・再実行](mori-plaza-connection-v1.md)を参照してください。

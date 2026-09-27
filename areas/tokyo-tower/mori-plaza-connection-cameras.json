@@ -1,0 +1,398 @@
+{
+  "version": 1,
+  "status": "candidate-poses-human-review-pending",
+  "note": "Six visually checked inspection views and one wider context view. Identical settings for before and after.",
+  "views": [
+    {
+      "id": "link-overview",
+      "frame": 1,
+      "matrix_world": [
+        [
+          -0.19302186029333604,
+          -0.6560569020525068,
+          0.7296107885154711,
+          -381.33963078700367
+        ],
+        [
+          0.9811944564911177,
+          -0.12906037417426458,
+          0.14352999118337242,
+          318.5472429209974
+        ],
+        [
+          0.0,
+          0.7435944869935942,
+          0.6686308689499264,
+          25.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 42,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "source_camera": "Fixed inferred plaza connection review pose"
+    },
+    {
+      "id": "link-approach",
+      "frame": 1,
+      "matrix_world": [
+        [
+          -0.8944271909999154,
+          0.004258983953179568,
+          0.44719331508385446,
+          -403.7003105620015
+        ],
+        [
+          0.44721359549995904,
+          0.00851796790635911,
+          0.8943866301677063,
+          323.01937887599695
+        ],
+        [
+          0.0,
+          0.9999546516109783,
+          -0.009523377634390272,
+          1.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 28,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "source_camera": "Fixed inferred plaza connection review pose"
+    },
+    {
+      "id": "entrance-front",
+      "frame": 1,
+      "matrix_world": [
+        [
+          -0.894427190999916,
+          -0.04048881650894584,
+          0.4453769815984038,
+          -409.96130089900095
+        ],
+        [
+          0.447213595499958,
+          -0.08097763301789168,
+          0.8907539631968076,
+          310.4973982019981
+        ],
+        [
+          0.0,
+          0.9958932064677039,
+          0.09053574604251861,
+          8.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 24,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "source_camera": "Fixed entrance detail pose; estimated registration to legacy scene"
+    },
+    {
+      "id": "plaza-outward",
+      "frame": 1,
+      "matrix_world": [
+        [
+          0.8944271802902222,
+          -2.0509689946379694e-08,
+          -0.44721364974975586,
+          -409.0668640136719
+        ],
+        [
+          -0.44721364974975586,
+          -1.0165798158823236e-07,
+          -0.8944272994995117,
+          312.2862548828125
+        ],
+        [
+          2.0509689946379694e-08,
+          1.0000001192092896,
+          -1.113413432562993e-07,
+          1.8200000524520874
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 24,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "eye_local_uvz": [
+        0,
+        24,
+        1.82
+      ],
+      "target_local_uvz": [
+        0,
+        75,
+        1.82
+      ],
+      "source_camera": "Inspection pose in the inherited, approximate entrance-local coordinate frame"
+    },
+    {
+      "id": "plaza-context",
+      "frame": 1,
+      "matrix_world": [
+        [
+          -0.3972230553627014,
+          -0.5120213031768799,
+          0.7616087198257446,
+          -339.748779296875
+        ],
+        [
+          0.9177219867706299,
+          -0.22162117063999176,
+          0.32965168356895447,
+          357.0075988769531
+        ],
+        [
+          -2.3689519679237492e-08,
+          0.8298904299736023,
+          0.55792635679245,
+          44.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 35,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "eye_local_uvz": [
+        42,
+        95,
+        44
+      ],
+      "target_local_uvz": [
+        0,
+        45,
+        0.1
+      ],
+      "source_camera": "Inspection pose in the inherited, approximate entrance-local coordinate frame"
+    },
+    {
+      "id": "plaza-edge",
+      "frame": 1,
+      "matrix_world": [
+        [
+          -0.3823527693748474,
+          -3.5039633417000005e-08,
+          -0.9240164756774902,
+          -401.01702880859375
+        ],
+        [
+          -0.9240164756774902,
+          -5.6550874205640866e-08,
+          0.382352739572525,
+          328.3859558105469
+        ],
+        [
+          -3.5039633417000005e-08,
+          1.0,
+          -5.6550874205640866e-08,
+          1.7100000381469727
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 24,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "eye_local_uvz": [
+        0,
+        42,
+        1.71
+      ],
+      "target_local_uvz": [
+        28,
+        44,
+        1.71
+      ],
+      "source_camera": "Inspection pose in the inherited, approximate entrance-local coordinate frame"
+    },
+    {
+      "id": "protected-street-context",
+      "frame": 1,
+      "matrix_world": [
+        [
+          -0.15596257347301096,
+          -0.5618961824338334,
+          0.8123720550597243,
+          -287.87198932751244
+        ],
+        [
+          0.987762965329069,
+          -0.08872044985797373,
+          0.12826927185153547,
+          398.1512629199899
+        ],
+        [
+          0.0,
+          0.8224362357917377,
+          0.5688573090474597,
+          60
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "lens_mm": 35,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "eye_local_uvz": [
+        70,
+        155,
+        60
+      ],
+      "target_local_uvz": [
+        0,
+        105,
+        0.5
+      ],
+      "source_camera": "Wider fixed comparison pose including the protected street boundary"
+    },
+    {
+      "id": "near-connector-road",
+      "frame": 1,
+      "matrix_world": [
+        [
+          0.9323214888572693,
+          -0.09063446521759033,
+          0.35008862614631653,
+          -415.48895263671875
+        ],
+        [
+          0.36163055896759033,
+          0.23366504907608032,
+          -0.9025653004646301,
+          341.9369812011719
+        ],
+        [
+          1.1333781912981067e-08,
+          0.9680837392807007,
+          0.2506271302700043,
+          1.25
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 28,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.05,
+      "clip_end": 9000,
+      "source_camera": "Local inspection of a measured paving-boundary height difference"
+    },
+    {
+      "id": "near-connector-sidewalk",
+      "frame": 1,
+      "matrix_world": [
+        [
+          0.9323214888572693,
+          -0.09063446521759033,
+          0.35008862614631653,
+          -416.4841613769531
+        ],
+        [
+          0.36163055896759033,
+          0.23366504907608032,
+          -0.9025653004646301,
+          341.9378662109375
+        ],
+        [
+          1.1333781912981067e-08,
+          0.9680837392807007,
+          0.2506271302700043,
+          1.25
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 28,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.05,
+      "clip_end": 9000,
+      "source_camera": "Local inspection of a measured paving-boundary height difference"
+    }
+  ]
+}
