@@ -43,7 +43,7 @@ class WorkspaceContract(unittest.TestCase):
         self.assertIsNone(catalog["profiles"]["city"]["public_url"])
         features = workspace.read_json(ROOT / catalog["profiles"]["city"]["features"])
         self.assertEqual(features["waiver_input_sha256"], catalog["profiles"]["city"]["asset"]["sha256"])
-        accepted = workspace.read_json(ROOT / "manifests/mori-plaza-landscape-accepted.json")
+        accepted = workspace.read_json(ROOT / "manifests/mori-plaza-connection-accepted.json")
         for field in ("bytes", "sha256"):
             self.assertEqual(catalog["profiles"]["city"]["asset"][field], accepted[field])
 

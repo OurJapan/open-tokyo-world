@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "ok": true,
+  "date": "2026-09-27",
+  "asset": {
+    "bytes": 559040261,
+    "sha256": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4"
+  },
+  "code_and_config_sha256": {
+    "manifests/contributor-workspace.json": "550e4ffa25e5db36e08b13ec22b32a70519e39dc8b72ac0853a61b3f0c5b1454",
+    "manifests/mori-plaza-connection-accepted.json": "32301cc375adb23bcdc5cbb5f70cba11744954121c30f2c016a56e13e240c8b1",
+    "areas/tokyo-tower/mori-plaza-connection-accepted-features.json": "c2dc5d3e5a5bbf3fb8b883164ddbcefc7007f4510e075e2e5ee26eeb18f68ff2",
+    "areas/tokyo-tower/mori-plaza-connection-cameras.json": "0e6ac9d5e941c77b9f5bc49bc6bb30314029c4a5c9cc1fbb95716f93722fd970",
+    "scripts/workspace.py": "7863a50aa8bc941dc0b3747b34949f2f8fbb9c4fbc3d93d973e5cfceffd81820",
+    "tests/test_workspace.py": "139f37b126f8727637ad04304a0e077bdacae27dda60084ce0b2b5d3ffe60f2d"
+  },
+  "runtime": {
+    "report": "checks/scene-20260927T052803Z-81918647/report.json",
+    "blender_version": "4.5.1",
+    "blender_python": "3.11.11",
+    "scene": {
+      "opened": true,
+      "objects": 3307,
+      "meshes": 3257,
+      "packed_images": 383,
+      "missing_images": [],
+      "unsupported_images": [],
+      "missing_libraries": [],
+      "external_images": [],
+      "linked_libraries": 0,
+      "self_contained_images_libraries": true,
+      "references_ok": true,
+      "scope": "Opening and image/library references only; not a full geometry, external dependency or accuracy audit."
+    }
+  },
+  "file_hashes": {
+    "source": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4",
+    "registered": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4",
+    "edit": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4",
+    "previous": "2e2cce08aa581ef6a99d60c9fe993b8c4e53ff7f5cffb687f9d9c4cee19dc544"
+  },
+  "edit_validated": false,
+  "tests": {
+    "total": 217,
+    "passed": 211,
+    "skipped": 6,
+    "exit_code": 0
+  },
+  "reuse": {
+    "scene_validation": "docs/mori-plaza-connection-v1-validation.json",
+    "matched_before_after": "docs/mori-plaza-connection-v1-run.json",
+    "reason": "Exact existing candidate; no geometry, material, camera or render-setting changes.",
+    "new_render": false
+  },
+  "registration_scope": "Independent local workspace. Existing default registration preserved until code update.",
+  "limits": [
+    "No new public city distribution.",
+    "Not a separate-PC or real-world terrain validation."
+  ],
+  "local_outputs": {
+    "workspace": "data/local/connection-workspace",
+    "checks": "data/local/checks/connection-baseline"
+  }
+}

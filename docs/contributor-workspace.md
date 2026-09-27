@@ -8,7 +8,7 @@
 
 | 対象 | 入手・実行方法 | 含むもの |
 |---|---|---|
-| `city`（既定） | 採用版を持つ方が `import-city` で登録 | PR #40採用の街全体。固定SHA-256で照合 |
+| `city`（既定） | 採用版を持つ方が `import-city` で登録 | 入口接続修正を採用した街全体。固定SHA-256で照合 |
 | `mori` | `setup --profile mori` で公式入力を取得して生成 | 森JPタワー＋周囲23棟＋広場6部品。東京タワー・道路・地形は含まない |
 
 `city` がない場合に `mori` へ自動的に切り替えません。街全体の一般公開を含む完了条件は [配布準備状況](asset-distribution-readiness.md) に残します。
@@ -61,9 +61,9 @@ python scripts/workspace.py doctor --blender 'C:\Tools\Blender-4.5.1\blender.exe
 .\otw.ps1 setup --profile city
 ```
 
-採用版は558,877,024 bytes、SHA-256 `2e2cce08aa581ef6a99d60c9fe993b8c4e53ff7f5cffb687f9d9c4cee19dc544` です。コピー前後の照合とBlender読み込みを行い、元ファイルは変更しません。これは新しい配布許諾を与える操作ではありません。
+採用版は559,040,261 bytes、SHA-256 `9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4` です。コピー前後の照合とBlender読み込みを行い、元ファイルは変更しません。これは新しい配布許諾を与える操作ではありません。
 
-以前の版を登録している場合、`status` は `ready_locally: false`、`update_required: true` と更新手順を表示します。上記の `import-city` で現行採用版を登録してください。モデルはSHA-256ごとの別フォルダーへ保存し、旧モデルや既存の編集コピーは上書きしません。編集途中の差分は自動移植されないため、新しい編集コピーへの反映と再検証が必要です。[基準版の更新記録](city-baseline-pr40.md)
+以前の版を登録している場合、`status` は `ready_locally: false`、`update_required: true` と更新手順を表示します。上記の `import-city` で現行採用版を登録してください。モデルはSHA-256ごとの別フォルダーへ保存し、旧モデルや既存の編集コピーは上書きしません。編集途中の差分は自動移植されないため、新しい編集コピーへの反映と再検証が必要です。[基準版の更新記録](city-baseline-connection.md)
 
 ## 3. コピーを開いて改善する
 
@@ -74,7 +74,7 @@ python scripts/workspace.py doctor --blender 'C:\Tools\Blender-4.5.1\blender.exe
 
 街全体なら `--profile city` に置き換えます。`edit` は毎回新しい編集用コピーを作ります。`--open` を省略するとコピーの保存先だけを表示します。基準モデルの検証記録は、その後の手編集の検証にはなりません。対象・根拠・変更範囲を決め、既存の [レビュー手順](review-harness.md) に従ってください。
 
-登録した街全体から、現行の固定7視点で基準画像を生成する場合：
+登録した街全体から、現行の固定9視点で基準画像を生成する場合：
 
 ```powershell
 .\otw.ps1 review
