@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "base_commit": "9f1aa67028356851afefae5c565329b9a9d451b3",
+  "input_description": "Completed isolated paint-bands-03 candidate; retains the earlier parts005/006 improvement",
+  "input_sha256": "361f45888ca17db9cee112bf76a55d21f2e9820f4d385f575101ffc152400f5f",
+  "input_bytes": 27742051,
+  "feature_id": "otw:jp:tokyo:minato:tokyo-tower",
+  "floor_part_id": "tokyo-tower-part-012",
+  "floor_top_m": 246.22000122070312,
+  "lower_end_depth_m": 0.01,
+  "targets": [
+    {"part_id": "tokyo-tower-part-009", "lower_z_m": 246.25, "vertices": 2240, "lower_vertices": 1120, "components": 40},
+    {"part_id": "tokyo-tower-part-010", "lower_z_m": 246.27749633789062, "vertices": 320, "lower_vertices": 160, "components": 40},
+    {"part_id": "tokyo-tower-part-011", "lower_z_m": 246.25, "vertices": 320, "lower_vertices": 160, "components": 40}
+  ],
+  "evidence": [
+    {"path": "assets/tokyo-tower/legacy-source/tower-base.fragment.py.txt", "lines": [49, 53, 152], "claim": "Retained generator leaves frames 30mm and glass 57.5mm above the existing floor. Saved coordinates and a close render confirm floating lower ends."},
+    {"url": "https://tdt.tokyotower.co.jp/en/topdecktour/", "image_url": "https://tdt.tokyotower.co.jp/assets/images/slider_pc.jpg", "image_sha256": "fd89ac56cdbc27e58e47ff7f0fc6af76de0e8e690894c3ae41eb98713056e5f8", "checked": "2026-10-02", "claim": "Official interior photograph shows a closed window-base assembly with a continuous metal base. It does not establish dimensions or direct glass-to-floor contact. Reference image is not bundled or used as texture."}
+  ],
+  "strategy": "Translate each existing lower end to the unchanged floor top, including the entire lower 6mm bevel profile of the aluminum posts. Preserve upper ends, XY coordinates, topology, material definitions, identity and all other objects.",
+  "limits": [
+    "A simplified closure repair using existing parts, not an as-built reconstruction of sill profiles or seals.",
+    "The existing floor elevation and circular plan remain inherited estimates, not surveyed dimensions.",
+    "The separate 300mm floor-to-lower-white-shell gap and upper glass-to-roof clearance are outside this change.",
+    "No city integration, registry change, tree change, main-deck window-slope change or full self-intersection certification."
+  ]
+}

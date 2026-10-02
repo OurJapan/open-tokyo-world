@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "main_commit": "32de6da79b7ffb66a442edeb6f4cadb9d96fba91",
+  "before_sha256": "489922f8a260a363b0e0349a2f00c4244830f1686b887f2d9d756c0bccd77845",
+  "after_sha256": "d163ee0e923b481d123b5ee2b71cfd4136d5bf1d222ee1d5dcf9e88a28274b97",
+  "shiba_sha256": "ce945a214bdae65d76ac7ed77ecf2e620033f51058580bd7f5f008d5fcbe26af",
+  "strategy": "Retain the validated PR47/49/51 tower comparison and append only the five reviewed PR52 objects and their eleven materials to both sides. Reopen both saved scenes and rerun the complete tower preservation/geometry validator. PR53 changes only the local viewer.",
+  "limits": ["PR52 plantings and terrain retain their documented inferred status.", "Only the reviewed PR52 collection is appended; other legacy objects from that input are not imported."]
+}

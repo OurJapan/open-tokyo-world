@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "body_commit": "568a9e76106b2354c94616e6c62d6c8b9ac3ac38",
+  "main_at_inspection": "05026ec9de08b25e15e8e77c2ad2e2a43a1b5f6d",
+  "city_sha256": "09977e34f02c02a7e24448767874294e0f7c09e3bbaf40b5630ea1dea8965216",
+  "city_bytes": 558938658,
+  "city_description": "Saved PR47 + PR49 model; registered city manifest still points to PR46. No registration change.",
+  "reference_sha256": "8413d9cce5f0cfa6d27428d4315b5516768a46c018065f5787607ed6ec138da9",
+  "feature_id": "otw:jp:tokyo:minato:tokyo-tower",
+  "targets": [
+    {"part_id": "tokyo-tower-part-005", "object": "Tokyo Tower structure / orange", "raw_vertices": 75064, "raw_faces": 55222, "paint_material": "OTW tower paint bands 005"},
+    {"part_id": "tokyo-tower-part-006", "object": "Tokyo Tower structure / white", "raw_vertices": 18432, "raw_faces": 13724, "paint_material": "OTW tower paint bands 006"}
+  ],
+  "strategy": "Use two object-coordinate paint materials with the same height boundaries. Preserve raw and evaluated geometry and the viewport-on/render-off bevel. Keep each original material in an unused second slot so no original material is discarded on save.",
+  "limits": ["Exact band elevations are inherited model estimates, not surveyed facts.", "This input does not contain the parallel unmerged tree candidate."]
+}

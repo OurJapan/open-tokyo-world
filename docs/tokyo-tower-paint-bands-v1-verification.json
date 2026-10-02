@@ -1,0 +1,238 @@
+{
+  "ok": true,
+  "base_commit": "234b163210ac19d61f33e86b6920b8b26f9d453a",
+  "branch": "codex/tokyo-tower-body-20261002",
+  "environment": {
+    "os": "Windows",
+    "blender": "4.5.1 LTS",
+    "python": "3.11.11"
+  },
+  "source_sha256": "8413d9cce5f0cfa6d27428d4315b5516768a46c018065f5787607ed6ec138da9",
+  "source_unchanged": true,
+  "candidate_sha256": "361f45888ca17db9cee112bf76a55d21f2e9820f4d385f575101ffc152400f5f",
+  "candidate_bytes": 27742051,
+  "code_sha256": {
+    "scripts/tokyo_tower_paint_bands.py": "d6dcbbbd4f8299db1b43dacf7a35ee75f49ba7af421ab73fecee9ac4fefeb7d0",
+    "tests/test_tokyo_tower_paint_bands.py": "20af9227ec1977cc07ada78d4a9474604673d41b52a939283f482c05221f2b80",
+    "tests/blender_tower_paint_bands_smoke.py": "435626f29ba0235f794580f679badb2b600780d6ea3d5bedc74ac8d63ecdd7db",
+    "assets/tokyo-tower/paint-bands-v1.json": "ffbd37597cc9f22466e72d0ef28d3a9d33bc519f81e83100b5d4512a7b372c01"
+  },
+  "build": {
+    "ok": true,
+    "plan_sha256": "ffbd37597cc9f22466e72d0ef28d3a9d33bc519f81e83100b5d4512a7b372c01",
+    "source_sha256": "8413d9cce5f0cfa6d27428d4315b5516768a46c018065f5787607ed6ec138da9",
+    "boundaries_m": [
+      179.57142857142858,
+      205.14285714285714,
+      230.71428571428572,
+      256.2857142857143,
+      281.8571428571429,
+      307.42857142857144
+    ],
+    "parts": {
+      "tokyo-tower-part-005": {
+        "before": {
+          "name": "Tokyo Tower structure / orange.001",
+          "sha256": "168d7880ce519641713a2f5aee8d9a5d8bcf069059bab3abe21c8c5be4a45ab2",
+          "vertices": 519880,
+          "faces": 500038,
+          "loops": 2004712,
+          "uv_layers": [],
+          "custom_normals": false
+        },
+        "after": {
+          "name": "Tokyo Tower structure / orange.001 / horizontal paint bands v1",
+          "sha256": "9d51808ac6b581a1c0e345e1c36e2b71fbca0f0129a4554d83376fa743c2b469",
+          "vertices": 521944,
+          "faces": 503134,
+          "loops": 2015032,
+          "uv_layers": [],
+          "custom_normals": false
+        },
+        "split_source_faces": 1032,
+        "faces_with_other_paint": 5801,
+        "new_vertices": 2064,
+        "before_edge_counts": {
+          "wire": 0,
+          "boundary": 0,
+          "more_than_two_faces": 0
+        },
+        "after_edge_counts": {
+          "wire": 0,
+          "boundary": 0,
+          "more_than_two_faces": 0
+        }
+      },
+      "tokyo-tower-part-006": {
+        "before": {
+          "name": "Tokyo Tower structure / white.001",
+          "sha256": "b63026a8917caec30ad70ac3df0a1f90897210eae7452d0758be46d0845dfe87",
+          "vertices": 116352,
+          "faces": 111644,
+          "loops": 449280,
+          "uv_layers": [],
+          "custom_normals": false
+        },
+        "after": {
+          "name": "Tokyo Tower structure / white.001 / horizontal paint bands v1",
+          "sha256": "eb5f1e65795102852b0521640c998dc1e73116e0a9ab28cc499f97a859f5e002",
+          "vertices": 119856,
+          "faces": 116900,
+          "loops": 466800,
+          "uv_layers": [],
+          "custom_normals": false
+        },
+        "split_source_faces": 1752,
+        "faces_with_other_paint": 11633,
+        "new_vertices": 3504,
+        "before_edge_counts": {
+          "wire": 0,
+          "boundary": 0,
+          "more_than_two_faces": 0
+        },
+        "after_edge_counts": {
+          "wire": 0,
+          "boundary": 0,
+          "more_than_two_faces": 0
+        }
+      }
+    }
+  },
+  "validation": {
+    "ok": true,
+    "saved_reopened": true,
+    "part_ids_preserved": 77,
+    "unchanged_mesh_objects": 75,
+    "unchanged_camera_light": 2,
+    "all_material_definitions_unchanged": true,
+    "parts": {
+      "tokyo-tower-part-005": {
+        "original_vertices_unchanged": 519880,
+        "original_faces_covered": 500038,
+        "split_source_faces_checked": 1032,
+        "max_plane_error_m": 6.01386031182094e-06,
+        "max_face_area_error_m2": 3.0481255673536767e-06,
+        "edge_counts": {
+          "wire": 0,
+          "boundary": 0,
+          "more_than_two_faces": 0
+        },
+        "paint_assignments_checked": 503134
+      },
+      "tokyo-tower-part-006": {
+        "original_vertices_unchanged": 116352,
+        "original_faces_covered": 111644,
+        "split_source_faces_checked": 1752,
+        "max_plane_error_m": 3.979813520071929e-06,
+        "max_face_area_error_m2": 2.8883073091914846e-06,
+        "edge_counts": {
+          "wire": 0,
+          "boundary": 0,
+          "more_than_two_faces": 0
+        },
+        "paint_assignments_checked": 116900
+      }
+    },
+    "candidate_sha256": "361f45888ca17db9cee112bf76a55d21f2e9820f4d385f575101ffc152400f5f",
+    "limitations": [
+      "154 m bottom and exact boundary elevations are inherited model estimates, not newly surveyed real-world elevations.",
+      "Existing geometry silhouette and palette are retained; no claim of exact paint color, as-built section dimensions or antenna accuracy.",
+      "Only the two structural paint meshes are changed; deck, interior, auxiliary vegetation and city placement are outside scope.",
+      "No new full topology, self-intersection or engineering safety certification."
+    ]
+  },
+  "comparison": {
+    "full": {
+      "size": [
+        720,
+        960
+      ],
+      "matching_settings": true,
+      "identical": false,
+      "changed_pixels": 1216,
+      "max_rgba_difference": 0.5843137502670288,
+      "mean_rgba_difference": 4.312901364755817e-05
+    },
+    "band-231": {
+      "size": [
+        800,
+        640
+      ],
+      "matching_settings": true,
+      "identical": false,
+      "changed_pixels": 8364,
+      "max_rgba_difference": 0.6980392336845398,
+      "mean_rgba_difference": 0.001020144554786384
+    },
+    "band-205": {
+      "size": [
+        800,
+        640
+      ],
+      "matching_settings": true,
+      "identical": false,
+      "changed_pixels": 13535,
+      "max_rgba_difference": 0.7098039388656616,
+      "mean_rgba_difference": 0.002510039834305644
+    },
+    "lower-control": {
+      "size": [
+        640,
+        640
+      ],
+      "matching_settings": true,
+      "identical": false,
+      "changed_pixels": 50,
+      "max_rgba_difference": 0.0156862735748291,
+      "mean_rgba_difference": 3.2312735243067436e-07
+    }
+  },
+  "render_settings": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "threads": 4,
+    "samples": 16,
+    "seed": 0,
+    "denoising": false,
+    "adaptive_sampling": false
+  },
+  "images": {
+    "after-band-205.png": "38aeee0ae9b2da4be00f08dbf5f82e089392932d94f24dcdfedaab4dfa07a0fb",
+    "after-band-231.png": "470e229a6f5674e1d0916d79551877475462e7172da56ff93009cc23a1f6afda",
+    "after-full.png": "23eff16cca4b737603d6df2535b6540ea7927de0aeba1f2d2b0c6c75d167973a",
+    "after-lower-control.png": "9b523735a9aed18a0b482df58cdd4e4845b106fc364644740c3b0263f64be287",
+    "before-band-205.png": "16eeeeddbf8d02c39ce03d1911f7f618d156beda0ee81c91d2c8ef53246a5497",
+    "before-band-231.png": "dc225efc747990d442a4b840ca1a66a546b869174868e4fdd92bb60a3ccc0f61",
+    "before-full.png": "3e2d53e6e918ed9fefae63cd6d58e04e15f4bf7b6abec5d16d3c6500a4e48157",
+    "before-lower-control.png": "288d8a25aefc9e8683627b4e82658bb967c382ea0452ad123742d6c7efb641a0"
+  },
+  "visual_inspection": {
+    "inspected_images": 8,
+    "result": "Horizontal bands now pass continuously across diagonal braces and columns; full silhouette retained. Lower geometry unchanged; lower comparison has 50 small pixel differences, not certified pixel-identical."
+  },
+  "portable_tests": {
+    "run": 237,
+    "passed": 230,
+    "skipped": 7,
+    "exit_code": 0
+  },
+  "blender_surface_smoke": {
+    "run": 5,
+    "passed": 5,
+    "exit_code": 0
+  },
+  "local_results": "data/local/tower-paint-bands-03",
+  "local_logs": "data/local/tower-body-probe",
+  "publication": {
+    "pushed": false,
+    "pr_created": false,
+    "merged": false,
+    "shared_city_modified": false
+  },
+  "limitations": [
+    "154 m bottom and exact boundary elevations are inherited model estimates, not newly surveyed real-world elevations.",
+    "Existing geometry silhouette and palette are retained; no claim of exact paint color, as-built section dimensions or antenna accuracy.",
+    "Only the two structural paint meshes are changed; deck, interior, auxiliary vegetation and city placement are outside scope.",
+    "Current city integration, GPU rendering, self-intersection checks and public artifact distribution were not performed."
+  ]
+}
