@@ -1,14 +1,18 @@
 # 東京タワーの塗装とトップデッキ接合：最新mainへの統合
 
-鉄骨の斜材・柱を横断する塗装境界を揃え、トップデッキの窓柱・ガラス・ガスケット下端を既存床へ延長します。独立制作の3コミット（`568a9e7`、`9f1aa67`、`dd188b7`）をmain `3b1eb5f6c10ca9c0ebb072348faea4981985439e` へ取り込み、同じ都市候補として検証します。塗装済みモデルを土台に接合修正を制作したため、依存関係を保つ1本のDraft PRです。
+鉄骨の斜材・柱を横断する塗装境界を揃え、トップデッキの窓柱・ガラス・ガスケット下端を既存床へ延長します。独立制作の3コミット（`568a9e7`、`9f1aa67`、`dd188b7`）をmainへ取り込み、同じ都市候補として検証します。公開時のコードの基点は `68247dad0421f331f4179b9146a7b06273540a01` です。塗装済みモデルを土台に接合修正を制作したため、依存関係を保つ1本のDraft PRです。
 
-PR #50のviewer変更とPR #51の樹木コードはmainのままです。変更対象ファイルに重複はありません。PR #52のもみじ谷候補や他の未採用作業は含めません。元checkout、各制作worktree、入力blendと通常workspace登録を保持します。マージは行いません。
+PR #50・#53のviewer、#51の北東側樹木、#52のもみじ谷コードはmainのままです。変更対象ファイルに重複はありません。作業中に#52・#53がmainへ入ったため追従し、#52の保存済み樹林5部品をBefore/After両方へ保持しました。他の未採用作業は含めません。元checkout、各制作worktree、入力blendと通常workspace登録を保持します。マージは行いません。
+
+描画・モデル検証時のmainは `32de6da79b7ffb66a442edeb6f4cadb9d96fba91`。公開前に入ったPR #54は別棟0551e688の独立編集コード・証拠だけで、共通city登録、今回の実行依存、描画入力を更新していません。#54のコードを含む最新mainへrebaseし、portable検査を再実行しました。比較cityは#47・#49・#51・#52と今回のタワー修正の構成であり、#54の別候補を合成した全成果統合cityではありません。
 
 ## 入力と範囲
 
 登録用manifestはPR #46のままなので、登録済みcityを最新mainの成果と混同しません。PR #47＋#49の固定city `09977e34f02c…` へ、採用済みPR #51の固定増分 `bd190345084c…` を既存append処理で加え、Beforeを作成します。追加18オブジェクトとcollectionをPR #51保存モデル `966a81151bea…` に照合し、元3,309オブジェクトのうち旧樹木16部品の表示抑制だけを許可します。
 
 [固定入力一覧](../assets/tokyo-tower/city-repairs-v1.json) / [再実行スクリプト](../scripts/tokyo_tower_city_repairs.py)。都市の大きなblendや素材はローカル入力であり、Gitへ同梱しません。
+
+最初の#47＋#49＋#51比較はmain `3b1eb5f` 上で保存後検証・6組描画まで完了しています。その入力・結果を固定し、[main追従設定](../assets/tokyo-tower/city-main-sync-v1.json)と[追加スクリプト](../scripts/tokyo_tower_city_main_sync.py)で#52の承認済み5オブジェクト・11材質・1collectionだけを両側へ追加します。#52の旧cityを丸ごと混ぜず、各追加部品の形状・材質・属性を固定ライブラリと比較し、既存都市の保持を検査します。#53はviewerのみで、都市形状を変更しません。
 
 | 対象 | 都市側への反映 | 保持する状態 |
 |---|---|---|
@@ -25,17 +29,19 @@ PR #50のviewer変更とPR #51の樹木コードはmainのままです。変更�
 
 ## 保存後の検査と画像
 
-[検証JSON](tokyo-tower-city-repairs-v1-verification.json)と[Before/After画像](../renders/previews/tokyo-tower-city-repairs-v1/README.md)を参照してください。完全なログと構造スナップショットはignored `data/local/city-repairs-03/` と `data/local/` に保持します。01は旧部品の地物タグ有無の扱い、02は上記ベベルの完全hash比較で停止した診断用出力であり、採用候補ではありません。
+[検証JSON](tokyo-tower-city-repairs-v1-verification.json)と[Before/After画像](../renders/previews/tokyo-tower-city-repairs-v1/README.md)を参照してください。最終候補はignored `data/local/city-repairs-main-02/`。追従前の完全な検査・6組画像は `data/local/city-repairs-03/`、全ログは `data/local/` に保持します。初回cityの01・02とmain追従01は検査器調整で停止した診断用出力であり、採用候補ではありません。
 
 検査は別Blenderプロセスで保存ファイルを再読込します。対象外の都市オブジェクト、元材質、packed画像、collection、action、World、カメラ、照明を比較し、対象3部品も座標を戻した一時コピーで元メッシュの完全hashを再現することを要求します。120部材へ床上15 mmの接触rayを投射します。rayは局所的な隙間の検査であり、接触面全域や気密・構造安全を保証しません。
 
-保存後検証に成功し、3,327オブジェクト中3,322を完全保持。384画像データ（packed 383）、既存551材質、18 collections、23 actionsを保持しました。120部材のrayはBefore 0/120、After 120/120です。既存VIEWER画像のcolorspace enum警告が残りますが、新規の素材変更・修復はせず、処理はexit 0で完了しています。
+追従前の保存後検証では3,327オブジェクト中3,322を完全保持。#52追加後の再読込検査にも成功し、3,332中3,327、384画像データ（packed 383）、Beforeの562材質、19 collections、23 actionsを保持しました。120部材のrayはBefore 0/120、After 120/120です。既存VIEWER画像のcolorspace enum警告を修復するための素材変更は行わず、処理はexit 0で完了しています。
 
 PR #51で非表示になった静的な旧樹木16部品は、再読込時の評価キャッシュを避け、保存されたmatrix_basisと位置・回転・尺度を比較します。派生dimensionsだけを除外し、メッシュ・保存transform・表示状態は厳密に保持します。既存の組合せ検証で再有効化によりdimensionsが復元することを確認済みです。
 
-最新コードのportable testsは297件中290成功・任意依存7 skip（Shapely 2、OpenCV 5）。`compileall` も成功。既存都市や樹木の変更、対象材質・modifierの変更、評価後上端Zの移動、許容丸め幅を超える座標差を拒否する検査を含みます。
+追従後のportable testsは329件中322成功・任意依存7 skip（Shapely 2、OpenCV 5）。`compileall` も成功。既存都市や樹木の変更、対象材質・modifierの変更、評価後上端Zの移動、許容丸め幅を超える座標差を拒否する検査を含みます。
 
 全景、205 m帯、230 m帯、足元と樹木、トップデッキ全体、窓下端近景の6組を、同一camera・照明・World・色管理・seedで都市候補から描画します。Cycles CPU、2 threads、640×640、通常8 samples／下端近景32 samples、denoising ON、adaptive sampling OFFです。保存blendへのレンダー用cameraの書込みは行いません。
+
+全12枚を目視確認し、205 m・230 m付近の斜材を横切る塗装境界と窓下端の延長を確認しました。床と外側shell間の別の隙間は残ります。足元・樹木の画像は画素完全一致ではなく、最大差2/255、平均RGBA差0.000004763です。周辺物の保存は画像の近似一致だけで判断せず、保存後再読込した形状・材質・属性の厳密比較で確認しました。
 
 旧制作記録は[独立塗装](tokyo-tower-paint-bands-v1.md)、[初回都市塗装](tokyo-tower-paint-city-v1.md)、[独立接合](tokyo-tower-topdeck-junction-v1.md)に残します。各文書の当時の未公開・未統合という記述は履歴です。
 
@@ -48,6 +54,14 @@ BLENDER --background --factory-startup --threads 2 --disable-autoexec --python-e
 ```
 
 同じ引数で `validate`、`render-before`、`render-after`、`compare` を実行します。portable checksは `python -m unittest discover -s tests`。Blenderの追加検査は `tests/blender_tower_paint_bands_smoke.py`、`tests/blender_tower_paint_city_smoke.py`（固定PR47＋#49 cityを `--` の後へ渡す）、`tests/blender_topdeck_junction_smoke.py` です。
+
+最終main追従工程には、上記の保存比較と#52保存候補の固定hashが必要です。Blenderの同じ起動オプションで、次のスクリプトを `build` → `validate` → `render-before` → `render-after` → `compare` の順に実行します。
+
+```text
+--python scripts/tokyo_tower_city_main_sync.py -- --phase build --repairs RECEIVED_VALIDATED_TOWER_PAIR_DIRECTORY --shiba RECEIVED_PR52_CITY --output data/local/city-main-sync-new
+```
+
+blendを再生成するとbyte hashが変わり得ます。別版へ無条件にhashを書き換えず、入力・構造・追加物を確認した上で別の固定入力として検証してください。
 
 ## 公開範囲と残る限界
 
