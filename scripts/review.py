@@ -113,6 +113,14 @@ def validate_patch(patch):
             require(set(op['added_objects'])==ADDED and len(op['added_objects'])==len(ADDED), 'Wrong landscape additions')
             require(all(re.fullmatch('[0-9a-f]{64}',op[k]) for k in ('expected_mesh_sha256','park_mesh_sha256','plan_sha256')), 'Landscape requires hashes')
             require(bool(patch['source_refs']) and len(ops)==1, 'Landscape must be a standalone increment')
+        elif op['op']=='shiba_momijidani_v1':
+            from shiba_momijidani_v1 import ANCHOR,ANCHOR_FEATURE,ADDED
+            require(set(op)=={'op','feature_id','object','expected_mesh_sha256','plan_sha256','added_objects'}, 'Unexpected Shiba patch keys')
+            require(op['object']==ANCHOR and op['feature_id']==ANCHOR_FEATURE, 'Wrong Shiba anchor')
+            names=op['added_objects']
+            require(isinstance(names,list) and all(isinstance(n,str) for n in names) and set(names)==ADDED and len(names)==len(ADDED), 'Wrong Shiba additions')
+            require(all(isinstance(op[k],str) and re.fullmatch('[0-9a-f]{64}',op[k]) for k in ('expected_mesh_sha256','plan_sha256')), 'Shiba requires hashes')
+            require(bool(patch['source_refs']) and len(ops)==1, 'Shiba must be a standalone evidence-backed increment')
         elif op['op']=='mori_plaza_west_path_v1':
             from mori_plaza_west_path_v1 import ANCHOR,FEATURE,ROADS,ADDED
             require(set(op)=={'op','feature_id','object','expected_mesh_sha256','road_mesh_sha256','plan_sha256','added_objects'}, 'Unexpected west path patch keys')
@@ -202,6 +210,7 @@ def main():
     p.add_argument('--road-inputs', type=Path, help='Pinned production-input directory for Mori outline or connection correction')
     p.add_argument('--landscape-plan', type=Path, help='Pinned local geometry plan, only for Mori plaza landscape correction')
     p.add_argument('--connection-plan', type=Path, help='Pinned seam-fill plan, only for Mori plaza connection correction')
+    p.add_argument('--shiba-plan', type=Path, help='Pinned geometry plan, only for Shiba Momijidani additions')
     p.add_argument('--output', required=True, type=Path, help='Must not already exist')
     p.add_argument('--device', choices=['CPU','OPTIX'], default='CPU')
     p.add_argument('--width', type=int, default=640)
@@ -216,6 +225,13 @@ def main():
     validate_cameras(cameras); validate_features(features)
     patch = read_json(a.patch) if a.patch else None
     if patch: validate_patch(patch)
+    needs_shiba=bool(patch and any(op['op']=='shiba_momijidani_v1' for op in patch['operations']))
+    require(needs_shiba==bool(a.shiba_plan), 'Shiba operation requires exactly one local plan')
+    if needs_shiba:
+        from shiba_momijidani_v1 import validate_plan
+        shiba_hash=patch['operations'][0]['plan_sha256']
+        require(digest(a.shiba_plan)==shiba_hash, 'Shiba plan hash differs')
+        validate_plan(read_json(a.shiba_plan))
     needs_geometry=bool(patch and any(op['op'] in ('mori_podium_v2','mori_podium_v3') for op in patch['operations']))
     require(needs_geometry==bool(a.geometry_source), 'Podium operation requires exactly one geometry source')
     needs_connection=bool(patch and any(op['op']=='mori_plaza_connection_v1' for op in patch['operations']))
@@ -250,6 +266,9 @@ def main():
     require(source.stat().st_size == lock['bytes'], 'Input size does not match lock')
     input_hash = digest(source)
     require(input_hash == lock['sha256'], 'Input hash does not match lock')
+    if needs_shiba:
+        from shiba_momijidani_v1 import INPUT_SHA256
+        require(input_hash == INPUT_SHA256, 'Shiba requires the accepted city input')
     if needs_connection:
         from mori_plaza_connection_v1 import INPUT_SHA256
         require(input_hash == INPUT_SHA256, 'Connection requires the accepted PR 40 city')
@@ -269,6 +288,8 @@ def main():
             summary['code_files'].update({f.relative_to(ROOT).as_posix():digest(f) for f in (ROOT/'scripts/mori_plaza_landscape_v1.py',ROOT/'scripts/prepare_mori_plaza_landscape.py')})
         if needs_connection:
             summary['code_files'].update({f.relative_to(ROOT).as_posix():digest(f) for f in (ROOT/'scripts/mori_plaza_connection_v1.py',ROOT/'scripts/mori_plaza_landscape_v1.py',ROOT/'scripts/prepare_mori_plaza_connection.py')})
+        if needs_shiba:
+            summary['code_files'].update({f.relative_to(ROOT).as_posix():digest(f) for f in (ROOT/'scripts/shiba_momijidani_v1.py',ROOT/'scripts/prepare_shiba_momijidani.py',ROOT/'scripts/validate_shiba_momijidani.py',ROOT/'scripts/export_shiba_road_mask.py') if f.is_file()})
         if needs_west_path:
             summary['code_files'].update({f.relative_to(ROOT).as_posix():digest(f) for f in (ROOT/'scripts/mori_plaza_west_path_v1.py',ROOT/'scripts/mori_plaza_connection_v1.py',ROOT/'scripts/mori_plaza_landscape_v1.py',ROOT/'scripts/prepare_mori_plaza_west_path.py')})
         job = {'output':str(output),'cameras':cameras,'features':features,'patch':patch,'settings':{k:summary[k] for k in ('blender_version','device','width','height','samples','seed')}}
@@ -284,6 +305,9 @@ def main():
         if needs_plan:
             job['connection_plan']=str(a.connection_plan.resolve())
             summary['connection_plan_sha256']=connection_hash
+        if needs_shiba:
+            job['shiba_plan']=str(a.shiba_plan.resolve())
+            summary['shiba_plan_sha256']=shiba_hash
         job_path = output/'job.json'; write_json(job_path,job)
         for phase, blend in [('prepare',source),('validate-before',output/'before.blend'),('validate-after',output/'after.blend')]:
             summary['jobs'][phase] = run_job(a.blender,phase,output,job_path,blend,a.timeout)
@@ -310,6 +334,10 @@ def main():
         if needs_landscape:
             from mori_plaza_landscape_v1 import CHANGED,ADDED
             allowed=sorted(CHANGED);added=sorted(ADDED)
+        if needs_shiba:
+            from shiba_momijidani_v1 import CHANGED,ADDED
+            require(not CHANGED, 'Shiba operation only permits additions')
+            allowed=[];added=sorted(ADDED)
         summary['changed_objects'] = compare_reports(before,after,allowed,added)
         if patch: require(bool(summary['changed_objects']), 'Patch produced no recorded change')
         for phase in ('render-before','render-after'):
@@ -320,6 +348,7 @@ def main():
         if needs_roads: verify_sources(a.road_inputs)
         if needs_landscape: require(digest(a.landscape_plan)==landscape_hash, 'Landscape plan changed during review')
         if needs_plan: require(digest(a.connection_plan)==connection_hash, 'Connection plan changed during review')
+        if needs_shiba: require(digest(a.shiba_plan)==shiba_hash, 'Shiba plan changed during review')
         summary['ok'] = True
         make_html(output,cameras,summary)
     except Exception as error:
