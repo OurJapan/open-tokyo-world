@@ -107,9 +107,11 @@ The four selected Before/After PNGs in [the west footway review preview](renders
 
 ## Tokyo Tower exterior structure correction
 
-The original implementations in `scripts/tower_structure_v1.py`, `scripts/tower_foottown_v1.py`, `scripts/validate_tower_structure.py`, `tests/test_tower_structure_geometry.py`, `tests/test_tower_structure_review.py`, and `tests/test_tower_foottown.py`, together with the original `tower_structure_v1` integration additions to `scripts/review.py` and `scripts/blender_worker.py`, are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This covers the named original correction and verification code, not the legacy city, reference photographs/PDFs, textures, generated combined scenes or third-party inputs.
+The original implementations in `scripts/tower_structure_v1.py`, `scripts/tower_foottown_v1.py`, `scripts/tower_upper_lift_v2.py`, `scripts/tower_lift_car_v2.py`, `scripts/validate_tower_structure.py`, `tests/test_tower_structure_geometry.py`, `tests/test_tower_structure_review.py`, `tests/test_tower_lift_car_v2.py`, and `tests/test_tower_foottown.py`, together with the original `tower_structure_v1` integration additions to `scripts/review.py` and `scripts/blender_worker.py`, are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This covers the named original correction and verification code, not the legacy city, reference photographs/PDFs, textures, generated combined scenes or third-party inputs.
 
 The 18 Before/After PNGs in the [tower structure review](renders/previews/tower-structure-v1/README.md) are published as evidence for the user-requested PR. Their publication does not grant a new blanket licence for the images, underlying city or third-party content. Retain the attribution and scope recorded in that preview and [NOTICE](NOTICE.md).
+
+The 30 PNGs in the [upper lift revision review](renders/previews/tower-lift-v2/README.md) follow the same publication scope. They include 26 pinned-input Before/After views and four views of the previous proposal for comparison with the revised upper lift. Reference photographs and PDFs are not redistributed.
 
 ## Outside these grants
 

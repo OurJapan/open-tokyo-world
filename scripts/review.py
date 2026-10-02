@@ -299,7 +299,8 @@ def main():
         summary['code_base_commit'] = revision
         summary['code_files'] = {f.relative_to(ROOT).as_posix():digest(f) for f in (Path(__file__),WORKER,ROOT/'scripts/mori_shape.py',ROOT/'scripts/mori_crown_v2.py',ROOT/'scripts/mori_crown_material.py',ROOT/'scripts/mori_facade_v2.py',ROOT/'scripts/mori_podium_v2.py',ROOT/'scripts/mori_entrance_v1.py',ROOT/'scripts/mori_podium_v3.py',ROOT/'scripts/mori_terrace_v1.py',ROOT/'scripts/mori_plaza_v1.py',ROOT/'scripts/mori_plaza_link_v1.py',ROOT/'scripts/mori_plaza_edge_v1.py',ROOT/'scripts/mori_plaza_outline_v1.py')}
         if needs_tower:
-            for tower_code in (ROOT/'scripts/tower_structure_v1.py',ROOT/'scripts/tower_foottown_v1.py'):
+            for tower_code in (ROOT/'scripts/tower_structure_v1.py',ROOT/'scripts/tower_foottown_v1.py',
+                               ROOT/'scripts/tower_upper_lift_v2.py',ROOT/'scripts/tower_lift_car_v2.py'):
                 summary['code_files'][tower_code.relative_to(ROOT).as_posix()]=digest(tower_code)
             tower_validator=ROOT/'scripts/validate_tower_structure.py'
             if tower_validator.is_file():

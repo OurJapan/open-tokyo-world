@@ -12,7 +12,13 @@
     "sha256": "aa80b552f267d935d3c5d943ac95d0d410d6ec7abb170346bef707eee6cae2e2",
     "lock": "manifests/tower-structure-input.json",
     "composition": "Pinned PR #56 integration candidate containing PR #47, #49, #51, #52 and #56 changes. Separate candidates such as PR #54 and #55 are not composed into this input.",
-    "composition_prs": [47, 49, 51, 52, 56],
+    "composition_prs": [
+      47,
+      49,
+      51,
+      52,
+      56
+    ],
     "composition_record": "docs/tokyo-tower-city-repairs-v1.md",
     "composition_verification": "docs/tokyo-tower-city-repairs-v1-verification.json",
     "workspace_registration": {
@@ -24,14 +30,18 @@
   "implementation": {
     "adapter": "scripts/tower_structure_v1.py",
     "foottown_helper": "scripts/tower_foottown_v1.py",
-    "scope": "Static exterior geometry: FootTown shell, lower lift enclosure, turning stairs, roof access, leg/base connection details, open upper lift support frame, guide members, two small rescue landings and illustrative stationary cars.",
+    "scope": "Static exterior geometry: FootTown shell, lower lift enclosure, turning stairs, roof access, leg/base connection details, open upper lift support frame, guide members, two small rescue landings and illustrative stationary cars. Upper revision: adjacent two-face / three-pane cabin, mirror ceiling, suspension sling, two T guides with brackets, seven visible ropes, rescue doors and grating, adjacent service stairs; painted upper members inherit PR56 bands.",
     "not_implemented": [
       "Lift operation, mechanical engineering, structural verification or animation",
       "Surveyed reconstruction of the building, foundations or tower profile",
       "FootTown shop interiors, signs or exact current floor plan",
       "Interior doors or a verified walkable route from the stair termination through the main deck",
-      "Relocation of the inherited main deck or top deck"
-    ]
+      "Relocation of the inherited main deck or top deck",
+      "Unlocated counterweight and return ropes, hidden full-wrap traction sheaves and machine room internals",
+      "Exact current shaft framing schedule, antenna service platforms and electrical cable routes"
+    ],
+    "upper_lift_helper": "scripts/tower_upper_lift_v2.py",
+    "car_helper": "scripts/tower_lift_car_v2.py"
   },
   "sources": [
     {
@@ -46,7 +56,11 @@
         "The roof has an entrance to the outdoor stairs and an open area beneath the tower steelwork.",
         "The current guide lists 1F, 2F, 3F, 5F, RF and BF; it does not establish the model's four equal-height facade storeys."
       ],
-      "unconfirmed": ["Footprint dimensions", "Roof elevation", "Surveyed alignment with tower legs"]
+      "unconfirmed": [
+        "Footprint dimensions",
+        "Roof elevation",
+        "Surveyed alignment with tower legs"
+      ]
     },
     {
       "id": "tt-open-stairs",
@@ -76,7 +90,12 @@
           "observed": "A narrow central vertical stair/lift assembly, separated from the large outer lattice by open air, below the main-deck underside."
         }
       ],
-      "unconfirmed": ["Exact number and arrangement of flights", "Stair width", "Landing dimensions", "Exact guard construction throughout the route"]
+      "unconfirmed": [
+        "Exact number and arrangement of flights",
+        "Stair width",
+        "Landing dimensions",
+        "Exact guard construction throughout the route"
+      ]
     },
     {
       "id": "mebs-renewal",
@@ -104,7 +123,12 @@
           "observed": "Orange vertical, horizontal and diagonal members, vertical guide/rope-like members and sky beyond; this is not a dimensioned exterior survey."
         }
       ],
-      "unconfirmed": ["Rescue-floor elevations and dimensions", "Upper support frame cross-section", "Exact plan offset", "Photo capture date"]
+      "unconfirmed": [
+        "Rescue-floor elevations and dimensions",
+        "Upper support frame cross-section",
+        "Exact plan offset",
+        "Photo capture date"
+      ]
     },
     {
       "id": "mitsubishi-2018-elevator",
@@ -117,9 +141,15 @@
       "claims": [
         "The specific upper observation elevator has no hoistway wall, as stated on printed page 22.",
         "The published elevator travel is approximately 85m; this is travel distance, not a surveyed total support-frame height.",
-        "The article describes outdoor exposure and the renewed car's use of glazing."
+        "The article describes outdoor exposure and the renewed car's use of glazing.",
+        "Printed page 23: seven suspension ropes and full-wrap traction; these statements do not locate hidden equipment in plan.",
+        "Printed page 24: full-height glazing, mirror ceiling and rectangular car after renewal; rescue entrances have landing doors, three-sided jambs and sills."
       ],
-      "unconfirmed": ["External frame width", "Exact rescue-floor levels", "A full current exterior elevation of the lift assembly"]
+      "unconfirmed": [
+        "External frame width",
+        "Exact rescue-floor levels",
+        "A full current exterior elevation of the lift assembly"
+      ]
     },
     {
       "id": "miyaji-2014-structure",
@@ -152,7 +182,10 @@
         "FootTown is identified as reinforced concrete in the building outline.",
         "The page describes maintenance and reinforcement of tower steelwork and foundations."
       ],
-      "unconfirmed": ["Current FootTown facade dimensions", "Visible base plate and bolt dimensions"]
+      "unconfirmed": [
+        "Current FootTown facade dimensions",
+        "Visible base plate and bolt dimensions"
+      ]
     },
     {
       "id": "tt-towerpedia",
@@ -166,18 +199,71 @@
         "Tower foundations extend below ground at each leg; this source does not establish the model's exposed pedestal shape.",
         "The tower's paint colours are international orange and white."
       ],
-      "unconfirmed": ["Equivalence of promotional deck heights to the model's local Z coordinates", "Current surveyed foundation geometry"]
+      "unconfirmed": [
+        "Equivalence of promotional deck heights to the model's local Z coordinates",
+        "Current surveyed foundation geometry"
+      ]
+    },
+    {
+      "id": "elevator-journal-19",
+      "title": "東京タワー（日本電波塔）",
+      "publisher": "日本エレベーター協会 / 三菱電機ビルテクノサービス執筆",
+      "url": "https://www.n-elekyo.or.jp/about/elevatorjournal/pdf/Journal19_07.pdf",
+      "accessed_on": "2026-10-03",
+      "source_type": "manufacturer-authored-primary",
+      "locator": "Elevator Journal No.19 (2018.4), printed pages 17–18",
+      "claims": [
+        "The car has one rear pane and two right-wall panes: three panes across two adjacent faces.",
+        "Ceiling is mirror-finish stainless steel; other walls have vibration-finish stainless steel."
+      ],
+      "unconfirmed": [
+        "World orientation",
+        "Cabin dimensions",
+        "Sling and guide-shoe construction"
+      ]
+    },
+    {
+      "id": "dpz-exterior-2021",
+      "title": "東京タワーを上から下までぜんぶ見る",
+      "publisher": "デイリーポータルZ / 撮影者 三土たつお",
+      "url": "https://dailyportalz.jp/kiji/tokyo-tower-ue-kara-shita-made",
+      "accessed_on": "2026-10-03",
+      "source_type": "photographer-primary",
+      "published_on": "2021-12-16",
+      "visual_references": [
+        {
+          "url": "https://dailyportalz.jp/application/files/4116/3930/2609/tokyo-tower-big-2.jpg",
+          "observed": "Narrow central equipment strip, adjacent stair flights/landings, dense transverse members and much wider outer tower trusses."
+        }
+      ],
+      "limitations": [
+        "Stitched vertical panorama is not a calibrated elevation: do not measure heights or count a regular bay schedule from it.",
+        "Intermediate rescue platforms and antenna service platforms cannot be reliably distinguished.",
+        "Capture establishes 2021 appearance, not every detail of a 2026 survey."
+      ]
     }
   ],
   "model_estimates": {
     "classification": "All values below are local scene-fit values, inherited approximations or visual estimates, not measurements from the cited sources.",
     "foottown": {
-      "footprint_m": [73.0, 58.0],
+      "footprint_m": [
+        73.0,
+        58.0
+      ],
       "basis": "Retained legacy model footprint; not confirmed by a dimensioned primary drawing.",
-      "facade_levels_m": [0.5, 4.4, 8.3, 12.2, 16.0],
+      "facade_levels_m": [
+        0.5,
+        4.4,
+        8.3,
+        12.2,
+        16.0
+      ],
       "roof_top_m": 16.2,
       "roof_railing_height_m": 1.1,
-      "lower_shaft_roof_opening_half_extents_m": [2.35, 2.35],
+      "lower_shaft_roof_opening_half_extents_m": [
+        2.35,
+        2.35
+      ],
       "roof_opening_basis": "A central square opening clears the modeled lower lift envelope; its dimensions are a scene-fit choice, not surveyed roof geometry.",
       "roof_access_doorway": {
         "model_side": "west",
@@ -185,7 +271,12 @@
         "height_m": 2.1,
         "basis": "An opening in the stair-entry enclosure; side and dimensions are inferred, not a verified real-world entrance orientation."
       },
-      "inferred_details": ["Four simplified facade storeys", "Window and entrance positions", "Roof equipment placement", "Roof access enclosure"]
+      "inferred_details": [
+        "Four simplified facade storeys",
+        "Window and entrance positions",
+        "Roof equipment placement",
+        "Roof access enclosure"
+      ]
     },
     "stairs": {
       "bottom_m": 16.2,
@@ -207,14 +298,57 @@
       "top_m": 246.1,
       "nominal_frame_width_m": 3.6,
       "walls": "none",
-      "basis": "Open appearance is sourced; width, support intervals, guide details, plan centering and connections to existing tower members are inferred.",
+      "basis": "No walls is sourced. The 3.6m square, four posts and 24 intervals remain an inherited modelling approximation, not a newly established real-world arrangement. Flanged members, splice plates, guides and brackets add visible structure but their sections and allocation are interpolations; T_018 does not distinguish every tower member from shaft-specific members.",
       "rescue_landings_count": 2,
-      "rescue_landing_levels_m": [184.0, 217.0],
-      "rescue_landing_basis": "Count is sourced; model elevations, layout, platform size and railings are illustrative estimates.",
-      "visible_rope_segment_m": [203.94, 246.0],
-      "rope_basis": "Only the segment above the illustrative upper car roof is drawn to avoid passing through the car. This is static exterior detail, not a complete operational rope system."
+      "rescue_landing_levels_m": [
+        184.0,
+        217.0
+      ],
+      "rescue_landing_basis": "Count and doors/jambs/sills are sourced. Levels, doorway sizes, gratings, walkway layout and guard geometry are inferred.",
+      "visible_rope_segment_m": [
+        204.32,
+        246.1
+      ],
+      "rope_basis": "Seven is sourced. Only the car-to-upper-termination segment is represented, connected through sockets to the car crosshead. Counterweight position and the hidden full-wrap route are not established or modeled.",
+      "frame_posts": 4,
+      "frame_intervals": 24,
+      "guide_rails": 2,
+      "guide_section": "Two compound T sections with discrete brackets and car shoes; dimensions and positions are inferred.",
+      "paint": "Copied PR56 orange-object material applies the same inherited height bands to new frame, support links and service stairs without changing the original shader.",
+      "service_stairs": {
+        "bottom_m": 154,
+        "top_m": 246.1,
+        "flights": 50,
+        "treads": 500,
+        "landings": 51,
+        "basis": "Existence of the adjacent stair route is observed in the 2021 exterior panorama. Counts and dimensions fit the inherited scene and inferred rescue levels; not a claim about actual step count.",
+        "tread_width_m": 0.6,
+        "lane_centres_y_m": [
+          2.33,
+          3.0
+        ],
+        "landing_y_m": [
+          2.03,
+          3.3
+        ],
+        "fit_note": "Width is a modelling fit, not measured. A wider first candidate intersected the retained top trusses; this footprint is checked against saved original geometry."
+      }
     },
-    "cars": "Illustrative stationary exterior envelopes; pose and dimensions are not operational specifications.",
+    "cars": {
+      "lower": "Original simple lower static envelope unchanged.",
+      "upper": {
+        "floor_m": 201,
+        "mirror_underside_m": 203.7,
+        "width_m": 2.45,
+        "depth_m": 2.4,
+        "doors_model_side": "+Y",
+        "glazing_model_sides": [
+          "-Y (one pane)",
+          "-X (two panes)"
+        ],
+        "basis": "Face/pane arrangement and finishes are sourced. Static pose, dimensions, world orientation, roof enclosure, sling, rail shoes and fasteners are inferred."
+      }
+    },
     "base_connections": "Small plates and fasteners fitted to inherited leg/pedestal joints; size, number and geometry are unverified visual detail. No underground foundation reconstruction.",
     "decks": "Inherited deck positions and geometry are retained. The differing published height conventions remain unresolved.",
     "inherited_main_deck_interface": "In the pinned city, the old tower main-deck floor is absent and the Photo based main deck interior omits a central floor region of approximately +/-9m. This is a description of the inherited model, not a claim about the real building. The exterior stairs end inside that equipment region; interior circulation remains outside this revision."
@@ -222,19 +356,27 @@
   "evidence_limits": [
     "No site measurement or geodetic survey was performed.",
     "Photo viewpoints have no verified compass bearing and do not supply calibrated dimensions.",
-    "No close current primary-source exterior photograph covering the complete upper lift frame was obtained.",
     "Published existence and appearance do not establish structural adequacy, accessible circulation or safe lift operation.",
-    "Technical validation and matched comparison images must be recorded separately; this source record does not claim completed validation or human acceptance."
+    "Technical validation and matched comparison images must be recorded separately; this source record does not claim completed validation or human acceptance.",
+    "Exterior panorama adds visible structural context, but no calibrated present-day full shaft elevation or plan has been obtained.",
+    "T_018 contains ceiling reflections; reflected members were not counted as duplicate real structures. The black loop in that photo is not modeled because its function and endpoints are unknown."
   ],
   "comparison_plan": {
-    "views": 9,
+    "views": 13,
     "detail_view": "upper-lift-detail",
-    "status": "Comparison rendering and validation results are recorded separately after completion."
+    "status": "Comparison rendering and validation results are recorded separately after completion.",
+    "detail_views": [
+      "upper-car-exterior",
+      "upper-car-interior",
+      "upper-rescue-detail",
+      "upper-rigging-detail"
+    ]
   },
   "distribution": {
     "reference_media": "Third-party photographs and PDFs are reference-only and are not included in this repository or distributed with the model.",
     "local_reference_directory": "data/local/references/tower-structure-research/",
     "permission": "Public accessibility is not a redistribution licence. This record grants no rights to reference media or the full legacy city.",
     "model_textures": "Reference photographs are not embedded or used as distributed textures."
-  }
+  },
+  "detail_revision": "upper-lift-v2"
 }

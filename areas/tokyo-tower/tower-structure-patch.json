@@ -6,7 +6,9 @@
     "areas/tokyo-tower/tower-structure-sources.json",
     "https://www.tokyotower.co.jp/foottown/20c72pu2d7b.html",
     "https://www.mebs.co.jp/cases/multiple-solutions/interview/1199875_1508.html",
-    "https://www.giho.mitsubishielectric.co.jp/giho/pdf/2018/1809.pdf"
+    "https://www.giho.mitsubishielectric.co.jp/giho/pdf/2018/1809.pdf",
+    "https://www.n-elekyo.or.jp/about/elevatorjournal/pdf/Journal19_07.pdf",
+    "https://dailyportalz.jp/kiji/tokyo-tower-ue-kara-shita-made"
   ],
   "operations": [
     {
@@ -34,10 +36,19 @@
         "OTW Tokyo Tower structure / stairs-frame",
         "OTW Tokyo Tower structure / stairs-guards",
         "OTW Tokyo Tower structure / stairs-treads",
+        "OTW Tokyo Tower structure / upper-car-dark",
+        "OTW Tokyo Tower structure / upper-car-floor",
+        "OTW Tokyo Tower structure / upper-car-glass",
+        "OTW Tokyo Tower structure / upper-car-mirror",
+        "OTW Tokyo Tower structure / upper-car-rigging",
+        "OTW Tokyo Tower structure / upper-car-shell",
         "OTW Tokyo Tower structure / upper-guide-rails",
+        "OTW Tokyo Tower structure / upper-landing-doors",
         "OTW Tokyo Tower structure / upper-platforms",
+        "OTW Tokyo Tower structure / upper-service-stairs",
         "OTW Tokyo Tower structure / upper-shaft-frame",
-        "OTW Tokyo Tower structure / upper-support-links"
+        "OTW Tokyo Tower structure / upper-support-links",
+        "OTW Tokyo Tower structure / upper-suspension"
       ]
     }
   ]

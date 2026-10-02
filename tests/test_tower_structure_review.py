@@ -93,7 +93,7 @@ class TowerStructureReviewContracts(unittest.TestCase):
         self.assertTrue(summary['ok'])
         self.assertEqual(set(summary['changed_objects']), set(tower.CHANGED) | set(tower.ADDED))
         self.assertEqual(summary['input_sha256'], self.input_hash)
-        for name in ('tower_structure_v1.py','tower_foottown_v1.py'):
+        for name in ('tower_structure_v1.py','tower_foottown_v1.py','tower_upper_lift_v2.py','tower_lift_car_v2.py'):
             self.assertEqual(summary['code_files']['scripts/'+name], review.digest(ROOT/'scripts'/name))
         validator = ROOT/'scripts/validate_tower_structure.py'
         if validator.is_file():
