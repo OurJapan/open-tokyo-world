@@ -12,13 +12,13 @@ import { fresh, cameraQuaternion, geoGate, containRect } from './spatial.js';
 import { makeDraft, validateDraft, sha256 } from './observation.js';
 import { submitObservation } from './submission.js';
 import { createRenderLoop } from './render-loop.js';
-import {localReviewSelection,validateLocalManifest,validateLocalGlb,validateLocalMeasurements,localView,resizeLocalView} from './local-review.js';
+import {localReviewSelection,validateLocalManifest,validateLocalGlb,validateLocalMeasurements,localView,applyLocalView,resizeLocalView} from './local-review.js';
 
 const $=id=>document.getElementById(id);
 const stage=$('stage'),video=$('camera'),host=$('canvas-host');
 let manifest,model,renderer,scene,camera,controls,grid;
 const localRequested=new URLSearchParams(location.search).has('local_model');
-let homeView=null,modelMeasurements=null,localHomeView=false;
+let homeView=null,modelMeasurements=null,localPreset=null;
 const renderLoop=createRenderLoop(frame);
 if(document.hidden)renderLoop.pause();
 let active=false,busy=false,viewPose=null,photo=null,draft=null,previewURL=null,packedFile=null;
@@ -39,10 +39,21 @@ const sensors=new Sensors({onChange:()=>{
   for(const type of ['camera','location','orientation'])$(type+'-status').textContent=sensors.state[type];
 }});
 const say=text=>{$('notice').textContent=text;};
+function showLocalViewSelection(preset){
+  localPreset=preset;
+  for(const button of document.querySelectorAll('[data-local-view]'))button.setAttribute('aria-pressed',String(button.dataset.localView===preset));
+  const labels={overview:'全景',north:'北から',east:'東から'};
+  $('local-view-status').textContent=preset?`${labels[preset]}を表示中`:'自由視点';
+}
+function selectLocalView(preset){
+  if(!homeView||!model||active)return;
+  homeView=localView(manifest.assets[0].bounds_render_m,camera.aspect,camera.fov,preset);
+  applyLocalView(homeView,camera,controls);showLocalViewSelection(preset);renderLoop.requestRender();
+}
 function resetView() {
   if(active)return;
-  if(homeView){camera.position.fromArray(homeView.position);controls.target.fromArray(homeView.target);localHomeView=true;}
-  else{camera.position.set(27,20,33);controls.target.set(0,6,0);}
+  if(homeView){selectLocalView('overview');return;}
+  camera.position.set(27,20,33);controls.target.set(0,6,0);
   camera.up.set(0,1,0);controls.update();renderLoop.requestRender();
 }
 function resize() {
@@ -52,7 +63,7 @@ function resize() {
   host.style.inset='auto';Object.assign(host.style,{left:rect.left+'px',top:rect.top+'px',width:rect.width+'px',height:rect.height+'px'});
   renderer.setSize(rect.width,rect.height);camera.aspect=rect.width/rect.height;
   camera.fov=active?2*Math.atan(Math.tan(Math.PI/6)/camera.aspect)*180/Math.PI:48;
-  if(homeView)homeView=resizeLocalView(manifest.assets[0].bounds_render_m,camera,controls,localHomeView);
+  if(homeView)homeView=resizeLocalView(manifest.assets[0].bounds_render_m,camera,controls,localPreset!==null,localPreset??'overview');
   camera.updateProjectionMatrix();
   renderLoop.requestRender();
 }
@@ -191,7 +202,7 @@ async function init() {
     scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(48,1,.1,1500);
     controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.minDistance=10;controls.maxDistance=100;controls.maxPolarAngle=Math.PI*.49;
     controls.addEventListener('change',renderLoop.requestRender);
-    controls.addEventListener('start',()=>{localHomeView=false;});
+    controls.addEventListener('start',()=>{if(homeView)showLocalViewSelection(null);});
     scene.add(new THREE.HemisphereLight(0xd9edff,0x36536a,2.7));const sun=new THREE.DirectionalLight(0xffdbc4,3);sun.position.set(8,20,12);scene.add(sun);
     grid=new THREE.GridHelper(60,12,0xd4d4d8,0xe7e7eb);grid.material.transparent=true;grid.material.opacity=.45;scene.add(grid);resetView();resize();
     const local=localReviewSelection(location.search,import.meta.env.DEV);
@@ -216,6 +227,8 @@ async function init() {
       camera.near=homeView.near;camera.far=homeView.far;camera.updateProjectionMatrix();controls.minDistance=homeView.minDistance;controls.maxDistance=homeView.maxDistance;
       grid.position.set(homeView.target[0],asset.bounds_render_m[1],homeView.target[2]);grid.scale.setScalar(Math.max(asset.bounds_render_m[3]-asset.bounds_render_m[0],asset.bounds_render_m[5]-asset.bounds_render_m[2])*2/60);
       $('opacity').value='100';resetView();$('start').hidden=true;$('capture').hidden=true;$('area').disabled=true;$('placement').disabled=true;$('radius').disabled=true;
+      $('local-view-controls').hidden=false;
+      $('reset-view').textContent='全景に戻す';$('reset-view').classList.add('local-reset');
       for(const id of ['placement','radius']){document.querySelector(`label[for="${id}"]`).hidden=true;$(id).hidden=true;}
       $('placement-help').hidden=true;$('saved-title').closest('section').hidden=true;document.querySelector('.privacy-note').hidden=true;
       document.querySelector('.model-caption').textContent='PLATEAU 2025を加工・ローカル確認用。現地標高は未検証。';
@@ -233,6 +246,7 @@ $('area').addEventListener('change',()=>{
   const url=new URL(location.href);url.searchParams.set('area',$('area').value);location.assign(url);
 });
 $('start').addEventListener('click',start);$('stop').addEventListener('click',()=>stop());$('reset-view').addEventListener('click',resetView);
+for(const button of document.querySelectorAll('[data-local-view]'))button.addEventListener('click',()=>selectLocalView(button.dataset.localView));
 $('capture').addEventListener('click',()=>{if(draft)$('draft-dialog').showModal();else capture();});
 $('close-draft').addEventListener('click',async()=>{try{await persistDraft();clearDraft();say('写真とメモを端末に保存しました。保存一覧から再開できます。');}catch(e){$('draft-status').textContent=e.message;}});
 $('draft-dialog').addEventListener('cancel',e=>{e.preventDefault();if(!sending)$('close-draft').click();});

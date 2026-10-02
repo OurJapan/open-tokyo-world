@@ -47,23 +47,35 @@ export function validateLocalMeasurements(asset,{bounds,triangles,featureIds}){
     throw new Error('GLBの建物ID・形状範囲・三角形数がmanifestと一致しません。');
 }
 
-export function localView(bounds,aspect=1,verticalFov=48){
+// Directions in the existing east/up/south display frame, not surveyed bearings.
+const viewDirections={overview:[1,.45,.55],north:[0,.25,-1],east:[1,.25,0]};
+
+export function localView(bounds,aspect=1,verticalFov=48,preset='overview'){
   if(!Number.isFinite(aspect)||aspect<=0)throw new Error('表示領域が不正です。');
+  if(!Object.hasOwn(viewDirections,preset))throw new Error('未対応の建物視点です。');
   const size=bounds.slice(0,3).map((n,i)=>bounds[i+3]-n);
   const target=bounds.slice(0,3).map((n,i)=>(n+bounds[i+3])/2);
   const radius=Math.hypot(...size)/2,halfVertical=verticalFov*Math.PI/360;
   const halfHorizontal=Math.atan(Math.tan(halfVertical)*aspect);
   const distance=radius/Math.sin(Math.min(halfVertical,halfHorizontal))*1.12;
-  const direction=[1,.45,.55],length=Math.hypot(...direction);
+  const direction=viewDirections[preset],length=Math.hypot(...direction);
   return {target,position:target.map((n,i)=>n+direction[i]/length*distance),
     radius,near:Math.max(.01,radius/1000),far:radius*50,minDistance:radius*.25,maxDistance:radius*20};
 }
 
-// Fit the home view on resize. A user's orbit/pan/zoom remains under their control.
-export function resizeLocalView(bounds,camera,controls,atHome){
-  const home=localView(bounds,camera.aspect,camera.fov);
-  if(atHome){
-    camera.position.fromArray(home.position);controls.target.fromArray(home.target);controls.update();
-  }
+export function applyLocalView(view,camera,controls){
+  // Drain pending orbit/pan damping before applying an exact, repeatable preset.
+  const damping=controls.enableDamping;
+  try{
+    controls.enableDamping=false;controls.update();
+    camera.position.fromArray(view.position);camera.up.set(0,1,0);
+    controls.target.fromArray(view.target);controls.update();
+  }finally{controls.enableDamping=damping;}
+}
+
+// Refit the selected preset on resize; preserve a user's orbit/pan/zoom unchanged.
+export function resizeLocalView(bounds,camera,controls,atHome,preset='overview'){
+  const home=localView(bounds,camera.aspect,camera.fov,preset);
+  if(atHome)applyLocalView(home,camera,controls);
   return home;
 }

@@ -90,3 +90,36 @@ test('resize preserves an interacting or manually positioned camera and updates 
   resizeLocalView(bounds,camera,controls,true);
   assert.deepEqual(camera.position.toArray(),home.position);assert.deepEqual(controls.target.toArray(),home.target);
 });
+
+test('north and east views use the display-frame directions and fit all bounds after resize',()=>{
+  for(const preset of ['north','east']){
+    const {bounds,camera,controls}=resizeScene();
+    for(const aspect of [.4,1,2]){
+      camera.aspect=aspect;
+      resizeLocalView(bounds,camera,controls,true,preset);camera.updateProjectionMatrix();
+      const offset=camera.position.clone().sub(controls.target);
+      assert.ok(offset.y>0,'raised viewpoint keeps roof and base readable');
+      if(preset==='north'){assert.ok(Math.abs(offset.x)<1e-9);assert.ok(offset.z<0);}
+      else{assert.ok(offset.x>0);assert.ok(Math.abs(offset.z)<1e-9);}
+      for(let mask=0;mask<8;mask++){
+        const point=new Vector3(...[0,1,2].map(i=>bounds[i+((mask>>i)&1)*3])).project(camera);
+        assert.ok(point.toArray().every(n=>Number.isFinite(n)&&Math.abs(n)<1));
+      }
+    }
+    const position=camera.position.clone(),target=controls.target.clone();
+    camera.aspect=.4;resizeLocalView(bounds,camera,controls,false,preset);
+    assert.deepEqual(camera.position,position);assert.deepEqual(controls.target,target);
+  }
+});
+
+test('presets retain translated metre coordinates and reject unknown directions',()=>{
+  const bounds=manifest().assets[0].bounds_render_m,translation=[1200,30,-600];
+  for(const preset of ['overview','north','east']){
+    const view=localView(bounds,.4,48,preset),shifted=localView(bounds.map((n,i)=>n+translation[i%3]),.4,48,preset);
+    for(let i=0;i<3;i++){
+      assert.ok(Math.abs(shifted.position[i]-view.position[i]-translation[i])<1e-9);
+      assert.ok(Math.abs(shifted.target[i]-view.target[i]-translation[i])<1e-9);
+    }
+  }
+  for(const preset of ['south','toString',null])assert.throws(()=>localView(bounds,1,48,preset));
+});

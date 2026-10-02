@@ -1,5 +1,7 @@
 # Web Spatial Viewer — P0 実装
 
+ローカル建物の確認では、[全景・北から・東からの視点切替](../../docs/local-building-view-presets.md)を利用できます。
+
 既存`OurJapan/open-tokyo-world`内の独立Web package。camera + WebGL + GPS/方位 + 生写真/観測下書きの端末保存を実装した。ブラウザはこのpackageの配布contractだけを読み、Blender/Python/GitHubへ接続しない。
 
 ## 起動
