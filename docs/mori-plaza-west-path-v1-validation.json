@@ -1,0 +1,51 @@
+{
+  "ok": true,
+  "scenes_unchanged": true,
+  "scene_sha256": {
+    "before": "eae18eb05bd30f60a377983b8e7b9ed6add9d0979d9063855068798f6a473c12",
+    "after": "2a6f63658722beecdb8af2158baed62c044f33a22084df0d227c70c67332ae5b"
+  },
+  "validator_sha256": "c1125305fbcef83e3d1765d1fb07e0cf64dbcd4bb2f63f94ff86ef6f7b6de8dc",
+  "result": {
+    "ok": true,
+    "objects": {
+      "asphalt 15s road detail": {
+        "original_vertices_retained": 423080,
+        "outside_faces_preserved": 140410,
+        "xy_symmetric_difference_m2": 8.717737070496057e-05,
+        "maximum_vertex_height_error_m": 7.269504664342286e-07,
+        "inverted_new_walking_faces": 0
+      },
+      "gutter 15s road detail": {
+        "original_vertices_retained": 102051,
+        "outside_faces_preserved": 33207,
+        "xy_symmetric_difference_m2": 7.878473200248481e-05,
+        "maximum_vertex_height_error_m": 7.269504664342286e-07,
+        "inverted_new_walking_faces": 0
+      },
+      "pavement_0 unified road": {
+        "original_vertices_retained": 278849,
+        "outside_faces_preserved": 270983,
+        "xy_symmetric_difference_m2": 3.994781583835372e-05,
+        "maximum_vertex_height_error_m": 7.258597235770825e-07,
+        "inverted_new_walking_faces": 0
+      }
+    },
+    "boundary_samples": 75,
+    "selected_boundary_samples": 98,
+    "seam_fill": {
+      "closed_consistent_mesh": true,
+      "area_m2": 0.07852012412424614,
+      "overlap_existing_m2": 1.5634274417435004e-07,
+      "overlap_adopted_seam_m2": 0.0
+    },
+    "boundary_maximum_rise_m": 3.5762786865234375e-07,
+    "unresolved_boundary_probes": [],
+    "prior_junction_and_entrance_probes_preserved": 74,
+    "flat_road_grid_probes": 338,
+    "limits": [
+      "Fixed model-space probes; no surveyed elevations, continuous collision or accessibility certification.",
+      "Only three road meshes inside the declared rectangle may change."
+    ]
+  }
+}

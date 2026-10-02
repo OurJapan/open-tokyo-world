@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-02",
+  "ok": true,
+  "feature": "bldg_af7335da-7542-44dd-964d-8cccd2b046ff",
+  "official_building_id": "13103-bldg-7517",
+  "source_measured_height_m": 216,
+  "height_interpretation": "Metadata is not used to resize geometry; its relation to the source geometry extent is unresolved.",
+  "source_b3dm_sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2",
+  "source_tileset_sha256": "edec4c24d137eaf08a8525cecea505a3f21a30823b9ef4fb530e10774cea1323",
+  "local_output_directory": "data/local/af7335da-review-01",
+  "run": {
+    "ok": true,
+    "input_sha256": "2a6f63658722beecdb8af2158baed62c044f33a22084df0d227c70c67332ae5b",
+    "input_preserved": true,
+    "code_base_commit": "234b163210ac19d61f33e86b6920b8b26f9d453a",
+    "code_files": {
+      "scripts/data221_af7335da_mesh.py": "2c2dbad1aded3a4bc9ff7d4f6f7dfa04d4f74b9f3c648446d49c487a5f0c973e",
+      "scripts/data221_af7335da_worker.py": "f8352563299c3797e2ff73f02e5a126908e95c257cd241c9dd377fc5c07a68f0",
+      "scripts/review_data221_af7335da.py": "e939751f707cf0a81d96d452e8ba0a6d212e80520309145bbcc8eda4c85ebe87",
+      "scripts/blender_worker.py": "6d527b18c2b41df29a14a16e0aafb12bdc5fc56fddf09e3b8933a0745be4a4b2",
+      "starter/plateau/tile.py": "540aa9b7e8d8efc482f4ef4cdcf0f890bac6102a905707e588f13ca60f2d7c11",
+      "areas/tokyo-tower/mori-plaza-connection-accepted-features.json": "c2dc5d3e5a5bbf3fb8b883164ddbcefc7007f4510e075e2e5ee26eeb18f68ff2"
+    },
+    "jobs": {
+      "build": {
+        "exit_code": 0,
+        "seconds": 42.25
+      },
+      "validate": {
+        "exit_code": 0,
+        "seconds": 38.109
+      },
+      "render-before": {
+        "exit_code": 0,
+        "seconds": 13.5
+      },
+      "render-after": {
+        "exit_code": 0,
+        "seconds": 13.859
+      }
+    },
+    "output_blends": {
+      "after.blend": "0b204e5257560d6a4aa124570bb8d3663551bac176a88f782c074dc4f7cffd21",
+      "target.blend": "12d10c076249b2a228409d12a63512142a35a8b8d092eb28fbb51719cc155fc5",
+      "before-neighborhood.blend": "f12ea2888fbd29d01f045b123794cf9a9a8e396685d8bff1189b940e4e669d81",
+      "after-neighborhood.blend": "7df384eaabccda0fbbbdda4de21d6cf58d7d7815adca5fcd18b793b3e9395cb5"
+    },
+    "scope": "Exact topology repair of data221 batch 15; local candidate only",
+    "limits": [
+      "No survey/real-world detail improvement claimed.",
+      "Rendered extraction contains the 23 data221 buildings, not roads or the complete city.",
+      "Existing synthetic facade and legacy display height retained.",
+      "No new asset license or permission grant. No publication or registration."
+    ]
+  },
+  "production": {
+    "ok": true,
+    "feature": "bldg_af7335da-7542-44dd-964d-8cccd2b046ff",
+    "source_max_error_m": 2.7710491167454165e-05,
+    "decoder_sha256": "49630e97d24ca24a3c6fa44ffd06de0d58a27e450ceec248a9a69426c2839087",
+    "selected_records_sha256": "28ad9ff4d5256970d0793dce1c7b04c7b7f0e36a51180427690a112e80b3ceaa",
+    "retained_records_sha256": "34f1784399f824b960597569912a419b0a491037979df43302d5e68dbf3ac257",
+    "retained_faces": 2694,
+    "before": {
+      "vertices": 1398,
+      "faces": 466,
+      "edges": 1398,
+      "boundary_edges": 1398,
+      "nonmanifold_edges": 1398,
+      "winding_errors": 0,
+      "components": 466,
+      "loose_vertices": 0,
+      "euler_characteristic": 466,
+      "minimum_triangle_area_m2": 0.22631793932673352,
+      "surface_area_m2": 58658.822218369525,
+      "signed_volume_m3": 566337.1483691091
+    },
+    "after": {
+      "vertices": 235,
+      "faces": 466,
+      "edges": 699,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "winding_errors": 0,
+      "components": 1,
+      "loose_vertices": 0,
+      "euler_characteristic": 2,
+      "minimum_triangle_area_m2": 0.22631793932673352,
+      "surface_area_m2": 58658.822218369525,
+      "signed_volume_m3": 566337.1483691091
+    }
+  },
+  "saved_city_validation": {
+    "ok": true,
+    "blender": "4.5.1 LTS",
+    "unchanged_city_objects": 3307,
+    "unchanged_other_features": 22,
+    "unchanged_assets": 383,
+    "same_faces_uv_material_batch": true,
+    "same_original_cameras_lights": true,
+    "duplicate_target_faces": 0,
+    "source_max_error_m": 2.7710491167454165e-05,
+    "after": {
+      "vertices": 235,
+      "faces": 466,
+      "edges": 699,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "winding_errors": 0,
+      "components": 1,
+      "loose_vertices": 0,
+      "euler_characteristic": 2,
+      "minimum_triangle_area_m2": 0.22631793932673352,
+      "surface_area_m2": 58658.822218369525,
+      "signed_volume_m3": 566337.1483691091
+    },
+    "counts_before": {
+      "objects": 3308,
+      "vertices": 51239567,
+      "polygons": 39533116
+    },
+    "counts_after": {
+      "objects": 3309,
+      "vertices": 51238404,
+      "polygons": 39533116
+    },
+    "limitations": [
+      "No geographic accuracy certification",
+      "No complete modifier/animation/node-group fingerprint",
+      "Image decode checks dimensions and a pixel probe; not all image samples",
+      "No manifold/zero-area/normal checks",
+      "External asset content hashes not yet recorded"
+    ]
+  },
+  "standalone_library_validation": {
+    "ok": true,
+    "one_feature": true,
+    "source_id": "bldg_af7335da-7542-44dd-964d-8cccd2b046ff",
+    "topology_faces_uv_materials_match_saved_city": true,
+    "self_contained_packed_images": true,
+    "file_preserved": true,
+    "sha256": "12d10c076249b2a228409d12a63512142a35a8b8d092eb28fbb51719cc155fc5"
+  },
+  "portable_tests": {
+    "total": 238,
+    "passed": 231,
+    "skipped_optional_dependencies": 7,
+    "failures": 0,
+    "targeted_tests": 6,
+    "log_sha256": "f721ad06b119b0d237953a804f48ba162a291982da6cccf051979dba80cc8da0"
+  },
+  "matched_render_settings": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "threads": 2,
+    "samples": 16,
+    "seed": 0,
+    "resolution": [
+      800,
+      800
+    ]
+  },
+  "views": [
+    {
+      "id": "east",
+      "center": [
+        -460,
+        404,
+        118
+      ],
+      "offset": [
+        360,
+        -140,
+        140
+      ],
+      "scale": 310
+    },
+    {
+      "id": "west",
+      "center": [
+        -460,
+        404,
+        118
+      ],
+      "offset": [
+        -330,
+        200,
+        130
+      ],
+      "scale": 310
+    },
+    {
+      "id": "roof",
+      "center": [
+        -433,
+        392,
+        224
+      ],
+      "offset": [
+        110,
+        -85,
+        100
+      ],
+      "scale": 120
+    },
+    {
+      "id": "podium",
+      "center": [
+        -460,
+        404,
+        15
+      ],
+      "offset": [
+        -110,
+        -130,
+        105
+      ],
+      "scale": 165
+    }
+  ],
+  "image_pairs": [
+    {
+      "view": "east",
+      "pixel_identical": true,
+      "before_png_sha256": "aa29d7ce2bb4662132d2128899efd832497a44def209e6ba48993933879588a8",
+      "after_png_sha256": "b4c2f0a9b7f57fd8247112eecfac6a3b1b761cf495379417a6535fe9cb0d4e33",
+      "pixel_sha256": "4170c13f5fe506d46ee3306dc09a8bf908907b5f776ec301443573fda823c659"
+    },
+    {
+      "view": "west",
+      "pixel_identical": true,
+      "before_png_sha256": "e8c3c756df3639543343f59b4814919b0bfad392b1319b9bceace6a0510eaa13",
+      "after_png_sha256": "056c2de2bb9ac7bd6ae8b96f006656cefc61f8f940bf28aecb3e422caee57c4d",
+      "pixel_sha256": "5e61f4dd2c17d1e667a4498a3a62b287b67d8f9c24de8e63f1f60198ba4d8dd7"
+    },
+    {
+      "view": "roof",
+      "pixel_identical": true,
+      "before_png_sha256": "85a726234a58d1ed7bdb6090fcc867d6dac48c94cde07efb3aaffc487db01dc8",
+      "after_png_sha256": "fcb90f0955ce8af7eb5058e4e63c6dcc21645f69c5ffa1cd0bee870021e4a282",
+      "pixel_sha256": "96304de6a08e401437bc81a8d4e8ea584d356c3bbfcfb7346094aae4fd96f8d5"
+    },
+    {
+      "view": "podium",
+      "pixel_identical": true,
+      "before_png_sha256": "a05682cb3652cb736d310affee4dbe2ddcd06fd2f81f26053006939fb52859bb",
+      "after_png_sha256": "6ab43496bcb4d30d13030f01dddcce9e3431ccb32462876c81d9812ca21b4033",
+      "pixel_sha256": "e356fcf56c7ae89f6cd4070336450ccce4112174d5a343f6a91cfcd44c91bca7"
+    }
+  ],
+  "visual_review": "All four rendered pairs checked through identical decoded pixel hashes and inspected east/west/full-height, roof and podium images. Existing source facade texture limitations retained.",
+  "warnings": [
+    "Blender emitted an extension cache write warning at shutdown; all four phases exited 0. No configuration or registration was changed."
+  ],
+  "verification_scope_note": "The inherited city validation limitations refer to unrelated city content. The target additionally passed explicit finite/nonzero-area, closed indexed-edge, consistent winding, component and signed-volume checks.",
+  "remaining": [
+    "Building name is not asserted; source name is null.",
+    "Full-city shaded render, geographic ground truth, self-intersections and collision suitability were not validated.",
+    "Independent machine verification, parent integration review and publication remain pending."
+  ]
+}

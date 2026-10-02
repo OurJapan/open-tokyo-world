@@ -1,0 +1,141 @@
+{
+  "browser": "154.0.4258.48",
+  "platform": "win32",
+  "node": "v24.19.0",
+  "url": "http://127.0.0.1:54013/before/",
+  "viewport": {
+    "width": 960,
+    "height": 900,
+    "deviceScaleFactor": 1
+  },
+  "sample_ms": 2500,
+  "model": {
+    "bytes": 3036,
+    "triangles": 144
+  },
+  "idle": [
+    {
+      "elapsed_ms": 2504.2999999970198,
+      "frames": 361,
+      "draw_calls": 4693,
+      "rendered_triangles": 51984,
+      "task_ms": 153.24800000000005,
+      "script_ms": 71.60600000000001
+    },
+    {
+      "elapsed_ms": 2506.9000000059605,
+      "frames": 361,
+      "draw_calls": 4693,
+      "rendered_triangles": 51984,
+      "task_ms": 151.04700000000005,
+      "script_ms": 62.84100000000004
+    },
+    {
+      "elapsed_ms": 2516,
+      "frames": 363,
+      "draw_calls": 4719,
+      "rendered_triangles": 52272,
+      "task_ms": 139.45799999999997,
+      "script_ms": 57.73799999999996
+    }
+  ],
+  "idle_median": {
+    "frames": 361,
+    "draw_calls": 4693,
+    "task_ms": 151.04700000000005,
+    "script_ms": 62.84100000000004
+  },
+  "checks": {
+    "opaqueIdle": {
+      "elapsed_ms": 514.3000000119209,
+      "frames": 74,
+      "draw_calls": 962,
+      "rendered_triangles": 10656,
+      "task_ms": 29.54900000000005,
+      "script_ms": 11.88100000000003
+    },
+    "mobileIdle": {
+      "elapsed_ms": 508.80000001192093,
+      "frames": 73,
+      "draw_calls": 949,
+      "rendered_triangles": 10512,
+      "task_ms": 31.957000000000015,
+      "script_ms": 12.664000000000009
+    },
+    "interaction": {
+      "elapsed_ms": 3015.9000000059605,
+      "frames": 434,
+      "draw_calls": 5642,
+      "rendered_triangles": 62496,
+      "task_ms": 174.86899999999994,
+      "script_ms": 71.6690000000001
+    },
+    "orbitIdle": {
+      "elapsed_ms": 517.3000000119209,
+      "frames": 74,
+      "draw_calls": 962,
+      "rendered_triangles": 10656,
+      "task_ms": 47.61799999999994,
+      "script_ms": 19.54200000000006
+    },
+    "cameraWork": {
+      "elapsed_ms": 1012.4000000059605,
+      "frames": 139,
+      "draw_calls": 1390,
+      "rendered_triangles": 16680,
+      "task_ms": 68.84800000000001,
+      "script_ms": 27.105000000000047
+    },
+    "stoppedWork": {
+      "elapsed_ms": 516.6000000089407,
+      "frames": 74,
+      "draw_calls": 962,
+      "rendered_triangles": 10656,
+      "task_ms": 57.80999999999992,
+      "script_ms": 27.249999999999996
+    },
+    "hiddenWork": {
+      "elapsed_ms": 505.20000000298023,
+      "frames": 0,
+      "draw_calls": 0,
+      "rendered_triangles": 0,
+      "task_ms": 13.668999999999931,
+      "script_ms": 1.5619999999999523
+    },
+    "visibleWork": {
+      "elapsed_ms": 508.20000000298023,
+      "frames": 73,
+      "draw_calls": 949,
+      "rendered_triangles": 10512,
+      "task_ms": 49.884999999999955,
+      "script_ms": 20.681999999999977
+    }
+  },
+  "snapshots": {
+    "initial": {
+      "file": "initial.png",
+      "sha256": "93d7128cb4746d5b03ce4ae339317083553f96e7e5e2a44d3f5ff289a7570f8b"
+    },
+    "opaque": {
+      "file": "opaque.png",
+      "sha256": "6d1a8995b036d8fdda415dad475356de26c851ecbf54247b7365f66be22d7e3d"
+    },
+    "mobile": {
+      "file": "mobile.png",
+      "sha256": "78a26b4432b8e0e21a9abba8416a1ec8e78a737f3546c8cd5676ae83c0518eed"
+    },
+    "orbit": {
+      "file": "orbit.png",
+      "sha256": "1d6249e5f34b483069a3f3771422f299f70d1607fc88faf3b97f62a1ac54df4d"
+    },
+    "reset": {
+      "file": "reset.png",
+      "sha256": "1bf0de0fb3d3e1a3c83eb262635a73cfa2169f0d6d60e146913e12b6dddad320"
+    }
+  },
+  "errors": [],
+  "limits": [
+    "Desktop headless Chromium only; fake camera, no Safari/device thermal or battery measurements.",
+    "Performance counters cover this document; no whole-machine CPU or GPU power claim."
+  ]
+}

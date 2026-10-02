@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-02",
+  "ok": true,
+  "integration": {
+    "base": "234b163210ac19d61f33e86b6920b8b26f9d453a",
+    "evidence_commit": "7a0ef42",
+    "original_model_commit": "c3dba225450ed662434e7e83a39e0c84dd82561d",
+    "combined_model_commit": "ed7043ce5e1e18063ce9f80f2e507f3760395c5a",
+    "branch": "codex/data221-af7335da-integration-20261002",
+    "cherry_pick_conflicts": 0,
+    "original_worktree_and_commits_preserved": true
+  },
+  "model_rerun": {
+    "ok": true,
+    "input_sha256": "2a6f63658722beecdb8af2158baed62c044f33a22084df0d227c70c67332ae5b",
+    "input_preserved": true,
+    "code_base_commit": "ed7043ce5e1e18063ce9f80f2e507f3760395c5a",
+    "code_files": {
+      "scripts/data221_af7335da_mesh.py": "22805e14547abe2c6cd9cb7d7642a4fe20c7e41ca9bf731d9d103778e4b0e8fa",
+      "scripts/data221_af7335da_worker.py": "b7739c17ff61309935c2b432d061a0ad4ae33bd7a9241ff61bd77d14efdabba5",
+      "scripts/review_data221_af7335da.py": "0fdd5ec5bc111d34ea69139e6569be7a51cfe221be0184a633b983fac5fae8dc",
+      "scripts/blender_worker.py": "6d527b18c2b41df29a14a16e0aafb12bdc5fc56fddf09e3b8933a0745be4a4b2",
+      "starter/plateau/tile.py": "540aa9b7e8d8efc482f4ef4cdcf0f890bac6102a905707e588f13ca60f2d7c11",
+      "areas/tokyo-tower/mori-plaza-connection-accepted-features.json": "c2dc5d3e5a5bbf3fb8b883164ddbcefc7007f4510e075e2e5ee26eeb18f68ff2"
+    },
+    "jobs": {
+      "build": {
+        "exit_code": 0,
+        "seconds": 43.859
+      },
+      "validate": {
+        "exit_code": 0,
+        "seconds": 38.625
+      },
+      "render-before": {
+        "exit_code": 0,
+        "seconds": 14.047
+      },
+      "render-after": {
+        "exit_code": 0,
+        "seconds": 14.313
+      }
+    },
+    "output_blends": {
+      "after.blend": "09977e34f02c02a7e24448767874294e0f7c09e3bbaf40b5630ea1dea8965216",
+      "target.blend": "4b2d6d0af6813e7748bf6890b608c217751945b55c88b733ba31adeac6188243",
+      "before-neighborhood.blend": "135241a4a79489046c1d72092702b5b2d8f38ac4f2248d40a06851704dea1a12",
+      "after-neighborhood.blend": "bda29633b2c62b6b2e76aa538576d31190b127980191a002f922d64715d66648"
+    },
+    "scope": "Exact topology repair of data221 batch 15; local candidate only",
+    "limits": [
+      "No survey/real-world detail improvement claimed.",
+      "Rendered extraction contains the 23 data221 buildings, not roads or the complete city.",
+      "Existing synthetic facade and legacy display height retained.",
+      "No new asset license or permission grant. No publication or registration."
+    ]
+  },
+  "reproduction": {
+    "production_measurements_identical": true,
+    "saved_city_validation_identical": true,
+    "original_city_snapshot_identical": true,
+    "code_equal_after_LF_normalization": {
+      "scripts/data221_af7335da_mesh.py": true,
+      "scripts/data221_af7335da_worker.py": true,
+      "scripts/review_data221_af7335da.py": true,
+      "scripts/blender_worker.py": true,
+      "starter/plateau/tile.py": true,
+      "areas/tokyo-tower/mori-plaza-connection-accepted-features.json": true
+    },
+    "blend_files_byte_identical": {
+      "after.blend": false,
+      "target.blend": false,
+      "before-neighborhood.blend": false,
+      "after-neighborhood.blend": false
+    },
+    "note": "Blender file bytes differ between independent saves; reproducibility is established by source/shape/UV/material/state checks and decoded image hashes, not byte-identical blend output.",
+    "decoded_images": [
+      {
+        "phase": "render-before",
+        "view": "east",
+        "pixel_sha256": "4170c13f5fe506d46ee3306dc09a8bf908907b5f776ec301443573fda823c659",
+        "identical_to_original": true
+      },
+      {
+        "phase": "render-before",
+        "view": "west",
+        "pixel_sha256": "5e61f4dd2c17d1e667a4498a3a62b287b67d8f9c24de8e63f1f60198ba4d8dd7",
+        "identical_to_original": true
+      },
+      {
+        "phase": "render-before",
+        "view": "roof",
+        "pixel_sha256": "96304de6a08e401437bc81a8d4e8ea584d356c3bbfcfb7346094aae4fd96f8d5",
+        "identical_to_original": true
+      },
+      {
+        "phase": "render-before",
+        "view": "podium",
+        "pixel_sha256": "e356fcf56c7ae89f6cd4070336450ccce4112174d5a343f6a91cfcd44c91bca7",
+        "identical_to_original": true
+      },
+      {
+        "phase": "render-after",
+        "view": "east",
+        "pixel_sha256": "4170c13f5fe506d46ee3306dc09a8bf908907b5f776ec301443573fda823c659",
+        "identical_to_original": true
+      },
+      {
+        "phase": "render-after",
+        "view": "west",
+        "pixel_sha256": "5e61f4dd2c17d1e667a4498a3a62b287b67d8f9c24de8e63f1f60198ba4d8dd7",
+        "identical_to_original": true
+      },
+      {
+        "phase": "render-after",
+        "view": "roof",
+        "pixel_sha256": "96304de6a08e401437bc81a8d4e8ea584d356c3bbfcfb7346094aae4fd96f8d5",
+        "identical_to_original": true
+      },
+      {
+        "phase": "render-after",
+        "view": "podium",
+        "pixel_sha256": "e356fcf56c7ae89f6cd4070336450ccce4112174d5a343f6a91cfcd44c91bca7",
+        "identical_to_original": true
+      }
+    ]
+  },
+  "index": {
+    "schema_version": 1,
+    "ok": true,
+    "scope": "data221-source-production-candidates",
+    "source_audit_date": "2026-09-07",
+    "source_audit_repository_base": "805178260506f0951540d7cae1d13e86ea1cd2ee",
+    "inputs": {
+      "docs/plateau-data221.json": {
+        "bytes": 25751,
+        "sha256": "eb0d7105e3a4e1a71deb9490c0bd5956be836abb2b1a8f5747f2354e041cbdfb"
+      },
+      "starter/plateau/tile.py": {
+        "bytes": 8041,
+        "sha256": "540aa9b7e8d8efc482f4ef4cdcf0f890bac6102a905707e588f13ca60f2d7c11"
+      }
+    },
+    "tool": {
+      "path": "scripts/plateau_evidence.py",
+      "bytes": 15523,
+      "sha256": "9fe3063abe928cba2f7a6e2e8bbfa2d6d4d9f0af6b96146031265d51dd1ae7f5",
+      "python": "3.11.11"
+    },
+    "source_sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2",
+    "tileset_sha256": "edec4c24d137eaf08a8525cecea505a3f21a30823b9ef4fb530e10774cea1323",
+    "origin": {
+      "lon": 139.74543,
+      "lat": 35.65858,
+      "ellipsoid_height_m": 0
+    },
+    "axis_order": [
+      "east",
+      "north",
+      "up"
+    ],
+    "units": "metres",
+    "checks": {
+      "document": {
+        "status": "matched",
+        "features": 24
+      },
+      "official_inputs": {
+        "status": "matched",
+        "features": 24,
+        "files": {
+          "tileset.json": {
+            "bytes": 412889,
+            "sha256": "edec4c24d137eaf08a8525cecea505a3f21a30823b9ef4fb530e10774cea1323"
+          },
+          "data221.b3dm": {
+            "bytes": 1246040,
+            "sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2"
+          }
+        },
+        "geometry_decoded_this_run": false
+      }
+    },
+    "query": {
+      "feature": "bldg_af7335da-7542-44dd-964d-8cccd2b046ff"
+    },
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "gml_id": "bldg_af7335da-7542-44dd-964d-8cccd2b046ff",
+        "batch_id": 15,
+        "name": null,
+        "source_lod": 2,
+        "data_quality_lod": [
+          "LOD2.2"
+        ],
+        "triangles": 466,
+        "audit_ref": "docs/plateau-data221.json#/features/15",
+        "source_bbox_lon_lat_attribute_height": [
+          139.73975675174177,
+          35.661767269749866,
+          19.999,
+          139.74095150276142,
+          35.66267564895687,
+          256.009
+        ],
+        "source_enu_min_m": [
+          -513.6962488672323,
+          353.65161505376295,
+          56.60578547175812
+        ],
+        "source_enu_max_m": [
+          -405.51689651385846,
+          454.4426464783688,
+          292.61837440754624
+        ],
+        "bbox_midpoint_xy_m": [
+          -459.60657269054536,
+          404.04713076606583
+        ],
+        "legacy_z_shift_m": -56.28578547175812,
+        "legacy_display_z_range_m": [
+          0.32,
+          236.33258893578812
+        ],
+        "replacement": false,
+        "scene_lookup": {
+          "plateau_trial_object_name": "bldg_af7335da-7542-44dd-964d-8cccd2b046ff",
+          "mori_before_object_name": "bldg_af7335da-7542-44dd-964d-8cccd2b046ff",
+          "mori_after_property": "gml_id",
+          "mori_after_value": "bldg_af7335da-7542-44dd-964d-8cccd2b046ff"
+        }
+      }
+    ],
+    "limitations": [
+      "XY midpoint and distance refer to axis-aligned bounds, not footprint centres or occupancy.",
+      "Per-feature ground at 0.32 m is legacy display placement, not surveyed terrain or a height datum conversion.",
+      "Source bounds describe the retained 2025 tile, not current detailed-model geometry.",
+      "Optional checks compare source metadata and saved coordinate metadata; they do not open or validate a scene.",
+      "OSM, photographs and adjacent tiles are separate evidence; no spatial association is inferred here."
+    ]
+  },
+  "additional_geometry_and_selection": {
+    "ok": true,
+    "index_sha256": "f21a04c7805532f5fe1968164354a86dc69fe2b0b8c105efe2c7798d2ab57171",
+    "selected_gml_id": "bldg_af7335da-7542-44dd-964d-8cccd2b046ff",
+    "index_property_used": "gml_id",
+    "selected_object": "bldg_af7335da-7542-44dd-964d-8cccd2b046ff",
+    "candidate_matches": 1,
+    "face_count": 466,
+    "expanded_face_data_identical_to_original": true,
+    "uv_material_batch_and_flat_shading_identical": true,
+    "material_definitions_identical": true,
+    "indexed_surface": {
+      "vertices": 235,
+      "faces": 466,
+      "edges": 699,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "winding_errors": 0,
+      "components": 1,
+      "loose_vertices": 0,
+      "euler_characteristic": 2,
+      "minimum_triangle_area_m2": 0.22631793932673352,
+      "surface_area_m2": 58658.822218369525,
+      "signed_volume_m3": 566337.1483691091
+    },
+    "additional_topology": {
+      "duplicate_geometric_faces": 0,
+      "vertex_links_checked": 235,
+      "nonmanifold_vertex_links": 0
+    },
+    "minimum_normal_cosine_to_original": 0.9999999999999792,
+    "maximum_normal_angle_degrees": 1.1675179017869926e-05,
+    "normal_comparison_faces": 466,
+    "self_intersections_tested": false,
+    "watertight_solid_certified": false,
+    "next_visual_candidate_evidence": {
+      "high_vertical_facade_edges_with_0_1_to_30_degree_dihedral": 14,
+      "dihedral_range_degrees": [
+        0.16585913105832156,
+        26.257180270331727
+      ],
+      "interpretation": "Candidate for a reversible normal-smoothing comparison only; preserve roof/podium creases, UVs and source vertices. Does not establish real facade curvature."
+    },
+    "selection_scene": "selected-neighborhood.blend",
+    "limits": [
+      "Closed consistent indexed topology plus vertex-link checks; geometric self-intersections and suitability as a watertight solid are not certified.",
+      "Selection proof uses the extracted data221 neighborhood, not a UI interaction in the normal city workspace."
+    ]
+  },
+  "saved_selection_reopen": {
+    "ok": true,
+    "gml_id": "bldg_af7335da-7542-44dd-964d-8cccd2b046ff",
+    "active_object": "bldg_af7335da-7542-44dd-964d-8cccd2b046ff",
+    "selected_objects": [
+      "bldg_af7335da-7542-44dd-964d-8cccd2b046ff"
+    ],
+    "saved_scene_meshes": 2
+  },
+  "extra_check_code_sha256": "4f1c75a0fff0a43a171d120680e4cf1d459cc42fb2946b691a165dd16100b67d",
+  "extra_tests_sha256": "4ed0b5668cb92a007b4480bf2b3fe7574be2711d4f29c8df1f9427f1a4303eb4",
+  "tests": {
+    "total": 249,
+    "passed": 242,
+    "skipped_optional_dependencies": 7,
+    "failures": 0,
+    "log_sha256": "c9614f0059bc6f6336be68433300e6ec93519f948d0638d24dc8cb1f547effcf"
+  },
+  "user_value_sentence": "資料の地物IDから目的の建物だけを選び、隣の建物を巻き込まず外形・UVを保ったまま次の街制作へ進めるようになりました。",
+  "next_visual_candidate": "Compare selective normal smoothing along the 14 shallow high-facade edges measured from the retained geometry; keep source vertices, UVs, roof and podium creases. This is a reversible shading study, not a claim of surveyed facade curvature.",
+  "local_deliverables": [
+    "data/local/af7335da-integrated-01/review.html",
+    "data/local/af7335da-integrated-01/after.blend",
+    "data/local/af7335da-integrated-01/target.blend",
+    "data/local/af7335da-integrated-01/selected-neighborhood.blend"
+  ],
+  "limits": [
+    "No geometric self-intersection or watertight-solid certification.",
+    "No real-world curvature, building name or height-attribute interpretation added.",
+    "No publication, normal workspace registration or UI manipulation.",
+    "Existing Blender extension cache write warning; all production/selection processes exited successfully."
+  ]
+}
