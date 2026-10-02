@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "purpose": "reviewed-change",
+  "reason": "Continue the accepted entrance junction north along about 15m of mapped west footway. Retain XY, the entrance and all exterior faces; locally meet the adopted 0.11m paving with a continuous return to inherited heights. This is provisional model-space grading, not surveyed terrain.",
+  "source_refs": [
+    "docs/mori-plaza-level-audit.md",
+    "docs/mori-plaza-west-path-v1.md",
+    "docs/city-baseline-connection.md",
+    "https://www.openstreetmap.org/way/1443867478"
+  ],
+  "operations": [
+    {
+      "op": "mori_plaza_west_path_v1",
+      "object": "Mori JP podium / stone",
+      "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "expected_mesh_sha256": "4f4cfbc17a08f91e35ea5787b9bc062a51c0df8ffdee5a4017c9ed85da16ccf6",
+      "road_mesh_sha256": {
+        "asphalt 15s road detail": "e4e4b63d11e3528fa0b0a38e4ab94730231a7bff71af5f9186d12248c11587fd",
+        "gutter 15s road detail": "8b3a10448bb100ecf1348c6e56a7204cceaee129c8d76bbfee498c87a9b04c6a",
+        "pavement_0 unified road": "118fefe7079af5bf5cd15d580a2f329af1770f4bb467df35e2ae35202e9ac0b3"
+      },
+      "plan_sha256": "6bb6165ee58f9827162256023a7f5b8ebd514b66f05307b8bf01606df0a0127c",
+      "added_objects": ["OTW Mori west path / seam fill"]
+    }
+  ]
+}

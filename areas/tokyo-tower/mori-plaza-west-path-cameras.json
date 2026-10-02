@@ -1,0 +1,261 @@
+{
+  "version": 1,
+  "status": "candidate-poses-human-review-pending",
+  "note": "Three local west-path views plus plaza, entrance and protected street context; identical Before/After settings.",
+  "views": [
+    {
+      "id": "west-path-context",
+      "frame": 1,
+      "matrix_world": [
+        [
+          0.9701425001453319,
+          -0.14160114836483342,
+          0.19690770475917171,
+          -406.38359213500127
+        ],
+        [
+          0.24253562503633297,
+          0.5664045934593337,
+          -0.7876308190366869,
+          328.8331556174964
+        ],
+        [
+          -0.0,
+          0.8118712652200022,
+          0.5838364914169657,
+          20
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "lens_mm": 40,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "source_camera": "Fixed model-space inspection pose; not a measured photograph registration."
+    },
+    {
+      "id": "west-path-walk",
+      "frame": 1,
+      "matrix_world": [
+        [
+          0.8666224568741684,
+          0.04638557333843933,
+          -0.49680367936182246,
+          -418.9055728090001
+        ],
+        [
+          -0.49896444486694663,
+          0.08056441685097339,
+          -0.8628695483652685,
+          346.27448584199476
+        ],
+        [
+          0.0,
+          0.9956695000468414,
+          0.09296368471867462,
+          1.7
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "lens_mm": 34,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "source_camera": "Fixed model-space inspection pose; not a measured photograph registration."
+    },
+    {
+      "id": "west-path-edge",
+      "frame": 1,
+      "matrix_world": [
+        [
+          0.9008441697356699,
+          -0.07429922767443228,
+          0.4277375440854293,
+          -407.2780193260012
+        ],
+        [
+          0.4341425824003581,
+          0.15417060841235797,
+          -0.8875537401467652,
+          356.1131849429938
+        ],
+        [
+          -0.0,
+          0.9852466941171365,
+          0.17114015230580384,
+          1.4
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "lens_mm": 50,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "source_camera": "Fixed model-space inspection pose; not a measured photograph registration."
+    },
+    {
+      "id": "entrance-front",
+      "frame": 1,
+      "matrix_world": [
+        [
+          -0.894427190999916,
+          -0.04048881650894584,
+          0.4453769815984038,
+          -409.96130089900095
+        ],
+        [
+          0.447213595499958,
+          -0.08097763301789168,
+          0.8907539631968076,
+          310.4973982019981
+        ],
+        [
+          0.0,
+          0.9958932064677039,
+          0.09053574604251861,
+          8.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 24,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "source_camera": "Fixed entrance detail pose; estimated registration to legacy scene"
+    },
+    {
+      "id": "plaza-context",
+      "frame": 1,
+      "matrix_world": [
+        [
+          -0.3972230553627014,
+          -0.5120213031768799,
+          0.7616087198257446,
+          -339.748779296875
+        ],
+        [
+          0.9177219867706299,
+          -0.22162117063999176,
+          0.32965168356895447,
+          357.0075988769531
+        ],
+        [
+          -2.3689519679237492e-08,
+          0.8298904299736023,
+          0.55792635679245,
+          44.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 35,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "eye_local_uvz": [
+        42,
+        95,
+        44
+      ],
+      "target_local_uvz": [
+        0,
+        45,
+        0.1
+      ],
+      "source_camera": "Inspection pose in the inherited, approximate entrance-local coordinate frame"
+    },
+    {
+      "id": "protected-street-context",
+      "frame": 1,
+      "matrix_world": [
+        [
+          -0.15596257347301096,
+          -0.5618961824338334,
+          0.8123720550597243,
+          -287.87198932751244
+        ],
+        [
+          0.987762965329069,
+          -0.08872044985797373,
+          0.12826927185153547,
+          398.1512629199899
+        ],
+        [
+          0.0,
+          0.8224362357917377,
+          0.5688573090474597,
+          60
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "lens_mm": 35,
+      "sensor_width_mm": 36,
+      "sensor_height_mm": 24,
+      "sensor_fit": "AUTO",
+      "shift_x": 0,
+      "shift_y": 0,
+      "clip_start": 0.1,
+      "clip_end": 9000,
+      "eye_local_uvz": [
+        70,
+        155,
+        60
+      ],
+      "target_local_uvz": [
+        0,
+        105,
+        0.5
+      ],
+      "source_camera": "Wider fixed comparison pose including the protected street boundary"
+    }
+  ]
+}

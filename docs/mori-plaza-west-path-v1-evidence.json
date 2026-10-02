@@ -1,0 +1,257 @@
+{
+  "version": 1,
+  "status": "Draft review candidate; human adoption pending",
+  "base_commit": "805310ef7a6aad5a13104334e798fb83b35f1711",
+  "publication": {
+    "approved_date": "2026-10-02",
+    "scope": "Selected original change code, settings, path-free validation metadata and four matched review PNGs.",
+    "underlying_assets": "Legacy scene, recovered map/seed data, textures and local geometry plans retain their existing rights and redistribution limits."
+  },
+  "input_scene": {
+    "bytes": 559040261,
+    "sha256": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4"
+  },
+  "output_scene_sha256": {
+    "before.blend": "eae18eb05bd30f60a377983b8e7b9ed6add9d0979d9063855068798f6a473c12",
+    "after.blend": "2a6f63658722beecdb8af2158baed62c044f33a22084df0d227c70c67332ae5b"
+  },
+  "cameras_sha256": "eff38d74ccb723c1aa2a5130ca97d250edc83c46297f5d69810c6f7c6ca45444",
+  "patch_sha256": "6c3d01ecab149c4e7dc94d6df65c43ead09e929c4e9c3c0c5cb2952a7800ac4c",
+  "lf_normalized_config_sha256": {
+    "areas/tokyo-tower/mori-plaza-west-path-cameras.json": "b3ef6421cc6beb6a75865da2082cd30d52ad64739bdfad4dd7949608adbc381f",
+    "patches/mori-plaza-west-path-v1.json": "6c3d01ecab149c4e7dc94d6df65c43ead09e929c4e9c3c0c5cb2952a7800ac4c",
+    "areas/tokyo-tower/mori-plaza-connection-accepted-features.json": "73ae1670cc2af20268f22e285c5afcbb7ea152df1620dc1c3ca938d37b3bc398"
+  },
+  "plan_sha256": "6bb6165ee58f9827162256023a7f5b8ebd514b66f05307b8bf01606df0a0127c",
+  "road_source_sha256": {
+    "work/osm.xml": "f04e8e70ab24a61ca749375d1ef37401feb0fdc840cc506b670ef71454a6a8ab",
+    "work/twin_towers/tower_surfaces.json": "184875e48426ba84b0dddb169f2dc2a414798ac42ee3b7c0047b572991013531"
+  },
+  "validated_code": {
+    "scripts/review.py": {
+      "execution_bytes_sha256": "48829c3e97324726ca27a99a7decd4c4bf3c76859745992774d4065d8ba8eb31",
+      "lf_normalized_sha256": "06cd76137bdffb693cdab6b37f91b437ff52062857b540215a86e201f68208e7"
+    },
+    "scripts/blender_worker.py": {
+      "execution_bytes_sha256": "6d527b18c2b41df29a14a16e0aafb12bdc5fc56fddf09e3b8933a0745be4a4b2",
+      "lf_normalized_sha256": "bb38eb2c6cb34eb06c41d921db11847b2edf0b7c1745cbcd82bc4f9d1967eaeb"
+    },
+    "scripts/mori_shape.py": {
+      "execution_bytes_sha256": "e82b840819da692b1a0dd6b27f095c524706fce08c0e85db47b2236301f91411",
+      "lf_normalized_sha256": "5588ac6e1409944faf1d686baffa7230b7a95a0b939c21502686b0a96d80df5a"
+    },
+    "scripts/mori_crown_v2.py": {
+      "execution_bytes_sha256": "9822f54cec4965881dc5838e5204f55fcf95fcf172620ebb56735101be98015b",
+      "lf_normalized_sha256": "8bb386b4429575c4c37b914c71b63629fb844c84c0399e943706b34fd10e64a7"
+    },
+    "scripts/mori_crown_material.py": {
+      "execution_bytes_sha256": "02e207032a4873ee75cf80991ab2066e3621e9a8ccbf4c014e2c5aee06bbc8b5",
+      "lf_normalized_sha256": "25d8ae26b7c5b2ba38f6db5fd5baa507f18c3965a83a3e09996d71fceb2d1959"
+    },
+    "scripts/mori_facade_v2.py": {
+      "execution_bytes_sha256": "b962aeb523cb35cd242bad7f3a91409750219bda62eec1cd64ddcbf49a7ab26f",
+      "lf_normalized_sha256": "5df83c9acf790bbfc1491f133445221174644663e2c041ec860a2900a81e7b9e"
+    },
+    "scripts/mori_podium_v2.py": {
+      "execution_bytes_sha256": "f5de3f66b97bd63d55e91820ccbddf7bd99b0a290d65bc4c0f2eb5f91168d8ca",
+      "lf_normalized_sha256": "821a8ee485ff39757d97ee29a2678083a850c5b714eda7698457105b5745520e"
+    },
+    "scripts/mori_entrance_v1.py": {
+      "execution_bytes_sha256": "aeb7417803ebea8ac8af590aeca7a1e723d1591e1756eb07ad1078cd9e753c90",
+      "lf_normalized_sha256": "f9ab6f5aa0ad9a1cd201c8b021e9893a411e9556afbc7bb877f558e6faa2fede"
+    },
+    "scripts/mori_podium_v3.py": {
+      "execution_bytes_sha256": "cec7699cb570248bfb4c121275044b0950a6bfcad128464455a2faabc9321790",
+      "lf_normalized_sha256": "b202252d78763d965213c30a8c85260b0ce550e32128a7dbef05107d9e639dfb"
+    },
+    "scripts/mori_terrace_v1.py": {
+      "execution_bytes_sha256": "26f9149e5889266caa7c62bbd8a0df886fb9713266751c0a69e6c6df24a036e5",
+      "lf_normalized_sha256": "2056674560bbcd92503db2a5e8491eca0f2f21ab782ba9d332820b70a74d1a9d"
+    },
+    "scripts/mori_plaza_v1.py": {
+      "execution_bytes_sha256": "5f92f0381ab16fd0bbef325db2200381a903723ab5418ecb51c0c64562131ef9",
+      "lf_normalized_sha256": "b16a1179b14f9e56b615d818c06da11c7be77959c199e2d93c6ee4544076fc2c"
+    },
+    "scripts/mori_plaza_link_v1.py": {
+      "execution_bytes_sha256": "9db234b625b99fe1ee5751b4f4da57445ea6122222377e8b2e9fe36105519ec3",
+      "lf_normalized_sha256": "c5e15978e47a7e4816001b175ead98d7445bf37828f48945f15915db639f4d37"
+    },
+    "scripts/mori_plaza_edge_v1.py": {
+      "execution_bytes_sha256": "a04401be2c0eae5031df1348258d50e433f0a5168b736c890e5823e22b138414",
+      "lf_normalized_sha256": "1741fbb697d015a9f29e542daa5d4bf1759681508f8f2d670765e4bd29968a5d"
+    },
+    "scripts/mori_plaza_outline_v1.py": {
+      "execution_bytes_sha256": "7fc8cf44dc466ff9fe0031c4cf99bd6358291b161125465a02abe33416656c69",
+      "lf_normalized_sha256": "bf32df1b459cf5851f7aefd6ad6a92f9f81fe3867cba3d40a322f749ec2aa3c6"
+    },
+    "scripts/mori_plaza_west_path_v1.py": {
+      "execution_bytes_sha256": "ebb6860a4567c39153a93be9918789e67ec7bb275fde22ba66e713aed993b684",
+      "lf_normalized_sha256": "ebb6860a4567c39153a93be9918789e67ec7bb275fde22ba66e713aed993b684"
+    },
+    "scripts/mori_plaza_connection_v1.py": {
+      "execution_bytes_sha256": "316e95dbda267b5c27ad38422af96ceafe9042eeec4758f2afd1c3cb00c6b594",
+      "lf_normalized_sha256": "798ce27187a3a6f38e6ddd4822c78f47632b8e2fd17795140f3e7edb1fa58f8a"
+    },
+    "scripts/mori_plaza_landscape_v1.py": {
+      "execution_bytes_sha256": "929de7aa975559892048fd3fa41e9c63a7a3a44ef617fcc1029e0cf1ce2f9906",
+      "lf_normalized_sha256": "bae87e622bc9b9c678a1491c3fc6897b294addf3f08400b3a02f3bca9ee2ce29"
+    },
+    "scripts/prepare_mori_plaza_west_path.py": {
+      "execution_bytes_sha256": "c508fa6c9c75fad04d38ec7c217e6b8360f3c21673e6092b2d2b3e4c5985eede",
+      "lf_normalized_sha256": "c508fa6c9c75fad04d38ec7c217e6b8360f3c21673e6092b2d2b3e4c5985eede"
+    },
+    "scripts/validate_mori_plaza_west_path.py": {
+      "execution_bytes_sha256": "c1125305fbcef83e3d1765d1fb07e0cf64dbcd4bb2f63f94ff86ef6f7b6de8dc",
+      "lf_normalized_sha256": "c1125305fbcef83e3d1765d1fb07e0cf64dbcd4bb2f63f94ff86ef6f7b6de8dc"
+    }
+  },
+  "line_endings": "Execution byte hashes identify the actual checked Windows files; LF-normalized hashes identify equivalent committed source bytes.",
+  "render_settings": {
+    "blender": "4.5.1 LTS",
+    "engine": "Cycles",
+    "device": "OPTIX",
+    "width": 1280,
+    "height": 720,
+    "samples": 24,
+    "seed": 0,
+    "frame": 1
+  },
+  "boundary": {
+    "pairs": 75,
+    "offsets_per_pair": 31,
+    "probes": 2325,
+    "before_maximum_rise_m": 0.35000038146972656,
+    "after_maximum_rise_m": 3.5762786865234375e-07,
+    "before_ground_probes": 90,
+    "after_unresolved_probes": 0
+  },
+  "preservation": {
+    "original_target_vertices": 803980,
+    "outside_faces": 444600,
+    "unchanged_other_object_fingerprints": 3304,
+    "existing_junction_and_entrance_probes": 74,
+    "packed_images": 383,
+    "new_warnings": 0,
+    "inherited_warnings": 36
+  },
+  "tests": {
+    "portable": {
+      "total": 232,
+      "passed": 225,
+      "skipped": 7,
+      "seconds": 5.489
+    },
+    "production": {
+      "total": 232,
+      "passed": 227,
+      "skipped": 5,
+      "seconds": 4.767
+    },
+    "skip_basis": "Five optional photo-estimation tests require existing image dependencies; portable checks also skip two optional geometry checks.",
+    "production_runtime": {
+      "python": "3.12",
+      "numpy": "2.3.5",
+      "shapely": "2.1.2",
+      "geos": "3.13.1"
+    }
+  },
+  "visual_inspection": {
+    "views": 6,
+    "png_count": 12,
+    "reviewed_by": "AI",
+    "human_adoption": false
+  },
+  "public_images": [
+    {
+      "path": "renders/previews/mori-plaza-west-path-v1/before-west-path-walk.png",
+      "sha256": "38f80e855d9542300f35dd238a83f12c714817d46e018874ba64ed96691a1abb",
+      "bytes": 1201984,
+      "source_render_sha256": "ad32a40362e5c054d37a1d4ec8998c92a5fa2fc4e272b368c93ed26efb956d0d",
+      "width": 1280,
+      "height": 720,
+      "metadata_private_paths_found": false,
+      "source_pixels_unchanged": true,
+      "removed_metadata_chunk_types": [
+        "eXIf",
+        "tEXt"
+      ],
+      "private_paths_removed": true,
+      "unchanged_idat_sha256": "3ca5720f4a9ae4982701e2a95797c06dec0c815170d51580d421adef9e783c0e"
+    },
+    {
+      "path": "renders/previews/mori-plaza-west-path-v1/after-west-path-walk.png",
+      "sha256": "1d785d1913abc08b8c30a009cab02e8795abba738018444b4ada717750aec218",
+      "bytes": 1185224,
+      "source_render_sha256": "d7ab17421032a9548e8a541868e6702cd46cc206eb455b5f112e859ab96c9199",
+      "width": 1280,
+      "height": 720,
+      "metadata_private_paths_found": false,
+      "source_pixels_unchanged": true,
+      "removed_metadata_chunk_types": [
+        "eXIf",
+        "tEXt"
+      ],
+      "private_paths_removed": true,
+      "unchanged_idat_sha256": "3b596393d5a91d129207c2eca925cbf01575aa1186aaae2bfc1213eae42b2dec"
+    },
+    {
+      "path": "renders/previews/mori-plaza-west-path-v1/before-west-path-edge.png",
+      "sha256": "403e33495979a60e447434f99fea95acced22033df814e9f1e355a56fa087e45",
+      "bytes": 995958,
+      "source_render_sha256": "05096c887f850d6301c38645a5a02eb94bbd6ca09b3646f1db07dad9a732ca5b",
+      "width": 1280,
+      "height": 720,
+      "metadata_private_paths_found": false,
+      "source_pixels_unchanged": true,
+      "removed_metadata_chunk_types": [
+        "eXIf",
+        "tEXt"
+      ],
+      "private_paths_removed": true,
+      "unchanged_idat_sha256": "a7b78d60698f62281b223f01d294b5a5349942051d740396af0fc41762a4344b"
+    },
+    {
+      "path": "renders/previews/mori-plaza-west-path-v1/after-west-path-edge.png",
+      "sha256": "3c3d3e621f0a25c37c857138a1af6fef1ab4b7a7ebd333ab00a6e8b94b4d2486",
+      "bytes": 995471,
+      "source_render_sha256": "157fef2b977d31b1b9b56590e990999177e617ed9471e5152a8de956d551d4fd",
+      "width": 1280,
+      "height": 720,
+      "metadata_private_paths_found": false,
+      "source_pixels_unchanged": true,
+      "removed_metadata_chunk_types": [
+        "eXIf",
+        "tEXt"
+      ],
+      "private_paths_removed": true,
+      "unchanged_idat_sha256": "ae19bb346b669baf26093e6213b08da9ce625ba666ce2bb7c4c19cc3cf85be7b"
+    }
+  ],
+  "image_privacy": "Automatic PNG text/EXIF metadata removed; all image and colour chunks, including IDAT, preserved byte-for-byte. Original local renders remain intact.",
+  "local_additional_views": [
+    "west-path-context",
+    "entrance-front",
+    "plaza-context",
+    "protected-street-context"
+  ],
+  "record_sha256": {
+    "mori-plaza-west-path-v1-run.json": "83a2d09e3ca9f0010aaf002f5084c0aecf57a9b6b6a58cfaf5aec1ac572cc988",
+    "mori-plaza-west-path-v1-validation.json": "53a4daf5a9fab4a6bbd8096e23de8afe90bf75d803d77f0ba36cd0cebf2cef17"
+  },
+  "original_execution_record_sha256": {
+    "run.json": "17fcc68baf43044145e3407d949f5d98aa6f6ce031e510754206d7cb8c367f19",
+    "validation.json": "09dd3d78e6eef9d6e2bc8efe41245255929813007a833f615dbe9b4a0f64a72f"
+  },
+  "source_attribution": {
+    "osm": "Copyright OpenStreetMap contributors",
+    "license_url": "https://www.openstreetmap.org/copyright",
+    "fixed_way": "1443867478",
+    "height_basis": "Provisional inherited model-space 0.11m, not a surveyed elevation."
+  },
+  "limits": [
+    "Fixed model-space probes; no surveyed elevation, continuous collision or accessibility certification.",
+    "Only the declared west-path unit is repaired.",
+    "Legacy modifier/animation fingerprint limitations remain.",
+    "This change does not update the accepted common city asset profile."
+  ]
+}

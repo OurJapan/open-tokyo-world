@@ -113,6 +113,14 @@ def validate_patch(patch):
             require(set(op['added_objects'])==ADDED and len(op['added_objects'])==len(ADDED), 'Wrong landscape additions')
             require(all(re.fullmatch('[0-9a-f]{64}',op[k]) for k in ('expected_mesh_sha256','park_mesh_sha256','plan_sha256')), 'Landscape requires hashes')
             require(bool(patch['source_refs']) and len(ops)==1, 'Landscape must be a standalone increment')
+        elif op['op']=='mori_plaza_west_path_v1':
+            from mori_plaza_west_path_v1 import ANCHOR,FEATURE,ROADS,ADDED
+            require(set(op)=={'op','feature_id','object','expected_mesh_sha256','road_mesh_sha256','plan_sha256','added_objects'}, 'Unexpected west path patch keys')
+            require(op['object']==ANCHOR and op['feature_id']==FEATURE, 'Wrong west path anchor')
+            require(set(op['road_mesh_sha256'])==ROADS, 'Wrong west path scope')
+            require(set(op['added_objects'])==ADDED and len(op['added_objects'])==len(ADDED), 'Wrong west path additions')
+            require(all(re.fullmatch('[0-9a-f]{64}',h) for h in [op['expected_mesh_sha256'],op['plan_sha256']]+list(op['road_mesh_sha256'].values())), 'West path requires hashes')
+            require(bool(patch['source_refs']) and len(ops)==1, 'West path must be a standalone increment')
         elif op['op']=='mori_plaza_connection_v1':
             from mori_plaza_connection_v1 import ANCHOR,FEATURE,ROADS,ADDED
             require(set(op)=={'op','feature_id','object','expected_mesh_sha256','road_mesh_sha256','plan_sha256','added_objects'}, 'Unexpected connection patch keys')
@@ -211,12 +219,17 @@ def main():
     needs_geometry=bool(patch and any(op['op'] in ('mori_podium_v2','mori_podium_v3') for op in patch['operations']))
     require(needs_geometry==bool(a.geometry_source), 'Podium operation requires exactly one geometry source')
     needs_connection=bool(patch and any(op['op']=='mori_plaza_connection_v1' for op in patch['operations']))
-    require(needs_connection==bool(a.connection_plan), 'Connection operation requires exactly one local plan')
-    if needs_connection:
-        from mori_plaza_connection_v1 import load_plan
+    needs_west_path=bool(patch and any(op['op']=='mori_plaza_west_path_v1' for op in patch['operations']))
+    needs_plan=needs_connection or needs_west_path
+    require(needs_plan==bool(a.connection_plan), 'Connection operation requires exactly one local plan')
+    if needs_plan:
+        if needs_west_path:
+            from mori_plaza_west_path_v1 import load_plan
+        else:
+            from mori_plaza_connection_v1 import load_plan
         connection_hash=patch['operations'][0]['plan_sha256']
         load_plan(a.connection_plan,connection_hash)
-    needs_roads=bool(patch and any(op['op'] in ('mori_plaza_outline_v1','mori_plaza_connection_v1') for op in patch['operations']))
+    needs_roads=bool(patch and any(op['op'] in ('mori_plaza_outline_v1','mori_plaza_connection_v1','mori_plaza_west_path_v1') for op in patch['operations']))
     require(needs_roads==bool(a.road_inputs), 'Plaza road operation requires exactly one road-input directory')
     if needs_roads:
         from mori_plaza_outline_v1 import verify_sources, SOURCE_FILES
@@ -240,6 +253,9 @@ def main():
     if needs_connection:
         from mori_plaza_connection_v1 import INPUT_SHA256
         require(input_hash == INPUT_SHA256, 'Connection requires the accepted PR 40 city')
+    if needs_west_path:
+        from mori_plaza_west_path_v1 import INPUT_SHA256
+        require(input_hash == INPUT_SHA256, 'West path requires the accepted entrance connection city')
     if features.get('legacy_empty_objects'):
         require(features.get('waiver_input_sha256') == input_hash, 'Legacy waivers do not match this input')
         require(all(isinstance(reason,str) and reason.strip() for reason in features['legacy_empty_objects'].values()), 'Waivers need reasons')
@@ -253,6 +269,8 @@ def main():
             summary['code_files'].update({f.relative_to(ROOT).as_posix():digest(f) for f in (ROOT/'scripts/mori_plaza_landscape_v1.py',ROOT/'scripts/prepare_mori_plaza_landscape.py')})
         if needs_connection:
             summary['code_files'].update({f.relative_to(ROOT).as_posix():digest(f) for f in (ROOT/'scripts/mori_plaza_connection_v1.py',ROOT/'scripts/mori_plaza_landscape_v1.py',ROOT/'scripts/prepare_mori_plaza_connection.py')})
+        if needs_west_path:
+            summary['code_files'].update({f.relative_to(ROOT).as_posix():digest(f) for f in (ROOT/'scripts/mori_plaza_west_path_v1.py',ROOT/'scripts/mori_plaza_connection_v1.py',ROOT/'scripts/mori_plaza_landscape_v1.py',ROOT/'scripts/prepare_mori_plaza_west_path.py')})
         job = {'output':str(output),'cameras':cameras,'features':features,'patch':patch,'settings':{k:summary[k] for k in ('blender_version','device','width','height','samples','seed')}}
         if needs_geometry:
             job['geometry_source']=str(a.geometry_source.resolve())
@@ -263,7 +281,7 @@ def main():
         if needs_landscape:
             job['landscape_plan']=str(a.landscape_plan.resolve())
             summary['landscape_plan_sha256']=landscape_hash
-        if needs_connection:
+        if needs_plan:
             job['connection_plan']=str(a.connection_plan.resolve())
             summary['connection_plan_sha256']=connection_hash
         job_path = output/'job.json'; write_json(job_path,job)
@@ -282,7 +300,9 @@ def main():
             from mori_plaza_edge_v1 import ROADS,ADDED
             allowed=sorted(ROADS);added=sorted(ADDED)
         if needs_roads:
-            if needs_connection:
+            if needs_west_path:
+                from mori_plaza_west_path_v1 import ROADS,ADDED
+            elif needs_connection:
                 from mori_plaza_connection_v1 import ROADS,ADDED
             else:
                 from mori_plaza_outline_v1 import ROADS,ADDED
@@ -299,7 +319,7 @@ def main():
         if needs_geometry: require(digest(a.geometry_source)==geometry_hash, 'Geometry source changed during review')
         if needs_roads: verify_sources(a.road_inputs)
         if needs_landscape: require(digest(a.landscape_plan)==landscape_hash, 'Landscape plan changed during review')
-        if needs_connection: require(digest(a.connection_plan)==connection_hash, 'Connection plan changed during review')
+        if needs_plan: require(digest(a.connection_plan)==connection_hash, 'Connection plan changed during review')
         summary['ok'] = True
         make_html(output,cameras,summary)
     except Exception as error:

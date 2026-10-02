@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "ok": true,
+  "mode": "patch-review",
+  "input_sha256": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4",
+  "blender_version": "4.5.1 LTS",
+  "cameras_sha256": "eff38d74ccb723c1aa2a5130ca97d250edc83c46297f5d69810c6f7c6ca45444",
+  "features_sha256": "c2dc5d3e5a5bbf3fb8b883164ddbcefc7007f4510e075e2e5ee26eeb18f68ff2",
+  "patch_sha256": "6c3d01ecab149c4e7dc94d6df65c43ead09e929c4e9c3c0c5cb2952a7800ac4c",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "device": "OPTIX",
+  "width": 1280,
+  "height": 720,
+  "samples": 24,
+  "seed": 0,
+  "jobs": {
+    "prepare": {
+      "seconds": 18.094,
+      "report_sha256": "7cae8312f0183bd3e63f57437d62178094f934bb3085aad38b20185542b0af35"
+    },
+    "validate-before": {
+      "seconds": 35.25,
+      "report_sha256": "e757aa4f61a07e19dfbde96db5bbd94faf45f57af7bb7a274165f121e7a155db"
+    },
+    "validate-after": {
+      "seconds": 36.094,
+      "report_sha256": "86c1d23a80f2c3dab1b6d475930a566cc7c44a32ead652e187dff0f34850cd89"
+    },
+    "render-before": {
+      "seconds": 71.563,
+      "report_sha256": "defd038b145ff16a83b1cc266bbfc60308bd570076c8901a21c0c5de037f766d"
+    },
+    "render-after": {
+      "seconds": 66.031,
+      "report_sha256": "1a443d5d9bc236aa28e9e4d809df78c9df704592a00d0536a60df9c15204772d"
+    }
+  },
+  "limitations": [
+    "Human visual approval is required.",
+    "Peak RAM/VRAM and physical accuracy are not measured.",
+    "Timing is one run, not a warmed-up median.",
+    "Dependency audit and fingerprints cover documented initial checks, not all Blender features."
+  ],
+  "code_base_commit": "805310ef7a6aad5a13104334e798fb83b35f1711",
+  "code_files": {
+    "scripts/review.py": "48829c3e97324726ca27a99a7decd4c4bf3c76859745992774d4065d8ba8eb31",
+    "scripts/blender_worker.py": "6d527b18c2b41df29a14a16e0aafb12bdc5fc56fddf09e3b8933a0745be4a4b2",
+    "scripts/mori_shape.py": "e82b840819da692b1a0dd6b27f095c524706fce08c0e85db47b2236301f91411",
+    "scripts/mori_crown_v2.py": "9822f54cec4965881dc5838e5204f55fcf95fcf172620ebb56735101be98015b",
+    "scripts/mori_crown_material.py": "02e207032a4873ee75cf80991ab2066e3621e9a8ccbf4c014e2c5aee06bbc8b5",
+    "scripts/mori_facade_v2.py": "b962aeb523cb35cd242bad7f3a91409750219bda62eec1cd64ddcbf49a7ab26f",
+    "scripts/mori_podium_v2.py": "f5de3f66b97bd63d55e91820ccbddf7bd99b0a290d65bc4c0f2eb5f91168d8ca",
+    "scripts/mori_entrance_v1.py": "aeb7417803ebea8ac8af590aeca7a1e723d1591e1756eb07ad1078cd9e753c90",
+    "scripts/mori_podium_v3.py": "cec7699cb570248bfb4c121275044b0950a6bfcad128464455a2faabc9321790",
+    "scripts/mori_terrace_v1.py": "26f9149e5889266caa7c62bbd8a0df886fb9713266751c0a69e6c6df24a036e5",
+    "scripts/mori_plaza_v1.py": "5f92f0381ab16fd0bbef325db2200381a903723ab5418ecb51c0c64562131ef9",
+    "scripts/mori_plaza_link_v1.py": "9db234b625b99fe1ee5751b4f4da57445ea6122222377e8b2e9fe36105519ec3",
+    "scripts/mori_plaza_edge_v1.py": "a04401be2c0eae5031df1348258d50e433f0a5168b736c890e5823e22b138414",
+    "scripts/mori_plaza_outline_v1.py": "7fc8cf44dc466ff9fe0031c4cf99bd6358291b161125465a02abe33416656c69",
+    "scripts/mori_plaza_west_path_v1.py": "ebb6860a4567c39153a93be9918789e67ec7bb275fde22ba66e713aed993b684",
+    "scripts/mori_plaza_connection_v1.py": "316e95dbda267b5c27ad38422af96ceafe9042eeec4758f2afd1c3cb00c6b594",
+    "scripts/mori_plaza_landscape_v1.py": "929de7aa975559892048fd3fa41e9c63a7a3a44ef617fcc1029e0cf1ce2f9906",
+    "scripts/prepare_mori_plaza_west_path.py": "c508fa6c9c75fad04d38ec7c217e6b8360f3c21673e6092b2d2b3e4c5985eede"
+  },
+  "road_source_sha256": {
+    "work/osm.xml": "f04e8e70ab24a61ca749375d1ef37401feb0fdc840cc506b670ef71454a6a8ab",
+    "work/twin_towers/tower_surfaces.json": "184875e48426ba84b0dddb169f2dc2a414798ac42ee3b7c0047b572991013531"
+  },
+  "connection_plan_sha256": "6bb6165ee58f9827162256023a7f5b8ebd514b66f05307b8bf01606df0a0127c",
+  "changed_objects": [
+    "pavement_0 unified road",
+    "asphalt 15s road detail",
+    "gutter 15s road detail",
+    "OTW Mori west path / seam fill"
+  ],
+  "output_blends": {
+    "before.blend": "eae18eb05bd30f60a377983b8e7b9ed6add9d0979d9063855068798f6a473c12",
+    "after.blend": "2a6f63658722beecdb8af2158baed62c044f33a22084df0d227c70c67332ae5b"
+  }
+}
