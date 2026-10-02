@@ -19,6 +19,8 @@
 
 正面・南側の入口付近は保存シーンの下向きraycastで地表Z=0を確認しました。1F床上をZ=0.02に合わせています。これはシーン内の接地検査で、現地標高の測量値ではありません。離れた右側の既存歩道にはZ=0.46の区間が残ります。
 
+東京都の案内に記載された有効幅155cmは1F正面玄関の値です。本候補で他の扉へ同じ幅を適用した部分は制作上の推定であり、全6組を実測したものではありません。
+
 公式1F図のNorth/East階段表示と全体案内から、実物の主正面は北東側と判断しています。本候補では既存の軸に沿った塔・建物配置を保持し、正面を+Y側へ近似登録しています。実際の敷地回転、地形の高低、道路との位置合わせを復元したという意味ではありません。
 
 南側出入口は公式に2Fと案内されています。本候補ではこの高さを保ち、平坦な既存地盤から入るための直階段を付加しています。実物の駐車場地盤の復元ではなく、既存シーンへの推定接続です。内装・店舗、扉の開閉動作、設備の工学的寸法は対象外です。
@@ -33,4 +35,21 @@ python scripts/review.py --blender BLENDER --input PR59_CANDIDATE --lock manifes
 
 入力hash、4対象のmesh hash、7部品の名前、追加数を固定し、別入力や二重適用は拒否します。元入力へ保存せず、出力を別Blenderプロセスで開き直して検査します。検証成功と実物精度・人間の採用判断は区別します。
 
-比較画像と最終検証結果は、確定した保存候補に対応付けて記録します。
+保存モデルの独立検査も、新しいJSON出力先を指定して実行します。
+
+```powershell
+python scripts/validate_tower_foottown.py --blender BLENDER --input data/local/reviews/foottown-v2-review/after.blend --original PR59_CANDIDATE --output data/local/reviews/foottown-v2-review/saved-geometry-validation.json --timeout 1200
+```
+
+## 検証結果と画像
+
+[同条件の8視点・16枚](../renders/previews/foottown-v2/README.md) / [保存後検証の記録](foottown-v2-validation.json) / [画像とコードのhash](../renders/previews/foottown-v2/evidence.json)
+
+2026-10-03、Blender 4.5.1 LTS・OptiX、1280×848・32 samples・seed 0で確認しました。実装と描画時のcommitは `ba72fa0f471013db3836fd50b9719c84d1f7ae74` です。
+
+- portable checks 398件：390成功、任意依存8省略。構文検査も成功。
+- 別プロセスで保存候補を開き直し、7部品の閉形状、入口6組、正面床と柱の接地、南25段階段、屋上昇降路、既存階段50床面の頭上空間を確認。
+- FootTown以外の既存3,354 objects、元の素材・画像資産・metadataと表示状態は不変。原本と保存候補のhashも検査前後で不変。
+- 公開PNGはテキストmetadataだけを除去し、圧縮画像データと復号後の画素が元レンダーと同一であることを確認。
+
+既存入力には5個の空メッシュとmodifier指紋の検査制限があり、その警告は変更前後で同じです。地理位置・寸法・敷地高低の推定は上記の通り残ります。人間の画像レビューと採用判断は未完了です。

@@ -1,0 +1,375 @@
+{
+  "version": 1,
+  "date": "2026-10-03",
+  "ok": true,
+  "status": "candidate-human-review-pending",
+  "human_visual_approval": false,
+  "geometry_and_render_code_commit": "ba72fa0f471013db3836fd50b9719c84d1f7ae74",
+  "input_sha256": "7a5cd95d2223092a1a2931131eeadd3978605d8e7293b5908aada3b13f301350",
+  "output_blends": {
+    "before.blend": "16fc1b36a4c4ef8a9af7e47ac678e16cf19cf7a8ee279e3e2602f556c5124b63",
+    "after.blend": "e4ecbdf02fb6217e67c111f284a2d905bb31f3521fbd380818e687ba5d85da97"
+  },
+  "runtime": {
+    "blender_version": "4.5.1 LTS",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "device": "OPTIX",
+    "width": 1280,
+    "height": 848,
+    "samples": 32,
+    "seed": 0
+  },
+  "existing_objects_changed": [
+    "OTW Tokyo Tower structure / foottown-glazing",
+    "OTW Tokyo Tower structure / foottown-metal",
+    "OTW Tokyo Tower structure / foottown-roof",
+    "OTW Tokyo Tower structure / foottown-shell"
+  ],
+  "added_objects": [
+    "OTW Tokyo Tower FootTown v2 / foottown-cladding",
+    "OTW Tokyo Tower FootTown v2 / foottown-joints",
+    "OTW Tokyo Tower FootTown v2 / foottown-screen"
+  ],
+  "counts": {
+    "before": {
+      "objects": 3358,
+      "vertices": 54572673,
+      "polygons": 42580950
+    },
+    "after": {
+      "objects": 3361,
+      "vertices": 54591897,
+      "polygons": 42595590
+    }
+  },
+  "matched_views": [
+    "foottown-front",
+    "foottown-entrance",
+    "foottown-context",
+    "foottown-south",
+    "foottown-roof",
+    "foottown-roof-core",
+    "foottown-roof-access",
+    "tower-context"
+  ],
+  "jobs": {
+    "prepare": {
+      "seconds": 12.422,
+      "report_sha256": "fbe272768b747db7ac8a5b8d3075c9a91d86ea3e77984c1cec78420d0d13e12e"
+    },
+    "validate-before": {
+      "seconds": 35.266,
+      "report_sha256": "01792e2560a6ce9a15b0c9228077f1f898a97fcab12f965d5f98d45d160e680e"
+    },
+    "validate-after": {
+      "seconds": 35.031,
+      "report_sha256": "8200bdc7252f329f87137c657865de9c6164c5b9215f2406114c425b5e6bb90c"
+    },
+    "render-before": {
+      "seconds": 55.937,
+      "report_sha256": "51520e9828c58ece3512c34a54de4152ae4ee2fda0acfdb74c9c6cc47696ab21"
+    },
+    "render-after": {
+      "seconds": 58.031,
+      "report_sha256": "f7dec70a57582b5a29da4e688bac0d0b67bcda0ec704bc0bef815bf046c6b6b5"
+    }
+  },
+  "portable_tests": {
+    "run": 398,
+    "passed": 390,
+    "skipped": 8,
+    "failures": 0,
+    "log_sha256": "989b73d0d90554871f0b8b498722f8e8bc982736b7c79d1ab54e4741c4dec8e2"
+  },
+  "syntax_check": "python -m compileall -q scripts tests passed",
+  "warnings_unchanged": [
+    "Modifier stack not fingerprinted: Close detail rim",
+    "Modifier stack not fingerprinted: Close detail iron",
+    "Modifier stack not fingerprinted: Close detail silver",
+    "Modifier stack not fingerprinted: Close detail frame",
+    "Modifier stack not fingerprinted: Tokyo traffic • silver",
+    "Modifier stack not fingerprinted: Tokyo traffic • white",
+    "Modifier stack not fingerprinted: Tokyo traffic • blue",
+    "Modifier stack not fingerprinted: Tokyo traffic • black",
+    "Modifier stack not fingerprinted: Tokyo traffic • red",
+    "Modifier stack not fingerprinted: Tokyo Tower structure / stone",
+    "Modifier stack not fingerprinted: Tokyo Tower structure / orange",
+    "Modifier stack not fingerprinted: Tokyo Tower structure / white",
+    "Modifier stack not fingerprinted: Tokyo Tower decks and interior / white",
+    "Modifier stack not fingerprinted: Tokyo Tower decks and interior / aluminum",
+    "Known empty legacy mesh: Tokyo Tower decks and interior / wood; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Modifier stack not fingerprinted: Tokyo Tower decks and interior / wood",
+    "Known empty legacy mesh: Tokyo Tower decks and interior / stone; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Modifier stack not fingerprinted: Tokyo Tower decks and interior / stone",
+    "Known empty legacy mesh: Tokyo Tower decks and interior / soil; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Known empty legacy mesh: Tokyo Tower decks and interior / leaf; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Known empty legacy mesh: Tokyo Tower decks and interior / darkmetal; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Modifier stack not fingerprinted: Mori JP curtain wall / aluminum",
+    "Modifier stack not fingerprinted: Mori JP interior / stone",
+    "Modifier stack not fingerprinted: Mori JP interior / wood",
+    "Modifier stack not fingerprinted: Mori JP interior / aluminum",
+    "Modifier stack not fingerprinted: Mori JP interior / chair",
+    "Modifier stack not fingerprinted: Mori JP interior / fabric",
+    "Modifier stack not fingerprinted: Observation interior detail / charcoal glass",
+    "Modifier stack not fingerprinted: Observation interior detail / brushed steel",
+    "Modifier stack not fingerprinted: Observation interior detail / ceiling",
+    "Modifier stack not fingerprinted: Photo based main deck / frame",
+    "Modifier stack not fingerprinted: Photo based main deck / silver",
+    "Modifier stack not fingerprinted: Photo based main deck / wall",
+    "Modifier stack not fingerprinted: 2019 reference window revision / black",
+    "Modifier stack not fingerprinted: 2019 reference window revision / aluminum",
+    "Modifier stack not fingerprinted: 2019 reference window revision / white"
+  ],
+  "saved_geometry_validation": {
+    "meshes": {
+      "foottown-shell": {
+        "vertices": 656,
+        "polygons": 492,
+        "components": 82,
+        "bounds_m": [
+          [
+            -36.5,
+            36.5
+          ],
+          [
+            -29.0,
+            29.0
+          ],
+          [
+            0.0,
+            25.079999923706055
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 1077.4517817796298
+      },
+      "foottown-glazing": {
+        "vertices": 464,
+        "polygons": 348,
+        "components": 58,
+        "bounds_m": [
+          [
+            -32.334999084472656,
+            31.334999084472656
+          ],
+          [
+            -28.897499084472656,
+            33.066001892089844
+          ],
+          [
+            0.019999999552965164,
+            23.204999923706055
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 3.399479841212956
+      },
+      "foottown-metal": {
+        "vertices": 12680,
+        "polygons": 9388,
+        "components": 1524,
+        "bounds_m": [
+          [
+            -36.5,
+            36.5
+          ],
+          [
+            -32.099998474121094,
+            33.150001525878906
+          ],
+          [
+            0.0,
+            25.34000015258789
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 96.02066596532991
+      },
+      "foottown-roof": {
+        "vertices": 280,
+        "polygons": 210,
+        "components": 35,
+        "bounds_m": [
+          [
+            -36.5,
+            36.5
+          ],
+          [
+            -31.399999618530273,
+            33.29999923706055
+          ],
+          [
+            0.0,
+            24.200000762939453
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 872.0989467660692
+      },
+      "foottown-cladding": {
+        "vertices": 1048,
+        "polygons": 786,
+        "components": 131,
+        "bounds_m": [
+          [
+            -28.492000579833984,
+            28.492000579833984
+          ],
+          [
+            -32.09199905395508,
+            33.141998291015625
+          ],
+          [
+            0.0,
+            19.170000076293945
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 109.70858969203086
+      },
+      "foottown-joints": {
+        "vertices": 544,
+        "polygons": 408,
+        "components": 68,
+        "bounds_m": [
+          [
+            -28.459999084472656,
+            28.459999084472656
+          ],
+          [
+            -32.060001373291016,
+            33.11000061035156
+          ],
+          [
+            0.019999999552965164,
+            25.227500915527344
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 17.052275964441474
+      },
+      "foottown-screen": {
+        "vertices": 11680,
+        "polygons": 8760,
+        "components": 1460,
+        "bounds_m": [
+          [
+            -14.002828598022461,
+            14.002828598022461
+          ],
+          [
+            29.125999450683594,
+            29.134000778198242
+          ],
+          [
+            7.55717134475708,
+            16.1428279876709
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 0.4349633968239472
+      }
+    },
+    "clearances": [
+      "roof lift shaft",
+      "roof stair approach",
+      "roof stair doorway"
+    ],
+    "existing_stair_headroom_surfaces": 50,
+    "roof_elevation_m": 16.2,
+    "entries": {
+      "main_door_pairs": 4,
+      "south_door_pairs": 2,
+      "door_pair_width_m": 1.55,
+      "door_state": "closed static exterior geometry"
+    },
+    "ground_connections": {
+      "ground_z_m": 0,
+      "main_floor_top_m": 0.02,
+      "grounded_main_columns": 4,
+      "grounded_south_columns": 6,
+      "main_door_threshold_max_m": 0.015,
+      "south_stair_treads": 25,
+      "grounded_south_stair_bases": 2,
+      "south_stair_start_floor_m": 0.02,
+      "south_first_tread_top_m": 0.19519999623298645,
+      "south_stair_riser_m": 0.17520000000000002,
+      "south_landing_top_m": 4.4
+    },
+    "ok": true,
+    "blender_version": "4.5.1 LTS",
+    "frame": 1,
+    "scene_saved": false,
+    "autoexec_enabled": false,
+    "inspected_meshes": 7,
+    "saved_mesh_sha256": {
+      "OTW Tokyo Tower structure / foottown-shell": "610f745a10034550b33bf8fac0f1e939983a915374d6aeca92147772b498774a",
+      "OTW Tokyo Tower structure / foottown-glazing": "03bd2029e964eeef5891bbd666513917e5ae511fb6b84ad258dbbe6c7b54e333",
+      "OTW Tokyo Tower structure / foottown-metal": "1ca6dd5944c2ba44958af009e32855fa775afd13a864978bd66ac3c54d21ce2e",
+      "OTW Tokyo Tower structure / foottown-roof": "77aa1af31ee57f18907eb0daaf6e17f231ce5e05d9530ac3c8c1b5eeee33f696",
+      "OTW Tokyo Tower FootTown v2 / foottown-cladding": "721a87a64de78ff172c05e4152feccb25b033c32ea7c9b79e560b090d9edd93f",
+      "OTW Tokyo Tower FootTown v2 / foottown-joints": "20861cd9c821e9c733ec98fa249dc61a2c4c7d17e5ee3bb0f07cdae3f39ce72d",
+      "OTW Tokyo Tower FootTown v2 / foottown-screen": "1f8f4cf8bd15daec3bfb33d951915ea633bb59d8724c26bc4aa4c7710c4b3662"
+    },
+    "saved_material_sha256": {
+      "OTW Tokyo Tower structure / foottown-shell": "e53967954d7d17e22af363f968225ea41592c7415b9ae35e572d5355df2df283",
+      "OTW Tokyo Tower structure / foottown-glazing": "cf03dda73bd3e8798a1c5c493a6b9fe7ddc1ed151dab720d3f21925f356c7102",
+      "OTW Tokyo Tower structure / foottown-metal": "b9b16fd583511db0ccc5a64218fc298bb4ce21ebb3053f17454a831d19cde6a8",
+      "OTW Tokyo Tower structure / foottown-roof": "0c510bc325e775f9c284015c55eaabc22977910128e7907dceb0d7aac3b2190f",
+      "OTW Tokyo Tower FootTown v2 / foottown-cladding": "3d010fe0184681e03db9f22a3991d79a792116e39b4be7b9cde870da7a28db18",
+      "OTW Tokyo Tower FootTown v2 / foottown-joints": "aeebc277853b4faa2996ab9257659a7d877f5dd8e8fa2c50f7f11102c54f6a79",
+      "OTW Tokyo Tower FootTown v2 / foottown-screen": "6919685662a9a7038e62700b2a52121b0ee5b1cb00882d177695bfe7b2a01a59"
+    },
+    "changed_objects": [
+      "OTW Tokyo Tower structure / foottown-shell",
+      "OTW Tokyo Tower structure / foottown-glazing",
+      "OTW Tokyo Tower structure / foottown-metal",
+      "OTW Tokyo Tower structure / foottown-roof",
+      "OTW Tokyo Tower FootTown v2 / foottown-cladding",
+      "OTW Tokyo Tower FootTown v2 / foottown-joints",
+      "OTW Tokyo Tower FootTown v2 / foottown-screen"
+    ],
+    "protected_existing_objects": 3354,
+    "protected_metadata_and_flags_unchanged": true,
+    "original_assets_unchanged": true,
+    "limitations": [
+      "Photo-guided model constraints do not certify real-world dimensions or engineering correctness.",
+      "Closed disconnected solids may meet or intersect at construction joints.",
+      "Existing mesh/material/assets use the review harness fingerprints; arbitrary animation and complete modifier state are not fingerprinted."
+    ],
+    "input_unchanged": true,
+    "original_unchanged": true,
+    "code_unchanged": true,
+    "input_sha256": "e4ecbdf02fb6217e67c111f284a2d905bb31f3521fbd380818e687ba5d85da97",
+    "original_sha256": "7a5cd95d2223092a1a2931131eeadd3978605d8e7293b5908aada3b13f301350",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "python_version": "3.11.11",
+    "code_sha256": {
+      "validate_tower_foottown.py": "ddf246dd40b4acab8c6084743f7c26b6242fd2a8bdc9e7eff9e463f0139245c2",
+      "tower_foottown_v2.py": "52b4455ddf146c0dc1444226a492aeacf3d68e593918cd0365a6b49eaf9af6d4",
+      "tower_foottown_geometry_v2.py": "c3bd8f8cb5d7a38f5ccee78c3392811b64b7742a321b1585abe307876c3ab818",
+      "tower_structure_v1.py": "bfb1730e3277138aec489cdb113c6af1738a5c8d1ebad395f6119ad2d1656821",
+      "validate_tower_structure.py": "03f911a2f85f4aee0d32d986d3210b7c4a495e13487f062997abe5d26ee0581c",
+      "blender_worker.py": "7cd8a0437c8378a9adc72390291a8d8eef7573b926cdb1e3eb9252ed9c517cef",
+      "review.py": "622c4fd41e0128ae48a4d912a98aaed72edb0322fd1af06947d0eb487589d418",
+      "foottown-v2-features.json": "53b1b64a59da344150bd0e6e9af40f3d4063f6147b03d4e651ed1d91c29b4f41"
+    }
+  },
+  "local_run": "data/local/reviews/foottown-v2-final-01",
+  "input_composition": "PR59 upper-lift candidate on the prior composed city. The ordinary shared city registration remains unchanged.",
+  "limitations": [
+    "Human visual approval is required.",
+    "Peak RAM/VRAM and physical accuracy are not measured.",
+    "Timing is one run, not a warmed-up median.",
+    "Dependency audit and fingerprints cover documented initial checks, not all Blender features.",
+    "Footprint, dimensions and facade registration retain the approximate legacy tower frame.",
+    "South entrance stairs adapt the real second-floor entrance to flat inherited terrain; actual site grading is not reproduced."
+  ]
+}
