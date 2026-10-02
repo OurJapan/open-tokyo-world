@@ -1,0 +1,582 @@
+{
+  "version": 1,
+  "date": "2026-10-03",
+  "ok": true,
+  "purpose": "Latest-main verification of the completed northeast bend for the authorized Draft PR; no merge.",
+  "integration": {
+    "main_commit": "68247dad0421f331f4179b9146a7b06273540a01",
+    "original_commit": "d2b2731552db5c8cc8d4f0b209543a51356a7440",
+    "checked_code_commit": "582e286f2207fb6c205933bbc9edbbc62531e73d",
+    "source_scene_code_base_commit": "102ad0a41a84b5336795bb8d5b2aeb5e8c81eb39",
+    "pr47_merge_commit": "234b163210ac19d61f33e86b6920b8b26f9d453a",
+    "pr51_merge_commit": "3b1eb5f6c10ca9c0ebb072348faea4981985439e",
+    "pr47_and_pr51_merged": true,
+    "only_original_east_bend_commit_cherry_picked": true,
+    "input_matches_pr51_final_artifact_in_main": true,
+    "existing_main_files_unchanged": true,
+    "shared_city_registration_unchanged": true,
+    "scene_scope": "Pinned PR47 + PR51 city; other later building, Shiba and tower scene candidates are not combined."
+  },
+  "input_sha256": "966a81151beaf851a796bae8f91cad4d4106e82a40ccc69bad92aec48f1f6d9b",
+  "input_unchanged": true,
+  "plan": {
+    "sha256": "a5ad01479cf411183cfa019e945a06efc9999dd11d0f2f9f69c242bafd3397ee",
+    "regenerated_matches_handoff": true,
+    "audit": {
+      "fill_area_m2": 0.04268141743037379,
+      "maximum_distance_to_either_surface_m": 0.01,
+      "core_inset_m": 0.001,
+      "overlap_existing_m2": 3.9046940795659835e-07,
+      "road_edge_clearance_m": 0.0,
+      "adopted_seam_clearance_m": 0.0001,
+      "mesh_origin_m": [
+        -389.0,
+        370.0,
+        0.0
+      ],
+      "overlap_adopted_seam_m2": 0.0,
+      "height_m": 0.11,
+      "basis": "Inherited millimetric calculation gaps inside the new flat core only; no surveyed geometry."
+    }
+  },
+  "patch_sha256": "a2b09f9c9f89e3b3643669eb2c0fa6e86aa34025f8664e8f2937bb819b6bacdf",
+  "executed_code": {
+    "scripts/audit_mori_plaza_levels.py": {
+      "executed_bytes_sha256": "ccd9bffff36ff5f0e96e3c951f97c16142a180cfc8e827ec76ed9e9b73c4b02b",
+      "lf_normalized_sha256": "1936a5e5ac040b5de0aa1ca841625da1141cc0c4768aed19b22a573f14beb35f"
+    },
+    "scripts/blender_worker.py": {
+      "executed_bytes_sha256": "833a3b43d83eccb075d29d912fad757e6585a4318b1531f7ebcdd80008ff268f",
+      "lf_normalized_sha256": "28eed95cfc25ae1830b58f544e73fb0207ecaa4147dd82ec8bd83ed64df35b2d"
+    },
+    "scripts/city_catalog_blender.py": {
+      "executed_bytes_sha256": "5ee2236d08527aa02304559f65932e4ee781e2b53e5725d196935f8f8aef0550",
+      "lf_normalized_sha256": "1f852b0cc58c45b9e374d6b5c0582bcddac7e2db2bd39251556904b1a05c27e2"
+    },
+    "scripts/mori_east_bend.py": {
+      "executed_bytes_sha256": "f730ed66384b1e8f3496f9822cd610fba6b999b9212b39bebd37b446a8793146",
+      "lf_normalized_sha256": "e50b25f2152217af2e8cb3725896f0b20fbc839a0015782034ecae9a32ce175a"
+    },
+    "scripts/mori_east_bend_blender.py": {
+      "executed_bytes_sha256": "0f293c5af417263a14f4357c4c59964fee952e38176c9fafd22c0ab43222dc44",
+      "lf_normalized_sha256": "b0080e2ffb14a440a1c421b322797fbd002ac4120b114a0beca9519c7c824ebe"
+    },
+    "scripts/mori_east_bend_review_copy.py": {
+      "executed_bytes_sha256": "25aa7834f533e32419e5653bd2d20382c53fcf79928357d0d0f814ada1a43ae2",
+      "lf_normalized_sha256": "3e9ec631077f7d62c7838a5c9f20a648443cb261af1cd5a681b6798c9dd6ca1d"
+    },
+    "scripts/mori_plaza_connection_v1.py": {
+      "executed_bytes_sha256": "316e95dbda267b5c27ad38422af96ceafe9042eeec4758f2afd1c3cb00c6b594",
+      "lf_normalized_sha256": "798ce27187a3a6f38e6ddd4822c78f47632b8e2fd17795140f3e7edb1fa58f8a"
+    },
+    "scripts/mori_plaza_east_bend_v1.py": {
+      "executed_bytes_sha256": "9fa640b451b639393a6a35d9a5a0381697efa50f305fa30337d591cc8e2a75f1",
+      "lf_normalized_sha256": "5a959cbfe8e4676cd5d1127fb80383da16fa38f87fdaf4c9dc03a3719d814202"
+    },
+    "scripts/mori_plaza_landscape_v1.py": {
+      "executed_bytes_sha256": "929de7aa975559892048fd3fa41e9c63a7a3a44ef617fcc1029e0cf1ce2f9906",
+      "lf_normalized_sha256": "bae87e622bc9b9c678a1491c3fc6897b294addf3f08400b3a02f3bca9ee2ce29"
+    },
+    "scripts/mori_plaza_outline_v1.py": {
+      "executed_bytes_sha256": "7fc8cf44dc466ff9fe0031c4cf99bd6358291b161125465a02abe33416656c69",
+      "lf_normalized_sha256": "bf32df1b459cf5851f7aefd6ad6a92f9f81fe3867cba3d40a322f749ec2aa3c6"
+    },
+    "scripts/prepare_mori_plaza_connection.py": {
+      "executed_bytes_sha256": "23f84ccd274fc233b916f108f57b681f5d2c3bd1c9dfb08181835cb79bda276c",
+      "lf_normalized_sha256": "13a12cbdecc1725973be3ceabb4fe1209c2083a00fae6f021e6e9e56ea433191"
+    },
+    "scripts/prepare_mori_plaza_east_bend.py": {
+      "executed_bytes_sha256": "e600447cd0ade7e5fbc0b9f21ebca4624f3519d1af9849c91f6941bfd71c8f4a",
+      "lf_normalized_sha256": "957005e376094e82b773a94dba9fec9146d126d0d270c3def86c6d4f3f8ce6a5"
+    },
+    "scripts/tower_approach.py": {
+      "executed_bytes_sha256": "6b6d9240ae937d4adb9176b46138b89e53ada54c43640cf60700915c0d04a384",
+      "lf_normalized_sha256": "bff69a508644ac7ab94e9da883a31de6e57368056dd368fd51ad630f8de758b2"
+    },
+    "scripts/tower_approach_blender.py": {
+      "executed_bytes_sha256": "70674e1d74b4fdceca092684694a88e300d39552ffdb989429aa5f21e3b6ee4d",
+      "lf_normalized_sha256": "8542d6f90456bb5a9efe44d34f509d4675ae3aeac17897991c89c2a99e5b58b0"
+    },
+    "scripts/validate_mori_plaza_east_bend.py": {
+      "executed_bytes_sha256": "93f2200d6c975f142e07ca1c7d20756dc358f6544b3e94a922e2b3193a0d5568",
+      "lf_normalized_sha256": "6d379817dcdb21ad30f958251f3da2592579702697f42cf98b37136370349de9"
+    },
+    "scripts/validate_mori_plaza_outline.py": {
+      "executed_bytes_sha256": "6ee6170e52a05e457f4e18b6e7bb9f709b1abb28f553177e396b357ba41cba27",
+      "lf_normalized_sha256": "2c70ec41828fd596202aedd43c5c7108abe0aa2afcb0913f32f3f536460b92c6"
+    },
+    "tests/test_mori_plaza_east_bend.py": {
+      "executed_bytes_sha256": "81f3c8caad55964fb58c59050b837a1ecc0106f4338b5cb74b0c3be6eed7b0e7",
+      "lf_normalized_sha256": "1b7bc6aa66045e9b382db70ad396fb156ff26b55d47f318f7f27a556f0b8e5f9"
+    }
+  },
+  "outputs_local_only": {
+    "after.blend": {
+      "sha256": "994c2007fa97b09b7ff8db6c41c249687337f25d169d48851e2a3fdcd99ccab7",
+      "bytes": 558512321
+    },
+    "before-review.blend": {
+      "sha256": "bf40c00dec0f030364a47ee144b39881bd712f494cec824c18f89d3d9262d2d5",
+      "bytes": 18350964
+    },
+    "after-review.blend": {
+      "sha256": "aed5d9e342048e954b18453dbd38b445e026d81bbb9d2f7c35f492eb19da23fd",
+      "bytes": 18355054
+    }
+  },
+  "saved_reopen": {
+    "full_city_validated_in_fresh_process": true,
+    "review_copies_fresh_process_reopen": true,
+    "original_handoff_snapshots_identical": {
+      "validate-before": true,
+      "validate-after": true
+    },
+    "geometry_audit_matches_handoff": true,
+    "original_handoff_after_sha256": "ead21b18a8f4c9f7b74cbc2acdeefadab1fef8d9f1ac2c9f9a79ba9ec3e6398c",
+    "note": "New blend byte hash changes on save; the complete recorded Before/After snapshots equal the original candidate."
+  },
+  "preservation": {
+    "ok": true,
+    "unchanged_objects": 3323,
+    "changed_road_objects": [
+      "asphalt 15s road detail",
+      "gutter 15s road detail",
+      "pavement_0 unified road"
+    ],
+    "added_objects": [
+      "OTW Mori east bend / seam fill"
+    ],
+    "unchanged_assets": 383,
+    "unchanged_collections_except_seam_membership": 18,
+    "unchanged_warning_count": 36,
+    "embedded_texts_unchanged": 3
+  },
+  "geometry_audit": {
+    "ok": true,
+    "objects": {
+      "asphalt 15s road detail": {
+        "original_vertices_retained": 423335,
+        "outside_faces_preserved": 140427,
+        "xy_symmetric_difference_m2": 7.836942267496622e-05,
+        "maximum_vertex_height_error_m": 8.807795768839277e-07,
+        "inverted_new_walking_faces": 0
+      },
+      "gutter 15s road detail": {
+        "original_vertices_retained": 102204,
+        "outside_faces_preserved": 33232,
+        "xy_symmetric_difference_m2": 1.5187077224254608e-05,
+        "maximum_vertex_height_error_m": 8.807795768839277e-07,
+        "inverted_new_walking_faces": 0
+      },
+      "pavement_0 unified road": {
+        "original_vertices_retained": 278939,
+        "outside_faces_preserved": 270996,
+        "xy_symmetric_difference_m2": 0.0,
+        "maximum_vertex_height_error_m": 1.555743084358241e-08,
+        "inverted_new_walking_faces": 0
+      }
+    },
+    "boundary_samples": 45,
+    "selected_boundary_samples": 73,
+    "seam_fill": {
+      "closed_consistent_mesh": true,
+      "area_m2": 0.0426814174303729,
+      "overlap_existing_m2": 3.9046940795659835e-07,
+      "overlap_adopted_seam_m2": 0.0
+    },
+    "boundary_maximum_rise_m": 4.76837158203125e-07,
+    "unresolved_boundary_probes": [],
+    "prior_junction_and_entrance_probes_preserved": 567,
+    "flat_road_grid_probes": 134,
+    "limits": [
+      "Fixed model-space probes; no surveyed elevations, continuous collision or accessibility certification.",
+      "Only three road meshes inside the declared rectangle may change."
+    ]
+  },
+  "contacts": {
+    "pairs": 45,
+    "boundary_probes": 1395,
+    "before_maximum_rise_m": 0.350000262260437,
+    "after_maximum_rise_m": 4.76837158203125e-07,
+    "exposed_ground_probes_before": 48,
+    "exposed_ground_probes_after": 0
+  },
+  "duplicate": {
+    "ok": true,
+    "refused": "East bend correction already applied",
+    "saved": false,
+    "saved_candidate_hash_unchanged": true
+  },
+  "render": {
+    "settings": {
+      "blender_version": "4.5.1 LTS",
+      "device": "OPTIX",
+      "width": 960,
+      "height": 540,
+      "samples": 16,
+      "seed": 0
+    },
+    "frame": 1,
+    "camera_matrices_match": true,
+    "cameras_sha256": "a82ff8b162600dd7da8c082c49f971e4caf91a7f4f7a2e938a13246d3d590483",
+    "views": [
+      {
+        "id": "context",
+        "frame": 1,
+        "matrix_world": [
+          [
+            0.9386698007583618,
+            -0.21054835617542267,
+            0.27307209372520447,
+            -380.8924255371094
+          ],
+          [
+            0.34481731057167053,
+            0.5731596946716309,
+            -0.7433633208274841,
+            348.51055908203125
+          ],
+          [
+            4.374463458134414e-09,
+            0.7919327020645142,
+            0.6106083989143372,
+            18.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "lens_mm": 42,
+        "sensor_width_mm": 36,
+        "sensor_height_mm": 24,
+        "sensor_fit": "HORIZONTAL",
+        "shift_x": 0,
+        "shift_y": 0,
+        "clip_start": 0.03,
+        "clip_end": 600
+      },
+      {
+        "id": "walk",
+        "frame": 1,
+        "matrix_world": [
+          [
+            0.8944265842437744,
+            0.06200550124049187,
+            -0.44289547204971313,
+            -392.51995849609375
+          ],
+          [
+            -0.447214812040329,
+            0.1240105926990509,
+            -0.8857879638671875,
+            363.26861572265625
+          ],
+          [
+            1.2256220927042705e-08,
+            0.9903417229652405,
+            0.1386481374502182,
+            1.7000000476837158
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "lens_mm": 34,
+        "sensor_width_mm": 36,
+        "sensor_height_mm": 24,
+        "sensor_fit": "HORIZONTAL",
+        "shift_x": 0,
+        "shift_y": 0,
+        "clip_start": 0.03,
+        "clip_end": 600
+      },
+      {
+        "id": "edge",
+        "frame": 1,
+        "matrix_world": [
+          [
+            0.4472109079360962,
+            -0.2087351232767105,
+            0.8697309494018555,
+            -383.57568359375
+          ],
+          [
+            0.8944284915924072,
+            0.10436686873435974,
+            -0.4348621368408203,
+            367.7407531738281
+          ],
+          [
+            -6.3469300926044525e-09,
+            0.9723872542381287,
+            0.23337270319461823,
+            1.2000000476837158
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "lens_mm": 48,
+        "sensor_width_mm": 36,
+        "sensor_height_mm": 24,
+        "sensor_fit": "HORIZONTAL",
+        "shift_x": 0,
+        "shift_y": 0,
+        "clip_start": 0.03,
+        "clip_end": 600
+      },
+      {
+        "id": "reverse",
+        "frame": 1,
+        "matrix_world": [
+          [
+            -0.9701427221298218,
+            -0.0653599351644516,
+            0.2335612028837204,
+            -386.7062072753906
+          ],
+          [
+            0.24253404140472412,
+            -0.26144105195999146,
+            0.9342513680458069,
+            379.3682861328125
+          ],
+          [
+            -1.0135391903531854e-07,
+            0.9630038738250732,
+            0.2694873511791229,
+            2.700000047683716
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "lens_mm": 40,
+        "sensor_width_mm": 36,
+        "sensor_height_mm": 24,
+        "sensor_fit": "HORIZONTAL",
+        "shift_x": 0,
+        "shift_y": 0,
+        "clip_start": 0.03,
+        "clip_end": 600
+      }
+    ],
+    "extraction_bounds_xy_m": [
+      -483.9422619105029,
+      275.4240199989925,
+      -293.9422619105029,
+      465.4240199989925
+    ],
+    "scope": "190m XY neighborhood extracted from the full candidate; full city not rendered.",
+    "preview_conversion": "Same framing, System.Drawing HighQualityBicubic 960x540 to 640x360; only IHDR/IDAT/IEND chunks retained.",
+    "images": {
+      "before-context.png": {
+        "source": {
+          "sha256": "03ba25074ae946204ab2b73b9cfa1ab0698f660bfa9cac068a9e4347c8359723",
+          "bytes": 627169,
+          "width": 960,
+          "height": 540,
+          "pixel_sha256": "577b988288de52c7805ee58cc31cf21ed3a3be311faeffcce6c3502a5902493a"
+        },
+        "published": {
+          "sha256": "d9c00cc37322871c00bf9c6b211c6af6f1496b710ea0f8ca16d9386cd22ac519",
+          "bytes": 269120,
+          "width": 640,
+          "height": 360
+        },
+        "pixel_hash_matches_original_handoff": false
+      },
+      "before-walk.png": {
+        "source": {
+          "sha256": "941998f7c00d2b114cf4fd9aa88461a3bc6bc0f801b77d1f04f1611475ab150d",
+          "bytes": 593800,
+          "width": 960,
+          "height": 540,
+          "pixel_sha256": "bbb0d041800b8b75a8c45fcd79e0d6c4be31e0396b0521b97f8881a88bcb59f0"
+        },
+        "published": {
+          "sha256": "513df8c9e71b6c2c8f56081b1aaa99db1a35ec64b61542499547472985b27bf5",
+          "bytes": 261273,
+          "width": 640,
+          "height": 360
+        },
+        "pixel_hash_matches_original_handoff": false
+      },
+      "before-edge.png": {
+        "source": {
+          "sha256": "4fbae7ff488d3a8e6263825fdbcb34ce52e03e3589eedea30ca45b9a620d1577",
+          "bytes": 555294,
+          "width": 960,
+          "height": 540,
+          "pixel_sha256": "0e18a164e0e5c806e5428e6270e4d88d2ef2ca8985421fb25be92bf618ec189d"
+        },
+        "published": {
+          "sha256": "c05b1bc8eb1fae8414a4ab0850b605f89ec155b23b2a38ea91e6abb8b946dbeb",
+          "bytes": 227166,
+          "width": 640,
+          "height": 360
+        },
+        "pixel_hash_matches_original_handoff": false
+      },
+      "before-reverse.png": {
+        "source": {
+          "sha256": "34c8cec33b559f48d6a6f5a952dbe3506edc96f9d065574c0835e8dd32ebd1f2",
+          "bytes": 603283,
+          "width": 960,
+          "height": 540,
+          "pixel_sha256": "d8887cfe875bf2e8d857a9bcd65256d9bd35dec3c0d4c1bd2eacf8688afbedd6"
+        },
+        "published": {
+          "sha256": "00f98a0befb1acb6fcfe668b703bee413a7c1c72337fa0efca4736ae7947c2e1",
+          "bytes": 249332,
+          "width": 640,
+          "height": 360
+        },
+        "pixel_hash_matches_original_handoff": false
+      },
+      "after-context.png": {
+        "source": {
+          "sha256": "53b81c0969471274603ba059ada3bd21f3d3c79786be41b0aa545ab4511b786f",
+          "bytes": 621873,
+          "width": 960,
+          "height": 540,
+          "pixel_sha256": "d582b890fbe36f6bb90a936d89420f1450294a79cce9b56d18646210c8b1d9ed"
+        },
+        "published": {
+          "sha256": "3198ac479e46da69a139419943872fddf2b0f10607d75bec8476a5157be7b637",
+          "bytes": 265399,
+          "width": 640,
+          "height": 360
+        },
+        "pixel_hash_matches_original_handoff": false
+      },
+      "after-walk.png": {
+        "source": {
+          "sha256": "2d286a3ef075412b127bc5c42e48a65706d6187db06e04519b45182f3f5e89f7",
+          "bytes": 587920,
+          "width": 960,
+          "height": 540,
+          "pixel_sha256": "35327930e0319bd7e4c74dc7524e154fedeeffc68d68080b5d9e685f399d10bf"
+        },
+        "published": {
+          "sha256": "fedc87264b04086c73c37fc5e33a675d01594a69997c876a8a9c993e14a2f285",
+          "bytes": 252648,
+          "width": 640,
+          "height": 360
+        },
+        "pixel_hash_matches_original_handoff": false
+      },
+      "after-edge.png": {
+        "source": {
+          "sha256": "a0b0b3560f3909805e4cafe8ae981221d95843dd277795204fce666039803334",
+          "bytes": 549963,
+          "width": 960,
+          "height": 540,
+          "pixel_sha256": "911a1b2b7fb7c1a27425c1f51ae23753e039915ce991ab21e58341a3c2b89dc2"
+        },
+        "published": {
+          "sha256": "03a2aa3264907992b6fb7f5ad9e023ff691cdc45d6bb115393412578f649e971",
+          "bytes": 213063,
+          "width": 640,
+          "height": 360
+        },
+        "pixel_hash_matches_original_handoff": false
+      },
+      "after-reverse.png": {
+        "source": {
+          "sha256": "19b06e0ca8456c615ef8a0ed3f8c2e86a1cc2a387fabc3274801266907770bf4",
+          "bytes": 599857,
+          "width": 960,
+          "height": 540,
+          "pixel_sha256": "9988539bef84b83b775832e3f3c834bcc3d8ab21dd8e0ba55ded2315fad441ab"
+        },
+        "published": {
+          "sha256": "b263e777435271d4393cbc469ee872d06ef4e2664d7edc94f3bab01aafa747f4",
+          "bytes": 242646,
+          "width": 640,
+          "height": 360
+        },
+        "pixel_hash_matches_original_handoff": false
+      }
+    },
+    "published_total_bytes": 1980647,
+    "visual_review": {
+      "completed": true,
+      "images_reviewed": 8,
+      "findings": [
+        "The bounded bend meets the paving; the raised step and the small local risers are removed.",
+        "Context, walking, low edge and reverse views preserve the surroundings and original material treatment.",
+        "Other roads outside the permitted rectangle retain their original height differences."
+      ],
+      "reviewer": "Codex image inspection; human adoption remains pending"
+    }
+  },
+  "tests": {
+    "portable": {
+      "command": "python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "run": 315,
+      "passed": 307,
+      "skipped": 8,
+      "local_log_sha256": "288f36165528cfb72a9a4aeca1cbf82ead4903ca8759933c90a196f4caf886a7",
+      "runtime": "Blender bundled Python 3.11.11; optional Shapely and photo dependencies absent"
+    },
+    "production": {
+      "command": "python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "run": 315,
+      "passed": 310,
+      "skipped": 5,
+      "local_log_sha256": "6921b89e10b23d8d286b17d696be3eef16b58994ec0fce9def030389cdf2d6ca",
+      "runtime": "Python 3.12.14 / NumPy 2.3.5 / Shapely 2.1.2 / GEOS 3.13.1",
+      "skip_reason": "5 optional photo-estimation image tests; all geometry tests executed"
+    },
+    "compileall": {
+      "command": "python -m compileall -q scripts tests",
+      "exit_code": 0
+    }
+  },
+  "phase_results": {
+    "build": {
+      "exit_code": 0,
+      "seconds": 57.344
+    },
+    "validate-after": {
+      "exit_code": 0,
+      "seconds": 42.859
+    },
+    "render-before": {
+      "exit_code": 0,
+      "seconds": 45.859
+    },
+    "render-after": {
+      "exit_code": 0,
+      "seconds": 50.235
+    },
+    "duplicate": {
+      "exit_code": 0,
+      "seconds": 17.25
+    }
+  },
+  "limits": [
+    "Fixed model-space probes; no surveyed elevations, continuous collision or accessibility certification.",
+    "Only three road meshes inside the declared rectangle may change.",
+    "Provisional model heights; current real-world appearance and elevation have not been surveyed.",
+    "Recorded mesh/material/asset fingerprints are not a proof of all RNA, modifiers or animation equivalence.",
+    "36 existing warnings remain unchanged; no new warnings.",
+    "Public PNGs are authorized review evidence and do not grant new redistribution rights for the source scene.",
+    "Human adoption remains pending; no main merge or shared asset registration performed."
+  ]
+}
