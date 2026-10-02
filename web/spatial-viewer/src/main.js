@@ -12,10 +12,13 @@ import { fresh, cameraQuaternion, geoGate, containRect } from './spatial.js';
 import { makeDraft, validateDraft, sha256 } from './observation.js';
 import { submitObservation } from './submission.js';
 import { createRenderLoop } from './render-loop.js';
+import {localReviewSelection,validateLocalManifest,validateLocalGlb,validateLocalMeasurements,localView} from './local-review.js';
 
 const $=id=>document.getElementById(id);
 const stage=$('stage'),video=$('camera'),host=$('canvas-host');
 let manifest,model,renderer,scene,camera,controls,grid;
+const localRequested=new URLSearchParams(location.search).has('local_model');
+let homeView=null,modelMeasurements=null;
 const renderLoop=createRenderLoop(frame);
 if(document.hidden)renderLoop.pause();
 let active=false,busy=false,viewPose=null,photo=null,draft=null,previewURL=null,packedFile=null;
@@ -25,7 +28,7 @@ let receipt=null,localSaved=false,saving=false;
 let saveQueue=Promise.resolve();
 let memoTimer;
 let sending=false,submissionSnapshot=null;
-const submissionEndpoint=import.meta.env.VITE_OBSERVATION_API_URL||'';
+const submissionEndpoint=localRequested?'':import.meta.env.VITE_OBSERVATION_API_URL||'';
 const consent={evidence_storage:true,public_display:false,visual_map:false,model_training:false,policy_revision:'private-poc-v1'};
 let catalogue=null;
 fetch(`${import.meta.env.BASE_URL}data/iidabashi-buildings.json`).then(r=>{if(!r.ok)throw Error();return r.json();}).then(d=>{catalogue=d;}).catch(()=>{});
@@ -38,7 +41,9 @@ const sensors=new Sensors({onChange:()=>{
 const say=text=>{$('notice').textContent=text;};
 function resetView() {
   if(active)return;
-  camera.position.set(27,20,33);camera.up.set(0,1,0);controls.target.set(0,6,0);controls.update();renderLoop.requestRender();
+  if(homeView){camera.position.fromArray(homeView.position);controls.target.fromArray(homeView.target);}
+  else{camera.position.set(27,20,33);controls.target.set(0,6,0);}
+  camera.up.set(0,1,0);controls.update();renderLoop.requestRender();
 }
 function resize() {
   if(!renderer)return;
@@ -47,6 +52,7 @@ function resize() {
   host.style.inset='auto';Object.assign(host.style,{left:rect.left+'px',top:rect.top+'px',width:rect.width+'px',height:rect.height+'px'});
   renderer.setSize(rect.width,rect.height);camera.aspect=rect.width/rect.height;
   camera.fov=active?2*Math.atan(Math.tan(Math.PI/6)/camera.aspect)*180/Math.PI:48;
+  if(homeView)homeView=localView(manifest.assets[0].bounds_render_m,camera.aspect,camera.fov);
   camera.updateProjectionMatrix();
   renderLoop.requestRender();
 }
@@ -65,14 +71,14 @@ function anchorTest() {
 }
 function stop(message='カメラを終了しました。') {
   active=false;busy=false;sensors.stop();video.pause();video.srcObject=null;video.hidden=true;
-  stage.classList.remove('camera-active');$('start').hidden=false;$('start').disabled=!model;
+  stage.classList.remove('camera-active');$('start').hidden=localRequested;$('start').disabled=localRequested||!model;
   $('stop').hidden=true;$('capture').disabled=!draft;$('reset-view').disabled=false;
   if(model){model.position.set(0,0,0);model.visible=true;}if(grid)grid.visible=true;
   if(controls){controls.enabled=true;resetView();resize();}
   $('mode-label').textContent='3Dビュー';viewPose=null;say(message);
 }
 async function start() {
-  if(busy||active||!model)return;
+  if(localRequested||busy||active||!model)return;
   busy=true;$('start').disabled=true;$('stop').hidden=false;say('カメラへのアクセスを許可してください。');
   try {
     const started=await sensors.start(video);if(!started)return;
@@ -171,7 +177,8 @@ function frame(now) {
     if(now-lastDiagnostic>500||(!active&&!settling)){
       $('diagnostics').textContent=JSON.stringify({secure_context:window.isSecureContext,mode:active?'camera':'viewer',
         location:sensors.location,orientation:sensors.orientation,display_pose:viewPose,
-        frame:manifest?.frame,model_bytes:manifest?.assets[0].bytes,triangles:renderer.info.render.triangles},null,2);
+        frame:manifest?.frame,model_bytes:manifest?.assets[0].bytes,triangles:renderer.info.render.triangles,
+        ...(modelMeasurements?{local_model:modelMeasurements}: {})},null,2);
       lastDiagnostic=now;
     }
   }
@@ -186,15 +193,36 @@ async function init() {
     controls.addEventListener('change',renderLoop.requestRender);
     scene.add(new THREE.HemisphereLight(0xd9edff,0x36536a,2.7));const sun=new THREE.DirectionalLight(0xffdbc4,3);sun.position.set(8,20,12);scene.add(sun);
     grid=new THREE.GridHelper(60,12,0xd4d4d8,0xe7e7eb);grid.material.transparent=true;grid.material.opacity=.45;scene.add(grid);resetView();resize();
-    const area=selectedArea(location.search);$('area').value=area.id;$('viewer-title').textContent=area.label;
-    const response=await fetch(`${import.meta.env.BASE_URL}data/${area.manifest}`);if(!response.ok)throw new Error('表示データを取得できませんでした。');manifest=await response.json();
-    if(manifest.schema_version!=='otw-spatial-manifest/0.1'||!manifest.fixture||manifest.assets.length!==1)throw new Error('未対応の表示データです。');
-    const asset=manifest.assets[0];if(asset.bytes>5*1024*1024||!asset.fixture||asset.feature_id!==null)throw new Error('検証用assetの範囲を超えています。');
-    const assetURL=new URL(`${import.meta.env.BASE_URL}data/${asset.url}`,location.href);if(assetURL.origin!==location.origin)throw new Error('配信元が異なるassetは読み込めません。');
+    const local=localReviewSelection(location.search,import.meta.env.DEV);
+    const area=selectedArea(location.search);$('area').value=area.id;$('viewer-title').textContent=local?'PLATEAU 建物のローカル確認':area.label;
+    const manifestURL=new URL(local?local.manifest:`${import.meta.env.BASE_URL}data/${area.manifest}`,location.href);
+    const response=await fetch(manifestURL);if(!response.ok)throw new Error('表示データを取得できませんでした。');manifest=await response.json();
+    if(!local&&(manifest.schema_version!=='otw-spatial-manifest/0.1'||!manifest.fixture||manifest.assets.length!==1))throw new Error('未対応の表示データです。');
+    const asset=local?validateLocalManifest(manifest):manifest.assets[0];if(!local&&(asset.bytes>5*1024*1024||!asset.fixture||asset.feature_id!==null))throw new Error('検証用assetの範囲を超えています。');
+    const assetURL=local?new URL(asset.url,manifestURL):new URL(`${import.meta.env.BASE_URL}data/${asset.url}`,location.href);if(assetURL.origin!==location.origin)throw new Error('配信元が異なるassetは読み込めません。');
     const r=await fetch(assetURL);if(!r.ok)throw new Error('3Dモデルを取得できませんでした。');
     const bytes=await r.arrayBuffer();if(bytes.byteLength!==asset.bytes||await sha256(bytes)!==asset.sha256)throw new Error('3Dモデルの内容がmanifestと一致しません。');
-    const gltf=await new GLTFLoader().parseAsync(bytes,'');model=gltf.scene;scene.add(model);setOpacity();
-    $('loading').hidden=true;$('start').disabled=false;
+    if(local)validateLocalGlb(bytes);
+    const gltf=await new GLTFLoader().parseAsync(bytes,'');model=gltf.scene;
+    if(local){
+      model.updateMatrixWorld(true);const bounds=new THREE.Box3().setFromObject(model);const featureIds=new Set();let triangles=0;
+      model.traverse(object=>{if(object.userData.gml_id)featureIds.add(object.userData.gml_id);if(object.isMesh)triangles+=(object.geometry.index?.count??object.geometry.attributes.position.count)/3;});
+      modelMeasurements={bounds:[...bounds.min.toArray(),...bounds.max.toArray()],triangles,featureIds:[...featureIds]};
+      const materials=new Set();model.traverse(object=>{if(object.isMesh)for(const material of Array.isArray(object.material)?object.material:[object.material])materials.add(material);});
+      modelMeasurements.materials=[...materials].map(material=>({name:material.name,roughness:material.roughness,metalness:material.metalness,
+        texture_size:material.map?[material.map.image.width,material.map.image.height]:null,texture_uv:material.map?.channel}));
+      validateLocalMeasurements(asset,modelMeasurements);homeView=localView(asset.bounds_render_m,camera.aspect,camera.fov);
+      camera.near=homeView.near;camera.far=homeView.far;camera.updateProjectionMatrix();controls.minDistance=homeView.minDistance;controls.maxDistance=homeView.maxDistance;
+      grid.position.set(homeView.target[0],asset.bounds_render_m[1],homeView.target[2]);grid.scale.setScalar(Math.max(asset.bounds_render_m[3]-asset.bounds_render_m[0],asset.bounds_render_m[5]-asset.bounds_render_m[2])*2/60);
+      $('opacity').value='100';resetView();$('start').hidden=true;$('capture').hidden=true;$('area').disabled=true;$('placement').disabled=true;$('radius').disabled=true;
+      for(const id of ['placement','radius']){document.querySelector(`label[for="${id}"]`).hidden=true;$(id).hidden=true;}
+      $('placement-help').hidden=true;$('saved-title').closest('section').hidden=true;document.querySelector('.privacy-note').hidden=true;
+      document.querySelector('.model-caption').textContent='PLATEAU 2025を加工・ローカル確認用。現地標高は未検証。';
+      $('capture-status').textContent='地物ID: '+asset.feature_id;
+      $('notice').textContent='出典：3D都市モデル（Project PLATEAU）港区2025年度。加工：OurJapan。材質の色をWeb用に変換。';
+      $('offline-status').textContent='この建物はローカル制作確認用です。';
+    }
+    scene.add(model);setOpacity();$('loading').hidden=true;$('start').disabled=!!local;
     renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();renderLoop.pause();stop('3D描画が中断されました。ページを再読み込みしてください。');$('start').disabled=true;});
     renderer.domElement.addEventListener('webglcontextrestored',resumeRendering);
   }catch(e){$('loading').textContent=`${e.message} ページを再読み込みしてください。`;$('start').disabled=true;}
@@ -317,9 +345,9 @@ $('share-draft').addEventListener('click',async()=>{
   }catch(e){if(e.name!=='AbortError')$('draft-status').textContent='共有できませんでした。ZIPダウンロードをお試しください。';}
 });
 
-function updateConnection(){if(!navigator.onLine)$('offline-status').textContent='オフラインです。写真は端末に保存し、通信が戻ってから送信できます。';}
+function updateConnection(){if(localRequested){$('offline-status').textContent='この建物はローカル制作確認用です。';return;}if(!navigator.onLine)$('offline-status').textContent='オフラインです。写真は端末に保存し、通信が戻ってから送信できます。';}
 window.addEventListener('offline',updateConnection);
-window.addEventListener('online',()=>{if(!draft)void autoUpload.pump();$('offline-status').textContent='オンラインです。端末に保存した写真を送信できます。';});
+window.addEventListener('online',()=>{if(localRequested){updateConnection();return;}if(!draft)void autoUpload.pump();$('offline-status').textContent='オンラインです。端末に保存した写真を送信できます。';});
 if(import.meta.env.PROD&&'serviceWorker' in navigator){
   navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`).then(()=>navigator.serviceWorker.ready).then(()=>{
     $('offline-status').textContent='オフライン撮影の準備ができました。';updateConnection();
