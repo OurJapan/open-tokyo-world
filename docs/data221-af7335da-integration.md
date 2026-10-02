@@ -2,9 +2,17 @@
 
 資料の地物IDから目的の建物だけを選び、隣の建物を巻き込まず外形・UVを保ったまま次の街制作へ進めるようになった。
 
+## 公開PRの分離と実行時の依存
+
+main宛の建物PRは、制作と追加検査の担当差分だけを取り込む。`scripts/plateau_evidence.py`、`tests/test_plateau_evidence.py`、資料索引の文書更新は別担当の資料PRへ分離しており、本PRには含まない。
+
+建物生成runnerと建物のテストは索引コードに依存しない。以下の索引から選択する手順だけは、別途資料PRのCLIで作ったJSONを `--index` へ渡す必要がある。既存の索引JSONを読み取るvalidator自体は、このPRだけで実行できる。資料PRは公開準備中で、公開後にPR間のリンクを付ける。
+
+資料索引を除いたmainベースの公開用構成でも241テスト中234成功・任意依存7件省略、compileall成功。下の249テストは資料索引も含めた統合検証時の履歴として区別する。モデル生成コードはその検証版から変更していない。[公開画像と出典](../renders/previews/data221-af7335da-topology/README.md)。
+
 ## 統合した版
 
-専用branch `codex/data221-af7335da-integration-20261002` に、mainの指定版 `234b163210ac19d61f33e86b6920b8b26f9d453a`、その直上の資料索引 `7a0ef42`、モデル制作 `c3dba225450ed662434e7e83a39e0c84dd82561d` を組み合わせた。制作commitのcherry-pick後は `ed7043ce5e1e18063ce9f80f2e507f3760395c5a`。競合0件。元branch・commit・通常checkout・通常登録は保全し、公開しない。
+専用branch `codex/data221-af7335da-integration-20261002` に、mainの指定版 `234b163210ac19d61f33e86b6920b8b26f9d453a`、その直上の資料索引 `7a0ef42`、モデル制作 `c3dba225450ed662434e7e83a39e0c84dd82561d` を組み合わせた。制作commitのcherry-pick後は `ed7043ce5e1e18063ce9f80f2e507f3760395c5a`。競合0件。元branch・commit・通常checkout・通常登録は保全した。これは公開前のローカル統合検証記録である。
 
 ## 実際に確認した導線
 

@@ -1,5 +1,7 @@
 # data221 batch 15：個別編集できる建物メッシュ
 
+[公開用の代表Before/After](../renders/previews/data221-af7335da-topology/README.md)で、外観を保ったまま対象だけを編集可能にした結果を確認できる。今回のmain宛PRは建物担当の変更だけを含み、資料索引と不採用の法線調整は含めない。
+
 対象は `bldg_af7335da-7542-44dd-964d-8cccd2b046ff`。固定PLATEAU入力の名称はnullのため、建物名は推定しない。2025港区入力のLOD2.2、XY外接範囲は東西−513.696〜−405.517m、南北353.652〜454.443m、旧表示用高さは0.32〜236.333m。[入力の座標・根拠](plateau-data221.md)を参照。
 
 同じ固定b3dmのbatch tableから公式建物ID `13103-bldg-7517` と `bldg:measuredHeight=216m` を確認した。高さ属性とジオメトリ全体の約236.01mの上下幅は意味が異なる可能性があり、その関係は未確認。216mへ縮めたり、基準高さを推定で置き換えたりしない。
@@ -31,15 +33,15 @@
 Blender 4.5.1と付属Pythonで、許諾済みの保存入力を指定する。出力先は新しいディレクトリに限り、既存出力と二重追加は拒否する。
 
 ```powershell
-& 'C:\Program Files\Blender Foundation\Blender 4.5\4.5\python\bin\python.exe' -B scripts/review_data221_af7335da.py `
-  --blender 'C:\Program Files\Blender Foundation\Blender 4.5\blender.exe' `
+& $python -B scripts/review_data221_af7335da.py `
+  --blender $blender `
   --input 'LOCAL_PR47_AFTER.blend' `
   --input-sha256 2a6f63658722beecdb8af2158baed62c044f33a22084df0d227c70c67332ae5b `
   --inputs 'LOCAL_EXISTING_PLATEAU_INPUTS' `
   --output data/local/af7335da-review-new
 ```
 
-`after.blend` は街全体の候補。`target.blend` は対象オブジェクトをAppendできる小さなBlenderライブラリで、街全体の登録用ファイルではない。`before-neighborhood.blend` / `after-neighborhood.blend` は同じ23地物の比較用ライブラリ。`review.html` と4視点×Before/AfterのPNGを出力する。モデルと画像は `data/local/` に保持し、Git配布には追加していない。
+`$python` はBlender付属Python、`$blender` はBlender 4.5.1の実行ファイルを指定する。`after.blend` は街全体の候補。`target.blend` は対象オブジェクトをAppendできる小さなBlenderライブラリで、街全体の登録用ファイルではない。`before-neighborhood.blend` / `after-neighborhood.blend` は同じ23地物の比較用ライブラリ。`review.html` と4視点×Before/AfterのPNGを出力する。モデル・入力は `data/local/` に保持し、代表画像2組だけを出典付きで公開する。
 
 ## 検証と限界
 
