@@ -100,7 +100,7 @@ class TowerStructureReviewContracts(unittest.TestCase):
             self.assertEqual(summary['code_files']['scripts/validate_tower_structure.py'], review.digest(validator))
 
     def test_other_city_is_rejected_even_when_lock_matches(self):
-        with self.assertRaisesRegex(ValueError, 'Tower structure requires the registered city input'):
+        with self.assertRaisesRegex(ValueError, 'Tower structure requires the pinned PR56 city input'):
             self.invoke(allow_fixture=False)
         self.run_job.assert_not_called()
         self.assertFalse(self.output.exists())

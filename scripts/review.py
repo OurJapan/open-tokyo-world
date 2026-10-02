@@ -279,7 +279,7 @@ def main():
     require(input_hash == lock['sha256'], 'Input hash does not match lock')
     if needs_tower:
         from tower_structure_v1 import INPUT_SHA256
-        require(input_hash == INPUT_SHA256, 'Tower structure requires the registered city input')
+        require(input_hash == INPUT_SHA256, 'Tower structure requires the pinned PR56 city input')
     if needs_shiba:
         from shiba_momijidani_v1 import INPUT_SHA256
         require(input_hash == INPUT_SHA256, 'Shiba requires the accepted city input')

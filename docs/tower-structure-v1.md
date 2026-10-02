@@ -4,7 +4,9 @@
 
 ## 固定入力と変更範囲
 
-[採用済みcityのlock](../manifests/mori-plaza-connection-accepted.json)を入力にします。559,040,261 bytes、SHA-256は `9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4` です。**PR #51・#52の候補形状は合成していません。** 他候補を含む街全体の更新や採用判断とは分けて、この固定入力との差分をレビューします。
+[構造修正専用の入力lock](../manifests/tower-structure-input.json)で、PR #56の統合候補を固定します。630,656,265 bytes、SHA-256は `aa80b552f267d935d3c5d943ac95d0d410d6ec7abb170346bef707eee6cae2e2` です。[統合記録](tokyo-tower-city-repairs-v1.md)と[検証記録](tokyo-tower-city-repairs-v1-verification.json)に対応し、構成は **PR #47・#49・#51・#52・#56** です。PR #54・#55などの別候補は含みません。今回の修正は、この塗装帯・トップデッキ窓下端を含む入力に対する構造の増分としてレビューします。
+
+通常のcity登録は[採用済みcityのlock](../manifests/mori-plaza-connection-accepted.json)、SHA-256 `9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4` のままです。構造修正専用の入力固定は、通常のcity登録の変更や別候補の採用を意味しません。
 
 [実装](../scripts/tower_structure_v1.py)は対象feature `otw:jp:tokyo:minato:tokyo-tower` と変更前メッシュhashを確認し、旧中央コア・階段の限定部分を置き換えます。[フットタウン生成helper](../scripts/tower_foottown_v1.py)は建物外壁・開口・ガラス・屋根・屋上柵を組み立てます。追加部品は専用collection `OTW Tokyo Tower structure v1` にまとめ、二重適用を拒否します。
 

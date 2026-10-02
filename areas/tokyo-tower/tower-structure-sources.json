@@ -8,10 +8,18 @@
   "units": "m",
   "input": {
     "profile": "city",
-    "bytes": 559040261,
-    "sha256": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4",
-    "lock": "manifests/mori-plaza-connection-accepted.json",
-    "composition": "Pinned accepted city only. PR #51 and PR #52 candidate geometry is not composed into this input."
+    "bytes": 630656265,
+    "sha256": "aa80b552f267d935d3c5d943ac95d0d410d6ec7abb170346bef707eee6cae2e2",
+    "lock": "manifests/tower-structure-input.json",
+    "composition": "Pinned PR #56 integration candidate containing PR #47, #49, #51, #52 and #56 changes. Separate candidates such as PR #54 and #55 are not composed into this input.",
+    "composition_prs": [47, 49, 51, 52, 56],
+    "composition_record": "docs/tokyo-tower-city-repairs-v1.md",
+    "composition_verification": "docs/tokyo-tower-city-repairs-v1-verification.json",
+    "workspace_registration": {
+      "sha256": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4",
+      "lock": "manifests/mori-plaza-connection-accepted.json",
+      "status": "Unchanged. This dedicated structure input pin does not update the ordinary city registration or approve unrelated candidates."
+    }
   },
   "implementation": {
     "adapter": "scripts/tower_structure_v1.py",

@@ -1,0 +1,7 @@
+{
+  "bytes": 630656265,
+  "sha256": "aa80b552f267d935d3c5d943ac95d0d410d6ec7abb170346bef707eee6cae2e2",
+  "blender_version": "4.5.1 LTS",
+  "description": "Immutable PR56 reviewed composed city: PR47/49 base, PR51 trees, PR52 woodland, PR56 tower paint and window-base repair. Pin for the tower structure increment; does not update the shared workspace registration or compose separate PR54/55 candidates.",
+  "provenance": "docs/tokyo-tower-city-repairs-v1-verification.json"
+}

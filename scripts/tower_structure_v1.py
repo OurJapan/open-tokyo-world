@@ -3,7 +3,7 @@
 """Bounded, photo-guided Tokyo Tower exterior corrections, not engineering CAD."""
 import math
 
-INPUT_SHA256 = '9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4'
+INPUT_SHA256 = 'aa80b552f267d935d3c5d943ac95d0d410d6ec7abb170346bef707eee6cae2e2'  # PR #56 composed city
 FEATURE = 'otw:jp:tokyo:minato:tokyo-tower'
 ANCHOR = 'Tokyo Tower structure / stone'
 ORANGE = 'Tokyo Tower structure / orange'

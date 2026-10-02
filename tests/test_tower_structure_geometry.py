@@ -115,10 +115,12 @@ class TowerGeometryTests(unittest.TestCase):
         vertices, faces = cube()
         data = {'vertices': vertices, 'faces': faces, 'polygon_flags': [(0, False)]*6,
                 'matrix_world': [[int(r == c) for c in range(4)] for r in range(4)], 'materials': ['original'],
+                'material_fingerprints': ['original-paint-shader-hash'],
                 'modifiers': [{'rna_type': 'BevelModifier', 'width': .006, 'segments': 2, 'show_render': False}]}
         self.assertTrue(saved.compare_retained(data, copy.deepcopy(data))['coordinates_faces_material_indices_smooth_flags_exact'])
         for key, value in [('vertices', (0.1, 0, 0)), ('faces', [0, 2, 3, 1]),
-                           ('polygon_flags', (0, True)), ('polygon_flags', (1, False)), ('materials', 'other')]:
+                           ('polygon_flags', (0, True)), ('polygon_flags', (1, False)), ('materials', 'other'),
+                           ('material_fingerprints', 'changed-shader-with-same-name')]:
             bad = copy.deepcopy(data); bad[key][0] = value
             with self.subTest(key=key, value=value):
                 with self.assertRaisesRegex(ValueError, 'Retained tower'):

@@ -302,12 +302,13 @@ def retained_snapshot(name, snapshot):
 
 
 def compare_retained(expected, saved):
-    for key in ('vertices', 'faces', 'polygon_flags', 'matrix_world', 'materials', 'modifiers'):
+    for key in ('vertices', 'faces', 'polygon_flags', 'matrix_world', 'materials', 'material_fingerprints', 'modifiers'):
         require(expected[key] == saved[key], 'Retained tower '+key+' differ')
     payload = json.dumps(saved, separators=(',', ':'), allow_nan=False).encode()
     return {'vertices': len(saved['vertices']), 'polygons': len(saved['faces']),
             'coordinates_faces_material_indices_smooth_flags_exact': True,
             'modifier_settings_exact': True, 'modifiers': saved['modifiers'],
+            'material_fingerprints_exact': True, 'material_fingerprints': saved['material_fingerprints'],
             'retained_data_sha256': hashlib.sha256(payload).hexdigest()}
 
 
@@ -342,6 +343,7 @@ def snapshot_modifier_rna(value):
 
 
 def snapshot_object(obj):
+    from blender_worker import material_fingerprint
     require(obj is not None and obj.type == 'MESH' and not obj.parent and
             not obj.constraints and not obj.animation_data, 'Unsupported retained tower state')
     return {'vertices': [tuple(v.co) for v in obj.data.vertices],
@@ -349,6 +351,7 @@ def snapshot_object(obj):
             'polygon_flags': [(p.material_index, p.use_smooth) for p in obj.data.polygons],
             'matrix_world': [list(row) for row in obj.matrix_world],
             'materials': [m.name if m else None for m in obj.data.materials],
+            'material_fingerprints': [material_fingerprint(m) for m in obj.data.materials],
             'modifiers': [snapshot_modifier_rna(modifier) for modifier in obj.modifiers]}
 
 
@@ -399,7 +402,7 @@ def inspect(args):
     # Take plain Python snapshots before opening the original; no candidate is
     # saved and no Blender data references survive the file switch.
     saved = {name: snapshot_object(bpy.data.objects.get(name)) for name in (tower.ORANGE, tower.WHITE)}
-    require(digest(args.original) == tower.INPUT_SHA256, 'Original is not the registered city input')
+    require(digest(args.original) == tower.INPUT_SHA256, 'Original is not the pinned PR56 city input')
     bpy.ops.wm.open_mainfile(filepath=str(args.original), use_scripts=False)
     require(Path(bpy.data.filepath).resolve() == args.original.resolve(), 'Opened original differs from requested input')
     require(not bpy.context.preferences.filepaths.use_scripts_auto_execute, 'Original enabled Blender auto-execution')
@@ -417,7 +420,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--blender', type=Path)
     parser.add_argument('--input', type=Path, required=True)
-    parser.add_argument('--original', type=Path, required=True, help='Immutable registered city input for retained-member comparison')
+    parser.add_argument('--original', type=Path, required=True, help='Immutable pinned PR56 city input for retained-member comparison')
     parser.add_argument('--output', type=Path, required=True, help='New JSON report path')
     parser.add_argument('--timeout', type=int, default=900)
     parser.add_argument('--worker', action='store_true', help=argparse.SUPPRESS)
@@ -440,7 +443,7 @@ def main():
     require(not log.exists(), 'Refusing to overwrite validation log')
     input_hash = digest(args.input)
     original_hash = digest(args.original)
-    require(original_hash == tower.INPUT_SHA256, 'Original is not the registered city input')
+    require(original_hash == tower.INPUT_SHA256, 'Original is not the pinned PR56 city input')
     dependencies = tuple(Path(__file__).with_name(name) for name in
                          ('validate_tower_structure.py', 'tower_structure_v1.py', 'tower_foottown_v1.py', 'blender_worker.py'))
     code_hashes = {path.name: digest(path) for path in dependencies}
