@@ -38,6 +38,13 @@ class ObjectRegistryTests(unittest.TestCase):
         self.assertEqual(road["segment-b"]["geometry"]["source_binding"]["object_id"], "road-1/segment-b")
         self.assertEqual(road["segment-b"]["material"]["slot"], "paving")
 
+    def test_replaced_and_suppressed_parts_retain_source_binding(self):
+        plan = self.plan()
+        building = next(p for p in plan['parts'] if p['feature'] == 'fixture:building')
+        suppressed = next(p for p in plan['parts'] if p['geometry'] is None)
+        self.assertEqual(building['source_binding']['object_id'], 'building-1')
+        self.assertEqual(suppressed['source_binding']['object_id'], 'old-sign-1')
+
     def test_rollback_changes_only_target_and_declared_review_scope(self):
         feature = self.r["features"][1]
         feature["revisions"].append({"id":"baseline","status":"accepted","operations":[]})

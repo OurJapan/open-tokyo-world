@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "source_id": "plateau:minato:2025:data221",
+  "extraction": "gml_id batch table in hash-verified data221.b3dm, original batch order; metadata only",
+  "files": {
+    "tileset.json": {
+      "url": "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/tileset.json",
+      "bytes": 412889,
+      "sha256": "edec4c24d137eaf08a8525cecea505a3f21a30823b9ef4fb530e10774cea1323"
+    },
+    "data221.b3dm": {
+      "url": "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data221.b3dm",
+      "bytes": 1246040,
+      "sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2"
+    }
+  },
+  "object_ids": [
+    "bldg_0551e688-a2a3-498e-ad2f-09ed3aca361c",
+    "bldg_0ae43c4e-b1f9-48e1-adde-36e49ee20e94",
+    "bldg_18d27033-749a-4676-9c13-3881e1dd9188",
+    "bldg_243ff12c-1ba7-4f9d-87fc-020f66381aad",
+    "bldg_320f5eac-d9ed-46e6-a0ee-5a9303df5be8",
+    "bldg_433bc5b3-db73-4644-ac24-a28d51b7ecd5",
+    "bldg_5dab31bf-48b2-4de9-8f4f-3ff552347f28",
+    "bldg_6316c78d-13f0-4ca9-81da-e227bf126107",
+    "bldg_6d05f419-2581-4d4e-bfa5-d89edbfd3295",
+    "bldg_6f3a4a13-3582-4e78-8e84-6042fd94d9c3",
+    "bldg_7ecf1183-80d7-467e-8dfd-546a645789e8",
+    "bldg_82e12af1-124e-44f1-bcd9-35f326843649",
+    "bldg_8e51b9d0-156d-476b-a9d6-2eb25b062508",
+    "bldg_9f67faf4-3270-469d-a099-69e270b6a702",
+    "bldg_aa1fbb0e-43b8-4b67-8efa-0c4e3d31fb92",
+    "bldg_af7335da-7542-44dd-964d-8cccd2b046ff",
+    "bldg_b5b6c2c3-bf12-4259-86bf-e522db3516d8",
+    "bldg_c355ccef-01b6-4ace-a515-1481bb012f42",
+    "bldg_c9830911-b1d7-4dd3-b5ed-fe46baa9f15a",
+    "bldg_d13fe45b-21a9-4bf1-b8cc-27b8b50c20fd",
+    "bldg_d489fc05-14bf-46a1-8cbd-d8ad472c8b68",
+    "bldg_dc21f8c4-6629-4c2e-a39b-9a52e837637a",
+    "bldg_eafc9420-63a2-452d-8633-d54c6919c7f3",
+    "bldg_f5fe39a0-8082-4b57-b66d-c0683f7b8e54"
+  ]
+}

@@ -21,7 +21,7 @@
   "districts": {
     "mori": {
       "label": "森JPタワー周辺（公式入力からの再生成）",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "adapter": "mori-v1",
       "input_package": "plateau-minato-tile221",
       "packages": [
@@ -30,6 +30,8 @@
       "recipe_files": [
         "LICENSE.md",
         "MIT-LICENSE.txt",
+        "registry/mori.json",
+        "registry/mori.lock.json",
         "scripts/mori_crown_material.py",
         "scripts/mori_crown_v2.py",
         "scripts/mori_entrance_v1.py",
@@ -39,9 +41,13 @@
         "scripts/mori_podium_v3.py",
         "scripts/mori_shape.py",
         "scripts/mori_terrace_v1.py",
+        "scripts/object_registry.py",
+        "sources/plateau-minato-2025-data221.json",
         "starter/mori/ASSET-LICENSE.md",
         "starter/mori/NOTICE.md",
         "starter/mori/facade.py",
+        "starter/mori/model-manifest.json",
+        "starter/mori/plan_adapter.py",
         "starter/mori/profile.py",
         "starter/mori/provenance.json",
         "starter/mori/run.py",

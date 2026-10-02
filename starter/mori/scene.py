@@ -7,12 +7,11 @@ from mathutils import Vector
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[1]
 sys.path[:0]=[str(HERE),str(ROOT/'scripts'),str(HERE.parent/'plateau')]
-import tile, profile, facade
+import tile, profile, facade, plan_adapter
 import mori_entrance_v1, mori_terrace_v1
 spec=importlib.util.spec_from_file_location('plateau_scene',HERE.parent/'plateau/scene.py')
 base=importlib.util.module_from_spec(spec);spec.loader.exec_module(base)
 VIEWS=[('full',(-430,253,165),(450,600,230),520),('crown',(-430,253,307),(180,260,120),120),('podium',(-440,278,20),(85,140,105),175),('entrance',(-409,312,1),(45,9,42),60)]
-ID='otw:jp:tokyo:minato:azabudai-mori-jp'
 
 def material_state(m):
     def val(v):
@@ -22,7 +21,7 @@ def material_state(m):
     return {'name':m.name,'nodes':[{ 'name':n.name,'type':n.bl_idname,'operation':getattr(n,'operation',None),'blend_type':getattr(n,'blend_type',None),'uv_map':getattr(n,'uv_map',None),'image':getattr(getattr(n,'image',None),'name',None),'inputs':[(s.identifier,val(s.default_value)) for s in n.inputs if hasattr(s,'default_value')]} for n in m.node_tree.nodes], 'links':sorted((l.from_node.name,l.from_socket.identifier,l.to_node.name,l.to_socket.identifier) for l in m.node_tree.links)}
 
 def state(o):
-    data={'mesh':base.digest(o),'matrix':[list(r) for r in o.matrix_world],'hidden':o.hide_render,'materials':[material_state(m) for m in o.data.materials],'properties':{k:o[k] for k in ['gml_id','batch_id','legacy_z_shift_m','otw_feature_id','otw_part_id'] if k in o}}
+    data={'mesh':base.digest(o),'matrix':[list(r) for r in o.matrix_world],'hidden':o.hide_render,'materials':[material_state(m) for m in o.data.materials],'properties':{k:o[k] for k in ['gml_id','batch_id','legacy_z_shift_m','otw_feature_id','otw_part_id','source_gml_id','source_sha256','otw_plan_sha256','otw_model_sha256'] if k in o}}
     return hashlib.sha256(json.dumps(data,sort_keys=True).encode()).hexdigest()
 
 def objects():return {o.name:o for o in bpy.context.scene.objects if o.type=='MESH'}
@@ -73,15 +72,21 @@ def floors_and_roof(radii):
     return o
 
 def build(out):
+    plan,context=plan_adapter.load_bundle(out)
+    plan_adapter.verify_inputs({n:(out/'inputs'/n).read_bytes() for n in tile.FILES},plan)
     base.build(out)
     scene=bpy.context.scene
+    scene['otw_plan_sha256']=context['plan_sha256']
+    scene['otw_model_sha256']=context['model_sha256']
+    if {o.get('gml_id') for o in objects().values() if o.get('gml_id')}!=set(context['source_ids']):raise ValueError('Imported scene inventory mismatch')
     # Shared daylight rig: illuminate the inspected northeast facade in both states.
     bpy.data.objects['Starter sun'].rotation_euler=(-.5,.5,0)
     scene.world.node_tree.nodes['Background'].inputs['Color'].default_value=(.6,.68,.78,1)
     before={n:state(o) for n,o in objects().items()}
     bpy.ops.wm.save_as_mainfile(filepath=str(out/'before.blend'),compress=True)
-    matches=[o for o in objects().values() if o.get('gml_id')==profile.FEATURE]
-    profile.target_index([o.get('gml_id') for o in objects().values()])
+    target_id=context['source_gml_id']
+    matches=[o for o in objects().values() if o.get('gml_id')==target_id]
+    if len(matches)!=1:raise ValueError('Expected exactly one planned source feature')
     target=matches[0]
     vertices=np.array([tuple(v.co) for v in target.data.vertices]);faces=np.array([tuple(f.vertices) for f in target.data.polygons])
     triangles=vertices[faces]
@@ -91,23 +96,31 @@ def build(out):
     for module in [mori_entrance_v1,mori_terrace_v1]:
         for name in sorted(module.TARGETS):
             o=new_object(name);o.hide_render=True;module.apply(o);created.append(o)
+    if len(created)!=13 or {o.name for o in created}!=set(context['parts'].values()):raise ValueError('Generated parts differ from plan')
+    part_ids={name:pid for pid,name in context['parts'].items()}
     for o in created:
-        o['otw_feature_id']=ID;o['otw_part_id']=o.name;o['source_gml_id']=profile.FEATURE
+        o['otw_feature_id']=context['feature_id'];o['otw_part_id']=part_ids[o.name];o['source_gml_id']=target_id
+        o['otw_plan_sha256']=context['plan_sha256'];o['otw_model_sha256']=context['model_sha256']
         o['source_sha256']=tile.FILES['data221.b3dm'][2]
         o['accuracy']='photo-guided estimates; legacy display height'
+    target_name=target.name
     bpy.data.objects.remove(target,do_unlink=True)
-    scene['replacement_gml_id']=profile.FEATURE
+    scene['replacement_gml_id']=target_id
     after={n:state(o) for n,o in objects().items()}
-    unchanged=set(before)-{profile.FEATURE}
+    unchanged=set(before)-{target_name}
     if any(before[n]!=after[n] for n in unchanged):raise ValueError('Changed unrelated object')
-    ref={'before':before,'after':after,'unchanged':sorted(unchanged),'parts':sorted(o.name for o in created),'profile_radii':radii,'feature_id':ID,'source_gml_id':profile.FEATURE,'podium_triangles':len(low),'legacy_input_used':False,'interior_scope':'inferred floor/ceiling slabs and roof only; no furniture','road_input_included':False}
+    ref={'before':before,'after':after,'unchanged':sorted(unchanged),'parts':sorted(o.name for o in created),'part_ids':context['parts'],'plan_sha256':context['plan_sha256'],'model_sha256':context['model_sha256'],'profile_radii':radii,'feature_id':context['feature_id'],'source_gml_id':target_id,'podium_triangles':len(low),'legacy_input_used':False,'interior_scope':'inferred floor/ceiling slabs and roof only; no furniture','road_input_included':False}
     (out/'replacement.json').write_text(json.dumps(ref,indent=2)+'\n')
     bpy.ops.wm.save_as_mainfile(filepath=str(out/'after.blend'),compress=True)
 
 def validate(out,which):
+    plan,context=plan_adapter.load_bundle(out)
     bpy.ops.wm.open_mainfile(filepath=str(out/(which+'.blend')),use_scripts=False)
     ref=json.loads((out/'replacement.json').read_text());geo=json.loads((out/'georeference.json').read_text())
     meshes=objects();scene=bpy.context.scene
+    if any(scene.get('otw_'+key)!=context[key] or ref.get(key)!=context[key] for key in ['plan_sha256','model_sha256']):raise ValueError('Saved plan/model identity mismatch')
+    if ref.get('part_ids')!=context['parts']:raise ValueError('Saved part mapping differs from plan')
+    if which=='before' and {o.get('gml_id') for o in meshes.values() if o.get('gml_id')}!=set(context['source_ids']):raise ValueError('Before inventory differs from plan')
     if set(meshes)!=set(ref[which]):raise ValueError('Object set mismatch')
     if bpy.data.libraries or bpy.data.texts or bpy.data.sounds:raise ValueError('Unexpected dependencies')
     images=[i for i in bpy.data.images if i.type!='RENDER_RESULT']
@@ -120,8 +133,15 @@ def validate(out,which):
         o.data.calc_loop_triangles();triangles+=len(o.data.loop_triangles)
         if any(t.area<=1e-10 for t in o.data.loop_triangles):raise ValueError('Degenerate geometry: '+name)
     if which=='after':
-        if any(o.get('gml_id')==profile.FEATURE for o in meshes.values()):raise ValueError('Duplicate source tower')
-        if len([o for o in meshes.values() if o.get('otw_feature_id')==ID])!=13:raise ValueError('Incorrect detailed part count')
+        if scene.get('replacement_gml_id')!=context['source_gml_id']:raise ValueError('Saved replacement differs from plan')
+        if any(o.get('gml_id')==context['source_gml_id'] for o in meshes.values()):raise ValueError('Duplicate source tower')
+        detailed=[o for o in meshes.values() if o.get('otw_feature_id')==context['feature_id']]
+        if len(detailed)!=13 or {o.get('otw_part_id'):o.name for o in detailed}!=context['parts']:raise ValueError('Detailed part IDs differ from plan')
+        for o in detailed:
+            if o.get('source_gml_id')!=context['source_gml_id'] or any(o.get('otw_'+key)!=context[key] for key in ['plan_sha256','model_sha256']):raise ValueError('Detailed part provenance differs from plan')
+        expected_neighbors=set(context['source_ids'])-{context['source_gml_id']}
+        if {o.get('gml_id') for o in meshes.values() if o.get('gml_id')}!=expected_neighbors:raise ValueError('Neighbor inventory differs from plan')
+        if set(ref['unchanged'])!=expected_neighbors|base.plaza.EXPECTED:raise ValueError('Preservation scope differs from plan')
         roof=meshes['Mori independent / floors and roof']
         if len(roof.data.polygons)!=129*162 or abs(max(v.co.z for v in roof.data.vertices)-318.95)>.001:raise ValueError('Missing floor or roof slabs')
         if len(meshes['Mori JP podium / stone'].data.polygons)!=1070:raise ValueError('Podium face loss')
@@ -145,7 +165,7 @@ def validate(out,which):
         bpy.context.view_layer.update()
         if name=='full':
             from bpy_extras.object_utils import world_to_camera_view
-            targets=[o for o in meshes.values() if o.get('gml_id')==profile.FEATURE or o.get('otw_feature_id')==ID]
+            targets=[o for o in meshes.values() if o.get('gml_id')==context['source_gml_id'] or o.get('otw_feature_id')==context['feature_id']]
             for o in targets:
                 for corner in o.bound_box:
                     q=world_to_camera_view(scene,cam,o.matrix_world@Vector(corner))
@@ -154,7 +174,7 @@ def validate(out,which):
         im=bpy.data.images.load(str(path),check_existing=False);px=np.array(im.pixels[:]).reshape(-1,4)
         if tuple(im.size)!=(960,720) or not np.isfinite(px).all() or px[:,:3].std()<.01:raise ValueError('Bad image')
         bpy.data.images.remove(im);pictures[name]=hashlib.sha256(path.read_bytes()).hexdigest()
-    (out/(which+'-validation.json')).write_text(json.dumps({'ok':True,'blender':bpy.app.version_string,'meshes':len(meshes),'triangles':triangles,'blend_bytes':(out/(which+'.blend')).stat().st_size,'saved_reopened':True,'renders':pictures,'cameras':VIEWS,'render_settings':{'engine':'CYCLES','device':'CPU','samples':16,'seed':0,'resolution':[960,720]},'full_camera_bounds_checked':True},indent=2)+'\n')
+    (out/(which+'-validation.json')).write_text(json.dumps({'ok':True,'blender':bpy.app.version_string,'meshes':len(meshes),'triangles':triangles,'blend_bytes':(out/(which+'.blend')).stat().st_size,'saved_reopened':True,'plan_sha256':context['plan_sha256'],'model_sha256':context['model_sha256'],'planned_parts_verified':13 if which=='after' else 0,'unchanged_neighbors':23 if which=='after' else 0,'unchanged_plaza_parts':6 if which=='after' else 0,'renders':pictures,'cameras':VIEWS,'render_settings':{'engine':'CYCLES','device':'CPU','samples':16,'seed':0,'resolution':[960,720]},'full_camera_bounds_checked':True},indent=2)+'\n')
 
 if __name__=='__main__':
     ap=argparse.ArgumentParser();ap.add_argument('--folder',type=Path,required=True);ap.add_argument('--phase',choices=['build','before','after'],required=True)

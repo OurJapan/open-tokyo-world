@@ -2,13 +2,17 @@
 import argparse, json, shutil, subprocess, sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
-CASES=['roof-missing','neighbor-changed','glass-link-missing','duplicate-tower']
+CASES={'roof-missing':'Object set mismatch','neighbor-changed':'Object/material fingerprint mismatch',
+       'glass-link-missing':'Object/material fingerprint mismatch','duplicate-tower':'Object set mismatch',
+       'plaza-changed':'Object/material fingerprint mismatch','part-id-changed':'Object/material fingerprint mismatch',
+       'scene-plan-changed':'Saved plan/model identity mismatch','saved-plan-changed':'Saved plan differs from registry/lock',
+       'model-manifest-changed':'Saved model manifest mismatch'}
 
 def mutate(run,out):
     import bpy
     for case in CASES:
         folder=out/case;folder.mkdir()
-        for name in ['replacement.json','georeference.json']:shutil.copyfile(run/name,folder/name)
+        for name in ['replacement.json','georeference.json','plan.json','registry.json','registry.lock.json','model-manifest.json']:shutil.copyfile(run/name,folder/name)
         bpy.ops.wm.open_mainfile(filepath=str(run/'after.blend'),use_scripts=False)
         if case=='roof-missing':bpy.data.objects.remove(bpy.data.objects['Mori independent / floors and roof'],do_unlink=True)
         elif case=='neighbor-changed':
@@ -16,8 +20,16 @@ def mutate(run,out):
         elif case=='glass-link-missing':
             o=bpy.data.objects['Mori continuous pearl glass / pearl grey coated glass'];m=o.data.materials[0]
             output=next(n for n in m.node_tree.nodes if n.type=='OUTPUT_MATERIAL');m.node_tree.links.remove(output.inputs['Surface'].links[0])
-        else:
+        elif case=='duplicate-tower':
             o=bpy.data.objects['Mori JP podium / stone'].copy();o.data=o.data.copy();o['gml_id']='bldg_433bc5b3-db73-4644-ac24-a28d51b7ecd5';bpy.context.scene.collection.objects.link(o)
+        elif case=='plaza-changed':
+            o=bpy.data.objects['OTW Mori entry plaza / paving'];o.data.vertices[0].co.z+=1
+        elif case=='part-id-changed':bpy.data.objects['Mori JP podium / stone']['otw_part_id']='wrong'
+        elif case=='scene-plan-changed':bpy.context.scene['otw_plan_sha256']='0'*64
+        elif case=='saved-plan-changed':
+            plan=json.loads((folder/'plan.json').read_text());plan['review_only']=True
+            (folder/'plan.json').write_text(json.dumps(plan))
+        elif case=='model-manifest-changed':(folder/'model-manifest.json').write_text('{}')
         bpy.ops.wm.save_as_mainfile(filepath=str(folder/'after.blend'),compress=True)
 
 def main():
@@ -34,7 +46,7 @@ def main():
         with (folder/'check.log').open('w') as log:
             p=subprocess.run(command+['--python',str(ROOT/'starter/mori/scene.py'),'--','--folder',str(folder.resolve()),'--phase','after'],stdout=log,stderr=subprocess.STDOUT,timeout=120)
         error=(folder/'check.log').read_text()
-        expected='Object set mismatch' if case in ['roof-missing','duplicate-tower'] else 'Object/material fingerprint mismatch'
+        expected=CASES[case]
         if p.returncode==0 or expected not in error:raise AssertionError('Negative did not fail as intended: '+case)
         results[case]={'rejected':True,'expected_error':expected,'exit_code':p.returncode}
     (a.output/'results.json').write_text(json.dumps({'ok':True,'cases':results},indent=2)+'\n')

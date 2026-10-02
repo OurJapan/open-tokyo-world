@@ -4,7 +4,7 @@
 
 ## 今回実装した範囲
 
-`scripts/object_registry.py`はJSON台帳と版固定lockから、地物の追加・置換・抑制・材質変更を含む組み立て計画を生成する。Blenderなしで実行でき、既存のcontracts CIで検証する。実メッシュの読込・切断・組立・描画はまだこの共通CLIに接続していない。既存のMori/Tower runnerを置き換えたと表示しない。
+`scripts/object_registry.py`はJSON台帳と版固定lockから、地物の追加・置換・抑制・材質変更を含む組み立て計画を生成する。Blenderなしで実行でき、既存のcontracts CIで検証する。共通CLIは引き続きplan生成のみを行う。森JPの実consumerは[専用adapter](mori-common-plan.md)で接続した。Towerや全都市の汎用組み立ては未接続。
 
 ```sh
 python scripts/object_registry.py --registry registry/example.json --lock registry/example.lock.json --output runs/objects/plan.json
@@ -73,3 +73,7 @@ registry_sha256はJSONをキー順・UTF-8で正規化した内容hash。`object
 5. 各consumerでhash検証・許諾同梱・依存データの隔離・保存後再openを実装し、planを差し替えるだけで採用版と旧版を再組立できる状態にする。その後にAreaを拡張する。
 
 本PRはこの順序の前提となる共通契約・planner・テストまで。Mori/Towerの実都市adapter統合、道路の実モデリング、モデル配布サービスは未完了。
+
+## Common Mori plan consumer (Issue #34)
+
+The standalone Mori runner now validates the real registry, lock, fixed source inventory and procedural model manifest before output creation and Blender startup. See [contract, commands and evidence](mori-common-plan.md). The generic planner does not execute model locators.
