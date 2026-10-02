@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-02",
+  "ok": true,
+  "scope": "Selected review evidence; model/texture binaries remain local.",
+  "approval": "Account holder explicitly authorized public push and draft PR with representative comparison images on 2026-10-02.",
+  "source_policy_url": "https://www.mlit.go.jp/plateau/site-policy/",
+  "source_policy_checked": "2026-10-02",
+  "source_dataset_url": "https://www.geospatial.jp/ckan/dataset/plateau-13103-minato-ku-2025",
+  "provenance": {
+    "ok": true,
+    "render_scope": "The 23 retained data221 building features only; no city roads, photographs, music, detailed Mori or Tokyo Tower objects.",
+    "source_b3dm_sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2",
+    "official_embedded_texture_sha256": "85bcc1658f6899c6cd8ae3de43bc31048db4694af428e33e6aca11bd31b9523f",
+    "packed_preview_texture_sha256": "85bcc1658f6899c6cd8ae3de43bc31048db4694af428e33e6aca11bd31b9523f",
+    "packed_texture_matches_official_bytes": true,
+    "decoded_texture_max_error": 0.0,
+    "image_size": [
+      2048,
+      2048
+    ],
+    "texture_count": 1,
+    "retained_batches": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "materials": [
+      "Synthetic facade on measured geometry 2",
+      "Material_1.035"
+    ],
+    "source_library_sha256": "135241a4a79489046c1d72092702b5b2d8f38ac4f2248d40a06851704dea1a12"
+  },
+  "images": [
+    {
+      "file": "before-east.png",
+      "source_png_sha256": "ca2b0e208d0837ddb07a5a9aaab205b7e920ffdbbc1fc7c9b44ae6b4c5a241d4",
+      "published_png_sha256": "0d19b0db874e668e726bdab0aa1fa94d2c2a536d32fd700b538b6d51a8f29ddb",
+      "bytes": 781594,
+      "pixel_sha256": "4170c13f5fe506d46ee3306dc09a8bf908907b5f776ec301443573fda823c659",
+      "compressed_pixel_data_unchanged": true,
+      "removed_chunk_types": [
+        "eXIf",
+        "oFFs",
+        "tEXt"
+      ],
+      "retained_chunk_types": [
+        "IDAT",
+        "IEND",
+        "IHDR",
+        "pHYs"
+      ]
+    },
+    {
+      "file": "after-east.png",
+      "source_png_sha256": "2e8c637dc37d40fbd595de57d007436a45a59984b8a33f173e11d0a9bacfa2c6",
+      "published_png_sha256": "0d19b0db874e668e726bdab0aa1fa94d2c2a536d32fd700b538b6d51a8f29ddb",
+      "bytes": 781594,
+      "pixel_sha256": "4170c13f5fe506d46ee3306dc09a8bf908907b5f776ec301443573fda823c659",
+      "compressed_pixel_data_unchanged": true,
+      "removed_chunk_types": [
+        "eXIf",
+        "oFFs",
+        "tEXt"
+      ],
+      "retained_chunk_types": [
+        "IDAT",
+        "IEND",
+        "IHDR",
+        "pHYs"
+      ]
+    },
+    {
+      "file": "before-podium.png",
+      "source_png_sha256": "cb691b805ccd096aa7fd32ebffd0e1b6ce49dec3c37b91c09847cb1d5ad7d766",
+      "published_png_sha256": "5457cb47535e48276c3825e5e38cba91b459958edb277e29dcd284812175fee2",
+      "bytes": 968615,
+      "pixel_sha256": "e356fcf56c7ae89f6cd4070336450ccce4112174d5a343f6a91cfcd44c91bca7",
+      "compressed_pixel_data_unchanged": true,
+      "removed_chunk_types": [
+        "eXIf",
+        "oFFs",
+        "tEXt"
+      ],
+      "retained_chunk_types": [
+        "IDAT",
+        "IEND",
+        "IHDR",
+        "pHYs"
+      ]
+    },
+    {
+      "file": "after-podium.png",
+      "source_png_sha256": "bf782c1f6b6a52ee204dd9501b86b9f96076049b0fd1693e3ce1b4d915e009d9",
+      "published_png_sha256": "5457cb47535e48276c3825e5e38cba91b459958edb277e29dcd284812175fee2",
+      "bytes": 968615,
+      "pixel_sha256": "e356fcf56c7ae89f6cd4070336450ccce4112174d5a343f6a91cfcd44c91bca7",
+      "compressed_pixel_data_unchanged": true,
+      "removed_chunk_types": [
+        "eXIf",
+        "oFFs",
+        "tEXt"
+      ],
+      "retained_chunk_types": [
+        "IDAT",
+        "IEND",
+        "IHDR",
+        "pHYs"
+      ]
+    }
+  ],
+  "total_bytes": 3500418,
+  "privacy": {
+    "private_execution_paths_published": false,
+    "png_text_exif_metadata_removed": true,
+    "city_blends_or_raw_textures_committed": false
+  },
+  "license_scope": "Publication is review evidence authorized by the account holder, with retained PLATEAU attribution and processing notice. No new blanket license is granted for original code, scenes or third-party content.",
+  "pr_tests": {
+    "total": 241,
+    "passed": 234,
+    "skipped_optional_dependencies": 7,
+    "failures": 0
+  },
+  "excluded": [
+    "scripts/plateau_evidence.py and its source-index docs/tests (separate contributor PR)",
+    "unadopted normal-study commit 1c254444 and all its changes"
+  ]
+}
