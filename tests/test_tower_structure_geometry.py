@@ -35,10 +35,14 @@ class TowerGeometryTests(unittest.TestCase):
 
     def test_float32_geometry_satisfies_independent_physical_constraints(self):
         result = saved.check_geometry(self.meshes)
-        self.assertEqual(len(result['objects']), 17)
+        self.assertEqual(len(result['objects']), 26)
         self.assertEqual(result['stairs']['treads'], 598)
         self.assertEqual(result['stairs']['landing_connections_checked'], 92)
         self.assertEqual(result['upper_guides']['top_m'], 246.1)
+        self.assertEqual(result['upper_suspension']['ropes'], 7)
+        self.assertEqual(result['upper_car']['large_glass_panes'], 3)
+        self.assertEqual(result['upper_rescue_doors']['structural_penetrations'], 0)
+        self.assertEqual(result['upper_service_stairs']['treads'], 500)
         self.assertTrue(result['foottown']['doorway_open'])
         self.assertEqual(result['base_connections']['plates'], 16)
 
@@ -87,14 +91,51 @@ class TowerGeometryTests(unittest.TestCase):
         _, parts = saved.check_mesh(vertices, faces, saved.BOUNDS['upper-shaft-frame'])
         with self.assertRaisesRegex(ValueError, 'Wide vertical wall'):
             saved.check_open_upper(vertices, faces, parts)
-        for cuboid in (True, False):
-            rails = copy.deepcopy(self.parts['upper-guide-rails'])
-            part = next(p for p in rails if p['cuboid'] == cuboid)
-            extent = list(part['bounds'])
-            extent[2] = (extent[2][0]-1, extent[2][1])
-            part['bounds'] = extent
-            with self.assertRaisesRegex(ValueError, 'endpoint|rope'):
-                saved.check_guides(rails)
+        rails = copy.deepcopy(self.parts['upper-guide-rails'])
+        part = next(p for p in rails if p['size'][2] > 90)
+        extent = list(part['bounds']); extent[2] = (extent[2][0]-1, extent[2][1]); part['bounds'] = extent
+        with self.assertRaisesRegex(ValueError, 'endpoint'):
+            saved.check_guides(rails)
+        ropes = copy.deepcopy(self.parts['upper-suspension'])
+        extent = list(ropes[0]['bounds']); extent[2] = (203, extent[2][1]); ropes[0]['bounds'] = extent
+        with self.assertRaisesRegex(ValueError, 'Suspension rope endpoint'):
+            saved.check_suspension(ropes, self.parts['upper-car-rigging'])
+        with self.assertRaisesRegex(ValueError, 'seven suspension ropes'):
+            saved.check_suspension(ropes[1:], self.parts['upper-car-rigging'])
+
+    def test_car_glass_mirror_shoes_and_rope_crosshead_connections_are_enforced(self):
+        for target in ('pane', 'mirror', 'shoe', 'crosshead', 'door'):
+            parts = copy.deepcopy(self.parts)
+            if target == 'pane':
+                parts['upper-car-glass'] = [p for p in parts['upper-car-glass'] if not (p['cuboid'] and p['center'][1] < -1)]
+            elif target == 'mirror':
+                part = parts['upper-car-mirror'][0]
+                extent = list(part['bounds']); extent[2] = (203.71, 203.73); part['bounds'] = extent
+            elif target == 'shoe':
+                part = next(p for p in parts['upper-car-dark'] if saved.near(p['center'][0], 1.4145))
+                part['center'] = (1.42, 0, part['center'][2])
+            elif target == 'crosshead':
+                parts['upper-car-rigging'] = [p for p in parts['upper-car-rigging'] if not (p['cuboid'] and saved.near(p['bounds'][2][1], 204.32) and p['size'][0] > 2)]
+            else:
+                part = next(p for p in parts['upper-car-shell'] if p['cuboid'] and saved.near(p['size'][0], .654))
+                extent = list(part['bounds']); extent[2] = (201.09, extent[2][1]); part['bounds'] = extent
+            with self.subTest(target=target):
+                with self.assertRaises(ValueError):
+                    saved.check_upper_car(parts)
+
+    def test_rescue_door_detects_stair_member_crossing_and_upper_stair_landing_gap(self):
+        parts = copy.deepcopy(self.parts)
+        vertices, faces = cube()
+        vertices = [(x*.04-.02, y*.04+1.8, z+184.5) for x, y, z in vertices]
+        _, intrusive = saved.check_mesh(vertices, faces, ((-1, 1), (1, 2), (184, 186)))
+        parts['upper-service-stairs'].extend(intrusive)
+        with self.assertRaisesRegex(ValueError, 'crosses rescue doorway: upper-service-stairs'):
+            saved.check_rescue_doors(parts)
+        stairs = copy.deepcopy(self.parts['upper-service-stairs'])
+        landing = next(p for p in stairs if p['cuboid'] and saved.near(p['size'][0], .7) and saved.near(p['bounds'][2][1], 184))
+        extent = list(landing['bounds']); extent[0] = tuple(v+1 for v in extent[0]); landing['bounds'] = extent
+        with self.assertRaisesRegex(ValueError, 'misses a landing'):
+            saved.check_upper_stairs(stairs)
 
     def test_roof_hole_plate_contact_and_doorway_are_enforced(self):
         for change in ('roof', 'door'):

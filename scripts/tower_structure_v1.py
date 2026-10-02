@@ -22,7 +22,10 @@ GROUPS = ('foottown-shell', 'foottown-glazing', 'foottown-metal', 'foottown-roof
           'base-connections', 'lower-shaft-frame', 'lower-shaft-glazing',
           'stairs-frame', 'stairs-treads', 'stairs-guards', 'roof-access',
           'upper-shaft-frame', 'upper-guide-rails', 'upper-support-links',
-          'upper-platforms', 'lift-cars', 'lift-glazing')
+          'upper-platforms', 'lift-cars', 'lift-glazing', 'upper-suspension',
+          'upper-landing-doors', 'upper-car-shell', 'upper-car-glass',
+          'upper-car-mirror', 'upper-car-floor', 'upper-car-rigging', 'upper-car-dark',
+          'upper-service-stairs')
 ADDED = {PREFIX + group for group in GROUPS}
 STAIR_BOTTOM, STAIR_TOP = 16.2, 145.1
 STAIR_FLIGHTS, STEPS_PER_FLIGHT = 46, 13
@@ -149,41 +152,10 @@ def lower_lift_geometry(b):
 
 
 def upper_lift_geometry(b):
-    half = 1.80
-    levels = [UPPER_BOTTOM+i*(UPPER_TOP-UPPER_BOTTOM)/24 for i in range(25)]
-    for x in (-half,half):
-        for y in (-half,half):
-            b.box('upper-shaft-frame',(x,y,(UPPER_BOTTOM+UPPER_TOP)/2),(.16,.16,UPPER_TOP-UPPER_BOTTOM))
-    for i,(a,z) in enumerate(zip(levels,levels[1:])):
-        for sign in (-1,1):
-            b.box('upper-shaft-frame',(0,sign*half,a+.06),(3.6,.13,.12))
-            b.box('upper-shaft-frame',(sign*half,0,a+.06),(.13,3.6,.12))
-        # Leave the front open to the observation car; sparse rear/side bracing.
-        b.beam('upper-shaft-frame',(-half,half,a),(half,half,z),.055)
-        for sign in (-1,1):
-            b.beam('upper-shaft-frame',(sign*half,-half,a),(sign*half,half,z),.045)
-    for x in (-1.43,1.43):
-        b.box('upper-guide-rails',(x,0,(UPPER_BOTTOM+UPPER_TOP)/2),(.10,.15,UPPER_TOP-UPPER_BOTTOM))
-        b.box('upper-guide-rails',(x,1.40,(UPPER_BOTTOM+UPPER_TOP)/2),(.08,.12,UPPER_TOP-UPPER_BOTTOM))
-    for x in (-.48,-.32,-.16,0,.16,.32,.48):
-        # Suspension ropes terminate on the upper cabin roof, not inside it.
-        b.beam('upper-guide-rails',(x,.9,203.94),(x,.9,UPPER_TOP-.1),.014,6)
-    for z in (UPPER_BOTTOM, *RESCUE_LEVELS, 243.8):
-        width=tower_half_width(z)
-        for sx in (-1,1):
-            for sy in (-1,1):
-                b.beam('upper-support-links',(sx*half,sy*half,z),(sx*width,sy*width,z),.115)
-                b.beam('upper-support-links',(sx*half,sy*half,z-1.8),(sx*width,sy*width,z),.075)
-    for z in RESCUE_LEVELS:
-        # Two small service/rescue landings: not a solid intermediate deck.
-        b.box('upper-platforms',(0,2.6,z-.065),(5.6,1.4,.13))
-        for x in (-2.30,2.30):
-            b.box('upper-platforms',(x,.6,z-.065),(1.0,2.6,.13))
-            outer=2.8 if x>0 else -2.8
-            railing(b,'upper-platforms',(outer,-.7,z),(outer,3.3,z))
-        railing(b,'upper-platforms',(-2.8,3.3,z),(2.8,3.3,z))
-    # Static exterior envelopes only; cabin pose is illustrative, not operational.
-    for z in (80.0,201.0):
+    from tower_upper_lift_v2 import geometry as upper_geometry
+    upper_geometry(b)
+    # Preserve the separate, simple lower lift envelope from the first revision.
+    for z in (80.0,):
         b.box('lift-cars',(0,0,z),(2.65,2.60,.20))
         b.box('lift-cars',(0,0,z+2.85),(2.65,2.60,.18))
         b.box('lift-cars',(0,1.22,z+1.42),(2.55,.12,2.65))
@@ -287,6 +259,11 @@ def apply(op, fingerprint):
         'roof':((.38,.40,.39,1),0,.80,0),
         'glass':((.24,.37,.42,1),.18,.12,.45),
         'light':((.71,.73,.72,1),.55,.30,0),
+        'clear':((.92,.97,.98,1),0,.035,1),
+        'mirror':((.92,.94,.96,1),1,.035,0),
+        'stainless':((.55,.58,.61,1),.86,.23,0),
+        'dark':((.022,.027,.031,1),.38,.38,0),
+        'floor':((.035,.037,.039,1),0,.86,0),
     }
     materials={}
     for key,(color,metal,rough,transmission) in specs.items():
@@ -296,9 +273,18 @@ def apply(op, fingerprint):
         shader.inputs['Base Color'].default_value=color;shader.inputs['Metallic'].default_value=metal
         shader.inputs['Roughness'].default_value=rough;shader.inputs['Transmission Weight'].default_value=transmission
         materials[key]=material
+    # Match the already reviewed PR56 bands in the original local coordinates.
+    # Copy the shader without mutating any original material or its users.
+    materials['banded']=bpy.data.objects[ORANGE].data.materials[0].copy()
+    materials['banded'].name='OTW Tower structure v1 / banded'
     assignment={'foottown-shell':'brown','foottown-glazing':'glass','foottown-metal':'light','foottown-roof':'roof',
                 'lower-shaft-frame':'steel','lower-shaft-glazing':'glass','roof-access':'light',
-                'upper-guide-rails':'steel','upper-platforms':'steel','lift-cars':'light','lift-glazing':'glass'}
+                'upper-guide-rails':'steel','upper-platforms':'steel','lift-cars':'light','lift-glazing':'glass',
+                'upper-suspension':'dark','upper-landing-doors':'stainless',
+                'upper-car-shell':'stainless','upper-car-glass':'clear','upper-car-mirror':'mirror',
+                'upper-car-floor':'floor','upper-car-rigging':'steel','upper-car-dark':'dark'}
+    assignment.update({name:'banded' for name in
+                       ('upper-shaft-frame','upper-support-links','upper-service-stairs')})
     for group in GROUPS:
         mesh=bpy.data.meshes.new(PREFIX+group)
         mesh.from_pydata(data[group]['vertices'],[],data[group]['faces']);mesh.update()
