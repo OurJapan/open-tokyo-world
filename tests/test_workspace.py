@@ -43,9 +43,23 @@ class WorkspaceContract(unittest.TestCase):
         self.assertIsNone(catalog["profiles"]["city"]["public_url"])
         features = workspace.read_json(ROOT / catalog["profiles"]["city"]["features"])
         self.assertEqual(features["waiver_input_sha256"], catalog["profiles"]["city"]["asset"]["sha256"])
-        accepted = workspace.read_json(ROOT / "manifests/mori-plaza-landscape-accepted.json")
+        accepted = workspace.read_json(ROOT / "manifests/mori-plaza-connection-accepted.json")
         for field in ("bytes", "sha256"):
             self.assertEqual(catalog["profiles"]["city"]["asset"][field], accepted[field])
+
+    def test_city_reuses_validated_connection_views_and_legacy_waivers(self):
+        profile = workspace.load_catalog()["profiles"]["city"]
+        evidence = workspace.read_json(ROOT / profile["evidence"])
+        views = workspace.read_json(ROOT / profile["cameras"])["views"]
+        self.assertEqual(len(views), 9)
+        for stage in ("before", "after"):
+            self.assertEqual([view["id"] for view in views],
+                             [view["id"] for view in evidence["render_evidence"][stage]])
+        features = workspace.read_json(ROOT / profile["features"])
+        previous = workspace.read_json(ROOT / "areas/tokyo-tower/mori-plaza-landscape-accepted-features.json")
+        self.assertEqual(features["features"], previous["features"])
+        self.assertEqual(features["legacy_empty_objects"], previous["legacy_empty_objects"])
+        self.assertEqual(len(features["legacy_empty_objects"]), 5)
 
     def test_city_upgrade_preserves_old_model_and_existing_edits(self):
         with tempfile.TemporaryDirectory() as folder:
@@ -70,6 +84,12 @@ class WorkspaceContract(unittest.TestCase):
             self.assertEqual(current.read_bytes(), b"new city")
             self.assertNotEqual(current, old)
             self.assertEqual(record["scene"], repeated["scene"])
+            new_edit = workspace.prepare_edit(root, "city", catalog)
+            self.assertNotEqual(new_edit, edit)
+            self.assertEqual(new_edit.read_bytes(), b"new city")
+            metadata = workspace.read_json(new_edit.parent / "edit.json")
+            self.assertEqual(metadata["reference_sha256"], expected(b"new city")["sha256"])
+            self.assertFalse(metadata["validated_edit"])
             self.assertEqual(old.read_bytes(), b"old city")
             self.assertEqual(edit.read_bytes(), b"my ongoing edit")
             self.assertEqual(source.read_bytes(), b"new city")

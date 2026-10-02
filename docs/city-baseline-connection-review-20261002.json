@@ -1,0 +1,129 @@
+{
+  "date": "2026-10-02T13:33:36.998128+09:00",
+  "ok": true,
+  "runner_python": "3.12.13",
+  "scope": "Existing model import, version migration, and fresh edit copy; no geometry or rendering changes",
+  "reused_evidence": {
+    "same_saved_model": true,
+    "same_cameras": true,
+    "code_sha256_lf_matches": {
+      "scripts/audit_mori_plaza_levels.py": true,
+      "scripts/blender_worker.py": true,
+      "scripts/mori_crown_material.py": true,
+      "scripts/mori_crown_v2.py": true,
+      "scripts/mori_entrance_v1.py": true,
+      "scripts/mori_facade_v2.py": true,
+      "scripts/mori_plaza_connection_v1.py": true,
+      "scripts/mori_plaza_edge_v1.py": true,
+      "scripts/mori_plaza_landscape_v1.py": true,
+      "scripts/mori_plaza_link_v1.py": true,
+      "scripts/mori_plaza_outline_v1.py": true,
+      "scripts/mori_plaza_v1.py": true,
+      "scripts/mori_podium_v2.py": true,
+      "scripts/mori_podium_v3.py": true,
+      "scripts/mori_shape.py": true,
+      "scripts/mori_terrace_v1.py": true,
+      "scripts/prepare_mori_plaza_connection.py": true,
+      "scripts/review.py": true,
+      "scripts/validate_mori_plaza_connection.py": true,
+      "tests/test_mori_plaza_connection.py": true
+    },
+    "geometry_validation": "docs/mori-plaza-connection-v1-validation.json",
+    "matched_nine_view_review": "docs/mori-plaza-connection-v1-run.json",
+    "new_geometry_validation": false,
+    "new_render": false,
+    "human_visual_approval": false
+  },
+  "asset": {
+    "bytes": 559040261,
+    "sha256": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4"
+  },
+  "old_registration_reported_update_required": true,
+  "stale_edit_blocked": true,
+  "new_registration_ready": true,
+  "old_model_preserved": true,
+  "old_edit_preserved": true,
+  "original_models_unchanged": true,
+  "default_registration_unchanged": true,
+  "source_sha256": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4",
+  "registered_sha256": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4",
+  "fresh_edit_sha256": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4",
+  "fresh_edit_validated_as_edited_model": false,
+  "runtime": {
+    "report": "checks/scene-20261002T043406Z-34c6e502/report.json",
+    "blender_version": "4.5.1",
+    "blender_python": "3.11.11",
+    "scene": {
+      "opened": true,
+      "objects": 3307,
+      "meshes": 3257,
+      "packed_images": 383,
+      "missing_images": [],
+      "unsupported_images": [],
+      "missing_libraries": [],
+      "external_images": [],
+      "linked_libraries": 0,
+      "self_contained_images_libraries": true,
+      "references_ok": true,
+      "scope": "Opening and image/library references only; not a full geometry, external dependency or accuracy audit."
+    }
+  },
+  "fresh_edit_runtime": {
+    "report": "checks/scene-20261002T043429Z-6d1b1229/report.json",
+    "blender_version": "4.5.1",
+    "blender_python": "3.11.11",
+    "scene": {
+      "opened": true,
+      "objects": 3307,
+      "meshes": 3257,
+      "packed_images": 383,
+      "missing_images": [],
+      "unsupported_images": [],
+      "missing_libraries": [],
+      "external_images": [],
+      "linked_libraries": 0,
+      "self_contained_images_libraries": true,
+      "references_ok": true,
+      "scope": "Opening and image/library references only; not a full geometry, external dependency or accuracy audit."
+    }
+  },
+  "local_outputs": {
+    "checks": "data/local/pr46-review-20261002-02",
+    "workspace": "data/local/pr46-review-20261002-02/workspace"
+  },
+  "limits": [
+    "Same Windows host only.",
+    "No new render, physical accuracy certification, or public distribution.",
+    "Later manual edits require their own validation."
+  ],
+  "schema_version": 1,
+  "checked_code_base_commit": "85f0215f620a6e25870d5f3701d390c1fee043d8",
+  "contracts": {
+    "compileall": true,
+    "log": "data/local/pr46-contracts.log",
+    "skipped_scope": [
+      "One optional production Shapely test",
+      "Five optional photo image tests"
+    ],
+    "exit_code": 0,
+    "passed": 212,
+    "total": 218,
+    "skipped": 6
+  },
+  "focused_workspace_tests": {
+    "passed": 16,
+    "exit_code": 0,
+    "total": 16,
+    "log": "data/local/pr46-workspace-tests.log"
+  },
+  "code_and_config_sha256_lf": {
+    "manifests/mori-plaza-connection-accepted.json": "1887a68bd55e6c1fd7196e57a908cb278124fb3adc6dae829e8742a42698096e",
+    "areas/tokyo-tower/mori-plaza-connection-accepted-features.json": "73ae1670cc2af20268f22e285c5afcbb7ea152df1620dc1c3ca938d37b3bc398",
+    "tests/test_workspace.py": "e0d04340e154b353be10554d503191cfb06ba0b4dd245c153f7006396b16ee45",
+    "scripts/workspace.py": "4aff2f7b379264cf46ab8a4cc79d2345450c40053f341e09cdb79b4d4203ec70",
+    "scripts/workspace_blender.py": "e7fc7978c2b2f09d769bc66925b0e40f0e89e3087961a70389db60602350ba1a",
+    "manifests/contributor-workspace.json": "7a3e1481646fc02c70bfbcbecf916f652ead65889407cd58d6ee1d3b66cb0859",
+    "areas/tokyo-tower/mori-plaza-connection-cameras.json": "b1865aa9028bf8b56e193efd99345a7b13451e6c6a6024543f56659820e4bae4"
+  },
+  "hash_convention": "code_and_config_sha256_lf normalizes CRLF to LF; blend hashes are exact raw-byte hashes."
+}

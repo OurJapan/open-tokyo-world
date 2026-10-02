@@ -1,0 +1,6 @@
+{
+  "bytes": 559040261,
+  "sha256": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4",
+  "blender_version": "4.5.1 LTS",
+  "description": "Accepted entrance connection included in main b346d26dd6bda41cbf1057741b1ec50dcefda172 (PR 43). Existing validated output, no geometry regeneration or public distribution grant."
+}
