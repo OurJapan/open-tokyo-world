@@ -1,0 +1,248 @@
+{
+  "status": "complete-locally-not-published",
+  "recorded_at": "2026-10-02T14:09:22.193546+00:00",
+  "base_commit": "9f1aa67028356851afefae5c565329b9a9d451b3",
+  "branch": "codex/tower-topdeck-junction-20261002",
+  "model": "data/local/topdeck-junction-02/after.blend",
+  "review": "data/local/topdeck-junction-02/review.html",
+  "validation": {
+    "ok": true,
+    "saved_reopened": true,
+    "part_ids_preserved": 77,
+    "unchanged_mesh_objects": 74,
+    "unchanged_camera_light": 2,
+    "all_materials_world_unchanged": true,
+    "paint_parts005_006_unchanged": true,
+    "floor_unchanged": true,
+    "parts": {
+      "tokyo-tower-part-009": {
+        "moved_vertices": 1120,
+        "fixed_vertices": 1120,
+        "old_gap_m": 0.029998779296875,
+        "new_gap_m": 0.0,
+        "xy_unchanged": true,
+        "upper_end_unchanged": true,
+        "lower_profile_translated": true,
+        "topology_shading_attributes_unchanged": true,
+        "edge_incidence": {
+          "wire": 0,
+          "boundary": 0,
+          "more_than_two_faces": 0
+        }
+      },
+      "tokyo-tower-part-010": {
+        "moved_vertices": 160,
+        "fixed_vertices": 160,
+        "old_gap_m": 0.0574951171875,
+        "new_gap_m": 0.0,
+        "xy_unchanged": true,
+        "upper_end_unchanged": true,
+        "lower_profile_translated": true,
+        "topology_shading_attributes_unchanged": true,
+        "edge_incidence": {
+          "wire": 0,
+          "boundary": 0,
+          "more_than_two_faces": 0
+        }
+      },
+      "tokyo-tower-part-011": {
+        "moved_vertices": 160,
+        "fixed_vertices": 160,
+        "old_gap_m": 0.029998779296875,
+        "new_gap_m": 0.0,
+        "xy_unchanged": true,
+        "upper_end_unchanged": true,
+        "lower_profile_translated": true,
+        "topology_shading_attributes_unchanged": true,
+        "edge_incidence": {
+          "wire": 0,
+          "boundary": 0,
+          "more_than_two_faces": 0
+        }
+      }
+    },
+    "contact_rays": {
+      "tokyo-tower-part-009": {
+        "members": 40,
+        "base_ray_hits": 40,
+        "ray_height_above_floor_m": 0.015
+      },
+      "tokyo-tower-part-010": {
+        "members": 40,
+        "base_ray_hits": 40,
+        "ray_height_above_floor_m": 0.015
+      },
+      "tokyo-tower-part-011": {
+        "members": 40,
+        "base_ray_hits": 40,
+        "ray_height_above_floor_m": 0.015
+      }
+    },
+    "candidate_sha256": "2bd43b6cea8796d612695e5b3a57f9f3a677bd0bfc4038ca0980284f03047583",
+    "candidate_bytes": 27742045,
+    "input_sha256": "361f45888ca17db9cee112bf76a55d21f2e9820f4d385f575101ffc152400f5f",
+    "script_sha256": "739ddb64442d7ecd357b30483da2b9c2351e29eda26fc7c9fa9227585e5ed309",
+    "plan_sha256": "315557e4aa90ba6947aaf2386c0c095a79997c25462bcdac434d0d6f55e916df",
+    "limits": [
+      "A simplified closure repair using existing parts, not an as-built reconstruction of sill profiles or seals.",
+      "The existing floor elevation and circular plan remain inherited estimates, not surveyed dimensions.",
+      "The separate 300mm floor-to-lower-white-shell gap and upper glass-to-roof clearance are outside this change.",
+      "No city integration, registry change, tree change, main-deck window-slope change or full self-intersection certification."
+    ]
+  },
+  "build": {
+    "ok": true,
+    "input_sha256": "361f45888ca17db9cee112bf76a55d21f2e9820f4d385f575101ffc152400f5f",
+    "script_sha256": "739ddb64442d7ecd357b30483da2b9c2351e29eda26fc7c9fa9227585e5ed309",
+    "plan_sha256": "315557e4aa90ba6947aaf2386c0c095a79997c25462bcdac434d0d6f55e916df",
+    "blender": "4.5.1 LTS",
+    "floor_top_m": 246.22000122070312,
+    "changes": {
+      "tokyo-tower-part-009": {
+        "moved_vertices": 1120,
+        "lower_end_translation_m": -0.029998779296875
+      },
+      "tokyo-tower-part-010": {
+        "moved_vertices": 160,
+        "lower_end_translation_m": -0.0574951171875
+      },
+      "tokyo-tower-part-011": {
+        "moved_vertices": 160,
+        "lower_end_translation_m": -0.029998779296875
+      }
+    },
+    "before_rays": {
+      "tokyo-tower-part-009": {
+        "members": 40,
+        "base_ray_hits": 0,
+        "ray_height_above_floor_m": 0.015
+      },
+      "tokyo-tower-part-010": {
+        "members": 40,
+        "base_ray_hits": 0,
+        "ray_height_above_floor_m": 0.015
+      },
+      "tokyo-tower-part-011": {
+        "members": 40,
+        "base_ray_hits": 0,
+        "ray_height_above_floor_m": 0.015
+      }
+    }
+  },
+  "comparison": {
+    "sill": {
+      "matching_settings": true,
+      "size": [
+        800,
+        600
+      ],
+      "changed_pixels": 67990,
+      "mean_rgba_difference": 0.00047570865717716515,
+      "max_rgba_difference": 0.4392157196998596
+    },
+    "topdeck": {
+      "matching_settings": true,
+      "size": [
+        800,
+        600
+      ],
+      "changed_pixels": 25285,
+      "mean_rgba_difference": 0.00017041082901414484,
+      "max_rgba_difference": 0.5058823823928833
+    },
+    "full": {
+      "matching_settings": true,
+      "size": [
+        640,
+        800
+      ],
+      "changed_pixels": 227,
+      "mean_rgba_difference": 1.2197455134810298e-06,
+      "max_rgba_difference": 0.027451008558273315
+    }
+  },
+  "render_hashes": {
+    "before": {
+      "sill": "fdff61fd0773c69a28d7487a0876a6f7ac1d4686a32ca2f2ab8ca55a59913f4c",
+      "topdeck": "fccb0cd35b4a22d0dca4c730fe3c695927521536b29378a8bad1582eb9c8f36b",
+      "full": "eae981cf9f0aa881090407bfc1c21a90871eecadd0e258610573f8054ad89cc0"
+    },
+    "after": {
+      "sill": "11960661f444ff43cfde6ea6a8342b998e0817a3cef6e21acbeadc22d2553641",
+      "topdeck": "00135d18f4b3ac199152427eda59f356a4753bfd1b7f380212791d133ef502d7",
+      "full": "8041bab76c774c7d1515da77d4c3a0015d6da278021ff182aa7f865a2e8af716"
+    }
+  },
+  "render_settings": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "threads": 2,
+    "samples": 32,
+    "seed": 0,
+    "denoise": true,
+    "adaptive_sampling": false
+  },
+  "protected_inputs": {
+    "original_fixed_ids": {
+      "path": "C:\\Users\\ark4e\\Projects\\open-tokyo-world\\data\\local\\checks\\tower-part-ids-20260927\\after\\tower.blend",
+      "sha256": "8413d9cce5f0cfa6d27428d4315b5516768a46c018065f5787607ed6ec138da9",
+      "bytes": 25784543
+    },
+    "completed_paint": {
+      "path": "C:\\Users\\ark4e\\Documents\\Codex\\2026-10-02\\task-5\\tokyo-tower-body\\data\\local\\tower-paint-bands-03\\after.blend",
+      "sha256": "361f45888ca17db9cee112bf76a55d21f2e9820f4d385f575101ffc152400f5f",
+      "bytes": 27742051
+    }
+  },
+  "verification": {
+    "portable_tests": {
+      "total": 248,
+      "passed": 241,
+      "skipped": 7,
+      "exit_code": 0
+    },
+    "blender_validator_tests": {
+      "total": 6,
+      "passed": 6,
+      "exit_code": 0
+    },
+    "protection_guards": {
+      "modified_input_refused": true,
+      "exit_codes": [
+        1,
+        1
+      ],
+      "existing_output_refused": true,
+      "candidate_sha256": "2bd43b6cea8796d612695e5b3a57f9f3a677bd0bfc4038ca0980284f03047583",
+      "candidate_unchanged": true
+    }
+  },
+  "visual_review": {
+    "views": [
+      "sill",
+      "topdeck",
+      "full"
+    ],
+    "both_sides_inspected": true,
+    "independent_review": "Astra independently reviewed implementation, official photograph, all six final images and candidate SHA-256; no requested changes.",
+    "sill": "Floating metal post ends now reach the existing floor. Existing bevels and the independent lower white-shell gap remain visible.",
+    "topdeck": "Upper window heads, deck roof and nearby tower members retain their existing silhouette.",
+    "full": "Tower tip, paint bands, main deck and legs retain their existing visible arrangement; no broad visual regression observed.",
+    "limits": "Image review does not certify engineering accuracy, all contact areas, all intersections or airtightness."
+  },
+  "unchanged_scope": [
+    "shared city registration",
+    "full city models",
+    "old compatibility result",
+    "trees",
+    "streets",
+    "neighbor buildings",
+    "viewer"
+  ],
+  "publication": {
+    "push": false,
+    "pr": false,
+    "merge": false,
+    "adopted_into_shared_city": false
+  }
+}
