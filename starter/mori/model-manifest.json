@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "adapter": "mori-standalone-v1",
+  "model_id": "otw:mori:procedural-v1",
+  "version": "standalone-v1",
+  "source_inventory_sha256": "b0070633b7f419600fdbb1bf98a7e6037dff0b7baa1eacc99866a1a775102e36",
+  "parts": {
+    "podium-aluminum": "Mori JP podium / aluminum",
+    "podium-ceiling": "Mori JP podium / ceiling",
+    "podium-clear-glass": "Mori JP podium / clear glass",
+    "podium-gasket": "Mori JP podium / gasket",
+    "podium-leaf": "Mori JP podium / leaf",
+    "podium-soil": "Mori JP podium / soil",
+    "podium-stone": "Mori JP podium / stone",
+    "podium-wood": "Mori JP podium / wood",
+    "facade-glass": "Mori continuous pearl glass / pearl grey coated glass",
+    "facade-spandrel": "Mori continuous pearl glass / recessed spandrel",
+    "facade-joint": "Mori continuous pearl glass / sealing joint",
+    "facade-mullion": "Mori continuous pearl glass / slender mullion",
+    "floors-roof": "Mori independent / floors and roof"
+  },
+  "code_sha256_lf": {
+    "scripts/object_registry.py": "e1f38a494d512e9cdae9ee0bef83d77dea4f2641ca3d463eb78ce0c8770e5a20",
+    "starter/mori/plan_adapter.py": "6fae1b6573762ca27c17d4624d791cdbdf5d89bc7153e0d888ae813d750a233c",
+    "starter/mori/run.py": "ea9a7bd87373f39e68052a32d5ae21cd363cd064b99b85db890a89f7ecf7f3e2",
+    "starter/mori/scene.py": "50c764aa9c344ad7e4c9076894011e4dd8a5ed767f59e490bfaf3fd67eab1b4d",
+    "starter/mori/profile.py": "78767146deaa0dd7280eda01dfe3da09e69bcc6cce6e4bde812a14c5da220a9b",
+    "starter/mori/facade.py": "e0422fc6998ad3791ecf3122ccd3e509a540559e791cd415b7578a8cf054f4f4",
+    "starter/plateau/tile.py": "566c3426113935348be0bd26c6e06ced6bd4f3c6ef5028fd9895736e670fccda",
+    "starter/plateau/scene.py": "54aef39d9517c9a1872ce7f38c95225b04b4d7867a169c068b8f054b5724fad9",
+    "starter/plaza/scene.py": "272f5b50a7d6953c67ec2a0b9acb209a4124b7120b4db21c225292c4b86cf751",
+    "scripts/mori_shape.py": "5588ac6e1409944faf1d686baffa7230b7a95a0b939c21502686b0a96d80df5a",
+    "scripts/mori_crown_v2.py": "8bb386b4429575c4c37b914c71b63629fb844c84c0399e943706b34fd10e64a7",
+    "scripts/mori_crown_material.py": "25d8ae26b7c5b2ba38f6db5fd5baa507f18c3965a83a3e09996d71fceb2d1959",
+    "scripts/mori_facade_v2.py": "5df83c9acf790bbfc1491f133445221174644663e2c041ec860a2900a81e7b9e",
+    "scripts/mori_podium_v3.py": "b202252d78763d965213c30a8c85260b0ce550e32128a7dbef05107d9e639dfb",
+    "scripts/mori_entrance_v1.py": "f9ab6f5aa0ad9a1cd201c8b021e9893a411e9556afbc7bb877f558e6faa2fede",
+    "scripts/mori_terrace_v1.py": "2056674560bbcd92503db2a5e8491eca0f2f21ab782ba9d332820b70a74d1a9d",
+    "scripts/mori_plaza_v1.py": "b16a1179b14f9e56b615d818c06da11c7be77959c199e2d93c6ee4544076fc2c",
+    "scripts/mori_plaza_link_v1.py": "c5e15978e47a7e4816001b175ead98d7445bf37828f48945f15915db639f4d37"
+  },
+  "hash_policy": "Model sha256 is exact manifest bytes (LF via .gitattributes); code hashes normalize CRLF to LF, matching district distribution.",
+  "limitations": [
+    "Existing standalone geometry unchanged; display heights, not survey accuracy.",
+    "Manifest describes a fixed local recipe, never an executable locator.",
+    "Original additions only under CC BY 4.0; PLATEAU source terms remain. No combined model distribution claim."
+  ]
+}

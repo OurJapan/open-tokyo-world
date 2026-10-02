@@ -1,0 +1,499 @@
+{
+  "schema_version": 1,
+  "issue": 34,
+  "base_commit": "e2ffac45815b0c847c6d405668af8dd644b3bfca",
+  "recorded_at": "2026-10-02T18:46:31.827374+00:00",
+  "environment": {
+    "host": "19KF",
+    "os": "Windows",
+    "python": "3.11.11",
+    "blender": "4.5.1 LTS"
+  },
+  "scope": "Existing standalone Mori recipe connected to the common plan; no geometry or full-city changes.",
+  "portable_tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "exit_code": 0,
+    "tests_run": 349,
+    "passed": 341,
+    "skipped": 8,
+    "failures": 0,
+    "errors": 0,
+    "log": "data/local/issue34/portable-tests-final.log",
+    "skip_reasons": [
+      "3 unrelated production Shapely geometry tests (optional dependency)",
+      "5 unrelated photo-estimation image tests (optional dependencies)"
+    ]
+  },
+  "compileall": {
+    "command": "python -m compileall -q scripts tests starter/mori",
+    "exit_code": 0
+  },
+  "preflight_rejection_evidence": {
+    "test_file": "tests/test_mori_plan.py",
+    "assertions": [
+      "Mismatch raises before Blender subprocess invocation",
+      "Output and missing parent are not created",
+      "Registry/manifest mismatches reject before network access",
+      "Explicit corrupt source files reject before Blender and output creation"
+    ],
+    "cases": [
+      "stale-lock",
+      "relocked-source-hash",
+      "relocked-source-inventory",
+      "relocked-target-gml-id",
+      "relocked-part-id",
+      "relocked-model-hash",
+      "unknown-locator",
+      "operation",
+      "position",
+      "yaw",
+      "frame",
+      "profile",
+      "selection",
+      "review-neighbor-scope",
+      "candidate",
+      "review-only",
+      "manifest-parts",
+      "manifest-code-file-set",
+      "manifest-inventory-hash",
+      "changed-scene-code",
+      "changed-adapter-code",
+      "changed-geometry-code",
+      "changed-planner-code",
+      "corrupt-tileset",
+      "corrupt-b3dm"
+    ]
+  },
+  "standalone_generation": {
+    "command": "python starter/mori/run.py --blender BLENDER --inputs data/local/issue34/inputs --output data/local/issue34/final-generation",
+    "ok": true,
+    "started_at": 1790966544.4727373,
+    "legacy_scene_used": false,
+    "input_mode": "explicit-pinned-files",
+    "plan_sha256": "6beb7662efb5bfdfbad8c026bd63b64db73f680a152596392d4eeb7846b5c646",
+    "model_sha256": "18a42a919f75092256346a27c42ac8d544729d575ca7571698f11a38455e1249",
+    "preflight_code_sha256_lf": {
+      "scripts/object_registry.py": "e1f38a494d512e9cdae9ee0bef83d77dea4f2641ca3d463eb78ce0c8770e5a20",
+      "starter/mori/plan_adapter.py": "6fae1b6573762ca27c17d4624d791cdbdf5d89bc7153e0d888ae813d750a233c",
+      "starter/mori/run.py": "ea9a7bd87373f39e68052a32d5ae21cd363cd064b99b85db890a89f7ecf7f3e2",
+      "starter/mori/scene.py": "50c764aa9c344ad7e4c9076894011e4dd8a5ed767f59e490bfaf3fd67eab1b4d",
+      "starter/mori/profile.py": "78767146deaa0dd7280eda01dfe3da09e69bcc6cce6e4bde812a14c5da220a9b",
+      "starter/mori/facade.py": "e0422fc6998ad3791ecf3122ccd3e509a540559e791cd415b7578a8cf054f4f4",
+      "starter/plateau/tile.py": "566c3426113935348be0bd26c6e06ced6bd4f3c6ef5028fd9895736e670fccda",
+      "starter/plateau/scene.py": "54aef39d9517c9a1872ce7f38c95225b04b4d7867a169c068b8f054b5724fad9",
+      "starter/plaza/scene.py": "272f5b50a7d6953c67ec2a0b9acb209a4124b7120b4db21c225292c4b86cf751",
+      "scripts/mori_shape.py": "5588ac6e1409944faf1d686baffa7230b7a95a0b939c21502686b0a96d80df5a",
+      "scripts/mori_crown_v2.py": "8bb386b4429575c4c37b914c71b63629fb844c84c0399e943706b34fd10e64a7",
+      "scripts/mori_crown_material.py": "25d8ae26b7c5b2ba38f6db5fd5baa507f18c3965a83a3e09996d71fceb2d1959",
+      "scripts/mori_facade_v2.py": "5df83c9acf790bbfc1491f133445221174644663e2c041ec860a2900a81e7b9e",
+      "scripts/mori_podium_v3.py": "b202252d78763d965213c30a8c85260b0ce550e32128a7dbef05107d9e639dfb",
+      "scripts/mori_entrance_v1.py": "f9ab6f5aa0ad9a1cd201c8b021e9893a411e9556afbc7bb877f558e6faa2fede",
+      "scripts/mori_terrace_v1.py": "2056674560bbcd92503db2a5e8491eca0f2f21ab782ba9d332820b70a74d1a9d",
+      "scripts/mori_plaza_v1.py": "b16a1179b14f9e56b615d818c06da11c7be77959c199e2d93c6ee4544076fc2c",
+      "scripts/mori_plaza_link_v1.py": "c5e15978e47a7e4816001b175ead98d7445bf37828f48945f15915db639f4d37"
+    },
+    "notice_sha256": {
+      "NOTICE.md": "6453cc54c21c465a1c21b0eeb89644413266033f201e09c077834f44b3709f87",
+      "ASSET-LICENSE.md": "a9f955534cd0907c8b5b4f1cffe22aa5899b4836fedc84ae32908b2e170fb3ac",
+      "provenance.json": "324f60663dcf054fd82613b855c8ea141fc9277f8500a4f9744cd79f2fe04a5f",
+      "MIT-LICENSE.txt": "ea868396a9901972b564835af3ab67857796566a7b1b5811e41d9fd1d6a920d4",
+      "CODE-LICENSE.md": "537da5ac8ef60f96a5021fc237330c03e8a8cbd4c9e4c969e18ecad98b780790",
+      "PLATEAU-NOTICE.md": "60b6ceb21a5bed60367673e8791a8f3044f9ae7679fc37d880d24a74239e77d9",
+      "PLAZA-LICENSE.md": "baf41b2af4afd30f99ac7df8c15ee66ff1f27dceacaf68b3266cbbdcd2d9a767",
+      "plaza-provenance.json": "56c937995a63dbc12ed7ec4a59ddf7419230a6c74f89e57d68e787639c862a64"
+    },
+    "licensed_parts_verified": true,
+    "validation": {
+      "before": {
+        "ok": true,
+        "blender": "4.5.1 LTS",
+        "meshes": 30,
+        "triangles": 134700,
+        "blend_bytes": 3883742,
+        "saved_reopened": true,
+        "plan_sha256": "6beb7662efb5bfdfbad8c026bd63b64db73f680a152596392d4eeb7846b5c646",
+        "model_sha256": "18a42a919f75092256346a27c42ac8d544729d575ca7571698f11a38455e1249",
+        "planned_parts_verified": 0,
+        "unchanged_neighbors": 0,
+        "unchanged_plaza_parts": 0,
+        "renders": {
+          "full": "e44a4327a88e469b4cb440201e62d9615bbe2a5b572af88a05e2813ca5877da3",
+          "crown": "db39b9c9a1b7e705a82bb8a944300a365dd38cac4fe713d2ed1484143754e07d",
+          "podium": "88cd859459b2bd52addf888e8bdbfb485b89e2ee8be663dff7bf8e26e75dacb7",
+          "entrance": "d5e9c7fcd43a524b72bde5393507af43ea7ba51bc973c788f687f5e7e1dd9b54"
+        },
+        "cameras": [
+          [
+            "full",
+            [
+              -430,
+              253,
+              165
+            ],
+            [
+              450,
+              600,
+              230
+            ],
+            520
+          ],
+          [
+            "crown",
+            [
+              -430,
+              253,
+              307
+            ],
+            [
+              180,
+              260,
+              120
+            ],
+            120
+          ],
+          [
+            "podium",
+            [
+              -440,
+              278,
+              20
+            ],
+            [
+              85,
+              140,
+              105
+            ],
+            175
+          ],
+          [
+            "entrance",
+            [
+              -409,
+              312,
+              1
+            ],
+            [
+              45,
+              9,
+              42
+            ],
+            60
+          ]
+        ],
+        "render_settings": {
+          "engine": "CYCLES",
+          "device": "CPU",
+          "samples": 16,
+          "seed": 0,
+          "resolution": [
+            960,
+            720
+          ]
+        },
+        "full_camera_bounds_checked": true
+      },
+      "after": {
+        "ok": true,
+        "blender": "4.5.1 LTS",
+        "meshes": 42,
+        "triangles": 1183474,
+        "blend_bytes": 19323706,
+        "saved_reopened": true,
+        "plan_sha256": "6beb7662efb5bfdfbad8c026bd63b64db73f680a152596392d4eeb7846b5c646",
+        "model_sha256": "18a42a919f75092256346a27c42ac8d544729d575ca7571698f11a38455e1249",
+        "planned_parts_verified": 13,
+        "unchanged_neighbors": 23,
+        "unchanged_plaza_parts": 6,
+        "renders": {
+          "full": "1c4811f33de40598491285a755b82a49a64a439be0422d9a0879855ce98f6527",
+          "crown": "121cd39f93f4f92192a7aaedc1939e97a56580f1680fad6b76586780efb9fabe",
+          "podium": "b913906966d34d4ebc0e31ea644b7bd17ca560ffcf154bdeeae52b6046788da4",
+          "entrance": "24e80288a49912661d142c758c848e3637567a72ec986e8a7fe63c1eef880fe2"
+        },
+        "cameras": [
+          [
+            "full",
+            [
+              -430,
+              253,
+              165
+            ],
+            [
+              450,
+              600,
+              230
+            ],
+            520
+          ],
+          [
+            "crown",
+            [
+              -430,
+              253,
+              307
+            ],
+            [
+              180,
+              260,
+              120
+            ],
+            120
+          ],
+          [
+            "podium",
+            [
+              -440,
+              278,
+              20
+            ],
+            [
+              85,
+              140,
+              105
+            ],
+            175
+          ],
+          [
+            "entrance",
+            [
+              -409,
+              312,
+              1
+            ],
+            [
+              45,
+              9,
+              42
+            ],
+            60
+          ]
+        ],
+        "render_settings": {
+          "engine": "CYCLES",
+          "device": "CPU",
+          "samples": 16,
+          "seed": 0,
+          "resolution": [
+            960,
+            720
+          ]
+        },
+        "full_camera_bounds_checked": true
+      }
+    },
+    "code_sha256": {
+      "scripts/object_registry.py": "ca924c099c199b6cba39c5d732e77d2a171eef71ed771bda74dfa847ef3356d5",
+      "starter/mori/plan_adapter.py": "6fae1b6573762ca27c17d4624d791cdbdf5d89bc7153e0d888ae813d750a233c",
+      "starter/mori/run.py": "8a955d1eedc42500ece0db8d5297fcbad26c3e87994c9cbdd2080395b1d3dc26",
+      "starter/mori/scene.py": "50c764aa9c344ad7e4c9076894011e4dd8a5ed767f59e490bfaf3fd67eab1b4d",
+      "starter/mori/profile.py": "aaf29e2fefc5b2de6860da98215a89032f4e4dc66773baf41cc5ea37cd1fbcd8",
+      "starter/mori/facade.py": "2dcfac5c2dae48fd893142b1d1fc524141ab95df4c144b4576035a466f945e4a",
+      "starter/plateau/tile.py": "540aa9b7e8d8efc482f4ef4cdcf0f890bac6102a905707e588f13ca60f2d7c11",
+      "starter/plateau/scene.py": "2f53a4bf52b63dfffd10de674ec080fdb546dbdbf213fdff6d2521c5ba377d3e",
+      "starter/plaza/scene.py": "52bed9bca744615928232d524091caf9d8a7f98cd7b69314364e474ce236bd93",
+      "scripts/mori_shape.py": "e82b840819da692b1a0dd6b27f095c524706fce08c0e85db47b2236301f91411",
+      "scripts/mori_crown_v2.py": "9822f54cec4965881dc5838e5204f55fcf95fcf172620ebb56735101be98015b",
+      "scripts/mori_crown_material.py": "02e207032a4873ee75cf80991ab2066e3621e9a8ccbf4c014e2c5aee06bbc8b5",
+      "scripts/mori_facade_v2.py": "b962aeb523cb35cd242bad7f3a91409750219bda62eec1cd64ddcbf49a7ab26f",
+      "scripts/mori_podium_v3.py": "cec7699cb570248bfb4c121275044b0950a6bfcad128464455a2faabc9321790",
+      "scripts/mori_entrance_v1.py": "aeb7417803ebea8ac8af590aeca7a1e723d1591e1756eb07ad1078cd9e753c90",
+      "scripts/mori_terrace_v1.py": "26f9149e5889266caa7c62bbd8a0df886fb9713266751c0a69e6c6df24a036e5",
+      "scripts/mori_plaza_v1.py": "5f92f0381ab16fd0bbef325db2200381a903723ab5418ecb51c0c64562131ef9",
+      "scripts/mori_plaza_link_v1.py": "9db234b625b99fe1ee5751b4f4da57445ea6122222377e8b2e9fe36105519ec3"
+    },
+    "elapsed_seconds": 61.24666380882263,
+    "sources": {
+      "tileset.json": {
+        "url": "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/tileset.json",
+        "bytes": 412889,
+        "sha256": "edec4c24d137eaf08a8525cecea505a3f21a30823b9ef4fb530e10774cea1323"
+      },
+      "data221.b3dm": {
+        "url": "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data221.b3dm",
+        "bytes": 1246040,
+        "sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2"
+      }
+    }
+  },
+  "saved_reopen_negatives": {
+    "command": "python tests/mori_standalone_blender.py --blender BLENDER --run data/local/issue34/final-generation --output data/local/issue34/final-negative",
+    "ok": true,
+    "cases": {
+      "roof-missing": {
+        "rejected": true,
+        "expected_error": "Object set mismatch",
+        "exit_code": 1
+      },
+      "neighbor-changed": {
+        "rejected": true,
+        "expected_error": "Object/material fingerprint mismatch",
+        "exit_code": 1
+      },
+      "glass-link-missing": {
+        "rejected": true,
+        "expected_error": "Object/material fingerprint mismatch",
+        "exit_code": 1
+      },
+      "duplicate-tower": {
+        "rejected": true,
+        "expected_error": "Object set mismatch",
+        "exit_code": 1
+      },
+      "plaza-changed": {
+        "rejected": true,
+        "expected_error": "Object/material fingerprint mismatch",
+        "exit_code": 1
+      },
+      "part-id-changed": {
+        "rejected": true,
+        "expected_error": "Object/material fingerprint mismatch",
+        "exit_code": 1
+      },
+      "scene-plan-changed": {
+        "rejected": true,
+        "expected_error": "Saved plan/model identity mismatch",
+        "exit_code": 1
+      },
+      "saved-plan-changed": {
+        "rejected": true,
+        "expected_error": "Saved plan differs from registry/lock",
+        "exit_code": 1
+      },
+      "model-manifest-changed": {
+        "rejected": true,
+        "expected_error": "Saved model manifest mismatch",
+        "exit_code": 1
+      }
+    }
+  },
+  "unchanged_geometry_evidence": {
+    "baseline_code_commit": "e2ffac45815b0c847c6d405668af8dd644b3bfca",
+    "baseline_run": "data/local/issue34/baseline-generation/run.json",
+    "method": "Regenerated base and candidate with identical inputs, Blender, cameras, light, CPU Cycles/16 samples/seed 0; SHA256 of decoded Format32bppArgb pixels via System.Drawing.Bitmap.LockBits (PNG metadata excluded).",
+    "all_eight_images_pixel_identical": true,
+    "images": {
+      "before-podium.png": {
+        "identical": true,
+        "resolution": [
+          960,
+          720
+        ],
+        "candidate_pixels_sha256": "cf25a4b79c0d52343ed96e797c51cb136c131ce2bf6b3d708ad7b3d13f5b146b",
+        "baseline_pixels_sha256": "cf25a4b79c0d52343ed96e797c51cb136c131ce2bf6b3d708ad7b3d13f5b146b"
+      },
+      "before-entrance.png": {
+        "identical": true,
+        "resolution": [
+          960,
+          720
+        ],
+        "candidate_pixels_sha256": "2795cee487cfd7d6724bb1253190567bb4715fa898ed2665b3606579c6ee84cd",
+        "baseline_pixels_sha256": "2795cee487cfd7d6724bb1253190567bb4715fa898ed2665b3606579c6ee84cd"
+      },
+      "after-podium.png": {
+        "identical": true,
+        "resolution": [
+          960,
+          720
+        ],
+        "candidate_pixels_sha256": "56dbec7555d83f5f06f63f075f2bb09df0a215022c4045b31acdd2d63028dd72",
+        "baseline_pixels_sha256": "56dbec7555d83f5f06f63f075f2bb09df0a215022c4045b31acdd2d63028dd72"
+      },
+      "after-full.png": {
+        "identical": true,
+        "resolution": [
+          960,
+          720
+        ],
+        "candidate_pixels_sha256": "917861381e0635b2083601bcf61f4a402938bc82db6a101c286df5b86fb58f8a",
+        "baseline_pixels_sha256": "917861381e0635b2083601bcf61f4a402938bc82db6a101c286df5b86fb58f8a"
+      },
+      "before-full.png": {
+        "identical": true,
+        "resolution": [
+          960,
+          720
+        ],
+        "candidate_pixels_sha256": "a7f507135746495f35d61e5a18dcb309962372b5935b1341fb521e8028883bc8",
+        "baseline_pixels_sha256": "a7f507135746495f35d61e5a18dcb309962372b5935b1341fb521e8028883bc8"
+      },
+      "after-crown.png": {
+        "identical": true,
+        "resolution": [
+          960,
+          720
+        ],
+        "candidate_pixels_sha256": "b9452f1d8ad1356227a85ff48ff954ec4c61e6a149539060d944ca7e4a0a42c4",
+        "baseline_pixels_sha256": "b9452f1d8ad1356227a85ff48ff954ec4c61e6a149539060d944ca7e4a0a42c4"
+      },
+      "after-entrance.png": {
+        "identical": true,
+        "resolution": [
+          960,
+          720
+        ],
+        "candidate_pixels_sha256": "2efc0ee3b233d75c8dcecc6395508ea0e1896cc85ff7cd5e93103bef0a04ba7c",
+        "baseline_pixels_sha256": "2efc0ee3b233d75c8dcecc6395508ea0e1896cc85ff7cd5e93103bef0a04ba7c"
+      },
+      "before-crown.png": {
+        "identical": true,
+        "resolution": [
+          960,
+          720
+        ],
+        "candidate_pixels_sha256": "b8bc8ad665a1632c202a788ca302263b4cdd6bb8de524420b235aeceb0027a71",
+        "baseline_pixels_sha256": "b8bc8ad665a1632c202a788ca302263b4cdd6bb8de524420b235aeceb0027a71"
+      }
+    }
+  },
+  "district_setup": {
+    "command": "python scripts/district_distribution.py setup --district mori --blender BLENDER --workspace data/local/issue34/district --source-dir data/local/issue34/inputs --offline",
+    "ok": true,
+    "exit_code": 0,
+    "offline": true,
+    "recipe_version": "0.2.0",
+    "lock_id": "4bd5a24e27758217b5a42edd3e63774a98334c4e89abe593f2332e40686723c0",
+    "locked_code_files": 34,
+    "plan_sha256": "6beb7662efb5bfdfbad8c026bd63b64db73f680a152596392d4eeb7846b5c646",
+    "run": "data/local/issue34/district/builds/mori-20261002T184443Z-db7b16c0/run.json",
+    "validation": {
+      "before": {
+        "ok": true,
+        "meshes": 30,
+        "saved_reopened": true,
+        "planned_parts_verified": 0,
+        "unchanged_neighbors": 0,
+        "unchanged_plaza_parts": 0
+      },
+      "after": {
+        "ok": true,
+        "meshes": 42,
+        "saved_reopened": true,
+        "planned_parts_verified": 13,
+        "unchanged_neighbors": 23,
+        "unchanged_plaza_parts": 6
+      }
+    }
+  },
+  "source_protection": {
+    "original_input_directory": "Existing contributor workspace pinned source copy; read only",
+    "original_files_unchanged": true,
+    "legacy_blend_loaded": false
+  },
+  "preview": {
+    "path": "renders/previews/mori-common-plan/comparison.jpg",
+    "bytes": 212291,
+    "sha256": "db77ebe305e78d3831b0c16b6c9b62c79cc52830d1c983a6bac0624ab007e832",
+    "attribution": "MLIT Project PLATEAU / Minato 2025; original Mori additions and plaza: ark4ez / OurJapan; existing source terms retained"
+  },
+  "warnings": [
+    "Blender reported an existing extensions cache write failure under the sandbox; all build/reopen/render processes exited 0."
+  ],
+  "limitations": [
+    "One Windows host; no independent Blender execution on another OS.",
+    "Full city, new geometry and model distribution are outside scope.",
+    "Existing display heights and inferred geometry are not survey accuracy.",
+    "No generated blend, source tile, texture or full-size render set is committed.",
+    "Human adoption/merge review remains pending."
+  ]
+}

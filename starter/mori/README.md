@@ -45,3 +45,7 @@ python tests/mori_standalone_blender.py --blender BLENDER --run runs/mori-first 
 ## 生成物の許諾ファイル
 
 runnerはMIT-LICENSE.txt、CODE-LICENSE.md（対象一覧）、ASSET-LICENSE.md、provenance.json、PLATEAU-NOTICE.md、PLAZA-LICENSE.md、plaza-provenance.json、NOTICE.mdを同梱します。各bytesのhashをrun.jsonに保存し、生成13部品がprovenanceの対象と一致することを検査します。単一blendに異なる出典が混在するため、ファイル全体をMITまたは自分の独占物として表示しないでください。
+
+## Common Mori plan consumer (Issue #34)
+
+The standalone Mori runner now validates the real registry, lock, fixed source inventory and procedural model manifest before output creation and Blender startup. See [contract, commands and evidence](../../docs/mori-common-plan.md). The generic planner does not execute model locators.
