@@ -1,0 +1,683 @@
+{
+  "version": 1,
+  "input_sha256": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4",
+  "input_bytes": 559040261,
+  "base_commit": "805310ef7a6aad5a13104334e798fb83b35f1711",
+  "plan_sha256": "e72b4056f35cb8749e63b29d82903d6672a3259b84e2f0a85d4b79445a6f357f",
+  "code_and_provenance_sha256": {
+    "scripts/tower_approach.py": "bff69a508644ac7ab94e9da883a31de6e57368056dd368fd51ad630f8de758b2",
+    "scripts/tower_approach_plan.py": "e0a50b966dd67a3de3e7bd2b9837429987b2163a4d85712c048d1077414c1a47",
+    "scripts/tower_approach_blender.py": "6fafed80df18d6ac481546bac381480df47b5cbeb2d18e1b5ac037f951391820",
+    "scripts/blender_worker.py": "6e099ce6f4a86226299146be7ed0b77c9d5919b6e68b27a1f700e83ceece33ae",
+    "scripts/component_contracts.py": "cde9c50bca3e6edf8239b387d8066d7a177bbc5bece97ea81f6136f7ca2ddf21",
+    "scripts/city_catalog_blender.py": "5ee2236d08527aa02304559f65932e4ee781e2b53e5725d196935f8f8aef0550",
+    "assets/procedural-components/provenance.json": "556f19a79f2f87bd1a0fb587040e2e6947bb8fa04c9fbae3e3629039b3b9820d"
+  },
+  "jobs": {
+    "build": {
+      "exit_code": 0,
+      "seconds": 14.156
+    },
+    "validate-before": {
+      "exit_code": 0,
+      "seconds": 37.422
+    },
+    "validate-after": {
+      "exit_code": 0,
+      "seconds": 40.782
+    },
+    "validate-additions": {
+      "exit_code": 0,
+      "seconds": 1.609
+    },
+    "render-before": {
+      "exit_code": 0,
+      "seconds": 33.703
+    },
+    "render-after": {
+      "exit_code": 0,
+      "seconds": 33.281
+    }
+  },
+  "outputs": {
+    "after.blend": {
+      "bytes": 559048565,
+      "sha256": "c1abefa4c2988cd9db32f433389a762edb2cb14813d850d963979a8fb7a617ce"
+    },
+    "approach-additions.blend": {
+      "bytes": 5752667,
+      "sha256": "7bec956402b45347bbee39876555ec2b500df2bc87d227aae19fdb2eb520fe13"
+    }
+  },
+  "build": {
+    "ok": true,
+    "added_objects": [
+      "OTW approach / flush edging",
+      "OTW approach / soil beds",
+      "OTW approach 158 / bark",
+      "OTW approach 158 / foliage",
+      "OTW approach 160 / bark",
+      "OTW approach 160 / foliage",
+      "OTW approach 164 / bark",
+      "OTW approach 164 / foliage",
+      "OTW approach 166 / bark",
+      "OTW approach 166 / foliage",
+      "OTW approach 168 / bark",
+      "OTW approach 168 / foliage",
+      "OTW approach 170 / bark",
+      "OTW approach 170 / foliage",
+      "OTW approach 172 / bark",
+      "OTW approach 172 / foliage",
+      "OTW approach 174 / bark",
+      "OTW approach 174 / foliage"
+    ],
+    "collection": "OTW Tokyo Tower northeast approach / trees v1",
+    "feature_id": "otw:jp:tokyo:minato:tokyo-tower:northeast-approach-trees-v1",
+    "tree_count": 8,
+    "added_vertices": 589696,
+    "added_polygons": 504320
+  },
+  "delta_validation": {
+    "ok": true,
+    "objects": 18,
+    "unique_meshes": 8,
+    "materials": 4,
+    "images": 0,
+    "embedded_scripts": 0,
+    "scope": "Append-only local collection; city textures, buildings, cameras and lights excluded."
+  },
+  "placement": {
+    "ok": true,
+    "trees": [
+      {
+        "seed": 158,
+        "xy": [
+          69.4341049194336,
+          28.867076873779297
+        ],
+        "root_z": 0.4399999976158142,
+        "soil_z": 0.44000244140625,
+        "foliage_min_z": 3.3256947994232178,
+        "adjacent_pavement_z": [
+          0.45999908447265625,
+          0.4600067138671875
+        ],
+        "asphalt_samples": 49,
+        "road_hits": [],
+        "asphalt_overlap_area_m2": 0.0,
+        "foundation_overlap_area_m2": 0,
+        "tower_shell_overlap_pairs": {
+          "bark/Tokyo Tower structure / stone": 0,
+          "bark/Tokyo Tower structure / orange": 0,
+          "foliage/Tokyo Tower structure / stone": 0,
+          "foliage/Tokyo Tower structure / orange": 0
+        },
+        "asphalt_candidate_triangles": 3,
+        "foundation_candidate_triangles": 0
+      },
+      {
+        "seed": 160,
+        "xy": [
+          58.233638763427734,
+          35.466285705566406
+        ],
+        "root_z": 0.4399999976158142,
+        "soil_z": 0.43999481201171875,
+        "foliage_min_z": 3.4863550662994385,
+        "adjacent_pavement_z": [
+          0.459991455078125,
+          0.4600067138671875
+        ],
+        "asphalt_samples": 49,
+        "road_hits": [],
+        "asphalt_overlap_area_m2": 0.0,
+        "foundation_overlap_area_m2": 0,
+        "tower_shell_overlap_pairs": {
+          "bark/Tokyo Tower structure / stone": 0,
+          "bark/Tokyo Tower structure / orange": 0,
+          "foliage/Tokyo Tower structure / stone": 0,
+          "foliage/Tokyo Tower structure / orange": 0
+        },
+        "asphalt_candidate_triangles": 2,
+        "foundation_candidate_triangles": 0
+      },
+      {
+        "seed": 164,
+        "xy": [
+          35.832706451416016,
+          48.664703369140625
+        ],
+        "root_z": 0.4399999976158142,
+        "soil_z": 0.43999481201171875,
+        "foliage_min_z": 3.2285802364349365,
+        "adjacent_pavement_z": [
+          0.45999908447265625,
+          0.45999908447265625
+        ],
+        "asphalt_samples": 49,
+        "road_hits": [],
+        "asphalt_overlap_area_m2": 0.0,
+        "foundation_overlap_area_m2": 0,
+        "tower_shell_overlap_pairs": {
+          "bark/Tokyo Tower structure / stone": 0,
+          "bark/Tokyo Tower structure / orange": 0,
+          "foliage/Tokyo Tower structure / stone": 0,
+          "foliage/Tokyo Tower structure / orange": 0
+        },
+        "asphalt_candidate_triangles": 4,
+        "foundation_candidate_triangles": 0
+      },
+      {
+        "seed": 166,
+        "xy": [
+          25.377349853515625,
+          55.51930236816406
+        ],
+        "root_z": 0.4399999976158142,
+        "soil_z": 0.43999481201171875,
+        "foliage_min_z": 3.390298843383789,
+        "adjacent_pavement_z": [
+          0.4600067138671875,
+          0.45999908447265625
+        ],
+        "asphalt_samples": 49,
+        "road_hits": [],
+        "asphalt_overlap_area_m2": 0.0,
+        "foundation_overlap_area_m2": 0,
+        "tower_shell_overlap_pairs": {
+          "bark/Tokyo Tower structure / stone": 0,
+          "bark/Tokyo Tower structure / orange": 0,
+          "foliage/Tokyo Tower structure / stone": 0,
+          "foliage/Tokyo Tower structure / orange": 0
+        },
+        "asphalt_candidate_triangles": 6,
+        "foundation_candidate_triangles": 0
+      },
+      {
+        "seed": 168,
+        "xy": [
+          14.62571907043457,
+          62.82699966430664
+        ],
+        "root_z": 0.4399999976158142,
+        "soil_z": 0.43999481201171875,
+        "foliage_min_z": 2.891749382019043,
+        "adjacent_pavement_z": [
+          0.4600067138671875,
+          0.45999908447265625
+        ],
+        "asphalt_samples": 49,
+        "road_hits": [],
+        "asphalt_overlap_area_m2": 0.0,
+        "foundation_overlap_area_m2": 0,
+        "tower_shell_overlap_pairs": {
+          "bark/Tokyo Tower structure / stone": 0,
+          "bark/Tokyo Tower structure / orange": 0,
+          "foliage/Tokyo Tower structure / stone": 0,
+          "foliage/Tokyo Tower structure / orange": 0
+        },
+        "asphalt_candidate_triangles": 2,
+        "foundation_candidate_triangles": 0
+      },
+      {
+        "seed": 170,
+        "xy": [
+          3.8740885257720947,
+          70.13469696044922
+        ],
+        "root_z": 0.4399999976158142,
+        "soil_z": 0.44000244140625,
+        "foliage_min_z": 3.1314656734466553,
+        "adjacent_pavement_z": [
+          0.45999908447265625,
+          0.4600067138671875
+        ],
+        "asphalt_samples": 49,
+        "road_hits": [],
+        "asphalt_overlap_area_m2": 0.0,
+        "foundation_overlap_area_m2": 0,
+        "tower_shell_overlap_pairs": {
+          "bark/Tokyo Tower structure / stone": 0,
+          "bark/Tokyo Tower structure / orange": 0,
+          "foliage/Tokyo Tower structure / stone": 0,
+          "foliage/Tokyo Tower structure / orange": 0
+        },
+        "asphalt_candidate_triangles": 2,
+        "foundation_candidate_triangles": 0
+      },
+      {
+        "seed": 172,
+        "xy": [
+          -6.877542018890381,
+          77.44239807128906
+        ],
+        "root_z": 0.4399999976158142,
+        "soil_z": 0.44000244140625,
+        "foliage_min_z": 3.2942426204681396,
+        "adjacent_pavement_z": [
+          0.45999908447265625,
+          0.459991455078125
+        ],
+        "asphalt_samples": 49,
+        "road_hits": [],
+        "asphalt_overlap_area_m2": 0,
+        "foundation_overlap_area_m2": 0,
+        "tower_shell_overlap_pairs": {
+          "bark/Tokyo Tower structure / stone": 0,
+          "bark/Tokyo Tower structure / orange": 0,
+          "foliage/Tokyo Tower structure / stone": 0,
+          "foliage/Tokyo Tower structure / orange": 0
+        },
+        "asphalt_candidate_triangles": 0,
+        "foundation_candidate_triangles": 0
+      },
+      {
+        "seed": 174,
+        "xy": [
+          -26.210601806640625,
+          70.70174407958984
+        ],
+        "root_z": 0.4399999976158142,
+        "soil_z": 0.44000244140625,
+        "foliage_min_z": 3.4638242721557617,
+        "adjacent_pavement_z": [
+          0.45999908447265625
+        ],
+        "asphalt_samples": 49,
+        "road_hits": [],
+        "asphalt_overlap_area_m2": 0.0,
+        "foundation_overlap_area_m2": 0,
+        "tower_shell_overlap_pairs": {
+          "bark/Tokyo Tower structure / stone": 0,
+          "bark/Tokyo Tower structure / orange": 0,
+          "foliage/Tokyo Tower structure / stone": 0,
+          "foliage/Tokyo Tower structure / orange": 0
+        },
+        "asphalt_candidate_triangles": 2,
+        "foundation_candidate_triangles": 0
+      }
+    ],
+    "nearby_building_meshes_checked": 11,
+    "editor_visible_additions": 18,
+    "editor_hidden_original_sources": 16,
+    "limits": [
+      "Projected asphalt/foundation intersections and tower shell pairs checked; not a complete solid-volume collision proof.",
+      "PLATEAU and legacy roof/wall building clearance uses five column samples per bed.",
+      "Local model surface heights only; no surveyed terrain or species accuracy claim."
+    ]
+  },
+  "preservation": {
+    "ok": true,
+    "unchanged_existing_objects": 3291,
+    "added_objects": 18,
+    "existing_geometry_material_transform_preserved": 3307,
+    "original_source_viewport_suppression": [
+      "Street tree ginkgo 158",
+      "Street tree ginkgo 158.001",
+      "Street tree ginkgo 160",
+      "Street tree ginkgo 160.001",
+      "Street tree ginkgo 164",
+      "Street tree ginkgo 164.001",
+      "Street tree ginkgo 166",
+      "Street tree ginkgo 166.001",
+      "Street tree ginkgo 168",
+      "Street tree ginkgo 168.001",
+      "Street tree ginkgo 170",
+      "Street tree ginkgo 170.001",
+      "Street tree ginkgo 172",
+      "Street tree ginkgo 172.001",
+      "Street tree ginkgo 174",
+      "Street tree ginkgo 174.001"
+    ],
+    "unchanged_existing_collections": 17,
+    "unchanged_assets": 383,
+    "existing_object_changes": []
+  },
+  "original_input_unchanged": true,
+  "device": "OPTIX",
+  "width": 960,
+  "height": 540,
+  "samples": 16,
+  "seed": 0,
+  "ok": true,
+  "status": "local-candidate-human-adoption-and-integration-review-pending",
+  "date": "2026-10-02",
+  "blender_version": "4.5.1 LTS",
+  "blender_python": "3.11.11",
+  "gpu": "NVIDIA GeForce RTX 3060 Ti",
+  "local_output": "data/local/tower-approach-v1-final-02",
+  "tests": {
+    "command": "python -m unittest discover -s tests",
+    "total": 240,
+    "passed": 234,
+    "skipped": 6,
+    "exit_code": 0,
+    "new_targeted_tests": 16,
+    "log": "data/local/tower-street-discovery/all-tests-viewport-final.log",
+    "test_file_sha256": "881fad9b3b4d7c356eb4f1184c9a9c13f65a2068bebef7b557da763ff6d95330"
+  },
+  "duplicate_application": {
+    "expected_exit_code": 1,
+    "actual_exit_code": 1,
+    "error": "Candidate already applied; refusing duplicate additions",
+    "candidate_unchanged": true
+  },
+  "existing_warnings": {
+    "before": 36,
+    "after": 36,
+    "unchanged": true
+  },
+  "visual_review": {
+    "all_eight_images_inspected": true,
+    "reviewer": "Codex agent",
+    "human_adoption": "pending",
+    "views": [
+      "approach-aerial",
+      "walk-along-row",
+      "planting-bed",
+      "tower-context"
+    ]
+  },
+  "images": {
+    "before": [
+      {
+        "id": "approach-aerial",
+        "seconds": 10.0,
+        "sha256": "33d8ec5c22662c064df262ff7871d8791e30bd49f526dd035cbb14fb0429f24d",
+        "pixel_sha256": "eaf62feace32e2c9a22437115fe32337b30f8af383ef216661a6ff498acda3ba",
+        "rgb_min": 0.0,
+        "rgb_max": 0.9725490808486938,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            -0.715376079082489,
+            -0.45965340733528137,
+            0.5262658596038818,
+            106.0
+          ],
+          [
+            0.6987395882606506,
+            -0.47059738636016846,
+            0.5387959480285645,
+            138.0
+          ],
+          [
+            -5.8058418517248356e-08,
+            0.753164529800415,
+            0.657832145690918,
+            110.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "walk-along-row",
+        "seconds": 3.688,
+        "sha256": "8da5a5faf77b823549275740937cde3c23b4876a785506376b6b8d64c11fba9e",
+        "pixel_sha256": "c76b3ff06ed9d67cb0564390a10010aa995e66b7c6026687afbf25d92c8e3eda",
+        "rgb_min": 0.0,
+        "rgb_max": 0.9411765336990356,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            0.5324509739875793,
+            0.021949773654341698,
+            0.8461761474609375,
+            82.0
+          ],
+          [
+            0.8464608788490295,
+            -0.013807112351059914,
+            -0.5322718620300293,
+            21.0
+          ],
+          [
+            1.7882404446112332e-09,
+            0.9996636509895325,
+            -0.025931235402822495,
+            2.0999999046325684
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "planting-bed",
+        "seconds": 3.641,
+        "sha256": "83ba147c6044ec432ff8ffc7f1b96074228b3f0641d5d74a134139410ad5328b",
+        "pixel_sha256": "c199110898922d05a3dda4d3ddce9e6102545e23786b1b653b29c8afe491cfeb",
+        "rgb_min": 0.05098039656877518,
+        "rgb_max": 0.8196079134941101,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            0.6695200800895691,
+            -0.14647427201271057,
+            0.7282088398933411,
+            41.0
+          ],
+          [
+            0.7427939772605896,
+            0.13202504813671112,
+            -0.6563736796379089,
+            44.0
+          ],
+          [
+            6.213076630956493e-08,
+            0.9803645610809326,
+            0.19719360768795013,
+            2.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "tower-context",
+        "seconds": 3.5,
+        "sha256": "237b91a32d3657e6e50b8d4a7fe9a8e38ce0e1daf1fb814c6208b3c2656cf0cd",
+        "pixel_sha256": "810b44306bf7b6d92f026e722af0dc5eb65dc97b255e1d56b2f4bdee67a3f3e2",
+        "rgb_min": 0.011764707043766975,
+        "rgb_max": 0.9254902601242065,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            -0.8384436368942261,
+            -0.06241605803370476,
+            0.5414023399353027,
+            260.0
+          ],
+          [
+            0.5449882745742798,
+            -0.09602470695972443,
+            0.8329267501831055,
+            400.0
+          ],
+          [
+            -4.306083933869331e-09,
+            0.9934200644493103,
+            0.11452733725309372,
+            215.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    ],
+    "after": [
+      {
+        "id": "approach-aerial",
+        "seconds": 9.578,
+        "sha256": "aeb777b622b68bbf9b5b6c4ed0318099fbc4d9cd3b67f7090cd387c26d710900",
+        "pixel_sha256": "979e9084a9c7a4286b925a7c4a81ee97087aefcc9b9cb42572072223541b83ce",
+        "rgb_min": 0.0,
+        "rgb_max": 0.9725490808486938,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            -0.715376079082489,
+            -0.45965340733528137,
+            0.5262658596038818,
+            106.0
+          ],
+          [
+            0.6987395882606506,
+            -0.47059738636016846,
+            0.5387959480285645,
+            138.0
+          ],
+          [
+            -5.8058418517248356e-08,
+            0.753164529800415,
+            0.657832145690918,
+            110.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "walk-along-row",
+        "seconds": 3.875,
+        "sha256": "d9dde543565e27a42707b6cd80c0ccdfa701788dffd37d90f723a9f53b1a24e2",
+        "pixel_sha256": "f9546cbb0906c33d5a426d4f17a4dd22c96cbe3468e3e7d679eedec2b63189d7",
+        "rgb_min": 0.0,
+        "rgb_max": 0.9372549653053284,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            0.5324509739875793,
+            0.021949773654341698,
+            0.8461761474609375,
+            82.0
+          ],
+          [
+            0.8464608788490295,
+            -0.013807112351059914,
+            -0.5322718620300293,
+            21.0
+          ],
+          [
+            1.7882404446112332e-09,
+            0.9996636509895325,
+            -0.025931235402822495,
+            2.0999999046325684
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "planting-bed",
+        "seconds": 3.812,
+        "sha256": "44efe4e67857d54a4f0dc9ddf6149a217240971cc7460fe5a184b2ff5451a708",
+        "pixel_sha256": "c1e77bf69227e0cfbe5e688b016d370b5aeb866d05dfc87e908ce22a4d9ccb08",
+        "rgb_min": 0.02352941408753395,
+        "rgb_max": 0.8156863451004028,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            0.6695200800895691,
+            -0.14647427201271057,
+            0.7282088398933411,
+            41.0
+          ],
+          [
+            0.7427939772605896,
+            0.13202504813671112,
+            -0.6563736796379089,
+            44.0
+          ],
+          [
+            6.213076630956493e-08,
+            0.9803645610809326,
+            0.19719360768795013,
+            2.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "id": "tower-context",
+        "seconds": 3.625,
+        "sha256": "74dc4abae09c67fc98dc2e4713506b20b0dc60bbd386b23d323afc6e18686486",
+        "pixel_sha256": "40a5a544e3bbb615e88b654b34209354e6281a76ac10f68093390e9bfee13e4a",
+        "rgb_min": 0.011764707043766975,
+        "rgb_max": 0.9254902601242065,
+        "active_camera": "OTW review camera",
+        "camera_matrix_world": [
+          [
+            -0.8384436368942261,
+            -0.06241605803370476,
+            0.5414023399353027,
+            260.0
+          ],
+          [
+            0.5449882745742798,
+            -0.09602470695972443,
+            0.8329267501831055,
+            400.0
+          ],
+          [
+            -4.306083933869331e-09,
+            0.9934200644493103,
+            0.11452733725309372,
+            215.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    ]
+  },
+  "superseded_candidate": {
+    "output": "data/local/tower-approach-v1-review-01",
+    "adopt": false,
+    "reason": "Seed 162 intersects orange tower structure: 150 bark and 3877 foliage BVH surface pairs."
+  },
+  "limits": [
+    "Human visual and adoption review pending.",
+    "Not a surveyed planting or terrain reconstruction.",
+    "No city redistribution, push, PR, merge or shared registration update.",
+    "Timing is one local run, not a warmed-up performance median.",
+    "No geographic accuracy certification",
+    "No complete modifier/animation/node-group fingerprint",
+    "Image decode checks dimensions and a pixel probe; not all image samples",
+    "No manifold/zero-area/normal checks",
+    "External asset content hashes not yet recorded"
+  ]
+}

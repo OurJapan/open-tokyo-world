@@ -1,0 +1,468 @@
+{
+  "version": 1,
+  "feature_id": "otw:jp:tokyo:minato:tokyo-tower:northeast-approach-trees-v1",
+  "base_commit": "805310ef7a6aad5a13104334e798fb83b35f1711",
+  "input": {
+    "bytes": 559040261,
+    "sha256": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4"
+  },
+  "frame": "legacy-tokyo-display-v1",
+  "units": "m",
+  "axes": "east/north/up; legacy local display heights",
+  "status": "local-model-fit-candidate-human-review-pending",
+  "claims": {
+    "placement": "Existing illustrative ginkgo seed row; species, count and real tree positions unverified.",
+    "geometry": "Existing CC BY 4.0 prototypes; eight independent placements and original closed bed geometry.",
+    "height": "Soil top 0.44m, edging top 0.46m in the existing display model; not surveyed elevations."
+  },
+  "scope": {
+    "source_indices": [
+      158,
+      160,
+      164,
+      166,
+      168,
+      170,
+      172,
+      174
+    ],
+    "horizontal_centres_bounds_m": [
+      [
+        -26.211,
+        28.867
+      ],
+      [
+        69.435,
+        77.443
+      ]
+    ],
+    "excluded_seed": {
+      "index": 162,
+      "reason": "Existing illustrative seed intersects the Tokyo Tower orange structural mesh; confirmed by BVH shell overlap."
+    },
+    "source_viewport_suppression": "Only the selected sixteen original bark/foliage objects receive hide_viewport=True to prevent editor duplicates.",
+    "protected": "All existing geometry, materials, transforms, collections, roads, ground, Mori plaza/path and lighting remain unchanged."
+  },
+  "sources": [
+    "assets/procedural-components/provenance.json",
+    "assets/procedural-components/NOTICE.md",
+    "sources/city-pr12-component-verification.json",
+    "sources/city-pr12-input-recovery.json",
+    "manifests/mori-plaza-connection-accepted.json"
+  ],
+  "beds": {
+    "outer_width_m": 1.2,
+    "inner_width_m": 1.04,
+    "soil_top_m": 0.44,
+    "rim_top_m": 0.46,
+    "bottom_m": 0.0
+  },
+  "trees": [
+    {
+      "index": 158,
+      "variant": 2,
+      "source_matrix_world": [
+        [
+          -0.8960371613502502,
+          -0.5279368162155151,
+          0.0,
+          69.4341049194336
+        ],
+        [
+          0.5279368162155151,
+          -0.8960371613502502,
+          0.0,
+          28.867076873779297
+        ],
+        [
+          0.0,
+          0.0,
+          1.0399999618530273,
+          0.20000000298023224
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "index": 160,
+      "variant": 1,
+      "source_matrix_world": [
+        [
+          -0.9563474059104919,
+          -0.5634710788726807,
+          0.0,
+          58.233638763427734
+        ],
+        [
+          0.5634710788726807,
+          -0.9563474059104919,
+          0.0,
+          35.466285705566406
+        ],
+        [
+          0.0,
+          0.0,
+          1.1100000143051147,
+          0.20000000298023224
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "index": 164,
+      "variant": 2,
+      "source_matrix_world": [
+        [
+          -0.8658820986747742,
+          -0.5101697444915771,
+          0.0,
+          35.832706451416016
+        ],
+        [
+          0.5101697444915771,
+          -0.8658820986747742,
+          0.0,
+          48.664703369140625
+        ],
+        [
+          0.0,
+          0.0,
+          1.0049999952316284,
+          0.20000000298023224
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "index": 166,
+      "variant": 1,
+      "source_matrix_world": [
+        [
+          -0.8890771269798279,
+          -0.6042904257774353,
+          0.0,
+          25.377349853515625
+        ],
+        [
+          0.6042904257774353,
+          -0.8890771269798279,
+          0.0,
+          55.51930236816406
+        ],
+        [
+          0.0,
+          0.0,
+          1.0750000476837158,
+          0.20000000298023224
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "index": 168,
+      "variant": 0,
+      "source_matrix_world": [
+        [
+          -0.744343638420105,
+          -0.5059175491333008,
+          0.0,
+          14.62571907043457
+        ],
+        [
+          0.5059175491333008,
+          -0.744343638420105,
+          0.0,
+          62.82699966430664
+        ],
+        [
+          0.0,
+          0.0,
+          0.8999999761581421,
+          0.20000000298023224
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "index": 170,
+      "variant": 2,
+      "source_matrix_world": [
+        [
+          -0.8022370338439941,
+          -0.5452667474746704,
+          0.0,
+          3.8740885257720947
+        ],
+        [
+          0.5452667474746704,
+          -0.8022370338439941,
+          0.0,
+          70.13469696044922
+        ],
+        [
+          0.0,
+          0.0,
+          0.9700000286102295,
+          0.20000000298023224
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "index": 172,
+      "variant": 1,
+      "source_matrix_world": [
+        [
+          -0.8601303696632385,
+          -0.5846158266067505,
+          0.0,
+          -6.877542018890381
+        ],
+        [
+          0.5846158266067505,
+          -0.8601303696632385,
+          0.0,
+          77.44239807128906
+        ],
+        [
+          0.0,
+          0.0,
+          1.0399999618530273,
+          0.20000000298023224
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "index": 174,
+      "variant": 0,
+      "source_matrix_world": [
+        [
+          -0.9742451906204224,
+          -0.5319269895553589,
+          0.0,
+          -26.210601806640625
+        ],
+        [
+          0.5319269895553589,
+          -0.9742451906204224,
+          0.0,
+          70.70174407958984
+        ],
+        [
+          0.0,
+          0.0,
+          1.1100000143051147,
+          0.20000000298023224
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "cameras": {
+    "version": 1,
+    "status": "candidate-review-poses-no-surveyed-viewpoint-claim",
+    "views": [
+      {
+        "id": "approach-aerial",
+        "label": "並木と道路の接続",
+        "frame": 1,
+        "matrix_world": [
+          [
+            -0.71537617920553,
+            -0.45965338757048696,
+            0.5262657936064942,
+            106
+          ],
+          [
+            0.6987395238751687,
+            -0.4705975158459748,
+            0.538795931549506,
+            138
+          ],
+          [
+            0.0,
+            0.7531644849397594,
+            0.6578322420081177,
+            110
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "lens_mm": 42,
+        "sensor_width_mm": 36,
+        "sensor_height_mm": 24,
+        "sensor_fit": "HORIZONTAL",
+        "shift_x": 0,
+        "shift_y": 0,
+        "clip_start": 0.05,
+        "clip_end": 15000,
+        "dof": false
+      },
+      {
+        "id": "walk-along-row",
+        "label": "歩行者の視点",
+        "frame": 1,
+        "matrix_world": [
+          [
+            0.5324511187414497,
+            0.021949746015089734,
+            0.8461761133480734,
+            82
+          ],
+          [
+            0.8464607528710227,
+            -0.013807098299814507,
+            -0.5322720712995945,
+            21
+          ],
+          [
+            -0.0,
+            0.9996637298043839,
+            -0.02593120347356999,
+            2.1
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "lens_mm": 32,
+        "sensor_width_mm": 36,
+        "sensor_height_mm": 24,
+        "sensor_fit": "HORIZONTAL",
+        "shift_x": 0,
+        "shift_y": 0,
+        "clip_start": 0.05,
+        "clip_end": 15000,
+        "dof": false
+      },
+      {
+        "id": "planting-bed",
+        "label": "植樹枡の接地",
+        "frame": 1,
+        "matrix_world": [
+          [
+            0.6695201894705033,
+            -0.14647438537597818,
+            0.7282087408979041,
+            41
+          ],
+          [
+            0.7427938582752158,
+            0.13202526805649084,
+            -0.6563738360897929,
+            44
+          ],
+          [
+            -0.0,
+            0.9803645153836105,
+            0.1971938563359894,
+            2.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "lens_mm": 36,
+        "sensor_width_mm": 36,
+        "sensor_height_mm": 24,
+        "sensor_fit": "HORIZONTAL",
+        "shift_x": 0,
+        "shift_y": 0,
+        "clip_start": 0.05,
+        "clip_end": 15000,
+        "dof": false
+      },
+      {
+        "id": "tower-context",
+        "label": "東京タワーと周辺街区",
+        "frame": 1,
+        "matrix_world": [
+          [
+            -0.8384436163006371,
+            -0.0624161126584984,
+            0.5414023745471677,
+            260
+          ],
+          [
+            0.5449883505954141,
+            -0.09602478870538217,
+            0.8329267300725657,
+            400
+          ],
+          [
+            0.0,
+            0.9934200867884082,
+            0.11452742538497779,
+            215
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "lens_mm": 28,
+        "sensor_width_mm": 36,
+        "sensor_height_mm": 24,
+        "sensor_fit": "HORIZONTAL",
+        "shift_x": 0,
+        "shift_y": 0,
+        "clip_start": 0.05,
+        "clip_end": 15000,
+        "dof": false
+      }
+    ]
+  }
+}
