@@ -1,0 +1,535 @@
+{
+  "schema_version": 1,
+  "purpose": "Fresh validation on latest main for the explicitly authorized image-backed Draft PR; no merge or workspace registration.",
+  "base_main": "3b1eb5f6c10ca9c0ebb072348faea4981985439e",
+  "checked_code_commit": "d4df2e65828ad2909af464e44485f83f7c4ef0ab",
+  "source_commits": [
+    "417103feb85dbe3ac67ce5c3f5afc8ed593b5a58",
+    "25e8c71bcd2af58a69791bbe8d6c1ef2f3262ba4"
+  ],
+  "main_compatibility": {
+    "later_main_changes": [
+      "PR #50 viewer rendering",
+      "PR #51 tower approach trees"
+    ],
+    "overlapping_tracked_runner_dependencies": [],
+    "conflicts": 0,
+    "city_input": "Pinned af7335da integrated predecessor; not a newly composed city containing PR #51 tree additions.",
+    "combined_tree_city_generated": false,
+    "workspace_city_baseline_manifest_unchanged": true
+  },
+  "run": {
+    "ok": true,
+    "feature": "bldg_0551e688-a2a3-498e-ad2f-09ed3aca361c",
+    "input_sha256": "09977e34f02c02a7e24448767874294e0f7c09e3bbaf40b5630ea1dea8965216",
+    "input_preserved": true,
+    "code_base_commit": "d4df2e65828ad2909af464e44485f83f7c4ef0ab",
+    "code_files": {
+      "scripts/data221_0551e688_mesh.py": "024619722914c14875f7b2407b96ba89f4246a3e3ec030165194dbb79fea7172",
+      "scripts/data221_0551e688_worker.py": "b037b2df9f832e7f8f2f8b2921a4c0604fd286c540893b80130ee591d48fdb93",
+      "scripts/review_data221_0551e688.py": "aa296ce3f2eafef64599cf3d6acbbc3242a4f7fd9c5938dc40fa666463d2cc11",
+      "scripts/data221_af7335da_mesh.py": "2c2dbad1aded3a4bc9ff7d4f6f7dfa04d4f74b9f3c648446d49c487a5f0c973e",
+      "scripts/data221_af7335da_worker.py": "f8352563299c3797e2ff73f02e5a126908e95c257cd241c9dd377fc5c07a68f0",
+      "scripts/review_data221_af7335da.py": "e939751f707cf0a81d96d452e8ba0a6d212e80520309145bbcc8eda4c85ebe87",
+      "scripts/validate_data221_af7335da_integration.py": "4f1c75a0fff0a43a171d120680e4cf1d459cc42fb2946b691a165dd16100b67d",
+      "scripts/blender_worker.py": "6d527b18c2b41df29a14a16e0aafb12bdc5fc56fddf09e3b8933a0745be4a4b2",
+      "starter/plateau/tile.py": "566c3426113935348be0bd26c6e06ced6bd4f3c6ef5028fd9895736e670fccda",
+      "areas/tokyo-tower/mori-plaza-connection-accepted-features.json": "73ae1670cc2af20268f22e285c5afcbb7ea152df1620dc1c3ca938d37b3bc398"
+    },
+    "jobs": {
+      "build": {
+        "exit_code": 0,
+        "seconds": 45.578
+      },
+      "validate": {
+        "exit_code": 0,
+        "seconds": 42.938
+      },
+      "render-before": {
+        "exit_code": 0,
+        "seconds": 14.594
+      },
+      "render-after": {
+        "exit_code": 0,
+        "seconds": 14.828
+      },
+      "reopen-edit": {
+        "exit_code": 0,
+        "seconds": 1.359
+      }
+    },
+    "output_blends": {
+      "after.blend": "e6685cfcd96c92ea68f88b1a28a3e723794fc84c65d026118b1ed9ff40ec5d06",
+      "target.blend": "ce3ee2d03faaf290dae4e890b6e6f183395acb4e15d045f6a4ffca1edb33969f",
+      "before-neighborhood.blend": "b0aaea507823cc02a001ab7cdd4a21b632d7b007742d262dbe1ea1068fcffa57",
+      "after-neighborhood.blend": "9ed43428ccb7aaee542daf459cfab179c87a1f5a11eb578aa675057f797253e1",
+      "edit-neighborhood.blend": "be12f059d6bc5a0d7de890b3138ab58d27395eae89d5e8ecbde3801304baeaf0"
+    },
+    "image_comparisons": [
+      {
+        "view": "south",
+        "pixel_identical": true,
+        "pixels_sha256": "00ca4f9c3ceeb913180a2601a538ef6b814fb5f9588b38daa7015eedbce67eac"
+      },
+      {
+        "view": "north",
+        "pixel_identical": true,
+        "pixels_sha256": "fe8133957519b84f7f308af4218c54f62dc8d0f63401cfdbcf596fb458ca3844"
+      },
+      {
+        "view": "roof",
+        "pixel_identical": true,
+        "pixels_sha256": "660988fedf3a81475972fed85d29de1938f928b0cf03f537759464beb28745c5"
+      },
+      {
+        "view": "context",
+        "pixel_identical": true,
+        "pixels_sha256": "3b5bc19599144e147078485cd5e6f8bba1d786d02d6814effefa666341a4779c"
+      }
+    ],
+    "source_hashes": {
+      "data221.b3dm": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2",
+      "tileset.json": "edec4c24d137eaf08a8525cecea505a3f21a30823b9ef4fb530e10774cea1323"
+    },
+    "limits": [
+      "Local candidate only; no registration, push, PR or merge.",
+      "Three isolated views and one data221-neighborhood view; no roads/full-city render.",
+      "Existing textures, synthetic material and legacy height retained; no real-world detail added.",
+      "Self-intersections and solid/physics suitability not certified."
+    ]
+  },
+  "production": {
+    "ok": true,
+    "feature": "bldg_0551e688-a2a3-498e-ad2f-09ed3aca361c",
+    "source_max_error_m": 1.5242209030930098e-05,
+    "edit_coordinate_displacement_m": 0,
+    "decoder_sha256": "49630e97d24ca24a3c6fa44ffd06de0d58a27e450ceec248a9a69426c2839087",
+    "selected_records_sha256": "539978151f407a2021417b672aab99f9f05d9cfbd9bb997d90a35aa605e217cf",
+    "retained_records_sha256": "24e614be61b61661c81c71538176ac134446106e56e112dc394abb92cd8c0a4c",
+    "retained_faces": 1748,
+    "retained_aggregate_features": 21,
+    "original_uv_settings": {
+      "active_index": 0,
+      "layers": [
+        [
+          "UVMap",
+          true,
+          true
+        ]
+      ]
+    },
+    "shader_evidence": [
+      {
+        "material": "Synthetic facade on measured geometry 2",
+        "coordinate_inputs": [
+          "Position",
+          "Normal"
+        ]
+      },
+      {
+        "material": "Material_1.035",
+        "coordinate_inputs": [
+          "active render UV (implicit Image Texture vector)"
+        ]
+      }
+    ],
+    "before": {
+      "vertices": 2838,
+      "faces": 946,
+      "edges": 2838,
+      "boundary_edges": 2838,
+      "nonmanifold_edges": 2838,
+      "winding_errors": 0,
+      "components": 946,
+      "loose_vertices": 0,
+      "euler_characteristic": 946,
+      "minimum_triangle_area_m2": 0.12807426372895309,
+      "surface_area_m2": 5559.823073489763,
+      "signed_volume_m3": 18505.89231645864
+    },
+    "after": {
+      "surface": {
+        "vertices": 475,
+        "faces": 946,
+        "edges": 1419,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "winding_errors": 0,
+        "components": 1,
+        "loose_vertices": 0,
+        "euler_characteristic": 2,
+        "minimum_triangle_area_m2": 0.12807426372895309,
+        "surface_area_m2": 5559.823073489763,
+        "signed_volume_m3": 18505.89231645864
+      },
+      "extras": {
+        "duplicate_geometric_faces": 0,
+        "vertex_links_checked": 475,
+        "nonmanifold_vertex_links": 0
+      }
+    },
+    "normals": {
+      "faces": 946,
+      "minimum_cosine": 0.9999999999999922,
+      "maximum_angle_degrees": 7.143182815269534e-06
+    },
+    "exported_surfaces": {
+      "PLATEAU_data221": {
+        "records": "24e614be61b61661c81c71538176ac134446106e56e112dc394abb92cd8c0a4c",
+        "materials": [
+          "da0f3d34b9b6e0fa42e5fd3a1d89b82d66489c9adfdc70a72543b748b9e1a817",
+          "2ea8cdb7f9a0ab9c64f0c9827e2fd36c54c96daf5202c8a05218d157e87deb9c"
+        ],
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "uv_settings": {
+          "active_index": 0,
+          "layers": [
+            [
+              "UVMap",
+              true,
+              true
+            ]
+          ]
+        },
+        "gml_id": null,
+        "hide_render": false,
+        "hide_viewport": false
+      },
+      "bldg_af7335da-7542-44dd-964d-8cccd2b046ff": {
+        "records": "28ad9ff4d5256970d0793dce1c7b04c7b7f0e36a51180427690a112e80b3ceaa",
+        "materials": [
+          "da0f3d34b9b6e0fa42e5fd3a1d89b82d66489c9adfdc70a72543b748b9e1a817",
+          "2ea8cdb7f9a0ab9c64f0c9827e2fd36c54c96daf5202c8a05218d157e87deb9c"
+        ],
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "uv_settings": {
+          "active_index": 0,
+          "layers": [
+            [
+              "UVMap",
+              true,
+              true
+            ]
+          ]
+        },
+        "gml_id": "bldg_af7335da-7542-44dd-964d-8cccd2b046ff",
+        "hide_render": false,
+        "hide_viewport": false
+      },
+      "bldg_0551e688-a2a3-498e-ad2f-09ed3aca361c": {
+        "records": "539978151f407a2021417b672aab99f9f05d9cfbd9bb997d90a35aa605e217cf",
+        "materials": [
+          "da0f3d34b9b6e0fa42e5fd3a1d89b82d66489c9adfdc70a72543b748b9e1a817",
+          "2ea8cdb7f9a0ab9c64f0c9827e2fd36c54c96daf5202c8a05218d157e87deb9c"
+        ],
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "uv_settings": {
+          "active_index": 0,
+          "layers": [
+            [
+              "UVMap",
+              true,
+              true
+            ]
+          ]
+        },
+        "gml_id": "bldg_0551e688-a2a3-498e-ad2f-09ed3aca361c",
+        "hide_render": false,
+        "hide_viewport": false
+      }
+    }
+  },
+  "saved_city": {
+    "ok": true,
+    "blender": "4.5.1 LTS",
+    "unchanged_city_objects": 3308,
+    "previous_feature_unchanged": "bldg_af7335da-7542-44dd-964d-8cccd2b046ff",
+    "unchanged_other_aggregate_features": 21,
+    "unchanged_assets": 383,
+    "same_original_cameras_lights": true,
+    "same_faces_uv_material_batch": true,
+    "same_material_definitions_and_uv_selection": true,
+    "source_max_error_m": 1.5242209030930098e-05,
+    "after": {
+      "surface": {
+        "vertices": 475,
+        "faces": 946,
+        "edges": 1419,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "winding_errors": 0,
+        "components": 1,
+        "loose_vertices": 0,
+        "euler_characteristic": 2,
+        "minimum_triangle_area_m2": 0.12807426372895309,
+        "surface_area_m2": 5559.823073489763,
+        "signed_volume_m3": 18505.89231645864
+      },
+      "extras": {
+        "duplicate_geometric_faces": 0,
+        "vertex_links_checked": 475,
+        "nonmanifold_vertex_links": 0
+      }
+    },
+    "normals": {
+      "faces": 946,
+      "minimum_cosine": 0.9999999999999922,
+      "maximum_angle_degrees": 7.143182815269534e-06
+    },
+    "selected_target": "bldg_0551e688-a2a3-498e-ad2f-09ed3aca361c",
+    "counts_before": {
+      "objects": 3309,
+      "vertices": 51238404,
+      "polygons": 39533116
+    },
+    "counts_after": {
+      "objects": 3310,
+      "vertices": 51236041,
+      "polygons": 39533116
+    },
+    "limits": [
+      "No geographic accuracy certification",
+      "No complete modifier/animation/node-group fingerprint",
+      "Image decode checks dimensions and a pixel probe; not all image samples",
+      "No manifold/zero-area/normal checks",
+      "External asset content hashes not yet recorded",
+      "The general-city manifold/normal limitation above excludes the target-specific checks recorded here.",
+      "Geometric self-intersections and real-world accuracy not certified."
+    ]
+  },
+  "edit_and_target_library_reopen": {
+    "ok": true,
+    "selected": "bldg_0551e688-a2a3-498e-ad2f-09ed3aca361c",
+    "after": {
+      "surface": {
+        "vertices": 475,
+        "faces": 946,
+        "edges": 1419,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "winding_errors": 0,
+        "components": 1,
+        "loose_vertices": 0,
+        "euler_characteristic": 2,
+        "minimum_triangle_area_m2": 0.12807426372895309,
+        "surface_area_m2": 5559.823073489763,
+        "signed_volume_m3": 18505.89231645864
+      },
+      "extras": {
+        "duplicate_geometric_faces": 0,
+        "vertex_links_checked": 475,
+        "nonmanifold_vertex_links": 0
+      }
+    },
+    "mesh_objects": 3,
+    "all_exported_surfaces_preserved": true,
+    "target_library_reopened": true
+  },
+  "source_result_comparison": {
+    "semantic_reports_identical": {
+      "production.json": true,
+      "validation.json": true,
+      "edit-reopen.json": true
+    },
+    "all_four_decoded_image_pairs_identical_to_handoff": true
+  },
+  "protected_originals": {
+    "original_checkout_head": "805310ef7a6aad5a13104334e798fb83b35f1711",
+    "original_checkout_status": "",
+    "source_branch_head": "25e8c71bcd2af58a69791bbe8d6c1ef2f3262ba4",
+    "source_checkout_status": "",
+    "handoff_blends_sha256": {
+      "after.blend": "152bff206c36ced271c382a9845da48dc90e3674827847f5bb721995d0f986dc",
+      "target.blend": "672bf822688a5bcdafee59ce3f6313d8dbae86b5e15198480408dc49be522dc8",
+      "before-neighborhood.blend": "be364f19581e76a4983d649849beeaf32be3e09f3b108a159b375729981a1058",
+      "after-neighborhood.blend": "d104eda07701804f8753fb43d921040d0814096dc7019bf8d2f7c42de055a8dc",
+      "edit-neighborhood.blend": "e2c2ef244d2c5549b186239028a9d0b375a633da38b0bf7b8b1caee1f77a3882"
+    },
+    "git_metadata_isolation": "Independent bare clone with --no-hardlinks and a dedicated worktree; original Git metadata untouched."
+  },
+  "environment": {
+    "os": "Windows",
+    "python": "3.11.11 (main, May 31 2025, 09:35:27) [MSC v.1929 64 bit (AMD64)]",
+    "blender": "4.5.1 LTS",
+    "render_settings": {
+      "engine": "CYCLES",
+      "device": "CPU",
+      "threads": 2,
+      "samples": 16,
+      "seed": 0,
+      "resolution": [
+        800,
+        800
+      ]
+    }
+  },
+  "tests": {
+    "portable": {
+      "run": 280,
+      "passed": 273,
+      "skipped": 7,
+      "exit_code": 0,
+      "log_sha256": "0ed26a1df773e3977b219a9e6cd7ce70121dc9a1ddeb75252e30df78d1a984f4"
+    },
+    "compileall": {
+      "exit_code": 0
+    },
+    "skip_reasons": [
+      "2 optional Shapely production tests",
+      "5 optional photo-estimation dependency tests"
+    ]
+  },
+  "visual_review": {
+    "views": [
+      "south",
+      "north",
+      "roof",
+      "context"
+    ],
+    "images_inspected": 8,
+    "observation": "Roof curves, facades, projecting wing and adjacent building retained. Existing blurred textures remain. No visual claim of increased real-world accuracy.",
+    "source": "Fresh renders from this run, not copied historical preview evidence."
+  },
+  "published_images": {
+    "before-south.png": {
+      "id": "south",
+      "isolated": true,
+      "sha256": "6c37ca474d3d83ad043e50a40e7d071b2e8dcf9071b52594967e880158269363",
+      "pixels_sha256": "00ca4f9c3ceeb913180a2601a538ef6b814fb5f9588b38daa7015eedbce67eac",
+      "bytes": 774520
+    },
+    "before-north.png": {
+      "id": "north",
+      "isolated": true,
+      "sha256": "d3c9ce0d292c09096cf017614efceb810147df5c31d97640bc301fd9078ee416",
+      "pixels_sha256": "fe8133957519b84f7f308af4218c54f62dc8d0f63401cfdbcf596fb458ca3844",
+      "bytes": 802799
+    },
+    "before-roof.png": {
+      "id": "roof",
+      "isolated": true,
+      "sha256": "1dd90328d8f6e2c83049858dca107ef28c0a66a123ec11f0e39b0fd8b1d4681c",
+      "pixels_sha256": "660988fedf3a81475972fed85d29de1938f928b0cf03f537759464beb28745c5",
+      "bytes": 814910
+    },
+    "before-context.png": {
+      "id": "context",
+      "isolated": false,
+      "sha256": "2d6e2e2df8fe27427648f38062fef6c1e2ca74bf9a04ffbd92f666a1e8a62ef2",
+      "pixels_sha256": "3b5bc19599144e147078485cd5e6f8bba1d786d02d6814effefa666341a4779c",
+      "bytes": 878707
+    },
+    "after-south.png": {
+      "id": "south",
+      "isolated": true,
+      "sha256": "d9e26e09639424806bca74c79d6f50575a53d33cbb412eeb7aa9ee44179b1b71",
+      "pixels_sha256": "00ca4f9c3ceeb913180a2601a538ef6b814fb5f9588b38daa7015eedbce67eac",
+      "bytes": 774520
+    },
+    "after-north.png": {
+      "id": "north",
+      "isolated": true,
+      "sha256": "94073f83b15a3c954c01d0b3f15eed817f046413c3731f0a141fde2863a9a8b9",
+      "pixels_sha256": "fe8133957519b84f7f308af4218c54f62dc8d0f63401cfdbcf596fb458ca3844",
+      "bytes": 802799
+    },
+    "after-roof.png": {
+      "id": "roof",
+      "isolated": true,
+      "sha256": "2839dffca27abd346e625cfb70b7e56b9fb153c82b43e3c8ba905f5e5f42eadd",
+      "pixels_sha256": "660988fedf3a81475972fed85d29de1938f928b0cf03f537759464beb28745c5",
+      "bytes": 814910
+    },
+    "after-context.png": {
+      "id": "context",
+      "isolated": false,
+      "sha256": "5650b6664d42f092d3f42172fefe4dbc26ae0e2c68a47338de759dd0a6c2ec74",
+      "pixels_sha256": "3b5bc19599144e147078485cd5e6f8bba1d786d02d6814effefa666341a4779c",
+      "bytes": 878707
+    }
+  },
+  "published_png_total_bytes": 6541872,
+  "logs": {
+    "build": {
+      "exit_code": 0,
+      "sha256": "c8c7a099f7fcb29acae02fa79573fd8ff9c009e201768d91cf9b0e432e683267"
+    },
+    "validate": {
+      "exit_code": 0,
+      "sha256": "cbbe3a904de6d81781d22da94cd02c6862a508e40bb8e78f33ce9871cf7ed3b6"
+    },
+    "render-before": {
+      "exit_code": 0,
+      "sha256": "ba6fe18b4a048541ea4cb2a933c8b2fbdd32fe2267f7fbd98ddf01c5bc09786d"
+    },
+    "render-after": {
+      "exit_code": 0,
+      "sha256": "5b87b2f925ba70fd855df33a75f62cecc3fafd75a812a96130bf286a8e403e96"
+    },
+    "reopen-edit": {
+      "exit_code": 0,
+      "sha256": "95bbd730cabc372f548a1d9b170b79cfd0a2a4cfd7dcfdc09efc8e54dc300fb9"
+    }
+  },
+  "warnings": [
+    "Existing Blender extension cache write warnings in render/reopen logs; all five Blender phases exited 0."
+  ],
+  "publication_scope": "Original code and verification metadata plus eight explicitly approved 800x800 PNGs; no blend, b3dm, textures, model libraries or raw scene data.",
+  "limits": [
+    "No claim of measured real-world accuracy or absence of geometric self-intersections.",
+    "No combined city reconstruction containing the PR #51 tree candidate.",
+    "The run report describes local generation only; the authorized Draft PR publishes selected code, metadata and PNGs separately.",
+    "Full scene/asset redistribution rights and external asset content hashing are outside this change."
+  ]
+}
