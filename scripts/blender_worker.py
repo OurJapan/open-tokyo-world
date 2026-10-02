@@ -120,10 +120,12 @@ def prepare(job):
                 sys.path.insert(0,str(Path(__file__).resolve().parent))
                 import mori_plaza_landscape_v1 as detail
                 detail.apply(op,mesh_fingerprint,job['landscape_plan'])
-            elif op['op'] in ('mori_plaza_v1','mori_plaza_link_v1','mori_plaza_edge_v1','mori_plaza_outline_v1','mori_plaza_connection_v1'):
+            elif op['op'] in ('mori_plaza_v1','mori_plaza_link_v1','mori_plaza_edge_v1','mori_plaza_outline_v1','mori_plaza_connection_v1','mori_plaza_west_path_v1'):
                 if obj.type!='MESH' or mesh_fingerprint(obj.data)!=op['expected_mesh_sha256']:raise ValueError('Plaza anchor differs')
                 sys.path.insert(0,str(Path(__file__).resolve().parent))
-                if op['op']=='mori_plaza_connection_v1':
+                if op['op']=='mori_plaza_west_path_v1':
+                    import mori_plaza_west_path_v1 as detail
+                elif op['op']=='mori_plaza_connection_v1':
                     import mori_plaza_connection_v1 as detail
                 elif op['op']=='mori_plaza_outline_v1':
                     import mori_plaza_outline_v1 as detail
@@ -134,6 +136,8 @@ def prepare(job):
                 else:
                     import mori_plaza_v1 as detail
                 if op['op']=='mori_plaza_connection_v1':
+                    detail.apply(op,mesh_fingerprint,job['road_inputs'],job['connection_plan'])
+                elif op['op']=='mori_plaza_west_path_v1':
                     detail.apply(op,mesh_fingerprint,job['road_inputs'],job['connection_plan'])
                 elif op['op']=='mori_plaza_outline_v1':
                     detail.apply(op,mesh_fingerprint,job['road_inputs'])
