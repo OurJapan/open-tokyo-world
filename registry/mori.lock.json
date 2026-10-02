@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "registry_sha256": "f34246a80c6c05450292007566338ec1cc783db6f92347f457de55f570be7b7a",
+  "frame": "legacy-tokyo-display-v1",
+  "profile": "mori-standalone",
+  "selections": [
+    {
+      "feature": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "revision": "standalone-v1"
+    }
+  ]
+}

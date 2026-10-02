@@ -54,7 +54,7 @@ def validate(registry):
         require(bool(model.get("version")) and sha(model.get("sha256")), "Model must be version/hash pinned")
         require(bool(model.get("license")) and bool(model.get("attribution")), "Model rights missing")
         require(model.get("source_refs") and all(s in sources for s in model["source_refs"]), "Unknown model source")
-        require(model.get("format") in {"blend", "glb", "mesh-json"}, "Unsupported model format")
+        require(model.get("format") in {"blend", "glb", "mesh-json", "procedural-manifest"}, "Unsupported model format")
         require(bool(model.get("locator")), "Missing model locator")
     features = keyed(registry["features"], "feature")
     for feature in features.values():
@@ -131,7 +131,7 @@ def compile_plan(registry, lock, *, allow_candidates=False):
                 claim = (binding["source"], binding["object_id"])
                 require(claim not in claims, "Source object claimed twice; split into distinct source parts before registration")
                 claims[claim] = (fid, pid)
-            states[(fid, pid)] = {"feature": fid, "part": pid, "kind": feature["kind"], "owner_area": feature["owner_area"], "geometry": {"source_binding": binding} if binding else None, "material": None}
+            states[(fid, pid)] = {"feature": fid, "part": pid, "kind": feature["kind"], "owner_area": feature["owner_area"], "source_binding": binding, "geometry": {"source_binding": binding} if binding else None, "material": None}
         for operation in revision["operations"]:
             state = states[(fid, operation["part"])]
             action = operation["action"]

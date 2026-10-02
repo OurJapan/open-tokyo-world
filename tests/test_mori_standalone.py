@@ -51,10 +51,8 @@ class ReplacementContract(unittest.TestCase):
             out=p/'out'
             result=subprocess.run([sys.executable,str(ROOT/'starter/mori/run.py'),'--blender',sys.executable,'--inputs',str(inputs),'--output',str(out)],capture_output=True,text=True)
             self.assertNotEqual(result.returncode,0)
-            record=json.loads((out/'run.json').read_text())
-            self.assertFalse(record['ok'])
-            self.assertIn('Pinned source mismatch',record['error'])
-            self.assertFalse((out/'build.log').exists())
+            self.assertIn('Pinned source mismatch',result.stderr)
+            self.assertFalse(out.exists())
 
     def test_existing_output_not_overwritten(self):
         with tempfile.TemporaryDirectory() as folder:

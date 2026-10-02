@@ -1,0 +1,985 @@
+{
+  "schema_version": 1,
+  "purpose": "Fixed Mori standalone plan; accepted means the existing standalone recipe, not real-world accuracy or whole-city acceptance. Neighbor entries are review scope, not build selections.",
+  "frames": [
+    {
+      "id": "legacy-tokyo-display-v1",
+      "units": "m",
+      "axes": "east-north-up",
+      "definition": "glTF (x,-z,y) + RTC -> ECEF -> ENU at 139.74543,35.65858,0m ellipsoid; each building minimum Z shifted to 0.32m. Display heights, not survey datum."
+    }
+  ],
+  "sources": [
+    {
+      "id": "plateau:minato:2025:data221",
+      "revision": "2025.1.0",
+      "sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2",
+      "license": "PLATEAU source-specific terms; see starter/plateau/NOTICE.md",
+      "attribution": "MLIT Project PLATEAU / Minato 2025",
+      "object_ids": [
+        "bldg_0551e688-a2a3-498e-ad2f-09ed3aca361c",
+        "bldg_0ae43c4e-b1f9-48e1-adde-36e49ee20e94",
+        "bldg_18d27033-749a-4676-9c13-3881e1dd9188",
+        "bldg_243ff12c-1ba7-4f9d-87fc-020f66381aad",
+        "bldg_320f5eac-d9ed-46e6-a0ee-5a9303df5be8",
+        "bldg_433bc5b3-db73-4644-ac24-a28d51b7ecd5",
+        "bldg_5dab31bf-48b2-4de9-8f4f-3ff552347f28",
+        "bldg_6316c78d-13f0-4ca9-81da-e227bf126107",
+        "bldg_6d05f419-2581-4d4e-bfa5-d89edbfd3295",
+        "bldg_6f3a4a13-3582-4e78-8e84-6042fd94d9c3",
+        "bldg_7ecf1183-80d7-467e-8dfd-546a645789e8",
+        "bldg_82e12af1-124e-44f1-bcd9-35f326843649",
+        "bldg_8e51b9d0-156d-476b-a9d6-2eb25b062508",
+        "bldg_9f67faf4-3270-469d-a099-69e270b6a702",
+        "bldg_aa1fbb0e-43b8-4b67-8efa-0c4e3d31fb92",
+        "bldg_af7335da-7542-44dd-964d-8cccd2b046ff",
+        "bldg_b5b6c2c3-bf12-4259-86bf-e522db3516d8",
+        "bldg_c355ccef-01b6-4ace-a515-1481bb012f42",
+        "bldg_c9830911-b1d7-4dd3-b5ed-fe46baa9f15a",
+        "bldg_d13fe45b-21a9-4bf1-b8cc-27b8b50c20fd",
+        "bldg_d489fc05-14bf-46a1-8cbd-d8ad472c8b68",
+        "bldg_dc21f8c4-6629-4c2e-a39b-9a52e837637a",
+        "bldg_eafc9420-63a2-452d-8633-d54c6919c7f3",
+        "bldg_f5fe39a0-8082-4b57-b66d-c0683f7b8e54"
+      ],
+      "inventory_sha256": "b0070633b7f419600fdbb1bf98a7e6037dff0b7baa1eacc99866a1a775102e36",
+      "files": {
+        "tileset.json": {
+          "url": "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/tileset.json",
+          "bytes": 412889,
+          "sha256": "edec4c24d137eaf08a8525cecea505a3f21a30823b9ef4fb530e10774cea1323"
+        },
+        "data221.b3dm": {
+          "url": "https://assets.cms.plateau.reearth.io/assets/c7/ffcc73-1d33-434b-a49a-aa0289160814/13103_minato-ku_pref_2025_citygml_1_op_bldg_3dtiles_13103_minato-ku_lod3/data/data221.b3dm",
+          "bytes": 1246040,
+          "sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2"
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "otw:mori:procedural-v1",
+      "version": "standalone-v1",
+      "sha256": "18a42a919f75092256346a27c42ac8d544729d575ca7571698f11a38455e1249",
+      "format": "procedural-manifest",
+      "locator": "starter/mori/model-manifest.json",
+      "license": "CC-BY-4.0 for original additions only; PLATEAU source terms retained",
+      "attribution": "ark4ez / OurJapan; see starter/mori/provenance.json",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "id": "otw:jp:tokyo:minato:azabudai-mori-jp",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [
+        "otw:jp:tokyo:minato:bldg_0551e688-a2a3-498e-ad2f-09ed3aca361c",
+        "otw:jp:tokyo:minato:bldg_0ae43c4e-b1f9-48e1-adde-36e49ee20e94",
+        "otw:jp:tokyo:minato:bldg_18d27033-749a-4676-9c13-3881e1dd9188",
+        "otw:jp:tokyo:minato:bldg_243ff12c-1ba7-4f9d-87fc-020f66381aad",
+        "otw:jp:tokyo:minato:bldg_320f5eac-d9ed-46e6-a0ee-5a9303df5be8",
+        "otw:jp:tokyo:minato:bldg_5dab31bf-48b2-4de9-8f4f-3ff552347f28",
+        "otw:jp:tokyo:minato:bldg_6316c78d-13f0-4ca9-81da-e227bf126107",
+        "otw:jp:tokyo:minato:bldg_6d05f419-2581-4d4e-bfa5-d89edbfd3295",
+        "otw:jp:tokyo:minato:bldg_6f3a4a13-3582-4e78-8e84-6042fd94d9c3",
+        "otw:jp:tokyo:minato:bldg_7ecf1183-80d7-467e-8dfd-546a645789e8",
+        "otw:jp:tokyo:minato:bldg_82e12af1-124e-44f1-bcd9-35f326843649",
+        "otw:jp:tokyo:minato:bldg_8e51b9d0-156d-476b-a9d6-2eb25b062508",
+        "otw:jp:tokyo:minato:bldg_9f67faf4-3270-469d-a099-69e270b6a702",
+        "otw:jp:tokyo:minato:bldg_aa1fbb0e-43b8-4b67-8efa-0c4e3d31fb92",
+        "otw:jp:tokyo:minato:bldg_af7335da-7542-44dd-964d-8cccd2b046ff",
+        "otw:jp:tokyo:minato:bldg_b5b6c2c3-bf12-4259-86bf-e522db3516d8",
+        "otw:jp:tokyo:minato:bldg_c355ccef-01b6-4ace-a515-1481bb012f42",
+        "otw:jp:tokyo:minato:bldg_c9830911-b1d7-4dd3-b5ed-fe46baa9f15a",
+        "otw:jp:tokyo:minato:bldg_d13fe45b-21a9-4bf1-b8cc-27b8b50c20fd",
+        "otw:jp:tokyo:minato:bldg_d489fc05-14bf-46a1-8cbd-d8ad472c8b68",
+        "otw:jp:tokyo:minato:bldg_dc21f8c4-6629-4c2e-a39b-9a52e837637a",
+        "otw:jp:tokyo:minato:bldg_eafc9420-63a2-452d-8633-d54c6919c7f3",
+        "otw:jp:tokyo:minato:bldg_f5fe39a0-8082-4b57-b66d-c0683f7b8e54"
+      ],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_433bc5b3-db73-4644-ac24-a28d51b7ecd5"
+          }
+        },
+        {
+          "id": "podium-aluminum"
+        },
+        {
+          "id": "podium-ceiling"
+        },
+        {
+          "id": "podium-clear-glass"
+        },
+        {
+          "id": "podium-gasket"
+        },
+        {
+          "id": "podium-leaf"
+        },
+        {
+          "id": "podium-soil"
+        },
+        {
+          "id": "podium-stone"
+        },
+        {
+          "id": "podium-wood"
+        },
+        {
+          "id": "facade-glass"
+        },
+        {
+          "id": "facade-spandrel"
+        },
+        {
+          "id": "facade-joint"
+        },
+        {
+          "id": "facade-mullion"
+        },
+        {
+          "id": "floors-roof"
+        }
+      ],
+      "revisions": [
+        {
+          "id": "standalone-v1",
+          "status": "accepted",
+          "requires": [],
+          "operations": [
+            {
+              "action": "suppress",
+              "part": "source-building"
+            },
+            {
+              "action": "add",
+              "part": "podium-aluminum",
+              "models": {
+                "mori-standalone": "otw:mori:procedural-v1"
+              },
+              "position_m": [
+                0,
+                0,
+                0
+              ],
+              "yaw_degrees": 0
+            },
+            {
+              "action": "add",
+              "part": "podium-ceiling",
+              "models": {
+                "mori-standalone": "otw:mori:procedural-v1"
+              },
+              "position_m": [
+                0,
+                0,
+                0
+              ],
+              "yaw_degrees": 0
+            },
+            {
+              "action": "add",
+              "part": "podium-clear-glass",
+              "models": {
+                "mori-standalone": "otw:mori:procedural-v1"
+              },
+              "position_m": [
+                0,
+                0,
+                0
+              ],
+              "yaw_degrees": 0
+            },
+            {
+              "action": "add",
+              "part": "podium-gasket",
+              "models": {
+                "mori-standalone": "otw:mori:procedural-v1"
+              },
+              "position_m": [
+                0,
+                0,
+                0
+              ],
+              "yaw_degrees": 0
+            },
+            {
+              "action": "add",
+              "part": "podium-leaf",
+              "models": {
+                "mori-standalone": "otw:mori:procedural-v1"
+              },
+              "position_m": [
+                0,
+                0,
+                0
+              ],
+              "yaw_degrees": 0
+            },
+            {
+              "action": "add",
+              "part": "podium-soil",
+              "models": {
+                "mori-standalone": "otw:mori:procedural-v1"
+              },
+              "position_m": [
+                0,
+                0,
+                0
+              ],
+              "yaw_degrees": 0
+            },
+            {
+              "action": "add",
+              "part": "podium-stone",
+              "models": {
+                "mori-standalone": "otw:mori:procedural-v1"
+              },
+              "position_m": [
+                0,
+                0,
+                0
+              ],
+              "yaw_degrees": 0
+            },
+            {
+              "action": "add",
+              "part": "podium-wood",
+              "models": {
+                "mori-standalone": "otw:mori:procedural-v1"
+              },
+              "position_m": [
+                0,
+                0,
+                0
+              ],
+              "yaw_degrees": 0
+            },
+            {
+              "action": "add",
+              "part": "facade-glass",
+              "models": {
+                "mori-standalone": "otw:mori:procedural-v1"
+              },
+              "position_m": [
+                0,
+                0,
+                0
+              ],
+              "yaw_degrees": 0
+            },
+            {
+              "action": "add",
+              "part": "facade-spandrel",
+              "models": {
+                "mori-standalone": "otw:mori:procedural-v1"
+              },
+              "position_m": [
+                0,
+                0,
+                0
+              ],
+              "yaw_degrees": 0
+            },
+            {
+              "action": "add",
+              "part": "facade-joint",
+              "models": {
+                "mori-standalone": "otw:mori:procedural-v1"
+              },
+              "position_m": [
+                0,
+                0,
+                0
+              ],
+              "yaw_degrees": 0
+            },
+            {
+              "action": "add",
+              "part": "facade-mullion",
+              "models": {
+                "mori-standalone": "otw:mori:procedural-v1"
+              },
+              "position_m": [
+                0,
+                0,
+                0
+              ],
+              "yaw_degrees": 0
+            },
+            {
+              "action": "add",
+              "part": "floors-roof",
+              "models": {
+                "mori-standalone": "otw:mori:procedural-v1"
+              },
+              "position_m": [
+                0,
+                0,
+                0
+              ],
+              "yaw_degrees": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_0551e688-a2a3-498e-ad2f-09ed3aca361c",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_0551e688-a2a3-498e-ad2f-09ed3aca361c"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_0ae43c4e-b1f9-48e1-adde-36e49ee20e94",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_0ae43c4e-b1f9-48e1-adde-36e49ee20e94"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_18d27033-749a-4676-9c13-3881e1dd9188",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_18d27033-749a-4676-9c13-3881e1dd9188"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_243ff12c-1ba7-4f9d-87fc-020f66381aad",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_243ff12c-1ba7-4f9d-87fc-020f66381aad"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_320f5eac-d9ed-46e6-a0ee-5a9303df5be8",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_320f5eac-d9ed-46e6-a0ee-5a9303df5be8"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_5dab31bf-48b2-4de9-8f4f-3ff552347f28",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_5dab31bf-48b2-4de9-8f4f-3ff552347f28"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_6316c78d-13f0-4ca9-81da-e227bf126107",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_6316c78d-13f0-4ca9-81da-e227bf126107"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_6d05f419-2581-4d4e-bfa5-d89edbfd3295",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_6d05f419-2581-4d4e-bfa5-d89edbfd3295"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_6f3a4a13-3582-4e78-8e84-6042fd94d9c3",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_6f3a4a13-3582-4e78-8e84-6042fd94d9c3"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_7ecf1183-80d7-467e-8dfd-546a645789e8",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_7ecf1183-80d7-467e-8dfd-546a645789e8"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_82e12af1-124e-44f1-bcd9-35f326843649",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_82e12af1-124e-44f1-bcd9-35f326843649"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_8e51b9d0-156d-476b-a9d6-2eb25b062508",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_8e51b9d0-156d-476b-a9d6-2eb25b062508"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_9f67faf4-3270-469d-a099-69e270b6a702",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_9f67faf4-3270-469d-a099-69e270b6a702"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_aa1fbb0e-43b8-4b67-8efa-0c4e3d31fb92",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_aa1fbb0e-43b8-4b67-8efa-0c4e3d31fb92"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_af7335da-7542-44dd-964d-8cccd2b046ff",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_af7335da-7542-44dd-964d-8cccd2b046ff"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_b5b6c2c3-bf12-4259-86bf-e522db3516d8",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_b5b6c2c3-bf12-4259-86bf-e522db3516d8"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_c355ccef-01b6-4ace-a515-1481bb012f42",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_c355ccef-01b6-4ace-a515-1481bb012f42"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_c9830911-b1d7-4dd3-b5ed-fe46baa9f15a",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_c9830911-b1d7-4dd3-b5ed-fe46baa9f15a"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_d13fe45b-21a9-4bf1-b8cc-27b8b50c20fd",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_d13fe45b-21a9-4bf1-b8cc-27b8b50c20fd"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_d489fc05-14bf-46a1-8cbd-d8ad472c8b68",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_d489fc05-14bf-46a1-8cbd-d8ad472c8b68"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_dc21f8c4-6629-4c2e-a39b-9a52e837637a",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_dc21f8c4-6629-4c2e-a39b-9a52e837637a"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_eafc9420-63a2-452d-8633-d54c6919c7f3",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_eafc9420-63a2-452d-8633-d54c6919c7f3"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "id": "otw:jp:tokyo:minato:bldg_f5fe39a0-8082-4b57-b66d-c0683f7b8e54",
+      "kind": "building",
+      "owner_area": "azabudai",
+      "frame": "legacy-tokyo-display-v1",
+      "source_refs": [
+        "plateau:minato:2025:data221"
+      ],
+      "parent": null,
+      "review_neighbors": [],
+      "parts": [
+        {
+          "id": "source-building",
+          "source_binding": {
+            "source": "plateau:minato:2025:data221",
+            "object_id": "bldg_f5fe39a0-8082-4b57-b66d-c0683f7b8e54"
+          }
+        }
+      ],
+      "revisions": [
+        {
+          "id": "source-2025",
+          "status": "accepted",
+          "requires": [],
+          "operations": []
+        }
+      ]
+    }
+  ]
+}
