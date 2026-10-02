@@ -5,6 +5,7 @@ import copy
 from pathlib import Path
 import struct
 import sys
+from types import SimpleNamespace
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'scripts'))
@@ -113,7 +114,8 @@ class TowerGeometryTests(unittest.TestCase):
     def test_retained_geometry_and_display_flags_are_exact(self):
         vertices, faces = cube()
         data = {'vertices': vertices, 'faces': faces, 'polygon_flags': [(0, False)]*6,
-                'matrix_world': [[int(r == c) for c in range(4)] for r in range(4)], 'materials': ['original']}
+                'matrix_world': [[int(r == c) for c in range(4)] for r in range(4)], 'materials': ['original'],
+                'modifiers': [{'rna_type': 'BevelModifier', 'width': .006, 'segments': 2, 'show_render': False}]}
         self.assertTrue(saved.compare_retained(data, copy.deepcopy(data))['coordinates_faces_material_indices_smooth_flags_exact'])
         for key, value in [('vertices', (0.1, 0, 0)), ('faces', [0, 2, 3, 1]),
                            ('polygon_flags', (0, True)), ('polygon_flags', (1, False)), ('materials', 'other')]:
@@ -121,6 +123,34 @@ class TowerGeometryTests(unittest.TestCase):
             with self.subTest(key=key, value=value):
                 with self.assertRaisesRegex(ValueError, 'Retained tower'):
                     saved.compare_retained(data, bad)
+        for key, value in (('width', .007), ('segments', 3), ('show_render', True)):
+            bad = copy.deepcopy(data); bad['modifiers'][0][key] = value
+            with self.assertRaisesRegex(ValueError, 'Retained tower modifiers differ'):
+                saved.compare_retained(data, bad)
+        bad = copy.deepcopy(data); bad['modifiers'] = []
+        with self.assertRaisesRegex(ValueError, 'Retained tower modifiers differ'):
+            saved.compare_retained(data, bad)
+
+    def test_modifier_snapshot_keeps_profile_and_rejects_unknown_or_nonfinite_state(self):
+        def rna(kind, values):
+            properties = [SimpleNamespace(identifier=key, type=typ, is_array=isinstance(value, tuple))
+                          for key, (typ, value) in values.items()]
+            return SimpleNamespace(bl_rna=SimpleNamespace(identifier=kind, properties=properties),
+                                   **{key: value for key, (_, value) in values.items()})
+        point = rna('CurveProfilePoint', {'location': ('FLOAT', (0., 1.)), 'handle_type_1': ('ENUM', 'AUTO')})
+        profile = rna('CurveProfile', {'preset': ('ENUM', 'LINE'), 'points': ('COLLECTION', [point])})
+        modifier = rna('BevelModifier', {'width': ('FLOAT', .006), 'show_render': ('BOOLEAN', False),
+                                        'execution_time': ('FLOAT', .03), 'custom_profile': ('POINTER', profile)})
+        snapshot = saved.snapshot_modifier_rna(modifier)
+        self.assertNotIn('execution_time', snapshot)
+        self.assertEqual(snapshot['custom_profile']['points'][0]['location'], [0., 1.])
+        point.location = (.1, 1.)
+        self.assertNotEqual(snapshot, saved.snapshot_modifier_rna(modifier))
+        modifier.width = float('nan')
+        with self.assertRaisesRegex(ValueError, 'non-finite'):
+            saved.snapshot_modifier_rna(modifier)
+        with self.assertRaisesRegex(ValueError, 'Unsupported retained modifier RNA'):
+            saved.snapshot_modifier_rna(rna('NodesModifier', {}))
 
 
 if __name__ == '__main__':

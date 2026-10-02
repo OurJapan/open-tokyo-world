@@ -302,22 +302,54 @@ def retained_snapshot(name, snapshot):
 
 
 def compare_retained(expected, saved):
-    for key in ('vertices', 'faces', 'polygon_flags', 'matrix_world', 'materials'):
+    for key in ('vertices', 'faces', 'polygon_flags', 'matrix_world', 'materials', 'modifiers'):
         require(expected[key] == saved[key], 'Retained tower '+key+' differ')
     payload = json.dumps(saved, separators=(',', ':'), allow_nan=False).encode()
     return {'vertices': len(saved['vertices']), 'polygons': len(saved['faces']),
             'coordinates_faces_material_indices_smooth_flags_exact': True,
+            'modifier_settings_exact': True, 'modifiers': saved['modifiers'],
             'retained_data_sha256': hashlib.sha256(payload).hexdigest()}
 
 
+def snapshot_modifier_rna(value):
+    """Serialize the pinned bevel stack, including its embedded curve profile.
+
+    Only its measured execution time is excluded: it is a runtime measurement,
+    not a saved setting. Unknown structs/properties fail instead of being skipped.
+    """
+    kind = value.bl_rna.identifier
+    require(kind in ('BevelModifier', 'CurveProfile', 'CurveProfilePoint'),
+            'Unsupported retained modifier RNA: '+kind)
+    state = {'rna_type': kind}
+    for prop in value.bl_rna.properties:
+        key = prop.identifier
+        if key == 'rna_type' or (kind == 'BevelModifier' and key == 'execution_time'):
+            continue
+        item = getattr(value, key)
+        if prop.type in ('BOOLEAN', 'INT', 'FLOAT', 'STRING', 'ENUM'):
+            items = list(item) if getattr(prop, 'is_array', False) else [item]
+            require(all(type(v) in (str, int, float, bool) and
+                        (not isinstance(v, float) or math.isfinite(v)) for v in items),
+                    'Unsupported or non-finite retained modifier property: '+key)
+            state[key] = items if getattr(prop, 'is_array', False) else item
+        elif prop.type == 'POINTER':
+            state[key] = None if item is None else snapshot_modifier_rna(item)
+        elif prop.type == 'COLLECTION':
+            state[key] = [snapshot_modifier_rna(element) for element in item]
+        else:
+            raise ValueError('Unsupported retained modifier property: '+key)
+    return state
+
+
 def snapshot_object(obj):
-    require(obj is not None and obj.type == 'MESH' and not obj.modifiers and not obj.parent and
+    require(obj is not None and obj.type == 'MESH' and not obj.parent and
             not obj.constraints and not obj.animation_data, 'Unsupported retained tower state')
     return {'vertices': [tuple(v.co) for v in obj.data.vertices],
             'faces': [list(p.vertices) for p in obj.data.polygons],
             'polygon_flags': [(p.material_index, p.use_smooth) for p in obj.data.polygons],
             'matrix_world': [list(row) for row in obj.matrix_world],
-            'materials': [m.name if m else None for m in obj.data.materials]}
+            'materials': [m.name if m else None for m in obj.data.materials],
+            'modifiers': [snapshot_modifier_rna(modifier) for modifier in obj.modifiers]}
 
 
 def inspect(args):

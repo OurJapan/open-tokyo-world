@@ -105,6 +105,12 @@ The original implementations in `scripts/mori_plaza_west_path_v1.py`, `scripts/p
 
 The four selected Before/After PNGs in [the west footway review preview](renders/previews/mori-plaza-west-path-v1/README.md) were explicitly approved for publication with the draft PR on 2026-10-02. Their publication as review evidence adds no asset license for the underlying legacy scene or third-party content. Preserve the source notices in that preview and [NOTICE](NOTICE.md).
 
+## Tokyo Tower exterior structure correction
+
+The original implementations in `scripts/tower_structure_v1.py`, `scripts/tower_foottown_v1.py`, `scripts/validate_tower_structure.py`, `tests/test_tower_structure_geometry.py`, `tests/test_tower_structure_review.py`, and `tests/test_tower_foottown.py`, together with the original `tower_structure_v1` integration additions to `scripts/review.py` and `scripts/blender_worker.py`, are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This covers the named original correction and verification code, not the legacy city, reference photographs/PDFs, textures, generated combined scenes or third-party inputs.
+
+The 18 Before/After PNGs in the [tower structure review](renders/previews/tower-structure-v1/README.md) are published as evidence for the user-requested PR. Their publication does not grant a new blanket licence for the images, underlying city or third-party content. Retain the attribution and scope recorded in that preview and [NOTICE](NOTICE.md).
+
 ## Outside these grants
 
 Except for the separately identified starters and original additions above, no license is granted here for other repository files, legacy city scenes, generated models, reference photos, textures, music, trademarks, PLATEAU data, OpenStreetMap data, or other third-party content. Any separately applicable license remains in effect. Execution of the covered code does not itself grant rights to its inputs or outputs. This scope document adds no conditions to the MIT grant for the covered code.

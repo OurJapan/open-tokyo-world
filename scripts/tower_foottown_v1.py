@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 ark4ez
 """Estimated FootTown exterior, independent of Blender and material creation.
 
 The retained legacy footprint is 73 x 58 m. Four simplified storeys and a roof
