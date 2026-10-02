@@ -1,0 +1,613 @@
+{
+  "schema_version": 1,
+  "ok": true,
+  "verified_date": "2026-10-02",
+  "feature": "bldg_0551e688-a2a3-498e-ad2f-09ed3aca361c",
+  "branch": "codex/data221-0551e688-model-20261002",
+  "base_commit": "05026ec9de08b25e15e8e77c2ad2e2a43a1b5f6d",
+  "later_remote_main_checked": "29157afbab0ce05e62d065b3535e577230b7583a",
+  "later_remote_change_scope": "PR #50 web/spatial-viewer only; no building overlap",
+  "local_output_directory": "data/local/0551e688-review-02",
+  "run": {
+    "ok": true,
+    "feature": "bldg_0551e688-a2a3-498e-ad2f-09ed3aca361c",
+    "input_sha256": "09977e34f02c02a7e24448767874294e0f7c09e3bbaf40b5630ea1dea8965216",
+    "input_preserved": true,
+    "code_base_commit": "417103feb85dbe3ac67ce5c3f5afc8ed593b5a58",
+    "code_files": {
+      "scripts/data221_0551e688_mesh.py": "024619722914c14875f7b2407b96ba89f4246a3e3ec030165194dbb79fea7172",
+      "scripts/data221_0551e688_worker.py": "b037b2df9f832e7f8f2f8b2921a4c0604fd286c540893b80130ee591d48fdb93",
+      "scripts/review_data221_0551e688.py": "aa296ce3f2eafef64599cf3d6acbbc3242a4f7fd9c5938dc40fa666463d2cc11",
+      "scripts/data221_af7335da_mesh.py": "22805e14547abe2c6cd9cb7d7642a4fe20c7e41ca9bf731d9d103778e4b0e8fa",
+      "scripts/data221_af7335da_worker.py": "b7739c17ff61309935c2b432d061a0ad4ae33bd7a9241ff61bd77d14efdabba5",
+      "scripts/review_data221_af7335da.py": "0fdd5ec5bc111d34ea69139e6569be7a51cfe221be0184a633b983fac5fae8dc",
+      "scripts/validate_data221_af7335da_integration.py": "cce8911a93a4178b8838495af34a2c1257a0232f72348eea701e2c0d4c620ea0",
+      "scripts/blender_worker.py": "6d527b18c2b41df29a14a16e0aafb12bdc5fc56fddf09e3b8933a0745be4a4b2",
+      "starter/plateau/tile.py": "540aa9b7e8d8efc482f4ef4cdcf0f890bac6102a905707e588f13ca60f2d7c11",
+      "areas/tokyo-tower/mori-plaza-connection-accepted-features.json": "c2dc5d3e5a5bbf3fb8b883164ddbcefc7007f4510e075e2e5ee26eeb18f68ff2"
+    },
+    "jobs": {
+      "build": {
+        "exit_code": 0,
+        "seconds": 42.953
+      },
+      "validate": {
+        "exit_code": 0,
+        "seconds": 38.828
+      },
+      "render-before": {
+        "exit_code": 0,
+        "seconds": 14.969
+      },
+      "render-after": {
+        "exit_code": 0,
+        "seconds": 14.265
+      },
+      "reopen-edit": {
+        "exit_code": 0,
+        "seconds": 1.344
+      }
+    },
+    "output_blends": {
+      "after.blend": "152bff206c36ced271c382a9845da48dc90e3674827847f5bb721995d0f986dc",
+      "target.blend": "672bf822688a5bcdafee59ce3f6313d8dbae86b5e15198480408dc49be522dc8",
+      "before-neighborhood.blend": "be364f19581e76a4983d649849beeaf32be3e09f3b108a159b375729981a1058",
+      "after-neighborhood.blend": "d104eda07701804f8753fb43d921040d0814096dc7019bf8d2f7c42de055a8dc",
+      "edit-neighborhood.blend": "e2c2ef244d2c5549b186239028a9d0b375a633da38b0bf7b8b1caee1f77a3882"
+    },
+    "image_comparisons": [
+      {
+        "view": "south",
+        "pixel_identical": true,
+        "pixels_sha256": "00ca4f9c3ceeb913180a2601a538ef6b814fb5f9588b38daa7015eedbce67eac"
+      },
+      {
+        "view": "north",
+        "pixel_identical": true,
+        "pixels_sha256": "fe8133957519b84f7f308af4218c54f62dc8d0f63401cfdbcf596fb458ca3844"
+      },
+      {
+        "view": "roof",
+        "pixel_identical": true,
+        "pixels_sha256": "660988fedf3a81475972fed85d29de1938f928b0cf03f537759464beb28745c5"
+      },
+      {
+        "view": "context",
+        "pixel_identical": true,
+        "pixels_sha256": "3b5bc19599144e147078485cd5e6f8bba1d786d02d6814effefa666341a4779c"
+      }
+    ],
+    "source_hashes": {
+      "data221.b3dm": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2",
+      "tileset.json": "edec4c24d137eaf08a8525cecea505a3f21a30823b9ef4fb530e10774cea1323"
+    },
+    "limits": [
+      "Local candidate only; no registration, push, PR or merge.",
+      "Three isolated views and one data221-neighborhood view; no roads/full-city render.",
+      "Existing textures, synthetic material and legacy height retained; no real-world detail added.",
+      "Self-intersections and solid/physics suitability not certified."
+    ]
+  },
+  "production": {
+    "ok": true,
+    "feature": "bldg_0551e688-a2a3-498e-ad2f-09ed3aca361c",
+    "source_max_error_m": 1.5242209030930098e-05,
+    "edit_coordinate_displacement_m": 0,
+    "decoder_sha256": "49630e97d24ca24a3c6fa44ffd06de0d58a27e450ceec248a9a69426c2839087",
+    "selected_records_sha256": "539978151f407a2021417b672aab99f9f05d9cfbd9bb997d90a35aa605e217cf",
+    "retained_records_sha256": "24e614be61b61661c81c71538176ac134446106e56e112dc394abb92cd8c0a4c",
+    "retained_faces": 1748,
+    "retained_aggregate_features": 21,
+    "original_uv_settings": {
+      "active_index": 0,
+      "layers": [
+        [
+          "UVMap",
+          true,
+          true
+        ]
+      ]
+    },
+    "shader_evidence": [
+      {
+        "material": "Synthetic facade on measured geometry 2",
+        "coordinate_inputs": [
+          "Position",
+          "Normal"
+        ]
+      },
+      {
+        "material": "Material_1.035",
+        "coordinate_inputs": [
+          "active render UV (implicit Image Texture vector)"
+        ]
+      }
+    ],
+    "before": {
+      "vertices": 2838,
+      "faces": 946,
+      "edges": 2838,
+      "boundary_edges": 2838,
+      "nonmanifold_edges": 2838,
+      "winding_errors": 0,
+      "components": 946,
+      "loose_vertices": 0,
+      "euler_characteristic": 946,
+      "minimum_triangle_area_m2": 0.12807426372895309,
+      "surface_area_m2": 5559.823073489763,
+      "signed_volume_m3": 18505.89231645864
+    },
+    "after": {
+      "surface": {
+        "vertices": 475,
+        "faces": 946,
+        "edges": 1419,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "winding_errors": 0,
+        "components": 1,
+        "loose_vertices": 0,
+        "euler_characteristic": 2,
+        "minimum_triangle_area_m2": 0.12807426372895309,
+        "surface_area_m2": 5559.823073489763,
+        "signed_volume_m3": 18505.89231645864
+      },
+      "extras": {
+        "duplicate_geometric_faces": 0,
+        "vertex_links_checked": 475,
+        "nonmanifold_vertex_links": 0
+      }
+    },
+    "normals": {
+      "faces": 946,
+      "minimum_cosine": 0.9999999999999922,
+      "maximum_angle_degrees": 7.143182815269534e-06
+    },
+    "exported_surfaces": {
+      "PLATEAU_data221": {
+        "records": "24e614be61b61661c81c71538176ac134446106e56e112dc394abb92cd8c0a4c",
+        "materials": [
+          "da0f3d34b9b6e0fa42e5fd3a1d89b82d66489c9adfdc70a72543b748b9e1a817",
+          "2ea8cdb7f9a0ab9c64f0c9827e2fd36c54c96daf5202c8a05218d157e87deb9c"
+        ],
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "uv_settings": {
+          "active_index": 0,
+          "layers": [
+            [
+              "UVMap",
+              true,
+              true
+            ]
+          ]
+        },
+        "gml_id": null,
+        "hide_render": false,
+        "hide_viewport": false
+      },
+      "bldg_af7335da-7542-44dd-964d-8cccd2b046ff": {
+        "records": "28ad9ff4d5256970d0793dce1c7b04c7b7f0e36a51180427690a112e80b3ceaa",
+        "materials": [
+          "da0f3d34b9b6e0fa42e5fd3a1d89b82d66489c9adfdc70a72543b748b9e1a817",
+          "2ea8cdb7f9a0ab9c64f0c9827e2fd36c54c96daf5202c8a05218d157e87deb9c"
+        ],
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "uv_settings": {
+          "active_index": 0,
+          "layers": [
+            [
+              "UVMap",
+              true,
+              true
+            ]
+          ]
+        },
+        "gml_id": "bldg_af7335da-7542-44dd-964d-8cccd2b046ff",
+        "hide_render": false,
+        "hide_viewport": false
+      },
+      "bldg_0551e688-a2a3-498e-ad2f-09ed3aca361c": {
+        "records": "539978151f407a2021417b672aab99f9f05d9cfbd9bb997d90a35aa605e217cf",
+        "materials": [
+          "da0f3d34b9b6e0fa42e5fd3a1d89b82d66489c9adfdc70a72543b748b9e1a817",
+          "2ea8cdb7f9a0ab9c64f0c9827e2fd36c54c96daf5202c8a05218d157e87deb9c"
+        ],
+        "transform": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "uv_settings": {
+          "active_index": 0,
+          "layers": [
+            [
+              "UVMap",
+              true,
+              true
+            ]
+          ]
+        },
+        "gml_id": "bldg_0551e688-a2a3-498e-ad2f-09ed3aca361c",
+        "hide_render": false,
+        "hide_viewport": false
+      }
+    }
+  },
+  "saved_city": {
+    "ok": true,
+    "blender": "4.5.1 LTS",
+    "unchanged_city_objects": 3308,
+    "previous_feature_unchanged": "bldg_af7335da-7542-44dd-964d-8cccd2b046ff",
+    "unchanged_other_aggregate_features": 21,
+    "unchanged_assets": 383,
+    "same_original_cameras_lights": true,
+    "same_faces_uv_material_batch": true,
+    "same_material_definitions_and_uv_selection": true,
+    "source_max_error_m": 1.5242209030930098e-05,
+    "after": {
+      "surface": {
+        "vertices": 475,
+        "faces": 946,
+        "edges": 1419,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "winding_errors": 0,
+        "components": 1,
+        "loose_vertices": 0,
+        "euler_characteristic": 2,
+        "minimum_triangle_area_m2": 0.12807426372895309,
+        "surface_area_m2": 5559.823073489763,
+        "signed_volume_m3": 18505.89231645864
+      },
+      "extras": {
+        "duplicate_geometric_faces": 0,
+        "vertex_links_checked": 475,
+        "nonmanifold_vertex_links": 0
+      }
+    },
+    "normals": {
+      "faces": 946,
+      "minimum_cosine": 0.9999999999999922,
+      "maximum_angle_degrees": 7.143182815269534e-06
+    },
+    "selected_target": "bldg_0551e688-a2a3-498e-ad2f-09ed3aca361c",
+    "counts_before": {
+      "objects": 3309,
+      "vertices": 51238404,
+      "polygons": 39533116
+    },
+    "counts_after": {
+      "objects": 3310,
+      "vertices": 51236041,
+      "polygons": 39533116
+    },
+    "limits": [
+      "No geographic accuracy certification",
+      "No complete modifier/animation/node-group fingerprint",
+      "Image decode checks dimensions and a pixel probe; not all image samples",
+      "No manifold/zero-area/normal checks",
+      "External asset content hashes not yet recorded",
+      "The general-city manifold/normal limitation above excludes the target-specific checks recorded here.",
+      "Geometric self-intersections and real-world accuracy not certified."
+    ]
+  },
+  "edit_and_target_library_reopen": {
+    "ok": true,
+    "selected": "bldg_0551e688-a2a3-498e-ad2f-09ed3aca361c",
+    "after": {
+      "surface": {
+        "vertices": 475,
+        "faces": 946,
+        "edges": 1419,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "winding_errors": 0,
+        "components": 1,
+        "loose_vertices": 0,
+        "euler_characteristic": 2,
+        "minimum_triangle_area_m2": 0.12807426372895309,
+        "surface_area_m2": 5559.823073489763,
+        "signed_volume_m3": 18505.89231645864
+      },
+      "extras": {
+        "duplicate_geometric_faces": 0,
+        "vertex_links_checked": 475,
+        "nonmanifold_vertex_links": 0
+      }
+    },
+    "mesh_objects": 3,
+    "all_exported_surfaces_preserved": true,
+    "target_library_reopened": true
+  },
+  "index_checks": {
+    "document": {
+      "status": "matched",
+      "features": 24
+    },
+    "official_inputs": {
+      "status": "matched",
+      "features": 24,
+      "files": {
+        "tileset.json": {
+          "bytes": 412889,
+          "sha256": "edec4c24d137eaf08a8525cecea505a3f21a30823b9ef4fb530e10774cea1323"
+        },
+        "data221.b3dm": {
+          "bytes": 1246040,
+          "sha256": "dc8c7539b2bb22d8c6659689c37aafa53b4896650bbd6bcfe7f791ab8b1a38d2"
+        }
+      },
+      "geometry_decoded_this_run": false
+    }
+  },
+  "tests": {
+    "related": {
+      "total": 14,
+      "passed": 14,
+      "skipped": 0
+    },
+    "portable": {
+      "total": 254,
+      "passed": 247,
+      "skipped": 7
+    },
+    "logs": {
+      "tests-targeted-final.log": {
+        "path": "data/local/inspection/tests-targeted-final.log",
+        "sha256": "6fb81a3bbae4c7a713cb7b362bed81ae3ab414e3bbd27075ec8d60c27fd6c00b"
+      },
+      "tests-portable-final.log": {
+        "path": "data/local/inspection/tests-portable-final.log",
+        "sha256": "a5e261de2b08864701e44da50e114dfb389453b0db819d03537857b98d04e4f5"
+      }
+    }
+  },
+  "visual_review": {
+    "views": [
+      "south",
+      "north",
+      "roof",
+      "context"
+    ],
+    "images_reviewed": 8,
+    "observations": "Roof outlines, facade, projecting wing and adjacent previous building retained. Existing blurred textures and synthetic facade are unchanged.",
+    "final_run_reuse_basis": [
+      {
+        "phase": "render-before",
+        "view": "south",
+        "same_pixels_as_visually_inspected_first_run": true
+      },
+      {
+        "phase": "render-before",
+        "view": "north",
+        "same_pixels_as_visually_inspected_first_run": true
+      },
+      {
+        "phase": "render-before",
+        "view": "roof",
+        "same_pixels_as_visually_inspected_first_run": true
+      },
+      {
+        "phase": "render-before",
+        "view": "context",
+        "same_pixels_as_visually_inspected_first_run": true
+      },
+      {
+        "phase": "render-after",
+        "view": "south",
+        "same_pixels_as_visually_inspected_first_run": true
+      },
+      {
+        "phase": "render-after",
+        "view": "north",
+        "same_pixels_as_visually_inspected_first_run": true
+      },
+      {
+        "phase": "render-after",
+        "view": "roof",
+        "same_pixels_as_visually_inspected_first_run": true
+      },
+      {
+        "phase": "render-after",
+        "view": "context",
+        "same_pixels_as_visually_inspected_first_run": true
+      }
+    ]
+  },
+  "output_sizes_bytes": {
+    "after.blend": 558926165,
+    "target.blend": 774770,
+    "before-neighborhood.blend": 868189,
+    "after-neighborhood.blend": 858080,
+    "edit-neighborhood.blend": 882061
+  },
+  "load_observation": {
+    "cpu_percent": 58,
+    "gpu_percent_range": [
+      2,
+      7
+    ],
+    "free_physical_memory_kib": 22897772,
+    "own_render_scope": "Data221 extraction only, CPU 2 threads. No full-city rendering.",
+    "other_observed_blender_scope": "Separate Tokyo Tower topdeck-junction render; processes untouched."
+  },
+  "independent_review": {
+    "model": "gpt-6-astra",
+    "severe_findings": 0,
+    "resolved": [
+      "Require all four expected image IDs, not only pairwise zip comparison.",
+      "Compare every mesh in edit scene and reopen target library."
+    ]
+  },
+  "next_independent_candidate": {
+    "batch": 6,
+    "gml_id": "bldg_5dab31bf-48b2-4de9-8f4f-3ff552347f28",
+    "stats": {
+      "vertices": 108,
+      "faces": 212,
+      "edges": 318,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "winding_errors": 0,
+      "components": 1,
+      "loose_vertices": 0,
+      "euler_characteristic": 2,
+      "minimum_triangle_area_m2": 0.30267689415136384,
+      "surface_area_m2": 10394.885718251195,
+      "signed_volume_m3": 40892.71592123328
+    },
+    "extras": {
+      "duplicate_geometric_faces": 0,
+      "vertex_links_checked": 108,
+      "nonmanifold_vertex_links": 0
+    }
+  },
+  "other_candidate_cautions": [
+    {
+      "batch": 8,
+      "gml_id": "bldg_6d05f419-2581-4d4e-bfa5-d89edbfd3295",
+      "stats": {
+        "vertices": 121,
+        "faces": 234,
+        "edges": 350,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 1,
+        "winding_errors": 0,
+        "components": 2,
+        "loose_vertices": 0,
+        "euler_characteristic": 5,
+        "minimum_triangle_area_m2": 0.04202715217823343,
+        "surface_area_m2": 3112.7949567197784,
+        "signed_volume_m3": 9019.229797115238
+      },
+      "extras": {
+        "duplicate_geometric_faces": 0,
+        "vertex_links_checked": 121,
+        "nonmanifold_vertex_links": 2
+      }
+    },
+    {
+      "batch": 13,
+      "gml_id": "bldg_9f67faf4-3270-469d-a099-69e270b6a702",
+      "stats": {
+        "vertices": 181,
+        "faces": 344,
+        "edges": 516,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "winding_errors": 0,
+        "components": 4,
+        "loose_vertices": 0,
+        "euler_characteristic": 9,
+        "minimum_triangle_area_m2": 0.0009591828693035666,
+        "surface_area_m2": 1742.4624713278188,
+        "signed_volume_m3": 3566.782139281755
+      },
+      "extras": {
+        "duplicate_geometric_faces": 0,
+        "vertex_links_checked": 181,
+        "nonmanifold_vertex_links": 1
+      }
+    },
+    {
+      "batch": 17,
+      "gml_id": "bldg_c355ccef-01b6-4ace-a515-1481bb012f42",
+      "stats": {
+        "vertices": 179,
+        "faces": 318,
+        "edges": 477,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "winding_errors": 0,
+        "components": 10,
+        "loose_vertices": 0,
+        "euler_characteristic": 20,
+        "minimum_triangle_area_m2": 0.07784176974384982,
+        "surface_area_m2": 10910.685130981017,
+        "signed_volume_m3": 38890.22859091178
+      },
+      "extras": {
+        "duplicate_geometric_faces": 0,
+        "vertex_links_checked": 179,
+        "nonmanifold_vertex_links": 0
+      }
+    }
+  ],
+  "publication": {
+    "pushed": false,
+    "pr_created": false,
+    "merged": false,
+    "normal_workspace_registered": false,
+    "images_models_kept_local": true
+  },
+  "logs": {
+    "build": {
+      "sha256": "c8c7a099f7fcb29acae02fa79573fd8ff9c009e201768d91cf9b0e432e683267",
+      "exit_code": 0
+    },
+    "validate": {
+      "sha256": "0e79aff8729751df61ed1358160345ddab25a001fb9c45e7f2aacf778d45858e",
+      "exit_code": 0
+    },
+    "render-before": {
+      "sha256": "eee3474d723acff53dc150852c2c02c3b6c44082203e6ba4f85ed634676f9f7a",
+      "exit_code": 0
+    },
+    "render-after": {
+      "sha256": "9160a2955fa36aad3c75620ca6bced06422e0607777f90b406e938a68e7e47bd",
+      "exit_code": 0
+    },
+    "reopen-edit": {
+      "sha256": "3cabdf7c37e203a15d091d141bf4131b1d52a39df64907771ac180cdef4847b0",
+      "exit_code": 0
+    }
+  },
+  "warning": "Existing Blender extension-cache write warnings occurred during renders; all five processes exited 0."
+}
