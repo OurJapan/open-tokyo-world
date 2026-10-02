@@ -38,9 +38,12 @@ def check_plan(plan):
         x, y = matrix[0][3], matrix[1][3]
         if not (-30 < x < 75 and 25 < y < 80) or row['variant'] != row['index'] % 3:
             raise ValueError('Seed outside the approved local work extent')
+        expected_scale = .95 if row['index'] == 166 else 1.0
+        if row.get('display_xy_scale') != expected_scale:
+            raise ValueError('Unreviewed displayed tree scale')
     beds = plan['beds']
     if beds != {'outer_width_m': 1.20, 'inner_width_m': 1.04,
-                'soil_top_m': 0.44, 'rim_top_m': 0.46, 'bottom_m': 0.0}:
+                'soil_top_m': 0.68, 'rim_top_m': 0.72, 'bottom_m': 0.0}:
         raise ValueError('Unreviewed bed dimensions')
     return plan
 

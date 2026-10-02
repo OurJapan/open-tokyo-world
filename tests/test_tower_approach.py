@@ -43,6 +43,16 @@ class ApproachPlanTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'bed dimensions'):
             check_plan(self.plan)
 
+    def test_old_pavement_obscured_soil_revision_is_rejected(self):
+        self.plan['beds'].update(soil_top_m=.44,rim_top_m=.46)
+        with self.assertRaisesRegex(ValueError,'bed dimensions'):
+            check_plan(self.plan)
+
+    def test_only_reviewed_tree_166_horizontal_scale_is_permitted(self):
+        self.plan['trees'][0]['display_xy_scale'] = .95
+        with self.assertRaisesRegex(ValueError,'displayed tree scale'):
+            check_plan(self.plan)
+
     def test_beds_are_closed_outward_and_have_expected_volume(self):
         for rim in (False,True):
             vertices, faces = bed_geometry(self.plan,rim)
@@ -56,7 +66,7 @@ class ApproachPlanTests(unittest.TestCase):
                     cross = (b[1]*c[2]-b[2]*c[1],b[2]*c[0]-b[0]*c[2],b[0]*c[1]-b[1]*c[0])
                     volume += sum(x*y for x,y in zip(a,cross))/6
             self.assertEqual(set(incidences.values()),{2})
-            expected = 8*((1.2**2-1.04**2)*.46 if rim else 1.04**2*.44)
+            expected = 8*((1.2**2-1.04**2)*.72 if rim else 1.04**2*.68)
             self.assertAlmostEqual(volume,expected,places=7)
 
     def test_continuous_overlap_detects_small_corner_between_grid_samples(self):

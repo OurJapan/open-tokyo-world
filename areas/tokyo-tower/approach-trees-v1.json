@@ -13,7 +13,8 @@
   "claims": {
     "placement": "Existing illustrative ginkgo seed row; species, count and real tree positions unverified.",
     "geometry": "Existing CC BY 4.0 prototypes; eight independent placements and original closed bed geometry.",
-    "height": "Soil top 0.44m, edging top 0.46m in the existing display model; not surveyed elevations."
+    "height": "Soil top 0.68m, edging top 0.72m over inherited sidewalk 0.46m; lower planter foundation reaches existing model ground at 0m. Provisional scene composition, not surveyed elevations.",
+    "display_scale": "Tree166 bark and foliage local XY scale reduced to 0.95 of inherited pose to clear stored facade triangles; other displayed scales retained; species and position unverified."
   },
   "scope": {
     "source_indices": [
@@ -53,8 +54,8 @@
   "beds": {
     "outer_width_m": 1.2,
     "inner_width_m": 1.04,
-    "soil_top_m": 0.44,
-    "rim_top_m": 0.46,
+    "soil_top_m": 0.68,
+    "rim_top_m": 0.72,
     "bottom_m": 0.0
   },
   "trees": [
@@ -86,7 +87,8 @@
           0.0,
           1.0
         ]
-      ]
+      ],
+      "display_xy_scale": 1.0
     },
     {
       "index": 160,
@@ -116,7 +118,8 @@
           0.0,
           1.0
         ]
-      ]
+      ],
+      "display_xy_scale": 1.0
     },
     {
       "index": 164,
@@ -146,7 +149,8 @@
           0.0,
           1.0
         ]
-      ]
+      ],
+      "display_xy_scale": 1.0
     },
     {
       "index": 166,
@@ -176,7 +180,8 @@
           0.0,
           1.0
         ]
-      ]
+      ],
+      "display_xy_scale": 0.95
     },
     {
       "index": 168,
@@ -206,7 +211,8 @@
           0.0,
           1.0
         ]
-      ]
+      ],
+      "display_xy_scale": 1.0
     },
     {
       "index": 170,
@@ -236,7 +242,8 @@
           0.0,
           1.0
         ]
-      ]
+      ],
+      "display_xy_scale": 1.0
     },
     {
       "index": 172,
@@ -266,7 +273,8 @@
           0.0,
           1.0
         ]
-      ]
+      ],
+      "display_xy_scale": 1.0
     },
     {
       "index": 174,
@@ -296,7 +304,8 @@
           0.0,
           1.0
         ]
-      ]
+      ],
+      "display_xy_scale": 1.0
     }
   ],
   "cameras": {
@@ -464,5 +473,6 @@
         "dof": false
       }
     ]
-  }
+  },
+  "display_revision": "Raised soil above inherited pavement; tree166 scaled 0.95 in local XY for facade clearance; all positions provisional"
 }

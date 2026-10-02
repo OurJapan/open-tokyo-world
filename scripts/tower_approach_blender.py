@@ -12,7 +12,7 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 import bpy
 import bmesh
 import numpy as np
-from mathutils import Vector
+from mathutils import Vector,Matrix
 from mathutils.bvhtree import BVHTree
 from blender_worker import array_prop, mesh_fingerprint, validate, render
 from component_contracts import material_snapshot, signature
@@ -79,6 +79,7 @@ def build(job):
             collection.objects.link(obj); obj.hide_render = False; obj.hide_viewport = False
             # The approved trunk mesh starts at local z=.2, not z=0.
             obj.matrix_world = matrix
+            obj.scale.x *= row['display_xy_scale']; obj.scale.y *= row['display_xy_scale']
             obj.location.z = plan['beds']['soil_top_m'] - .2*obj.scale.z
             obj['otw_feature_id'] = FEATURE; obj['otw_part_id'] = f"seed-{row['index']}/{part}"
             obj['otw_seed_object'] = source.name
@@ -190,6 +191,7 @@ def validate_additions(job):
         require(COLLECTION in source.collections,'Missing saved delta collection')
         target.collections = [COLLECTION]
     bpy.context.scene.collection.children.link(target.collections[0])
+    bpy.context.view_layer.update()
     plan = job['plan']; names = added_names(plan)
     require(set(o.name for o in bpy.context.scene.objects) == names,'Saved delta object scope differs')
     require(names <= enabled_meshes(),'Saved delta objects hidden')
@@ -209,11 +211,20 @@ def validate_additions(job):
             require(mesh_fingerprint(obj.data) == prototypes[f"ginkgo-{row['variant']}-{part}"]['mesh_sha256'],
                     'Delta prototype differs')
             require(obj.get('otw_feature_id') == FEATURE,'Delta feature ID missing')
+            require(np.allclose(np.asarray(obj.matrix_world),np.asarray(expected_tree_matrix(row,plan)),
+                                rtol=0,atol=2e-6),'Delta displayed tree transform differs')
     check_closed_beds(plan)
     require(len(bpy.data.meshes) == 8,'Expected six shared prototypes and two bed meshes')
     return {'ok':True,'objects':len(names),'unique_meshes':len(bpy.data.meshes),'materials':len(bpy.data.materials),
             'images':len(bpy.data.images),'embedded_scripts':len(bpy.data.texts),
             'scope':'Append-only local collection; city textures, buildings, cameras and lights excluded.'}
+
+
+def expected_tree_matrix(row,plan):
+    location,rotation,scale = Matrix(row['source_matrix_world']).decompose()
+    scale.x *= row['display_xy_scale']; scale.y *= row['display_xy_scale']
+    location.z = plan['beds']['soil_top_m']-.2*scale.z
+    return Matrix.LocRotScale(location,rotation,scale)
 
 
 def check_placement(plan):
@@ -240,6 +251,9 @@ def check_placement(plan):
     for seed in plan['trees']:
         bark = bpy.data.objects[tree_name(seed['index'],'bark')]
         foliage = bpy.data.objects[tree_name(seed['index'],'foliage')]
+        for obj in (bark,foliage):
+            require(np.allclose(np.asarray(obj.matrix_world),np.asarray(expected_tree_matrix(seed,plan)),
+                                rtol=0,atol=2e-6),'Displayed tree transform differs from plan')
         x, y, _ = bark.matrix_world.translation
         require(abs(x-seed['source_matrix_world'][0][3]) < 1e-6 and abs(y-seed['source_matrix_world'][1][3]) < 1e-6,
                 'Horizontal seed placement changed')
@@ -267,8 +281,10 @@ def check_placement(plan):
         require(not road_hits, 'Planting bed overlaps asphalt samples')
         pavers = [height(pavement,x+dx,y+dy) for dx,dy in [(-1,0),(1,0),(0,-1),(0,1)]]
         pavers = [v for v in pavers if v is not None]
-        require(pavers and max(abs(v-plan['beds']['rim_top_m']) for v in pavers) < 1e-4,
-                'Bed edging does not align with adjacent pavement')
+        require(pavers and max(abs(v-.46) for v in pavers) < 1e-4,
+                'Adjacent inherited pavement height differs')
+        require(plan['beds']['soil_top_m'] > max(pavers) and plan['beds']['rim_top_m'] > max(pavers),
+                'Planter soil or rim is hidden below the inherited pavement')
         for name, tree in nearby_buildings:
             require(all(height(tree,x+dx,y+dy) is None for dx,dy in [(0,0),(-.6,0),(.6,0),(0,-.6),(0,.6)]),
                     'Tree bed inside PLATEAU building: '+name)
