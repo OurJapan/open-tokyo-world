@@ -1,0 +1,487 @@
+{
+  "ok": true,
+  "body_commit_preserved": "568a9e76106b2354c94616e6c62d6c8b9ac3ac38",
+  "main_at_inspection": "05026ec9de08b25e15e8e77c2ad2e2a43a1b5f6d",
+  "branch": "codex/tokyo-tower-city-integration-20261002",
+  "environment": {
+    "blender": "4.5.1 LTS",
+    "python": "3.11.11",
+    "os": "Windows"
+  },
+  "final_code_sha256": {
+    "assets/tokyo-tower/paint-bands-city-v1.json": "89ce24ad7f4af548f73844b7d8e1257a8b429c86acd1354df9f9999a22a16b80",
+    "scripts/tokyo_tower_paint_city.py": "ca09cc27c01c13e72b88716bb637da2a7b8a118c0162a0080cdd3489a8d3f4f8",
+    "scripts/tokyo_tower_paint_bands.py": "b796a3da10a287f5366f2b24b8722a9b62e5636e243ca616b4cdd18d17cee0d5",
+    "tests/test_tokyo_tower_paint_city.py": "40d08995bf02f5f936f39b7df1c1e1c665efeb2b34577fe214e690be7af8770e",
+    "tests/blender_tower_paint_city_smoke.py": "07e92fe7c049a4602da8b4b602562b3f1a50b6620c8b9af68605648195042c1e"
+  },
+  "build_code_sha256": "240b75f2e478ba6c4732dd86d8dd6388703711b55358a3614e1f41d13af07b04",
+  "code_revision_note": "After building and validating the unchanged candidate, only full-view framing and selective re-render support were adjusted. Close-up reused; full view re-rendered at 55 mm.",
+  "city_probe": {
+    "registered_pr46": {
+      "sha256": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4",
+      "bytes": 559040261,
+      "existing_tower_part_ids": {},
+      "targets": {
+        "Tokyo Tower structure / orange": {
+          "properties": {
+            "modeling_basis": "Public reference photographs and measured exterior profile; interior furniture/layout inferred.",
+            "otw_feature_id": "otw:jp:tokyo:minato:tokyo-tower",
+            "otw_legacy_name": "Tokyo Tower structure / orange"
+          },
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "hide_render": false,
+          "raw_vertices": 75064,
+          "raw_faces": 55222,
+          "constraints": 0,
+          "parent": null,
+          "animation": false,
+          "mesh_match": true,
+          "full_mesh_match": true,
+          "materials": [
+            "Rebuilt • orange"
+          ],
+          "material_nodes_match": true,
+          "bounds": [
+            [
+              -50.38753890991211,
+              -50.38753890991211,
+              1.8255902528762817
+            ],
+            [
+              50.38753890991211,
+              50.38753890991211,
+              333.0
+            ]
+          ],
+          "bevel_show_viewport": true,
+          "bevel_show_render": false
+        },
+        "Tokyo Tower structure / white": {
+          "properties": {
+            "modeling_basis": "Public reference photographs and measured exterior profile; interior furniture/layout inferred.",
+            "otw_feature_id": "otw:jp:tokyo:minato:tokyo-tower",
+            "otw_legacy_name": "Tokyo Tower structure / white"
+          },
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "hide_render": false,
+          "raw_vertices": 18432,
+          "raw_faces": 13724,
+          "constraints": 0,
+          "parent": null,
+          "animation": false,
+          "mesh_match": true,
+          "full_mesh_match": true,
+          "materials": [
+            "Rebuilt • white"
+          ],
+          "material_nodes_match": true,
+          "bounds": [
+            [
+              -9.048654556274414,
+              -9.048654556274414,
+              16.950000762939453
+            ],
+            [
+              9.048654556274414,
+              9.048654556274414,
+              310.0202331542969
+            ]
+          ],
+          "bevel_show_viewport": true,
+          "bevel_show_render": false
+        }
+      }
+    },
+    "main_pr47_pr49": {
+      "sha256": "09977e34f02c02a7e24448767874294e0f7c09e3bbaf40b5630ea1dea8965216",
+      "bytes": 558938658,
+      "existing_tower_part_ids": {},
+      "targets": {
+        "Tokyo Tower structure / orange": {
+          "properties": {
+            "modeling_basis": "Public reference photographs and measured exterior profile; interior furniture/layout inferred.",
+            "otw_feature_id": "otw:jp:tokyo:minato:tokyo-tower",
+            "otw_legacy_name": "Tokyo Tower structure / orange"
+          },
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "hide_render": false,
+          "raw_vertices": 75064,
+          "raw_faces": 55222,
+          "constraints": 0,
+          "parent": null,
+          "animation": false,
+          "mesh_match": true,
+          "full_mesh_match": true,
+          "materials": [
+            "Rebuilt • orange"
+          ],
+          "material_nodes_match": true,
+          "bounds": [
+            [
+              -50.38753890991211,
+              -50.38753890991211,
+              1.8255902528762817
+            ],
+            [
+              50.38753890991211,
+              50.38753890991211,
+              333.0
+            ]
+          ],
+          "bevel_show_viewport": true,
+          "bevel_show_render": false
+        },
+        "Tokyo Tower structure / white": {
+          "properties": {
+            "modeling_basis": "Public reference photographs and measured exterior profile; interior furniture/layout inferred.",
+            "otw_feature_id": "otw:jp:tokyo:minato:tokyo-tower",
+            "otw_legacy_name": "Tokyo Tower structure / white"
+          },
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "hide_render": false,
+          "raw_vertices": 18432,
+          "raw_faces": 13724,
+          "constraints": 0,
+          "parent": null,
+          "animation": false,
+          "mesh_match": true,
+          "full_mesh_match": true,
+          "materials": [
+            "Rebuilt • white"
+          ],
+          "material_nodes_match": true,
+          "bounds": [
+            [
+              -9.048654556274414,
+              -9.048654556274414,
+              16.950000762939453
+            ],
+            [
+              9.048654556274414,
+              9.048654556274414,
+              310.0202331542969
+            ]
+          ],
+          "bevel_show_viewport": true,
+          "bevel_show_render": false
+        }
+      }
+    }
+  },
+  "source_and_reference_unchanged": true,
+  "before_sha256": "09977e34f02c02a7e24448767874294e0f7c09e3bbaf40b5630ea1dea8965216",
+  "after_sha256": "73031afe18232ae8e101a683816a39374f6cf7c7cf669bc60cb0325f763fd689",
+  "after_bytes": 558942745,
+  "validation": {
+    "ok": true,
+    "saved_reopened": true,
+    "city_objects": 3309,
+    "unchanged_objects": 3307,
+    "unchanged_images": 384,
+    "unchanged_packed_images": 383,
+    "original_materials_world_cameras_lights_collections_actions_preserved": true,
+    "target_modifiers_preserved": true,
+    "target_ids_bound": [
+      "tokyo-tower-part-005",
+      "tokyo-tower-part-006"
+    ],
+    "all_raw_meshes_unchanged": true,
+    "target_evaluated_meshes_unchanged": true,
+    "new_materials": [
+      "OTW tower paint bands 005",
+      "OTW tower paint bands 006"
+    ],
+    "candidate_sha256": "73031afe18232ae8e101a683816a39374f6cf7c7cf669bc60cb0325f763fd689",
+    "limits": [
+      "Not a general audit of every Blender RNA dependency or animation driver variable.",
+      "Band elevations are inherited model estimates; parallel tree candidate is not included."
+    ]
+  },
+  "comparison": {
+    "city-full": {
+      "size": [
+        640,
+        640
+      ],
+      "matching_settings": true,
+      "identical": false,
+      "changed_pixels": 9059,
+      "max_rgba_difference": 0.4470588266849518,
+      "mean_rgba_difference": 0.00010847741941688582
+    },
+    "city-band-205": {
+      "size": [
+        640,
+        640
+      ],
+      "matching_settings": true,
+      "identical": false,
+      "changed_pixels": 45283,
+      "max_rgba_difference": 0.7058824300765991,
+      "mean_rgba_difference": 0.001435995101928711
+    }
+  },
+  "evaluated_reference_matches": {
+    "Tokyo Tower structure / orange": {
+      "evaluated_mesh_match": true,
+      "material_match": true,
+      "placement_identity": true
+    },
+    "Tokyo Tower structure / white": {
+      "evaluated_mesh_match": true,
+      "material_match": true,
+      "placement_identity": true
+    }
+  },
+  "target_evaluated_geometry": {
+    "Tokyo Tower structure / orange": {
+      "sha256": "168d7880ce519641713a2f5aee8d9a5d8bcf069059bab3abe21c8c5be4a45ab2",
+      "vertices": 519880,
+      "faces": 500038,
+      "loops": 2004712,
+      "uv_layers": [],
+      "custom_normals": false
+    },
+    "Tokyo Tower structure / white": {
+      "sha256": "b63026a8917caec30ad70ac3df0a1f90897210eae7452d0758be46d0845dfe87",
+      "vertices": 116352,
+      "faces": 111644,
+      "loops": 449280,
+      "uv_layers": [],
+      "custom_normals": false
+    }
+  },
+  "derived_material_records_sha256": {
+    "OTW tower paint bands 005": "d2bfe5b3a2c1645a5a55e5dcf619b6d85705b8e2403747f6a45e999b26736fa4",
+    "OTW tower paint bands 006": "e063f6e6447c4c414dc08405cd674f05f83a5ce10bfdf32737d3262a8ab72e16"
+  },
+  "images": {
+    "after-city-band-205.png": "f155cc97e2c9560271a82b115752abb47433ec5fc9a6fd3d3b7bc2fc1d15cd97",
+    "after-city-full.png": "3f102614d89e35523881565110682b603197d806785652982d13bb9f84a32906",
+    "before-city-band-205.png": "82d77fbd6baa8f55f638ce502537174fe6b72f58339bcb1ac568a2110cd1bf88",
+    "before-city-full.png": "dd332c597c668881fcb9915cc0753225d27bb36de9b59e5d4891c1997d68c868"
+  },
+  "render_settings": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "threads": 2,
+    "samples": 8,
+    "seed": 0,
+    "denoising": true,
+    "resolution": [
+      640,
+      640
+    ],
+    "full_lens_mm": 55,
+    "close_lens_mm": 80
+  },
+  "visual_review": {
+    "original_images_reinspected": 8,
+    "integrated_images_inspected": 4,
+    "result": "205m close-up: orange/white boundaries align across columns and diagonals; ring remains intact. Full city: tower silhouette, feet, decks, tip and surrounding blocks show no displacement or missing geometry.",
+    "original_lower_comparison": "50 small changed pixels, maximum 4/255; not pixel-identical."
+  },
+  "rejected_trial": {
+    "path": "data/local/tower-city-03",
+    "reason": "Raw face partition changed evaluated bevel dimensions after reopen; not adopted.",
+    "orange_dimensions_before": [
+      100.77507781982422,
+      100.77507781982422,
+      331.1744079589844
+    ],
+    "orange_dimensions_after": [
+      100.78240966796875,
+      100.78240966796875,
+      331.1764831542969
+    ]
+  },
+  "portable_tests": {
+    "run": 242,
+    "passed": 235,
+    "skipped": 7,
+    "exit_code": 0
+  },
+  "blender_smoke": {
+    "read_only_snapshot_passed": true,
+    "shader_sample_count": 16,
+    "shader_samples_passed": 16,
+    "exit_code": 0
+  },
+  "local_results": "data/local/tower-city-04",
+  "local_logs": "data/local/tower-city-probe",
+  "public_operations": {
+    "push": false,
+    "pr": false,
+    "merge": false,
+    "shared_city_write": false,
+    "registration_write": false
+  },
+  "limitations": [
+    "Exact band elevations are inherited model estimates, not surveyed facts.",
+    "This input does not contain the parallel unmerged tree candidate.",
+    "Native Blender material preview/render only; Solid material colors and interchange export equivalence are not certified.",
+    "No general audit of every Blender RNA dependency or animation driver variable.",
+    "GPU rendering and combination with the parallel tree candidate are not tested."
+  ]
+}

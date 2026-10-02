@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "main_commit": "3b1eb5f6c10ca9c0ebb072348faea4981985439e",
+  "inputs": {
+    "base": "09977e34f02c02a7e24448767874294e0f7c09e3bbaf40b5630ea1dea8965216",
+    "trees": "966a81151beaf851a796bae8f91cad4d4106e82a40ccc69bad92aec48f1f6d9b",
+    "delta": "bd190345084c7e93cf82adec5134f184b4d1867fb93c860740eb930f556aeb58",
+    "reference": "8413d9cce5f0cfa6d27428d4315b5516768a46c018065f5787607ed6ec138da9",
+    "topdeck": "2bd43b6cea8796d612695e5b3a57f9f3a677bd0bfc4038ca0980284f03047583"
+  },
+  "baseline": "Reconstruct PR47 + PR49 + PR51 from the pinned city and reviewed tree delta. The registered city manifest remains at PR46; PR50 changes only the viewer.",
+  "strategy": "Apply two paint materials to parts005/006 and lower 160 raw vertices each on parts009/010/011. Preserve all modifiers including the viewport-on/render-off post bevel. Check all 77 canonical part mappings. Compare evaluated geometry with the isolated 1440-vertex repair, allowing only diagnosed bevel roundoff: XY <= 2e-9 m, lower Z <= one float32 ULP (2^-16 m), upper Z exact. Restoring reference coordinates must reproduce its complete mesh hash.",
+  "limits": [
+    "Band boundaries and floor elevation are inherited model estimates, not surveyed real-world dimensions.",
+    "Simplified window-base closure, not a reconstruction of the real sill assembly.",
+    "No city registration update, whole-city redistribution, glTF export or full intersection certification.",
+    "PR51 tree positions and planter dimensions retain their documented provisional status."
+  ]
+}

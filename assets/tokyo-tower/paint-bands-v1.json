@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "feature_id": "otw:jp:tokyo:minato:tokyo-tower",
+  "base_commit": "234b163210ac19d61f33e86b6920b8b26f9d453a",
+  "input_sha256": "8413d9cce5f0cfa6d27428d4315b5516768a46c018065f5787607ed6ec138da9",
+  "input_bytes": 25784543,
+  "input_description": "PR44 fixed-ID isolated export, tower-part-ids-20260927/after/tower.blend",
+  "provenance_sha256": "8c09bf9cb67aeaecce38418e8cc44cb769062e69d22e78791390c097e3bf17e4",
+  "part_ids": ["tokyo-tower-part-005", "tokyo-tower-part-006"],
+  "legacy_band_bottom_m": 154.0,
+  "legacy_band_top_m": 333.0,
+  "band_count": 7,
+  "evidence": [
+    {"url": "https://www.tokyotower.co.jp/plan/towerpedia/", "checked": "2026-10-02", "claim": "Official page states that the upper tower is divided into seven equal orange/white paint bands. No photograph is packaged or used as a texture."},
+    {"path": "assets/tokyo-tower/legacy-source/tower-base.fragment.py.txt", "claim": "Existing color(z) specifies 154 + (333-154)/7 boundaries. Upper lattice currently chooses one material for a whole member using its midpoint; this change implements the existing intended bands across the member surfaces."}
+  ],
+  "limits": [
+    "154 m bottom and exact boundary elevations are inherited model estimates, not newly surveyed real-world elevations.",
+    "Existing geometry silhouette and palette are retained; no claim of exact paint color, as-built section dimensions or antenna accuracy.",
+    "Only the two structural paint meshes are changed; deck, interior, auxiliary vegetation and city placement are outside scope."
+  ]
+}
