@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "feature_id": "otw:jp:tokyo:minato:shiba-momijidani",
+  "status": "first-layout-candidate-human-review-pending",
+  "reference_checked_date": "2026-10-02",
+  "city_input_sha256": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4",
+  "sources": [
+    {
+      "id": "pinned-osm",
+      "relative_input": "work/osm.xml",
+      "sha256": "f04e8e70ab24a61ca749375d1ef37401feb0fdc840cc506b670ef71454a6a8ab",
+      "bytes": 10528704,
+      "attribution": "OpenStreetMap contributors",
+      "license": "ODbL-1.0",
+      "license_url": "https://www.openstreetmap.org/copyright",
+      "woodland_way": "30526664",
+      "path_ways": [
+        "222753172",
+        "222753173"
+      ],
+      "protected_step_ways": [
+        "222753175",
+        "222753176",
+        "1382211864",
+        "1382211865"
+      ],
+      "use": "Horizontal woodland/path layout and masks; no surveyed elevations or individual plant positions. The source snapshot and derived geometry plan stay local."
+    },
+    {
+      "id": "tokyo-parks-map",
+      "url": "https://www.tokyo-park.or.jp/park/siba/assets/files/shiba_map.pdf",
+      "publisher": "公益財団法人 東京都公園協会",
+      "use": "Reference only: identify Momijidani as parcel 19 and its relationship to Tokyo Tower. Not georeferenced or traced as measured geometry.",
+      "redistribution": "Not bundled; no new permission assumed",
+      "sha256": "7f03fe9b51ae36ab01d5a6c542c904fbf948e64a0b5ef555137a3f428403e683",
+      "bytes": 1988343
+    },
+    {
+      "id": "tokyo-parks-momijidani",
+      "url": "https://www.tokyo-park.or.jp/special/nagaokayasuhei/momijidani.html",
+      "publisher": "公益財団法人 東京都公園協会",
+      "use": "Reference only: waterfall, stream, bridges and restoration context. These features remain unmodeled in this first candidate.",
+      "redistribution": "Not bundled; no new permission assumed"
+    },
+    {
+      "id": "saved-city-road-mask",
+      "input_sha256": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4",
+      "sha256": "b33b54f7565d6c7901c2bec67b129b460813119b9ff4a28e519e31d8a53aaa02",
+      "use": "Exclude existing horizontal city road surfaces from inferred planting; both face windings, Z 0.1 to 0.6 m.",
+      "roads": [
+        {
+          "name": "asphalt 15s road detail",
+          "mesh_sha256": "e4e4b63d11e3528fa0b0a38e4ab94730231a7bff71af5f9186d12248c11587fd",
+          "triangle_count": 328
+        },
+        {
+          "name": "gutter 15s road detail",
+          "mesh_sha256": "8b3a10448bb100ecf1348c6e56a7204cceaee129c8d76bbfee498c87a9b04c6a",
+          "triangle_count": 272
+        },
+        {
+          "name": "pavement_0 unified road",
+          "mesh_sha256": "118fefe7079af5bf5cd15d580a2f329af1770f4bb467df35e2ae35202e9ac0b3",
+          "triangle_count": 301
+        },
+        {
+          "name": "asphalt_7 unified road",
+          "mesh_sha256": "ad860f403f1308517303de5fb94e5a3a35ee4e47f7f001bd824eef76bb0f7be7",
+          "triangle_count": 0
+        },
+        {
+          "name": "pavement_7 unified road",
+          "mesh_sha256": "d8e1b9f8f7f18054a795f3b157de5a1da97661ddb70118aec2a98f775f34b941",
+          "triangle_count": 0
+        }
+      ],
+      "distribution": "Local-only geometry; metadata published."
+    }
+  ],
+  "inferred": [
+    "Individual plant positions/counts/species/dimensions",
+    "Path width 2.4 m",
+    "Flat forest floor top Z 0.16 m and path top Z 0.53 m",
+    "Materials and foliage representation"
+  ],
+  "unresolved": [
+    "Real terrain elevations",
+    "Waterfall/stream/pond/bridges",
+    "Actual individual trees and canopy density",
+    "Physical alignment of existing city roads and stair connections"
+  ],
+  "public_city_distribution": false,
+  "human_visual_approval": false
+}
