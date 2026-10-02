@@ -113,6 +113,16 @@ def validate_patch(patch):
             require(set(op['added_objects'])==ADDED and len(op['added_objects'])==len(ADDED), 'Wrong landscape additions')
             require(all(re.fullmatch('[0-9a-f]{64}',op[k]) for k in ('expected_mesh_sha256','park_mesh_sha256','plan_sha256')), 'Landscape requires hashes')
             require(bool(patch['source_refs']) and len(ops)==1, 'Landscape must be a standalone increment')
+        elif op['op']=='tower_structure_v1':
+            from tower_structure_v1 import ANCHOR,FEATURE,BASELINE_HASHES,ADDED
+            require(set(op)=={'op','feature_id','object','expected_mesh_sha256','target_mesh_sha256','added_objects'}, 'Unexpected tower structure patch keys')
+            require(op['object']==ANCHOR and op['feature_id']==FEATURE, 'Wrong tower structure anchor')
+            require(isinstance(op['expected_mesh_sha256'],str) and re.fullmatch('[0-9a-f]{64}',op['expected_mesh_sha256']), 'Tower structure requires an anchor hash')
+            require(op['expected_mesh_sha256']==BASELINE_HASHES[ANCHOR], 'Tower structure anchor hash differs')
+            require(isinstance(op['target_mesh_sha256'],dict) and op['target_mesh_sha256']==BASELINE_HASHES, 'Wrong tower structure baseline targets or hashes')
+            names=op['added_objects']
+            require(isinstance(names,list) and all(isinstance(n,str) for n in names) and set(names)==ADDED and len(names)==len(ADDED), 'Wrong tower structure additions')
+            require(bool(patch['source_refs']) and len(ops)==1, 'Tower structure must be a standalone evidence-backed increment')
         elif op['op']=='shiba_momijidani_v1':
             from shiba_momijidani_v1 import ANCHOR,ANCHOR_FEATURE,ADDED
             require(set(op)=={'op','feature_id','object','expected_mesh_sha256','plan_sha256','added_objects'}, 'Unexpected Shiba patch keys')
@@ -225,6 +235,7 @@ def main():
     validate_cameras(cameras); validate_features(features)
     patch = read_json(a.patch) if a.patch else None
     if patch: validate_patch(patch)
+    needs_tower=bool(patch and any(op['op']=='tower_structure_v1' for op in patch['operations']))
     needs_shiba=bool(patch and any(op['op']=='shiba_momijidani_v1' for op in patch['operations']))
     require(needs_shiba==bool(a.shiba_plan), 'Shiba operation requires exactly one local plan')
     if needs_shiba:
@@ -266,6 +277,9 @@ def main():
     require(source.stat().st_size == lock['bytes'], 'Input size does not match lock')
     input_hash = digest(source)
     require(input_hash == lock['sha256'], 'Input hash does not match lock')
+    if needs_tower:
+        from tower_structure_v1 import INPUT_SHA256
+        require(input_hash == INPUT_SHA256, 'Tower structure requires the registered city input')
     if needs_shiba:
         from shiba_momijidani_v1 import INPUT_SHA256
         require(input_hash == INPUT_SHA256, 'Shiba requires the accepted city input')
@@ -284,6 +298,12 @@ def main():
         revision = subprocess.run(['git','-c',f'safe.directory={ROOT.as_posix()}','-C',str(ROOT),'rev-parse','HEAD'],capture_output=True,text=True,check=True).stdout.strip()
         summary['code_base_commit'] = revision
         summary['code_files'] = {f.relative_to(ROOT).as_posix():digest(f) for f in (Path(__file__),WORKER,ROOT/'scripts/mori_shape.py',ROOT/'scripts/mori_crown_v2.py',ROOT/'scripts/mori_crown_material.py',ROOT/'scripts/mori_facade_v2.py',ROOT/'scripts/mori_podium_v2.py',ROOT/'scripts/mori_entrance_v1.py',ROOT/'scripts/mori_podium_v3.py',ROOT/'scripts/mori_terrace_v1.py',ROOT/'scripts/mori_plaza_v1.py',ROOT/'scripts/mori_plaza_link_v1.py',ROOT/'scripts/mori_plaza_edge_v1.py',ROOT/'scripts/mori_plaza_outline_v1.py')}
+        if needs_tower:
+            for tower_code in (ROOT/'scripts/tower_structure_v1.py',ROOT/'scripts/tower_foottown_v1.py'):
+                summary['code_files'][tower_code.relative_to(ROOT).as_posix()]=digest(tower_code)
+            tower_validator=ROOT/'scripts/validate_tower_structure.py'
+            if tower_validator.is_file():
+                summary['code_files'][tower_validator.relative_to(ROOT).as_posix()]=digest(tower_validator)
         if needs_landscape:
             summary['code_files'].update({f.relative_to(ROOT).as_posix():digest(f) for f in (ROOT/'scripts/mori_plaza_landscape_v1.py',ROOT/'scripts/prepare_mori_plaza_landscape.py')})
         if needs_connection:
@@ -338,6 +358,9 @@ def main():
             from shiba_momijidani_v1 import CHANGED,ADDED
             require(not CHANGED, 'Shiba operation only permits additions')
             allowed=[];added=sorted(ADDED)
+        if needs_tower:
+            from tower_structure_v1 import CHANGED,ADDED
+            allowed=sorted(CHANGED);added=sorted(ADDED)
         summary['changed_objects'] = compare_reports(before,after,allowed,added)
         if patch: require(bool(summary['changed_objects']), 'Patch produced no recorded change')
         for phase in ('render-before','render-after'):

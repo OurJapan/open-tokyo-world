@@ -115,6 +115,12 @@ def prepare(job):
                 else:
                     import mori_podium_v2 as podium
                 podium.apply(obj,job['geometry_source'])
+            elif op['op']=='tower_structure_v1':
+                if obj.type!='MESH' or mesh_fingerprint(obj.data)!=op['expected_mesh_sha256']:
+                    raise ValueError('Tower structure anchor baseline mesh differs')
+                sys.path.insert(0,str(Path(__file__).resolve().parent))
+                import tower_structure_v1 as detail
+                detail.apply(op,mesh_fingerprint)
             elif op['op']=='shiba_momijidani_v1':
                 if obj.type!='MESH' or mesh_fingerprint(obj.data)!=op['expected_mesh_sha256']:
                     raise ValueError('Shiba anchor baseline mesh differs')
