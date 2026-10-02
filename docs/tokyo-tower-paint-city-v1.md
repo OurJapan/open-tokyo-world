@@ -1,5 +1,7 @@
 # 東京タワー塗装帯：現行cityへの限定統合
 
+この文書はPR #47＋#49への初回統合時点の記録です。PR #51の樹木と接合修正を含む最新検証・公開状況は[都市統合記録](tokyo-tower-city-repairs-v1.md)を参照してください。
+
 元の独立モデル制作commit `568a9e76106b2354c94616e6c62d6c8b9ac3ac38` を保持し、その子branchで統合パッチを作成しました。共有city・通常登録・他のworktreeへは書き込んでいません。公開push・PR・mergeは未実施です。
 
 ## 既存4視点の再確認
@@ -52,8 +54,8 @@ Blender 4.5.1と固定入力2ファイルが必要です。以下は専用worktr
 
 ```powershell
 $blenderPath = 'C:/Program Files/Blender Foundation/Blender 4.5/blender.exe'
-$cityInput = 'C:/Users/ark4e/Documents/Codex/2026-10-02/task-5/data221-af7335da-integration/data/local/af7335da-integrated-01/after.blend'
-$towerReference = 'C:/Users/ark4e/Projects/open-tokyo-world/data/local/checks/tower-part-ids-20260927/after/tower.blend'
+$cityInput = 'RECEIVED_PR47_PR49_CITY.blend'
+$towerReference = 'RECEIVED_FIXED_ID_TOWER.blend'
 $cityOutput = 'data/local/tower-city-new'
 foreach ($phase in @('build','validate','render-before','render-after','compare')) {
   & $blenderPath --background --factory-startup --threads 2 --disable-autoexec --python-exit-code 1 --python scripts/tokyo_tower_paint_city.py -- --phase $phase --city $cityInput --reference $towerReference --output $cityOutput

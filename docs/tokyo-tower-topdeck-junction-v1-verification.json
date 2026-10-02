@@ -184,12 +184,12 @@
   },
   "protected_inputs": {
     "original_fixed_ids": {
-      "path": "C:\\Users\\ark4e\\Projects\\open-tokyo-world\\data\\local\\checks\\tower-part-ids-20260927\\after\\tower.blend",
+      "path": "RECEIVED_FIXED_ID_TOWER.blend",
       "sha256": "8413d9cce5f0cfa6d27428d4315b5516768a46c018065f5787607ed6ec138da9",
       "bytes": 25784543
     },
     "completed_paint": {
-      "path": "C:\\Users\\ark4e\\Documents\\Codex\\2026-10-02\\task-5\\tokyo-tower-body\\data\\local\\tower-paint-bands-03\\after.blend",
+      "path": "RECEIVED_ISOLATED_PAINT_CANDIDATE.blend",
       "sha256": "361f45888ca17db9cee112bf76a55d21f2e9820f4d385f575101ffc152400f5f",
       "bytes": 27742051
     }

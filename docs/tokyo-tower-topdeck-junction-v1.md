@@ -1,5 +1,7 @@
 # Tokyo Tower top-deck window-base closure
 
+This is the historical isolated-model record. See the [city integration record](tokyo-tower-city-repairs-v1.md) for the current PR47/49/51 city validation and publication.
+
 The saved top-deck window posts and gaskets floated approximately 30 mm above
 the existing floor; glass started approximately 57.5 mm above it. A close view
 confirmed the floating post ends. This change extends only the existing lower
@@ -91,7 +93,7 @@ the input hash and exits nonzero on failure. All Blender work runs sequentially.
 
 ```powershell
 $blenderPath = 'C:/Program Files/Blender Foundation/Blender 4.5/blender.exe'
-$towerInput = 'C:/Users/ark4e/Documents/Codex/2026-10-02/task-5/tokyo-tower-body/data/local/tower-paint-bands-03/after.blend'
+$towerInput = 'RECEIVED_ISOLATED_PAINT_CANDIDATE.blend'
 $towerOutput = 'data/local/topdeck-junction-new'
 foreach ($phase in @('build','validate','render-before','render-after','compare')) {
   & $blenderPath --background --factory-startup --threads 2 --disable-autoexec --python-exit-code 1 --python scripts/tokyo_tower_topdeck_junction.py -- --phase $phase --input $towerInput --output $towerOutput

@@ -1,5 +1,7 @@
 # 東京タワー上部の塗装帯 — ローカル制作候補
 
+この文書は独立モデルの制作時点の記録です。最新mainへの統合と公開レビューは[都市統合記録](tokyo-tower-city-repairs-v1.md)を参照してください。
+
 既存の上部鉄骨は部材の中点で塗装色を選んでいたため、斜材全体が境界の反対側の帯へ同じ色ではみ出していました。固定ID `tokyo-tower-part-005`・`006` の表面を6本の水平境界で分割し、既存のオレンジ／白を面ごとに割り当てました。新しい実測寸法、設備や意匠の追加はありません。共通city・通常Blender登録・PR #49は変更していません。push・PR・mergeは未実施です。
 
 ## 根拠と範囲
@@ -40,7 +42,7 @@ PR #44で保持したID付き独立入力が必要です。公開リポジトリ
 
 ```powershell
 $blenderPath = 'C:/Program Files/Blender Foundation/Blender 4.5/blender.exe'
-$towerInput = 'C:/Users/ark4e/Projects/open-tokyo-world/data/local/checks/tower-part-ids-20260927/after/tower.blend'
+$towerInput = 'RECEIVED_FIXED_ID_TOWER.blend'
 $towerOutput = 'data/local/tower-paint-bands-new'
 foreach ($phase in @('build','validate','render-before','render-after','compare')) {
   & $blenderPath --background --factory-startup --threads 4 --disable-autoexec --python-exit-code 1 --python scripts/tokyo_tower_paint_bands.py -- --phase $phase --input $towerInput --output $towerOutput
