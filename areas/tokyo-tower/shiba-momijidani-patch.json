@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "purpose": "reviewed-change",
+  "reason": "Add the first Momijidani woodland and mapped-path layout study. Planting, widths and flat elevations are inferred; relief and water remain pending.",
+  "source_refs": [
+    "https://www.tokyo-park.or.jp/park/siba/",
+    "https://www.tokyo-park.or.jp/special/nagaokayasuhei/momijidani.html",
+    "OSM way 30526664 / ways 222753172 and 222753173; fixed local snapshot f04e8e70ab24a61ca749375d1ef37401feb0fdc840cc506b670ef71454a6a8ab"
+  ],
+  "operations": [
+    {
+      "op": "shiba_momijidani_v1",
+      "object": "Tokyo Tower structure / stone",
+      "feature_id": "otw:jp:tokyo:minato:tokyo-tower",
+      "expected_mesh_sha256": "83c51bad1b8f8e02a71901e21ec06c5ef2ac24cb02510d9f338639aff7085943",
+      "plan_sha256": "bbbdb093b85b94fa167a73c54f5387260ea8fb562e3e876d76b50805d9ec4137",
+      "added_objects": [
+        "OTW Shiba Momijidani / crowns",
+        "OTW Shiba Momijidani / forest floor",
+        "OTW Shiba Momijidani / paths",
+        "OTW Shiba Momijidani / trunks",
+        "OTW Shiba Momijidani / understory"
+      ]
+    }
+  ]
+}

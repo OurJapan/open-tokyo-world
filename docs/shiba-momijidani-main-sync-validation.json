@@ -1,0 +1,201 @@
+{
+  "version": 1,
+  "date": "2026-10-03",
+  "ok": true,
+  "previous_pr_head": "c03b58064f76eeea54ec3e5b5e92b6930ebfc52c",
+  "integrated_main": "29157afbab0ce05e62d065b3535e577230b7583a",
+  "resolution": "Preserve both Shiba Momijidani and Mori west-path operation validation, code hashes, plan forwarding and final plan hash checks.",
+  "checked_code_sha256_lf": {
+    "scripts/blender_worker.py": "28eed95cfc25ae1830b58f544e73fb0207ecaa4147dd82ec8bd83ed64df35b2d",
+    "scripts/export_shiba_road_mask.py": "a6f66887692abda6a4e4061498d5cd885beb0a43bc01bbd33cc4e6a2138cc131",
+    "scripts/mori_crown_material.py": "25d8ae26b7c5b2ba38f6db5fd5baa507f18c3965a83a3e09996d71fceb2d1959",
+    "scripts/mori_crown_v2.py": "8bb386b4429575c4c37b914c71b63629fb844c84c0399e943706b34fd10e64a7",
+    "scripts/mori_entrance_v1.py": "f9ab6f5aa0ad9a1cd201c8b021e9893a411e9556afbc7bb877f558e6faa2fede",
+    "scripts/mori_facade_v2.py": "5df83c9acf790bbfc1491f133445221174644663e2c041ec860a2900a81e7b9e",
+    "scripts/mori_plaza_edge_v1.py": "1741fbb697d015a9f29e542daa5d4bf1759681508f8f2d670765e4bd29968a5d",
+    "scripts/mori_plaza_link_v1.py": "c5e15978e47a7e4816001b175ead98d7445bf37828f48945f15915db639f4d37",
+    "scripts/mori_plaza_outline_v1.py": "bf32df1b459cf5851f7aefd6ad6a92f9f81fe3867cba3d40a322f749ec2aa3c6",
+    "scripts/mori_plaza_v1.py": "b16a1179b14f9e56b615d818c06da11c7be77959c199e2d93c6ee4544076fc2c",
+    "scripts/mori_podium_v2.py": "821a8ee485ff39757d97ee29a2678083a850c5b714eda7698457105b5745520e",
+    "scripts/mori_podium_v3.py": "b202252d78763d965213c30a8c85260b0ce550e32128a7dbef05107d9e639dfb",
+    "scripts/mori_shape.py": "5588ac6e1409944faf1d686baffa7230b7a95a0b939c21502686b0a96d80df5a",
+    "scripts/mori_terrace_v1.py": "2056674560bbcd92503db2a5e8491eca0f2f21ab782ba9d332820b70a74d1a9d",
+    "scripts/prepare_shiba_momijidani.py": "81a381f50a5d0aafc81daecc3474515b717847e1fa0499b11f4309614abcf1d2",
+    "scripts/review.py": "04e72d2df0b909367c5964d7e5b1ac550d745356229b70ca7d36b95deb2e5a8f",
+    "scripts/shiba_momijidani_v1.py": "e361456663a25f71bf3032afcbeef03dd02d75cd5dcea8374399fed8a049d00c",
+    "scripts/validate_shiba_momijidani.py": "ec56b3ff0d6ad2b98fc46ebce4e44a2bdcd701d23a23bee4be9d5e051cd3d6b2",
+    "tests/test_mori_plaza_west_path_review.py": "4aa340e64b76c7b58e1f7750f068e9e620679de03cea07d8d5afe289632fa049"
+  },
+  "review_runner_line_endings": "Executed with LF; unchanged main lines retain their original line endings in the merge. LF-normalized executed and published code matches.",
+  "input_sha256": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4",
+  "plan_sha256": "bbbdb093b85b94fa167a73c54f5387260ea8fb562e3e876d76b50805d9ec4137",
+  "original_input_unchanged": true,
+  "runtime": {
+    "blender_version": "4.5.1 LTS",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "device": "OPTIX",
+    "width": 1280,
+    "height": 848,
+    "samples": 32,
+    "seed": 0
+  },
+  "matched_settings_against_original_review": true,
+  "output_blends": {
+    "before.blend": "b8867daf7facb5d3a88799017a9404941658cf3bca712e582bacb13669924a61",
+    "after.blend": "ce945a214bdae65d76ac7ed77ecf2e620033f51058580bd7f5f008d5fcbe26af"
+  },
+  "scenes_match_original_review": {
+    "before": {
+      "objects": 3307,
+      "object_fingerprints_match": true,
+      "assets_match": true,
+      "warnings_and_limits_match": true
+    },
+    "after": {
+      "objects": 3312,
+      "object_fingerprints_match": true,
+      "assets_match": true,
+      "warnings_and_limits_match": true
+    }
+  },
+  "changed_objects": [
+    "OTW Shiba Momijidani / crowns",
+    "OTW Shiba Momijidani / forest floor",
+    "OTW Shiba Momijidani / paths",
+    "OTW Shiba Momijidani / trunks",
+    "OTW Shiba Momijidani / understory"
+  ],
+  "images": [
+    {
+      "file": "before-tower-context.png",
+      "published_png_sha256": "7e9b2a725b3468584aa6b36ebd78a102816128179db28542dda80aa534222390",
+      "rerendered_png_sha256": "26273f8e2bbbb54b5d08bf0488084cdb2a3e90fd267c67d3f4f9ce14837015ea",
+      "pixels_exact": false,
+      "max_channel_delta_8bit": 1,
+      "mean_absolute_channel_delta_8bit": 2.879016804245283e-05,
+      "changed_pixel_percent": 0.011516067216981132,
+      "decoded_pixel_sha256": "e61d47c71b9fc84ca9547ae9bf3d66fb98d96d9cda243276fec2875d90b7b7c1"
+    },
+    {
+      "file": "after-tower-context.png",
+      "published_png_sha256": "d3a16b4d0f94a0f174daa32564412cf543565ebd83228c1c0e846d519e34a2f7",
+      "rerendered_png_sha256": "bc9ff8c98e1cecb2490f28e78e47801b875a681172fae5ade19e37ec9c253db3",
+      "pixels_exact": false,
+      "max_channel_delta_8bit": 1,
+      "mean_absolute_channel_delta_8bit": 3.523916568396226e-05,
+      "changed_pixel_percent": 0.014095666273584904,
+      "decoded_pixel_sha256": "a16dc6c67a3a44c3c713b8f1181ba4d10f29822cfa40bf3eb1acbe4cd24ea81e"
+    },
+    {
+      "file": "before-woodland-overview.png",
+      "published_png_sha256": "abb565da301da01619288c7c93d37745e695397d17f577adcebbd4a6b794204c",
+      "rerendered_png_sha256": "6923ff88aa8c7ebca066516b24276b5315c55d839759163a32bc7f3970b642cf",
+      "pixels_exact": false,
+      "max_channel_delta_8bit": 1,
+      "mean_absolute_channel_delta_8bit": 3.1784345518867924e-05,
+      "changed_pixel_percent": 0.01271373820754717,
+      "decoded_pixel_sha256": "1a3abc05d0bbada56eec2f455d2ad6d1558f3160da36c492c7c6c3058b6da41d"
+    },
+    {
+      "file": "after-woodland-overview.png",
+      "published_png_sha256": "22593144a8552052534963c4872b2028136770d7e83468a525ff862d6891d68b",
+      "rerendered_png_sha256": "6cf2e8ff2508c8dfb5c822bbdb7f18a398e993c42755691b86c9b4d95cbb9205",
+      "pixels_exact": false,
+      "max_channel_delta_8bit": 1,
+      "mean_absolute_channel_delta_8bit": 3.385723761792453e-05,
+      "changed_pixel_percent": 0.01354289504716981,
+      "decoded_pixel_sha256": "e74c8b792a924a594e4a3cea8f97a66a22dbfe6bc8db16ace678f6ef525e0606"
+    },
+    {
+      "file": "before-woodland-overhead.png",
+      "published_png_sha256": "e353bf257eddfa2cc62731fb0890bc1cf2e12178d5867e0231688bf9715729b9",
+      "rerendered_png_sha256": "9761601920ec56867c105430a0b60bbe1b2a9e59259ea6d697bf2c742f340596",
+      "pixels_exact": false,
+      "max_channel_delta_8bit": 1,
+      "mean_absolute_channel_delta_8bit": 3.247530955188679e-05,
+      "changed_pixel_percent": 0.012990123820754717,
+      "decoded_pixel_sha256": "64b2c680e0a2d017bb6647574cd94b8efa09bc0e3f6ecb640968298b54e96a26"
+    },
+    {
+      "file": "after-woodland-overhead.png",
+      "published_png_sha256": "cadc3c6d983a7e5ee515586bca6d55d37485269e609528ba635d5fc85864ab02",
+      "rerendered_png_sha256": "bd37cb7ffd17eca823a1ac0afae5111b04ba8d54b209c40a47489f92c17ae06c",
+      "pixels_exact": false,
+      "max_channel_delta_8bit": 1,
+      "mean_absolute_channel_delta_8bit": 3.201466686320755e-05,
+      "changed_pixel_percent": 0.012805866745283018,
+      "decoded_pixel_sha256": "eb58b88d7add2e7d54d73e64f738595576845d8aeb2d8ca2b2c206828f57b393"
+    },
+    {
+      "file": "before-west-path.png",
+      "published_png_sha256": "7f89589cf0e9d8541ad2102a08ea7d2694fa64ca6bc11f6d8c2097ab81a21890",
+      "rerendered_png_sha256": "df7a91f8766d86d7559267db944d8ce622c2ae5ea3829355b4d07b00ea877fd7",
+      "pixels_exact": false,
+      "max_channel_delta_8bit": 1,
+      "mean_absolute_channel_delta_8bit": 2.786888266509434e-05,
+      "changed_pixel_percent": 0.011147553066037735,
+      "decoded_pixel_sha256": "38961b3f3b8c252d845219e6eb89da2d52a936bc186d6aff29f5935d1f5b010c"
+    },
+    {
+      "file": "after-west-path.png",
+      "published_png_sha256": "789bf325483faacfaaa7f0466083ea4398d3fcaabe2b3845c66ba2dca4fbae65",
+      "rerendered_png_sha256": "1dd6f03a12dc6362abad6154966ac7c66ca1a884286922642cf30c5d2dcd1c05",
+      "pixels_exact": false,
+      "max_channel_delta_8bit": 1,
+      "mean_absolute_channel_delta_8bit": 3.408755896226415e-05,
+      "changed_pixel_percent": 0.01363502358490566,
+      "decoded_pixel_sha256": "37df3718b4a8e4bb460c111558b709b9fcfdb9e231f6c8ed929105691cd0cb57"
+    },
+    {
+      "file": "before-east-boundary.png",
+      "published_png_sha256": "b70742ca9f33e2f465a24786175d675c65d9f411f431562b8cdcbe5fccb5a17f",
+      "rerendered_png_sha256": "82a0cca3f5b68faa418160d4850869305942fc0506c32ab5b5afb414add8b518",
+      "pixels_exact": false,
+      "max_channel_delta_8bit": 1,
+      "mean_absolute_channel_delta_8bit": 3.0863060141509434e-05,
+      "changed_pixel_percent": 0.012345224056603774,
+      "decoded_pixel_sha256": "4b0e3874259f4c213955e80e4b9ae350b645fd3d98706e745c99d4645d22e53f"
+    },
+    {
+      "file": "after-east-boundary.png",
+      "published_png_sha256": "baf8722f8ca9be4b46c5cb6e1678c9ec5e10920afc3d6bb9edaad768f1fd789f",
+      "rerendered_png_sha256": "3b035f206b24c8e75b3d18717c8f5a24a790f5ccb4fb5424efa4b737e22719ad",
+      "pixels_exact": false,
+      "max_channel_delta_8bit": 1,
+      "mean_absolute_channel_delta_8bit": 3.201466686320755e-05,
+      "changed_pixel_percent": 0.012805866745283018,
+      "decoded_pixel_sha256": "31b1fe18f76d1b74b3cc5a8ea692ac4ada6537c09772ecd4638435875e2fb51d"
+    }
+  ],
+  "image_comparison": {
+    "ok": true,
+    "geometry_and_material_fingerprints_exact": true,
+    "max_allowed_channel_delta_8bit": 1,
+    "max_allowed_changed_pixel_percent": 0.05,
+    "published_images_unchanged": true,
+    "note": "Rerendered pixels are not byte-identical; sparse differences are at most one 8-bit channel level. Measured deltas are recorded per image."
+  },
+  "saved_validation": {
+    "ok": true,
+    "report_sha256": "eda61ee749fee8d12ffaa07c86261d7b5e0ee55304b59c352d971403cd204d52",
+    "geometry_placement_and_road_checks_match": true,
+    "grounded_trees": 75,
+    "grounded_shrubs": 120,
+    "base_disk_samples": 3315,
+    "intersecting_samples": 0
+  },
+  "portable_tests": {
+    "total": 276,
+    "passed": 269,
+    "skipped": 7,
+    "log_sha256": "2b3144e5d5fc8b30f640d535751130a4377b479ce3a62732d184ab03b0c74e20"
+  },
+  "original_validation": "docs/shiba-momijidani-v1-validation.json",
+  "published_images": "renders/previews/shiba-momijidani-v1/evidence.json",
+  "local_results": {
+    "review": "data/local/reviews/shiba-momijidani-main-29157af/run.json",
+    "saved_validation": "data/local/checks/shiba/merge-main-29157af/saved-validation.json"
+  },
+  "human_visual_approval": false,
+  "limitations": "Original inferred geometry, unsurveyed terrain and baseline validation limitations remain unchanged."
+}
