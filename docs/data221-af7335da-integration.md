@@ -6,7 +6,7 @@
 
 main宛の建物PRは、制作と追加検査の担当差分だけを取り込む。`scripts/plateau_evidence.py`、`tests/test_plateau_evidence.py`、資料索引の文書更新は別担当の資料PRへ分離しており、本PRには含まない。
 
-建物生成runnerと建物のテストは索引コードに依存しない。以下の索引から選択する手順だけは、別途資料PRのCLIで作ったJSONを `--index` へ渡す必要がある。既存の索引JSONを読み取るvalidator自体は、このPRだけで実行できる。資料PRは公開準備中で、公開後にPR間のリンクを付ける。
+建物生成runnerと建物のテストは索引コードに依存しない。以下の索引から選択する手順だけは、別途[資料索引PR #48](https://github.com/OurJapan/open-tokyo-world/pull/48)のCLIで作ったJSONを `--index` へ渡す必要がある。既存の索引JSONを読み取るvalidator自体は、このPRだけで実行できる。資料索引差分を建物PRへ重複して取り込まない。
 
 資料索引を除いたmainベースの公開用構成でも241テスト中234成功・任意依存7件省略、compileall成功。下の249テストは資料索引も含めた統合検証時の履歴として区別する。モデル生成コードはその検証版から変更していない。[公開画像と出典](../renders/previews/data221-af7335da-topology/README.md)。
 
