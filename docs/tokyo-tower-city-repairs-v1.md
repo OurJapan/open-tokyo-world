@@ -37,7 +37,7 @@ PR #50・#53のviewer、#51の北東側樹木、#52のもみじ谷コードはma
 
 PR #51で非表示になった静的な旧樹木16部品は、再読込時の評価キャッシュを避け、保存されたmatrix_basisと位置・回転・尺度を比較します。派生dimensionsだけを除外し、メッシュ・保存transform・表示状態は厳密に保持します。既存の組合せ検証で再有効化によりdimensionsが復元することを確認済みです。
 
-追従後のportable testsは329件中322成功・任意依存7 skip（Shapely 2、OpenCV 5）。`compileall` も成功。既存都市や樹木の変更、対象材質・modifierの変更、評価後上端Zの移動、許容丸め幅を超える座標差を拒否する検査を含みます。
+公開時main追従後のportable testsは334件中327成功・任意依存7 skip（Shapely 2、OpenCV 5）。`compileall` も成功。既存都市や樹木の変更、対象材質・modifierの変更、評価後上端Zの移動、許容丸め幅を超える座標差を拒否する検査を含みます。Blenderで面被覆・変形拒否5件、接合validator6件、16点の実シェーダー照合とread-only検査も成功しました。
 
 全景、205 m帯、230 m帯、足元と樹木、トップデッキ全体、窓下端近景の6組を、同一camera・照明・World・色管理・seedで都市候補から描画します。Cycles CPU、2 threads、640×640、通常8 samples／下端近景32 samples、denoising ON、adaptive sampling OFFです。保存blendへのレンダー用cameraの書込みは行いません。
 
