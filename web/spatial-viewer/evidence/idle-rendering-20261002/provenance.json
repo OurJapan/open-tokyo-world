@@ -1,0 +1,106 @@
+{
+  "recorded_at": "2026-10-02T08:15:25.712Z",
+  "baseline_commit": "805310ef7a6aad5a13104334e798fb83b35f1711",
+  "branch": "codex/viewer-idle-performance-20261002",
+  "source_git_blobs": {
+    "web/spatial-viewer/src/main.js": "d12d5baf2e48d00ed5b58f9b9cf70754e7352c72",
+    "web/spatial-viewer/src/render-loop.js": "1cf92027389193e95c39ae470d53f375ee91f124",
+    "web/spatial-viewer/tests/render-loop.test.js": "6af9685ff1c54364d9800edb266bbdebc4f15e54",
+    "web/spatial-viewer/tests/render-browser.cjs": "538f0be9fcb5fbf2abc0a83e089fc0262da33257"
+  },
+  "fixture": {
+    "path": "web/spatial-viewer/public/data/device-test.glb",
+    "bytes": 3036,
+    "triangles": 144,
+    "sha256": "0bd314b3dc7e691f843293c490f4e27c6be3bc61bba28aad31dd12ed776d5f08",
+    "unchanged": true,
+    "scope": "Original public fixture only. No city scene or real-world geometry is represented by these screenshots."
+  },
+  "baseline_build": {
+    "bundle": "assets/index-L2Kar1Ui.js",
+    "bytes": 660557,
+    "sha256": "640e1f08622734af03bc846f08f33486f1b0934e9e54a0a65bc6985b2159f7e5"
+  },
+  "build": {
+    "bundle": "assets/index-C6R64VhK.js",
+    "bytes": 661246,
+    "sha256": "3575dcb988cec4453181997856432ce00d0c4a02a163a7c96f49f62f9c418e9f",
+    "offline_shell_sha256": "6d7bb416c073e5a3144b43c7143a2d0831abc6af92051d9108900057fe72d8ee",
+    "vite": "8.2.2",
+    "three": "0.185.1",
+    "playwright": "1.62.1"
+  },
+  "validation": {
+    "viewer_unit_tests": {
+      "total": 33,
+      "passed": 33
+    },
+    "portable_tests": {
+      "total": 224,
+      "passed": 218,
+      "skipped": 6,
+      "skip_reasons": [
+        "Optional production Shapely unavailable (1).",
+        "Optional OpenCV photo-estimation dependencies unavailable (5)."
+      ]
+    },
+    "field_browser": {
+      "passed": true,
+      "cases": [
+        "repeated capture",
+        "consent boundaries",
+        "automatic upload",
+        "identical retry after reload",
+        "no persisted credentials",
+        "offline capture and catalogue",
+        "ZIP download",
+        "storage failure recovery"
+      ],
+      "external_api_requests": "Intercepted locally; no real upload."
+    },
+    "render_browser": {
+      "passed": true,
+      "cases": [
+        "idle",
+        "opacity",
+        "resize",
+        "damped orbit",
+        "reset",
+        "camera",
+        "stop",
+        "visibility",
+        "pagehide/pageshow",
+        "WebGL context loss and restoration"
+      ],
+      "image_tolerance": {
+        "max_differing_pixel_fraction": 0.001,
+        "max_8_bit_channel_delta": 2
+      }
+    },
+    "unchanged_scopes": [
+      "public/data",
+      "adapters",
+      "patches",
+      "tests (repository root)",
+      "scripts (repository root)"
+    ]
+  },
+  "method": {
+    "idle_samples": 3,
+    "requested_duration_ms": 2500,
+    "viewport": {
+      "width": 960,
+      "height": 900,
+      "device_scale_factor": 1
+    },
+    "rendering": "WebGL clear and draw calls instrumented only for #canvas-host.",
+    "cpu": "Chrome DevTools Performance TaskDuration/ScriptDuration differences for the inspected page.",
+    "browser": "Dedicated headless Edge, separate temporary profile; fake camera. Service workers blocked only in the rendering benchmark.",
+    "images": "Both versions use the same fixture, camera setup, viewport, lighting, material opacity and antialiasing. Damping settles before orbit/reset comparisons."
+  },
+  "limits": [
+    "Desktop Chromium only; iPhone/Safari, battery, heat and whole-machine GPU/CPU use were not measured.",
+    "Counts describe eliminating redundant work while the public fixture is stationary; no loading-speed or full-city FPS claim.",
+    "Portable skips are outside the viewer change; no Blender scene validation was required or performed."
+  ]
+}
