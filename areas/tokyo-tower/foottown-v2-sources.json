@@ -1,0 +1,447 @@
+{
+  "version": 1,
+  "feature_id": "otw:jp:tokyo:minato:tokyo-tower",
+  "revision": "foottown_v2",
+  "status": "photo-guided-static-exterior-candidate",
+  "reviewed_on": "2026-10-03",
+  "frame": "legacy-tokyo-display-v1",
+  "units": "m",
+  "scope": "FootTown architectural exterior only. Original modeling observations are separated from reported values and legacy-frame adaptations.",
+  "media_policy": {
+    "reference_root": "data/local/references/foottown-v2",
+    "reference_media_public": false,
+    "reference_media_distribution": "none",
+    "usage_terms": "unknown",
+    "license_inference": "Public accessibility does not establish permission to redistribute photos, diagrams or PDFs.",
+    "included_public_content": "URLs, provenance, hashes and original factual modeling notes only."
+  },
+  "model_adaptations": [
+    {
+      "id": "legacy-footprint",
+      "value": [
+        73,
+        58
+      ],
+      "unit": "m",
+      "status": "inherited_approximation",
+      "description": "Retain the previous 73 by 58 m footprint and legacy display frame. These are model dimensions, not measurements established by the listed references.",
+      "source_ids": []
+    },
+    {
+      "id": "entrance-orientation",
+      "model_direction": "+Y",
+      "status": "diagram_guided_approximate_registration",
+      "description": "The main entrance between stair cores named North and East is interpreted as the real northeast-facing frontage and approximately registered to legacy +Y. This is not a surveyed geographic bearing or coordinate transform. RF has a different diagram orientation; match named stairs instead of assuming page-up is north.",
+      "source_ids": [
+        "operator-plan-1f",
+        "operator-plan-2f",
+        "operator-plan-rf",
+        "operator-whole-map"
+      ]
+    },
+    {
+      "id": "south-entrance-level",
+      "value": 4.4,
+      "unit": "m",
+      "status": "estimated_terrain_adaptation",
+      "description": "The proposed south 2F entrance level and straight access stairs adapt a real second-floor entrance to the inherited flat ground. Neither 4.4 m nor this stair layout is established by the photograph or visitor diagrams.",
+      "source_ids": [
+        "operator-south-2f",
+        "operator-plan-2f"
+      ]
+    },
+    {
+      "id": "facade",
+      "status": "observed_composition_with_estimated_geometry",
+      "description": "Replace uniform small-window rows with facade-specific brown wall fields, sparse staggered upper windows and a pale main-entrance composition with a thin canopy, tall columns and recessed glazing. Dimensions, panel pitch and unobserved parts remain approximations. The screen-like central surface's exact material is unconfirmed.",
+      "source_ids": [
+        "visitor-front-2025",
+        "townphoto-front-2012",
+        "metro-accessibility-exterior",
+        "operator-south-2f"
+      ]
+    },
+    {
+      "id": "central-rooftop-volume",
+      "status": "observed_presence_with_estimated_geometry",
+      "description": "Remove the previous generic four-corner HVAC units and add a central brown rooftop volume with an approximately two-level exterior composition, doors, small windows, louver and supported canopy. Its footprint, height, placement and equipment details are estimated; exact internal functions are not established.",
+      "source_ids": [
+        "hdrts-roof-2023",
+        "operator-plan-rf"
+      ]
+    },
+    {
+      "id": "roof-perimeter",
+      "status": "partial_observation_with_estimated_geometry",
+      "description": "Represent differences between solid brown wall/parapet portions and open vertical-picket railing portions. The corner photo does not document the complete perimeter or exact heights.",
+      "source_ids": [
+        "mebs-operator-corner",
+        "hdrts-roof-2023"
+      ]
+    }
+  ],
+  "exclusions": [
+    "Reproduction or redistribution of source photos, PDFs or floor-guide graphics.",
+    "Current logos, event graphics, obsolete aquarium/ONE PIECE or other closed-facility signs.",
+    "Survey-grade reconstruction, exact tenant interiors, verified public circulation paths, structural/engineering certification or animated operation.",
+    "Treating image upload dates as photograph capture dates or visitor maps as dimensioned drawings."
+  ],
+  "sources": [
+    {
+      "id": "visitor-front-2025",
+      "title": "東京タワー訪問時のフットタウン正面写真",
+      "source_type": "photographer-firsthand",
+      "publisher": "何しよう？ (Hatena blog account: bingger)",
+      "photographer": "Article author / account bingger; personal name not established",
+      "page_url": "https://xn--p8j7a4jn57j.com/entry/20250613/1749800716",
+      "image_url": "https://cdn-ak.f.st-hatena.com/images/fotolife/b/bingger/20250613/20250613155226.jpg",
+      "dates": {
+        "article_date": "2025-06-13",
+        "photograph_date": "2025-06-13",
+        "date_basis": "First-person visit article and image upload path; camera timestamp not independently verified."
+      },
+      "private_reference": {
+        "path": "data/local/references/foottown-v2/hatena-2025-entrance.jpg",
+        "bytes": 767420,
+        "sha256": "08a0627e7e66bdd217a16053dce7d09ce01f9efb9b3f7a3b3fb98382f3a65194",
+        "public": false
+      },
+      "view": "Main entrance facade from the forecourt, oblique close view; compass bearing is not provided.",
+      "supports": [
+        "Pale panel cladding with rectangular joints; recessed glass entrance groups with horizontal upper openings.",
+        "A wide, thin projecting canopy and tall rectangular columns with pale blue-green vertical inset-like strips.",
+        "A large pale screen-like panel above the canopy and dark brown upper walls remain visible in 2025."
+      ],
+      "does_not_establish": [
+        "Surveyed facade orientation, exact bay count, dimensions or floor elevations.",
+        "Exact cladding or screen material specification, canopy projection, column section or connection design.",
+        "Whether temporary event signs and business displays remain current in October 2026."
+      ],
+      "temporal_limit": "Use architectural geometry; do not reproduce the photographed shop/event graphics as current signage.",
+      "accessed_on": "2026-10-03",
+      "usage_terms": "unknown",
+      "redistribution_permission": "not_established",
+      "publication_scope": "Source metadata and original modeling observations only; reference media are private and are not distributed."
+    },
+    {
+      "id": "townphoto-front-2012",
+      "title": "飯倉交差点～東京タワー / フットタウン全景",
+      "source_type": "photographer-firsthand",
+      "publisher": "townphoto.net",
+      "photographer": "townphoto.net site photographer; personal name not identified",
+      "page_url": "https://townphoto.net/tokyo/tower.html",
+      "image_url": "https://townphoto.net/tokyo/tow/tow36.jpg",
+      "dates": {
+        "photograph_date": "2012-05",
+        "date_precision": "month",
+        "date_basis": "The page identifies May 2012 as the photography date; later textual updates do not date the photo."
+      },
+      "private_reference": {
+        "path": "data/local/references/foottown-v2/townphoto-tow36.jpg",
+        "bytes": 487368,
+        "sha256": "17d9ae778f9d18b0e73fd758b890b68463dedc0a984f884055139297356bfcd5",
+        "public": false
+      },
+      "view": "Oblique wide view of the main entrance facade; front walls are visible but not a surveyed orthographic elevation.",
+      "supports": [
+        "Large mostly solid dark brown upper wall fields; a thin light horizontal trim separates an upper band.",
+        "Sparse white-edged small square windows alternate between two heights in the upper band.",
+        "A broad pale screen-like central panel rises above the entrance canopy; the canopy extends beyond both sides of this panel.",
+        "The lower entrance composition has tall columns, pale jointed panels, recessed glazing and upper horizontal openings."
+      ],
+      "does_not_establish": [
+        "Current signs, tenants or a complete current window inventory.",
+        "Measured footprint, screen width, floor count, roof elevation or canopy depth.",
+        "A uniformly repeated window grid on every storey or every side."
+      ],
+      "temporal_limit": "Historical photograph. The principal entrance cladding/canopy composition is cross-checked against visitor-front-2025; obsolete facility names and signs are excluded.",
+      "accessed_on": "2026-10-03",
+      "usage_terms": "unknown",
+      "redistribution_permission": "not_established",
+      "publication_scope": "Source metadata and original modeling observations only; reference media are private and are not distributed."
+    },
+    {
+      "id": "metro-accessibility-exterior",
+      "title": "東京タワーのバリアフリー情報",
+      "source_type": "public-authority-primary-survey-and-operator-image",
+      "publisher": "東京都 / だれでも東京",
+      "photographer": "TOKYO TOWER credit on the exterior image; individual photographer not identified",
+      "page_url": "https://www.daredemo-tokyo.metro.tokyo.lg.jp/facility/leisure/40137/",
+      "image_url": "https://www.daredemo-tokyo.metro.tokyo.lg.jp/hotel_img/137_%E6%9D%B1%E4%BA%AC%E3%82%BF%E3%83%AF%E3%83%BC_000.jpg",
+      "dates": {
+        "survey_date": "2024-12-11",
+        "information_as_of": "2025-04-18",
+        "photograph_date": null,
+        "date_basis": "Survey and information dates are stated on the page; neither establishes the exterior photo's capture date."
+      },
+      "private_reference": {
+        "path": "data/local/references/foottown-v2/tokyo-metro-exterior-2024.jpg",
+        "bytes": 561195,
+        "sha256": "60dd98cf0a422efd36aedf32c3f1818efe502ad1b794567b8a808ebd519bd5e2",
+        "public": false
+      },
+      "view": "Upward view from beside the building; only an upper facade band and the tower are visible.",
+      "supports": [
+        "White-edged small square windows have staggered vertical positions in a dark brown upper wall band.",
+        "The survey identifies FootTown 1F main entrance and reports an entrance width of 155 cm and a level difference below 2 cm."
+      ],
+      "measured_or_reported_values": [
+        {
+          "quantity": "Surveyed main entrance clear width",
+          "value": 1.55,
+          "unit": "m",
+          "scope": "The surveyed doorway; not the width of the entire entrance group."
+        },
+        {
+          "quantity": "Surveyed main entrance level difference",
+          "upper_bound": 0.02,
+          "comparison": "less_than",
+          "unit": "m"
+        }
+      ],
+      "does_not_establish": [
+        "Whole-building dimensions or the width of all entrance groups.",
+        "The exterior photo's capture date or current shop signage.",
+        "The legacy model's 4.4 m south entrance height."
+      ],
+      "temporal_limit": "Local filename contains 2024 as a survey reference, not as a verified photo date.",
+      "accessed_on": "2026-10-03",
+      "usage_terms": "unknown",
+      "redistribution_permission": "not_established",
+      "publication_scope": "Source metadata and original modeling observations only; reference media are private and are not distributed."
+    },
+    {
+      "id": "operator-south-2f",
+      "title": "2階南側出入口",
+      "source_type": "operator-primary",
+      "publisher": "株式会社TOKYO TOWER",
+      "photographer": "Not identified",
+      "page_url": "https://www.tokyotower.co.jp/foottown/uq76y55913.html",
+      "image_url": "https://www.tokyotower.co.jp/foottown/shop_img/uq76y55913_thum.jpeg",
+      "dates": {
+        "published_on": null,
+        "photograph_date": null
+      },
+      "private_reference": {
+        "path": "data/local/references/foottown-v2/official-south-entrance.jpg",
+        "bytes": 87194,
+        "sha256": "197cb0c3e982d65453f6bcbdc4f6f026b8a637730dbef91c3a3ae5062c495449",
+        "public": false
+      },
+      "view": "Entrance explicitly identified by the operator as the south-side entrance on 2F.",
+      "supports": [
+        "A mostly solid brown facade with large exposed silver rectangular ducts.",
+        "A low broad canopy, narrow supporting posts and glazed entrance/opening groups.",
+        "The south 2F entrance has a different architectural composition from the main 1F entrance."
+      ],
+      "does_not_establish": [
+        "Entrance elevation above the legacy model ground plane, exact duct routing or dimensions.",
+        "The proposed 4.4 m entrance level or a switchback staircase from flat model terrain.",
+        "A uniform treatment for all four facades."
+      ],
+      "temporal_limit": "Capture date is unknown; use the operator identification and visible architecture without copying business graphics.",
+      "accessed_on": "2026-10-03",
+      "usage_terms": "unknown",
+      "redistribution_permission": "not_established",
+      "publication_scope": "Source metadata and original modeling observations only; reference media are private and are not distributed."
+    },
+    {
+      "id": "mebs-operator-corner",
+      "title": "東京タワー導入事例 / 建物角部を含む塔全景",
+      "source_type": "contractor-primary-with-operator-provided-image",
+      "publisher": "三菱電機ビルソリューションズ株式会社",
+      "photographer": "TOKYO TOWER-provided image; individual photographer not identified",
+      "page_url": "https://www.mebs.co.jp/cases/multiple-solutions/interview/1199875_1508.html",
+      "image_url": "https://www.mebs.co.jp/cases/multiple-solutions/interview/__icsFiles/afieldfile/2025/03/06/MG_9294.jpg",
+      "dates": {
+        "published_on": null,
+        "photograph_date": null,
+        "date_basis": "The 2025/03/06 URL directory is an asset path, not a verified capture date."
+      },
+      "private_reference": {
+        "path": "data/local/references/foottown-v2/mitsubishi-foot-corner.jpg",
+        "bytes": 255320,
+        "sha256": "e0f75db6f00a1a53ee09ec4447d361e88816ccc05b37199bd7ccecf9609495be",
+        "public": false
+      },
+      "view": "Low upward view across one FootTown upper corner; two wall faces and part of the roof edge are visible, but the building base is cropped.",
+      "supports": [
+        "Dark brown walls meet at a sharp corner with thin pale horizontal edge/trim lines.",
+        "A higher solid brown wall on one side transitions to an open vertical-picket railing on the neighboring roof edge."
+      ],
+      "does_not_establish": [
+        "The full roof perimeter, corner coordinates, total building height or measured parapet heights.",
+        "Uniform two-horizontal-rail fencing around all four sides.",
+        "The exact compass bearing of the photographed corner."
+      ],
+      "temporal_limit": "A partial architectural corner reference, not a full measured elevation.",
+      "accessed_on": "2026-10-03",
+      "usage_terms": "unknown",
+      "redistribution_permission": "not_established",
+      "publication_scope": "Source metadata and original modeling observations only; reference media are private and are not distributed."
+    },
+    {
+      "id": "hdrts-roof-2023",
+      "title": "東京タワーを階段で登ってみたあと、展望台からの光景をミニチュアラプス / 屋上",
+      "source_type": "photographer-firsthand",
+      "publisher": "HDRTS -hdr&tiltshift-",
+      "photographer": "sh1n",
+      "page_url": "https://hdrts.com/blog-entry-796.html",
+      "image_url": "https://blog-imgs-162.fc2.com/s/h/i/shin307/IMG_3242.jpg",
+      "dates": {
+        "article_date": "2023-03-24",
+        "photograph_date": "2023-03",
+        "date_precision": "early_month",
+        "date_basis": "The author states that the visit was in early March 2023."
+      },
+      "private_reference": {
+        "path": "data/local/references/foottown-v2/hdrts-2023-roof.jpg",
+        "bytes": 279864,
+        "sha256": "3547e318e450837514928f0ef067750bac4fe4c80feda26e95ab5c55e6fbb894",
+        "public": false
+      },
+      "view": "Across the occupied roof toward a brown central building beneath the glazed lift enclosure; compass bearing is not stated.",
+      "supports": [
+        "A substantial brown central rooftop volume with an approximately two-level visual composition, rather than an entirely exposed lift enclosure reaching the roof pavement.",
+        "Four white-edged small upper windows, a large dark louvered opening, additional lower small windows, a row of metal doors and a thin pale canopy with diagonal supports.",
+        "A taller wall-like element at the right end, exposed ducts/equipment beside the volume, broad grey paving and low peripheral barriers/fencing."
+      ],
+      "does_not_establish": [
+        "The central volume's measured footprint, storey heights, function of each room or exact connection to the main lift.",
+        "Exact compass orientation, complete roof equipment inventory or a four-corner HVAC arrangement.",
+        "Exact dimensions or structural design of the canopy and its diagonal supports."
+      ],
+      "temporal_limit": "A March 2023 exterior reference; current temporary roof uses are not reconstructed from it.",
+      "accessed_on": "2026-10-03",
+      "usage_terms": "unknown",
+      "redistribution_permission": "not_established",
+      "publication_scope": "Source metadata and original modeling observations only; reference media are private and are not distributed."
+    },
+    {
+      "id": "operator-plan-1f",
+      "title": "フットタウン1F公式フロアガイド",
+      "source_type": "operator-primary-diagram",
+      "publisher": "株式会社TOKYO TOWER",
+      "photographer": null,
+      "page_url": "https://www.tokyotower.co.jp/foottown/",
+      "image_url": "https://www.tokyotower.co.jp/foottown/img/1f.png",
+      "dates": {
+        "published_on": null,
+        "revision_date": null
+      },
+      "private_reference": {
+        "path": "data/local/references/foottown-v2/official-1f.png",
+        "bytes": 161564,
+        "sha256": "97944900ebc4beb281d92f1b16762e0c1988627ece73a5aac14d712025c36c65",
+        "public": false
+      },
+      "view": "Visitor floor guide; Main Entrance is between stair cores labeled North and East.",
+      "supports": [
+        "Separate main IN and OUT openings and relative locations of named stairs and elevators."
+      ],
+      "does_not_establish": [
+        "Surveyed coordinates, a scale, wall dimensions or exact floor elevation.",
+        "That diagram-up is geographic north."
+      ],
+      "temporal_limit": "Visitor circulation diagram; not a dimensioned architectural plan.",
+      "accessed_on": "2026-10-03",
+      "usage_terms": "unknown",
+      "redistribution_permission": "not_established",
+      "publication_scope": "Source metadata and original modeling observations only; reference media are private and are not distributed."
+    },
+    {
+      "id": "operator-plan-2f",
+      "title": "フットタウン2F公式フロアガイド",
+      "source_type": "operator-primary-diagram",
+      "publisher": "株式会社TOKYO TOWER",
+      "photographer": null,
+      "page_url": "https://www.tokyotower.co.jp/foottown/",
+      "image_url": "https://www.tokyotower.co.jp/foottown/img/2f.png",
+      "dates": {
+        "published_on": null,
+        "revision_date": null
+      },
+      "private_reference": {
+        "path": "data/local/references/foottown-v2/official-2f.png",
+        "bytes": 121479,
+        "sha256": "9863542b940ae9f06371cebb4f4a8f00cd8a85b407df76a47ed71ca6e0c73ed5",
+        "public": false
+      },
+      "view": "Visitor floor guide with North/East stair labels, a West Entrance and another 2F entrance.",
+      "supports": [
+        "Distinct 2F access locations and their diagrammatic relation to the stair cores."
+      ],
+      "does_not_establish": [
+        "Ground slope, access stair geometry, metric door widths or the proposed 4.4 m model entrance elevation."
+      ],
+      "temporal_limit": "Visitor circulation diagram; not a dimensioned architectural plan.",
+      "accessed_on": "2026-10-03",
+      "usage_terms": "unknown",
+      "redistribution_permission": "not_established",
+      "publication_scope": "Source metadata and original modeling observations only; reference media are private and are not distributed."
+    },
+    {
+      "id": "operator-plan-rf",
+      "title": "フットタウンRF公式フロアガイド",
+      "source_type": "operator-primary-diagram",
+      "publisher": "株式会社TOKYO TOWER",
+      "photographer": null,
+      "page_url": "https://www.tokyotower.co.jp/foottown/",
+      "image_url": "https://www.tokyotower.co.jp/foottown/img/rf.png",
+      "dates": {
+        "published_on": null,
+        "revision_date": null
+      },
+      "private_reference": {
+        "path": "data/local/references/foottown-v2/official-rf.png",
+        "bytes": 55095,
+        "sha256": "d26c47911035da6cd1e9f7ffc62684b792a6f090e382ed63712b6c31def3e063",
+        "public": false
+      },
+      "view": "Visitor roof guide; East and North stair labels appear at the bottom, unlike the 1F/2F diagram orientation.",
+      "supports": [
+        "Central elevator/toilet block, exterior stair access and broad usable roof space."
+      ],
+      "does_not_establish": [
+        "Metric roof dimensions, equipment heights or the meaning of every unlabeled rectangle.",
+        "A common north-up orientation with the 1F/2F guides."
+      ],
+      "temporal_limit": "Diagram orientation must be matched through named stair cores; it is not a survey.",
+      "accessed_on": "2026-10-03",
+      "usage_terms": "unknown",
+      "redistribution_permission": "not_established",
+      "publication_scope": "Source metadata and original modeling observations only; reference media are private and are not distributed."
+    },
+    {
+      "id": "operator-whole-map",
+      "title": "東京タワー全体マップ",
+      "source_type": "operator-primary-diagram",
+      "publisher": "株式会社TOKYO TOWER",
+      "photographer": null,
+      "page_url": "https://www.tokyotower.co.jp/access/",
+      "document_url": "https://www.tokyotower.co.jp/access/file/東京タワー全体マップ.pdf",
+      "dates": {
+        "published_on": null,
+        "revision_date": null
+      },
+      "private_reference": {
+        "path": "data/local/references/foottown-v2/official-whole-map.pdf",
+        "bytes": 562571,
+        "sha256": "ee19498bfd3a4c940435df3a3f56f8977a73b0330011b832646c387e0abfa20d",
+        "public": false
+      },
+      "review_basis": "Downloaded and visually reviewed by the parent implementation agent; local bytes and SHA-256 independently recorded here.",
+      "supports": [
+        "Operator-provided overall visitor map used with the floor guides to relate the tower, FootTown and access areas."
+      ],
+      "does_not_establish": [
+        "A surveyed georeference for the legacy model or exact building/entrance dimensions."
+      ],
+      "temporal_limit": "Site/access reference; do not infer survey precision from illustrative placement.",
+      "accessed_on": "2026-10-03",
+      "usage_terms": "unknown",
+      "redistribution_permission": "not_established",
+      "publication_scope": "Source metadata and original modeling observations only; reference media are private and are not distributed."
+    }
+  ]
+}

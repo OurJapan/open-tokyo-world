@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "purpose": "reviewed-change",
+  "reason": "Photo-guided FootTown exterior finishes and roof equipment block; preserve the upper lift and all other city objects. Dimensions and registration remain inferred.",
+  "source_refs": [
+    "areas/tokyo-tower/foottown-v2-sources.json"
+  ],
+  "operations": [
+    {
+      "op": "tower_foottown_v2",
+      "feature_id": "otw:jp:tokyo:minato:tokyo-tower",
+      "object": "OTW Tokyo Tower structure / foottown-shell",
+      "expected_mesh_sha256": "e9ca32a95250f2ca6291569dc2c3892ab7297199f6695da046da5945dc356f12",
+      "target_mesh_sha256": {
+        "OTW Tokyo Tower structure / foottown-shell": "e9ca32a95250f2ca6291569dc2c3892ab7297199f6695da046da5945dc356f12",
+        "OTW Tokyo Tower structure / foottown-glazing": "ace2ac1401e5f93b319cca219bf34febbd5d9149ff4127cf23c4cbccdfba4d34",
+        "OTW Tokyo Tower structure / foottown-metal": "6c637c0e92534112f3a714bd036d84ed80d56bc0e30df7860524855b9438207c",
+        "OTW Tokyo Tower structure / foottown-roof": "28ac51cb1f987fd3c1da1eee131495114060724ba7f56ac0bb1bc4545a3ed7c7"
+      },
+      "added_objects": [
+        "OTW Tokyo Tower FootTown v2 / foottown-cladding",
+        "OTW Tokyo Tower FootTown v2 / foottown-joints",
+        "OTW Tokyo Tower FootTown v2 / foottown-screen"
+      ]
+    }
+  ]
+}
