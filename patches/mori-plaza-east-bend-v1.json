@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "feature_id": "otw:jp:tokyo:minato:azabudai-mori-jp:northeast-footway-bend-v1",
+  "input_sha256": "966a81151beaf851a796bae8f91cad4d4106e82a40ccc69bad92aec48f1f6d9b",
+  "plan_sha256": "a5ad01479cf411183cfa019e945a06efc9999dd11d0f2f9f69c242bafd3397ee",
+  "center_uv_m": [-8, 85],
+  "core_half_size_m": [4, 4],
+  "outer_half_size_m": [8, 8],
+  "top_z_m": 0.11,
+  "road_mesh_sha256": {
+    "asphalt 15s road detail": "03a8596d33eeb3d1dd39be55027e048c3fc825ff9152789f127bd8f2f8705c62",
+    "gutter 15s road detail": "3a2be71925b39b48d4d0e66c9dee233c87c5642e88a5340c00065dd204d9189b",
+    "pavement_0 unified road": "fc73f6c394f21b13a07d5c907104473bb6b126eb144723773adbbb97d28b2cc7"
+  },
+  "basis": "Pinned OSM footway 1443867478 XY and inherited plaza contacts. Heights and grading dimensions are provisional model-space choices, not surveyed terrain."
+}
