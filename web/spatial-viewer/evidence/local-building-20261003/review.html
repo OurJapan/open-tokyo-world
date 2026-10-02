@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ローカル建物表示・視点プリセット 比較</title>
+<style>body{font-family:system-ui,sans-serif;margin:32px auto;max-width:1200px;padding:0 20px;background:#f5f5f7;color:#222;line-height:1.65}h1{font-size:1.6rem}code{overflow-wrap:anywhere}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}figure{margin:0;background:white;padding:12px;border-radius:16px}img{width:100%;height:auto;display:block}figcaption{padding:8px 0}a{color:#0057ae}@media(max-width:700px){.grid{grid-template-columns:1fr}}</style>
+<h1>ローカル建物表示・全景／北／東の視点</h1>
+<p>最新main <code>3b1eb5f</code>へ統合。Beforeはローカル表示のみの<code>d9da129</code>、Afterはプリセット追加後の<code>52175b1</code>。同一GLB・ブラウザ・viewportで再撮影しました。モデル形状の変更はありません。</p>
+<p><a href="README.md">検証・再現手順</a> / <a href="result.json">検証結果とSHA-256</a></p>
+<h2>Desktop 960×900</h2><div class="grid"><figure><a href="before-desktop.png"><img src="before-desktop.png" alt="Before: 視点切替なし"></a><figcaption>Before: 視点切替なし</figcaption></figure><figure><a href="after-desktop.png"><img src="after-desktop.png" alt="After: 全景・北・東"></a><figcaption>After: 全景・北・東</figcaption></figure></div>
+<h2>Mobile viewport 390×900</h2><div class="grid"><figure><a href="before-mobile.png"><img src="before-mobile.png" alt="Before: mobile"></a><figcaption>Before</figcaption></figure><figure><a href="after-mobile.png"><img src="after-mobile.png" alt="After: mobile"></a><figcaption>After</figcaption></figure></div>
+<h2>キーボードによる選択</h2><div class="grid"><figure><a href="after-north-desktop.png"><img src="after-north-desktop.png" alt="北から: Enterで選択"></a><figcaption>北から: Enterで選択</figcaption></figure><figure><a href="after-east-desktop.png"><img src="after-east-desktop.png" alt="東から: Spaceで選択"></a><figcaption>東から: Spaceで選択</figcaption></figure></div>
+<p><a href="after-east-mobile.png">Mobile 東から</a> / <a href="before-overview-canvas.png">Before 全景canvas</a> / <a href="after-overview-canvas.png">After 全景canvas</a> / <a href="main-fixture-canvas.png">main 通常モデルcanvas</a> / <a href="after-fixture-canvas.png">After 通常モデルcanvas</a>。全景と通常モデルの各比較はPNGがバイト一致。</p>
+<p>Safari実機・実機タッチ・スクリーンリーダーは未検証。北・東はモデル座標の目安で、測量済み方位や現地標高ではありません。出典: Project PLATEAU 港区2025年度、加工: OurJapan。PNGは比較用に公開承認済み。GLB・blend・テクスチャ素材は含みません。</p>
+</html>
