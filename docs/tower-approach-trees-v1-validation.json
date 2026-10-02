@@ -1,0 +1,1851 @@
+{
+  "version": 2,
+  "date": "2026-10-02",
+  "ok": true,
+  "status": "review-candidate-human-adoption-pending",
+  "integration": {
+    "base_commit": "234b163210ac19d61f33e86b6920b8b26f9d453a",
+    "original_production_commit": "b92061b5ccc99b23198288891e8b0107f6ed227c",
+    "original_artifacts_retained": true,
+    "shared_registration_unchanged": true,
+    "mode": "Only reviewed tree collection appended; existing prototypes/materials reused; old16 viewport suppressed"
+  },
+  "inputs": {
+    "city_sha256": "2a6f63658722beecdb8af2158baed62c044f33a22084df0d227c70c67332ae5b",
+    "revised_delta_sha256": "bd190345084c7e93cf82adec5134f184b4d1867fb93c860740eb930f556aeb58",
+    "original_delta_sha256": "7bec956402b45347bbee39876555ec2b500df2bc87d227aae19fdb2eb520fe13",
+    "unchanged_after_checks": true
+  },
+  "outputs": {
+    "after.blend": {
+      "bytes": 558932645,
+      "sha256": "966a81151beaf851a796bae8f91cad4d4106e82a40ccc69bad92aec48f1f6d9b"
+    },
+    "approach-additions.blend": {
+      "bytes": 5752195,
+      "sha256": "bd190345084c7e93cf82adec5134f184b4d1867fb93c860740eb930f556aeb58"
+    }
+  },
+  "executed_code_and_provenance": {
+    "scripts/tower_approach_integration.py": {
+      "executed_bytes_sha256": "5e4841e1e55b2b20db7310f8e20e96cd2de7c6cf56ae70f27b92c116f5cebd8f",
+      "lf_normalized_sha256": "5e4841e1e55b2b20db7310f8e20e96cd2de7c6cf56ae70f27b92c116f5cebd8f"
+    },
+    "scripts/tower_approach_integration_blender.py": {
+      "executed_bytes_sha256": "34d25426a703c4271670016744d988c0df9f6bd2a806d8008e4af75bec75996c",
+      "lf_normalized_sha256": "34d25426a703c4271670016744d988c0df9f6bd2a806d8008e4af75bec75996c"
+    },
+    "scripts/tower_approach_blender.py": {
+      "executed_bytes_sha256": "200628643ab85636ef5d718b9329bb285a12572c1dd3c088f4bca9004710456c",
+      "lf_normalized_sha256": "8542d6f90456bb5a9efe44d34f509d4675ae3aeac17897991c89c2a99e5b58b0"
+    },
+    "scripts/tower_approach_plan.py": {
+      "executed_bytes_sha256": "d11ebcc288be04c78739b0259ed73981cff4383bbe931638ad63292c6ac7edc5",
+      "lf_normalized_sha256": "8d46d4e1bbab71ab3c764a5eeedd8baaca46caf23a9c8f241d89cdf616e8487b"
+    },
+    "scripts/tower_approach.py": {
+      "executed_bytes_sha256": "6b6d9240ae937d4adb9176b46138b89e53ada54c43640cf60700915c0d04a384",
+      "lf_normalized_sha256": "bff69a508644ac7ab94e9da883a31de6e57368056dd368fd51ad630f8de758b2"
+    },
+    "scripts/blender_worker.py": {
+      "executed_bytes_sha256": "6d527b18c2b41df29a14a16e0aafb12bdc5fc56fddf09e3b8933a0745be4a4b2",
+      "lf_normalized_sha256": "bb38eb2c6cb34eb06c41d921db11847b2edf0b7c1745cbcd82bc4f9d1967eaeb"
+    },
+    "scripts/component_contracts.py": {
+      "executed_bytes_sha256": "cde9c50bca3e6edf8239b387d8066d7a177bbc5bece97ea81f6136f7ca2ddf21",
+      "lf_normalized_sha256": "3998de9a34746aec078ef9f4da79171cbdb843b50d247a1fb99030ea1e767bbb"
+    },
+    "scripts/city_catalog_blender.py": {
+      "executed_bytes_sha256": "5ee2236d08527aa02304559f65932e4ee781e2b53e5725d196935f8f8aef0550",
+      "lf_normalized_sha256": "1f852b0cc58c45b9e374d6b5c0582bcddac7e2db2bd39251556904b1a05c27e2"
+    },
+    "scripts/tower_approach_shell_audit_blender.py": {
+      "executed_bytes_sha256": "b7c1fef21ca2dfd962b9e6eb2191655b1ddf2251c37203f6ce08062c13715243",
+      "lf_normalized_sha256": "b7c1fef21ca2dfd962b9e6eb2191655b1ddf2251c37203f6ce08062c13715243"
+    },
+    "areas/tokyo-tower/approach-trees-v1.json": {
+      "executed_bytes_sha256": "cd393f50ccb92d5f376fe4d86460a68bb6c4f0ceaf5d9e1179596b3ce3ba925d",
+      "lf_normalized_sha256": "d3b99dc93cdd61cd9f58bc5a7dd237bbce740a0b48b376855317a861b52b6ec3"
+    },
+    "areas/tokyo-tower/mori-plaza-west-path-cameras.json": {
+      "executed_bytes_sha256": "eff38d74ccb723c1aa2a5130ca97d250edc83c46297f5d69810c6f7c6ca45444",
+      "lf_normalized_sha256": "b3ef6421cc6beb6a75865da2082cd30d52ad64739bdfad4dd7949608adbc381f"
+    },
+    "assets/procedural-components/provenance.json": {
+      "executed_bytes_sha256": "556f19a79f2f87bd1a0fb587040e2e6947bb8fa04c9fbae3e3629039b3b9820d",
+      "lf_normalized_sha256": "232f871447e68c9bfed6b1dcbc523ef077bfcfc25faa5c54a5ccb9eb0d7b6d6d"
+    },
+    "scripts/tower_approach_west_recheck.py": {
+      "executed_bytes_sha256": "a94a299ee17233f1d66364a66f0559db734e289f2357f78280cb8de1a253ad5e",
+      "lf_normalized_sha256": "a94a299ee17233f1d66364a66f0559db734e289f2357f78280cb8de1a253ad5e"
+    },
+    "scripts/validate_mori_plaza_west_path.py": {
+      "executed_bytes_sha256": "986ace873cb4d3e2ca389d3e8c0a63f5191f14b36ea1fe15516c748980c1acc4",
+      "lf_normalized_sha256": "c1125305fbcef83e3d1765d1fb07e0cf64dbcd4bb2f63f94ff86ef6f7b6de8dc"
+    }
+  },
+  "render_settings": {
+    "blender_version": "4.5.1 LTS",
+    "device": "OPTIX",
+    "width": 960,
+    "height": 540,
+    "samples": 16,
+    "seed": 0
+  },
+  "jobs": {
+    "append": {
+      "exit_code": 0,
+      "seconds": 20.219
+    },
+    "validate-before": {
+      "exit_code": 0,
+      "seconds": 41.047
+    },
+    "validate-after": {
+      "exit_code": 0,
+      "seconds": 44.703
+    },
+    "validate-additions": {
+      "exit_code": 0,
+      "seconds": 1.703
+    },
+    "shell-surface-audit": {
+      "exit_code": 0,
+      "seconds": 27.641
+    },
+    "render-before": {
+      "exit_code": 0,
+      "seconds": 65.516
+    },
+    "render-after": {
+      "exit_code": 0,
+      "seconds": 88.844
+    },
+    "inspect-astra": {
+      "exit_code": 0,
+      "seconds": 1.172
+    }
+  },
+  "preservation": {
+    "ok": true,
+    "unchanged_existing_objects": 3292,
+    "added_objects": 18,
+    "existing_geometry_material_transform_preserved": 3308,
+    "original_source_viewport_suppression": [
+      "Street tree ginkgo 158",
+      "Street tree ginkgo 158.001",
+      "Street tree ginkgo 160",
+      "Street tree ginkgo 160.001",
+      "Street tree ginkgo 164",
+      "Street tree ginkgo 164.001",
+      "Street tree ginkgo 166",
+      "Street tree ginkgo 166.001",
+      "Street tree ginkgo 168",
+      "Street tree ginkgo 168.001",
+      "Street tree ginkgo 170",
+      "Street tree ginkgo 170.001",
+      "Street tree ginkgo 172",
+      "Street tree ginkgo 172.001",
+      "Street tree ginkgo 174",
+      "Street tree ginkgo 174.001"
+    ],
+    "unchanged_existing_collections": 17,
+    "unchanged_assets": 383,
+    "existing_object_changes": []
+  },
+  "inherited_warning_count": 36,
+  "placement": {
+    "ok": true,
+    "trees": [
+      {
+        "seed": 158,
+        "xy": [
+          69.4341049194336,
+          28.867076873779297
+        ],
+        "root_z": 0.6800000071525574,
+        "soil_z": 0.6800079345703125,
+        "foliage_min_z": 3.565694808959961,
+        "adjacent_pavement_z": [
+          0.45999908447265625,
+          0.4600067138671875
+        ],
+        "asphalt_samples": 49,
+        "road_hits": [],
+        "asphalt_overlap_area_m2": 0.0,
+        "foundation_overlap_area_m2": 0,
+        "tower_shell_overlap_pairs": {
+          "bark/Tokyo Tower structure / stone": 0,
+          "bark/Tokyo Tower structure / orange": 0,
+          "foliage/Tokyo Tower structure / stone": 0,
+          "foliage/Tokyo Tower structure / orange": 0
+        },
+        "asphalt_candidate_triangles": 3,
+        "foundation_candidate_triangles": 0
+      },
+      {
+        "seed": 160,
+        "xy": [
+          58.233638763427734,
+          35.466285705566406
+        ],
+        "root_z": 0.6800000071525574,
+        "soil_z": 0.67999267578125,
+        "foliage_min_z": 3.7263550758361816,
+        "adjacent_pavement_z": [
+          0.459991455078125,
+          0.4600067138671875
+        ],
+        "asphalt_samples": 49,
+        "road_hits": [],
+        "asphalt_overlap_area_m2": 0.0,
+        "foundation_overlap_area_m2": 0,
+        "tower_shell_overlap_pairs": {
+          "bark/Tokyo Tower structure / stone": 0,
+          "bark/Tokyo Tower structure / orange": 0,
+          "foliage/Tokyo Tower structure / stone": 0,
+          "foliage/Tokyo Tower structure / orange": 0
+        },
+        "asphalt_candidate_triangles": 2,
+        "foundation_candidate_triangles": 0
+      },
+      {
+        "seed": 164,
+        "xy": [
+          35.832706451416016,
+          48.664703369140625
+        ],
+        "root_z": 0.6800000071525574,
+        "soil_z": 0.67999267578125,
+        "foliage_min_z": 3.4685802459716797,
+        "adjacent_pavement_z": [
+          0.45999908447265625,
+          0.45999908447265625
+        ],
+        "asphalt_samples": 49,
+        "road_hits": [],
+        "asphalt_overlap_area_m2": 0.0,
+        "foundation_overlap_area_m2": 0,
+        "tower_shell_overlap_pairs": {
+          "bark/Tokyo Tower structure / stone": 0,
+          "bark/Tokyo Tower structure / orange": 0,
+          "foliage/Tokyo Tower structure / stone": 0,
+          "foliage/Tokyo Tower structure / orange": 0
+        },
+        "asphalt_candidate_triangles": 4,
+        "foundation_candidate_triangles": 0
+      },
+      {
+        "seed": 166,
+        "xy": [
+          25.377349853515625,
+          55.51930236816406
+        ],
+        "root_z": 0.6800000071525574,
+        "soil_z": 0.67999267578125,
+        "foliage_min_z": 3.6302988529205322,
+        "adjacent_pavement_z": [
+          0.4600067138671875,
+          0.45999908447265625
+        ],
+        "asphalt_samples": 49,
+        "road_hits": [],
+        "asphalt_overlap_area_m2": 0.0,
+        "foundation_overlap_area_m2": 0,
+        "tower_shell_overlap_pairs": {
+          "bark/Tokyo Tower structure / stone": 0,
+          "bark/Tokyo Tower structure / orange": 0,
+          "foliage/Tokyo Tower structure / stone": 0,
+          "foliage/Tokyo Tower structure / orange": 0
+        },
+        "asphalt_candidate_triangles": 6,
+        "foundation_candidate_triangles": 0
+      },
+      {
+        "seed": 168,
+        "xy": [
+          14.62571907043457,
+          62.82699966430664
+        ],
+        "root_z": 0.6800000071525574,
+        "soil_z": 0.67999267578125,
+        "foliage_min_z": 3.131749391555786,
+        "adjacent_pavement_z": [
+          0.4600067138671875,
+          0.45999908447265625
+        ],
+        "asphalt_samples": 49,
+        "road_hits": [],
+        "asphalt_overlap_area_m2": 0.0,
+        "foundation_overlap_area_m2": 0,
+        "tower_shell_overlap_pairs": {
+          "bark/Tokyo Tower structure / stone": 0,
+          "bark/Tokyo Tower structure / orange": 0,
+          "foliage/Tokyo Tower structure / stone": 0,
+          "foliage/Tokyo Tower structure / orange": 0
+        },
+        "asphalt_candidate_triangles": 2,
+        "foundation_candidate_triangles": 0
+      },
+      {
+        "seed": 170,
+        "xy": [
+          3.8740885257720947,
+          70.13469696044922
+        ],
+        "root_z": 0.6800000071525574,
+        "soil_z": 0.6800003051757812,
+        "foliage_min_z": 3.3714656829833984,
+        "adjacent_pavement_z": [
+          0.45999908447265625,
+          0.4600067138671875
+        ],
+        "asphalt_samples": 49,
+        "road_hits": [],
+        "asphalt_overlap_area_m2": 0.0,
+        "foundation_overlap_area_m2": 0,
+        "tower_shell_overlap_pairs": {
+          "bark/Tokyo Tower structure / stone": 0,
+          "bark/Tokyo Tower structure / orange": 0,
+          "foliage/Tokyo Tower structure / stone": 0,
+          "foliage/Tokyo Tower structure / orange": 0
+        },
+        "asphalt_candidate_triangles": 2,
+        "foundation_candidate_triangles": 0
+      },
+      {
+        "seed": 172,
+        "xy": [
+          -6.877542018890381,
+          77.44239807128906
+        ],
+        "root_z": 0.6800000071525574,
+        "soil_z": 0.6800003051757812,
+        "foliage_min_z": 3.534242630004883,
+        "adjacent_pavement_z": [
+          0.45999908447265625,
+          0.459991455078125
+        ],
+        "asphalt_samples": 49,
+        "road_hits": [],
+        "asphalt_overlap_area_m2": 0,
+        "foundation_overlap_area_m2": 0,
+        "tower_shell_overlap_pairs": {
+          "bark/Tokyo Tower structure / stone": 0,
+          "bark/Tokyo Tower structure / orange": 0,
+          "foliage/Tokyo Tower structure / stone": 0,
+          "foliage/Tokyo Tower structure / orange": 0
+        },
+        "asphalt_candidate_triangles": 0,
+        "foundation_candidate_triangles": 0
+      },
+      {
+        "seed": 174,
+        "xy": [
+          -26.210601806640625,
+          70.70174407958984
+        ],
+        "root_z": 0.6800000071525574,
+        "soil_z": 0.6800079345703125,
+        "foliage_min_z": 3.703824281692505,
+        "adjacent_pavement_z": [
+          0.45999908447265625
+        ],
+        "asphalt_samples": 49,
+        "road_hits": [],
+        "asphalt_overlap_area_m2": 0.0,
+        "foundation_overlap_area_m2": 0,
+        "tower_shell_overlap_pairs": {
+          "bark/Tokyo Tower structure / stone": 0,
+          "bark/Tokyo Tower structure / orange": 0,
+          "foliage/Tokyo Tower structure / stone": 0,
+          "foliage/Tokyo Tower structure / orange": 0
+        },
+        "asphalt_candidate_triangles": 2,
+        "foundation_candidate_triangles": 0
+      }
+    ],
+    "nearby_building_meshes_checked": 11,
+    "editor_visible_additions": 18,
+    "editor_hidden_original_sources": 16,
+    "limits": [
+      "Projected asphalt/foundation intersections and tower shell pairs checked; not a complete solid-volume collision proof.",
+      "PLATEAU and legacy roof/wall building clearance uses five column samples per bed.",
+      "Local model surface heights only; no surveyed terrain or species accuracy claim."
+    ]
+  },
+  "shell_surface_audit": {
+    "ok": true,
+    "read_only": true,
+    "input_sha256": "966a81151beaf851a796bae8f91cad4d4106e82a40ccc69bad92aec48f1f6d9b",
+    "input_unchanged": true,
+    "obstacle_candidate_triangles": {
+      "pavement_0 unified road": 127,
+      "asphalt 15s road detail": 74,
+      "gutter 15s road detail": 35,
+      "wall3": 12,
+      "wall6": 6,
+      "PLATEAU_data57": 4
+    },
+    "tree_shell_overlap_pairs": {
+      "OTW approach 158 / bark": {
+        "pavement_0 unified road": 0,
+        "asphalt 15s road detail": 0,
+        "gutter 15s road detail": 0,
+        "wall3": 0,
+        "wall6": 0,
+        "PLATEAU_data57": 0
+      },
+      "OTW approach 158 / foliage": {
+        "pavement_0 unified road": 0,
+        "asphalt 15s road detail": 0,
+        "gutter 15s road detail": 0,
+        "wall3": 0,
+        "wall6": 0,
+        "PLATEAU_data57": 0
+      },
+      "OTW approach 160 / bark": {
+        "pavement_0 unified road": 0,
+        "asphalt 15s road detail": 0,
+        "gutter 15s road detail": 0,
+        "wall3": 0,
+        "wall6": 0,
+        "PLATEAU_data57": 0
+      },
+      "OTW approach 160 / foliage": {
+        "pavement_0 unified road": 0,
+        "asphalt 15s road detail": 0,
+        "gutter 15s road detail": 0,
+        "wall3": 0,
+        "wall6": 0,
+        "PLATEAU_data57": 0
+      },
+      "OTW approach 164 / bark": {
+        "pavement_0 unified road": 0,
+        "asphalt 15s road detail": 0,
+        "gutter 15s road detail": 0,
+        "wall3": 0,
+        "wall6": 0,
+        "PLATEAU_data57": 0
+      },
+      "OTW approach 164 / foliage": {
+        "pavement_0 unified road": 0,
+        "asphalt 15s road detail": 0,
+        "gutter 15s road detail": 0,
+        "wall3": 0,
+        "wall6": 0,
+        "PLATEAU_data57": 0
+      },
+      "OTW approach 166 / bark": {
+        "pavement_0 unified road": 0,
+        "asphalt 15s road detail": 0,
+        "gutter 15s road detail": 0,
+        "wall3": 0,
+        "wall6": 0,
+        "PLATEAU_data57": 0
+      },
+      "OTW approach 166 / foliage": {
+        "pavement_0 unified road": 0,
+        "asphalt 15s road detail": 0,
+        "gutter 15s road detail": 0,
+        "wall3": 0,
+        "wall6": 0,
+        "PLATEAU_data57": 0
+      },
+      "OTW approach 168 / bark": {
+        "pavement_0 unified road": 0,
+        "asphalt 15s road detail": 0,
+        "gutter 15s road detail": 0,
+        "wall3": 0,
+        "wall6": 0,
+        "PLATEAU_data57": 0
+      },
+      "OTW approach 168 / foliage": {
+        "pavement_0 unified road": 0,
+        "asphalt 15s road detail": 0,
+        "gutter 15s road detail": 0,
+        "wall3": 0,
+        "wall6": 0,
+        "PLATEAU_data57": 0
+      },
+      "OTW approach 170 / bark": {
+        "pavement_0 unified road": 0,
+        "asphalt 15s road detail": 0,
+        "gutter 15s road detail": 0,
+        "wall3": 0,
+        "wall6": 0,
+        "PLATEAU_data57": 0
+      },
+      "OTW approach 170 / foliage": {
+        "pavement_0 unified road": 0,
+        "asphalt 15s road detail": 0,
+        "gutter 15s road detail": 0,
+        "wall3": 0,
+        "wall6": 0,
+        "PLATEAU_data57": 0
+      },
+      "OTW approach 172 / bark": {
+        "pavement_0 unified road": 0,
+        "asphalt 15s road detail": 0,
+        "gutter 15s road detail": 0,
+        "wall3": 0,
+        "wall6": 0,
+        "PLATEAU_data57": 0
+      },
+      "OTW approach 172 / foliage": {
+        "pavement_0 unified road": 0,
+        "asphalt 15s road detail": 0,
+        "gutter 15s road detail": 0,
+        "wall3": 0,
+        "wall6": 0,
+        "PLATEAU_data57": 0
+      },
+      "OTW approach 174 / bark": {
+        "pavement_0 unified road": 0,
+        "asphalt 15s road detail": 0,
+        "gutter 15s road detail": 0,
+        "wall3": 0,
+        "wall6": 0,
+        "PLATEAU_data57": 0
+      },
+      "OTW approach 174 / foliage": {
+        "pavement_0 unified road": 0,
+        "asphalt 15s road detail": 0,
+        "gutter 15s road detail": 0,
+        "wall3": 0,
+        "wall6": 0,
+        "PLATEAU_data57": 0
+      }
+    },
+    "surface_samples": [
+      {
+        "seed": 158,
+        "pavement_z_at_center_and_corners": [
+          null,
+          0.459991455078125,
+          null,
+          0.45999908447265625,
+          null
+        ],
+        "soil_top_m": 0.68,
+        "soil_obscured_by_pavement": false
+      },
+      {
+        "seed": 160,
+        "pavement_z_at_center_and_corners": [
+          null,
+          0.4600067138671875,
+          null,
+          0.459991455078125,
+          null
+        ],
+        "soil_top_m": 0.68,
+        "soil_obscured_by_pavement": false
+      },
+      {
+        "seed": 164,
+        "pavement_z_at_center_and_corners": [
+          0.459991455078125,
+          0.459991455078125,
+          0.45999908447265625,
+          0.4600067138671875,
+          null
+        ],
+        "soil_top_m": 0.68,
+        "soil_obscured_by_pavement": false
+      },
+      {
+        "seed": 166,
+        "pavement_z_at_center_and_corners": [
+          0.45999908447265625,
+          0.4600067138671875,
+          0.45999908447265625,
+          0.45999908447265625,
+          null
+        ],
+        "soil_top_m": 0.68,
+        "soil_obscured_by_pavement": false
+      },
+      {
+        "seed": 168,
+        "pavement_z_at_center_and_corners": [
+          0.4600067138671875,
+          0.45999908447265625,
+          0.459991455078125,
+          0.45999908447265625,
+          null
+        ],
+        "soil_top_m": 0.68,
+        "soil_obscured_by_pavement": false
+      },
+      {
+        "seed": 170,
+        "pavement_z_at_center_and_corners": [
+          null,
+          0.45999908447265625,
+          null,
+          0.45999908447265625,
+          null
+        ],
+        "soil_top_m": 0.68,
+        "soil_obscured_by_pavement": false
+      },
+      {
+        "seed": 172,
+        "pavement_z_at_center_and_corners": [
+          null,
+          0.45999908447265625,
+          null,
+          null,
+          null
+        ],
+        "soil_top_m": 0.68,
+        "soil_obscured_by_pavement": false
+      },
+      {
+        "seed": 174,
+        "pavement_z_at_center_and_corners": [
+          null,
+          null,
+          null,
+          null,
+          0.45999908447265625
+        ],
+        "soil_top_m": 0.68,
+        "soil_obscured_by_pavement": false
+      }
+    ],
+    "limits": [
+      "Stored mesh triangle shell checks, not containment or complete evaluated-modifier collision certification.",
+      "Five planting-surface probes per bed; not a structural support or accessibility certification."
+    ]
+  },
+  "delta_reopen": {
+    "ok": true,
+    "objects": 18,
+    "unique_meshes": 8,
+    "materials": 4,
+    "images": 0,
+    "embedded_scripts": 0,
+    "scope": "Append-only local collection; city textures, buildings, cameras and lights excluded."
+  },
+  "duplicate_refusal": {
+    "ok": true,
+    "exit_code": 1,
+    "error": "Candidate already applied; refusing duplicate additions",
+    "candidate_unchanged": true
+  },
+  "west_path": {
+    "ok": true,
+    "method": "Fresh Blender export; exact arrays and ray/state replay against accepted PR47 audit",
+    "blender_version": "4.5.1 LTS",
+    "inputs": {
+      "before": "eae18eb05bd30f60a377983b8e7b9ed6add9d0979d9063855068798f6a473c12",
+      "after": "966a81151beaf851a796bae8f91cad4d4106e82a40ccc69bad92aec48f1f6d9b",
+      "seam_plan": "6bb6165ee58f9827162256023a7f5b8ebd514b66f05307b8bf01606df0a0127c"
+    },
+    "code_sha256": {
+      "scripts/tower_approach_west_recheck.py": "a94a299ee17233f1d66364a66f0559db734e289f2357f78280cb8de1a253ad5e",
+      "scripts/validate_mori_plaza_west_path.py": "986ace873cb4d3e2ca389d3e8c0a63f5191f14b36ea1fe15516c748980c1acc4"
+    },
+    "export_exit_code": 0,
+    "arrays": {
+      "before-0.npz": [
+        "counts",
+        "indices",
+        "material",
+        "normal",
+        "smooth",
+        "starts",
+        "vertices"
+      ],
+      "before-1.npz": [
+        "counts",
+        "indices",
+        "material",
+        "normal",
+        "smooth",
+        "starts",
+        "vertices"
+      ],
+      "before-2.npz": [
+        "counts",
+        "indices",
+        "material",
+        "normal",
+        "smooth",
+        "starts",
+        "vertices"
+      ],
+      "after-0.npz": [
+        "counts",
+        "indices",
+        "material",
+        "normal",
+        "smooth",
+        "starts",
+        "vertices"
+      ],
+      "after-1.npz": [
+        "counts",
+        "indices",
+        "material",
+        "normal",
+        "smooth",
+        "starts",
+        "vertices"
+      ],
+      "after-2.npz": [
+        "counts",
+        "indices",
+        "material",
+        "normal",
+        "smooth",
+        "starts",
+        "vertices"
+      ]
+    },
+    "identical_rays_per_stage": 5517,
+    "seam_and_patch_state_unchanged": true,
+    "reference_report_sha256": "09dd3d78e6eef9d6e2bc8efe41245255929813007a833f615dbe9b4a0f64a72f",
+    "accepted_metrics_reused_on_identical_geometry": {
+      "ok": true,
+      "objects": {
+        "asphalt 15s road detail": {
+          "original_vertices_retained": 423080,
+          "outside_faces_preserved": 140410,
+          "xy_symmetric_difference_m2": 8.717737070496057e-05,
+          "maximum_vertex_height_error_m": 7.269504664342286e-07,
+          "inverted_new_walking_faces": 0
+        },
+        "gutter 15s road detail": {
+          "original_vertices_retained": 102051,
+          "outside_faces_preserved": 33207,
+          "xy_symmetric_difference_m2": 7.878473200248481e-05,
+          "maximum_vertex_height_error_m": 7.269504664342286e-07,
+          "inverted_new_walking_faces": 0
+        },
+        "pavement_0 unified road": {
+          "original_vertices_retained": 278849,
+          "outside_faces_preserved": 270983,
+          "xy_symmetric_difference_m2": 3.994781583835372e-05,
+          "maximum_vertex_height_error_m": 7.258597235770825e-07,
+          "inverted_new_walking_faces": 0
+        }
+      },
+      "boundary_samples": 75,
+      "selected_boundary_samples": 98,
+      "seam_fill": {
+        "closed_consistent_mesh": true,
+        "area_m2": 0.07852012412424614,
+        "overlap_existing_m2": 1.5634274417435004e-07,
+        "overlap_adopted_seam_m2": 0.0
+      },
+      "boundary_maximum_rise_m": 3.5762786865234375e-07,
+      "unresolved_boundary_probes": [],
+      "prior_junction_and_entrance_probes_preserved": 74,
+      "flat_road_grid_probes": 338,
+      "limits": [
+        "Fixed model-space probes; no surveyed elevations, continuous collision or accessibility certification.",
+        "Only three road meshes inside the declared rectangle may change."
+      ]
+    },
+    "inputs_and_reference_unchanged": true,
+    "seconds": 58.062
+  },
+  "astra_bounded_check": {
+    "ok": true,
+    "feature_id": "bldg_af7335da-7542-44dd-964d-8cccd2b046ff",
+    "object": "bldg_af7335da-7542-44dd-964d-8cccd2b046ff",
+    "library_collections": [],
+    "world_bounds": {
+      "minimum": [
+        -513.6962280273438,
+        353.651611328125,
+        0.3199999928474426
+      ],
+      "maximum": [
+        -405.51690673828125,
+        454.4426574707031,
+        236.3325958251953
+      ]
+    },
+    "vertices": 235,
+    "polygons": 466,
+    "scene_saved": false,
+    "target_sha256": "4b2d6d0af6813e7748bf6890b608c217751945b55c88b733ba31adeac6188243",
+    "minimum_xy_distance_m": 463.0475392297978,
+    "file_scope_disjoint": true,
+    "combined_astra_city_not_generated": true
+  },
+  "rendered_images": {
+    "before-approach-aerial.png": {
+      "sha256": "fdbe54459ba3417e574c3139ae320a4807dc471f8c3b7771f1043b60462bd237",
+      "decoded_float_pixel_sha256": "db7fc2b8f8245c68edd6c9ef96207ed2572f0e3c2b3166b7719571295ef3e75f",
+      "camera_matrix_world": [
+        [
+          -0.715376079082489,
+          -0.45965340733528137,
+          0.5262658596038818,
+          106.0
+        ],
+        [
+          0.6987395882606506,
+          -0.47059738636016846,
+          0.5387959480285645,
+          138.0
+        ],
+        [
+          -5.8058418517248356e-08,
+          0.753164529800415,
+          0.657832145690918,
+          110.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "before-walk-along-row.png": {
+      "sha256": "9939f73b06c11e87f6c6c86c13198f095794c5dcb880f49b758bfbb77c97133d",
+      "decoded_float_pixel_sha256": "a5a2ebeabe610890b61f90413acf96afc5c1f8d3e3e0e38e9767215e9e296179",
+      "camera_matrix_world": [
+        [
+          0.5324509739875793,
+          0.021949773654341698,
+          0.8461761474609375,
+          82.0
+        ],
+        [
+          0.8464608788490295,
+          -0.013807112351059914,
+          -0.5322718620300293,
+          21.0
+        ],
+        [
+          1.7882404446112332e-09,
+          0.9996636509895325,
+          -0.025931235402822495,
+          2.0999999046325684
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "before-planting-bed.png": {
+      "sha256": "9d4f77ffa5370c1ca5226c4b9c97fa9a94621b6e6dd805d19df300cfc693b281",
+      "decoded_float_pixel_sha256": "12bb947ef4378516fc23bd38643d512c82a00b8049433da4692af2155387d14f",
+      "camera_matrix_world": [
+        [
+          0.6695200800895691,
+          -0.14647427201271057,
+          0.7282088398933411,
+          41.0
+        ],
+        [
+          0.7427939772605896,
+          0.13202504813671112,
+          -0.6563736796379089,
+          44.0
+        ],
+        [
+          6.213076630956493e-08,
+          0.9803645610809326,
+          0.19719360768795013,
+          2.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "before-tower-context.png": {
+      "sha256": "06ac4290674e2a304ac963100cd9977884e69bcec39d22703286b72998b5cad7",
+      "decoded_float_pixel_sha256": "1eac08620fe5f5419d7239dd64ffc79fc6ea721e47306a3d5a0999350f9ad28f",
+      "camera_matrix_world": [
+        [
+          -0.8384436368942261,
+          -0.06241605803370476,
+          0.5414023399353027,
+          260.0
+        ],
+        [
+          0.5449882745742798,
+          -0.09602470695972443,
+          0.8329267501831055,
+          400.0
+        ],
+        [
+          -4.306083933869331e-09,
+          0.9934200644493103,
+          0.11452733725309372,
+          215.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "before-west-path-walk.png": {
+      "sha256": "f2a9329ee588ff48914254f7c8dc05c18880a8b6477b7d1f0b039bc879081a1c",
+      "decoded_float_pixel_sha256": "8bd59046e95c9c848220f2fff9d2017d4bcd58c9e073c7b9254daaa01d5f581d",
+      "camera_matrix_world": [
+        [
+          0.8666224479675293,
+          0.04638555273413658,
+          -0.4968036711215973,
+          -418.90557861328125
+        ],
+        [
+          -0.49896442890167236,
+          0.08056430518627167,
+          -0.8628695607185364,
+          346.27447509765625
+        ],
+        [
+          -4.119044660910731e-08,
+          0.9956694841384888,
+          0.0929635763168335,
+          1.7000000476837158
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "before-west-path-edge.png": {
+      "sha256": "0b0139569b7cac053545ea430bdb3e56adc5015c30d95a14f22cb56757f5a5d2",
+      "decoded_float_pixel_sha256": "a6a506d78c5e40f0bf07487194921ca6731bfcb2750b06168b10f80376ede5bf",
+      "camera_matrix_world": [
+        [
+          0.900844156742096,
+          -0.07429920881986618,
+          0.42773759365081787,
+          -407.27801513671875
+        ],
+        [
+          0.4341426193714142,
+          0.15417048335075378,
+          -0.8875537514686584,
+          356.1131896972656
+        ],
+        [
+          3.2592808452136524e-08,
+          0.9852467179298401,
+          0.17114003002643585,
+          1.399999976158142
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "after-approach-aerial.png": {
+      "sha256": "86a4c38865121b77edf7197c9ee1ca3676f323e117d614215b6cf88242d035ca",
+      "decoded_float_pixel_sha256": "967d8a0a5ed71ec5716f3a284bc3e4283d63bc9211e16485fc0f871393e38344",
+      "camera_matrix_world": [
+        [
+          -0.715376079082489,
+          -0.45965340733528137,
+          0.5262658596038818,
+          106.0
+        ],
+        [
+          0.6987395882606506,
+          -0.47059738636016846,
+          0.5387959480285645,
+          138.0
+        ],
+        [
+          -5.8058418517248356e-08,
+          0.753164529800415,
+          0.657832145690918,
+          110.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "after-walk-along-row.png": {
+      "sha256": "be35863281d43f2535bc60ef136fce6ebfb99c9f7fac40f026efb313ace61fd7",
+      "decoded_float_pixel_sha256": "7a7959c6c9d5e4442018c2fec81c08e46dc9963744d23286d0849ca7657087e4",
+      "camera_matrix_world": [
+        [
+          0.5324509739875793,
+          0.021949773654341698,
+          0.8461761474609375,
+          82.0
+        ],
+        [
+          0.8464608788490295,
+          -0.013807112351059914,
+          -0.5322718620300293,
+          21.0
+        ],
+        [
+          1.7882404446112332e-09,
+          0.9996636509895325,
+          -0.025931235402822495,
+          2.0999999046325684
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "after-planting-bed.png": {
+      "sha256": "1ec543633323f7ec2d72d0d2c8fb39653e9f7fbd7395b04006a46fce3dd27eb6",
+      "decoded_float_pixel_sha256": "36918d2f2c7e924b8c7dfb8f0aeb0fb64adf242b1706702c9f055a285b9d4066",
+      "camera_matrix_world": [
+        [
+          0.6695200800895691,
+          -0.14647427201271057,
+          0.7282088398933411,
+          41.0
+        ],
+        [
+          0.7427939772605896,
+          0.13202504813671112,
+          -0.6563736796379089,
+          44.0
+        ],
+        [
+          6.213076630956493e-08,
+          0.9803645610809326,
+          0.19719360768795013,
+          2.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "after-tower-context.png": {
+      "sha256": "74efbe29b770ef19052e1f76298e9a4dc5b54e6d796c10c0779cf21280e2eeb8",
+      "decoded_float_pixel_sha256": "f1f2bada435621e713ad75555a799fa96c49b72be086ca1776b73a0a0698a865",
+      "camera_matrix_world": [
+        [
+          -0.8384436368942261,
+          -0.06241605803370476,
+          0.5414023399353027,
+          260.0
+        ],
+        [
+          0.5449882745742798,
+          -0.09602470695972443,
+          0.8329267501831055,
+          400.0
+        ],
+        [
+          -4.306083933869331e-09,
+          0.9934200644493103,
+          0.11452733725309372,
+          215.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "after-west-path-walk.png": {
+      "sha256": "20984146dd21dd8d0b7442f293fccbed51905f7bfa5fbb6c0ded3a230d665bea",
+      "decoded_float_pixel_sha256": "705cccf5573de4cae30cf9e0388bb66264ae9c652da17645831c03a41573850b",
+      "camera_matrix_world": [
+        [
+          0.8666224479675293,
+          0.04638555273413658,
+          -0.4968036711215973,
+          -418.90557861328125
+        ],
+        [
+          -0.49896442890167236,
+          0.08056430518627167,
+          -0.8628695607185364,
+          346.27447509765625
+        ],
+        [
+          -4.119044660910731e-08,
+          0.9956694841384888,
+          0.0929635763168335,
+          1.7000000476837158
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "after-west-path-edge.png": {
+      "sha256": "8c0bf29468e201d23da48b8b2af27bc643e730620a02dd3348f42bdab06b52fa",
+      "decoded_float_pixel_sha256": "b10ae5fc807304ad09081f071c05ca96adf891318a6fc19674424e4161a7d839",
+      "camera_matrix_world": [
+        [
+          0.900844156742096,
+          -0.07429920881986618,
+          0.42773759365081787,
+          -407.27801513671875
+        ],
+        [
+          0.4341426193714142,
+          0.15417048335075378,
+          -0.8875537514686584,
+          356.1131896972656
+        ],
+        [
+          3.2592808452136524e-08,
+          0.9852467179298401,
+          0.17114003002643585,
+          1.399999976158142
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  },
+  "public_images": {
+    "before-walk-along-row.png": {
+      "source_sha256": "9939f73b06c11e87f6c6c86c13198f095794c5dcb880f49b758bfbb77c97133d",
+      "public_sha256": "ded4caa1c0fa8d9229c1ebdf157dddc279a5737aeaa5f1ebb987a849f5d49dc9",
+      "public_bytes": 800830,
+      "idat_sha256": "a75d11a995d63217cc34ecd1f340fe3f7e0ee1066abd283ea50cd65add1cc984",
+      "removed_metadata_chunks": [
+        "eXIf",
+        "tEXt"
+      ],
+      "retained_chunk_types": [
+        "IHDR",
+        "oFFs",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "image_and_color_chunks_unchanged": true
+    },
+    "after-walk-along-row.png": {
+      "source_sha256": "be35863281d43f2535bc60ef136fce6ebfb99c9f7fac40f026efb313ace61fd7",
+      "public_sha256": "0c30ccb1494271f1171b8364b3dd1644d5901405f0b9e1914c3b91baf3db3e9c",
+      "public_bytes": 835159,
+      "idat_sha256": "b8c4bcdf95bc0ff163c2cf19209efc8133aa7d1175548cf28fd57a1b2a5b2687",
+      "removed_metadata_chunks": [
+        "eXIf",
+        "tEXt"
+      ],
+      "retained_chunk_types": [
+        "IHDR",
+        "oFFs",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "image_and_color_chunks_unchanged": true
+    },
+    "before-planting-bed.png": {
+      "source_sha256": "9d4f77ffa5370c1ca5226c4b9c97fa9a94621b6e6dd805d19df300cfc693b281",
+      "public_sha256": "7eca5e3a38499a48ce9f7cec2d227d386c644d3e64b12e6692bcb7f9aed6f8b8",
+      "public_bytes": 646390,
+      "idat_sha256": "b932e964c2c2d49929d674a66a22263c8c3c0265a385430a0dc242272eb94629",
+      "removed_metadata_chunks": [
+        "eXIf",
+        "tEXt"
+      ],
+      "retained_chunk_types": [
+        "IHDR",
+        "oFFs",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "image_and_color_chunks_unchanged": true
+    },
+    "after-planting-bed.png": {
+      "source_sha256": "1ec543633323f7ec2d72d0d2c8fb39653e9f7fbd7395b04006a46fce3dd27eb6",
+      "public_sha256": "eef424af57e36781425808a86e8f77eafccda5aeffa2ffd07531c65849d6c238",
+      "public_bytes": 672720,
+      "idat_sha256": "fcaa97b60e3e2720db4810ecbc0c45fe17590eb13a0752e5ba88f59c75af7a4e",
+      "removed_metadata_chunks": [
+        "eXIf",
+        "tEXt"
+      ],
+      "retained_chunk_types": [
+        "IHDR",
+        "oFFs",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "image_and_color_chunks_unchanged": true
+    },
+    "before-approach-aerial.png": {
+      "source_sha256": "fdbe54459ba3417e574c3139ae320a4807dc471f8c3b7771f1043b60462bd237",
+      "public_sha256": "400d15984d24efd5b6e2ee5204b17681422e7c78dcb7831fcd896353f7177861",
+      "public_bytes": 849089,
+      "idat_sha256": "65ba6baf26a1e7955f1a00e687e6b187887f9462850396488260498c8c168b8e",
+      "removed_metadata_chunks": [
+        "eXIf",
+        "tEXt"
+      ],
+      "retained_chunk_types": [
+        "IHDR",
+        "oFFs",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "image_and_color_chunks_unchanged": true
+    },
+    "after-approach-aerial.png": {
+      "source_sha256": "86a4c38865121b77edf7197c9ee1ca3676f323e117d614215b6cf88242d035ca",
+      "public_sha256": "72af86d9325a22631a90a0d7e98a06a5c1d80fb8676294343ad8cba8772c270e",
+      "public_bytes": 859933,
+      "idat_sha256": "4c055b9c1e6df8bc62dd6b81ef68232239dd7bba5443d7929b32e3a6570fcaa4",
+      "removed_metadata_chunks": [
+        "eXIf",
+        "tEXt"
+      ],
+      "retained_chunk_types": [
+        "IHDR",
+        "oFFs",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "image_and_color_chunks_unchanged": true
+    }
+  },
+  "image_review": {
+    "checked": 12,
+    "method": "Every Before/After PNG visually inspected",
+    "result": "Raised planter soil visible; tree row present; no obvious new defect in the two west path views",
+    "human_adoption": "pending"
+  },
+  "tests": {
+    "portable_total": 258,
+    "portable_passed": 251,
+    "portable_optional_skips": 7,
+    "portable_failures": 0,
+    "related_total": 26,
+    "related_passed": 26,
+    "compileall_exit_code": 0,
+    "portable_log_sha256": "fdfbd5d3559f013d87ef826a08ada8ab329fd2237aaf88ff80d467fba58b718e",
+    "related_log_sha256": "d5a7163d3c23962f3324c967c39eb9727a92b3bd1d888fa2d70841874e1c7e18"
+  },
+  "provenance": {
+    "components": "Existing consent-confirmed CC-BY-4.0 prototype meshes and shaders; ark4ez / OurJapan",
+    "positions_and_species": "Inherited illustrative OSM-derived seed layout; exact real positions/species/count unverified",
+    "planters": "Original creative proposal with soil at .68m and rim at .72m; local ground at 0m and adjacent paving at .46m",
+    "tree166": "Only local XY display scale changed to .95 for bark/foliage; original mesh and horizontal center retained",
+    "publication": "Account holder approved Draft PR with comparison images on 2026-10-02; no additional city/third-party license grant"
+  },
+  "limits": [
+    "Surveyed planting positions, species, season, elevations and continuous pedestrian width unverified.",
+    "Planter lower foundation overlaps part of inherited pavement below .46m as an inserted-foundation model expression; no excavation/traffic collision model produced.",
+    "Stored triangle-shell intersections plus five column probes per bed; not complete containment, evaluated-modifier or citywide collision certification.",
+    "Recorded fingerprints do not cover every animation/modifier/node feature; 36 inherited warnings remain.",
+    "West GEOS measurements reused only after exact saved arrays/rays/seam/patch comparison; GEOS not rerun.",
+    "Astra target library inspected for namespace/XY enclosing bounds only; combined Astra city not generated.",
+    "Timing is one local run, not a warmed performance median or separate-PC test.",
+    "Scene, packed textures, fixed inputs and private logs stay local; human adoption and merge remain pending."
+  ]
+}
