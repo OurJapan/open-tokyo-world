@@ -15,9 +15,9 @@ Windowsの専用headless Edge 154.0.4258.48、Node 24.19.0、Playwright 1.62.1�
 | ページのTaskDuration差分 | 151.047 ms | 0.555 ms |
 | ページのScriptDuration差分 | 62.841 ms | 0 ms |
 
-WebGLのclearを描画回数として数え、drawElements/drawArraysをdraw callとして数えた。CPU欄はCDP `Performance.getMetrics` の差分で、当該ページの処理時間である。端末全体の使用率やバッテリー改善率ではない。実際の計測時間はBefore 2,504.3〜2,516.0ms、After 2,503.8〜2,512.9msだった。
+WebGLのclearを描画回数として数え、drawElements/drawArraysをdraw callとして数えた。CPU欄はCDP `Performance.getMetrics` の差分で、当該ページの処理時間である。この時間には両版に同じように加えた計測用ラッパーや採取処理も含まれる。端末全体の使用率やバッテリー改善率ではない。実際の計測時間はBefore 2,504.3〜2,516.0ms、After 2,503.8〜2,512.9msだった。
 
-カメラ使用中はBefore 139描画/1,012.4ms、After 143描画/1,014.2msを記録した。回転の減衰中も描画を続け、操作終了、カメラ終了、復帰後の静止状態では描画が止まった。読み込み速度・市街地全体のFPS改善は計測していない。
+カメラ使用中はBefore 139描画/1,012.4ms、After 143描画/1,014.2msを記録した。この欄は継続描画の確認記録で、動作中のFPSを比較するための計測ではない。回転の減衰中も描画を続け、操作終了、カメラ終了、復帰後の静止状態では描画が止まった。読み込み速度・市街地全体のFPS改善は計測していない。
 
 ## 表示品質
 
@@ -60,5 +60,7 @@ TEST_URL=<candidate URL> PERF_OUTPUT=<after output> BASELINE_REPORT=<before outp
 PowerShellでは各値を `$env:TEST_URL='...'` の形式で設定する。テストは専用headlessインスタンスを起動し、既存ブラウザの画面を切り替えない。単体のcandidate検証では `BASELINE_REPORT` は不要。
 
 [provenance.json](evidence/idle-rendering-20261002/provenance.json) に基準commit、検証したsource blob、build/fixture hash、検証範囲を記録した。全ログとビルドは作業worktreeのignored `data/local/viewer-performance/` にある。
+
+指定main `234b163` 上での統合確認と描画要求の追加検証は [INTEGRATION-REVIEW.md](INTEGRATION-REVIEW.md) に記録した。元の計測JSONと画像はそのまま保全している。
 
 今回はdesktop Chromiumとfake cameraによる検証まで。iPhone Safari、実カメラ、電池・発熱、共通cityの表示は未検証。次の確認はiPhone Safariで回転、濃さ、camera終了/再開、background復帰を試すこと。push/PRは親の統合確認後に行う。
