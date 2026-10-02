@@ -1,0 +1,8 @@
+{
+  "bytes": 631833930,
+  "sha256": "7a5cd95d2223092a1a2931131eeadd3978605d8e7293b5908aada3b13f301350",
+  "blender_version": "4.5.1 LTS",
+  "description": "Immutable PR59 saved tower-lift-v2-final-02 candidate. FootTown v2 may replace only four pinned FootTown meshes and add three finish groups; the other 3354 existing objects are protected. Does not change the shared city registration.",
+  "provenance": "docs/tower-structure-v1-validation.json",
+  "local_input_hint": "data/local/reviews/tower-lift-v2-final-02/after.blend"
+}

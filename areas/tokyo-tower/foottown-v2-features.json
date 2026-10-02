@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "features": [],
+  "waiver_input_sha256": "7a5cd95d2223092a1a2931131eeadd3978605d8e7293b5908aada3b13f301350",
+  "legacy_empty_objects": {
+    "Tokyo Tower decks and interior / wood": "Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Tokyo Tower decks and interior / stone": "Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Tokyo Tower decks and interior / soil": "Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Tokyo Tower decks and interior / leaf": "Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Tokyo Tower decks and interior / darkmetal": "Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target."
+  },
+  "description": "The pinned PR59 candidate already has feature IDs. Preserve all existing IDs and custom properties; do not remap collections."
+}
