@@ -1,0 +1,192 @@
+{
+  "recorded_at": "2026-10-02T08:52:03.355Z",
+  "target_main": "234b163210ac19d61f33e86b6920b8b26f9d453a",
+  "original_commit": "04402500c8bbb2f55441fa909190d92bf2296e87",
+  "cherry_pick_commit": "b6306bbf552fc21538dcdee4ed80aed74ccb66a9",
+  "integration_branch": "codex/viewer-pr47-integration-20261002",
+  "file_overlap_with_pr47": [],
+  "source_git_blobs": {
+    "web/spatial-viewer/src/main.js": "d12d5baf2e48d00ed5b58f9b9cf70754e7352c72",
+    "web/spatial-viewer/src/render-loop.js": "1cf92027389193e95c39ae470d53f375ee91f124",
+    "web/spatial-viewer/tests/render-transitions-browser.cjs": "877816525062f90bbbe3fde30f38d64b93c91f9d"
+  },
+  "production_source_unchanged": true,
+  "original_evidence_unchanged": true,
+  "build_sha256": "3575dcb988cec4453181997856432ce00d0c4a02a163a7c96f49f62f9c418e9f",
+  "offline_shell_sha256": "6d7bb416c073e5a3144b43c7143a2d0831abc6af92051d9108900057fe72d8ee",
+  "fixture_sha256": "0bd314b3dc7e691f843293c490f4e27c6be3bc61bba28aad31dd12ed776d5f08",
+  "reused_checks": {
+    "viewer_unit_tests": 33,
+    "render_browser": true,
+    "field_browser": true,
+    "reason": "Source blobs, dependency lock, public inputs and production build are identical."
+  },
+  "portable_checks": {
+    "total": 232,
+    "passed": 225,
+    "skipped": 7,
+    "skip_reasons": [
+      "Optional production Shapely unavailable (2).",
+      "Optional OpenCV photo-estimation dependencies unavailable (5)."
+    ]
+  },
+  "additional_browser_checks": {
+    "browser": "154.0.4258.48",
+    "url": "http://127.0.0.1:59532/",
+    "cases": [
+      {
+        "name": "waiting_for_delayed_asset",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "resize_and_opacity_before_asset",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "delayed_asset_complete",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "late_model_is_visible_at_latest_opacity_and_size",
+        "passed": true,
+        "orange_pixels": 6006
+      },
+      {
+        "name": "initially_hidden_load_and_edits_resume",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "opacity_after_resume",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "damping_interrupted_by_visibility_resumes",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "reset_after_resumed_damping",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "real_browser_freeze_resume",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "camera_denial_returns_to_viewer",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "active_camera_real_browser_freeze_resume",
+        "passed": true
+      },
+      {
+        "name": "camera_background_stop_and_viewer_resume",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "pending_camera_cancel_does_not_restart",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "camera_track_end_returns_to_idle_viewer",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "camera_pagehide_pageshow_stops_dead_stream",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "capture_then_stop_returns_to_viewer",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "saved_draft_dialog_viewer_stays_idle",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "draft_escape_cancel_keeps_viewer_idle",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "reset_after_draft_cancel_redraws",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "submission_failure_keeps_viewer_idle",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "identical_submission_retry_keeps_viewer_idle",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "next_photo_returns_to_viewer",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "camera_retry_after_submission",
+        "passed": true,
+        "idle_draws": 0
+      }
+    ],
+    "errors": [],
+    "limits": [
+      "Original public fixture and fake camera only. External API responses are mocked locally.",
+      "Visibility events are controlled in a dedicated document; real CDP freeze/resume is also checked. Headless tabs do not report hidden on tab switching.",
+      "These assertions verify rendering state transitions, not FPS, battery or thermal improvement."
+    ],
+    "passed": true
+  },
+  "screenshot_comparisons": {
+    "hidden-load-resume": {
+      "sha256": "6d1a8995b036d8fdda415dad475356de26c851ecbf54247b7365f66be22d7e3d",
+      "matches_recorded_opaque_image": true
+    },
+    "final-viewer": {
+      "sha256": "6d1a8995b036d8fdda415dad475356de26c851ecbf54247b7365f66be22d7e3d",
+      "matches_recorded_opaque_image": true
+    }
+  },
+  "measurement_review": {
+    "same_browser_viewport_scale_and_model": true,
+    "original_measurements_reused": true,
+    "before_idle_median": {
+      "frames": 361,
+      "draw_calls": 4693,
+      "task_ms": 151.04700000000005,
+      "script_ms": 62.84100000000004
+    },
+    "after_idle_median": {
+      "frames": 0,
+      "draw_calls": 0,
+      "task_ms": 0.5550000000000277,
+      "script_ms": 0
+    },
+    "scope": "Stationary public fixture, after model load. Counts measure redundant idle drawing.",
+    "cpu_limit": "Instrumented document TaskDuration/ScriptDuration, not whole-machine CPU/GPU or energy.",
+    "no_fps_or_battery_improvement_claim": true
+  },
+  "shared_checkout_changed": false,
+  "models_or_generation_checks_changed": false,
+  "push_pr_merge_performed": false
+}

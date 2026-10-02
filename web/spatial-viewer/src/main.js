@@ -11,10 +11,13 @@ import { Sensors } from './sensors.js';
 import { fresh, cameraQuaternion, geoGate, containRect } from './spatial.js';
 import { makeDraft, validateDraft, sha256 } from './observation.js';
 import { submitObservation } from './submission.js';
+import { createRenderLoop } from './render-loop.js';
 
 const $=id=>document.getElementById(id);
 const stage=$('stage'),video=$('camera'),host=$('canvas-host');
 let manifest,model,renderer,scene,camera,controls,grid;
+const renderLoop=createRenderLoop(frame);
+if(document.hidden)renderLoop.pause();
 let active=false,busy=false,viewPose=null,photo=null,draft=null,previewURL=null,packedFile=null;
 let capturing=false,draftGeneration=0;
 const draftStore=createDraftStore();
@@ -28,13 +31,14 @@ let catalogue=null;
 fetch(`${import.meta.env.BASE_URL}data/iidabashi-buildings.json`).then(r=>{if(!r.ok)throw Error();return r.json();}).then(d=>{catalogue=d;}).catch(()=>{});
 const autoUpload=createAutoUpload({store:draftStore,submit:args=>submitObservation({endpoint:submissionEndpoint,...args}),onChange:async error=>{if(error)$('capture-status').textContent='送信結果を端末に保存できませんでした。写真は削除せず再試行してください。';await refreshSaved();}});
 const testAnchor=new THREE.Vector3(0,0,-25);
+const previousControlPosition=new THREE.Vector3();
 const sensors=new Sensors({onChange:()=>{
   for(const type of ['camera','location','orientation'])$(type+'-status').textContent=sensors.state[type];
 }});
 const say=text=>{$('notice').textContent=text;};
 function resetView() {
   if(active)return;
-  camera.position.set(27,20,33);camera.up.set(0,1,0);controls.target.set(0,6,0);controls.update();
+  camera.position.set(27,20,33);camera.up.set(0,1,0);controls.target.set(0,6,0);controls.update();renderLoop.requestRender();
 }
 function resize() {
   if(!renderer)return;
@@ -44,10 +48,12 @@ function resize() {
   renderer.setSize(rect.width,rect.height);camera.aspect=rect.width/rect.height;
   camera.fov=active?2*Math.atan(Math.tan(Math.PI/6)/camera.aspect)*180/Math.PI:48;
   camera.updateProjectionMatrix();
+  renderLoop.requestRender();
 }
 function setOpacity() {
   const opacity=Number($('opacity').value)/100;$('opacity-label').value=Math.round(opacity*100)+'%';
   model?.traverse(o=>{if(o.isMesh){o.material.transparent=true;o.material.opacity=opacity;o.material.depthWrite=opacity>.99;}});
+  renderLoop.requestRender();
 }
 function anchorTest() {
   camera.position.set(0,1.6,0);
@@ -136,7 +142,8 @@ function saveDraft(e) {
 }
 let lastDiagnostic=0;
 function frame(now) {
-  if(!renderer)return;
+  if(!renderer)return false;
+  let settling=false;
   if(!document.hidden){
     if(active&&model){
       const time=Date.now(),orientation=fresh(sensors.orientation,time,2000)?sensors.orientation:null;
@@ -155,16 +162,20 @@ function frame(now) {
         height_assumption_m:1.6,method:'display-only-estimate',orientation_measured:!!orientation};
       if(now-lastDiagnostic>500){say(message);}
       if(!sensors.stream?.getVideoTracks().some(t=>t.readyState==='live'))stop('カメラが停止しました。もう一度カメラを開始してください。');
-    }else controls?.update();
+    }else{
+      previousControlPosition.copy(camera.position);settling=controls?.update()??false;
+      // Finish the subpixel damping tail beyond OrbitControls' change-event threshold.
+      settling=settling||previousControlPosition.distanceToSquared(camera.position)>1e-14;
+    }
     renderer.render(scene,camera);
-    if(now-lastDiagnostic>500){
+    if(now-lastDiagnostic>500||(!active&&!settling)){
       $('diagnostics').textContent=JSON.stringify({secure_context:window.isSecureContext,mode:active?'camera':'viewer',
         location:sensors.location,orientation:sensors.orientation,display_pose:viewPose,
         frame:manifest?.frame,model_bytes:manifest?.assets[0].bytes,triangles:renderer.info.render.triangles},null,2);
       lastDiagnostic=now;
     }
   }
-  requestAnimationFrame(frame);
+  return !document.hidden&&(active||settling);
 }
 async function init() {
   $('start').disabled=true;
@@ -172,8 +183,9 @@ async function init() {
     renderer=new THREE.WebGLRenderer({alpha:true,antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));host.append(renderer.domElement);
     scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(48,1,.1,1500);
     controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.minDistance=10;controls.maxDistance=100;controls.maxPolarAngle=Math.PI*.49;
+    controls.addEventListener('change',renderLoop.requestRender);
     scene.add(new THREE.HemisphereLight(0xd9edff,0x36536a,2.7));const sun=new THREE.DirectionalLight(0xffdbc4,3);sun.position.set(8,20,12);scene.add(sun);
-    grid=new THREE.GridHelper(60,12,0xd4d4d8,0xe7e7eb);grid.material.transparent=true;grid.material.opacity=.45;scene.add(grid);resetView();resize();requestAnimationFrame(frame);
+    grid=new THREE.GridHelper(60,12,0xd4d4d8,0xe7e7eb);grid.material.transparent=true;grid.material.opacity=.45;scene.add(grid);resetView();resize();
     const area=selectedArea(location.search);$('area').value=area.id;$('viewer-title').textContent=area.label;
     const response=await fetch(`${import.meta.env.BASE_URL}data/${area.manifest}`);if(!response.ok)throw new Error('表示データを取得できませんでした。');manifest=await response.json();
     if(manifest.schema_version!=='otw-spatial-manifest/0.1'||!manifest.fixture||manifest.assets.length!==1)throw new Error('未対応の表示データです。');
@@ -183,7 +195,8 @@ async function init() {
     const bytes=await r.arrayBuffer();if(bytes.byteLength!==asset.bytes||await sha256(bytes)!==asset.sha256)throw new Error('3Dモデルの内容がmanifestと一致しません。');
     const gltf=await new GLTFLoader().parseAsync(bytes,'');model=gltf.scene;scene.add(model);setOpacity();
     $('loading').hidden=true;$('start').disabled=false;
-    renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();stop('3D描画が中断されました。ページを再読み込みしてください。');$('start').disabled=true;});
+    renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();renderLoop.pause();stop('3D描画が中断されました。ページを再読み込みしてください。');$('start').disabled=true;});
+    renderer.domElement.addEventListener('webglcontextrestored',resumeRendering);
   }catch(e){$('loading').textContent=`${e.message} ページを再読み込みしてください。`;$('start').disabled=true;}
 }
 $('area').addEventListener('change',()=>{
@@ -240,8 +253,10 @@ $('placement').addEventListener('change',()=>{
   if(active)anchorTest();
 });
 window.addEventListener('resize',resize);video.addEventListener('resize',resize);new ResizeObserver(resize).observe(stage);
-document.addEventListener('visibilitychange',()=>{if(document.hidden){if(draft&&!sending)persistDraft().catch(()=>{localSaved=false;});if(active||busy)stop('画面を離れたためカメラとセンサーを停止しました。ボタンから再開できます。');}});
-window.addEventListener('pagehide',()=>{sensors.stop();});
+function resumeRendering(){if(!document.hidden&&!renderer?.getContext().isContextLost())renderLoop.resume();}
+document.addEventListener('visibilitychange',()=>{if(document.hidden){renderLoop.pause();if(draft&&!sending)persistDraft().catch(()=>{localSaved=false;});if(active||busy)stop('画面を離れたためカメラとセンサーを停止しました。ボタンから再開できます。');}else resumeRendering();});
+window.addEventListener('pagehide',()=>{renderLoop.pause();sensors.stop();});
+window.addEventListener('pageshow',resumeRendering);
 window.addEventListener('beforeunload',e=>{if(capturing||saving||sending||(draft&&(!localSaved||draft.description!==$('description').value||draft.observation_type!==$('observation-type').value))){e.preventDefault();e.returnValue='';}});
 refreshSaved();
   init();
