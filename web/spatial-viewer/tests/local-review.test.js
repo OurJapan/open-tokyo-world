@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {LOCAL_FEATURE,localReviewSelection,validateLocalManifest,validateLocalGlb,validateLocalMeasurements,localView} from '../src/local-review.js';
+import {PerspectiveCamera,Vector3} from 'three';
+import {LOCAL_FEATURE,localReviewSelection,validateLocalManifest,validateLocalGlb,validateLocalMeasurements,localView,resizeLocalView} from '../src/local-review.js';
 
 const manifest=()=>({schema_version:'otw-spatial-manifest/0.1',fixture:false,local_only:true,
   frame:{registration_status:'unregistered',units:'meters',render_axes:'east-up-south'},
@@ -56,4 +57,36 @@ test('framing fits portrait and landscape views while preserving translated metr
     const translated=localView(bounds.map((v,i)=>v+[1200,30,-600][i%3]),aspect);
     for(let i=0;i<3;i++)assert.ok(Math.abs(translated.position[i]-view.position[i]-[1200,30,-600][i])<1e-9);
   }
+});
+
+function resizeScene(){
+  const bounds=manifest().assets[0].bounds_render_m,home=localView(bounds,2);
+  const camera=new PerspectiveCamera(48,2,home.near,home.far);camera.position.fromArray(home.position);
+  const controls={target:new Vector3().fromArray(home.target),update(){camera.lookAt(this.target);camera.updateMatrixWorld();}};
+  controls.update();
+  return {bounds,camera,controls};
+}
+
+test('home resize from wide to portrait puts every bounding-box corner inside the camera',()=>{
+  const {bounds,camera,controls}=resizeScene();camera.aspect=.4;camera.updateProjectionMatrix();
+  const corners=Array.from({length:8},(_,mask)=>new Vector3(...[0,1,2].map(i=>bounds[i+((mask>>i)&1)*3])));
+  assert.ok(corners.some(point=>Math.abs(point.clone().project(camera).x)>1),'original camera clips on portrait resize');
+  resizeLocalView(bounds,camera,controls,true);camera.updateProjectionMatrix();
+  for(const point of corners){
+    const projected=point.project(camera);
+    assert.ok(Math.abs(projected.x)<1&&Math.abs(projected.y)<1&&Math.abs(projected.z)<1);
+  }
+});
+
+test('resize preserves an interacting or manually positioned camera and updates its reset view',()=>{
+  const {bounds,camera,controls}=resizeScene();
+  camera.position.add(new Vector3(80,-10,30));controls.target.add(new Vector3(6,2,-9));controls.update();
+  const position=camera.position.clone(),target=controls.target.clone(),quaternion=camera.quaternion.toArray();
+  camera.aspect=.4;
+  const home=resizeLocalView(bounds,camera,controls,false);
+  assert.deepEqual(camera.position,position);assert.deepEqual(controls.target,target);assert.deepEqual(camera.quaternion.toArray(),quaternion);
+  assert.ok(home.position.some((value,i)=>value!==position.toArray()[i]));
+  // Returning home explicitly opts back into automatic fit, including the next resize.
+  resizeLocalView(bounds,camera,controls,true);
+  assert.deepEqual(camera.position.toArray(),home.position);assert.deepEqual(controls.target.toArray(),home.target);
 });

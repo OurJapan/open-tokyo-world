@@ -58,3 +58,12 @@ export function localView(bounds,aspect=1,verticalFov=48){
   return {target,position:target.map((n,i)=>n+direction[i]/length*distance),
     radius,near:Math.max(.01,radius/1000),far:radius*50,minDistance:radius*.25,maxDistance:radius*20};
 }
+
+// Fit the home view on resize. A user's orbit/pan/zoom remains under their control.
+export function resizeLocalView(bounds,camera,controls,atHome){
+  const home=localView(bounds,camera.aspect,camera.fov);
+  if(atHome){
+    camera.position.fromArray(home.position);controls.target.fromArray(home.target);controls.update();
+  }
+  return home;
+}

@@ -12,13 +12,13 @@ import { fresh, cameraQuaternion, geoGate, containRect } from './spatial.js';
 import { makeDraft, validateDraft, sha256 } from './observation.js';
 import { submitObservation } from './submission.js';
 import { createRenderLoop } from './render-loop.js';
-import {localReviewSelection,validateLocalManifest,validateLocalGlb,validateLocalMeasurements,localView} from './local-review.js';
+import {localReviewSelection,validateLocalManifest,validateLocalGlb,validateLocalMeasurements,localView,resizeLocalView} from './local-review.js';
 
 const $=id=>document.getElementById(id);
 const stage=$('stage'),video=$('camera'),host=$('canvas-host');
 let manifest,model,renderer,scene,camera,controls,grid;
 const localRequested=new URLSearchParams(location.search).has('local_model');
-let homeView=null,modelMeasurements=null;
+let homeView=null,modelMeasurements=null,localHomeView=false;
 const renderLoop=createRenderLoop(frame);
 if(document.hidden)renderLoop.pause();
 let active=false,busy=false,viewPose=null,photo=null,draft=null,previewURL=null,packedFile=null;
@@ -41,7 +41,7 @@ const sensors=new Sensors({onChange:()=>{
 const say=text=>{$('notice').textContent=text;};
 function resetView() {
   if(active)return;
-  if(homeView){camera.position.fromArray(homeView.position);controls.target.fromArray(homeView.target);}
+  if(homeView){camera.position.fromArray(homeView.position);controls.target.fromArray(homeView.target);localHomeView=true;}
   else{camera.position.set(27,20,33);controls.target.set(0,6,0);}
   camera.up.set(0,1,0);controls.update();renderLoop.requestRender();
 }
@@ -52,7 +52,7 @@ function resize() {
   host.style.inset='auto';Object.assign(host.style,{left:rect.left+'px',top:rect.top+'px',width:rect.width+'px',height:rect.height+'px'});
   renderer.setSize(rect.width,rect.height);camera.aspect=rect.width/rect.height;
   camera.fov=active?2*Math.atan(Math.tan(Math.PI/6)/camera.aspect)*180/Math.PI:48;
-  if(homeView)homeView=localView(manifest.assets[0].bounds_render_m,camera.aspect,camera.fov);
+  if(homeView)homeView=resizeLocalView(manifest.assets[0].bounds_render_m,camera,controls,localHomeView);
   camera.updateProjectionMatrix();
   renderLoop.requestRender();
 }
@@ -191,6 +191,7 @@ async function init() {
     scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(48,1,.1,1500);
     controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.minDistance=10;controls.maxDistance=100;controls.maxPolarAngle=Math.PI*.49;
     controls.addEventListener('change',renderLoop.requestRender);
+    controls.addEventListener('start',()=>{localHomeView=false;});
     scene.add(new THREE.HemisphereLight(0xd9edff,0x36536a,2.7));const sun=new THREE.DirectionalLight(0xffdbc4,3);sun.position.set(8,20,12);scene.add(sun);
     grid=new THREE.GridHelper(60,12,0xd4d4d8,0xe7e7eb);grid.material.transparent=true;grid.material.opacity=.45;scene.add(grid);resetView();resize();
     const local=localReviewSelection(location.search,import.meta.env.DEV);
