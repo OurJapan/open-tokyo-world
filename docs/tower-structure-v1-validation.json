@@ -1,0 +1,770 @@
+{
+  "version": 1,
+  "date": "2026-10-03",
+  "ok": true,
+  "status": "candidate-human-review-pending",
+  "human_visual_approval": false,
+  "geometry_and_render_code_commit": "0254578b2a25cad1a7dac881b2435b5c2da74636",
+  "input_sha256": "aa80b552f267d935d3c5d943ac95d0d410d6ec7abb170346bef707eee6cae2e2",
+  "output_blends": {
+    "before.blend": "d59713288fc90d2dd343ac041c145fc9b683ae5cd949b98f4a7ef584ab60a309",
+    "after.blend": "eee5f656772255d4717ec8e8045777ce8f75c3ad60d8729c94295f1d29d46dac"
+  },
+  "runtime": {
+    "blender_version": "4.5.1 LTS",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "device": "OPTIX",
+    "width": 1280,
+    "height": 848,
+    "samples": 32,
+    "seed": 0
+  },
+  "existing_objects_changed": [
+    "Tokyo Tower structure / darkmetal",
+    "Tokyo Tower structure / orange",
+    "Tokyo Tower structure / white"
+  ],
+  "added_objects": [
+    "OTW Tokyo Tower structure / base-connections",
+    "OTW Tokyo Tower structure / foottown-glazing",
+    "OTW Tokyo Tower structure / foottown-metal",
+    "OTW Tokyo Tower structure / foottown-roof",
+    "OTW Tokyo Tower structure / foottown-shell",
+    "OTW Tokyo Tower structure / lift-cars",
+    "OTW Tokyo Tower structure / lift-glazing",
+    "OTW Tokyo Tower structure / lower-shaft-frame",
+    "OTW Tokyo Tower structure / lower-shaft-glazing",
+    "OTW Tokyo Tower structure / roof-access",
+    "OTW Tokyo Tower structure / stairs-frame",
+    "OTW Tokyo Tower structure / stairs-guards",
+    "OTW Tokyo Tower structure / stairs-treads",
+    "OTW Tokyo Tower structure / upper-guide-rails",
+    "OTW Tokyo Tower structure / upper-platforms",
+    "OTW Tokyo Tower structure / upper-shaft-frame",
+    "OTW Tokyo Tower structure / upper-support-links"
+  ],
+  "counts": {
+    "before": {
+      "objects": 3332,
+      "vertices": 54498201,
+      "polygons": 42531440
+    },
+    "after": {
+      "objects": 3349,
+      "vertices": 54537629,
+      "polygons": 42557056
+    }
+  },
+  "matched_views": [
+    "tower-context",
+    "foottown-oblique",
+    "foottown-ground",
+    "base-connection",
+    "roof-access",
+    "exterior-stairs",
+    "upper-shaft",
+    "upper-lift-detail",
+    "top-connection"
+  ],
+  "jobs": {
+    "prepare": {
+      "seconds": 13.297,
+      "report_sha256": "0435cb75bfc8a545d8af2f3c52c9a7590b2fd765d05a31a489c875a0b2d5c0a4"
+    },
+    "validate-before": {
+      "seconds": 34.578,
+      "report_sha256": "af46414b3a1e4f462dc55a984c38a5ff0d073eacd9b01332e9f18d2270406f84"
+    },
+    "validate-after": {
+      "seconds": 34.641,
+      "report_sha256": "ac6a5b7ef82dd170d03b772357a161267cad1499f5646f9344c7c2c66760df3d"
+    },
+    "render-before": {
+      "seconds": 59.641,
+      "report_sha256": "5f4ce1fa75741362f930ad5e090f6c42a5d154a27620a1f21a629adbac1aab45"
+    },
+    "render-after": {
+      "seconds": 59.188,
+      "report_sha256": "91f28f35cbe4ee2525f1736c97786e638ef51ee0a5167fe0edc4e72479a0f6e2"
+    }
+  },
+  "portable_tests": {
+    "run": 358,
+    "passed": 350,
+    "skipped": 8,
+    "failures": 0,
+    "log_sha256": "4d04aa0e39bb3ebc6989ff447e400580326ae6cf59a99781fff7b9dadb0bbad5"
+  },
+  "syntax_check": "python -m compileall -q scripts tests passed",
+  "warnings_unchanged": [
+    "Modifier stack not fingerprinted: Close detail rim",
+    "Modifier stack not fingerprinted: Close detail iron",
+    "Modifier stack not fingerprinted: Close detail silver",
+    "Modifier stack not fingerprinted: Close detail frame",
+    "Modifier stack not fingerprinted: Tokyo traffic • silver",
+    "Modifier stack not fingerprinted: Tokyo traffic • white",
+    "Modifier stack not fingerprinted: Tokyo traffic • blue",
+    "Modifier stack not fingerprinted: Tokyo traffic • black",
+    "Modifier stack not fingerprinted: Tokyo traffic • red",
+    "Modifier stack not fingerprinted: Tokyo Tower structure / stone",
+    "Modifier stack not fingerprinted: Tokyo Tower structure / orange",
+    "Modifier stack not fingerprinted: Tokyo Tower structure / white",
+    "Modifier stack not fingerprinted: Tokyo Tower decks and interior / white",
+    "Modifier stack not fingerprinted: Tokyo Tower decks and interior / aluminum",
+    "Known empty legacy mesh: Tokyo Tower decks and interior / wood; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Modifier stack not fingerprinted: Tokyo Tower decks and interior / wood",
+    "Known empty legacy mesh: Tokyo Tower decks and interior / stone; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Modifier stack not fingerprinted: Tokyo Tower decks and interior / stone",
+    "Known empty legacy mesh: Tokyo Tower decks and interior / soil; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Known empty legacy mesh: Tokyo Tower decks and interior / leaf; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Known empty legacy mesh: Tokyo Tower decks and interior / darkmetal; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+    "Modifier stack not fingerprinted: Mori JP curtain wall / aluminum",
+    "Modifier stack not fingerprinted: Mori JP interior / stone",
+    "Modifier stack not fingerprinted: Mori JP interior / wood",
+    "Modifier stack not fingerprinted: Mori JP interior / aluminum",
+    "Modifier stack not fingerprinted: Mori JP interior / chair",
+    "Modifier stack not fingerprinted: Mori JP interior / fabric",
+    "Modifier stack not fingerprinted: Observation interior detail / charcoal glass",
+    "Modifier stack not fingerprinted: Observation interior detail / brushed steel",
+    "Modifier stack not fingerprinted: Observation interior detail / ceiling",
+    "Modifier stack not fingerprinted: Photo based main deck / frame",
+    "Modifier stack not fingerprinted: Photo based main deck / silver",
+    "Modifier stack not fingerprinted: Photo based main deck / wall",
+    "Modifier stack not fingerprinted: 2019 reference window revision / black",
+    "Modifier stack not fingerprinted: 2019 reference window revision / aluminum",
+    "Modifier stack not fingerprinted: 2019 reference window revision / white"
+  ],
+  "saved_geometry_validation": {
+    "objects": {
+      "foottown-shell": {
+        "vertices": 992,
+        "polygons": 744,
+        "components": 124,
+        "bounds_m": [
+          [
+            -36.5,
+            36.5
+          ],
+          [
+            -29.0,
+            29.0
+          ],
+          [
+            0.3499999940395355,
+            15.930000305175781
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 1750.2050740792035
+      },
+      "foottown-glazing": {
+        "vertices": 1168,
+        "polygons": 876,
+        "components": 146,
+        "bounds_m": [
+          [
+            -36.44499969482422,
+            36.44499969482422
+          ],
+          [
+            -28.94499969482422,
+            28.94499969482422
+          ],
+          [
+            0.5649999976158142,
+            14.53499984741211
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 12.658668136245574
+      },
+      "foottown-metal": {
+        "vertices": 5936,
+        "polygons": 4108,
+        "components": 570,
+        "bounds_m": [
+          [
+            -36.5,
+            36.5
+          ],
+          [
+            -29.0,
+            29.0
+          ],
+          [
+            0.5,
+            17.479999542236328
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 63.59780623588552
+      },
+      "foottown-roof": {
+        "vertices": 32,
+        "polygons": 24,
+        "components": 4,
+        "bounds_m": [
+          [
+            -36.5,
+            36.5
+          ],
+          [
+            -29.0,
+            29.0
+          ],
+          [
+            16.0,
+            16.200000762939453
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 842.3852137908951
+      },
+      "base-connections": {
+        "vertices": 896,
+        "polygons": 608,
+        "components": 80,
+        "bounds_m": [
+          [
+            -50.50266647338867,
+            50.50266647338867
+          ],
+          [
+            -50.50266647338867,
+            50.50266647338867
+          ],
+          [
+            1.9199999570846558,
+            2.2799999713897705
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 3.542204990938138
+      },
+      "lower-shaft-frame": {
+        "vertices": 1232,
+        "polygons": 924,
+        "components": 154,
+        "bounds_m": [
+          [
+            -2.2699999809265137,
+            2.2699999809265137
+          ],
+          [
+            -2.2699999809265137,
+            2.2699999809265137
+          ],
+          [
+            0.44999998807907104,
+            145.35000610351562
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 24.908506232047124
+      },
+      "lower-shaft-glazing": {
+        "vertices": 1184,
+        "polygons": 888,
+        "components": 148,
+        "bounds_m": [
+          [
+            -2.2125000953674316,
+            2.2125000953674316
+          ],
+          [
+            -2.2125000953674316,
+            2.2125000953674316
+          ],
+          [
+            0.5199999809265137,
+            145.27999877929688
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 58.123734743626024
+      },
+      "stairs-frame": {
+        "vertices": 1536,
+        "polygons": 960,
+        "components": 96,
+        "bounds_m": [
+          [
+            -4.054999828338623,
+            4.054999828338623
+          ],
+          [
+            2.805000066757202,
+            5.994999885559082
+          ],
+          [
+            16.012693405151367,
+            145.1300048828125
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 22.46138064247644
+      },
+      "stairs-treads": {
+        "vertices": 5168,
+        "polygons": 3876,
+        "components": 646,
+        "bounds_m": [
+          [
+            -4.75,
+            3.950000047683716
+          ],
+          [
+            2.924999952316284,
+            5.875
+          ],
+          [
+            16.079999923706055,
+            145.10000610351562
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 53.60262007898037
+      },
+      "stairs-guards": {
+        "vertices": 24288,
+        "polygons": 15180,
+        "components": 1518,
+        "bounds_m": [
+          [
+            -3.9839999675750732,
+            3.9839999675750732
+          ],
+          [
+            2.885999917984009,
+            5.914000034332275
+          ],
+          [
+            16.200000762939453,
+            146.23399353027344
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 5.753154313711813
+      },
+      "roof-access": {
+        "vertices": 48,
+        "polygons": 36,
+        "components": 6,
+        "bounds_m": [
+          [
+            -4.900000095367432,
+            -2.0999999046325684
+          ],
+          [
+            2.549999952316284,
+            6.25
+          ],
+          [
+            16.200000762939453,
+            19.059999465942383
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 4.707999515532702
+      },
+      "upper-shaft-frame": {
+        "vertices": 1952,
+        "polygons": 1320,
+        "components": 172,
+        "bounds_m": [
+          [
+            -1.8799999952316284,
+            1.8799999952316284
+          ],
+          [
+            -1.8799999952316284,
+            1.8799999952316284
+          ],
+          [
+            153.96237182617188,
+            246.13763427734375
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 17.349561264816156
+      },
+      "upper-guide-rails": {
+        "vertices": 116,
+        "polygons": 80,
+        "components": 11,
+        "bounds_m": [
+          [
+            -1.4800000190734863,
+            1.4800000190734863
+          ],
+          [
+            -0.07500000298023224,
+            1.4600000381469727
+          ],
+          [
+            154.0,
+            246.10000610351562
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 4.681247532669983
+      },
+      "upper-support-links": {
+        "vertices": 512,
+        "polygons": 320,
+        "components": 32,
+        "bounds_m": [
+          [
+            -8.537317276000977,
+            8.537317276000977
+          ],
+          [
+            -8.537317276000977,
+            8.537317276000977
+          ],
+          [
+            152.12632751464844,
+            243.9149932861328
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 5.105979747815384
+      },
+      "upper-platforms": {
+        "vertices": 880,
+        "polygons": 556,
+        "components": 58,
+        "bounds_m": [
+          [
+            -2.8340001106262207,
+            2.8340001106262207
+          ],
+          [
+            -0.7239999771118164,
+            3.3340001106262207
+          ],
+          [
+            183.8699951171875,
+            218.13400268554688
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 3.5954605443678305
+      },
+      "lift-cars": {
+        "vertices": 128,
+        "polygons": 96,
+        "components": 16,
+        "bounds_m": [
+          [
+            -1.3250000476837158,
+            1.3250000476837158
+          ],
+          [
+            -1.2999999523162842,
+            1.2999999523162842
+          ],
+          [
+            79.9000015258789,
+            203.94000244140625
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 8.011382547220556
+      },
+      "lift-glazing": {
+        "vertices": 48,
+        "polygons": 36,
+        "components": 6,
+        "bounds_m": [
+          [
+            -1.2719999551773071,
+            1.2719999551773071
+          ],
+          [
+            -1.2619999647140503,
+            1.2000000476837158
+          ],
+          [
+            80.09500122070312,
+            203.7449951171875
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 0.6674864937807229
+      }
+    },
+    "stairs": {
+      "treads": 598,
+      "landings": 47,
+      "thresholds": 1,
+      "flights": 46,
+      "bottom_m": 16.2,
+      "top_m": 145.1,
+      "riser_m": 0.21555183946488296,
+      "landing_connections_checked": 92
+    },
+    "upper_open_frame": {
+      "continuous_posts": 4,
+      "wide_vertical_walls": 0
+    },
+    "upper_guides": {
+      "guide_rails": 4,
+      "ropes": 7,
+      "bottom_m": 154,
+      "top_m": 246.1
+    },
+    "foottown": {
+      "roof_top_m": 16.2,
+      "roof_area_m2": 4211.910001792908,
+      "shaft_opening_area_m2": 22.090000000000003,
+      "glazed_components": 146,
+      "opaque_backed_panes": 0,
+      "doorway_open": true
+    },
+    "base_connections": {
+      "plates": 16,
+      "bolts": 64,
+      "legs": 4,
+      "plate_bottom_m": 1.92
+    },
+    "ok": true,
+    "blender_version": "4.5.1 LTS",
+    "frame": 1,
+    "autoexec_enabled": false,
+    "scene_saved": false,
+    "saved_mesh_sha256": {
+      "OTW Tokyo Tower structure / foottown-shell": "e9ca32a95250f2ca6291569dc2c3892ab7297199f6695da046da5945dc356f12",
+      "OTW Tokyo Tower structure / foottown-glazing": "ace2ac1401e5f93b319cca219bf34febbd5d9149ff4127cf23c4cbccdfba4d34",
+      "OTW Tokyo Tower structure / foottown-metal": "6c637c0e92534112f3a714bd036d84ed80d56bc0e30df7860524855b9438207c",
+      "OTW Tokyo Tower structure / foottown-roof": "28ac51cb1f987fd3c1da1eee131495114060724ba7f56ac0bb1bc4545a3ed7c7",
+      "OTW Tokyo Tower structure / base-connections": "f510391901847ed2273f3e2ce34495ff3e9b147a759b8a6f613171ee9f4e9b21",
+      "OTW Tokyo Tower structure / lower-shaft-frame": "0e014a5794e45780eb2c7dbe5142a93fb4eff921be7c7066614c1c155d6975ce",
+      "OTW Tokyo Tower structure / lower-shaft-glazing": "a8401c0b566f6ef08e44b6176f0fcde2193df0b111bff3df65667fbca7337e86",
+      "OTW Tokyo Tower structure / stairs-frame": "85ab6caab23338cf7d073a227570b8e71444748b2be3acfdf8dd06d858cfdeb8",
+      "OTW Tokyo Tower structure / stairs-treads": "34f56ff0cfc56c2b70d2cd07baa7fad99bb67ec2c45c55456fefe9c01be167d0",
+      "OTW Tokyo Tower structure / stairs-guards": "91fd52afd86f9d38bc058c3731cd401e173555f91efdeac0005e24d164c48315",
+      "OTW Tokyo Tower structure / roof-access": "fda798017432c0c4084abad36929c6e438e8e2c1ad501ea66089e600cee0cca6",
+      "OTW Tokyo Tower structure / upper-shaft-frame": "456c7f7bd627e8913e031a8a91bbab02435bc90737da7a9112f1d4a17fa07c80",
+      "OTW Tokyo Tower structure / upper-guide-rails": "bb9a7e007829abf48f53a81b55a9d293a974e2cc7eb7f1f9eaf0f1e101c8ed20",
+      "OTW Tokyo Tower structure / upper-support-links": "9738b5a53973e3aadacd9fd3aa1827599785b9374eabf71dd0790169f4443aae",
+      "OTW Tokyo Tower structure / upper-platforms": "cbd5253760357304d282f83c961952b5d8e6e42ef2058d646e1fc4d6700c103e",
+      "OTW Tokyo Tower structure / lift-cars": "4a31b0c5008928fa95584f1f0d52e0ca6017ec849f694f91d41f9ee1d8673b99",
+      "OTW Tokyo Tower structure / lift-glazing": "96866ddaabba84f9ffa0e61a3f869ed515ea192f9348f2f09d5d5a26bd50d850"
+    },
+    "inspected_added_meshes": 17,
+    "limitations": [
+      "Existing-object preservation is checked separately by review.py fingerprints.",
+      "Closed disconnected solids may intersect at structural joints; this is not a structural or navigation certification.",
+      "Dimensions and layout are inferred exterior geometry, not measured engineering drawings."
+    ],
+    "retained_original_meshes": {
+      "Tokyo Tower structure / orange": {
+        "vertices": 72944,
+        "polygons": 53632,
+        "coordinates_faces_material_indices_smooth_flags_exact": true,
+        "modifier_settings_exact": true,
+        "modifiers": [
+          {
+            "rna_type": "BevelModifier",
+            "name": "Small manufactured edge radius",
+            "type": "BEVEL",
+            "show_viewport": true,
+            "show_render": false,
+            "show_in_editmode": true,
+            "show_on_cage": false,
+            "show_expanded": true,
+            "is_active": true,
+            "use_pin_to_last": false,
+            "is_override_data": false,
+            "use_apply_on_spline": false,
+            "persistent_uid": 1277244409,
+            "width": 0.006000000052154064,
+            "width_pct": 0.006000000052154064,
+            "segments": 2,
+            "affect": "EDGES",
+            "limit_method": "ANGLE",
+            "edge_weight": "bevel_weight_edge",
+            "vertex_weight": "bevel_weight_vert",
+            "angle_limit": 0.5235987901687622,
+            "vertex_group": "",
+            "invert_vertex_group": false,
+            "use_clamp_overlap": true,
+            "offset_type": "OFFSET",
+            "profile_type": "SUPERELLIPSE",
+            "profile": 0.5,
+            "material": -1,
+            "loop_slide": true,
+            "mark_seam": false,
+            "mark_sharp": false,
+            "harden_normals": false,
+            "face_strength_mode": "FSTR_NONE",
+            "miter_outer": "MITER_SHARP",
+            "miter_inner": "MITER_SHARP",
+            "spread": 0.10000000149011612,
+            "custom_profile": {
+              "rna_type": "CurveProfile",
+              "preset": "LINE",
+              "use_clip": true,
+              "use_sample_straight_edges": false,
+              "use_sample_even_lengths": false,
+              "points": [
+                {
+                  "rna_type": "CurveProfilePoint",
+                  "location": [
+                    1.0,
+                    0.0
+                  ],
+                  "handle_type_1": "AUTO",
+                  "handle_type_2": "AUTO",
+                  "select": false
+                },
+                {
+                  "rna_type": "CurveProfilePoint",
+                  "location": [
+                    0.0,
+                    1.0
+                  ],
+                  "handle_type_1": "AUTO",
+                  "handle_type_2": "AUTO",
+                  "select": false
+                }
+              ],
+              "segments": []
+            },
+            "vmesh_method": "ADJ"
+          }
+        ],
+        "material_fingerprints_exact": true,
+        "material_fingerprints": [
+          "ea7135c4fedd41cce1ad924e26edc72db7f03130598dfb2791fb5d352f270612",
+          "f3ed03036eea4613c6b07caa1283f35a6ccb70707fca51aea4e9a01baeb8cd79"
+        ],
+        "retained_data_sha256": "44bdae58ac1182f8a2ff1b29eeedb3b3023554de34e864d3edaed1d6d75b0873"
+      },
+      "Tokyo Tower structure / white": {
+        "vertices": 13856,
+        "polygons": 10292,
+        "coordinates_faces_material_indices_smooth_flags_exact": true,
+        "modifier_settings_exact": true,
+        "modifiers": [
+          {
+            "rna_type": "BevelModifier",
+            "name": "Small manufactured edge radius",
+            "type": "BEVEL",
+            "show_viewport": true,
+            "show_render": false,
+            "show_in_editmode": true,
+            "show_on_cage": false,
+            "show_expanded": true,
+            "is_active": true,
+            "use_pin_to_last": false,
+            "is_override_data": false,
+            "use_apply_on_spline": false,
+            "persistent_uid": 1277244409,
+            "width": 0.006000000052154064,
+            "width_pct": 0.006000000052154064,
+            "segments": 2,
+            "affect": "EDGES",
+            "limit_method": "ANGLE",
+            "edge_weight": "bevel_weight_edge",
+            "vertex_weight": "bevel_weight_vert",
+            "angle_limit": 0.5235987901687622,
+            "vertex_group": "",
+            "invert_vertex_group": false,
+            "use_clamp_overlap": true,
+            "offset_type": "OFFSET",
+            "profile_type": "SUPERELLIPSE",
+            "profile": 0.5,
+            "material": -1,
+            "loop_slide": true,
+            "mark_seam": false,
+            "mark_sharp": false,
+            "harden_normals": false,
+            "face_strength_mode": "FSTR_NONE",
+            "miter_outer": "MITER_SHARP",
+            "miter_inner": "MITER_SHARP",
+            "spread": 0.10000000149011612,
+            "custom_profile": {
+              "rna_type": "CurveProfile",
+              "preset": "LINE",
+              "use_clip": true,
+              "use_sample_straight_edges": false,
+              "use_sample_even_lengths": false,
+              "points": [
+                {
+                  "rna_type": "CurveProfilePoint",
+                  "location": [
+                    1.0,
+                    0.0
+                  ],
+                  "handle_type_1": "AUTO",
+                  "handle_type_2": "AUTO",
+                  "select": false
+                },
+                {
+                  "rna_type": "CurveProfilePoint",
+                  "location": [
+                    0.0,
+                    1.0
+                  ],
+                  "handle_type_1": "AUTO",
+                  "handle_type_2": "AUTO",
+                  "select": false
+                }
+              ],
+              "segments": []
+            },
+            "vmesh_method": "ADJ"
+          }
+        ],
+        "material_fingerprints_exact": true,
+        "material_fingerprints": [
+          "b8b7b616ed9b32e75c07aa05463bb1b9dfcc6f63c5517a093bee763a0743a309",
+          "1bfc188337a6030fd91eddf175fd389573a977bc83bc62ffeee5e0b26079f965"
+        ],
+        "retained_data_sha256": "057713818b9b0327c572c016b93a5f87f3ffc516b327679600e9331583f58ec7"
+      }
+    },
+    "input_unchanged": true,
+    "original_unchanged": true,
+    "code_unchanged": true,
+    "input_sha256": "eee5f656772255d4717ec8e8045777ce8f75c3ad60d8729c94295f1d29d46dac",
+    "original_sha256": "aa80b552f267d935d3c5d943ac95d0d410d6ec7abb170346bef707eee6cae2e2",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "python_version": "3.11.11",
+    "code_sha256": {
+      "validate_tower_structure.py": "0e12269d149faa302fe9444e6557ef335bd8afe55b13c9e659e05c487103ce45",
+      "tower_structure_v1.py": "21368e45db7568605c0ecc3385b2bde8385cedbf4ff488502d098ef5ab3bd64b",
+      "tower_foottown_v1.py": "f3b7bb8e030e04ab8c73541bb8716cecba4383350159a70df99b5c8ddd95b7a5",
+      "blender_worker.py": "4f6180670a4e832ea21b4ab928b2bad6f6e43d8e3811a04a7bca4aae24a79d64"
+    }
+  },
+  "local_run": "data/local/reviews/tower-structure-final-03",
+  "input_composition": "Pinned PR56 composed candidate retains PR47/49/51/52/56; shared workspace registration is unchanged.",
+  "limitations": [
+    "Human visual approval is required.",
+    "Peak RAM/VRAM and physical accuracy are not measured.",
+    "Timing is one run, not a warmed-up median.",
+    "Dependency audit and fingerprints cover documented initial checks, not all Blender features.",
+    "Separate PR54/55 candidates are not composed into this input.",
+    "Interior circulation and lift operation are outside this static exterior change."
+  ]
+}

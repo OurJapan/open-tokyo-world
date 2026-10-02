@@ -47,8 +47,21 @@
 
 ## 検証と採用判断
 
-この文書と出典JSONは、調査・制作範囲と根拠の限界を記録したものです。保存後の再読込、入力保護、許可変更範囲、形状検査、同条件Before／Afterの実行結果、比較画像のパス、確認対象headは、最終候補に対応する検証記録へ追記します。現段階の文章だけで検証成功や人間の採用を主張しません。
+[9視点のBefore/After画像18枚](../renders/previews/tower-structure-v1/README.md)を公開しています。[検証結果](tower-structure-v1-validation.json)と[画像・実装hash](../renders/previews/tower-structure-v1/evidence.json)で入力、保存結果、比較画像を対応付けています。形状・描画コードは `0254578b2a25cad1a7dac881b2435b5c2da74636` です。
 
-比較は上部昇降路の近接視点 `upper-lift-detail` を含む9視点を計画します。描画完了後に画像と検証結果を対応付けます。
+- Blender 4.5.1 LTS、OptiX、1280×848、32 samples、seed 0。各ペアのカメラ・照明・描画条件は一致しています。
+- 5フェーズの実city検証が成功。既存3メッシュの限定部分を変更し、17メッシュを追加、その他の既存オブジェクトと依存素材のfingerprintは保持しました。既知の空メッシュ5個とmodifierに関する警告は変更前後で同じです。
+- 別Blenderプロセスで保存後のcandidateと固定原本を再読込。追加17メッシュの閉面・有限座標・面の向き、598段と踊り場、屋上開口・入口、ガイド・ロープ終端、脚部プレートと締結部を検査しました。橙色／白色鉄骨の残存頂点・面・材質番号・smooth設定・ベベル設定を原本と完全照合し、原本・candidateとも検査前後でhash不変でした。
+- portable checksは358件実行、350件成功、環境依存8件スキップ。構文検査とdiffcheckも成功しています。
 
-必要な確認は、フットタウン屋根と塔脚の関係、中央階段と昇降路の連続、両展望台への接続、上部開放フレームの見え方、周囲の既存形状の保全です。技術検査の成功は実物精度、歩行可能性、構造安全性、昇降機としての適合性を保証しません。
+画像レビューではフットタウン、階段、昇降路の追加と周辺の保持を確認しました。上部近接では既存主柱やリング梁がかご・ガイドの一部に重なり、救出床の細部も全景だけでは判定できません。保存メッシュ検査と合わせて評価してください。人間による採用判断とマージは未完了です。
+
+再現には登録済み原本とBlender 4.5.1が必要です。出力先は新しいディレクトリを指定してください。
+
+```text
+python scripts/review.py --blender <Blender実行ファイル> --input data/local/inputs/tower-structure-pr56/after.blend --lock manifests/tower-structure-input.json --cameras areas/tokyo-tower/tower-structure-cameras.json --features areas/tokyo-tower/tower-structure-features.json --patch areas/tokyo-tower/tower-structure-patch.json --output data/local/reviews/tower-structure-reproduce --device OPTIX --width 1280 --height 848 --samples 32
+python scripts/validate_tower_structure.py --blender <Blender実行ファイル> --input data/local/reviews/tower-structure-reproduce/after.blend --original data/local/inputs/tower-structure-pr56/after.blend --output data/local/reviews/tower-structure-reproduce/saved-geometry-validation.json
+python -m unittest discover -s tests
+```
+
+技術検査の成功は実物精度、歩行可能性、構造安全性、昇降機としての適合性を保証しません。ローカルの完全な実行記録はGit管理外の `data/local/reviews/tower-structure-final-03/` にあります。
