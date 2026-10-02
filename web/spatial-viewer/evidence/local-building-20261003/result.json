@@ -1,0 +1,444 @@
+{
+  "schema_version": 1,
+  "ok": true,
+  "base_commit": "3b1eb5f6c10ca9c0ebb072348faea4981985439e",
+  "tested_code_commit": "52175b1891c1cd1b5af94d87fffc307c7d36163c",
+  "before_presets_commit": "d9da129855c876cade749daccbbd0d435611f82d",
+  "source_commits": [
+    "c1e4cbce0268d722bfc73dcff626832f3bc4adee",
+    "168918787ccc6bd95b1799e05973cea9f40e7685",
+    "f0d13f77f39ca9f542a760a41a6cb86f956e0866"
+  ],
+  "pr50": {
+    "state": "MERGED",
+    "merge_commit": "29157afbab0ce05e62d065b3535e577230b7583a",
+    "merged_at": "2026-10-02T13:46:23Z",
+    "included_via_main": true
+  },
+  "environment": {
+    "os": "Windows",
+    "node": "24.19.0",
+    "pnpm": "11.19.0",
+    "browser": "Headless Microsoft Edge 154.0.4258.48",
+    "blender": "4.5.1 LTS",
+    "device_scale_factor": 1
+  },
+  "checked_source_sha256": {
+    "adapters/open-tokyo-world/export_local_building.py": "e7afc094b35cca5e2e634e54f0d65f39df35658a2e9cc323080e863cc8f5cd68",
+    "adapters/open-tokyo-world/local_building_blender.py": "3a14b8938f7b030c75127fb6454532da31f234b96f0de8837b60e6f6da3d75a1",
+    "docs/local-building-view-presets.md": "d6fc94e639190abef7ccc9e7fe67e40e288a796f0e279cd51104c5c1b2a490d3",
+    "tests/test_local_building_export.py": "1f384dbc839a036ea41c0f246e4b4ca2879a94a500b6b761235ff175f6c9e94e",
+    "web/spatial-viewer/README.md": "fd765032c013a635df7a687195dd6848c22b31280ac38ee55021c835515f79d8",
+    "web/spatial-viewer/index.html": "7df2399f02aea3c6339e754e3c99e19bfdce73cc9ea78898975aab199a736774",
+    "web/spatial-viewer/scripts/local-review-server.mjs": "cd30c3347c9b7b0fa2f807926fe2eca2c27fd1b7734e3e4718a3b36fd7ee50db",
+    "web/spatial-viewer/src/local-review.js": "24700956e8d199d48d924f2627f5a3be28bd76cb714227acac8843def6377806",
+    "web/spatial-viewer/src/main.js": "7c1a3e35c899b6842e25e621f86132fc9ae96d0e1ea1466d2ea5e65d727cd6c9",
+    "web/spatial-viewer/src/style.css": "11c21fb529e38dfcbed5d72f0bd9b9b02d66be6163317d81161108978c8d5a70",
+    "web/spatial-viewer/tests/local-review-server.test.js": "cc2f335f21b89f99c81a598fd2c91cd9e93651735b2913627b7156151462e249",
+    "web/spatial-viewer/tests/local-review.test.js": "5d387aa5688f1d326c3da2a2a259c91ba63eae1cd7125c4a5c2e462b16470c81",
+    "web/spatial-viewer/tests/local-views-browser.cjs": "d75abf1b9ffa95f2924acffc9272cb22fd54d7549e71cd6bacd081a0f07e4a0d",
+    "web/spatial-viewer/vite.config.js": "47a9552f54558ed868186f9ae1131b8c5214f2cc293a061786a9598e0226197a"
+  },
+  "inputs": [
+    {
+      "file": "target.blend",
+      "sha256": "4b2d6d0af6813e7748bf6890b608c217751945b55c88b733ba31adeac6188243",
+      "unchanged": true
+    },
+    {
+      "file": "model.glb",
+      "sha256": "61c815853fc12e912d8708af88a951f020a446e97ba83ffefd2f315e44234611",
+      "unchanged": true
+    },
+    {
+      "file": "manifest.json",
+      "sha256": "dadcc1726aba8f811c347e13c8c872c16d2bc785c27de19b400d842e0f8a8c66",
+      "unchanged": true
+    }
+  ],
+  "export": {
+    "model_bytes": 796668,
+    "regenerated_glb_and_manifest_match_retained": true,
+    "verification": {
+      "ok": true,
+      "blender": "4.5.1 LTS",
+      "feature_id": "bldg_af7335da-7542-44dd-964d-8cccd2b046ff",
+      "reimported_meshes": 1,
+      "triangles": 466,
+      "maximum_geometry_error_m": 0.0,
+      "bounds_reimported_xyz_m": [
+        -513.6962280273438,
+        353.651611328125,
+        0.3199999928474426,
+        -405.51690673828125,
+        454.4426574707031,
+        236.3325958251953
+      ],
+      "source_atlas_maximum_pixel_error": 0.0,
+      "materials": 2,
+      "roughness": [
+        0.6200000047683716,
+        0.7200000286102295
+      ],
+      "source_roughness": [
+        0.6200000047683716,
+        0.7200000286102295
+      ],
+      "texture_sizes": [
+        [
+          1024,
+          1024
+        ],
+        [
+          2048,
+          2048
+        ]
+      ],
+      "limits": [
+        "Texture baking approximates the original procedural base-colour shader at 1024px.",
+        "This checks conversion, not surveyed terrain, building identity or exact cross-renderer lighting."
+      ]
+    }
+  },
+  "portable": {
+    "total": 277,
+    "passed": 270,
+    "skipped": 7,
+    "failed": 0,
+    "skip_reasons": [
+      "2 optional production Shapely tests",
+      "5 optional photo-estimation image tests"
+    ]
+  },
+  "viewer_unit": {
+    "total": 49,
+    "passed": 46,
+    "skipped": 3,
+    "failed": 0,
+    "skip_reason": "Windows ordinary symlink EPERM; junction and data/local anchor escape tests passed"
+  },
+  "build": {
+    "vite": true,
+    "offline_shell": true,
+    "public_fixture_regenerated_without_diff": true,
+    "python_compileall": true,
+    "private_assets_in_dist": false
+  },
+  "local_browser": {
+    "browser": "154.0.4258.48",
+    "cases": [
+      {
+        "name": "actual local GLB loads and fits desktop/mobile",
+        "passed": true
+      },
+      {
+        "name": "desktop Tab / Enter / Space select visible north/east presets",
+        "passed": true
+      },
+      {
+        "name": "all presets retain direction and fit through portrait / landscape / 320px resize",
+        "passed": true
+      },
+      {
+        "name": "mobile viewport Tab / Enter / Space retain focus and select views",
+        "passed": true
+      },
+      {
+        "name": "preset cancels orbit inertia; repeated selection is deterministic",
+        "passed": true
+      },
+      {
+        "name": "drag/pan become manual; resize preserves manual pose; reset restores overview auto-fit",
+        "passed": true
+      },
+      {
+        "name": "local review stays camera-free and settled renderer stays idle",
+        "passed": true
+      },
+      {
+        "name": "failed load/hash validation never reveals usable preset controls",
+        "passed": true
+      },
+      {
+        "name": "public fixture UI/opaque render unchanged",
+        "passed": true
+      }
+    ],
+    "errors": [],
+    "external_requests": [],
+    "manual_resize_max_delta": 1.7323691281490028e-07,
+    "model": {
+      "bounds": [
+        -513.6962280273438,
+        0.3199999928474426,
+        -454.4426574707031,
+        -405.51690673828125,
+        236.3325958251953,
+        -353.651611328125
+      ],
+      "triangles": 466,
+      "featureIds": [
+        "bldg_af7335da-7542-44dd-964d-8cccd2b046ff"
+      ],
+      "materials": [
+        {
+          "name": "Synthetic facade on measured geometry 2 - local colour bake",
+          "roughness": 0.6200000047683716,
+          "metalness": 0,
+          "texture_size": [
+            1024,
+            1024
+          ],
+          "texture_uv": 1
+        },
+        {
+          "name": "Material_1.035",
+          "roughness": 0.7200000286102295,
+          "metalness": 0,
+          "texture_size": [
+            2048,
+            2048
+          ],
+          "texture_uv": 0
+        }
+      ]
+    }
+  },
+  "production_browser": {
+    "checks": [
+      {
+        "name": "production refuses local model without fetching private files",
+        "passed": true
+      },
+      {
+        "name": "field-regression",
+        "passed": true,
+        "exit_code": 0
+      },
+      {
+        "name": "transitions-regression",
+        "passed": true,
+        "exit_code": 0
+      }
+    ],
+    "errors": [],
+    "external_requests": [],
+    "ok": true
+  },
+  "render_transitions": {
+    "cases": [
+      {
+        "name": "waiting_for_delayed_asset",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "resize_and_opacity_before_asset",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "delayed_asset_complete",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "late_model_is_visible_at_latest_opacity_and_size",
+        "passed": true,
+        "orange_pixels": 6006
+      },
+      {
+        "name": "initially_hidden_load_and_edits_resume",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "opacity_after_resume",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "damping_interrupted_by_visibility_resumes",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "reset_after_resumed_damping",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "real_browser_freeze_resume",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "camera_denial_returns_to_viewer",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "active_camera_real_browser_freeze_resume",
+        "passed": true
+      },
+      {
+        "name": "camera_background_stop_and_viewer_resume",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "pending_camera_cancel_does_not_restart",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "camera_track_end_returns_to_idle_viewer",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "camera_pagehide_pageshow_stops_dead_stream",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "capture_then_stop_returns_to_viewer",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "saved_draft_dialog_viewer_stays_idle",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "draft_escape_cancel_keeps_viewer_idle",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "reset_after_draft_cancel_redraws",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "submission_failure_keeps_viewer_idle",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "identical_submission_retry_keeps_viewer_idle",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "next_photo_returns_to_viewer",
+        "passed": true,
+        "idle_draws": 0
+      },
+      {
+        "name": "camera_retry_after_submission",
+        "passed": true,
+        "idle_draws": 0
+      }
+    ],
+    "errors": []
+  },
+  "main_fixture_comparison": {
+    "errors": [],
+    "external_requests": [],
+    "browser": "154.0.4258.48",
+    "main_fixture_sha256": "6d1a8995b036d8fdda415dad475356de26c851ecbf54247b7365f66be22d7e3d",
+    "after_fixture_sha256": "6d1a8995b036d8fdda415dad475356de26c851ecbf54247b7365f66be22d7e3d",
+    "ok": true
+  },
+  "comparison": {
+    "overview_canvas_identical": true,
+    "images": [
+      {
+        "file": "before-desktop.png",
+        "sha256": "dbc2c2df70f53f317a400edb7709a5c58414ff2e6756804d21b85e25ebc490c6",
+        "bytes": 151631,
+        "width": 960,
+        "height": 900
+      },
+      {
+        "file": "after-desktop.png",
+        "sha256": "ecacbf2c0840b545f8cb9b7b09f867702890f1f7406c5d20ddd52d8c27337784",
+        "bytes": 162119,
+        "width": 960,
+        "height": 922
+      },
+      {
+        "file": "before-mobile.png",
+        "sha256": "262e6ea96e5fe02c473b8bc9db52589ae0cccb640f68fcca4f36d5acc61dd494",
+        "bytes": 115338,
+        "width": 390,
+        "height": 1156
+      },
+      {
+        "file": "after-mobile.png",
+        "sha256": "d9b264e95e732af49981d3acd821bf4d3d419719f6e2b79b1424d8d4ac2bd1f1",
+        "bytes": 125704,
+        "width": 390,
+        "height": 1270
+      },
+      {
+        "file": "after-north-desktop.png",
+        "sha256": "feda6d14897029f3015edd0ba362bf396c65c2e0cec017cd02b0653dca89a970",
+        "bytes": 170607,
+        "width": 960,
+        "height": 922
+      },
+      {
+        "file": "after-east-desktop.png",
+        "sha256": "6d128c824520edbd327b7b303561e196bae1434278f75002b381a5eecafbc0c6",
+        "bytes": 167485,
+        "width": 960,
+        "height": 922
+      },
+      {
+        "file": "after-east-mobile.png",
+        "sha256": "3407e375a874022cb19ebcae5a861a8f8c64df60fd502cc7f9bb88aaa0a41438",
+        "bytes": 130850,
+        "width": 390,
+        "height": 1270
+      },
+      {
+        "file": "before-overview-canvas.png",
+        "sha256": "230f70f81d1776ee775d00782efc13ad5914b2b97591dbe978987bdf9a298686",
+        "bytes": 102788,
+        "width": 596,
+        "height": 413
+      },
+      {
+        "file": "after-overview-canvas.png",
+        "sha256": "230f70f81d1776ee775d00782efc13ad5914b2b97591dbe978987bdf9a298686",
+        "bytes": 102788,
+        "width": 596,
+        "height": 413
+      },
+      {
+        "file": "main-fixture-canvas.png",
+        "sha256": "6d1a8995b036d8fdda415dad475356de26c851ecbf54247b7365f66be22d7e3d",
+        "bytes": 79738,
+        "width": 596,
+        "height": 413
+      },
+      {
+        "file": "after-fixture-canvas.png",
+        "sha256": "6d1a8995b036d8fdda415dad475356de26c851ecbf54247b7365f66be22d7e3d",
+        "bytes": 79738,
+        "width": 596,
+        "height": 413
+      }
+    ]
+  },
+  "setup_note": "Initial copied node_modules lacked transitive package references. Installed the unchanged frozen lockfile with pnpm 11.19.0; all affected checks were then rerun successfully.",
+  "limits": [
+    "Safari on a physical device, physical touch, and screen readers were not tested.",
+    "North/east follow the existing display frame; geographic registration and surveyed elevation remain unverified.",
+    "The procedural base-colour bake is an approximation.",
+    "Only code, validation metadata and explicitly approved comparison PNGs are published; no GLB, blend, textures, private job files or city data are included."
+  ]
+}

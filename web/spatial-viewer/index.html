@@ -23,6 +23,15 @@
         <div id="loading" role="status">3Dモデルを読み込んでいます…</div>
       </div>
 
+      <div id="local-view-controls" hidden>
+        <div class="view-presets" role="group" aria-label="建物を見る方向" aria-describedby="local-view-help">
+          <button type="button" data-local-view="overview" aria-pressed="true">全景</button>
+          <button type="button" data-local-view="north" aria-pressed="false">北から</button>
+          <button type="button" data-local-view="east" aria-pressed="false">東から</button>
+        </div>
+        <p id="local-view-help" class="help"><span id="local-view-status" role="status">全景を表示中</span> · 方角はモデル座標の目安です。ドラッグで自由に動かせます。</p>
+      </div>
+
       <p id="capture-status" class="notice" role="status" aria-live="polite">写真を撮るだけで端末に保存します。場所・寸法の入力は不要です。</p>
       <details id="session-controls" hidden><summary>撮影した写真を自動で送る</summary>
         <p class="help">このページを開いている間、これから撮る写真と以前に同意して送信待ちになった写真を自動送信します。写真・位置・撮影情報は非公開で保存し、30日経過後に順次削除します。ページを開き直したら再設定してください。</p>

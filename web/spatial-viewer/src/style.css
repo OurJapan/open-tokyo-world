@@ -33,6 +33,11 @@ h2 { font-size: 1.0625rem; font-weight: 600; margin: 0 0 24px; }
 .camera-active .model-caption { color: white; text-shadow: 0 1px 6px #000; }
 #loading { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 32px; background: #f5f5f7e8; color: var(--muted); }
 .notice { color: var(--muted); font-size: .875rem; min-height: 2.8em; margin: 20px 0 12px; text-align: center; }
+#local-view-controls { margin-top: 16px; }
+.local-reset { flex-shrink: 0; white-space: nowrap; }
+.view-presets { display: flex; gap: 8px; }
+.view-presets button { flex: 1; padding: .65rem .5rem; border: 1px solid transparent; }
+.view-presets button[aria-pressed=true] { color: #0057ae; background: #e8f2ff; border-color: #0071e3; font-weight: 600; }
 .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 .panel { margin-top: 66px; padding: 28px 24px; background: #fff; border-radius: 22px; }
 label { display: block; font-size: .875rem; font-weight: 500; margin: 22px 0 8px; }

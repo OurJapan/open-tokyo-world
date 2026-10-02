@@ -1,0 +1,327 @@
+{
+  "version": 1,
+  "date": "2026-10-02",
+  "ok": true,
+  "status": "candidate-human-review-pending",
+  "human_visual_approval": false,
+  "base_commit": "805310ef7a6aad5a13104334e798fb83b35f1711",
+  "input_sha256": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4",
+  "output_blends": {
+    "before.blend": "519219114891cb8e2b3c6f8f54754128a763c38f007b8d2775e23c2c62818e29",
+    "after.blend": "5adf895d6d81770bb0450eb44e85e6c9d07353a53cd9f5cb96180d396b80ec8c"
+  },
+  "plan_sha256": "bbbdb093b85b94fa167a73c54f5387260ea8fb562e3e876d76b50805d9ec4137",
+  "saved_road_mask_sha256": "b33b54f7565d6c7901c2bec67b129b460813119b9ff4a28e519e31d8a53aaa02",
+  "runtime": {
+    "blender_version": "4.5.1 LTS",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "device": "OPTIX",
+    "width": 1280,
+    "height": 848,
+    "samples": 32,
+    "seed": 0
+  },
+  "planting": {
+    "trees": 75,
+    "shrubs": 120,
+    "placement": "inferred; fixed OSM and saved-city road exclusion masks"
+  },
+  "geometry": {
+    "forest_floor_area_m2": 9669.225771987218,
+    "path_area_m2": 395.82377728470885
+  },
+  "existing_objects_changed": [],
+  "added_objects": [
+    "OTW Shiba Momijidani / crowns",
+    "OTW Shiba Momijidani / forest floor",
+    "OTW Shiba Momijidani / paths",
+    "OTW Shiba Momijidani / trunks",
+    "OTW Shiba Momijidani / understory"
+  ],
+  "counts": {
+    "before": {
+      "objects": 3307,
+      "vertices": 51238787,
+      "polygons": 39532723
+    },
+    "after": {
+      "objects": 3312,
+      "vertices": 53908888,
+      "polygons": 42026727
+    }
+  },
+  "matched_views": [
+    "tower-context",
+    "woodland-overview",
+    "woodland-overhead",
+    "west-path",
+    "east-boundary"
+  ],
+  "jobs": {
+    "prepare": {
+      "seconds": 24.547,
+      "report_sha256": "7cae8312f0183bd3e63f57437d62178094f934bb3085aad38b20185542b0af35"
+    },
+    "validate-before": {
+      "seconds": 35.734,
+      "report_sha256": "e757aa4f61a07e19dfbde96db5bbd94faf45f57af7bb7a274165f121e7a155db"
+    },
+    "validate-after": {
+      "seconds": 38.0,
+      "report_sha256": "a16a72bd612ee96c65d8d6cc67e3b9c4acede9610fe1a99d457a4dc00e155c5e"
+    },
+    "render-before": {
+      "seconds": 193.531,
+      "report_sha256": "39f662c230fe5441f501f60c3f460f36854f90b99216f0178de5e664d586a913"
+    },
+    "render-after": {
+      "seconds": 43.688,
+      "report_sha256": "5b991abc455ea312224c770ba1aac1dbeaad9e20ff85dc39dcbecde02f25a8b3"
+    }
+  },
+  "saved_validation": {
+    "ok": true,
+    "blender_version": "4.5.1 LTS",
+    "frame": 1,
+    "autoexec_enabled": false,
+    "objects": {
+      "OTW Shiba Momijidani / forest floor": {
+        "vertices": 48,
+        "triangles": 96,
+        "area_m2": 19356.672552898635,
+        "bounds_xyz": [
+          [
+            25.289281845092773,
+            -180.40469360351562,
+            0.11999999731779099
+          ],
+          [
+            134.24493408203125,
+            2.7293701171875,
+            0.1599999964237213
+          ]
+        ],
+        "nonfinite_vertices": 0,
+        "degenerate_triangles": 0,
+        "closed_edge_incidence_two": true,
+        "plan_coordinates_float32_exact": true,
+        "plan_faces_exact": true,
+        "top_area_m2": 9669.226009481274,
+        "plan_top_area_m2": 9669.225771987218,
+        "top_area_error_m2": 0.00023749405590933748
+      },
+      "OTW Shiba Momijidani / paths": {
+        "vertices": 188,
+        "triangles": 368,
+        "area_m2": 805.3995492628364,
+        "bounds_xyz": [
+          [
+            31.890256881713867,
+            -179.8604278564453,
+            0.49000000953674316
+          ],
+          [
+            71.98908233642578,
+            -25.927396774291992,
+            0.5299999713897705
+          ]
+        ],
+        "nonfinite_vertices": 0,
+        "degenerate_triangles": 0,
+        "closed_edge_incidence_two": true,
+        "plan_coordinates_float32_exact": true,
+        "plan_faces_exact": true,
+        "top_area_m2": 395.82374479937425,
+        "plan_top_area_m2": 395.82377728470874,
+        "top_area_error_m2": 3.2485334486409556e-05
+      },
+      "OTW Shiba Momijidani / trunks": {
+        "vertices": 20250,
+        "triangles": 36000,
+        "area_m2": 1110.9595279863647,
+        "bounds_xyz": [
+          [
+            39.540157318115234,
+            -162.9597930908203,
+            0.13171358406543732
+          ],
+          [
+            125.17237854003906,
+            -9.09294605255127,
+            9.278168678283691
+          ]
+        ],
+        "nonfinite_vertices": 0,
+        "degenerate_triangles": 0,
+        "closed_edge_incidence_two": null,
+        "vertices_within_planned_envelopes": 20250,
+        "represented_plantings": 75,
+        "maximum_relative_envelope_radius": 0.5254591131677318,
+        "grounded_plantings": 75,
+        "contact_height_m": 0.16,
+        "contact_radius_rule": "height * 0.027"
+      },
+      "OTW Shiba Momijidani / crowns": {
+        "vertices": 2637375,
+        "triangles": 2434500,
+        "area_m2": 14024.552555310014,
+        "bounds_xyz": [
+          [
+            38.29072570800781,
+            -164.11102294921875,
+            3.622570514678955
+          ],
+          [
+            126.3764419555664,
+            -7.891255855560303,
+            11.475008010864258
+          ]
+        ],
+        "nonfinite_vertices": 0,
+        "degenerate_triangles": 0,
+        "closed_edge_incidence_two": null,
+        "vertices_within_planned_envelopes": 2637375,
+        "represented_plantings": 75,
+        "maximum_relative_envelope_radius": 0.9565857240592159
+      },
+      "OTW Shiba Momijidani / understory": {
+        "vertices": 12240,
+        "triangles": 23040,
+        "area_m2": 523.0325389554894,
+        "bounds_xyz": [
+          [
+            35.6219367980957,
+            -153.68637084960938,
+            0.1599999964237213
+          ],
+          [
+            122.4993667602539,
+            -9.535168647766113,
+            1.1592178344726562
+          ]
+        ],
+        "nonfinite_vertices": 0,
+        "degenerate_triangles": 0,
+        "closed_edge_incidence_two": null,
+        "vertices_within_planned_envelopes": 12240,
+        "represented_plantings": 120,
+        "maximum_relative_envelope_radius": 0.8227460025488987,
+        "grounded_plantings": 120,
+        "contact_height_m": 0.16,
+        "contact_radius_rule": "radius * 0.85"
+      }
+    },
+    "placement": {
+      "trees": {
+        "count": 75,
+        "minimum_envelope_boundary_clearance_m": 3.7542525042678303,
+        "minimum_envelope_protected_clearance_m": 1.0533795073197116
+      },
+      "shrubs": {
+        "count": 120,
+        "minimum_envelope_boundary_clearance_m": 1.6849633565251965,
+        "minimum_envelope_protected_clearance_m": 1.0078982703389758
+      }
+    },
+    "scene_saved": false,
+    "limitations": [
+      "Existing-object fingerprints and original-input protection are validated separately by review.py.",
+      "Mapped horizontal layout and inferred vegetation/flat elevation; no surveyed terrain or waterfall reconstruction.",
+      "Road contact checks sample base disks; they do not certify collision-free navigation."
+    ],
+    "saved_road_clearance": {
+      "horizontal_road_triangles_in_scope": {
+        "asphalt 15s road detail": 328,
+        "gutter 15s road detail": 272,
+        "pavement_0 unified road": 301,
+        "asphalt_7 unified road": 0,
+        "pavement_7 unified road": 0
+      },
+      "source_winding_counts": {
+        "asphalt 15s road detail": {
+          "up": 0,
+          "down": 328
+        },
+        "gutter 15s road detail": {
+          "up": 0,
+          "down": 272
+        },
+        "pavement_0 unified road": {
+          "up": 0,
+          "down": 301
+        },
+        "asphalt_7 unified road": {
+          "up": 0,
+          "down": 0
+        },
+        "pavement_7 unified road": {
+          "up": 0,
+          "down": 0
+        }
+      },
+      "road_mesh_sha256": {
+        "asphalt 15s road detail": "e4e4b63d11e3528fa0b0a38e4ab94730231a7bff71af5f9186d12248c11587fd",
+        "gutter 15s road detail": "8b3a10448bb100ecf1348c6e56a7204cceaee129c8d76bbfee498c87a9b04c6a",
+        "pavement_0 unified road": "118fefe7079af5bf5cd15d580a2f329af1770f4bb467df35e2ae35202e9ac0b3",
+        "asphalt_7 unified road": "ad860f403f1308517303de5fb94e5a3a35ee4e47f7f001bd824eef76bb0f7be7",
+        "pavement_7 unified road": "d8e1b9f8f7f18054a795f3b157de5a1da97661ddb70118aec2a98f775f34b941"
+      },
+      "mask_source_meshes_exact": true,
+      "protected_road_z_range_m": [
+        0.1,
+        0.6
+      ],
+      "base_disk_samples": 3315,
+      "intersecting_samples": 0,
+      "tree_base_radius_m": 0.35,
+      "shrub_base_radius_factor": 0.85,
+      "sampling": "Both horizontal face windings are projected. Center and 16 perimeter points per base; canopy overhang above pedestrian height is allowed."
+    },
+    "input_sha256": "5adf895d6d81770bb0450eb44e85e6c9d07353a53cd9f5cb96180d396b80ec8c",
+    "plan_sha256": "bbbdb093b85b94fa167a73c54f5387260ea8fb562e3e876d76b50805d9ec4137",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "python_version": "3.11.11",
+    "code_sha256": {
+      "validate_shiba_momijidani.py": "ec56b3ff0d6ad2b98fc46ebce4e44a2bdcd701d23a23bee4be9d5e051cd3d6b2",
+      "shiba_momijidani_v1.py": "e361456663a25f71bf3032afcbeef03dd02d75cd5dcea8374399fed8a049d00c",
+      "blender_worker.py": "1d29478e4803a12bba15df5c4432508bc75863a06237b16587ae830ee2047bc6"
+    }
+  },
+  "source_input_unchanged": true,
+  "saved_candidate_unchanged_in_validation": true,
+  "portable_tests": {
+    "total": 247,
+    "passed": 241,
+    "skipped": 6,
+    "exit_code": 0,
+    "log": "data/local/checks/shiba/contracts-final.log"
+  },
+  "warnings": {
+    "existing_empty_mesh_waivers": 5,
+    "unfingerprinted_modifier_stacks": 31
+  },
+  "code_sha256_lf": {
+    "README.md": "dfe0f38f08dc207c8a9e5bdc9fdc978cbde23b0a8434614daa4602dfafb49891",
+    "scripts/shiba_momijidani_v1.py": "e361456663a25f71bf3032afcbeef03dd02d75cd5dcea8374399fed8a049d00c",
+    "scripts/prepare_shiba_momijidani.py": "81a381f50a5d0aafc81daecc3474515b717847e1fa0499b11f4309614abcf1d2",
+    "scripts/export_shiba_road_mask.py": "a6f66887692abda6a4e4061498d5cd885beb0a43bc01bbd33cc4e6a2138cc131",
+    "scripts/validate_shiba_momijidani.py": "ec56b3ff0d6ad2b98fc46ebce4e44a2bdcd701d23a23bee4be9d5e051cd3d6b2",
+    "scripts/review.py": "44829ff3f1ec72a66684a854864701f8123c35dcd32a4349752869cbca1c218f",
+    "scripts/blender_worker.py": "5f41163483653a15e206ae0624b0d57fc57c4b47535ae47d050d7d86df037012",
+    "tests/test_shiba_geometry.py": "e354fb3c98893bf131e0cc0b42ae5d02c1d6896b13c68c8ef1cb5d42a4eccb63",
+    "tests/test_shiba_review.py": "44545d048f6f7e58799ec8f48365c89c0425cc8529828e879be177fa434bf10f",
+    "areas/tokyo-tower/shiba-momijidani-cameras.json": "a797a38d048e57ad218ab36c22999467bb5ded92602aa9be7c6cdfcd57f86eae",
+    "areas/tokyo-tower/shiba-momijidani-patch.json": "7e2ec1efaa2a7e402a3e671f1421de0335a730b8695f9c1cccc6505ef8939bcd"
+  },
+  "local_outputs": {
+    "review": "data/local/reviews/shiba-momijidani-v1-final/final-review.html",
+    "candidate": "data/local/reviews/shiba-momijidani-v1-final/after.blend",
+    "validation": "data/local/shiba-audit/saved-validation-final.json"
+  },
+  "limitations": [
+    "No surveyed terrain, waterfall, stream, pond or bridge reconstruction.",
+    "Planting positions, dimensions, widths, materials and flat Z are inferred.",
+    "Road contacts sampled at 17 points per base; no complete navigation or collision certification.",
+    "Baseline dependency/modifier limitations remain; human acceptance and full-city public distribution are pending."
+  ]
+}
