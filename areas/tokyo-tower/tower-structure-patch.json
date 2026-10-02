@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "purpose": "reviewed-change",
+  "reason": "Restore the missing FootTown exterior and replace the incomplete elevator/stair core with photo-guided exterior structures. Dimensions and layouts remain inferred.",
+  "source_refs": [
+    "areas/tokyo-tower/tower-structure-sources.json",
+    "https://www.tokyotower.co.jp/foottown/20c72pu2d7b.html",
+    "https://www.mebs.co.jp/cases/multiple-solutions/interview/1199875_1508.html",
+    "https://www.giho.mitsubishielectric.co.jp/giho/pdf/2018/1809.pdf"
+  ],
+  "operations": [
+    {
+      "op": "tower_structure_v1",
+      "feature_id": "otw:jp:tokyo:minato:tokyo-tower",
+      "object": "Tokyo Tower structure / stone",
+      "expected_mesh_sha256": "83c51bad1b8f8e02a71901e21ec06c5ef2ac24cb02510d9f338639aff7085943",
+      "target_mesh_sha256": {
+        "Tokyo Tower structure / stone": "83c51bad1b8f8e02a71901e21ec06c5ef2ac24cb02510d9f338639aff7085943",
+        "Tokyo Tower structure / orange": "b6adab8152af75c884184a2f2fd5b49a1a227315324963deb7932ad97f8283db",
+        "Tokyo Tower structure / white": "3ffc88b2d5537dc28070fd486bf2866bfde63b5dc933c5060b12798280e3b722",
+        "Tokyo Tower structure / darkmetal": "22d54047bb948c1985adaf15bb1c171c61d526d3ca3d8b7db5e404de7573539f"
+      },
+      "added_objects": [
+        "OTW Tokyo Tower structure / base-connections",
+        "OTW Tokyo Tower structure / foottown-glazing",
+        "OTW Tokyo Tower structure / foottown-metal",
+        "OTW Tokyo Tower structure / foottown-roof",
+        "OTW Tokyo Tower structure / foottown-shell",
+        "OTW Tokyo Tower structure / lift-cars",
+        "OTW Tokyo Tower structure / lift-glazing",
+        "OTW Tokyo Tower structure / lower-shaft-frame",
+        "OTW Tokyo Tower structure / lower-shaft-glazing",
+        "OTW Tokyo Tower structure / roof-access",
+        "OTW Tokyo Tower structure / stairs-frame",
+        "OTW Tokyo Tower structure / stairs-guards",
+        "OTW Tokyo Tower structure / stairs-treads",
+        "OTW Tokyo Tower structure / upper-guide-rails",
+        "OTW Tokyo Tower structure / upper-platforms",
+        "OTW Tokyo Tower structure / upper-shaft-frame",
+        "OTW Tokyo Tower structure / upper-support-links"
+      ]
+    }
+  ]
+}
