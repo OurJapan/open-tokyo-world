@@ -59,21 +59,23 @@
 
 ## 検証と採用判断
 
-[9視点のBefore/After画像18枚](../renders/previews/tower-structure-v1/README.md)を公開しています。[検証結果](tower-structure-v1-validation.json)と[画像・実装hash](../renders/previews/tower-structure-v1/evidence.json)で入力、保存結果、比較画像を対応付けています。形状・描画コードは `0254578b2a25cad1a7dac881b2435b5c2da74636` です。
+[比較ギャラリー](../renders/previews/tower-lift-v2/README.md)には、前回提案と修正版の同一視点4組、および固定原本と修正版の13組を掲載しています。計30個のPNGを使い、かご外観・室内・吊り枠・救出階の近接を確認できます。[検証結果](tower-structure-v1-validation.json)と[画像・実装hash](../renders/previews/tower-lift-v2/evidence.json)で対応付けています。形状・描画コードは `4a7ceb0e9b07ff9b4f314072f200b7b118c41196` です。
 
 - Blender 4.5.1 LTS、OptiX、1280×848、32 samples、seed 0。各ペアのカメラ・照明・描画条件は一致しています。
-- 5フェーズの実city検証が成功。既存3メッシュの限定部分を変更し、17メッシュを追加、その他の既存オブジェクトと依存素材のfingerprintは保持しました。既知の空メッシュ5個とmodifierに関する警告は変更前後で同じです。
-- 別Blenderプロセスで保存後のcandidateと固定原本を再読込。追加17メッシュの閉面・有限座標・面の向き、598段と踊り場、屋上開口・入口、ガイド・ロープ終端、脚部プレートと締結部を検査しました。橙色／白色鉄骨の残存頂点・面・材質番号・smooth設定・ベベル設定を原本と完全照合し、原本・candidateとも検査前後でhash不変でした。
-- portable checksは358件実行、350件成功、環境依存8件スキップ。構文検査とdiffcheckも成功しています。
+- 固定原本からの5フェーズ検証が成功。3既存メッシュの限定箇所を変更し、26メッシュを追加しています。変更範囲外の既存オブジェクトと依存素材は保持しました。
+- 前回提案との追加照合では、上部架構・ガイド・支持材・救出床・上下かごを共有していた2メッシュの計6メッシュのみを変更、9メッシュを追加しました。フットタウン、地上〜メインデッキの階段、塔脚接点、他のcityオブジェクトは前回提案と同一です。
+- 別Blenderプロセスで保存後のcandidateと原本を再読込し、26メッシュの閉面・面向き・座標、3枚2面ガラス、鏡下面、4組のシュー、7索と吊り枠への接続、救出扉と折返し動線の空きを検査しました。上端付近98踏面の頭上領域と原本の33凸材に侵入はありません。4環状部材は面が階段領域の外側にあることを確認しています。この限定検査は全ルートの通行認証を意味しません。
+- 原本の残存鉄骨・塗装・BEVEL設定を完全照合し、追加上部鋼材の帯材質が原本と同一であることを確認しました。検査前後で原本と保存candidateのhashは不変です。
+- portable checksは367件実行、359件成功、環境依存8件スキップ。構文検査とdiffcheckも成功しています。
 
-画像レビューではフットタウン、階段、昇降路の追加と周辺の保持を確認しました。上部近接では既存主柱やリング梁がかご・ガイドの一部に重なり、救出床の細部も全景だけでは判定できません。保存メッシュ検査と合わせて評価してください。人間による採用判断とマージは未完了です。
+室内近景で隣接窓と鏡面反射、外部近景で吊り枠・索端・ガイド、救出近景で扉・敷居・格子床・階段を確認しました。未公開寸法や未同定部品は前節のとおり推定・未再現として残ります。PR #58からの後続候補であり、今回改訂に対する人間の画像採用判断とマージは未完了です。
 
-再現には登録済み原本とBlender 4.5.1が必要です。出力先は新しいディレクトリを指定してください。
+再現には認可された固定原本とBlender 4.5.1が必要です。出力先には新しいディレクトリを指定してください。
 
 ```text
-python scripts/review.py --blender <Blender実行ファイル> --input data/local/inputs/tower-structure-pr56/after.blend --lock manifests/tower-structure-input.json --cameras areas/tokyo-tower/tower-structure-cameras.json --features areas/tokyo-tower/tower-structure-features.json --patch areas/tokyo-tower/tower-structure-patch.json --output data/local/reviews/tower-structure-reproduce --device OPTIX --width 1280 --height 848 --samples 32
-python scripts/validate_tower_structure.py --blender <Blender実行ファイル> --input data/local/reviews/tower-structure-reproduce/after.blend --original data/local/inputs/tower-structure-pr56/after.blend --output data/local/reviews/tower-structure-reproduce/saved-geometry-validation.json
+python scripts/review.py --blender <Blender実行ファイル> --input data/local/inputs/tower-structure-pr56/after.blend --lock manifests/tower-structure-input.json --cameras areas/tokyo-tower/tower-structure-cameras.json --features areas/tokyo-tower/tower-structure-features.json --patch areas/tokyo-tower/tower-structure-patch.json --output data/local/reviews/tower-lift-v2-reproduce --device OPTIX --width 1280 --height 848 --samples 32
+python scripts/validate_tower_structure.py --blender <Blender実行ファイル> --input data/local/reviews/tower-lift-v2-reproduce/after.blend --original data/local/inputs/tower-structure-pr56/after.blend --output data/local/reviews/tower-lift-v2-reproduce/saved-geometry-validation.json
 python -m unittest discover -s tests
 ```
 
-技術検査の成功は実物精度、歩行可能性、構造安全性、昇降機としての適合性を保証しません。ローカルの完全な実行記録はGit管理外の `data/local/reviews/tower-structure-final-03/` にあります。
+完全なローカル実行記録はGit管理外の `data/local/reviews/tower-lift-v2-final-02/`、前回提案の追加描画は `data/local/reviews/tower-lift-v2-previous-proposal/` にあります。

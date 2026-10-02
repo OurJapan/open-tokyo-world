@@ -4,11 +4,11 @@
   "ok": true,
   "status": "candidate-human-review-pending",
   "human_visual_approval": false,
-  "geometry_and_render_code_commit": "0254578b2a25cad1a7dac881b2435b5c2da74636",
+  "geometry_and_render_code_commit": "4a7ceb0e9b07ff9b4f314072f200b7b118c41196",
   "input_sha256": "aa80b552f267d935d3c5d943ac95d0d410d6ec7abb170346bef707eee6cae2e2",
   "output_blends": {
-    "before.blend": "d59713288fc90d2dd343ac041c145fc9b683ae5cd949b98f4a7ef584ab60a309",
-    "after.blend": "eee5f656772255d4717ec8e8045777ce8f75c3ad60d8729c94295f1d29d46dac"
+    "before.blend": "433cdc0591563ae8629f4ef2d12b6044626479aff617c849ccb0c6153a1459d8",
+    "after.blend": "7a5cd95d2223092a1a2931131eeadd3978605d8e7293b5908aada3b13f301350"
   },
   "runtime": {
     "blender_version": "4.5.1 LTS",
@@ -38,10 +38,19 @@
     "OTW Tokyo Tower structure / stairs-frame",
     "OTW Tokyo Tower structure / stairs-guards",
     "OTW Tokyo Tower structure / stairs-treads",
+    "OTW Tokyo Tower structure / upper-car-dark",
+    "OTW Tokyo Tower structure / upper-car-floor",
+    "OTW Tokyo Tower structure / upper-car-glass",
+    "OTW Tokyo Tower structure / upper-car-mirror",
+    "OTW Tokyo Tower structure / upper-car-rigging",
+    "OTW Tokyo Tower structure / upper-car-shell",
     "OTW Tokyo Tower structure / upper-guide-rails",
+    "OTW Tokyo Tower structure / upper-landing-doors",
     "OTW Tokyo Tower structure / upper-platforms",
+    "OTW Tokyo Tower structure / upper-service-stairs",
     "OTW Tokyo Tower structure / upper-shaft-frame",
-    "OTW Tokyo Tower structure / upper-support-links"
+    "OTW Tokyo Tower structure / upper-support-links",
+    "OTW Tokyo Tower structure / upper-suspension"
   ],
   "counts": {
     "before": {
@@ -50,9 +59,9 @@
       "polygons": 42531440
     },
     "after": {
-      "objects": 3349,
-      "vertices": 54537629,
-      "polygons": 42557056
+      "objects": 3358,
+      "vertices": 54572673,
+      "polygons": 42580950
     }
   },
   "matched_views": [
@@ -64,36 +73,40 @@
     "exterior-stairs",
     "upper-shaft",
     "upper-lift-detail",
-    "top-connection"
+    "top-connection",
+    "upper-car-exterior",
+    "upper-car-interior",
+    "upper-rescue-detail",
+    "upper-rigging-detail"
   ],
   "jobs": {
     "prepare": {
-      "seconds": 13.297,
+      "seconds": 13.844,
       "report_sha256": "0435cb75bfc8a545d8af2f3c52c9a7590b2fd765d05a31a489c875a0b2d5c0a4"
     },
     "validate-before": {
-      "seconds": 34.578,
+      "seconds": 34.906,
       "report_sha256": "af46414b3a1e4f462dc55a984c38a5ff0d073eacd9b01332e9f18d2270406f84"
     },
     "validate-after": {
-      "seconds": 34.641,
-      "report_sha256": "ac6a5b7ef82dd170d03b772357a161267cad1499f5646f9344c7c2c66760df3d"
+      "seconds": 34.844,
+      "report_sha256": "01792e2560a6ce9a15b0c9228077f1f898a97fcab12f965d5f98d45d160e680e"
     },
     "render-before": {
-      "seconds": 59.641,
-      "report_sha256": "5f4ce1fa75741362f930ad5e090f6c42a5d154a27620a1f21a629adbac1aab45"
+      "seconds": 80.531,
+      "report_sha256": "2bedc8f192294fa041c29cfc563710e1cf2aefe32b617c0feea9af26faa0a7fb"
     },
     "render-after": {
-      "seconds": 59.188,
-      "report_sha256": "91f28f35cbe4ee2525f1736c97786e638ef51ee0a5167fe0edc4e72479a0f6e2"
+      "seconds": 84.031,
+      "report_sha256": "bf6e29efeb4c3ebfc206c0444e7e90c38dcf9c4e0e504fc581bf050097d1daec"
     }
   },
   "portable_tests": {
-    "run": 358,
-    "passed": 350,
+    "run": 367,
+    "passed": 359,
     "skipped": 8,
     "failures": 0,
-    "log_sha256": "4d04aa0e39bb3ebc6989ff447e400580326ae6cf59a99781fff7b9dadb0bbad5"
+    "log_sha256": "49ffcc0e73c2939dfaf1559716f6a81d9f77535ec89cb5866eececd4ad6ea33b"
   },
   "syntax_check": "python -m compileall -q scripts tests passed",
   "warnings_unchanged": [
@@ -379,39 +392,39 @@
         "volume_m3": 4.707999515532702
       },
       "upper-shaft-frame": {
-        "vertices": 1952,
-        "polygons": 1320,
-        "components": 172,
+        "vertices": 10224,
+        "polygons": 7284,
+        "components": 1086,
         "bounds_m": [
           [
-            -1.8799999952316284,
-            1.8799999952316284
+            -2.799999952316284,
+            2.799999952316284
           ],
           [
-            -1.8799999952316284,
-            1.8799999952316284
+            -1.9930000305175781,
+            3.299999952316284
           ],
           [
-            153.96237182617188,
-            246.13763427734375
+            153.8800048828125,
+            246.10000610351562
           ]
         ],
         "closed_edge_incidence_two": true,
         "consistent_outward_winding": true,
-        "volume_m3": 17.349561264816156
+        "volume_m3": 9.820181732777705
       },
       "upper-guide-rails": {
-        "vertices": 116,
-        "polygons": 80,
-        "components": 11,
+        "vertices": 1568,
+        "polygons": 1176,
+        "components": 196,
         "bounds_m": [
           [
-            -1.4800000190734863,
-            1.4800000190734863
+            -1.8125,
+            1.8125
           ],
           [
-            -0.07500000298023224,
-            1.4600000381469727
+            -0.14000000059604645,
+            0.14000000059604645
           ],
           [
             154.0,
@@ -420,34 +433,34 @@
         ],
         "closed_edge_incidence_two": true,
         "consistent_outward_winding": true,
-        "volume_m3": 4.681247532669983
+        "volume_m3": 1.0952911497936202
       },
       "upper-support-links": {
-        "vertices": 512,
-        "polygons": 320,
-        "components": 32,
+        "vertices": 640,
+        "polygons": 480,
+        "components": 80,
         "bounds_m": [
           [
-            -8.537317276000977,
-            8.537317276000977
+            -8.533782005310059,
+            8.533782005310059
           ],
           [
-            -8.537317276000977,
-            8.537317276000977
+            -8.533782005310059,
+            8.533782005310059
           ],
           [
-            152.12632751464844,
-            243.9149932861328
+            152.13124084472656,
+            243.9499969482422
           ]
         ],
         "closed_edge_incidence_two": true,
         "consistent_outward_winding": true,
-        "volume_m3": 5.105979747815384
+        "volume_m3": 1.5629164071715764
       },
       "upper-platforms": {
-        "vertices": 880,
-        "polygons": 556,
-        "components": 58,
+        "vertices": 1952,
+        "polygons": 1352,
+        "components": 188,
         "bounds_m": [
           [
             -2.8340001106262207,
@@ -458,18 +471,18 @@
             3.3340001106262207
           ],
           [
-            183.8699951171875,
+            183.875,
             218.13400268554688
           ]
         ],
         "closed_edge_incidence_two": true,
         "consistent_outward_winding": true,
-        "volume_m3": 3.5954605443678305
+        "volume_m3": 0.95141778053886
       },
       "lift-cars": {
-        "vertices": 128,
-        "polygons": 96,
-        "components": 16,
+        "vertices": 64,
+        "polygons": 48,
+        "components": 8,
         "bounds_m": [
           [
             -1.3250000476837158,
@@ -481,17 +494,17 @@
           ],
           [
             79.9000015258789,
-            203.94000244140625
+            82.94000244140625
           ]
         ],
         "closed_edge_incidence_two": true,
         "consistent_outward_winding": true,
-        "volume_m3": 8.011382547220556
+        "volume_m3": 4.005613628880737
       },
       "lift-glazing": {
-        "vertices": 48,
-        "polygons": 36,
-        "components": 6,
+        "vertices": 24,
+        "polygons": 18,
+        "components": 3,
         "bounds_m": [
           [
             -1.2719999551773071,
@@ -503,12 +516,210 @@
           ],
           [
             80.09500122070312,
-            203.7449951171875
+            82.74500274658203
           ]
         ],
         "closed_edge_incidence_two": true,
         "consistent_outward_winding": true,
-        "volume_m3": 0.6674864937807229
+        "volume_m3": 0.3337434702783817
+      },
+      "upper-suspension": {
+        "vertices": 112,
+        "polygons": 70,
+        "components": 7,
+        "bounds_m": [
+          [
+            -0.28200000524520874,
+            0.28200000524520874
+          ],
+          [
+            -0.012000000104308128,
+            0.012000000104308128
+          ],
+          [
+            204.32000732421875,
+            246.10000610351562
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 0.11911704990586867
+      },
+      "upper-landing-doors": {
+        "vertices": 96,
+        "polygons": 72,
+        "components": 12,
+        "bounds_m": [
+          [
+            -0.7099999785423279,
+            0.7099999785423279
+          ],
+          [
+            1.409999966621399,
+            1.7899999618530273
+          ],
+          [
+            183.92999267578125,
+            219.3000030517578
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 0.5776709471535418
+      },
+      "upper-car-shell": {
+        "vertices": 496,
+        "polygons": 312,
+        "components": 32,
+        "bounds_m": [
+          [
+            -1.225000023841858,
+            1.225000023841858
+          ],
+          [
+            -1.2000000476837158,
+            1.2000000476837158
+          ],
+          [
+            201.0,
+            203.6999969482422
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 0.7633964569814478
+      },
+      "upper-car-glass": {
+        "vertices": 152,
+        "polygons": 90,
+        "components": 7,
+        "bounds_m": [
+          [
+            -1.225000023841858,
+            1.1649999618530273
+          ],
+          [
+            -1.2000000476837158,
+            1.1399999856948853
+          ],
+          [
+            201.0500030517578,
+            203.6719970703125
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 0.28462870436818355
+      },
+      "upper-car-mirror": {
+        "vertices": 8,
+        "polygons": 6,
+        "components": 1,
+        "bounds_m": [
+          [
+            -1.1649999618530273,
+            1.1649999618530273
+          ],
+          [
+            -1.1399999856948853,
+            1.1399999856948853
+          ],
+          [
+            203.6999969482422,
+            203.72000122070312
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 0.10627069220821582
+      },
+      "upper-car-floor": {
+        "vertices": 8,
+        "polygons": 6,
+        "components": 1,
+        "bounds_m": [
+          [
+            -1.225000023841858,
+            1.225000023841858
+          ],
+          [
+            -1.2000000476837158,
+            1.2000000476837158
+          ],
+          [
+            200.86000061035156,
+            201.0
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 0.8231964598653584
+      },
+      "upper-car-rigging": {
+        "vertices": 336,
+        "polygons": 238,
+        "components": 35,
+        "bounds_m": [
+          [
+            -1.4900000095367432,
+            1.4900000095367432
+          ],
+          [
+            -1.2000000476837158,
+            1.2000000476837158
+          ],
+          [
+            200.6199951171875,
+            204.41000366210938
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 0.9778181756438517
+      },
+      "upper-car-dark": {
+        "vertices": 128,
+        "polygons": 96,
+        "components": 16,
+        "bounds_m": [
+          [
+            -1.4900000095367432,
+            1.4900000095367432
+          ],
+          [
+            -0.017000000923871994,
+            1.1799999475479126
+          ],
+          [
+            200.80999755859375,
+            204.0399932861328
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 0.0037683674797092245
+      },
+      "upper-service-stairs": {
+        "vertices": 22872,
+        "polygons": 15054,
+        "components": 1809,
+        "bounds_m": [
+          [
+            -1.8849999904632568,
+            1.8849999904632568
+          ],
+          [
+            1.9824999570846558,
+            3.3475000858306885
+          ],
+          [
+            153.89093017578125,
+            247.13400268554688
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 11.887270002038436
       }
     },
     "stairs": {
@@ -523,13 +734,56 @@
     },
     "upper_open_frame": {
       "continuous_posts": 4,
+      "post_webs_and_flanges": 12,
       "wide_vertical_walls": 0
     },
     "upper_guides": {
-      "guide_rails": 4,
-      "ropes": 7,
+      "guide_rails": 2,
+      "guide_profile_plates": 4,
+      "brackets": 48,
       "bottom_m": 154,
       "top_m": 246.1
+    },
+    "upper_suspension": {
+      "ropes": 7,
+      "bottom_m": 204.32,
+      "top_m": 246.1,
+      "anchorage_connections": 7
+    },
+    "upper_rescue_doors": {
+      "doorways": 2,
+      "door_leaves": 4,
+      "levels_m": [
+        184,
+        217
+      ],
+      "structural_penetrations": 0,
+      "grating_bars": 58,
+      "stair_return_landings_checked": 2,
+      "return_landing_intrusions": 0
+    },
+    "upper_service_stairs": {
+      "flights": 50,
+      "treads": 500,
+      "landings": 51,
+      "bottom_m": 154,
+      "top_m": 246.1,
+      "rescue_landing_levels_m": [
+        184,
+        217
+      ],
+      "dimensions_status": "Inferred modelling layout; not a surveyed stair count."
+    },
+    "upper_car": {
+      "large_glass_panes": 3,
+      "glass_sides": 2,
+      "light_lenses": 4,
+      "floor_top_m": 201,
+      "mirror_underside_m": 203.7,
+      "closed_door_leaves": 2,
+      "guide_shoes": 4,
+      "rope_crosshead_connections": 7,
+      "dimensions_status": "Photo-supported arrangement; cabin size and attachment dimensions are inferred."
     },
     "foottown": {
       "roof_top_m": 16.2,
@@ -562,14 +816,23 @@
       "OTW Tokyo Tower structure / stairs-treads": "34f56ff0cfc56c2b70d2cd07baa7fad99bb67ec2c45c55456fefe9c01be167d0",
       "OTW Tokyo Tower structure / stairs-guards": "91fd52afd86f9d38bc058c3731cd401e173555f91efdeac0005e24d164c48315",
       "OTW Tokyo Tower structure / roof-access": "fda798017432c0c4084abad36929c6e438e8e2c1ad501ea66089e600cee0cca6",
-      "OTW Tokyo Tower structure / upper-shaft-frame": "456c7f7bd627e8913e031a8a91bbab02435bc90737da7a9112f1d4a17fa07c80",
-      "OTW Tokyo Tower structure / upper-guide-rails": "bb9a7e007829abf48f53a81b55a9d293a974e2cc7eb7f1f9eaf0f1e101c8ed20",
-      "OTW Tokyo Tower structure / upper-support-links": "9738b5a53973e3aadacd9fd3aa1827599785b9374eabf71dd0790169f4443aae",
-      "OTW Tokyo Tower structure / upper-platforms": "cbd5253760357304d282f83c961952b5d8e6e42ef2058d646e1fc4d6700c103e",
-      "OTW Tokyo Tower structure / lift-cars": "4a31b0c5008928fa95584f1f0d52e0ca6017ec849f694f91d41f9ee1d8673b99",
-      "OTW Tokyo Tower structure / lift-glazing": "96866ddaabba84f9ffa0e61a3f869ed515ea192f9348f2f09d5d5a26bd50d850"
+      "OTW Tokyo Tower structure / upper-shaft-frame": "52c071c9a05474d837a2f4e1232284d5f05e6c0cbce74e1bd1b3a8079886e1aa",
+      "OTW Tokyo Tower structure / upper-guide-rails": "8d7922a0a370357c4e8684788478d62eee9f8d36ab17b637908cdf7a11ef0cbd",
+      "OTW Tokyo Tower structure / upper-support-links": "a4604c5c52c394d65c0e48d87d0c1bebe4766091205100eecb21c21aace39317",
+      "OTW Tokyo Tower structure / upper-platforms": "72af64773c48ded65638ba917f1588666031f90eb5353f0cbb9391421ba3e2b2",
+      "OTW Tokyo Tower structure / lift-cars": "05338c1c045165cfa13c1a053cb425b6a8bfbc753a56137d16f5fa99346f78bb",
+      "OTW Tokyo Tower structure / lift-glazing": "6159a7ed07132de08204a6f1cfed3725a684f98ac41a150d81d478c3d784e63f",
+      "OTW Tokyo Tower structure / upper-suspension": "4a342b36246b33ddf2ddb3dc9c08045d15af86ce240e33892229acef65872e93",
+      "OTW Tokyo Tower structure / upper-landing-doors": "3ad69fa04cc7a839b4295a5912a426c7528324426b548695b921f3db5939e39d",
+      "OTW Tokyo Tower structure / upper-car-shell": "cfb5598e91808215e24b99704ecd67436e73c10b0f8a4d69d74e841f776552cd",
+      "OTW Tokyo Tower structure / upper-car-glass": "e273da307b3b7b458c30db9841c84b5a879f6905ffd39d20d08da47a0474471f",
+      "OTW Tokyo Tower structure / upper-car-mirror": "844789d5cf8a6514c5eb5cce18edcdfad3a876c20d85df5b42609a9d59b3e052",
+      "OTW Tokyo Tower structure / upper-car-floor": "47c0a7a2f61bd5f5879ad96c97ed18c6869ea9075f5925d2545791bc6a5a7484",
+      "OTW Tokyo Tower structure / upper-car-rigging": "4937388d4e8c4d2223fa700671c5536e6944796ffa200d5bd3ee2db1ae39dcb9",
+      "OTW Tokyo Tower structure / upper-car-dark": "256d6981233cc87c34876042fc850d197f8de5da54c604660bcb6ff10340303d",
+      "OTW Tokyo Tower structure / upper-service-stairs": "cfbcbe6ca86fb4b02439f6cfd3d1c26505dc0a1f505eb56d15794746e3fdda4a"
     },
-    "inspected_added_meshes": 17,
+    "inspected_added_meshes": 26,
     "limitations": [
       "Existing-object preservation is checked separately by review.py fingerprints.",
       "Closed disconnected solids may intersect at structural joints; this is not a structural or navigation certification.",
@@ -743,21 +1006,42 @@
         "retained_data_sha256": "057713818b9b0327c572c016b93a5f87f3ffc516b327679600e9331583f58ec7"
       }
     },
+    "upper_stair_original_headroom": {
+      "floor_height_range_m": [
+        230,
+        246.1
+      ],
+      "floor_headrooms_checked": 98,
+      "headroom_above_surface_m": [
+        0.1,
+        1.8
+      ],
+      "edge_inset_m": 0.04,
+      "convex_original_members": 33,
+      "annular_decks_outside_stair_cylinder": 4,
+      "stair_cylinder_radius_m": 3.783186457670617,
+      "minimum_annular_face_radius_m": 5.793013455954642,
+      "lattice_intrusions": 0,
+      "scope": "Known upper-end clash regression only; not a full navigation clearance certification."
+    },
+    "upper_banded_paint_matches_original": true,
     "input_unchanged": true,
     "original_unchanged": true,
     "code_unchanged": true,
-    "input_sha256": "eee5f656772255d4717ec8e8045777ce8f75c3ad60d8729c94295f1d29d46dac",
+    "input_sha256": "7a5cd95d2223092a1a2931131eeadd3978605d8e7293b5908aada3b13f301350",
     "original_sha256": "aa80b552f267d935d3c5d943ac95d0d410d6ec7abb170346bef707eee6cae2e2",
     "platform": "Windows-10-10.0.26300-SP0",
     "python_version": "3.11.11",
     "code_sha256": {
-      "validate_tower_structure.py": "0e12269d149faa302fe9444e6557ef335bd8afe55b13c9e659e05c487103ce45",
-      "tower_structure_v1.py": "21368e45db7568605c0ecc3385b2bde8385cedbf4ff488502d098ef5ab3bd64b",
+      "validate_tower_structure.py": "03f911a2f85f4aee0d32d986d3210b7c4a495e13487f062997abe5d26ee0581c",
+      "tower_structure_v1.py": "bfb1730e3277138aec489cdb113c6af1738a5c8d1ebad395f6119ad2d1656821",
       "tower_foottown_v1.py": "f3b7bb8e030e04ab8c73541bb8716cecba4383350159a70df99b5c8ddd95b7a5",
+      "tower_upper_lift_v2.py": "89b0dcf7959de6a6fe5449e0ee8de2554077bbce1e083ec0f6948cc1d283eb57",
+      "tower_lift_car_v2.py": "354e3471c7f01080b4111d7b14f60c18ed771376b795c9e8849ae0cb886fe22f",
       "blender_worker.py": "4f6180670a4e832ea21b4ab928b2bad6f6e43d8e3811a04a7bca4aae24a79d64"
     }
   },
-  "local_run": "data/local/reviews/tower-structure-final-03",
+  "local_run": "data/local/reviews/tower-lift-v2-final-02",
   "input_composition": "Pinned PR56 composed candidate retains PR47/49/51/52/56; shared workspace registration is unchanged.",
   "limitations": [
     "Human visual approval is required.",
@@ -766,5 +1050,53 @@
     "Dependency audit and fingerprints cover documented initial checks, not all Blender features.",
     "Separate PR54/55 candidates are not composed into this input.",
     "Interior circulation and lift operation are outside this static exterior change."
-  ]
+  ],
+  "previous_proposal_comparison": {
+    "source_blend_sha256": "eee5f656772255d4717ec8e8045777ce8f75c3ad60d8729c94295f1d29d46dac",
+    "source_unchanged": true,
+    "matched_conditions": true,
+    "description": "First PR58 proposal rendered again with four final cameras; distinct from the pinned PR56 input Before images."
+  },
+  "previous_proposal_scope": {
+    "ok": true,
+    "previous_proposal_sha256": "eee5f656772255d4717ec8e8045777ce8f75c3ad60d8729c94295f1d29d46dac",
+    "candidate_sha256": "7a5cd95d2223092a1a2931131eeadd3978605d8e7293b5908aada3b13f301350",
+    "allowed_existing_objects": [
+      "OTW Tokyo Tower structure / upper-shaft-frame",
+      "OTW Tokyo Tower structure / upper-guide-rails",
+      "OTW Tokyo Tower structure / upper-support-links",
+      "OTW Tokyo Tower structure / upper-platforms",
+      "OTW Tokyo Tower structure / lift-cars",
+      "OTW Tokyo Tower structure / lift-glazing"
+    ],
+    "added_objects": [
+      "OTW Tokyo Tower structure / upper-suspension",
+      "OTW Tokyo Tower structure / upper-landing-doors",
+      "OTW Tokyo Tower structure / upper-car-shell",
+      "OTW Tokyo Tower structure / upper-car-glass",
+      "OTW Tokyo Tower structure / upper-car-mirror",
+      "OTW Tokyo Tower structure / upper-car-floor",
+      "OTW Tokyo Tower structure / upper-car-rigging",
+      "OTW Tokyo Tower structure / upper-car-dark",
+      "OTW Tokyo Tower structure / upper-service-stairs"
+    ],
+    "changed_objects": [
+      "OTW Tokyo Tower structure / upper-shaft-frame",
+      "OTW Tokyo Tower structure / upper-guide-rails",
+      "OTW Tokyo Tower structure / upper-support-links",
+      "OTW Tokyo Tower structure / upper-platforms",
+      "OTW Tokyo Tower structure / lift-cars",
+      "OTW Tokyo Tower structure / lift-glazing",
+      "OTW Tokyo Tower structure / upper-car-dark",
+      "OTW Tokyo Tower structure / upper-car-floor",
+      "OTW Tokyo Tower structure / upper-car-glass",
+      "OTW Tokyo Tower structure / upper-car-mirror",
+      "OTW Tokyo Tower structure / upper-car-rigging",
+      "OTW Tokyo Tower structure / upper-car-shell",
+      "OTW Tokyo Tower structure / upper-landing-doors",
+      "OTW Tokyo Tower structure / upper-service-stairs",
+      "OTW Tokyo Tower structure / upper-suspension"
+    ],
+    "other_existing_objects_unchanged": true
+  }
 }
