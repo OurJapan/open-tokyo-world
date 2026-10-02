@@ -45,7 +45,7 @@
 
 実行先は毎回新しいパスを指定します。CLIのPythonは3.11/3.12、Blenderは4.5.1 LTSです。OptiX対応GPUがない場合は明示的にCPUを指定してください。planは実行環境・生成コードのhashを含むため、環境が異なる場合は内容とhashを再確認し、patchのplan hashも更新して再検証します。固定hashを無条件に書き換える運用はしません。
 
-初版のplan hashは `bbbdb093b85b94fa167a73c54f5387260ea8fb562e3e876d76b50805d9ec4137`。plan・比較画像・blend・全ログは `data/local/` に保管します。コードと出典metadataのみを共有し、都市全体や参考図版の新しい配布許諾は付与しません。
+初版のplan hashは `bbbdb093b85b94fa167a73c54f5387260ea8fb562e3e876d76b50805d9ec4137`。[5視点のBefore/After画像](../renders/previews/shiba-momijidani-v1/README.md)をレビュー用に公開しています。画像10枚は検証済みの最終出力を変更せずにコピーし、[画像ごとのhash・入力・生成条件](../renders/previews/shiba-momijidani-v1/evidence.json)を記録しました。plan・blend・全ログは `data/local/` に保管します。画像の公開は採用判断や都市全体・参考図版への新しい配布許諾を意味しません。
 
 ## 検証と次の作業
 

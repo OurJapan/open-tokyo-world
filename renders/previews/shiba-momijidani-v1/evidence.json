@@ -1,0 +1,159 @@
+{
+  "version": 1,
+  "date": "2026-10-02",
+  "feature_id": "otw:jp:tokyo:minato:shiba-momijidani",
+  "purpose": "PR #52 human visual review of the first Momijidani candidate",
+  "validated_code_commit": "f986e04bfe78a49c4f88e2cbe6055e2f324f49ab",
+  "input_sha256": "9c142f54cc85689cb8a8bc00794dfe8e9b6bc9098f121c9fb02cdbc1aa3dbbc4",
+  "output_blends": {
+    "before.blend": "519219114891cb8e2b3c6f8f54754128a763c38f007b8d2775e23c2c62818e29",
+    "after.blend": "5adf895d6d81770bb0450eb44e85e6c9d07353a53cd9f5cb96180d396b80ec8c"
+  },
+  "plan_sha256": "bbbdb093b85b94fa167a73c54f5387260ea8fb562e3e876d76b50805d9ec4137",
+  "render_settings": {
+    "blender_version": "4.5.1 LTS",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "device": "OPTIX",
+    "width": 1280,
+    "height": 848,
+    "samples": 32,
+    "seed": 0
+  },
+  "matched_before_after_conditions": [
+    "camera",
+    "lighting",
+    "render engine",
+    "device",
+    "dimensions",
+    "samples",
+    "seed"
+  ],
+  "matched_views": [
+    "tower-context",
+    "woodland-overview",
+    "woodland-overhead",
+    "west-path",
+    "east-boundary"
+  ],
+  "image_processing": "Unmodified copies of the final PNGs; no resize, recompression or regeneration.",
+  "images": [
+    {
+      "file": "before-tower-context.png",
+      "view": "tower-context",
+      "state": "before",
+      "sha256": "7e9b2a725b3468584aa6b36ebd78a102816128179db28542dda80aa534222390",
+      "bytes": 2269296,
+      "width": 1280,
+      "height": 848
+    },
+    {
+      "file": "after-tower-context.png",
+      "view": "tower-context",
+      "state": "after",
+      "sha256": "d3a16b4d0f94a0f174daa32564412cf543565ebd83228c1c0e846d519e34a2f7",
+      "bytes": 2277776,
+      "width": 1280,
+      "height": 848
+    },
+    {
+      "file": "before-woodland-overview.png",
+      "view": "woodland-overview",
+      "state": "before",
+      "sha256": "abb565da301da01619288c7c93d37745e695397d17f577adcebbd4a6b794204c",
+      "bytes": 1789546,
+      "width": 1280,
+      "height": 848
+    },
+    {
+      "file": "after-woodland-overview.png",
+      "view": "woodland-overview",
+      "state": "after",
+      "sha256": "22593144a8552052534963c4872b2028136770d7e83468a525ff862d6891d68b",
+      "bytes": 1871805,
+      "width": 1280,
+      "height": 848
+    },
+    {
+      "file": "before-woodland-overhead.png",
+      "view": "woodland-overhead",
+      "state": "before",
+      "sha256": "e353bf257eddfa2cc62731fb0890bc1cf2e12178d5867e0231688bf9715729b9",
+      "bytes": 1695470,
+      "width": 1280,
+      "height": 848
+    },
+    {
+      "file": "after-woodland-overhead.png",
+      "view": "woodland-overhead",
+      "state": "after",
+      "sha256": "cadc3c6d983a7e5ee515586bca6d55d37485269e609528ba635d5fc85864ab02",
+      "bytes": 1737346,
+      "width": 1280,
+      "height": 848
+    },
+    {
+      "file": "before-west-path.png",
+      "view": "west-path",
+      "state": "before",
+      "sha256": "7f89589cf0e9d8541ad2102a08ea7d2694fa64ca6bc11f6d8c2097ab81a21890",
+      "bytes": 1604668,
+      "width": 1280,
+      "height": 848
+    },
+    {
+      "file": "after-west-path.png",
+      "view": "west-path",
+      "state": "after",
+      "sha256": "789bf325483faacfaaa7f0466083ea4398d3fcaabe2b3845c66ba2dca4fbae65",
+      "bytes": 1671320,
+      "width": 1280,
+      "height": 848
+    },
+    {
+      "file": "before-east-boundary.png",
+      "view": "east-boundary",
+      "state": "before",
+      "sha256": "b70742ca9f33e2f465a24786175d675c65d9f411f431562b8cdcbe5fccb5a17f",
+      "bytes": 1591102,
+      "width": 1280,
+      "height": 848
+    },
+    {
+      "file": "after-east-boundary.png",
+      "view": "east-boundary",
+      "state": "after",
+      "sha256": "baf8722f8ca9be4b46c5cb6e1678c9ec5e10920afc3d6bb9edaad768f1fd789f",
+      "bytes": 1740163,
+      "width": 1280,
+      "height": 848
+    }
+  ],
+  "validation": {
+    "public_report": "../../../docs/shiba-momijidani-v1-validation.json",
+    "status": "passed-technical-checks-human-review-pending",
+    "local_run": "data/local/reviews/shiba-momijidani-v1-final/run.json",
+    "local_run_sha256": "7c9fb6d0871b82836be63273faad4fade7bd88ed15bce3522468cdd183271cf0",
+    "saved_validation_local_path": "data/local/shiba-audit/saved-validation-final.json",
+    "saved_validation_sha256": "5bd71c6177151e1d830b8b20bcaa05b0f98baf06512600993d495e2d8123f5b6",
+    "render_before_report_sha256": "39f662c230fe5441f501f60c3f460f36854f90b99216f0178de5e664d586a913",
+    "render_after_report_sha256": "5b991abc455ea312224c770ba1aac1dbeaad9e20ff85dc39dcbecde02f25a8b3"
+  },
+  "publication_request": {
+    "date": "2026-10-02",
+    "scope": "Publish the ten Before/After images for PR review, following the user request to include review images.",
+    "human_visual_approval": false,
+    "candidate_adopted": false,
+    "new_blanket_license_granted": false,
+    "city_model_distribution": false
+  },
+  "provenance": {
+    "feature_sources": "../../../sources/shiba-momijidani-v1.json",
+    "notice": "../../../NOTICE.md",
+    "city_notice_draft": "../../../sources/city-distribution-NOTICE.draft.md",
+    "license_scope": "../../../LICENSE.md",
+    "osm_attribution": "© OpenStreetMap contributors",
+    "osm_license": "ODbL-1.0",
+    "osm_copyright_url": "https://www.openstreetmap.org/copyright",
+    "third_party_terms": "Existing source-specific terms and unresolved provenance/distribution items remain unchanged."
+  }
+}
