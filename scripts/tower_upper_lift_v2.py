@@ -59,21 +59,22 @@ def service_stairs(b):
         levels.extend(low+(high-low)*i/count for i in range(1,count+1))
     for i,(low,high) in enumerate(zip(levels,levels[1:])):
         sign=1 if i%2 == 0 else -1
-        y=2.47 if sign == 1 else 3.62
+        # Narrow maintenance flights stay inside the inherited upper trusses.
+        y=2.33 if sign == 1 else 3.00
         for j in range(10):
             b.box('upper-service-stairs',(sign*(-1.15+(j+.5)*.23),y,
-                                         low+(high-low)*(j+1)/10-.025),(.245,.90,.05))
-        for yy in (y-.46,y+.46):
+                                         low+(high-low)*(j+1)/10-.025),(.245,.60,.05))
+        for yy in (y-.31,y+.31):
             angle_member(b,'upper-service-stairs',(-sign*1.15,yy,low-.08),
                          (sign*1.15,yy,high-.08),.075,.010)
             railing(b,'upper-service-stairs',(-sign*1.15,yy,low),
                     (sign*1.15,yy,high),height=1.0,spacing=.65)
-        b.box('upper-service-stairs',(sign*1.50,3.045,high-.045),(.70,2.05,.09))
-        railing(b,'upper-service-stairs',(sign*1.84,2.02,high),
-                (sign*1.84,4.07,high),height=1.0)
-    b.box('upper-service-stairs',(-1.50,3.045,153.955),(.70,2.05,.09))
+        b.box('upper-service-stairs',(sign*1.50,2.665,high-.045),(.70,1.27,.09))
+        railing(b,'upper-service-stairs',(sign*1.84,2.03,high),
+                (sign*1.84,3.30,high),height=1.0)
+    b.box('upper-service-stairs',(-1.50,2.665,153.955),(.70,1.27,.09))
     for x in (-1.84,1.84):
-        for y in (2.02,4.07):
+        for y in (2.03,3.30):
             angle_member(b,'upper-service-stairs',(x,y,154),(x,y,246.1),.09,.012)
 
 
@@ -146,7 +147,10 @@ def geometry(b):
                      (sign*1.8,3.3,z-.18),.16,.24)
             angle_member(b,'upper-shaft-frame',(sign*1.8,1.8,z-1.1),
                          (sign*2.7,3.15,z-.2),.10)
-        railing(b,'upper-platforms',(-2.8,3.3,z),(2.8,3.3,z))
+        # Keep the return landing clear: a continuous rear rail would cut
+        # across the adjacent stair route at both inferred rescue levels.
+        railing(b,'upper-platforms',(-2.8,3.3,z),(-1.91,3.3,z))
+        railing(b,'upper-platforms',(-1.09,3.3,z),(2.8,3.3,z))
         i_member(b,'upper-shaft-frame',(-2.8,3.2,z-.18),(2.8,3.2,z-.18),.16,.24)
         # Landing door: distinct sill, two opaque leaves and a three-sided jamb.
         b.box('upper-landing-doors',(0,1.60,z-.035),(1.36,.38,.07))

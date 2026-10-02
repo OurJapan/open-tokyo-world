@@ -321,7 +321,17 @@
         "flights": 50,
         "treads": 500,
         "landings": 51,
-        "basis": "Existence of the adjacent stair route is observed in the 2021 exterior panorama. Counts and dimensions fit the inherited scene and inferred rescue levels; not a claim about actual step count."
+        "basis": "Existence of the adjacent stair route is observed in the 2021 exterior panorama. Counts and dimensions fit the inherited scene and inferred rescue levels; not a claim about actual step count.",
+        "tread_width_m": 0.6,
+        "lane_centres_y_m": [
+          2.33,
+          3.0
+        ],
+        "landing_y_m": [
+          2.03,
+          3.3
+        ],
+        "fit_note": "Width is a modelling fit, not measured. A wider first candidate intersected the retained top trusses; this footprint is checked against saved original geometry."
       }
     },
     "cars": {

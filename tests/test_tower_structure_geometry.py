@@ -42,6 +42,8 @@ class TowerGeometryTests(unittest.TestCase):
         self.assertEqual(result['upper_suspension']['ropes'], 7)
         self.assertEqual(result['upper_car']['large_glass_panes'], 3)
         self.assertEqual(result['upper_rescue_doors']['structural_penetrations'], 0)
+        self.assertEqual(result['upper_rescue_doors']['stair_return_landings_checked'], 2)
+        self.assertEqual(result['upper_rescue_doors']['return_landing_intrusions'], 0)
         self.assertEqual(result['upper_service_stairs']['treads'], 500)
         self.assertTrue(result['foottown']['doorway_open'])
         self.assertEqual(result['base_connections']['plates'], 16)
@@ -136,6 +138,38 @@ class TowerGeometryTests(unittest.TestCase):
         extent = list(landing['bounds']); extent[0] = tuple(v+1 for v in extent[0]); landing['bounds'] = extent
         with self.assertRaisesRegex(ValueError, 'misses a landing'):
             saved.check_upper_stairs(stairs)
+
+    def test_restored_continuous_rear_guard_blocks_each_return_landing(self):
+        for level in (184, 217):
+            with self.subTest(level=level):
+                parts = copy.deepcopy(self.parts)
+                vertices, faces = cube()
+                # Restore the former continuous rear middle rail at y=3.3,
+                # represented as a closed bar crossing the newly opened gap.
+                vertices = [(x*5.6-2.8, y*.048+3.276, z*.048+level+.476) for x, y, z in vertices]
+                _, restored = saved.check_mesh(vertices, faces, saved.BOUNDS['upper-platforms'])
+                parts['upper-platforms'].extend(restored)
+                with self.assertRaisesRegex(ValueError, 'guard blocks stair return landing at '+str(level)):
+                    saved.check_rescue_doors(parts)
+
+    def test_original_diagonal_member_cannot_enter_upper_stair_headroom(self):
+        floor = next(p for p in self.parts['upper-service-stairs'] if p['cuboid'] and
+                     saved.near(p['size'][2], .05) and 234 < p['bounds'][2][1] < 235)
+        cx, cy, _ = floor['center']; top = floor['bounds'][2][1]
+        vertices, faces = cube()
+        vertices = [(cx+(x-.5)*1.2, cy+(y-.5)*.12, top+.7+(x-.5)*.5+z*.12) for x, y, z in vertices]
+        _, old_members = saved.check_mesh(vertices, faces, ((-5, 5), (0, 5), (230, 249)))
+        with self.assertRaisesRegex(ValueError, 'Original lattice enters upper stair headroom'):
+            saved.check_legacy_stair_headroom([floor], old_members)
+        moved = [(x+10, y, z) for x, y, z in vertices]
+        _, clear_members = saved.check_mesh(moved, faces, ((5, 15), (0, 5), (230, 249)))
+        self.assertEqual(saved.check_legacy_stair_headroom([floor], clear_members)['lattice_intrusions'], 0)
+
+    def test_ring_exclusion_checks_whole_triangle_instead_of_centroid(self):
+        self.assertAlmostEqual(saved.triangle_xy_radius([(6, -1, 240), (6, 1, 240), (7, 0, 240)]), 6)
+        # All three vertices can lie outside the stair cylinder while a wide
+        # face crosses its centre. Such a face must never be excluded as a ring.
+        self.assertEqual(saved.triangle_xy_radius([(-10, -10, 240), (10, -10, 240), (0, 30, 240)]), 0)
 
     def test_roof_hole_plate_contact_and_doorway_are_enforced(self):
         for change in ('roof', 'door'):

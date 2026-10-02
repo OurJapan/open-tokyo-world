@@ -47,7 +47,7 @@ BOUNDS = {
     'upper-car-floor': ((-1.23, 1.23), (-1.21, 1.21), (200.86, 201)),
     'upper-car-rigging': ((-1.55, 1.55), (-1.25, 1.25), (200.6, 204.41)),
     'upper-car-dark': ((-1.55, 1.55), (-1.3, 1.3), (200.6, 204.1)),
-    'upper-service-stairs': ((-1.9, 1.9), (1.96, 4.16), (153.88, 247.15)),
+    'upper-service-stairs': ((-1.9, 1.9), (1.97, 3.36), (153.88, 247.15)),
 }
 
 
@@ -295,10 +295,14 @@ def check_rescue_doors(parts):
         clearance = ((-.58, .58), (1.48, 1.9), (z+.07, z+2.08))
         for group in ('upper-shaft-frame', 'upper-support-links', 'upper-guide-rails', 'upper-service-stairs'):
             require(not any(convex_intersects_box(p, clearance) for p in parts[group]), 'Structural member crosses rescue doorway: '+group)
+        return_landing = ((-1.80, -1.20), (2.10, 3.95), (z+.10, z+1.0))
+        require(not any(convex_intersects_box(p, return_landing) for p in parts['upper-platforms']),
+                'Rescue platform guard blocks stair return landing at '+str(z)+' m')
         bars = [p for p in parts['upper-platforms'] if p['cuboid'] and near(p['bounds'][2][1], z) and p['center'][1] > 1.7]
         require(len(bars) == 29 and all(p['bounds'][1][0] <= 1.79+EPS and p['bounds'][1][1] >= 3.2-EPS for p in bars),
                 'Rescue door does not connect to open grating')
-    return {'doorways': 2, 'door_leaves': 4, 'levels_m': [184, 217], 'structural_penetrations': 0, 'grating_bars': 58}
+    return {'doorways': 2, 'door_leaves': 4, 'levels_m': [184, 217], 'structural_penetrations': 0, 'grating_bars': 58,
+            'stair_return_landings_checked': 2, 'return_landing_intrusions': 0}
 
 
 def check_upper_stairs(parts):
@@ -309,20 +313,103 @@ def check_upper_stairs(parts):
     levels = [154] + [low+(high-low)*i/count for low, high, count in ((154, 184, 16), (184, 217, 18), (217, 246.1, 16))
                       for i in range(1, count+1)]
     for landing, z in zip(landings, levels):
-        require(near(landing['bounds'][2][1], z) and near(landing['size'][1], 2.05), 'Upper service landing level differs')
+        require(near(landing['bounds'][2][1], z) and near(landing['size'][1], 1.27) and near(landing['center'][1], 2.665), 'Upper service landing level differs')
     for i, (low, high) in enumerate(zip(levels, levels[1:])):
         flight = treads[i*10:(i+1)*10]
         sign = 1 if i % 2 == 0 else -1
         for j, tread in enumerate(flight):
             require(near(tread['bounds'][2][1], low+(high-low)*(j+1)/10) and
-                    near(tread['center'][1], 2.47 if sign == 1 else 3.62) and
-                    near(tread['size'][0], .245) and near(tread['size'][1], .9), 'Upper service tread rise or lane differs')
+                    near(tread['center'][1], 2.33 if sign == 1 else 3.00) and
+                    near(tread['size'][0], .245) and near(tread['size'][1], .60), 'Upper service tread rise or lane differs')
         require(overlaps(flight[0]['bounds'][:2], landings[i]['bounds'][:2]) and
                 overlaps(flight[-1]['bounds'][:2], landings[i+1]['bounds'][:2]), 'Upper service flight misses a landing')
         require(all(sign*(b['center'][0]-a['center'][0]) > 0 and overlaps(a['bounds'][:2], b['bounds'][:2])
                     for a, b in zip(flight, flight[1:])), 'Upper service flight contains a gap or reversal')
     return {'flights': 50, 'treads': 500, 'landings': 51, 'bottom_m': 154, 'top_m': 246.1,
             'rescue_landing_levels_m': [184, 217], 'dimensions_status': 'Inferred modelling layout; not a surveyed stair count.'}
+
+
+def original_upper_components(snapshot):
+    """Split only the original orange/white members near the known upper clash."""
+    matrix = snapshot['matrix_world']
+    vertices = [tuple(sum(matrix[r][c]*point[c] for c in range(3))+matrix[r][3] for r in range(3))
+                for point in snapshot['vertices']]
+    parents = list(range(len(vertices)))
+    def root(i):
+        while parents[i] != i:
+            parents[i] = parents[parents[i]]
+            i = parents[i]
+        return i
+    for face in snapshot['faces']:
+        for i in face[1:]:
+            parents[root(i)] = root(face[0])
+    indices, faces = defaultdict(list), defaultdict(list)
+    for i in range(len(vertices)):
+        indices[root(i)].append(i)
+    for face in snapshot['faces']:
+        faces[root(face[0])].append(face)
+    result = []
+    for key, ids in indices.items():
+        points = [vertices[i] for i in ids]
+        extent = bounds(points)
+        if not overlaps(extent, ((-2.1, 2.1), (1.8, 4.3), (230, 249))):
+            continue
+        remap = {old: new for new, old in enumerate(ids)}
+        result.append({'vertices': points, 'faces': [[remap[i] for i in face] for face in faces[key]], 'bounds': extent})
+    return result
+
+
+def triangle_xy_radius(triangle):
+    """Minimum distance from the origin to a filled projected triangle."""
+    signs = [a[0]*b[1]-a[1]*b[0] for a, b in zip(triangle, triangle[1:]+triangle[:1])]
+    area = sum(signs)
+    if abs(area) > 1e-10 and (min(signs) >= 0 or max(signs) <= 0):
+        return 0.
+    distances = []
+    for a, b in zip(triangle, triangle[1:]+triangle[:1]):
+        dx, dy = b[0]-a[0], b[1]-a[1]
+        length = dx*dx+dy*dy
+        t = max(0., min(1., -(a[0]*dx+a[1]*dy)/length)) if length else 0.
+        distances.append(math.hypot(a[0]+t*dx, a[1]+t*dy))
+    return min(distances)
+
+
+def check_legacy_stair_headroom(stairs, original):
+    floors = [p for p in stairs if p['cuboid'] and
+              (near(p['size'][2], .05) or near(p['size'][2], .09)) and p['bounds'][2][1] >= 230]
+    require(floors and original, 'Missing upper stair or original lattice headroom input')
+    radius = max(math.hypot(x, y) for p in floors for x in p['bounds'][0] for y in p['bounds'][1])
+    convex, rings = [], []
+    for part in original:
+        points, faces = part['vertices'], part['faces']
+        if len(points) == 256:
+            # The four pinned annular decks must remain outside the entire
+            # stair cylinder. Check filled face triangles, not centroids or a
+            # convex hull that would falsely fill their central opening.
+            clearance = min(triangle_xy_radius([points[f[0]], points[f[i]], points[f[i+1]]])
+                            for f in faces for i in range(1, len(f)-1))
+            require(clearance > radius+EPS, 'Original annular deck enters upper stair region')
+            rings.append(clearance)
+            continue
+        require(len(points) == 8 and len(faces) == 6 and all(len(f) == 4 for f in faces), 'Unsupported original upper member')
+        for face in faces:
+            normal = cross(*(points[i] for i in face[:3]))
+            length = math.sqrt(sum(v*v for v in normal))
+            require(length > 1e-9, 'Degenerate original upper member')
+            distances = [sum(normal[k]*(p[k]-points[face[0]][k]) for k in range(3))/length for p in points]
+            require(min(distances) >= -EPS or max(distances) <= EPS, 'Nonconvex original upper member')
+        convex.append(part)
+    for floor in floors:
+        bx, by = floor['bounds'][:2]
+        top = floor['bounds'][2][1]
+        space = ((bx[0]+.04, bx[1]-.04), (by[0]+.04, by[1]-.04), (top+.10, top+1.8))
+        require(not any(convex_intersects_box(part, space) for part in convex),
+                'Original lattice enters upper stair headroom at '+str(round(top, 4))+' m')
+    return {'floor_height_range_m': [230, 246.1], 'floor_headrooms_checked': len(floors),
+            'headroom_above_surface_m': [.10, 1.8], 'edge_inset_m': .04, 'convex_original_members': len(convex),
+            'annular_decks_outside_stair_cylinder': len(rings), 'stair_cylinder_radius_m': radius,
+            'minimum_annular_face_radius_m': min(rings) if rings else None, 'lattice_intrusions': 0,
+            'scope': 'Known upper-end clash regression only; not a full navigation clearance certification.'}
 
 
 def check_upper_car(parts):
@@ -578,6 +665,7 @@ def inspect(args):
         meshes[part] = ([tuple(v.co) for v in obj.data.vertices], [list(p.vertices) for p in obj.data.polygons])
         hashes[obj.name] = mesh_fingerprint(obj.data)
     result = check_geometry(meshes)
+    _, saved_upper_stairs = check_mesh(*meshes['upper-service-stairs'], BOUNDS['upper-service-stairs'])
     result.update(ok=True, blender_version=bpy.app.version_string, frame=1, autoexec_enabled=False,
                   scene_saved=False, saved_mesh_sha256=hashes, inspected_added_meshes=len(meshes),
                   limitations=['Existing-object preservation is checked separately by review.py fingerprints.',
@@ -596,11 +684,14 @@ def inspect(args):
     require(not bpy.context.preferences.filepaths.use_scripts_auto_execute, 'Original enabled Blender auto-execution')
     bpy.context.scene.frame_set(1)
     result['retained_original_meshes'] = {}
+    original_upper = []
     for name in (tower.ORANGE, tower.WHITE):
         obj = bpy.data.objects.get(name)
         require(obj is not None and mesh_fingerprint(obj.data) == tower.BASELINE_HASHES[name], 'Original baseline mesh differs: '+name)
         expected = retained_snapshot(name, snapshot_object(obj))
+        original_upper.extend(original_upper_components(expected))
         result['retained_original_meshes'][name] = compare_retained(expected, saved[name])
+    result['upper_stair_original_headroom'] = check_legacy_stair_headroom(saved_upper_stairs, original_upper)
     require(normalized_paint(bpy.data.objects[tower.ORANGE].data.materials[0]) == banded_hash,
             'Upper frame paint differs from original tower bands')
     result['upper_banded_paint_matches_original'] = True

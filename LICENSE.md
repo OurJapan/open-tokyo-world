@@ -111,6 +111,8 @@ The original implementations in `scripts/tower_structure_v1.py`, `scripts/tower_
 
 The 18 Before/After PNGs in the [tower structure review](renders/previews/tower-structure-v1/README.md) are published as evidence for the user-requested PR. Their publication does not grant a new blanket licence for the images, underlying city or third-party content. Retain the attribution and scope recorded in that preview and [NOTICE](NOTICE.md).
 
+The 30 PNGs in the [upper lift revision review](renders/previews/tower-lift-v2/README.md) follow the same publication scope. They include 26 pinned-input Before/After views and four views of the previous proposal for comparison with the revised upper lift. Reference photographs and PDFs are not redistributed.
+
 ## Outside these grants
 
 Except for the separately identified starters and original additions above, no license is granted here for other repository files, legacy city scenes, generated models, reference photos, textures, music, trademarks, PLATEAU data, OpenStreetMap data, or other third-party content. Any separately applicable license remains in effect. Execution of the covered code does not itself grant rights to its inputs or outputs. This scope document adds no conditions to the MIT grant for the covered code.
