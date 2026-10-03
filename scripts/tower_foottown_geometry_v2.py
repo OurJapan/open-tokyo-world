@@ -319,6 +319,11 @@ def _roof_core(b):
     b.box(SHELL,(6.85,-.90,24.64),(.30,7.20,.88))
 
 
+def south_handrail_junction(builder):
+    """Join existing stair/landing rail ends in the inherited world frame."""
+    builder.beam(METAL,(-8.0,-31.13,5.45),(-7.8,-31.38,5.45),.032)
+
+
 def geometry(builder):
     """Create the seven material groups, preserving the roof lift/stair interfaces."""
     b=_BodyRegistration(builder)
@@ -332,3 +337,5 @@ def geometry(builder):
     _roof_with_hole(builder,-36.5,36.5,-29,29,ROOF_TOP)
     _roof_edge(builder)
     _roof_core(builder)
+    # Append one solid so the existing PR60 geometry remains an exact prefix.
+    south_handrail_junction(builder)

@@ -1,0 +1,1005 @@
+{
+  "version": 1,
+  "date": "2026-10-03",
+  "base_main_commit": "dc65d7e27e237022d578a949eebb0f18a1aa54e1",
+  "geometry_and_validation_code_commit": "2064783a0f546391b8a9fdc086feb7af9974dc4e",
+  "validation": {
+    "ok": true,
+    "changed_objects": [
+      "OTW Tokyo Tower structure / foottown-metal"
+    ],
+    "protected_objects": 3360,
+    "objects": 3361,
+    "added_vertices": 16,
+    "added_polygons": 10,
+    "old_target_geometry_and_flags_unchanged": true,
+    "object_metadata_and_datablock_counts_unchanged": true,
+    "material_shaders_and_image_assets_unchanged": true,
+    "unused_materials_retained_with_fake_users": [
+      "OTW Tower structure v1 / brown",
+      "OTW Tower structure v1 / roof"
+    ],
+    "geometry": {
+      "meshes": {
+        "foottown-shell": {
+          "vertices": 656,
+          "polygons": 492,
+          "components": 82,
+          "bounds_m": [
+            [
+              -36.5,
+              36.5
+            ],
+            [
+              -29.0,
+              29.0
+            ],
+            [
+              0.0,
+              25.079999923706055
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 1077.4517817796298
+        },
+        "foottown-glazing": {
+          "vertices": 464,
+          "polygons": 348,
+          "components": 58,
+          "bounds_m": [
+            [
+              -32.334999084472656,
+              31.334999084472656
+            ],
+            [
+              -28.897499084472656,
+              33.066001892089844
+            ],
+            [
+              0.019999999552965164,
+              23.204999923706055
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 3.399479841212956
+        },
+        "foottown-metal": {
+          "vertices": 12696,
+          "polygons": 9398,
+          "components": 1525,
+          "bounds_m": [
+            [
+              -36.5,
+              36.5
+            ],
+            [
+              -32.099998474121094,
+              33.150001525878906
+            ],
+            [
+              0.0,
+              25.34000015258789
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 96.02159322521499
+        },
+        "foottown-roof": {
+          "vertices": 280,
+          "polygons": 210,
+          "components": 35,
+          "bounds_m": [
+            [
+              -36.5,
+              36.5
+            ],
+            [
+              -31.399999618530273,
+              33.29999923706055
+            ],
+            [
+              0.0,
+              24.200000762939453
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 872.0989467660692
+        },
+        "foottown-cladding": {
+          "vertices": 1048,
+          "polygons": 786,
+          "components": 131,
+          "bounds_m": [
+            [
+              -28.492000579833984,
+              28.492000579833984
+            ],
+            [
+              -32.09199905395508,
+              33.141998291015625
+            ],
+            [
+              0.0,
+              19.170000076293945
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 109.70858969203086
+        },
+        "foottown-joints": {
+          "vertices": 544,
+          "polygons": 408,
+          "components": 68,
+          "bounds_m": [
+            [
+              -28.459999084472656,
+              28.459999084472656
+            ],
+            [
+              -32.060001373291016,
+              33.11000061035156
+            ],
+            [
+              0.019999999552965164,
+              25.227500915527344
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 17.052275964441474
+        },
+        "foottown-screen": {
+          "vertices": 11680,
+          "polygons": 8760,
+          "components": 1460,
+          "bounds_m": [
+            [
+              -14.002828598022461,
+              14.002828598022461
+            ],
+            [
+              29.125999450683594,
+              29.134000778198242
+            ],
+            [
+              7.55717134475708,
+              16.1428279876709
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 0.4349633968239472
+        }
+      },
+      "clearances": [
+        "roof lift shaft",
+        "roof stair approach",
+        "roof stair doorway"
+      ],
+      "existing_stair_headroom_surfaces": 50,
+      "roof_elevation_m": 16.2,
+      "entries": {
+        "main_door_pairs": 4,
+        "south_door_pairs": 2,
+        "door_pair_width_m": 1.55,
+        "door_state": "closed static exterior geometry"
+      },
+      "ground_connections": {
+        "ground_z_m": 0,
+        "main_floor_top_m": 0.02,
+        "grounded_main_columns": 4,
+        "grounded_south_columns": 6,
+        "main_door_threshold_max_m": 0.015,
+        "south_stair_treads": 25,
+        "grounded_south_stair_bases": 2,
+        "south_stair_start_floor_m": 0.02,
+        "south_first_tread_top_m": 0.19519999623298645,
+        "south_stair_riser_m": 0.17520000000000002,
+        "south_landing_top_m": 4.4
+      }
+    },
+    "warnings": [
+      "Modifier stack not fingerprinted: Close detail rim",
+      "Modifier stack not fingerprinted: Close detail iron",
+      "Modifier stack not fingerprinted: Close detail silver",
+      "Modifier stack not fingerprinted: Close detail frame",
+      "Modifier stack not fingerprinted: Tokyo traffic \u2022 silver",
+      "Modifier stack not fingerprinted: Tokyo traffic \u2022 white",
+      "Modifier stack not fingerprinted: Tokyo traffic \u2022 blue",
+      "Modifier stack not fingerprinted: Tokyo traffic \u2022 black",
+      "Modifier stack not fingerprinted: Tokyo traffic \u2022 red",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / stone",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / orange",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / white",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / white",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / aluminum",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / wood; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / wood",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / stone; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / stone",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / soil; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / leaf; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / darkmetal; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Modifier stack not fingerprinted: Mori JP curtain wall / aluminum",
+      "Modifier stack not fingerprinted: Mori JP interior / stone",
+      "Modifier stack not fingerprinted: Mori JP interior / wood",
+      "Modifier stack not fingerprinted: Mori JP interior / aluminum",
+      "Modifier stack not fingerprinted: Mori JP interior / chair",
+      "Modifier stack not fingerprinted: Mori JP interior / fabric",
+      "Modifier stack not fingerprinted: Observation interior detail / charcoal glass",
+      "Modifier stack not fingerprinted: Observation interior detail / brushed steel",
+      "Modifier stack not fingerprinted: Observation interior detail / ceiling",
+      "Modifier stack not fingerprinted: Photo based main deck / frame",
+      "Modifier stack not fingerprinted: Photo based main deck / silver",
+      "Modifier stack not fingerprinted: Photo based main deck / wall",
+      "Modifier stack not fingerprinted: 2019 reference window revision / black",
+      "Modifier stack not fingerprinted: 2019 reference window revision / aluminum",
+      "Modifier stack not fingerprinted: 2019 reference window revision / white"
+    ],
+    "gap_model_m": 0.32015621187164245,
+    "limits": [
+      "No geographic accuracy certification",
+      "No complete modifier/animation/node-group fingerprint",
+      "Image decode checks dimensions and a pixel probe; not all image samples",
+      "No manifold/zero-area/normal checks",
+      "External asset content hashes not yet recorded",
+      "Inherited frame and dimensions are inferred, not surveyed.",
+      "Capped solids intersect at joints; no structural engineering certification."
+    ],
+    "input_sha256": "e4ecbdf02fb6217e67c111f284a2d905bb31f3521fbd380818e687ba5d85da97",
+    "candidate_sha256": "a590fecbc2cd52e52cf417b5ddcab656b3d30b3ddb62c47997e895535343ccb4",
+    "blender_version": "4.5.1 LTS",
+    "source_and_candidate_protected": true,
+    "code_sha256": {
+      "tower_south_handrail.py": "b1338f9b33ed42bf43ab72ee59dc776b7f8bf0521ac5228c61b2d7f7f35eaac9",
+      "tower_foottown_geometry_v2.py": "ffd70a12b35fafbd02eba1aec0f2e53bec0ddc1b4c9e6ceeee76d454643d6823",
+      "tower_structure_v1.py": "bfb1730e3277138aec489cdb113c6af1738a5c8d1ebad395f6119ad2d1656821",
+      "validate_tower_foottown.py": "ddf246dd40b4acab8c6084743f7c26b6242fd2a8bdc9e7eff9e463f0139245c2",
+      "validate_tower_structure.py": "03f911a2f85f4aee0d32d986d3210b7c4a495e13487f062997abe5d26ee0581c",
+      "blender_worker.py": "7cd8a0437c8378a9adc72390291a8d8eef7573b926cdb1e3eb9252ed9c517cef",
+      "review.py": "622c4fd41e0128ae48a4d912a98aaed72edb0322fd1af06947d0eb487589d418"
+    }
+  },
+  "render_settings": {
+    "engine": "CYCLES",
+    "device": "OPTIX",
+    "width": 640,
+    "height": 424,
+    "samples": 16,
+    "seed": 0
+  },
+  "render_reports": {
+    "before": {
+      "ok": true,
+      "views": [
+        {
+          "id": "foottown-front",
+          "seconds": 21.344,
+          "sha256": "8d565842cde16bb4c742d962ef35cc2b084d6aa55e12112210e0dc2886e8f246",
+          "pixel_sha256": "953e316384a7a625714f713b962a3a357f8819c0c5fc90a99492502f7a2ca8a2",
+          "rgb_min": 0.0,
+          "rgb_max": 0.9254902601242065,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              -0.9966574907302856,
+              -0.00731169618666172,
+              0.08136539161205292,
+              5.0
+            ],
+            [
+              0.08169325441122055,
+              -0.0892026498913765,
+              0.9926576018333435,
+              88.0
+            ],
+            [
+              -2.1328807608966827e-09,
+              0.9959865808486938,
+              0.08950181305408478,
+              14.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "foottown-entrance",
+          "seconds": 4.75,
+          "sha256": "b5ed02e557e09413d1cdf2a74f23b1249aa9a0c014d038e9760d144f35493d26",
+          "pixel_sha256": "2d5095f30682db452edfcfa9a35a8e615c70f52678977cb3d9130f9d8e5c4cd5",
+          "rgb_min": 0.0941176563501358,
+          "rgb_max": 0.8509804606437683,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              -0.9771763682365417,
+              -0.0027073167730122805,
+              0.21241238713264465,
+              5.0
+            ],
+            [
+              0.21242965757846832,
+              -0.012453637085855007,
+              0.9770969152450562,
+              50.0
+            ],
+            [
+              -4.152153731951103e-09,
+              0.9999186992645264,
+              0.012744514271616936,
+              4.400000095367432
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "foottown-context",
+          "seconds": 4.094,
+          "sha256": "4b8b7124c6844336c541e2456ce4c2e6d3a615fde3dc14aa8c849c925d207308",
+          "pixel_sha256": "e7488225c2523b5d43bc435f0b68a7ced7045ba49aaf1182f948e2dda1fff83b",
+          "rgb_min": 0.0,
+          "rgb_max": 0.9333333969116211,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              -0.7157819867134094,
+              0.17690588533878326,
+              -0.6755445599555969,
+              -84.0
+            ],
+            [
+              -0.6983238458633423,
+              -0.18132854998111725,
+              0.69243323802948,
+              82.0
+            ],
+            [
+              -7.648889521760793e-09,
+              0.9673801064491272,
+              0.2533293068408966,
+              42.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "foottown-south",
+          "seconds": 4.219,
+          "sha256": "e4b3991e76b5882a24f5ac9dfec0ca2242ce4c6024729dd0b1a527747dae7388",
+          "pixel_sha256": "2b37f3743cd78b04b65956a53ea3381e85fdf2040797a3a5bef344ab12d28c4c",
+          "rgb_min": 0.0,
+          "rgb_max": 0.9411765336990356,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              0.9925863146781921,
+              -0.00859557744115591,
+              0.12123686075210571,
+              6.0
+            ],
+            [
+              0.12154117971658707,
+              0.0701972022652626,
+              -0.9901010394096375,
+              -77.0
+            ],
+            [
+              1.6163638205668462e-09,
+              0.9974961280822754,
+              0.07072150707244873,
+              12.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "foottown-roof",
+          "seconds": 3.828,
+          "sha256": "0d3b3ff7571e1ebf6701f67b17c0ec7ffe168b52d5a5fb4d5188e0fd014fe576",
+          "pixel_sha256": "24f09c3478f597738191926e7f6c042af9a09b6846ace2f6bcfc2c3464b06195",
+          "rgb_min": 0.08235294371843338,
+          "rgb_max": 1.0,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              0.5881716012954712,
+              0.6878859996795654,
+              -0.42528459429740906,
+              -22.0
+            ],
+            [
+              -0.8087361454963684,
+              0.5002806186676025,
+              -0.3092978000640869,
+              -16.0
+            ],
+            [
+              1.9376068749465958e-08,
+              0.5258632302284241,
+              0.8505690693855286,
+              60.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "foottown-roof-core",
+          "seconds": 3.781,
+          "sha256": "310c3200e9239a47570ba85b153dd3cd406757828fb553ff4433590fb01269c8",
+          "pixel_sha256": "76279aacf2a4ccab47d7e6508b6d0b62f752a6a830ebd8f8600c800caa5c7632",
+          "rgb_min": 0.0,
+          "rgb_max": 0.9333333969116211,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              0.6643638610839844,
+              0.043375179171562195,
+              -0.7461495995521545,
+              -18.0
+            ],
+            [
+              -0.7474092841148376,
+              0.038555748760700226,
+              -0.6632441282272339,
+              -19.0
+            ],
+            [
+              2.2369370356045692e-08,
+              0.998314619064331,
+              0.058034054934978485,
+              22.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "foottown-roof-access",
+          "seconds": 4.485,
+          "sha256": "e092494cd6ca843216a412f68a976570daae5a7a5e1ccf34ef5e21679435d947",
+          "pixel_sha256": "58f855f406d1eb738046cb3ad1bf0d0aac046cc08dc5ff1c557735ec6289f83b",
+          "rgb_min": 0.0,
+          "rgb_max": 0.9294118285179138,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              -0.4819188416004181,
+              0.16948240995407104,
+              -0.859668493270874,
+              -16.0
+            ],
+            [
+              -0.8762158751487732,
+              -0.09321530908346176,
+              0.4728178083896637,
+              11.0
+            ],
+            [
+              3.137982673706574e-08,
+              0.9811149835586548,
+              0.19342538714408875,
+              21.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "tower-context",
+          "seconds": 4.297,
+          "sha256": "9092e24f95897ee84c4de22e55d9feb466be24007991fa1465035eb8be0ce0d4",
+          "pixel_sha256": "a6d5108c850d65be91651222b71aa55a7d83e29298c00f5a921eab86e0b6375e",
+          "rgb_min": 0.0313725508749485,
+          "rgb_max": 0.9490196704864502,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              0.7561687231063843,
+              -0.06345505267381668,
+              0.6512928009033203,
+              450.0
+            ],
+            [
+              0.6543766856193542,
+              0.07332587987184525,
+              -0.7526050806045532,
+              -520.0
+            ],
+            [
+              -2.182268588057923e-08,
+              0.995287299156189,
+              0.09697024524211884,
+              230.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "south-handrail-detail",
+          "seconds": 4.375,
+          "sha256": "bba4abda813095e84bf9ccd01a9f88c9521332c07d72fd38ba053b69ce25d479",
+          "pixel_sha256": "08ad1404569feb62a841ae2bf0fd7f6dc0be43a9a4a07c5018c08dbee4d6c18c",
+          "rgb_min": 0.03529411926865578,
+          "rgb_max": 0.8431373238563538,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              0.9253692626953125,
+              0.13088777661323547,
+              -0.3557528257369995,
+              -9.600000381469727
+            ],
+            [
+              -0.3790668547153473,
+              0.31952032446861267,
+              -0.8684555888175964,
+              -35.400001525878906
+            ],
+            [
+              2.7771593025249786e-08,
+              0.9384962320327759,
+              0.3452894985675812,
+              7.099999904632568
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "devices": [
+        "NVIDIA GeForce RTX 3060 Ti"
+      ],
+      "human_camera_acceptance": "pending",
+      "input_sha256": "e4ecbdf02fb6217e67c111f284a2d905bb31f3521fbd380818e687ba5d85da97",
+      "candidate_sha256": "a590fecbc2cd52e52cf417b5ddcab656b3d30b3ddb62c47997e895535343ccb4",
+      "blender_version": "4.5.1 LTS",
+      "source_and_candidate_protected": true,
+      "code_sha256": {
+        "tower_south_handrail.py": "b1338f9b33ed42bf43ab72ee59dc776b7f8bf0521ac5228c61b2d7f7f35eaac9",
+        "tower_foottown_geometry_v2.py": "ffd70a12b35fafbd02eba1aec0f2e53bec0ddc1b4c9e6ceeee76d454643d6823",
+        "tower_structure_v1.py": "bfb1730e3277138aec489cdb113c6af1738a5c8d1ebad395f6119ad2d1656821",
+        "validate_tower_foottown.py": "ddf246dd40b4acab8c6084743f7c26b6242fd2a8bdc9e7eff9e463f0139245c2",
+        "validate_tower_structure.py": "03f911a2f85f4aee0d32d986d3210b7c4a495e13487f062997abe5d26ee0581c",
+        "blender_worker.py": "7cd8a0437c8378a9adc72390291a8d8eef7573b926cdb1e3eb9252ed9c517cef",
+        "review.py": "622c4fd41e0128ae48a4d912a98aaed72edb0322fd1af06947d0eb487589d418"
+      }
+    },
+    "after": {
+      "ok": true,
+      "views": [
+        {
+          "id": "foottown-front",
+          "seconds": 15.297,
+          "sha256": "16789e9cf6c999f4adcf8650070d59c6ccb272ce50c401b0e89a979cddbb7ab0",
+          "pixel_sha256": "37a743394a4c366e4b52570bc0b61e48120c9da497717a297d29cbfe482feb66",
+          "rgb_min": 0.0,
+          "rgb_max": 0.9254902601242065,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              -0.9966574907302856,
+              -0.00731169618666172,
+              0.08136539161205292,
+              5.0
+            ],
+            [
+              0.08169325441122055,
+              -0.0892026498913765,
+              0.9926576018333435,
+              88.0
+            ],
+            [
+              -2.1328807608966827e-09,
+              0.9959865808486938,
+              0.08950181305408478,
+              14.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "foottown-entrance",
+          "seconds": 4.718,
+          "sha256": "5943900ca2edc2050c6d97403bd7d9eb4c7258a36a78af5821b178d51043e6ce",
+          "pixel_sha256": "5a3cab8ec70f13fb9faec377aa9defcaff97dd41a4e916ad2d2abd92080c506e",
+          "rgb_min": 0.0941176563501358,
+          "rgb_max": 0.8509804606437683,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              -0.9771763682365417,
+              -0.0027073167730122805,
+              0.21241238713264465,
+              5.0
+            ],
+            [
+              0.21242965757846832,
+              -0.012453637085855007,
+              0.9770969152450562,
+              50.0
+            ],
+            [
+              -4.152153731951103e-09,
+              0.9999186992645264,
+              0.012744514271616936,
+              4.400000095367432
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "foottown-context",
+          "seconds": 4.047,
+          "sha256": "ce1674064174ff64961dbbee95cca440c50743eb9bcac209de8da2ba50c3c14d",
+          "pixel_sha256": "5b7f002b0995f70b88fcd7c1775d5b44742c9edf09f93c8ed5bf0a9acf1d5844",
+          "rgb_min": 0.0,
+          "rgb_max": 0.9333333969116211,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              -0.7157819867134094,
+              0.17690588533878326,
+              -0.6755445599555969,
+              -84.0
+            ],
+            [
+              -0.6983238458633423,
+              -0.18132854998111725,
+              0.69243323802948,
+              82.0
+            ],
+            [
+              -7.648889521760793e-09,
+              0.9673801064491272,
+              0.2533293068408966,
+              42.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "foottown-south",
+          "seconds": 4.265,
+          "sha256": "b8b4a60f1b84114a9a8a5170a24ac8efd46082afdc1ab8786f76aca5a870360f",
+          "pixel_sha256": "e8b8b342b15395ca328198b8867c8f739581cd439665a7fa593c098718327ced",
+          "rgb_min": 0.0,
+          "rgb_max": 0.9411765336990356,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              0.9925863146781921,
+              -0.00859557744115591,
+              0.12123686075210571,
+              6.0
+            ],
+            [
+              0.12154117971658707,
+              0.0701972022652626,
+              -0.9901010394096375,
+              -77.0
+            ],
+            [
+              1.6163638205668462e-09,
+              0.9974961280822754,
+              0.07072150707244873,
+              12.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "foottown-roof",
+          "seconds": 4.125,
+          "sha256": "468f57b8a83cfd610fca4c17d7780563f8696554f8f5426d82315a33401a5ae5",
+          "pixel_sha256": "d443925fb05c894dfc3b91f0b2cfc6e8c28b202b6d92e7903a615b5dd1255457",
+          "rgb_min": 0.08235294371843338,
+          "rgb_max": 1.0,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              0.5881716012954712,
+              0.6878859996795654,
+              -0.42528459429740906,
+              -22.0
+            ],
+            [
+              -0.8087361454963684,
+              0.5002806186676025,
+              -0.3092978000640869,
+              -16.0
+            ],
+            [
+              1.9376068749465958e-08,
+              0.5258632302284241,
+              0.8505690693855286,
+              60.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "foottown-roof-core",
+          "seconds": 4.281,
+          "sha256": "7503505634fd33e6d7a2a9724060067bc6062d643160f57dd31ff79b899de5d9",
+          "pixel_sha256": "d0705428b9ee649e90c284cf534478cd415e94c6b7f45144c2552216d4a9c470",
+          "rgb_min": 0.0,
+          "rgb_max": 0.9333333969116211,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              0.6643638610839844,
+              0.043375179171562195,
+              -0.7461495995521545,
+              -18.0
+            ],
+            [
+              -0.7474092841148376,
+              0.038555748760700226,
+              -0.6632441282272339,
+              -19.0
+            ],
+            [
+              2.2369370356045692e-08,
+              0.998314619064331,
+              0.058034054934978485,
+              22.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "foottown-roof-access",
+          "seconds": 4.188,
+          "sha256": "2efef2e38e9276f0d11ef351016a5a7c53b74f44e69120c39b9e7c7a5ebdb917",
+          "pixel_sha256": "ad0299c0e25f365114efc908fe09296e6c03805e736c4b2ff583c3a13777124e",
+          "rgb_min": 0.0,
+          "rgb_max": 0.9294118285179138,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              -0.4819188416004181,
+              0.16948240995407104,
+              -0.859668493270874,
+              -16.0
+            ],
+            [
+              -0.8762158751487732,
+              -0.09321530908346176,
+              0.4728178083896637,
+              11.0
+            ],
+            [
+              3.137982673706574e-08,
+              0.9811149835586548,
+              0.19342538714408875,
+              21.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "tower-context",
+          "seconds": 4.359,
+          "sha256": "64d4eb45acf783b4e705ec7f8f507e32073c04902e45d5eabc8caca82c6aebc3",
+          "pixel_sha256": "84b0ae1bc8e8b8fa0113bb883625d610e1ce78b05ae6e574467d4c7dadd5bec2",
+          "rgb_min": 0.0313725508749485,
+          "rgb_max": 0.9490196704864502,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              0.7561687231063843,
+              -0.06345505267381668,
+              0.6512928009033203,
+              450.0
+            ],
+            [
+              0.6543766856193542,
+              0.07332587987184525,
+              -0.7526050806045532,
+              -520.0
+            ],
+            [
+              -2.182268588057923e-08,
+              0.995287299156189,
+              0.09697024524211884,
+              230.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "id": "south-handrail-detail",
+          "seconds": 4.313,
+          "sha256": "01f26b50a7439c36549275300ad9b9d5bbc1e2789bc244a3089a1c9b06dbb95f",
+          "pixel_sha256": "18bb4eefe5250b32a4e2a23bb0af89bf5cc8c13d2d05433f48ff7c970c376001",
+          "rgb_min": 0.03529411926865578,
+          "rgb_max": 0.8431373238563538,
+          "active_camera": "OTW review camera",
+          "camera_matrix_world": [
+            [
+              0.9253692626953125,
+              0.13088777661323547,
+              -0.3557528257369995,
+              -9.600000381469727
+            ],
+            [
+              -0.3790668547153473,
+              0.31952032446861267,
+              -0.8684555888175964,
+              -35.400001525878906
+            ],
+            [
+              2.7771593025249786e-08,
+              0.9384962320327759,
+              0.3452894985675812,
+              7.099999904632568
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "devices": [
+        "NVIDIA GeForce RTX 3060 Ti"
+      ],
+      "human_camera_acceptance": "pending",
+      "input_sha256": "e4ecbdf02fb6217e67c111f284a2d905bb31f3521fbd380818e687ba5d85da97",
+      "candidate_sha256": "a590fecbc2cd52e52cf417b5ddcab656b3d30b3ddb62c47997e895535343ccb4",
+      "blender_version": "4.5.1 LTS",
+      "source_and_candidate_protected": true,
+      "code_sha256": {
+        "tower_south_handrail.py": "b1338f9b33ed42bf43ab72ee59dc776b7f8bf0521ac5228c61b2d7f7f35eaac9",
+        "tower_foottown_geometry_v2.py": "ffd70a12b35fafbd02eba1aec0f2e53bec0ddc1b4c9e6ceeee76d454643d6823",
+        "tower_structure_v1.py": "bfb1730e3277138aec489cdb113c6af1738a5c8d1ebad395f6119ad2d1656821",
+        "validate_tower_foottown.py": "ddf246dd40b4acab8c6084743f7c26b6242fd2a8bdc9e7eff9e463f0139245c2",
+        "validate_tower_structure.py": "03f911a2f85f4aee0d32d986d3210b7c4a495e13487f062997abe5d26ee0581c",
+        "blender_worker.py": "7cd8a0437c8378a9adc72390291a8d8eef7573b926cdb1e3eb9252ed9c517cef",
+        "review.py": "622c4fd41e0128ae48a4d912a98aaed72edb0322fd1af06947d0eb487589d418"
+      }
+    }
+  },
+  "public_pngs": [
+    {
+      "file": "before-south-handrail-detail.png",
+      "sha256": "a9c90e4511ac265428e4968b78ae40e5f37b8bf5811a544250e88ab29617f9c8",
+      "source_sha256": "bba4abda813095e84bf9ccd01a9f88c9521332c07d72fd38ba053b69ce25d479",
+      "bytes": 314929,
+      "width": 640,
+      "height": 424,
+      "pixel_data_chunks_identical": true
+    },
+    {
+      "file": "after-south-handrail-detail.png",
+      "sha256": "98255f45bf8956d3f127104d4901fc7c32caf0ee522b9e1f2f1868c33649f917",
+      "source_sha256": "01f26b50a7439c36549275300ad9b9d5bbc1e2789bc244a3089a1c9b06dbb95f",
+      "bytes": 315537,
+      "width": 640,
+      "height": 424,
+      "pixel_data_chunks_identical": true
+    },
+    {
+      "file": "before-foottown-south.png",
+      "sha256": "64bfac743d6fad81de13b0eba08006674e8fdc70d08ea9411b053f30e8b19031",
+      "source_sha256": "e4b3991e76b5882a24f5ac9dfec0ca2242ce4c6024729dd0b1a527747dae7388",
+      "bytes": 376039,
+      "width": 640,
+      "height": 424,
+      "pixel_data_chunks_identical": true
+    },
+    {
+      "file": "after-foottown-south.png",
+      "sha256": "68800780e304d83cc87820ccac1a7c33f083779566c4e2f49268668b20c52c31",
+      "source_sha256": "b8b4a60f1b84114a9a8a5170a24ac8efd46082afdc1ab8786f76aca5a870360f",
+      "bytes": 376178,
+      "width": 640,
+      "height": 424,
+      "pixel_data_chunks_identical": true
+    }
+  ],
+  "portable_tests": {
+    "run": 399,
+    "passed": 391,
+    "skipped": 8,
+    "failures": 0,
+    "log_sha256": "28abeb862ea57b640723bce254918a563624ddcad9f63fd0268ef3a6ca743c85"
+  },
+  "compileall": "passed",
+  "visual_review": {
+    "all_nine_matched_views_inspected": true,
+    "maintainer_acceptance": "pending"
+  },
+  "prior_attempt": {
+    "saved_validation_rejected": "Blender removed two unused input material datablocks on save; final candidate retains them with explicit fake-user flags."
+  }
+}
