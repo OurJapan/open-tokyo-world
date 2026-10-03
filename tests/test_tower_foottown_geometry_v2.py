@@ -132,6 +132,26 @@ class FootTownV2GeometryTests(unittest.TestCase):
                and 19.8< p[2][2]<20.45]
         self.assertEqual(len(lower),2)
 
+    def test_south_outer_handrail_connects_to_landing_without_blocking_access(self):
+        # Traverse actual generated rail endpoints from the stair foot to the
+        # far landing end. Before this repair the two chains stop 0.32 m apart.
+        rails=[p for p in self.b.parts if p[0]=='beam' and p[1]==foot.METAL
+               and p[4]==.032 and max(p[2][1],p[3][1]) < -29]
+        graph={}
+        for p in rails:
+            a,c=(tuple(round(v,6) for v in point) for point in p[2:4])
+            graph.setdefault(a,set()).add(c)
+            graph.setdefault(c,set()).add(a)
+        visited=set(); pending=[(-14.2,-31.13,1.07)]
+        while pending:
+            point=pending.pop()
+            if point in visited:
+                continue
+            visited.add(point); pending.extend(graph.get(point,set())-visited)
+        self.assertIn((8.0,-31.38,5.45),visited)
+        passage=((-7.7,7.7),(-31.2,-29.2),(4.5,6.5))
+        self.assertFalse(any(overlaps(bounds(p),passage) for p in rails))
+
 
 if __name__ == "__main__":
     unittest.main()
