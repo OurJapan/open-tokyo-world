@@ -92,19 +92,28 @@ def build(source, output):
     mesh.from_pydata(old_vertices+extra['vertices'],[],
                      old_faces+[tuple(n+i for i in f) for f in extra['faces']])
     mesh.update()
+    # PR60 retains two unassigned material datablocks. Blender would discard
+    # them on the next save; keep their original shaders with persistence flags.
+    retained=[m.name for m in bpy.data.materials if m.users==0]
+    for name in retained:
+        bpy.data.materials[name].use_fake_user=True
     bpy.ops.wm.save_as_mainfile(filepath=str(output/'after.blend'), check_existing=False)
-    return {'ok': True, 'changed_object': TARGET, 'added_vertices': 16, 'added_polygons': 10}
+    return {'ok': True, 'changed_object': TARGET, 'added_vertices': 16, 'added_polygons': 10,
+            'unused_materials_retained_with_fake_users':retained}
 
 
 def validate(source, output):
     import bpy
-    from blender_worker import mesh_fingerprint, validate as scene_validate
+    from blender_worker import mesh_fingerprint, material_fingerprint, validate as scene_validate
     from validate_tower_foottown import check_geometry
     import tower_foottown_v2 as detail
     import numpy as np
     features=json.loads((ROOT/'areas/tokyo-tower/foottown-v2-features.json').read_text())
     open_scene(source)
     before=scene_validate({'features':features}); before_meta=metadata()
+    shaders={m.name:material_fingerprint(m) for m in bpy.data.materials}
+    original_fake_users={m.name:m.use_fake_user for m in bpy.data.materials}
+    unused={m.name for m in bpy.data.materials if m.users==0}
     original=bpy.data.objects[TARGET].data
     require(mesh_fingerprint(original)==MESH_SHA256, 'Pinned metal mesh differs')
     old_vertices, old_faces=points_and_faces(original); old_flags=mesh_flags(original)
@@ -112,6 +121,10 @@ def validate(source, output):
     after=scene_validate({'features':features})
     changed=compare_reports(before,after,{TARGET},set())
     require(metadata()==before_meta, 'Object identity, metadata, visibility or datablock counts changed')
+    require(shaders=={m.name:material_fingerprint(m) for m in bpy.data.materials},
+            'An original material datablock or shader changed')
+    require(all(m.use_fake_user==(True if m.name in unused else original_fake_users[m.name])
+                for m in bpy.data.materials), 'Unexpected material persistence flag change')
     mesh=bpy.data.objects[TARGET].data; vertices,faces=points_and_faces(mesh); extra=connector()
     require(vertices[:len(old_vertices)]==old_vertices and faces[:len(old_faces)]==old_faces,
             'Existing target geometry changed')
@@ -127,7 +140,8 @@ def validate(source, output):
     return {'ok':True, 'changed_objects':changed, 'protected_objects':len(before['objects'])-1,
             'objects':len(after['objects']), 'added_vertices':len(vertices)-len(old_vertices),
             'added_polygons':len(faces)-len(old_faces), 'old_target_geometry_and_flags_unchanged':True,
-            'metadata_and_datablock_counts_unchanged':True, 'materials_and_assets_unchanged':True,
+            'object_metadata_and_datablock_counts_unchanged':True, 'material_shaders_and_image_assets_unchanged':True,
+            'unused_materials_retained_with_fake_users':sorted(unused),
             'geometry':geometry, 'warnings':after['warnings'],
             'gap_model_m':(0.2**2+0.25**2)**.5,
             'limits':after['limits']+['Inherited frame and dimensions are inferred, not surveyed.',
