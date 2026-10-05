@@ -1,0 +1,333 @@
+{
+  "version": 1,
+  "date": "2026-10-05",
+  "ok": true,
+  "status": "candidate-human-review-pending",
+  "human_visual_approval": false,
+  "geometry_and_render_code_commit": "73c946ecf8b57d1262843a422fd094244d9ba7bf",
+  "local_run": "data/local/reviews/tower-registration-v6-final-01",
+  "saved_scene_validation": {
+    "ok": true,
+    "surface_samples": {
+      "saved_top_triangle_centroids": 459,
+      "maximum_probe_height_m": 1.95,
+      "blockers": [],
+      "limits": "Centroid probes are not a full continuous clearance or accessibility certificate."
+    },
+    "changed_objects": [
+      "pavement_0 unified road",
+      "asphalt 15s road detail",
+      "gutter 15s road detail",
+      "Tokyo Tower structure / stone",
+      "Tokyo Tower structure / orange",
+      "OTW Tokyo Tower structure / base-connections"
+    ],
+    "support_checks": {
+      "meshes": {
+        "OTW Tokyo Tower structure / base-connections": {
+          "vertices": 896,
+          "polygons": 1472,
+          "components": 80,
+          "bounds_m": [
+            [
+              -42.80406951904297,
+              45.90238571166992
+            ],
+            [
+              -41.57913589477539,
+              47.34239959716797
+            ],
+            [
+              1.9199999570846558,
+              2.2799999713897705
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 1.3206041625115663
+        },
+        "Tokyo Tower structure / orange": {
+          "vertices": 72944,
+          "polygons": 111824,
+          "components": 8517,
+          "bounds_m": [
+            [
+              -42.72871017456055,
+              45.82538986206055
+            ],
+            [
+              -41.50171661376953,
+              47.26681137084961
+            ],
+            [
+              1.8231573104858398,
+              333.0
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 945.0440414220566
+        },
+        "Tokyo Tower structure / stone": {
+          "vertices": 32,
+          "polygons": 48,
+          "components": 4,
+          "bounds_m": [
+            [
+              -43.84501266479492,
+              46.94429016113281
+            ],
+            [
+              -42.626739501953125,
+              48.38756561279297
+            ],
+            [
+              0.0,
+              2.0
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 368.93057557531574
+        }
+      },
+      "unchanged_vertices_at_or_above_30m": 58884,
+      "maximum_displacement_m": 9.562306039850027,
+      "steel_contact_max_distance_m": 0.019999980926513672,
+      "all_plate_corners_supported": true
+    },
+    "protected_objects": 3362,
+    "objects": 3368,
+    "checks": {
+      "gutter 15s road detail": {
+        "preserved_faces": 33027,
+        "cut_faces": 315,
+        "source_vertices_exact": true,
+        "outside_area_error_m2": 9.479660366196185e-05,
+        "remaining_old_inside_area_m2": 4.7620770919135095e-06,
+        "new_shape": {}
+      },
+      "pavement_0 unified road": {
+        "preserved_faces": 270571,
+        "cut_faces": 1406,
+        "source_vertices_exact": true,
+        "outside_area_error_m2": 0.00017072027549147606,
+        "remaining_old_inside_area_m2": 1.6152002601493057e-05,
+        "new_shape": {
+          "vertices": 946,
+          "polygons": 1391,
+          "components": 8,
+          "bounds_m": [
+            [
+              -51.001001958891386,
+              67.00100204556936
+            ],
+            [
+              -63.0010004612154,
+              60.50099964688729
+            ],
+            [
+              0.30000001192092896,
+              0.46000000834465027
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 52.591403258806665
+        }
+      },
+      "asphalt 15s road detail": {
+        "preserved_faces": 140321,
+        "cut_faces": 289,
+        "source_vertices_exact": true,
+        "outside_area_error_m2": 2.4478882551193237e-05,
+        "remaining_old_inside_area_m2": 5.817952631769145e-05,
+        "new_shape": {}
+      }
+    },
+    "warnings": [
+      "Modifier stack not fingerprinted: Close detail rim",
+      "Modifier stack not fingerprinted: Close detail iron",
+      "Modifier stack not fingerprinted: Close detail silver",
+      "Modifier stack not fingerprinted: Close detail frame",
+      "Modifier stack not fingerprinted: Tokyo traffic • silver",
+      "Modifier stack not fingerprinted: Tokyo traffic • white",
+      "Modifier stack not fingerprinted: Tokyo traffic • blue",
+      "Modifier stack not fingerprinted: Tokyo traffic • black",
+      "Modifier stack not fingerprinted: Tokyo traffic • red",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / stone",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / orange",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / white",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / white",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / aluminum",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / wood; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / wood",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / stone; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / stone",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / soil; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / leaf; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / darkmetal; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Modifier stack not fingerprinted: Mori JP curtain wall / aluminum",
+      "Modifier stack not fingerprinted: Mori JP interior / stone",
+      "Modifier stack not fingerprinted: Mori JP interior / wood",
+      "Modifier stack not fingerprinted: Mori JP interior / aluminum",
+      "Modifier stack not fingerprinted: Mori JP interior / chair",
+      "Modifier stack not fingerprinted: Mori JP interior / fabric",
+      "Modifier stack not fingerprinted: Observation interior detail / charcoal glass",
+      "Modifier stack not fingerprinted: Observation interior detail / brushed steel",
+      "Modifier stack not fingerprinted: Observation interior detail / ceiling",
+      "Modifier stack not fingerprinted: Photo based main deck / frame",
+      "Modifier stack not fingerprinted: Photo based main deck / silver",
+      "Modifier stack not fingerprinted: Photo based main deck / wall",
+      "Modifier stack not fingerprinted: 2019 reference window revision / black",
+      "Modifier stack not fingerprinted: 2019 reference window revision / aluminum",
+      "Modifier stack not fingerprinted: 2019 reference window revision / white"
+    ],
+    "limits": [
+      "No geographic accuracy certification",
+      "No complete modifier/animation/node-group fingerprint",
+      "Image decode checks dimensions and a pixel probe; not all image samples",
+      "No manifold/zero-area/normal checks",
+      "External asset content hashes not yet recorded",
+      "Nominal widths and flat local road elevations are inherited model assumptions.",
+      "OSM steps way 1245345677 remains a mapped pedestrian route; real riser elevations and stair geometry are not reconstructed.",
+      "Only three declared edit rectangles are rebuilt; other city roads are unchanged.",
+      "Visible plinths follow OSM minimum rectangles, not measured construction dimensions.",
+      "Independent mapped plinth positions are not treated as proof of real tower asymmetry.",
+      "Lower steel and estimated plates interpolate to unchanged geometry at 30m; this is not a structural reconstruction.",
+      "Cap height remains the inherited 2m estimate; OSM height=7 is not adopted.",
+      "The upper tower, FootTown, apron, geographic origin and vertical datum are unchanged."
+    ],
+    "input_sha256": "9b977881ebcde3cf407473926756cbe93455c18780722ca0eac1c1b8a3fb702c",
+    "candidate_sha256": "79e05021d365e7d1dcd56c3ff38196413d93619de6ba371f5dd1d626e5533ec0",
+    "source_and_candidate_protected": true,
+    "blender_version": "4.5.1 LTS",
+    "code_sha256": {
+      "tower_registration_v6.py": "43a362b4a362055e5decbe3fc9d36a774c036e5ebaa00a240e85730c400d4b11",
+      "tower_registration_geometry_v6.py": "65175cb8f9190ebfcaf70f5a9f9bf56f708498ab85bb5952fbb821c720c6afb9",
+      "prepare_tower_registration_v6.py": "29dc945f87eb2fd64b2506870dca37b6a5ffa650a26217cf91db91b4b533495c",
+      "tower_footway_geometry_v5.py": "60fe725a37590f4f1352e7cbae16fd4047dc626581caa4d8813130d319cb91af",
+      "prepare_tower_footway_v5.py": "eee1b9b841b0f399204828b79ec5a3b6165fe641bd5304e742006a259e0c4f54",
+      "tower_foundation_v4.py": "2e04308d521aaa1a1e8b035da5669ece5a5f27c93be7cccf161d73e70496e4a8",
+      "tower_foundation_geometry_v4.py": "882714acf56459a6bbad8d74722d1e360c5ef37957fbe16779d88422d0c35a80",
+      "tower_structure_v1.py": "bfb1730e3277138aec489cdb113c6af1738a5c8d1ebad395f6119ad2d1656821",
+      "blender_worker.py": "7cd8a0437c8378a9adc72390291a8d8eef7573b926cdb1e3eb9252ed9c517cef",
+      "review.py": "622c4fd41e0128ae48a4d912a98aaed72edb0322fd1af06947d0eb487589d418",
+      "validate_tower_structure.py": "03f911a2f85f4aee0d32d986d3210b7c4a495e13487f062997abe5d26ee0581c",
+      "validate_tower_foottown.py": "ddf246dd40b4acab8c6084743f7c26b6242fd2a8bdc9e7eff9e463f0139245c2",
+      "tower_site_v3.py": "c66be46098cb95348ff52569d696c3afc9c24bdaf56b9aab8a2ebce2b5558ab1",
+      "tower_south_handrail.py": "85d3a9288ce8a0c8d9a7308f34777b31e16058bf9b34e86d10e309799be59acf"
+    },
+    "configuration_sha256": "edb54fd57cb6c649a1bc007cdbf1f3101600f5ba22047af22d349801513b0c61",
+    "plan_sha256": "2d8f0cd47cba8403d925adb0f33d43a32521a7683a036fd5de97db35ffc7b182"
+  },
+  "build": {
+    "ok": true,
+    "audit": {
+      "asphalt 15s road detail": {
+        "source_vertices": 423799,
+        "cut_faces": 289,
+        "removed_area_m2": 808.8957989029096,
+        "retained_faces": 140386,
+        "replacement_vertex_start": 424031,
+        "replacement_faces": 174
+      },
+      "gutter 15s road detail": {
+        "source_vertices": 102638,
+        "cut_faces": 315,
+        "removed_area_m2": 50.52875535899497,
+        "retained_faces": 33069,
+        "replacement_vertex_start": 102785,
+        "replacement_faces": 209
+      },
+      "pavement_0 unified road": {
+        "source_vertices": 280150,
+        "cut_faces": 1406,
+        "removed_area_m2": 639.0984433455403,
+        "retained_faces": 270651,
+        "replacement_vertex_start": 280451,
+        "replacement_faces": 1391
+      }
+    },
+    "changed_objects": [
+      "OTW Tokyo Tower structure / base-connections",
+      "Tokyo Tower structure / orange",
+      "Tokyo Tower structure / stone",
+      "asphalt 15s road detail",
+      "gutter 15s road detail",
+      "pavement_0 unified road"
+    ],
+    "added_objects": [],
+    "input_sha256": "9b977881ebcde3cf407473926756cbe93455c18780722ca0eac1c1b8a3fb702c",
+    "candidate_sha256": "79e05021d365e7d1dcd56c3ff38196413d93619de6ba371f5dd1d626e5533ec0",
+    "source_and_candidate_protected": true,
+    "blender_version": "4.5.1 LTS",
+    "code_sha256": {
+      "tower_registration_v6.py": "43a362b4a362055e5decbe3fc9d36a774c036e5ebaa00a240e85730c400d4b11",
+      "tower_registration_geometry_v6.py": "65175cb8f9190ebfcaf70f5a9f9bf56f708498ab85bb5952fbb821c720c6afb9",
+      "prepare_tower_registration_v6.py": "29dc945f87eb2fd64b2506870dca37b6a5ffa650a26217cf91db91b4b533495c",
+      "tower_footway_geometry_v5.py": "60fe725a37590f4f1352e7cbae16fd4047dc626581caa4d8813130d319cb91af",
+      "prepare_tower_footway_v5.py": "eee1b9b841b0f399204828b79ec5a3b6165fe641bd5304e742006a259e0c4f54",
+      "tower_foundation_v4.py": "2e04308d521aaa1a1e8b035da5669ece5a5f27c93be7cccf161d73e70496e4a8",
+      "tower_foundation_geometry_v4.py": "882714acf56459a6bbad8d74722d1e360c5ef37957fbe16779d88422d0c35a80",
+      "tower_structure_v1.py": "bfb1730e3277138aec489cdb113c6af1738a5c8d1ebad395f6119ad2d1656821",
+      "blender_worker.py": "7cd8a0437c8378a9adc72390291a8d8eef7573b926cdb1e3eb9252ed9c517cef",
+      "review.py": "622c4fd41e0128ae48a4d912a98aaed72edb0322fd1af06947d0eb487589d418",
+      "validate_tower_structure.py": "03f911a2f85f4aee0d32d986d3210b7c4a495e13487f062997abe5d26ee0581c",
+      "validate_tower_foottown.py": "ddf246dd40b4acab8c6084743f7c26b6242fd2a8bdc9e7eff9e463f0139245c2",
+      "tower_site_v3.py": "c66be46098cb95348ff52569d696c3afc9c24bdaf56b9aab8a2ebce2b5558ab1",
+      "tower_south_handrail.py": "85d3a9288ce8a0c8d9a7308f34777b31e16058bf9b34e86d10e309799be59acf"
+    },
+    "configuration_sha256": "edb54fd57cb6c649a1bc007cdbf1f3101600f5ba22047af22d349801513b0c61",
+    "plan_sha256": "2d8f0cd47cba8403d925adb0f33d43a32521a7683a036fd5de97db35ffc7b182"
+  },
+  "render_settings": {
+    "device": "OPTIX",
+    "width": 1280,
+    "height": 848,
+    "samples": 32,
+    "seed": 0
+  },
+  "devices": [
+    "NVIDIA GeForce RTX 3060 Ti"
+  ],
+  "matched_views": [
+    "foottown-front",
+    "tower-context",
+    "site-overhead",
+    "south-grade",
+    "foundation-close",
+    "foundation-opposite",
+    "foundation-north",
+    "foundation-west"
+  ],
+  "portable_tests": {
+    "run": 417,
+    "passed": 409,
+    "skipped": 8,
+    "failures": 0,
+    "log_sha256": "47d8e602989765d9dcbff5aa4ada70a5125d386c6f5ca32d5717bb88b2153d2e"
+  },
+  "syntax_check": "python -m compileall -q scripts tests passed",
+  "configuration_sha256": {
+    "areas/tokyo-tower/tower-registration-v6-cameras.json": "18b3972741a32ea472e45346fd6b547499d2b0bce2d917c0f4c849b6b291b738",
+    "areas/tokyo-tower/tower-registration-v6-input.json": "edb54fd57cb6c649a1bc007cdbf1f3101600f5ba22047af22d349801513b0c61",
+    "areas/tokyo-tower/tower-registration-v6-plan.json": "2d8f0cd47cba8403d925adb0f33d43a32521a7683a036fd5de97db35ffc7b182",
+    "areas/tokyo-tower/tower-registration-v6-sources.json": "24a0c48986e766a038652a292a4390c24ae67bc804a8b60ca73b171325f505e1"
+  },
+  "limitations": [
+    "No geographic accuracy certification",
+    "No complete modifier/animation/node-group fingerprint",
+    "Image decode checks dimensions and a pixel probe; not all image samples",
+    "No manifold/zero-area/normal checks",
+    "External asset content hashes not yet recorded",
+    "Nominal widths and flat local road elevations are inherited model assumptions.",
+    "OSM steps way 1245345677 remains a mapped pedestrian route; real riser elevations and stair geometry are not reconstructed.",
+    "Only three declared edit rectangles are rebuilt; other city roads are unchanged.",
+    "Visible plinths follow OSM minimum rectangles, not measured construction dimensions.",
+    "Independent mapped plinth positions are not treated as proof of real tower asymmetry.",
+    "Lower steel and estimated plates interpolate to unchanged geometry at 30m; this is not a structural reconstruction.",
+    "Cap height remains the inherited 2m estimate; OSM height=7 is not adopted.",
+    "The upper tower, FootTown, apron, geographic origin and vertical datum are unchanged."
+  ]
+}
