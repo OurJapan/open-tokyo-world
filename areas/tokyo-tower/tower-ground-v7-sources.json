@@ -1,0 +1,416 @@
+{
+  "version": 1,
+  "date": "2026-10-05",
+  "feature_id": "otw:jp:tokyo:minato:tokyo-tower",
+  "status": "photo-and-map-guided-provisional-model",
+  "sources": [
+    {
+      "id": "OSM-cap",
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.7438,35.6575,139.7468,35.6597",
+      "sha256": "be3de9cbf95ce6f7a1243e7690543477b06bd4cdbe42a17ee6b28dd2c3717dd6",
+      "ways": [
+        "1244967004",
+        "1244967005",
+        "1244967006",
+        "1244967007"
+      ],
+      "version": 2,
+      "timestamp": "2024-02-01T16:54:38Z",
+      "license": "ODbL 1.0",
+      "attribution": "OpenStreetMap contributors",
+      "adopted": "Retain v6 mapped upper plan outlines; provisionally adopt mapped height=7, qualitatively supported by tall clad plinth photographs.",
+      "not_adopted": "Survey accuracy; exact structural asymmetry or underground foundation geometry."
+    },
+    {
+      "id": "OSM-roads",
+      "sha256": "f04e8e70ab24a61ca749375d1ef37401feb0fdc840cc506b670ef71454a6a8ab",
+      "register": "areas/tokyo-tower/tower-footway-v5-sources.json",
+      "adopted": "Retain route centres and nominal widths; reconstruct north eight-step route; bounded road, gutter and pavement heights.",
+      "license": "ODbL 1.0"
+    },
+    {
+      "id": "historical-foundations",
+      "url": "https://www.jaee.gr.jp/jp/wp-content/uploads/2015/04/vibration_characteristics.pdf",
+      "sha256": "365076249c4bdf88b9232ee20bbe883a08296d59ad2cee3c6cd412ff3a9827ab",
+      "pages": "PDF 115 / printed 106, figures 11 and 12",
+      "observed": "The text and figures describe underground foundations and tie beams, with 80m and 88m dimensions in Fig.12.",
+      "decision": "Withdraw the v4 use of 88m as confirmed visible plinth-centre spacing. No new physical ground-level dimension is inferred from these endpoints."
+    },
+    {
+      "id": "heritage",
+      "url": "https://online.bunka.go.jp/index.php/heritages/detail/206677",
+      "observed": "Registered description includes 80m leg span.",
+      "decision": "No uniform rescaling from this description because endpoints are not identified."
+    },
+    {
+      "id": "Miyaji-28",
+      "url": "https://www.miyaji-eng.co.jp/technology/newsletter/media/28/no28-p064-070.pdf",
+      "sha256": "03d3bb48c12d57671d7e75d52a3bb7b86470ec856be26481ff073dbbb7037f0f",
+      "pages": "PDF 2 / printed 65, Fig.1",
+      "observed": "Overall structural elevation reviewed; ground-level plinth widths are not dimensioned.",
+      "decision": "Context only; not a source of plinth dimensions."
+    },
+    {
+      "id": "Miyaji-18",
+      "url": "https://www.miyaji-eng.co.jp/technology/newsletter/media/18/no18-p085-091.pdf",
+      "sha256": "4c60d83215ff48462388face5980e7c51b5b0002c682d44f7484e18471d6c391",
+      "pages": "PDF 3 (printed 87), 6-7",
+      "observed": "Lower-tower reinforcement diagrams and bolted steel plate photographs.",
+      "adopted": "Qualitative gusset and bolted plate form.",
+      "not_adopted": "Exact v7 plate dimensions, locations, bolt counts or reconstructed member schedules."
+    },
+    {
+      "id": "Takenaka-retrofit",
+      "url": "https://www.takenaka.co.jp/solution/asset/project/07/",
+      "observed": "Exposed foundation and steel reinforcement photographs.",
+      "adopted": "Qualitative corroboration only; no hidden foundation reconstruction."
+    },
+    {
+      "id": "venue-plinth-photo",
+      "url": "https://venue-link.com/s/999/3742/",
+      "image_urls": [
+        "https://venue-link.com/images/999/3741/room202561611637490.jpeg",
+        "https://venue-link.com/images/999/3741/room202561611637483.jpeg",
+        "https://venue-link.com/images/999/3742/room202561611726605.jpeg"
+      ],
+      "observed": "Tall plinth cladding flares outward toward its upper end; pink/brown rectangular panel divisions; surrounding entrance and parking surface.",
+      "adopted": "Visible outward taper, stone-like panel subdivisions and approximate color.",
+      "not_adopted": "Metric photogrammetry; verified 7m height, taper ratio, panel dimensions or texture reuse."
+    },
+    {
+      "id": "GSI-elevation",
+      "documentation": "https://maps.gsi.go.jp/development/elevation_s.html",
+      "accuracy_documentation": "https://www.gsi.go.jp/kiban/faq.html",
+      "sample_sha256": "57fd523e86edbda8534c702d0855f58cd300fb1d42977251a9efdc39768ffb33",
+      "samples": [
+        {
+          "name": "front",
+          "xy": [
+            0,
+            35
+          ],
+          "lon": 139.74564470390558,
+          "lat": 35.658842446095306,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74564470&lat=35.65884245&outtype=JSON",
+          "result": {
+            "elevation": 18.6,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "south_entry",
+          "xy": [
+            0,
+            -33
+          ],
+          "lon": 139.74522756488903,
+          "lat": 35.658332550824426,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74522756&lat=35.65833255&outtype=JSON",
+          "result": {
+            "elevation": 22.7,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "south_lot",
+          "xy": [
+            0,
+            -55
+          ],
+          "lon": 139.74509260814838,
+          "lat": 35.65816758470737,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74509261&lat=35.65816758&outtype=JSON",
+          "result": {
+            "elevation": 21.5,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "1245345677-0",
+          "xy": [
+            50.98377299597131,
+            48.324891081550945
+          ],
+          "lon": 139.7461954,
+          "lat": 35.6586874,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74619540&lat=35.65868740&outtype=JSON",
+          "result": {
+            "elevation": 16.7,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "1245345677-1",
+          "xy": [
+            50.93174829316456,
+            47.6367273940843
+          ],
+          "lon": 139.7461907,
+          "lat": 35.6586825,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74619070&lat=35.65868250&outtype=JSON",
+          "result": {
+            "elevation": 16.7,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "1245345677-2",
+          "xy": [
+            50.80653213793776,
+            46.99310357921577
+          ],
+          "lon": 139.7461856,
+          "lat": 35.6586783,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74618560&lat=35.65867830&outtype=JSON",
+          "result": {
+            "elevation": 17.1,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "1245345677-3",
+          "xy": [
+            50.73124451100689,
+            46.20940901848115
+          ],
+          "lon": 139.7461801,
+          "lat": 35.6586728,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74618010&lat=35.65867280&outtype=JSON",
+          "result": {
+            "elevation": 17.2,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "1245345677-4",
+          "xy": [
+            50.55472316801078,
+            45.54490496882415
+          ],
+          "lon": 139.7461744,
+          "lat": 35.6586687,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74617440&lat=35.65866870&outtype=JSON",
+          "result": {
+            "elevation": 17.3,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "1245345677-5",
+          "xy": [
+            50.48012387188596,
+            44.84168589912998
+          ],
+          "lon": 139.7461694,
+          "lat": 35.6586638,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74616940&lat=35.65866380&outtype=JSON",
+          "result": {
+            "elevation": 17.4,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "1245345677-6",
+          "xy": [
+            50.28444620153779,
+            44.12439795105538
+          ],
+          "lon": 139.7461632,
+          "lat": 35.6586594,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74616320&lat=35.65865940&outtype=JSON",
+          "result": {
+            "elevation": 17.6,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "1245345677-7",
+          "xy": [
+            50.16400938369338,
+            43.31059262301305
+          ],
+          "lon": 139.7461571,
+          "lat": 35.6586539,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74615710&lat=35.65865390&outtype=JSON",
+          "result": {
+            "elevation": 17.8,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "1245345677-8",
+          "xy": [
+            50.00526770643726,
+            42.537921489692756
+          ],
+          "lon": 139.7461509,
+          "lat": 35.6586489,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74615090&lat=35.65864890&outtype=JSON",
+          "result": {
+            "elevation": 17.8,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "1245345677-9",
+          "xy": [
+            49.893724621053195,
+            41.74338361499882
+          ],
+          "lon": 139.746145,
+          "lat": 35.6586435,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74614500&lat=35.65864350&outtype=JSON",
+          "result": {
+            "elevation": 18,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "1245345677-10",
+          "xy": [
+            49.66452142653699,
+            40.89704834704612
+          ],
+          "lon": 139.7461377,
+          "lat": 35.6586383,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74613770&lat=35.65863830&outtype=JSON",
+          "result": {
+            "elevation": 18.1,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "1245345677-11",
+          "xy": [
+            49.485935091122755,
+            39.991117824267796
+          ],
+          "lon": 139.7461305,
+          "lat": 35.6586324,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74613050&lat=35.65863240&outtype=JSON",
+          "result": {
+            "elevation": 18.3,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "1245345677-12",
+          "xy": [
+            49.10761126345281,
+            39.20536431861096
+          ],
+          "lon": 139.7461222,
+          "lat": 35.6586284,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74612220&lat=35.65862840&outtype=JSON",
+          "result": {
+            "elevation": 18.4,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "1245345677-13",
+          "xy": [
+            48.52134454143544,
+            38.60099586842357
+          ],
+          "lon": 139.7461131,
+          "lat": 35.6586268,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74611310&lat=35.65862680&outtype=JSON",
+          "result": {
+            "elevation": 18.6,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "1245345677-14",
+          "xy": [
+            48.046581926979634,
+            38.057655341817366
+          ],
+          "lon": 139.7461054,
+          "lat": 35.6586251,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74610540&lat=35.65862510&outtype=JSON",
+          "result": {
+            "elevation": 18.6,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "1245345677-15",
+          "xy": [
+            47.5102515272867,
+            37.45991813458303
+          ],
+          "lon": 139.7460968,
+          "lat": 35.6586233,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74609680&lat=35.65862330&outtype=JSON",
+          "result": {
+            "elevation": 18.8,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "1245345677-16",
+          "xy": [
+            47.01497151406246,
+            36.996246706542955
+          ],
+          "lon": 139.7460894,
+          "lat": 35.6586223,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74608940&lat=35.65862230&outtype=JSON",
+          "result": {
+            "elevation": 18.9,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "1245345678-0",
+          "xy": [
+            47.01497151406246,
+            36.996246706542955
+          ],
+          "lon": 139.7460894,
+          "lat": 35.6586223,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74608940&lat=35.65862230&outtype=JSON",
+          "result": {
+            "elevation": 18.9,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "1245345678-1",
+          "xy": [
+            41.17220352609208,
+            32.11273552453353
+          ],
+          "lon": 139.7460057,
+          "lat": 35.6586149,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74600570&lat=35.65861490&outtype=JSON",
+          "result": {
+            "elevation": 18.6,
+            "hsrc": "1m（レーザ）"
+          }
+        }
+      ],
+      "adopted": "2.2m DEM endpoint difference for the north route; 1.2m south doorway-to-lot relative difference.",
+      "not_adopted": "Individual riser survey, doorstep height, complete site datum or accessibility compliance. DEM errors/interpolation and source-age differences remain."
+    }
+  ],
+  "coordinate_contract": {
+    "origin_lon": 139.74543,
+    "origin_lat": 35.65858,
+    "east_formula": "(lon-origin_lon)*111320*cos(origin_lat)",
+    "north_formula": "(lat-origin_lat)*110950",
+    "tower_rotation_degrees": -33.7,
+    "vertical_datum": "unknown / retained",
+    "absolute_survey_verified": false
+  },
+  "limits": [
+    "OSM plan outlines and legacy roads use different snapshot dates.",
+    "Per-plinth placement and interpolation are modeling decisions; not an as-built structural claim.",
+    "No source PDF, photograph, XML or legacy blend is redistributed.",
+    "0.275m model risers are provisional equal distribution of DEM difference, not measured step heights.",
+    "Cladding taper, panels, gusset dimensions and bolt layout are inferred.",
+    "Local terrain blends to inherited city and has no confirmed absolute elevation datum."
+  ]
+}

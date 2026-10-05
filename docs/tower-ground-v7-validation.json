@@ -1,0 +1,972 @@
+{
+  "version": 1,
+  "date": "2026-10-05",
+  "ok": true,
+  "status": "candidate-human-review-pending",
+  "human_visual_approval": false,
+  "geometry_and_render_code_commit": "08aa1585910930ef1a53c60564ecb04a9319998e",
+  "local_run": "data/local/reviews/tower-ground-v7-final-01",
+  "saved_scene_validation": {
+    "ok": true,
+    "surface_samples": {
+      "saved_top_triangle_centroids": 7983,
+      "stair_tread_centroids": 8,
+      "blockers": [],
+      "inherited_surface_details": [
+        {
+          "point": [
+            58.0882923872633,
+            22.362583620914,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.4719998836517334
+        },
+        {
+          "point": [
+            59.07628100231373,
+            49.5310829908935,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.4720001220703125
+        },
+        {
+          "point": [
+            59.69106290809025,
+            49.520062774309196,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.4719998836517334
+        },
+        {
+          "point": [
+            59.45090631904652,
+            49.378708744829915,
+            0.46000000834465027
+          ],
+          "object": "Close detail iron",
+          "height": 0.5199998617172241
+        },
+        {
+          "point": [
+            59.22996783737211,
+            49.372957825293135,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            59.26359366068012,
+            49.454895867861715,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            59.48453214235453,
+            49.46064678739848,
+            0.46000000834465027
+          ],
+          "object": "Close detail iron",
+          "height": 0.5200001001358032
+        },
+        {
+          "point": [
+            59.249187884129874,
+            49.50856261074909,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            59.676657131540004,
+            49.57372951719657,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            59.11468882243531,
+            49.18081326255949,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            59.1339044612753,
+            49.31641549040183,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47599995136260986
+        },
+        {
+          "point": [
+            59.10028075373603,
+            49.234478858875605,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            59.14313657053905,
+            35.424209041807906,
+            0.46000000834465027
+          ],
+          "object": "Close detail iron",
+          "height": 0.5199999809265137
+        },
+        {
+          "point": [
+            59.26520974159606,
+            35.5871675741875,
+            0.46000000834465027
+          ],
+          "object": "Close detail iron",
+          "height": 0.5197180509567261
+        },
+        {
+          "point": [
+            59.32414111057363,
+            35.49663571685381,
+            0.46000000834465027
+          ],
+          "object": "Close detail iron",
+          "height": 0.5200001001358032
+        },
+        {
+          "point": [
+            58.062062499585956,
+            23.000145711688816,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.4719998836517334
+        },
+        {
+          "point": [
+            58.17306252602594,
+            22.550770799026527,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            58.18718763249586,
+            22.862979115420718,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.4720001220703125
+        },
+        {
+          "point": [
+            58.29818765893585,
+            22.41360420275844,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47600018978118896
+        },
+        {
+          "point": [
+            58.32643787187569,
+            23.03802083554682,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            58.275312639005584,
+            22.875604333020785,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.4720001220703125
+        },
+        {
+          "point": [
+            58.261187532535644,
+            22.563396016626594,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.4720001220703125
+        },
+        {
+          "point": [
+            58.150187682475966,
+            23.012770664817783,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47599995136260986
+        },
+        {
+          "point": [
+            58.386312841825855,
+            22.42622915588741,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.4719998836517334
+        },
+        {
+          "point": [
+            58.539688011295304,
+            22.913479456878786,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            58.52556308120568,
+            22.601270876013505,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.4719998836517334
+        },
+        {
+          "point": [
+            58.4145628783854,
+            23.05064605314688,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            58.451562828405294,
+            22.900854503749816,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            59.75525015962691,
+            49.49404191166945,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            59.46735435123258,
+            49.32431277220562,
+            0.46000000834465027
+          ],
+          "object": "Close detail iron",
+          "height": 0.5200001001358032
+        },
+        {
+          "point": [
+            59.56254076218672,
+            49.38116627353583,
+            0.46000000834465027
+          ],
+          "object": "Close detail rim",
+          "height": 1.2995095252990723
+        },
+        {
+          "point": [
+            59.56166591281279,
+            49.38147885101708,
+            0.46000000834465027
+          ],
+          "object": "Close detail rim",
+          "height": 1.2998831272125244
+        },
+        {
+          "point": [
+            59.85014648222242,
+            49.55100036987424,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            59.75437531025298,
+            49.49435448915069,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            59.18062577271985,
+            49.15416724495724,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            59.274354865433764,
+            49.2115420909466,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            59.17887607397197,
+            49.15479239991973,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            59.179750923345914,
+            49.15447982243848,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.4720001220703125
+        },
+        {
+          "point": [
+            59.75791898424591,
+            49.05866830662948,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.4719998836517334
+        },
+        {
+          "point": [
+            59.94779314004355,
+            49.38950107231532,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            59.60539590650833,
+            49.37372939135032,
+            0.46000000834465027
+          ],
+          "object": "Close detail iron",
+          "height": 0.5199998617172241
+        },
+        {
+          "point": [
+            59.93381460341997,
+            49.53685570300456,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            59.87914676125553,
+            49.473396684015654,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            59.167645933185554,
+            49.08368759933183,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            59.66089814450726,
+            49.0019390675792,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            59.29095795017915,
+            49.063249727813606,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        },
+        {
+          "point": [
+            59.56470880492634,
+            49.16291702047895,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.4720001220703125
+        },
+        {
+          "point": [
+            59.63335509552422,
+            49.079021541014164,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.4720001220703125
+        },
+        {
+          "point": [
+            59.35960424077703,
+            48.97935424834882,
+            0.46000000834465027
+          ],
+          "object": "Close detail yellow",
+          "height": 0.47200000286102295
+        }
+      ],
+      "limits": "Point samples detect introduced obstruction. Unchanged tactile tiles and street furniture are recorded against baseline; not a continuous clearance or accessibility certificate."
+    },
+    "changed_objects": [
+      "pavement_0 unified road",
+      "asphalt 15s road detail",
+      "gutter 15s road detail",
+      "ground",
+      "Tokyo Tower structure / stone",
+      "Tokyo Tower structure / orange",
+      "Skywalk visible detail white",
+      "OTW Tokyo Tower structure / base-connections",
+      "OTW Tokyo Tower site v3 / site-paving",
+      "OTW Tokyo Tower ground v7 / gussets",
+      "OTW Tokyo Tower ground v7 / plinth-joints",
+      "OTW Tokyo Tower ground v7 / rails",
+      "OTW Tokyo Tower ground v7 / stairs"
+    ],
+    "support_checks": {
+      "meshes": {
+        "Tokyo Tower structure / orange": {
+          "vertices": 72944,
+          "polygons": 111824,
+          "components": 8517,
+          "bounds_m": [
+            [
+              -42.72871017456055,
+              45.82538986206055
+            ],
+            [
+              -41.50171661376953,
+              47.26681137084961
+            ],
+            [
+              6.82315731048584,
+              333.0
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 922.7295214201652
+        },
+        "OTW Tokyo Tower structure / base-connections": {
+          "vertices": 896,
+          "polygons": 1472,
+          "components": 80,
+          "bounds_m": [
+            [
+              -42.80406951904297,
+              45.90238571166992
+            ],
+            [
+              -41.57913589477539,
+              47.34239959716797
+            ],
+            [
+              6.920000076293945,
+              7.278510093688965
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 1.3187146143941446
+        },
+        "caps": {
+          "vertices": 64,
+          "polygons": 112,
+          "components": 4,
+          "bounds_m": [
+            [
+              -43.84501266479492,
+              46.94429016113281
+            ],
+            [
+              -42.626739501953125,
+              48.38756561279297
+            ],
+            [
+              -0.3544045090675354,
+              7.0
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 962.1857444544851
+        },
+        "parking": {
+          "vertices": 168,
+          "polygons": 126,
+          "components": 21,
+          "bounds_m": [
+            [
+              -20.049999237060547,
+              27.450000762939453
+            ],
+            [
+              -75.0,
+              -40.45000076293945
+            ],
+            [
+              0.12598535418510437,
+              0.14800824224948883
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 0.1771018073179115
+        },
+        "ground": {
+          "vertices": 5071,
+          "polygons": 10138,
+          "components": 1,
+          "bounds_m": [
+            [
+              -15000.0,
+              15000.0
+            ],
+            [
+              -15000.0,
+              15000.0
+            ],
+            [
+              -2.0,
+              0.29768383502960205
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 1799999861.1509192
+        },
+        "apron": {
+          "vertices": 4904,
+          "polygons": 9794,
+          "components": 2,
+          "bounds_m": [
+            [
+              -36.5,
+              36.5
+            ],
+            [
+              -70.0,
+              -28.540000915527344
+            ],
+            [
+              -0.05999999865889549,
+              4.400000095367432
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 6629.608326431843
+        },
+        "OTW Tokyo Tower ground v7 / gussets": {
+          "vertices": 11264,
+          "polygons": 18944,
+          "components": 896,
+          "bounds_m": [
+            [
+              -41.86479187011719,
+              44.631980895996094
+            ],
+            [
+              -40.66312026977539,
+              46.011043548583984
+            ],
+            [
+              11.056700706481934,
+              23.51319694519043
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 4.570358241939173
+        },
+        "OTW Tokyo Tower ground v7 / plinth-joints": {
+          "vertices": 2048,
+          "polygons": 3072,
+          "components": 256,
+          "bounds_m": [
+            [
+              -43.85301208496094,
+              46.95228958129883
+            ],
+            [
+              -42.634735107421875,
+              48.39556121826172
+            ],
+            [
+              0.47200000286102295,
+              6.9079999923706055
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 0.2008929741615639
+        },
+        "OTW Tokyo Tower ground v7 / rails": {
+          "vertices": 544,
+          "polygons": 952,
+          "components": 34,
+          "bounds_m": [
+            [
+              46.30254364013672,
+              52.01564407348633
+            ],
+            [
+              36.23722839355469,
+              48.42927551269531
+            ],
+            [
+              -1.1649999618530273,
+              2.169523239135742
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 0.13549297837339594
+        },
+        "OTW Tokyo Tower ground v7 / stairs": {
+          "vertices": 64,
+          "polygons": 96,
+          "components": 8,
+          "bounds_m": [
+            [
+              46.33154296875,
+              51.980926513671875
+            ],
+            [
+              36.26622772216797,
+              48.40027618408203
+            ],
+            [
+              -1.9900000095367432,
+              0.7599999904632568
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 43.966967969439914
+        }
+      },
+      "unchanged_vertices_at_or_above_30m": 58884,
+      "steel_contact_max_distance_m": 0.020154953002929688,
+      "plates": 16,
+      "all_plate_corners_supported": true,
+      "removed_parking_bays": [
+        0,
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "south_threshold_m": 4.4,
+      "south_lot_model_height_m": 3.2,
+      "unchanged_apron_boundary_and_bottom_vertices": 2628
+    },
+    "protected_objects": 3359,
+    "objects": 3372,
+    "checks": {
+      "gutter 15s road detail": {
+        "preserved_faces": 33196,
+        "cut_faces": 82,
+        "source_vertices_exact": true,
+        "outside_area_error_m2": 2.2716732928529382e-05,
+        "remaining_old_inside_area_m2": 7.451320374261813e-06,
+        "new_shape": {}
+      },
+      "asphalt 15s road detail": {
+        "preserved_faces": 140465,
+        "cut_faces": 95,
+        "source_vertices_exact": true,
+        "outside_area_error_m2": 4.368089139461517e-05,
+        "remaining_old_inside_area_m2": 5.7295768041801015e-05,
+        "new_shape": {}
+      },
+      "pavement_0 unified road": {
+        "preserved_faces": 271193,
+        "cut_faces": 849,
+        "source_vertices_exact": true,
+        "outside_area_error_m2": 1.2597301974892616e-05,
+        "remaining_old_inside_area_m2": 5.1737485845670015e-06,
+        "new_shape": {
+          "vertices": 8524,
+          "polygons": 16501,
+          "components": 3,
+          "bounds_m": [
+            [
+              33.49799907029239,
+              60.75499863818501
+            ],
+            [
+              19.997998827907217,
+              60.502001567140155
+            ],
+            [
+              -1.600000023841858,
+              0.7595168352127075
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 25.03615558053979
+        }
+      }
+    },
+    "warnings": [
+      "Modifier stack not fingerprinted: Close detail rim",
+      "Modifier stack not fingerprinted: Close detail iron",
+      "Modifier stack not fingerprinted: Close detail silver",
+      "Modifier stack not fingerprinted: Close detail frame",
+      "Modifier stack not fingerprinted: Tokyo traffic • silver",
+      "Modifier stack not fingerprinted: Tokyo traffic • white",
+      "Modifier stack not fingerprinted: Tokyo traffic • blue",
+      "Modifier stack not fingerprinted: Tokyo traffic • black",
+      "Modifier stack not fingerprinted: Tokyo traffic • red",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / stone",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / orange",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / white",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / white",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / aluminum",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / wood; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / wood",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / stone; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / stone",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / soil; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / leaf; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / darkmetal; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Modifier stack not fingerprinted: Mori JP curtain wall / aluminum",
+      "Modifier stack not fingerprinted: Mori JP interior / stone",
+      "Modifier stack not fingerprinted: Mori JP interior / wood",
+      "Modifier stack not fingerprinted: Mori JP interior / aluminum",
+      "Modifier stack not fingerprinted: Mori JP interior / chair",
+      "Modifier stack not fingerprinted: Mori JP interior / fabric",
+      "Modifier stack not fingerprinted: Observation interior detail / charcoal glass",
+      "Modifier stack not fingerprinted: Observation interior detail / brushed steel",
+      "Modifier stack not fingerprinted: Observation interior detail / ceiling",
+      "Modifier stack not fingerprinted: Photo based main deck / frame",
+      "Modifier stack not fingerprinted: Photo based main deck / silver",
+      "Modifier stack not fingerprinted: Photo based main deck / wall",
+      "Modifier stack not fingerprinted: 2019 reference window revision / black",
+      "Modifier stack not fingerprinted: 2019 reference window revision / aluminum",
+      "Modifier stack not fingerprinted: 2019 reference window revision / white"
+    ],
+    "limits": [
+      "No geographic accuracy certification",
+      "No complete modifier/animation/node-group fingerprint",
+      "Image decode checks dimensions and a pixel probe; not all image samples",
+      "No manifold/zero-area/normal checks",
+      "External asset content hashes not yet recorded",
+      "Eight risers come from saved OSM; the 2.2m endpoint difference is a 1m DEM estimate, not measured riser height.",
+      "The 0.275m model risers and long treads are provisional; no accessibility or construction compliance claim.",
+      "Ground and roads blend locally into the inherited flat city; this is not a regional terrain reconstruction.",
+      "Visible plinth height 7m is a mapped estimate corroborated qualitatively by photographs. Taper, panels and bolt layout are inferred.",
+      "The south apron is anchored to the retained 4.4m doorway, with 3.2m at the DEM lot sample; absolute datum remains unknown."
+    ],
+    "input_sha256": "79e05021d365e7d1dcd56c3ff38196413d93619de6ba371f5dd1d626e5533ec0",
+    "candidate_sha256": "40274b646b8637a786f4fe5150216613d2c57cf9eee651333ab5227251a2c330",
+    "source_and_candidate_protected": true,
+    "blender_version": "4.5.1 LTS",
+    "code_sha256": {
+      "tower_ground_v7.py": "b656dad946d1863caacfd8c4515d214a7cf9aa33533bcaa8daf5c00f44eef1f0",
+      "tower_ground_geometry_v7.py": "54fc5a00e220159f0229c7d2a8825b91b2e75f66f9fc767fa59ba94267d49357",
+      "prepare_tower_ground_v7.py": "31f05cb5f047628e52dd5db94e4f549a77fbf085ba95fd5ab2ba5c8bbbb23a70",
+      "tower_registration_geometry_v6.py": "65175cb8f9190ebfcaf70f5a9f9bf56f708498ab85bb5952fbb821c720c6afb9",
+      "tower_footway_v5.py": "473253249e1f3862c7b072a6f7d956511a9c9070cb2fb6ac8e891af1810e20ff",
+      "tower_footway_geometry_v5.py": "60fe725a37590f4f1352e7cbae16fd4047dc626581caa4d8813130d319cb91af",
+      "prepare_tower_footway_v5.py": "eee1b9b841b0f399204828b79ec5a3b6165fe641bd5304e742006a259e0c4f54",
+      "tower_foundation_v4.py": "2e04308d521aaa1a1e8b035da5669ece5a5f27c93be7cccf161d73e70496e4a8",
+      "tower_foundation_geometry_v4.py": "882714acf56459a6bbad8d74722d1e360c5ef37957fbe16779d88422d0c35a80",
+      "tower_structure_v1.py": "bfb1730e3277138aec489cdb113c6af1738a5c8d1ebad395f6119ad2d1656821",
+      "blender_worker.py": "7cd8a0437c8378a9adc72390291a8d8eef7573b926cdb1e3eb9252ed9c517cef",
+      "review.py": "622c4fd41e0128ae48a4d912a98aaed72edb0322fd1af06947d0eb487589d418",
+      "validate_tower_structure.py": "03f911a2f85f4aee0d32d986d3210b7c4a495e13487f062997abe5d26ee0581c",
+      "validate_tower_foottown.py": "ddf246dd40b4acab8c6084743f7c26b6242fd2a8bdc9e7eff9e463f0139245c2",
+      "tower_site_v3.py": "c66be46098cb95348ff52569d696c3afc9c24bdaf56b9aab8a2ebce2b5558ab1",
+      "tower_south_handrail.py": "85d3a9288ce8a0c8d9a7308f34777b31e16058bf9b34e86d10e309799be59acf",
+      "tower_foottown_v2.py": "52b4455ddf146c0dc1444226a492aeacf3d68e593918cd0365a6b49eaf9af6d4",
+      "tower_site_geometry_v3.py": "6d4013660d33100ee6df802f743463c4a84d862d94ff61e452c5b2dc22ba7db8"
+    },
+    "configuration_sha256": "c9a7f0dfd6747676577f3c16edd733d372630977873cfcfffc2e126e0c91432b",
+    "plan_sha256": "c624216f0a3b6ee4c90f033e8f3e07d385de7b51d22f78f4a9f5d73f91dd8a70"
+  },
+  "build": {
+    "ok": true,
+    "audit": {
+      "asphalt 15s road detail": {
+        "source_vertices": 424211,
+        "cut_faces": 95,
+        "removed_area_m2": 415.3875960879853,
+        "retained_faces": 140501,
+        "replacement_vertex_start": 424338,
+        "replacement_faces": 35287
+      },
+      "gutter 15s road detail": {
+        "source_vertices": 103008,
+        "cut_faces": 82,
+        "removed_area_m2": 16.028387621447425,
+        "retained_faces": 33210,
+        "replacement_vertex_start": 103057,
+        "replacement_faces": 2859
+      },
+      "pavement_0 unified road": {
+        "source_vertices": 281397,
+        "cut_faces": 849,
+        "removed_area_m2": 399.07074920559575,
+        "retained_faces": 271210,
+        "replacement_vertex_start": 281460,
+        "replacement_faces": 16501
+      }
+    },
+    "changed_objects": [
+      "OTW Tokyo Tower site v3 / site-paving",
+      "OTW Tokyo Tower structure / base-connections",
+      "Skywalk visible detail white",
+      "Tokyo Tower structure / orange",
+      "Tokyo Tower structure / stone",
+      "asphalt 15s road detail",
+      "ground",
+      "gutter 15s road detail",
+      "pavement_0 unified road"
+    ],
+    "added_objects": [
+      "OTW Tokyo Tower ground v7 / gussets",
+      "OTW Tokyo Tower ground v7 / plinth-joints",
+      "OTW Tokyo Tower ground v7 / rails",
+      "OTW Tokyo Tower ground v7 / stairs"
+    ],
+    "removed_parking_bays": [
+      0,
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13
+    ],
+    "input_sha256": "79e05021d365e7d1dcd56c3ff38196413d93619de6ba371f5dd1d626e5533ec0",
+    "candidate_sha256": "40274b646b8637a786f4fe5150216613d2c57cf9eee651333ab5227251a2c330",
+    "source_and_candidate_protected": true,
+    "blender_version": "4.5.1 LTS",
+    "code_sha256": {
+      "tower_ground_v7.py": "b656dad946d1863caacfd8c4515d214a7cf9aa33533bcaa8daf5c00f44eef1f0",
+      "tower_ground_geometry_v7.py": "54fc5a00e220159f0229c7d2a8825b91b2e75f66f9fc767fa59ba94267d49357",
+      "prepare_tower_ground_v7.py": "31f05cb5f047628e52dd5db94e4f549a77fbf085ba95fd5ab2ba5c8bbbb23a70",
+      "tower_registration_geometry_v6.py": "65175cb8f9190ebfcaf70f5a9f9bf56f708498ab85bb5952fbb821c720c6afb9",
+      "tower_footway_v5.py": "473253249e1f3862c7b072a6f7d956511a9c9070cb2fb6ac8e891af1810e20ff",
+      "tower_footway_geometry_v5.py": "60fe725a37590f4f1352e7cbae16fd4047dc626581caa4d8813130d319cb91af",
+      "prepare_tower_footway_v5.py": "eee1b9b841b0f399204828b79ec5a3b6165fe641bd5304e742006a259e0c4f54",
+      "tower_foundation_v4.py": "2e04308d521aaa1a1e8b035da5669ece5a5f27c93be7cccf161d73e70496e4a8",
+      "tower_foundation_geometry_v4.py": "882714acf56459a6bbad8d74722d1e360c5ef37957fbe16779d88422d0c35a80",
+      "tower_structure_v1.py": "bfb1730e3277138aec489cdb113c6af1738a5c8d1ebad395f6119ad2d1656821",
+      "blender_worker.py": "7cd8a0437c8378a9adc72390291a8d8eef7573b926cdb1e3eb9252ed9c517cef",
+      "review.py": "622c4fd41e0128ae48a4d912a98aaed72edb0322fd1af06947d0eb487589d418",
+      "validate_tower_structure.py": "03f911a2f85f4aee0d32d986d3210b7c4a495e13487f062997abe5d26ee0581c",
+      "validate_tower_foottown.py": "ddf246dd40b4acab8c6084743f7c26b6242fd2a8bdc9e7eff9e463f0139245c2",
+      "tower_site_v3.py": "c66be46098cb95348ff52569d696c3afc9c24bdaf56b9aab8a2ebce2b5558ab1",
+      "tower_south_handrail.py": "85d3a9288ce8a0c8d9a7308f34777b31e16058bf9b34e86d10e309799be59acf",
+      "tower_foottown_v2.py": "52b4455ddf146c0dc1444226a492aeacf3d68e593918cd0365a6b49eaf9af6d4",
+      "tower_site_geometry_v3.py": "6d4013660d33100ee6df802f743463c4a84d862d94ff61e452c5b2dc22ba7db8"
+    },
+    "configuration_sha256": "c9a7f0dfd6747676577f3c16edd733d372630977873cfcfffc2e126e0c91432b",
+    "plan_sha256": "c624216f0a3b6ee4c90f033e8f3e07d385de7b51d22f78f4a9f5d73f91dd8a70"
+  },
+  "render_settings": {
+    "device": "OPTIX",
+    "width": 1280,
+    "height": 848,
+    "samples": 32,
+    "seed": 0
+  },
+  "devices": [
+    "NVIDIA GeForce RTX 3060 Ti"
+  ],
+  "matched_views": [
+    "foottown-front",
+    "tower-context",
+    "site-overhead",
+    "south-grade",
+    "foundation-close",
+    "foundation-opposite",
+    "foundation-north",
+    "foundation-west",
+    "north-stairs",
+    "base-joints"
+  ],
+  "portable_tests": {
+    "run": 424,
+    "passed": 416,
+    "skipped": 8,
+    "failures": 0,
+    "log_sha256": "ca217560f65902d427f0e2dd3789ca96a50d78c5de602efb368d847b8fdf01fa"
+  },
+  "syntax_check": "python -m compileall -q scripts tests passed",
+  "configuration_sha256": {
+    "areas/tokyo-tower/tower-ground-v7-cameras.json": "cae0ad8f9525b4dc2b5d16c4773b3871ae9312ee413fc0fc2b639f11a2f25dc6",
+    "areas/tokyo-tower/tower-ground-v7-input.json": "c9a7f0dfd6747676577f3c16edd733d372630977873cfcfffc2e126e0c91432b",
+    "areas/tokyo-tower/tower-ground-v7-plan.json": "c624216f0a3b6ee4c90f033e8f3e07d385de7b51d22f78f4a9f5d73f91dd8a70",
+    "areas/tokyo-tower/tower-ground-v7-sources.json": "923328466b698ae16ea8d7719c649086baaa6c282c4e86e11c9a28a4b6e413c8"
+  },
+  "limitations": [
+    "No geographic accuracy certification",
+    "No complete modifier/animation/node-group fingerprint",
+    "Image decode checks dimensions and a pixel probe; not all image samples",
+    "No manifold/zero-area/normal checks",
+    "External asset content hashes not yet recorded",
+    "Eight risers come from saved OSM; the 2.2m endpoint difference is a 1m DEM estimate, not measured riser height.",
+    "The 0.275m model risers and long treads are provisional; no accessibility or construction compliance claim.",
+    "Ground and roads blend locally into the inherited flat city; this is not a regional terrain reconstruction.",
+    "Visible plinth height 7m is a mapped estimate corroborated qualitatively by photographs. Taper, panels and bolt layout are inferred.",
+    "The south apron is anchored to the retained 4.4m doorway, with 3.2m at the DEM lot sample; absolute datum remains unknown."
+  ]
+}
