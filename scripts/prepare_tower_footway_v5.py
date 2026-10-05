@@ -36,11 +36,12 @@ def mesh(zone,top,bottom=None):
                     fs.append([vertex(*a,top),vertex(*a,bottom),vertex(*b,bottom),vertex(*b,top)])
     return {'vertices':vs,'faces':fs}
 
-def prepare(osm):
+def prepare(osm,cap_polygons=None,scope_bounds=None):
     assert sh.__version__=='2.1.2'
     assert digest(osm)==OSM_HASH
     tree=ET.parse(osm).getroot();nodes={n.get('id'):n for n in tree.findall('node')}
-    scope=sh.union_all([sh.box(*b) for b in SCOPES]);near=scope.buffer(30)
+    scopes=SCOPES if scope_bounds is None else scope_bounds
+    scope=sh.union_all([sh.box(*b) for b in scopes]);near=scope.buffer(30)
     roads=[];outer=[];routes=[]
     for w in tree.findall('way'):
         tags={t.get('k'):t.get('v') for t in w.findall('tag')};typ=tags.get('highway')
@@ -69,7 +70,8 @@ def prepare(osm):
     # Retain the v4 tower and apron; no new walking surface beneath them.
     from tower_foundation_geometry_v4 import grid
     rows=grid();apron=sh.Polygon(rows[0]+[r[-1] for r in rows[1:]]+list(reversed(rows[-1][:-1]))+[r[0] for r in reversed(rows[1:-1])])
-    caps=sh.union_all([sh.box(sx*44-5.25,sy*44-5.25,sx*44+5.25,sy*44+5.25) for sx in (-1,1) for sy in (-1,1)])
+    caps=sh.union_all([sh.Polygon(p) for p in cap_polygons] if cap_polygons is not None else
+        [sh.box(sx*44-5.25,sy*44-5.25,sx*44+5.25,sy*44+5.25) for sx in (-1,1) for sy in (-1,1)])
     mask=sh.union_all([caps,apron]);road=road.difference(mask).intersection(scope);walk=walk.difference(mask).intersection(scope)
     gutter=road.difference(road.buffer(-.24,join_style=1)).intersection(scope)
     # Only physical road edges get gutters, not the rectangular edit boundary.
@@ -80,7 +82,7 @@ def prepare(osm):
     zones['gutter 15s road detail']=zones['gutter 15s road detail'].difference(zones['asphalt 15s road detail'])
     zones['pavement_0 unified road']=zones['pavement_0 unified road'].difference(sh.union_all([zones['asphalt 15s road detail'],zones['gutter 15s road detail']]))
     assert max(sh.intersection(a,b).area for i,a in enumerate(zones.values()) for j,b in enumerate(zones.values()) if i<j)<1e-7
-    return {'version':1,'osm_sha256':OSM_HASH,'scopes':SCOPES,'routes':routes,'runtime':{'shapely':sh.__version__,'geos':sh.geos_version_string},'replacement':{name:{**mesh(zone,.46 if name.startswith('pavement') else .3,.3 if name.startswith('pavement') else None),'area_m2':zone.area,'polygons':[{'exterior':list(p.exterior.coords),'holes':[list(h.coords) for h in p.interiors]} for p in polygons(zone)]} for name,zone in zones.items()},'limits':['Nominal widths and flat local road elevations are inherited model assumptions.','OSM steps way 1245345677 remains a mapped pedestrian route; real riser elevations and stair geometry are not reconstructed.','Existing tower/road georegistration conflicts are not solved by moving road centre lines.','Only three declared edit rectangles are rebuilt; other city roads are unchanged.']}
+    return {'version':1,'osm_sha256':OSM_HASH,'scopes':scopes,'routes':routes,'runtime':{'shapely':sh.__version__,'geos':sh.geos_version_string},'replacement':{name:{**mesh(zone,.46 if name.startswith('pavement') else .3,.3 if name.startswith('pavement') else None),'area_m2':zone.area,'polygons':[{'exterior':list(p.exterior.coords),'holes':[list(h.coords) for h in p.interiors]} for p in polygons(zone)]} for name,zone in zones.items()},'limits':['Nominal widths and flat local road elevations are inherited model assumptions.','OSM steps way 1245345677 remains a mapped pedestrian route; real riser elevations and stair geometry are not reconstructed.','Existing tower/road georegistration conflicts are not solved by moving road centre lines.','Only three declared edit rectangles are rebuilt; other city roads are unchanged.']}
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--osm',required=True,type=Path);p.add_argument('--output',required=True,type=Path);a=p.parse_args();data=prepare(a.osm)
     if a.output.exists():raise ValueError('Refusing to overwrite plan')
