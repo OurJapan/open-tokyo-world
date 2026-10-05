@@ -63,7 +63,10 @@ def walking_offsets(vertices,tree):
   d=scope_distance(p)
   if d>=2 or abs(p[2]-grade(*p[:2])-.46)>1e-5:continue
   co,no,face,distance=tree.ray_cast(Vector(xy.world((p[0],p[1],12))),Vector((0,0,-1)),20)
-  if co is None or no.z<.1:
+  # Inherited road faces can have downward winding. Their first downward ray
+  # hit still measures the geometric top; do not discard that height merely
+  # because the legacy normal points down.
+  if co is None or abs(no.z)<.1:
    # Source gaps have no measurable top. Retain the inherited regional
    # nominal level rather than treating a missing ray as a zero elevation.
    old=(.46 if 33.5<=p[0]<=67 and -63<=p[1]<=-30 else .6)+grade(*p[:2]);fallback+=1
@@ -245,7 +248,19 @@ def main():
   bpy.ops.wm.open_mainfile(filepath=str(src if a.phase=='render-before' else out/'after.blend'));cameras=json.loads(CAMERAS.read_text())
   if a.preview:cameras['views']=[v for v in cameras['views'] if v['id'] in ['west-road-vehicle','south-road-vehicle']]
   settings=dict(width=768 if a.preview else 1280,height=509 if a.preview else 848,samples=12 if a.preview else 32,seed=0,device='OPTIX')
-  result=render(dict(output=str(out),cameras=cameras,settings=settings),a.phase.replace('render-',''));result.update(settings=settings,cameras_sha256=digest(CAMERAS))
+  phase=a.phase.replace('render-','');normal=dict(cameras,views=[v for v in cameras['views'] if v['id']!='surface-details-close']);diagnostic=dict(cameras,views=[v for v in cameras['views'] if v['id']=='surface-details-close'])
+  result=render(dict(output=str(out),cameras=normal,settings=settings),phase)
+  if diagnostic['views']:
+   collection=bpy.data.objects['Close detail iron'].users_collection[0];visibility=collection.hide_render;flags={o.name:o.hide_render for o in collection.objects}
+   try:
+    collection.hide_render=False
+    for o in collection.objects:o.hide_render=o.name not in ['Close detail iron','Close detail rim']
+    detail=render(dict(output=str(out),cameras=diagnostic,settings=settings),phase);assert detail['devices']==result['devices'];result['views'].extend(detail['views'])
+   finally:
+    collection.hide_render=visibility
+    for name,hidden in flags.items():bpy.data.objects[name].hide_render=hidden
+   result['surface_detail_visibility_override']=dict(view='surface-details-close',visible_objects=['Close detail iron','Close detail rim'],stored_collection_hidden=visibility,saved_scene_visibility_unchanged=True)
+  result.update(settings=settings,cameras_sha256=digest(CAMERAS))
  assert digest(src)==SOURCE_SHA
  if candidate:assert digest(out/'after.blend')==candidate
  assert all(digest(ROOT/'scripts'/n)==h for n,h in code.items())
