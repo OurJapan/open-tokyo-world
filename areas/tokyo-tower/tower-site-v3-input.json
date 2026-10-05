@@ -1,0 +1,3309 @@
+{
+  "version": 1,
+  "input_sha256": "bb703a027727bdac79ae2da63e85f6ed9fe637978fabe45a8e4318a7b67aeabf",
+  "base_main": "4b9ca49",
+  "provenance": "PR61 handrail increment reproduced on immutable PR60 candidate; independent saved validation passed.",
+  "source_pr60_sha256": "e4ecbdf02fb6217e67c111f284a2d905bb31f3521fbd380818e687ba5d85da97",
+  "tower_objects": {
+    "Inclined window head closure": {
+      "mesh_sha256": "adad4c98eecb578bdb7a80f5cc5e7085fb54285635b0cd22b091b8df052fab23",
+      "collection": "Scene Collection",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Continuous window joint seals": {
+      "mesh_sha256": "80e4dd945732f61c1235d16eaaaa30368f6faa5a0d4470414b77c00e639a62a7",
+      "collection": "Scene Collection",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Closed window sill perimeter": {
+      "mesh_sha256": "f8f9423d4be006b962a49075b428b461a5acf65d718c06ed4356e538ac45a2d8",
+      "collection": "Scene Collection",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Tokyo Tower structure / stone": {
+      "mesh_sha256": "83c51bad1b8f8e02a71901e21ec06c5ef2ac24cb02510d9f338639aff7085943",
+      "collection": "Tokyo Tower structure",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Tokyo Tower structure / orange": {
+      "mesh_sha256": "8e0b17292cab912226f0912756ff4ea34396a7f4b549f5fd381936bcbf559cbe",
+      "collection": "Tokyo Tower structure",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Tokyo Tower structure / white": {
+      "mesh_sha256": "c19f6e1fe43590239b5562721107028ee7f55006df2870993bc6cfa88736261b",
+      "collection": "Tokyo Tower structure",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Tokyo Tower structure / darkmetal": {
+      "mesh_sha256": "b7308d24d6209be2dbe2f30ebb2c67debba8b990de2e391330ae626a4de7e9d0",
+      "collection": "Tokyo Tower structure",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Tokyo Tower decks and interior / white": {
+      "mesh_sha256": "deda494ec532408fc948ebe8635cfd510decf91d6e857ac1a43bfa2278b2143d",
+      "collection": "Tokyo Tower decks and interior",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Tokyo Tower decks and interior / aluminum": {
+      "mesh_sha256": "8a2e306024506ea81c13515673692a0db80f997d39f652a17cc7f316fe2ba193",
+      "collection": "Tokyo Tower decks and interior",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Tokyo Tower decks and interior / clear glass": {
+      "mesh_sha256": "d447389dfdb98f7a0ebc2426207231bfc9bfb4303ad4bb648fffe8f1236030aa",
+      "collection": "Tokyo Tower decks and interior",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Tokyo Tower decks and interior / gasket": {
+      "mesh_sha256": "3726ec993dbaf965936aa0510bdf0757c5ef7c0ccb59132cdf69fb4be677eb47",
+      "collection": "Tokyo Tower decks and interior",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Tokyo Tower decks and interior / floor": {
+      "mesh_sha256": "4945160adddac0db43468d82803d683824e85feb2b9ee47dea292c6d1ecd43b9",
+      "collection": "Tokyo Tower decks and interior",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Tokyo Tower decks and interior / ceiling": {
+      "mesh_sha256": "b61613cbd141770d6964521a8be198d1395ece66857dab0f60ce3298d0555b23",
+      "collection": "Tokyo Tower decks and interior",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Tokyo Tower decks and interior / wood": {
+      "mesh_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "collection": "Tokyo Tower decks and interior",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Tokyo Tower decks and interior / warm light": {
+      "mesh_sha256": "05b0e548530ad0b49c6c94790a5bbf7e9e628427ff38db0d6faffca0fe2fd17c",
+      "collection": "Tokyo Tower decks and interior",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Tokyo Tower decks and interior / stone": {
+      "mesh_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "collection": "Tokyo Tower decks and interior",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Tokyo Tower decks and interior / soil": {
+      "mesh_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "collection": "Tokyo Tower decks and interior",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Tokyo Tower decks and interior / leaf": {
+      "mesh_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "collection": "Tokyo Tower decks and interior",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Tokyo Tower decks and interior / mirror": {
+      "mesh_sha256": "a3d5ddcdc8232aa54c0658f54782413144db2514930da47abf5c478937f0128a",
+      "collection": "Tokyo Tower decks and interior",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Tokyo Tower decks and interior / darkmetal": {
+      "mesh_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "collection": "Tokyo Tower decks and interior",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Observation interior detail / charcoal glass": {
+      "mesh_sha256": "9577ab1489c52ca00d37c7c2b277adb03d7c90c51d56dc4daa174c3a9b247d1e",
+      "collection": "Observation interior detail",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Observation interior detail / black": {
+      "mesh_sha256": "839f53a4cb6893590445b0432b8b06479b18f112ab47ce6513a894f9567fe78e",
+      "collection": "Observation interior detail",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Observation interior detail / brushed steel": {
+      "mesh_sha256": "187c63a0f27a5060ab63a6cb4d701b8ef4d06950918a69c4784b76f28875c15d",
+      "collection": "Observation interior detail",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Observation interior detail / white": {
+      "mesh_sha256": "e9ed0056babd6ef9b13770c44d91b7da9ee9141bd43c6bf07ec73a30ca789c36",
+      "collection": "Observation interior detail",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Observation interior detail / ceiling": {
+      "mesh_sha256": "036f4eeedb2d9a7964b40e442d6408ad587a6b2ae87070c19e5fa1fd5be7bdb7",
+      "collection": "Observation interior detail",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Photo based main deck / carpet3": {
+      "mesh_sha256": "a00f0c00f4f1efe9c42f2ed35b773a7076e3748a8a3364889e673b59b443feea",
+      "collection": "Photo based main deck",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Photo based main deck / slab": {
+      "mesh_sha256": "625637108719bf0e19ad792979d9f99031fbcee815cb093a247128245f260c09",
+      "collection": "Photo based main deck",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Photo based main deck / carpet4": {
+      "mesh_sha256": "cb259f44240ff78916b448bcd67c3f40611257a030455b5db736f50de8bb260a",
+      "collection": "Photo based main deck",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Photo based main deck / carpet0": {
+      "mesh_sha256": "c4f0c7e94d49904558400f82a483f31e2061107bbe1c4edbf00653d0c7ab8b20",
+      "collection": "Photo based main deck",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Photo based main deck / carpet2": {
+      "mesh_sha256": "4f9f98fec2ca0587507d293dbaa8983dee02158ed45a9db8a8029a30f71c4f9c",
+      "collection": "Photo based main deck",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Photo based main deck / carpet1": {
+      "mesh_sha256": "8552571d482631d70fc2f53250d6dbe1c754b1ef0d54b33ae81c663a0d4fc40f",
+      "collection": "Photo based main deck",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Photo based main deck / white": {
+      "mesh_sha256": "10d55916f8a757655c8b0558c99329c130dd0021121f25a85dd271eea7282ca2",
+      "collection": "Photo based main deck",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Photo based main deck / ceiling": {
+      "mesh_sha256": "54db8654ae06012e50fcdad6db14a5d0618b80bc1cf22b47b55a03d05546ac8e",
+      "collection": "Photo based main deck",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Photo based main deck / glass": {
+      "mesh_sha256": "39be28223d5e6b40237d934f3c87f919ed3537f0e2947c41cc61abdd21296b02",
+      "collection": "Photo based main deck",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Photo based main deck / frame": {
+      "mesh_sha256": "b3dac13b8598f46c9908e4f5232e560089522b41bf07a9d18f2e6995eea72654",
+      "collection": "Photo based main deck",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Photo based main deck / silver": {
+      "mesh_sha256": "0159eb722da57a20d42239096295aa783aae4158afc502c1bd177977bfca7180",
+      "collection": "Photo based main deck",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Photo based main deck / rubber": {
+      "mesh_sha256": "aca2c01c9d015ba28b74a25fe46186f678bf6848f13ba4ec29bc356fc71c9594",
+      "collection": "Photo based main deck",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Photo based main deck / wall": {
+      "mesh_sha256": "f69da08f91e737867edf7845a0fdd464bd010641a5e2f7aab656dac0cd1c3319",
+      "collection": "Photo based main deck",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Photo based main deck / light": {
+      "mesh_sha256": "df6a30ec12e10313845199b803c658352e51c0f3140a083f21a11baa33a73546",
+      "collection": "Photo based main deck",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Photo based main deck / grid": {
+      "mesh_sha256": "b53a22ba05215d058c05f2d0ec2250a93db5fb150126d588919081bf95667e03",
+      "collection": "Photo based main deck",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "2019 reference window revision / black": {
+      "mesh_sha256": "aa1f1c5a10d0daffbadb9a644a2a24155a2c8967a99298158fb3e691dbe4e439",
+      "collection": "2019 reference window revision",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "2019 reference window revision / glass": {
+      "mesh_sha256": "9a51d6befdc7341d24d7b3141d6c29f7baa289e3456620bcde76b84237f66bd2",
+      "collection": "2019 reference window revision",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "2019 reference window revision / gasket": {
+      "mesh_sha256": "558cb70718df3fba87be2733a978714457c6908bc5b2c774f13759c9f75f834b",
+      "collection": "2019 reference window revision",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "2019 reference window revision / aluminum": {
+      "mesh_sha256": "9342f15cf764bfd54e0d60c1f708cf23339cedc9ae7e011ad715f0ce678f5b8f",
+      "collection": "2019 reference window revision",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "2019 reference window revision / white": {
+      "mesh_sha256": "b7b5f2a9a6d20e6a9264f43bb33a3eefb4ebdf0101a15d68693b8c19ded65130",
+      "collection": "2019 reference window revision",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush metal surround": {
+      "mesh_sha256": "d359ab9e6105de8df5e29f9daec674386b1551aa88dcdeeac05af0f4ff10939b",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Continuous outer gasket": {
+      "mesh_sha256": "ec0837c859aab4e02faeede45b100b256e03e1579cf1d0efbe8d76893601db98",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Continuous glass edge seal": {
+      "mesh_sha256": "75efea7de6b418dc1f58b62cfe3c03e8ffe4a342fd33c04f13cdd9448073a046",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -7.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -12.829999923706055
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.001": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -7.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -12.25
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.002": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -7.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -11.670000076293945
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.003": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -5.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -12.829999923706055
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.004": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -5.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -12.25
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.005": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -5.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -11.670000076293945
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush metal surround.001": {
+      "mesh_sha256": "7bd694a94919ce184b76872d32afcd62d10dcf6b6ac036b7a68e1afb1a376546",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Continuous outer gasket.001": {
+      "mesh_sha256": "0a35c1d272da4ffc28b5ecd9f2a653fe3bb785883214b6ea91f9d4cf6563897e",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Continuous glass edge seal.001": {
+      "mesh_sha256": "b3b99e80c77ae03ba079d8f57b7e13200d056018cedd78e283b1f7ca7bfe64fd",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.006": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -7.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          11.670000076293945
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.007": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -7.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          12.25
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.008": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -7.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          12.829999923706055
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.009": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -5.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          11.670000076293945
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.010": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -5.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          12.25
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.011": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -5.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          12.829999923706055
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush metal surround.002": {
+      "mesh_sha256": "317ef43b925724a52d0c29b9e93d5f323eb50691d1a68a565e26b0215bb52aaf",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Continuous outer gasket.002": {
+      "mesh_sha256": "8fc9b4415e54c3fe2e8c458cd7c9cdaeb73d0e2238e9547ac392e640eb98228f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Continuous glass edge seal.002": {
+      "mesh_sha256": "dbf0935762f66b10df894b92ad06a3343be70ab8462f2081b933d743d2f699cf",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.012": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          5.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -12.829999923706055
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.013": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          5.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -12.25
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.014": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          5.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -11.670000076293945
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.015": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          7.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -12.829999923706055
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.016": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          7.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -12.25
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.017": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          7.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -11.670000076293945
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush metal surround.003": {
+      "mesh_sha256": "372d1fadf80e59f55270b5be1073c439eb848772f38fbf9a427b41d1ca6884b7",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Continuous outer gasket.003": {
+      "mesh_sha256": "c6fffc989301b5bb7c722947f0b2c7d91d03436b43039d93ab499997435e47ce",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Continuous glass edge seal.003": {
+      "mesh_sha256": "57ad6420b5440621bc755ba7fabc3197e15d5d4eb8a020ea5ef6cdb671ddbe59",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.018": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          5.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          11.670000076293945
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.019": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          5.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          12.25
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.020": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          5.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          12.829999923706055
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.021": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          7.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          11.670000076293945
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.022": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          7.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          12.25
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flush fixing.023": {
+      "mesh_sha256": "01f26ee4b4b8956897a1b69845e6976ca357af089286adcb21b7af19a5d1ed5f",
+      "collection": "Flush glass floor surrounds",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          7.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          12.829999923706055
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          145.08900451660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / foottown-shell": {
+      "mesh_sha256": "610f745a10034550b33bf8fac0f1e939983a915374d6aeca92147772b498774a",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / foottown-glazing": {
+      "mesh_sha256": "03bd2029e964eeef5891bbd666513917e5ae511fb6b84ad258dbbe6c7b54e333",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / foottown-metal": {
+      "mesh_sha256": "8040495ce0436e1c239cc24652c092d3d46f47b02ab24581dc8c589873756633",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / foottown-roof": {
+      "mesh_sha256": "77aa1af31ee57f18907eb0daaf6e17f231ce5e05d9530ac3c8c1b5eeee33f696",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / base-connections": {
+      "mesh_sha256": "f510391901847ed2273f3e2ce34495ff3e9b147a759b8a6f613171ee9f4e9b21",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / lower-shaft-frame": {
+      "mesh_sha256": "0e014a5794e45780eb2c7dbe5142a93fb4eff921be7c7066614c1c155d6975ce",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / lower-shaft-glazing": {
+      "mesh_sha256": "a8401c0b566f6ef08e44b6176f0fcde2193df0b111bff3df65667fbca7337e86",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / stairs-frame": {
+      "mesh_sha256": "85ab6caab23338cf7d073a227570b8e71444748b2be3acfdf8dd06d858cfdeb8",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / stairs-treads": {
+      "mesh_sha256": "34f56ff0cfc56c2b70d2cd07baa7fad99bb67ec2c45c55456fefe9c01be167d0",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / stairs-guards": {
+      "mesh_sha256": "91fd52afd86f9d38bc058c3731cd401e173555f91efdeac0005e24d164c48315",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / roof-access": {
+      "mesh_sha256": "fda798017432c0c4084abad36929c6e438e8e2c1ad501ea66089e600cee0cca6",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / upper-shaft-frame": {
+      "mesh_sha256": "52c071c9a05474d837a2f4e1232284d5f05e6c0cbce74e1bd1b3a8079886e1aa",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / upper-guide-rails": {
+      "mesh_sha256": "8d7922a0a370357c4e8684788478d62eee9f8d36ab17b637908cdf7a11ef0cbd",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / upper-support-links": {
+      "mesh_sha256": "a4604c5c52c394d65c0e48d87d0c1bebe4766091205100eecb21c21aace39317",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / upper-platforms": {
+      "mesh_sha256": "72af64773c48ded65638ba917f1588666031f90eb5353f0cbb9391421ba3e2b2",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / lift-cars": {
+      "mesh_sha256": "05338c1c045165cfa13c1a053cb425b6a8bfbc753a56137d16f5fa99346f78bb",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / lift-glazing": {
+      "mesh_sha256": "6159a7ed07132de08204a6f1cfed3725a684f98ac41a150d81d478c3d784e63f",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / upper-suspension": {
+      "mesh_sha256": "4a342b36246b33ddf2ddb3dc9c08045d15af86ce240e33892229acef65872e93",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / upper-landing-doors": {
+      "mesh_sha256": "3ad69fa04cc7a839b4295a5912a426c7528324426b548695b921f3db5939e39d",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / upper-car-shell": {
+      "mesh_sha256": "cfb5598e91808215e24b99704ecd67436e73c10b0f8a4d69d74e841f776552cd",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / upper-car-glass": {
+      "mesh_sha256": "e273da307b3b7b458c30db9841c84b5a879f6905ffd39d20d08da47a0474471f",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / upper-car-mirror": {
+      "mesh_sha256": "844789d5cf8a6514c5eb5cce18edcdfad3a876c20d85df5b42609a9d59b3e052",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / upper-car-floor": {
+      "mesh_sha256": "47c0a7a2f61bd5f5879ad96c97ed18c6869ea9075f5925d2545791bc6a5a7484",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / upper-car-rigging": {
+      "mesh_sha256": "4937388d4e8c4d2223fa700671c5536e6944796ffa200d5bd3ee2db1ae39dcb9",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / upper-car-dark": {
+      "mesh_sha256": "256d6981233cc87c34876042fc850d197f8de5da54c604660bcb6ff10340303d",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower structure / upper-service-stairs": {
+      "mesh_sha256": "cfbcbe6ca86fb4b02439f6cfd3d1c26505dc0a1f505eb56d15794746e3fdda4a",
+      "collection": "OTW Tokyo Tower structure v1",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower FootTown v2 / foottown-cladding": {
+      "mesh_sha256": "721a87a64de78ff172c05e4152feccb25b033c32ea7c9b79e560b090d9edd93f",
+      "collection": "OTW Tokyo Tower FootTown v2",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower FootTown v2 / foottown-joints": {
+      "mesh_sha256": "20861cd9c821e9c733ec98fa249dc61a2c4c7d17e5ee3bb0f07cdae3f39ce72d",
+      "collection": "OTW Tokyo Tower FootTown v2",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "OTW Tokyo Tower FootTown v2 / foottown-screen": {
+      "mesh_sha256": "1f8f4cf8bd15daec3bfb33d951915ea633bb59d8724c26bc4aa4c7710c4b3662",
+      "collection": "OTW Tokyo Tower FootTown v2",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  }
+}
