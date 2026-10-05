@@ -1,0 +1,451 @@
+{
+  "version": 1,
+  "date": "2026-10-05",
+  "ok": true,
+  "status": "candidate-human-review-pending",
+  "human_visual_approval": false,
+  "geometry_and_render_code_commit": "e15531182fa7c55687b8fdab1c13d546c67d3d0c",
+  "local_run": "data/local/reviews/tower-site-v3-final-01",
+  "saved_scene_validation": {
+    "ok": true,
+    "changed_objects": [
+      "Inclined window head closure",
+      "Continuous window joint seals",
+      "Closed window sill perimeter",
+      "Tokyo Tower structure / stone",
+      "Tokyo Tower structure / orange",
+      "Tokyo Tower structure / white",
+      "Tokyo Tower structure / darkmetal",
+      "Tokyo Tower decks and interior / white",
+      "Tokyo Tower decks and interior / aluminum",
+      "Tokyo Tower decks and interior / clear glass",
+      "Tokyo Tower decks and interior / gasket",
+      "Tokyo Tower decks and interior / floor",
+      "Tokyo Tower decks and interior / ceiling",
+      "Tokyo Tower decks and interior / wood",
+      "Tokyo Tower decks and interior / warm light",
+      "Tokyo Tower decks and interior / stone",
+      "Tokyo Tower decks and interior / soil",
+      "Tokyo Tower decks and interior / leaf",
+      "Tokyo Tower decks and interior / mirror",
+      "Tokyo Tower decks and interior / darkmetal",
+      "Photo based main deck / carpet3",
+      "Photo based main deck / slab",
+      "Photo based main deck / carpet4",
+      "Photo based main deck / carpet0",
+      "Photo based main deck / carpet2",
+      "Photo based main deck / carpet1",
+      "Photo based main deck / white",
+      "Photo based main deck / ceiling",
+      "Photo based main deck / glass",
+      "Photo based main deck / frame",
+      "Photo based main deck / silver",
+      "Photo based main deck / rubber",
+      "Photo based main deck / wall",
+      "Photo based main deck / light",
+      "Photo based main deck / grid",
+      "2019 reference window revision / black",
+      "2019 reference window revision / glass",
+      "2019 reference window revision / gasket",
+      "2019 reference window revision / aluminum",
+      "2019 reference window revision / white",
+      "Flush metal surround",
+      "Continuous outer gasket",
+      "Continuous glass edge seal",
+      "Flush fixing",
+      "Flush fixing.001",
+      "Flush fixing.002",
+      "Flush fixing.003",
+      "Flush fixing.004",
+      "Flush fixing.005",
+      "Flush metal surround.001",
+      "Continuous outer gasket.001",
+      "Continuous glass edge seal.001",
+      "Flush fixing.006",
+      "Flush fixing.007",
+      "Flush fixing.008",
+      "Flush fixing.009",
+      "Flush fixing.010",
+      "Flush fixing.011",
+      "Flush metal surround.002",
+      "Continuous outer gasket.002",
+      "Continuous glass edge seal.002",
+      "Flush fixing.012",
+      "Flush fixing.013",
+      "Flush fixing.014",
+      "Flush fixing.015",
+      "Flush fixing.016",
+      "Flush fixing.017",
+      "Flush metal surround.003",
+      "Continuous outer gasket.003",
+      "Continuous glass edge seal.003",
+      "Flush fixing.018",
+      "Flush fixing.019",
+      "Flush fixing.020",
+      "Flush fixing.021",
+      "Flush fixing.022",
+      "Flush fixing.023",
+      "OTW Tokyo Tower structure / foottown-shell",
+      "OTW Tokyo Tower structure / foottown-glazing",
+      "OTW Tokyo Tower structure / foottown-metal",
+      "OTW Tokyo Tower structure / foottown-roof",
+      "OTW Tokyo Tower structure / base-connections",
+      "OTW Tokyo Tower structure / lower-shaft-frame",
+      "OTW Tokyo Tower structure / lower-shaft-glazing",
+      "OTW Tokyo Tower structure / stairs-frame",
+      "OTW Tokyo Tower structure / stairs-treads",
+      "OTW Tokyo Tower structure / stairs-guards",
+      "OTW Tokyo Tower structure / roof-access",
+      "OTW Tokyo Tower structure / upper-shaft-frame",
+      "OTW Tokyo Tower structure / upper-guide-rails",
+      "OTW Tokyo Tower structure / upper-support-links",
+      "OTW Tokyo Tower structure / upper-platforms",
+      "OTW Tokyo Tower structure / lift-cars",
+      "OTW Tokyo Tower structure / lift-glazing",
+      "OTW Tokyo Tower structure / upper-suspension",
+      "OTW Tokyo Tower structure / upper-landing-doors",
+      "OTW Tokyo Tower structure / upper-car-shell",
+      "OTW Tokyo Tower structure / upper-car-glass",
+      "OTW Tokyo Tower structure / upper-car-mirror",
+      "OTW Tokyo Tower structure / upper-car-floor",
+      "OTW Tokyo Tower structure / upper-car-rigging",
+      "OTW Tokyo Tower structure / upper-car-dark",
+      "OTW Tokyo Tower structure / upper-service-stairs",
+      "OTW Tokyo Tower FootTown v2 / foottown-cladding",
+      "OTW Tokyo Tower FootTown v2 / foottown-joints",
+      "OTW Tokyo Tower FootTown v2 / foottown-screen",
+      "OTW Tokyo Tower site v3 / deck-bridge",
+      "OTW Tokyo Tower site v3 / deck-guards",
+      "OTW Tokyo Tower site v3 / equipment",
+      "OTW Tokyo Tower site v3 / roof-buildings",
+      "OTW Tokyo Tower site v3 / roof-slabs",
+      "OTW Tokyo Tower site v3 / site-paving",
+      "OTW Tokyo Tower site v3 / vents"
+    ],
+    "added_objects": [
+      "OTW Tokyo Tower site v3 / deck-bridge",
+      "OTW Tokyo Tower site v3 / deck-guards",
+      "OTW Tokyo Tower site v3 / equipment",
+      "OTW Tokyo Tower site v3 / roof-buildings",
+      "OTW Tokyo Tower site v3 / roof-slabs",
+      "OTW Tokyo Tower site v3 / site-paving",
+      "OTW Tokyo Tower site v3 / vents"
+    ],
+    "protected_objects": 3251,
+    "retained_tower_meshes": 103,
+    "original_shaders_unchanged": true,
+    "protected_metadata_unchanged": true,
+    "geometry": {
+      "meshes": {
+        "OTW Tokyo Tower site v3 / deck-bridge": {
+          "vertices": 8,
+          "polygons": 6,
+          "components": 1,
+          "bounds_m": [
+            [
+              -9.75,
+              -3.5999999046325684
+            ],
+            [
+              3.6500000953674316,
+              5.150000095367432
+            ],
+            [
+              144.89999389648438,
+              145.10000610351562
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 1.845112638475257
+        },
+        "OTW Tokyo Tower site v3 / deck-guards": {
+          "vertices": 288,
+          "polygons": 180,
+          "components": 18,
+          "bounds_m": [
+            [
+              -8.824000358581543,
+              -3.946000099182129
+            ],
+            [
+              3.5959999561309814,
+              5.203999996185303
+            ],
+            [
+              145.10000610351562,
+              146.1840057373047
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 0.07127278541564369
+        },
+        "OTW Tokyo Tower site v3 / equipment": {
+          "vertices": 736,
+          "polygons": 532,
+          "components": 82,
+          "bounds_m": [
+            [
+              -35.099998474121094,
+              35.099998474121094
+            ],
+            [
+              -1.2699999809265137,
+              14.0600004196167
+            ],
+            [
+              16.200000762939453,
+              147.60000610351562
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 16.637414411644112
+        },
+        "OTW Tokyo Tower site v3 / roof-buildings": {
+          "vertices": 144,
+          "polygons": 108,
+          "components": 18,
+          "bounds_m": [
+            [
+              -35.0,
+              35.0
+            ],
+            [
+              -1.100000023841858,
+              25.0
+            ],
+            [
+              16.200000762939453,
+              19.700000762939453
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 79.74820806049136
+        },
+        "OTW Tokyo Tower site v3 / roof-slabs": {
+          "vertices": 24,
+          "polygons": 18,
+          "components": 3,
+          "bounds_m": [
+            [
+              -35.099998474121094,
+              35.099998474121094
+            ],
+            [
+              -1.100000023841858,
+              25.100000381469727
+            ],
+            [
+              19.0,
+              19.799999237060547
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 40.17154075483201
+        },
+        "OTW Tokyo Tower site v3 / site-paving": {
+          "vertices": 32,
+          "polygons": 24,
+          "components": 4,
+          "bounds_m": [
+            [
+              -36.5,
+              36.5
+            ],
+            [
+              -70.0,
+              -28.540000915527344
+            ],
+            [
+              -0.05999999865889549,
+              4.400000095367432
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 8828.410992051271
+        },
+        "OTW Tokyo Tower site v3 / vents": {
+          "vertices": 104,
+          "polygons": 78,
+          "components": 13,
+          "bounds_m": [
+            [
+              -28.704999923706055,
+              31.844999313354492
+            ],
+            [
+              -1.0525000095367432,
+              14.0
+            ],
+            [
+              16.299999237060547,
+              19.9375
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 87.5101529461472
+        }
+      },
+      "south_threshold_m": 4.4,
+      "south_lot_m": 2.92,
+      "deck_floor_m": 145.1,
+      "passenger_floor_objects": [
+        "Photo based main deck / carpet4"
+      ],
+      "route_clear_width_m": 1.36,
+      "route_checked_height_m": 2.15,
+      "roof_approach_clear": true,
+      "site_extent_is_local_inferred_seam": true,
+      "unobstructed_city_apron_samples": 298
+    },
+    "warnings": [
+      "Modifier stack not fingerprinted: Close detail rim",
+      "Modifier stack not fingerprinted: Close detail iron",
+      "Modifier stack not fingerprinted: Close detail silver",
+      "Modifier stack not fingerprinted: Close detail frame",
+      "Modifier stack not fingerprinted: Tokyo traffic • silver",
+      "Modifier stack not fingerprinted: Tokyo traffic • white",
+      "Modifier stack not fingerprinted: Tokyo traffic • blue",
+      "Modifier stack not fingerprinted: Tokyo traffic • black",
+      "Modifier stack not fingerprinted: Tokyo traffic • red",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / stone",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / orange",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / white",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / white",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / aluminum",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / wood; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / wood",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / stone; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / stone",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / soil; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / leaf; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / darkmetal; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Modifier stack not fingerprinted: Mori JP curtain wall / aluminum",
+      "Modifier stack not fingerprinted: Mori JP interior / stone",
+      "Modifier stack not fingerprinted: Mori JP interior / wood",
+      "Modifier stack not fingerprinted: Mori JP interior / aluminum",
+      "Modifier stack not fingerprinted: Mori JP interior / chair",
+      "Modifier stack not fingerprinted: Mori JP interior / fabric",
+      "Modifier stack not fingerprinted: Observation interior detail / charcoal glass",
+      "Modifier stack not fingerprinted: Observation interior detail / brushed steel",
+      "Modifier stack not fingerprinted: Observation interior detail / ceiling",
+      "Modifier stack not fingerprinted: Photo based main deck / frame",
+      "Modifier stack not fingerprinted: Photo based main deck / silver",
+      "Modifier stack not fingerprinted: Photo based main deck / wall",
+      "Modifier stack not fingerprinted: 2019 reference window revision / black",
+      "Modifier stack not fingerprinted: 2019 reference window revision / aluminum",
+      "Modifier stack not fingerprinted: 2019 reference window revision / white"
+    ],
+    "limits": [
+      "No geographic accuracy certification",
+      "No complete modifier/animation/node-group fingerprint",
+      "Image decode checks dimensions and a pixel probe; not all image samples",
+      "No manifold/zero-area/normal checks",
+      "External asset content hashes not yet recorded",
+      "OSM-guided azimuth is not a surveyed registration.",
+      "Site apron borders and deck passage are model-fit estimates; no complete terrain/interior survey.",
+      "Upper framing schedule and rescue heights remain unverified and unchanged."
+    ],
+    "input_sha256": "bb703a027727bdac79ae2da63e85f6ed9fe637978fabe45a8e4318a7b67aeabf",
+    "candidate_sha256": "6ff6745bcd2ed40c24e8577bd86cd7cfd1de5c9c9386a82218d66d54a52f81f3",
+    "source_and_candidate_protected": true,
+    "blender_version": "4.5.1 LTS",
+    "code_sha256": {
+      "tower_site_v3.py": "c66be46098cb95348ff52569d696c3afc9c24bdaf56b9aab8a2ebce2b5558ab1",
+      "tower_site_geometry_v3.py": "bc5b244f3299dac27aef46b435c5346ca0388ded84afc75860ac3c81744188b4",
+      "validate_tower_site_v3.py": "9266be2829e5f7dc1fc500f059313fe8ac6e7b6f98e2c49e2da4d6352e7ea0cf",
+      "tower_structure_v1.py": "bfb1730e3277138aec489cdb113c6af1738a5c8d1ebad395f6119ad2d1656821",
+      "blender_worker.py": "7cd8a0437c8378a9adc72390291a8d8eef7573b926cdb1e3eb9252ed9c517cef",
+      "review.py": "622c4fd41e0128ae48a4d912a98aaed72edb0322fd1af06947d0eb487589d418"
+    }
+  },
+  "build": {
+    "ok": true,
+    "edited_components": {
+      "OTW Tokyo Tower structure / foottown-metal": 55,
+      "Photo based main deck / silver": 1,
+      "Photo based main deck / rubber": 1,
+      "Photo based main deck / wall": 2,
+      "OTW Tokyo Tower structure / foottown-roof": 26,
+      "OTW Tokyo Tower structure / stairs-guards": 7,
+      "Photo based main deck / frame": 2
+    },
+    "rotated_objects": 110,
+    "added_objects": [
+      "OTW Tokyo Tower site v3 / deck-bridge",
+      "OTW Tokyo Tower site v3 / deck-guards",
+      "OTW Tokyo Tower site v3 / equipment",
+      "OTW Tokyo Tower site v3 / roof-buildings",
+      "OTW Tokyo Tower site v3 / roof-slabs",
+      "OTW Tokyo Tower site v3 / site-paving",
+      "OTW Tokyo Tower site v3 / vents"
+    ],
+    "retained_unused_materials": [],
+    "input_sha256": "bb703a027727bdac79ae2da63e85f6ed9fe637978fabe45a8e4318a7b67aeabf",
+    "candidate_sha256": "6ff6745bcd2ed40c24e8577bd86cd7cfd1de5c9c9386a82218d66d54a52f81f3",
+    "source_and_candidate_protected": true,
+    "blender_version": "4.5.1 LTS",
+    "code_sha256": {
+      "tower_site_v3.py": "c66be46098cb95348ff52569d696c3afc9c24bdaf56b9aab8a2ebce2b5558ab1",
+      "tower_site_geometry_v3.py": "bc5b244f3299dac27aef46b435c5346ca0388ded84afc75860ac3c81744188b4",
+      "validate_tower_site_v3.py": "9266be2829e5f7dc1fc500f059313fe8ac6e7b6f98e2c49e2da4d6352e7ea0cf",
+      "tower_structure_v1.py": "bfb1730e3277138aec489cdb113c6af1738a5c8d1ebad395f6119ad2d1656821",
+      "blender_worker.py": "7cd8a0437c8378a9adc72390291a8d8eef7573b926cdb1e3eb9252ed9c517cef",
+      "review.py": "622c4fd41e0128ae48a4d912a98aaed72edb0322fd1af06947d0eb487589d418"
+    }
+  },
+  "render_settings": {
+    "device": "OPTIX",
+    "width": 1280,
+    "height": 848,
+    "samples": 32,
+    "seed": 0
+  },
+  "devices": [
+    "NVIDIA GeForce RTX 3060 Ti"
+  ],
+  "matched_views": [
+    "foottown-front",
+    "foottown-entrance",
+    "foottown-context",
+    "foottown-south",
+    "foottown-roof",
+    "foottown-roof-core",
+    "foottown-roof-access",
+    "tower-context",
+    "site-overhead",
+    "site-south",
+    "roof-equipment",
+    "deck-connection",
+    "upper-context"
+  ],
+  "portable_tests": {
+    "run": 403,
+    "passed": 395,
+    "skipped": 8,
+    "failures": 0,
+    "log_sha256": "276448c152ca3252bf3901dcaf2c3c6013f240637bc6e36808d57e3230700da7"
+  },
+  "syntax_check": "python -m compileall -q scripts tests passed",
+  "configuration_sha256": {
+    "areas/tokyo-tower/tower-site-v3-cameras.json": "9aa15276ebaf2c2d010a594e6e4a16ff46e531362a2c74a69cd79706469e3a18",
+    "areas/tokyo-tower/tower-site-v3-input.json": "55958271f6e210078d0303e0edb8154b0293b955ee58fe71f43aeff572cc1fe9",
+    "areas/tokyo-tower/tower-site-v3-sources.json": "8e9ddf994663d25e9659bdeb16e46f8eb0c49703fd87934f25f0d6cfc91f9f2b"
+  },
+  "limitations": [
+    "No geographic accuracy certification",
+    "No complete modifier/animation/node-group fingerprint",
+    "Image decode checks dimensions and a pixel probe; not all image samples",
+    "No manifold/zero-area/normal checks",
+    "External asset content hashes not yet recorded",
+    "OSM-guided azimuth is not a surveyed registration.",
+    "Site apron borders and deck passage are model-fit estimates; no complete terrain/interior survey.",
+    "Upper framing schedule and rescue heights remain unverified and unchanged."
+  ]
+}

@@ -111,6 +111,8 @@ The original implementations in `scripts/tower_structure_v1.py`, `scripts/tower_
 
 The original implementations in `scripts/tower_site_v3.py`, `scripts/tower_site_geometry_v3.py`, `scripts/validate_tower_site_v3.py`, and `tests/test_tower_site_v3.py` are also licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. This grant does not include city scenes, reference images or geographic datasets. OSM-derived centroid data in `areas/tokyo-tower/tower-site-v3-sources.json` is attributed to OpenStreetMap contributors under ODbL 1.0.
 
+The 26 Before/After PNGs in the [tower site and roof review](renders/previews/tower-site-v3/README.md) are published only as evidence for the user-requested PR, under the attribution and publication scope documented there. No new blanket image or city licence is granted. Reference photographs, PDFs, city scenes and texture originals are not redistributed.
+
 The 18 Before/After PNGs in the [tower structure review](renders/previews/tower-structure-v1/README.md) are published as evidence for the user-requested PR. Their publication does not grant a new blanket licence for the images, underlying city or third-party content. Retain the attribution and scope recorded in that preview and [NOTICE](NOTICE.md).
 
 The 30 PNGs in the [upper lift revision review](renders/previews/tower-lift-v2/README.md) follow the same publication scope. They include 26 pinned-input Before/After views and four views of the previous proposal for comparison with the revised upper lift. Reference photographs and PDFs are not redistributed.
