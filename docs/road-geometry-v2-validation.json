@@ -1,0 +1,298 @@
+{
+  "version": 2,
+  "date": "2026-10-06",
+  "status": "candidate-human-review-pending",
+  "code_commit": "1bccc4c221596111d9f2ddef526a5ae6dfe02b61",
+  "saved_scene_validation": {
+    "ok": true,
+    "objects": 3372,
+    "checks": {
+      "asphalt 15s road detail": {
+        "original_vertices_exact": true,
+        "outside_faces_exact": 201099.0,
+        "outside_area_error_m2": 2.9039186387080917e-05,
+        "replacement_matches_plan": true
+      },
+      "gutter 15s road detail": {
+        "original_vertices_exact": true,
+        "outside_faces_exact": 65713.0,
+        "outside_area_error_m2": 2.7321719249684406e-05,
+        "replacement_matches_plan": true
+      },
+      "parking mapped land use": {
+        "original_vertices_exact": true,
+        "outside_faces_exact": 6407.0,
+        "outside_area_error_m2": 1.7769054011296248e-05,
+        "replacement_matches_plan": true
+      },
+      "pavement_0 unified road": {
+        "original_vertices_exact": true,
+        "outside_faces_exact": 347080.0,
+        "outside_area_error_m2": 1.628975358869411e-05,
+        "replacement_matches_plan": true,
+        "replacement_closed": true
+      },
+      "Skywalk visible detail white": {
+        "changed_vertices": 104,
+        "other_vertices_exact": true,
+        "topology_preserved": true,
+        "surface_contacts_verified": true
+      },
+      "Close detail white": {
+        "changed_vertices": 768,
+        "other_vertices_exact": true,
+        "topology_preserved": true,
+        "surface_contacts_verified": true
+      },
+      "Close detail iron": {
+        "changed_vertices": 848,
+        "other_vertices_exact": true,
+        "topology_preserved": true,
+        "surface_contacts_verified": true
+      },
+      "Close detail rim": {
+        "changed_vertices": 1300,
+        "other_vertices_exact": true,
+        "topology_preserved": true,
+        "surface_contacts_verified": true
+      },
+      "Close detail silver": {
+        "changed_vertices": 768,
+        "other_vertices_exact": true,
+        "topology_preserved": true,
+        "surface_contacts_verified": true
+      }
+    },
+    "source_unchanged": true,
+    "warnings": [
+      "Modifier stack not fingerprinted: Close detail rim",
+      "Modifier stack not fingerprinted: Close detail iron",
+      "Modifier stack not fingerprinted: Close detail silver",
+      "Modifier stack not fingerprinted: Close detail frame",
+      "Modifier stack not fingerprinted: Tokyo traffic • silver",
+      "Modifier stack not fingerprinted: Tokyo traffic • white",
+      "Modifier stack not fingerprinted: Tokyo traffic • blue",
+      "Modifier stack not fingerprinted: Tokyo traffic • black",
+      "Modifier stack not fingerprinted: Tokyo traffic • red",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / stone",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / orange",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / white",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / white",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / aluminum",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / wood; inherited empty mesh",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / wood",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / stone; inherited empty mesh",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / stone",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / soil; inherited empty mesh",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / leaf; inherited empty mesh",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / darkmetal; inherited empty mesh",
+      "Modifier stack not fingerprinted: Mori JP curtain wall / aluminum",
+      "Modifier stack not fingerprinted: Mori JP interior / stone",
+      "Modifier stack not fingerprinted: Mori JP interior / wood",
+      "Modifier stack not fingerprinted: Mori JP interior / aluminum",
+      "Modifier stack not fingerprinted: Mori JP interior / chair",
+      "Modifier stack not fingerprinted: Mori JP interior / fabric",
+      "Modifier stack not fingerprinted: Observation interior detail / charcoal glass",
+      "Modifier stack not fingerprinted: Observation interior detail / brushed steel",
+      "Modifier stack not fingerprinted: Observation interior detail / ceiling",
+      "Modifier stack not fingerprinted: Photo based main deck / frame",
+      "Modifier stack not fingerprinted: Photo based main deck / silver",
+      "Modifier stack not fingerprinted: Photo based main deck / wall",
+      "Modifier stack not fingerprinted: 2019 reference window revision / black",
+      "Modifier stack not fingerprinted: 2019 reference window revision / aluminum",
+      "Modifier stack not fingerprinted: 2019 reference window revision / white"
+    ],
+    "limits": [
+      "Road centres and tagged/nominal widths retained. Curbs, gutter width and corner radius are model choices, not surveyed dimensions.",
+      "Existing v8 relative grade is retained. No regional elevation reconstruction.",
+      "Only west and south edit rectangles are rebuilt.",
+      "Drain and marking locations require independent evidence; no invented road markings.",
+      "No geographic accuracy certification",
+      "No complete modifier/animation/node-group fingerprint",
+      "Image decode checks dimensions and a pixel probe; not all image samples",
+      "No manifold/zero-area/normal checks",
+      "External asset content hashes not yet recorded"
+    ],
+    "input_sha256": "959610fc3c3b1f6eca725de5666a2c5fd218f7ea33cc90b8bf5f7300e65bb877",
+    "candidate_sha256": "1ebd9c7059d0036e537e0f18a039a60fc646dec040e99d4727f375bfd5b6879e",
+    "plan_sha256": "3abc03d6fe3e2a76be49ff3673221501fab22aba4880b697c48c7ac91f8dc280",
+    "code_sha256": {
+      "road_geometry_v2.py": "0dd23b714dffc26db9e75a282a7da08ac7746dd30a886b3b1373a1513df31bf9",
+      "prepare_road_geometry_v2.py": "a960b8df460e107cb56e2bdf8d54f862d5456a08f2afecfb45b714ffe254055b",
+      "road_finish_v1.py": "eb1554ecb3e83bc9ff7cd7a2586b386cffab870f3f4320521e3c956b2e71c5ea",
+      "tower_footway_geometry_v5.py": "60fe725a37590f4f1352e7cbae16fd4047dc626581caa4d8813130d319cb91af",
+      "tower_site_geometry_v8.py": "71c9af95df7a8c553f9b3783f96635ab08aec495c295671537631067d29a31eb",
+      "blender_worker.py": "7cd8a0437c8378a9adc72390291a8d8eef7573b926cdb1e3eb9252ed9c517cef",
+      "validate_tower_foottown.py": "ddf246dd40b4acab8c6084743f7c26b6242fd2a8bdc9e7eff9e463f0139245c2"
+    },
+    "blender_version": "4.5.1 LTS"
+  },
+  "build": {
+    "ok": true,
+    "audit_sha256": "d4a179c0fb4ea5ddcb19876f6b54b31c8137e91118c5f5e6ea07a9d1a114cd92",
+    "detail_audit_sha256": "b5c12533ac87517a2867e4fadf7f4aad3b288e106a1b47fa5222701742cf0a3c",
+    "detail_vertices": {
+      "Close detail iron": 848,
+      "Close detail rim": 1300,
+      "Close detail silver": 768,
+      "Close detail white": 768,
+      "Skywalk visible detail white": 104
+    },
+    "surfaces": {
+      "asphalt 15s road detail": {
+        "original_vertices": 473857,
+        "retained_faces": 201141,
+        "replacement_vertex_start": 474005,
+        "cut_faces": 34673,
+        "replacement_faces": 1227,
+        "material_index": 0,
+        "boundary_height_fallback_vertices": 0,
+        "boundary_height_adjusted_vertices": 0
+      },
+      "gutter 15s road detail": {
+        "original_vertices": 130225,
+        "retained_faces": 65788,
+        "replacement_vertex_start": 130488,
+        "cut_faces": 17966,
+        "replacement_faces": 784,
+        "material_index": 2,
+        "boundary_height_fallback_vertices": 0,
+        "boundary_height_adjusted_vertices": 0
+      },
+      "parking mapped land use": {
+        "original_vertices": 14004,
+        "retained_faces": 6744,
+        "replacement_vertex_start": 15183,
+        "cut_faces": 16423,
+        "replacement_faces": 6178,
+        "material_index": 0,
+        "boundary_height_fallback_vertices": 0,
+        "boundary_height_adjusted_vertices": 0
+      },
+      "pavement_0 unified road": {
+        "original_vertices": 354464,
+        "retained_faces": 347295,
+        "replacement_vertex_start": 355222,
+        "cut_faces": 62014,
+        "replacement_faces": 3736,
+        "material_index": 2,
+        "boundary_height_fallback_vertices": 18,
+        "boundary_height_adjusted_vertices": 45
+      }
+    },
+    "new_materials": 2,
+    "input_sha256": "959610fc3c3b1f6eca725de5666a2c5fd218f7ea33cc90b8bf5f7300e65bb877",
+    "candidate_sha256": "1ebd9c7059d0036e537e0f18a039a60fc646dec040e99d4727f375bfd5b6879e",
+    "plan_sha256": "3abc03d6fe3e2a76be49ff3673221501fab22aba4880b697c48c7ac91f8dc280",
+    "code_sha256": {
+      "road_geometry_v2.py": "0dd23b714dffc26db9e75a282a7da08ac7746dd30a886b3b1373a1513df31bf9",
+      "prepare_road_geometry_v2.py": "a960b8df460e107cb56e2bdf8d54f862d5456a08f2afecfb45b714ffe254055b",
+      "road_finish_v1.py": "eb1554ecb3e83bc9ff7cd7a2586b386cffab870f3f4320521e3c956b2e71c5ea",
+      "tower_footway_geometry_v5.py": "60fe725a37590f4f1352e7cbae16fd4047dc626581caa4d8813130d319cb91af",
+      "tower_site_geometry_v8.py": "71c9af95df7a8c553f9b3783f96635ab08aec495c295671537631067d29a31eb",
+      "blender_worker.py": "7cd8a0437c8378a9adc72390291a8d8eef7573b926cdb1e3eb9252ed9c517cef",
+      "validate_tower_foottown.py": "ddf246dd40b4acab8c6084743f7c26b6242fd2a8bdc9e7eff9e463f0139245c2"
+    },
+    "blender_version": "4.5.1 LTS"
+  },
+  "vehicle_contacts": {
+    "ok": true,
+    "candidate_sha256": "1ebd9c7059d0036e537e0f18a039a60fc646dec040e99d4727f375bfd5b6879e",
+    "code_sha256": "f46b59cf0a2068502b43268de35715199f40fb7c1d4507a2170e426bed2c4085",
+    "checks": [
+      {
+        "inherited_vehicle_index": 99,
+        "wheels": [
+          {
+            "wheel": 0,
+            "lowest_gap_m": 0.013083219528198242,
+            "supported_vertex_probes": 40
+          },
+          {
+            "wheel": 1,
+            "lowest_gap_m": 0.0009744167327880859,
+            "supported_vertex_probes": 40
+          },
+          {
+            "wheel": 2,
+            "lowest_gap_m": 0.00150299072265625,
+            "supported_vertex_probes": 40
+          },
+          {
+            "wheel": 3,
+            "lowest_gap_m": 0.012639999389648438,
+            "supported_vertex_probes": 40
+          }
+        ]
+      },
+      {
+        "inherited_vehicle_index": 506,
+        "wheels": [
+          {
+            "wheel": 0,
+            "lowest_gap_m": 0.05461859703063965,
+            "supported_vertex_probes": 40
+          },
+          {
+            "wheel": 1,
+            "lowest_gap_m": 0.004389762878417969,
+            "supported_vertex_probes": 40
+          },
+          {
+            "wheel": 2,
+            "lowest_gap_m": 0.006006479263305664,
+            "supported_vertex_probes": 40
+          },
+          {
+            "wheel": 3,
+            "lowest_gap_m": 0.045354604721069336,
+            "supported_vertex_probes": 40
+          }
+        ]
+      }
+    ],
+    "limits": [
+      "Discrete tire vertex probes; not a continuous collision or traffic simulation.",
+      "Stored hidden traffic visibility is unchanged."
+    ]
+  },
+  "render_settings": {
+    "width": 1280,
+    "height": 848,
+    "samples": 32,
+    "seed": 0,
+    "device": "OPTIX"
+  },
+  "devices": [
+    "NVIDIA GeForce RTX 3060 Ti"
+  ],
+  "matched_views": [
+    "foottown-front",
+    "tower-context",
+    "site-overhead",
+    "north-stairs",
+    "south-road-vehicle",
+    "west-road-vehicle",
+    "surface-details-close"
+  ],
+  "diagnostic_visibility_override": {
+    "view": "surface-details-close",
+    "visible_objects": [
+      "Close detail iron",
+      "Close detail rim",
+      "Close detail silver",
+      "Close detail white"
+    ],
+    "stored_collection_hidden": true,
+    "saved_scene_visibility_unchanged": true
+  },
+  "candidate_unchanged_during_checks": true,
+  "portable_tests": {
+    "run": 437,
+    "passed": 429,
+    "skipped": 8,
+    "failures": 0,
+    "log_sha256": "635e7e0ca7b8f09e2518bdd6148fb65ff60a6c12851f23574f86b97d58b69b45"
+  },
+  "syntax_check": "compileall passed"
+}

@@ -1,0 +1,167 @@
+{
+  "version": 2,
+  "date": "2026-10-06",
+  "code_commit": "1bccc4c221596111d9f2ddef526a5ae6dfe02b61",
+  "source_sha256": "959610fc3c3b1f6eca725de5666a2c5fd218f7ea33cc90b8bf5f7300e65bb877",
+  "candidate_sha256": "1ebd9c7059d0036e537e0f18a039a60fc646dec040e99d4727f375bfd5b6879e",
+  "settings": {
+    "width": 1280,
+    "height": 848,
+    "samples": 32,
+    "seed": 0,
+    "device": "OPTIX"
+  },
+  "devices": [
+    "NVIDIA GeForce RTX 3060 Ti"
+  ],
+  "diagnostic_visibility_override": {
+    "view": "surface-details-close",
+    "visible_objects": [
+      "Close detail iron",
+      "Close detail rim",
+      "Close detail silver",
+      "Close detail white"
+    ],
+    "stored_collection_hidden": true,
+    "saved_scene_visibility_unchanged": true
+  },
+  "code_sha256": {
+    "road_geometry_v2.py": "0dd23b714dffc26db9e75a282a7da08ac7746dd30a886b3b1373a1513df31bf9",
+    "prepare_road_geometry_v2.py": "a960b8df460e107cb56e2bdf8d54f862d5456a08f2afecfb45b714ffe254055b",
+    "road_finish_v1.py": "eb1554ecb3e83bc9ff7cd7a2586b386cffab870f3f4320521e3c956b2e71c5ea",
+    "tower_footway_geometry_v5.py": "60fe725a37590f4f1352e7cbae16fd4047dc626581caa4d8813130d319cb91af",
+    "tower_site_geometry_v8.py": "71c9af95df7a8c553f9b3783f96635ab08aec495c295671537631067d29a31eb",
+    "blender_worker.py": "7cd8a0437c8378a9adc72390291a8d8eef7573b926cdb1e3eb9252ed9c517cef",
+    "validate_tower_foottown.py": "ddf246dd40b4acab8c6084743f7c26b6242fd2a8bdc9e7eff9e463f0139245c2"
+  },
+  "contacts_code_sha256": "f46b59cf0a2068502b43268de35715199f40fb7c1d4507a2170e426bed2c4085",
+  "camera_sha256": "5cc59b97734e223cb3302c2afe54b29be309df199b490acb51812a4f60bb1f2c",
+  "plan_sha256": "3abc03d6fe3e2a76be49ff3673221501fab22aba4880b697c48c7ac91f8dc280",
+  "matched_views": [
+    "foottown-front",
+    "tower-context",
+    "site-overhead",
+    "north-stairs",
+    "south-road-vehicle",
+    "west-road-vehicle",
+    "surface-details-close"
+  ],
+  "images": [
+    {
+      "file": "before-foottown-front.png",
+      "sha256": "97066f9115d717d684475a01915d6b6d63bf9dd38a424b974d715d2346e528e2",
+      "source_sha256": "6cdcb93d04b72eb563f6b26d67aa1b0b53745ef353f450a4a6c1b516b6fefc2b",
+      "pixel_sha256": "a871ff3f10e008a74b88ca1f6fafc72720a8264de692b685c3b17f56d909d7b4",
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "after-foottown-front.png",
+      "sha256": "22920c7fba030a19aaf8f113bc434e9deb5bbd693ad9603d2c29f3ae78a49804",
+      "source_sha256": "beb93420934c5c795b95f219e0b72d4a0fc6a2bce6c15b49965f33b439842c04",
+      "pixel_sha256": "939b9d3c79286bc4bdca537376ea8797e250f277077c7d3db81d0f808b1086e7",
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "before-tower-context.png",
+      "sha256": "f00236cd29e78e99f5b9523798899d2447d36f7103e7a90d53d0a7f5c58c69fc",
+      "source_sha256": "4b402a7ce541443a8ccc4280695bfe069798871e6c3f8f2145bb1d146fb6d9eb",
+      "pixel_sha256": "a0d91adef3e336ab13ea39f16f3792d09a70156111c66f38de9b13f11a97371b",
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "after-tower-context.png",
+      "sha256": "c33d842c8cb375bfb9a7dcda84f9cc391117c544a5e98e4b91bd3e9145174f0a",
+      "source_sha256": "20707eee433b1f7fbee2d1e367740577bc2e0b900244694bfcf12d8bc48f095d",
+      "pixel_sha256": "cfeab6ad906871dadd555052530047894494eb790766730cfc2ebca83a28c1cd",
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "before-site-overhead.png",
+      "sha256": "d67cb5ff3314193b6a1aabe9c75d657ef0e11c2cbb91ac8dfb69acde86e872bf",
+      "source_sha256": "6b0f66e1d31cf6fa0fbabd7df626efd622b2cf051a6548862972986f51b28622",
+      "pixel_sha256": "f990af5d68e7a78bb5887dbfaeac2204153a207f7c5d5bff3eea2089d7621e72",
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "after-site-overhead.png",
+      "sha256": "2a41a9b93bc0fa8450c393ee0993dab80e9963c4b983fe020a14bf0d4d445d97",
+      "source_sha256": "8ce98d3cc76db961e4faae991ac1ac6dc1b717976f373cec261054aba0e2f5b5",
+      "pixel_sha256": "0633f3d6d70a04fb28acbab322def10e779623307cd4bbc69ae59bf1c79cd6c5",
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "before-north-stairs.png",
+      "sha256": "cef94631324b092bbea445c017ee5a6309293a3462045cb8fee4510afe03d8e4",
+      "source_sha256": "d8c610b24ccd9fe2fe2fddaaec820007c58430267bcd7a94388479e755ee7378",
+      "pixel_sha256": "1f54833aa658c09b6927cb722e80934c679205f7f68d5a06e001422ddb3ca80e",
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "after-north-stairs.png",
+      "sha256": "f33d6fcee642c9f5cbda7410f7937925478e2094d1f75a7a625e9ff999039532",
+      "source_sha256": "c7c481a51d76d39432c65015a452ab01932019187d4b06ddf3ceb60358c48e55",
+      "pixel_sha256": "6d3483ba8404677a2020afdda0e4356ebfeccafbc840fead7880041298383953",
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "before-south-road-vehicle.png",
+      "sha256": "3ef22df9fa151dba4dbdbeadf87a580d1205b479735c61f7e6b66c5ce0335c66",
+      "source_sha256": "87c7b4fe1814bd4e7d73f0f2086d0e2480a5b76f67dbeceaa8844ae448ca4e36",
+      "pixel_sha256": "10a22bf72b5853cf20e94acc74b597aa978beb4f3755df4cf4db5d7a9c048788",
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "after-south-road-vehicle.png",
+      "sha256": "141318d0c877309dcf38cacb9e3b163c8114821424f1f6babf87d586fb9a29d3",
+      "source_sha256": "508a8c4880c0071c1fe224bd14cf682c4688202ff9232d43ef1d3ce4e8f28665",
+      "pixel_sha256": "9e979b31550c3a2343497a01e00fc40137e1ad05aa86173d51b6eff310ec3e79",
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "before-west-road-vehicle.png",
+      "sha256": "b57697071d8074c2ed80f35612a1dd2fe0805ffe80705201b8ae1cdae5fe7234",
+      "source_sha256": "28236e82494298364d6faf234d48c67c21ca8a22c42cfc0db9bf5f2218b34943",
+      "pixel_sha256": "0aad73f90176a1af0366d59b8097927c05b275d48ba921a5fc8e5b29503b8a14",
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "after-west-road-vehicle.png",
+      "sha256": "a264445dbe8ede7ef5ace1b4da2a2eea11aef64b4bc8c23440ed7584f65befdb",
+      "source_sha256": "36ce4da22986944885579a5b144f8ea80f86f736bc1eac4be3a0817b5922a4ff",
+      "pixel_sha256": "2d4a04955f1eaf829c97c5896df1cf9eb979602700b72944917739657a95e9a0",
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "before-surface-details-close.png",
+      "sha256": "44930a53a1cb4f90d204714ed61b115feadb0614b9967141de97a2c56fa66fb0",
+      "source_sha256": "ae1d0bd9037dd8464b7f2df3d40d73a9021b8c38894e1d44df685652d454448c",
+      "pixel_sha256": "1097f3f142fd5bf0e624c77833eaec9538ddc40bba73137a97046f0c58f00138",
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "after-surface-details-close.png",
+      "sha256": "6819bd176513447631c9e0d55453fb9ba4eb4091b010847f801a99e1c427729d",
+      "source_sha256": "03bb96b3ad632fac8da24cf45adb28df8a27aa4ca92a3b625f3a8232534fcfbb",
+      "pixel_sha256": "0d92f3702af86f84036d90219b51bb0248bb200e259043a3fe1511725a7d43bc",
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    }
+  ],
+  "human_visual_approval": false,
+  "publication_authorization": "User requested all road/pavement refinements and PR review images under the continuing authorization.",
+  "image_processing": "Only PNG text metadata removed. Compressed image chunks and decoded pixels unchanged.",
+  "distribution": "Review PNGs, original code and derived metadata only; no city blend, textures, audio or reference originals."
+}
