@@ -370,5 +370,13 @@
   "image_processing": "Only PNG text metadata removed. Compressed image chunks and decoded pixels are unchanged; no resizing, recompression or generative editing.",
   "human_visual_approval": false,
   "publication_authorization": "User requested the tower refinement and a PR with review images; earlier image-publication approval remains applicable.",
-  "distribution": "Only review PNGs, original code and metadata. No city blend, reference photographs/PDFs or texture originals."
+  "distribution": "Only review PNGs, original code and metadata. No city blend, reference photographs/PDFs or texture originals.",
+  "post_render_whitespace_only_change": {
+    "file": "scripts/tower_site_geometry_v3.py",
+    "rendered_sha256": "bc5b244f3299dac27aef46b435c5346ca0388ded84afc75860ac3c81744188b4",
+    "published_sha256": "6d4013660d33100ee6df802f743463c4a84d862d94ff61e452c5b2dc22ba7db8",
+    "only_trailing_blank_line_removed": true,
+    "python_ast_identical": true,
+    "validation_reuse_reason": "The generated geometry, imports and all executable Python AST nodes are identical. Original render and validation code hashes remain recorded without modification."
+  }
 }

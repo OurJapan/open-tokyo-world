@@ -97,5 +97,3 @@ def deck_geometry(b):
 def geometry():
     b=MeshBuilder();site_geometry(b);roof_geometry(b);deck_geometry(b)
     return b.groups
-
-

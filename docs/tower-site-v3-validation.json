@@ -430,7 +430,8 @@
     "passed": 395,
     "skipped": 8,
     "failures": 0,
-    "log_sha256": "276448c152ca3252bf3901dcaf2c3c6013f240637bc6e36808d57e3230700da7"
+    "log_sha256": "f7df88ee86806d17d974e46cc4c522ee2616f400026dac9f70ef950d7dbdad59",
+    "after_whitespace_cleanup": true
   },
   "syntax_check": "python -m compileall -q scripts tests passed",
   "configuration_sha256": {
@@ -447,5 +448,13 @@
     "OSM-guided azimuth is not a surveyed registration.",
     "Site apron borders and deck passage are model-fit estimates; no complete terrain/interior survey.",
     "Upper framing schedule and rescue heights remain unverified and unchanged."
-  ]
+  ],
+  "post_render_whitespace_only_change": {
+    "file": "scripts/tower_site_geometry_v3.py",
+    "rendered_sha256": "bc5b244f3299dac27aef46b435c5346ca0388ded84afc75860ac3c81744188b4",
+    "published_sha256": "6d4013660d33100ee6df802f743463c4a84d862d94ff61e452c5b2dc22ba7db8",
+    "only_trailing_blank_line_removed": true,
+    "python_ast_identical": true,
+    "validation_reuse_reason": "The generated geometry, imports and all executable Python AST nodes are identical. Original render and validation code hashes remain recorded without modification."
+  }
 }
