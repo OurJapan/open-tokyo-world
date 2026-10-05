@@ -48,6 +48,16 @@
       "new_context_sample_count": 81,
       "limit": "階段の各蹴上げ・敷居・擁壁を測定した値ではない。建物と崖をまたぐ単純補間は採用しない。",
       "attribution": "国土地理院の標高データを加工。絶対標高基準は未確定。"
+    },
+    {
+      "id": "inherited-procedural-vehicles",
+      "record": "docs/city-production-sources.md",
+      "source_repository": "ark4ez/tokyo-tower-blender (private)",
+      "source_commit": "defac576e076f40bf3bc4fddcdcefe30f9a009f7",
+      "layout_sha256": "451a8c95accc72f7f265e56a2f2c67f71f9f83dda8eabae6d9c750be6e88ca3f",
+      "changed_car_indices": [99, 506],
+      "claim": "593台の材質別集約メッシュから、地盤変更にかかる2台の全パーツの頂点範囲を特定。",
+      "limit": "旧シーンの演出的な車両配置。現地の交通量や駐停車位置の観測ではない。旧コードや配置原本は再配布しない。"
     }
   ],
   "unresolved": ["北側階段の各段・踊り場寸法", "台座の実測上端高・外装寸法", "敷地全体の絶対標高と現地勾配"],

@@ -54,5 +54,13 @@ class SiteGradeTests(unittest.TestCase):
         for i,p in enumerate(result):
             self.assertEqual(p[2],-2.1 if i%16<4 else 7.)
 
+    def test_vehicle_pose_is_rigid_and_flat_ground_is_identity(self):
+        car=dict(xy=(-51.458396997,-58.126784732),z=.3,yaw=-2.86538201,length=4.5,width=1.78)
+        pose=geo.vehicle_pose(car)
+        a=(-51,-58,1.);b=(-52,-59,2.)
+        self.assertAlmostEqual(math.dist(a,b),math.dist(geo.vehicle_point(a,pose),geo.vehicle_point(b,pose)))
+        car['xy']=(500,500);flat=geo.vehicle_pose(car)
+        self.assertLess(math.dist(a,geo.vehicle_point(a,flat)),1e-10)
+
 
 if __name__=='__main__':unittest.main()

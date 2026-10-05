@@ -10,7 +10,7 @@ from tower_site_v3 import open_scene,read,write,points
 from review import require,digest,compare_reports,validate_cameras
 CONFIG=ROOT/'areas/tokyo-tower/tower-site-v8-input.json'
 PLAN=ROOT/'areas/tokyo-tower/tower-site-v8-plan.json'
-CAMERAS=ROOT/'areas/tokyo-tower/tower-ground-v7-cameras.json'
+CAMERAS=ROOT/'areas/tokyo-tower/tower-site-v8-cameras.json'
 
 
 def metadata():
@@ -118,6 +118,21 @@ def build(source,out,config,plan):
     for n in sorted(geo.SURFACES):
         print('Surface: '+n,flush=True);audit[n]=surface(bpy.data.objects[n],plan)
     for n in sorted(geo.DETAILS):audit[n]=move_details(bpy.data.objects[n])
+    vehicle_poses=[]
+    for car in config['vehicles']:
+        pose=geo.vehicle_pose(car);tire=bpy.data.objects[geo.TRAFFIC_PREFIX+'tire'].data
+        start,end=car['ranges'][geo.TRAFFIC_PREFIX+'tire']
+        # Four 40-vertex tires precede the 32-vertex steering wheel. A common
+        # vertical adjustment keeps the rigid vehicle above the curved road.
+        gaps=[]
+        for v in list(tire.vertices)[start:start+160]:
+            p=xy.local(geo.vehicle_point(tuple(v.co),pose));gaps.append(p[2]-.3-geo.grade(*p[:2]))
+        pose['lift']=-min(gaps)
+        for n,(start,end) in car['ranges'].items():
+            m=bpy.data.objects[n].data
+            for v in list(m.vertices)[start:end]:v.co=geo.vehicle_point(tuple(v.co),pose)
+            m.update()
+        vehicle_poses.append(dict(index=car['index'],pose=pose))
     for n in (geo.STONE,geo.JOINTS):
         m=bpy.data.objects[n].data
         old=[tuple(v.co) for v in m.vertices]
@@ -143,7 +158,7 @@ def build(source,out,config,plan):
     bpy.data.objects[geo.RAILS].hide_render=True;bpy.data.objects[geo.RAILS].hide_viewport=True
     write(out/'surface-audit.json',audit)
     bpy.ops.wm.save_as_mainfile(filepath=str(out/'after.blend'),check_existing=False)
-    return dict(ok=True,audit_sha256=digest(out/'surface-audit.json'),surfaces={n:{k:v for k,v in a.items() if k not in ('origins','retained_indices')} for n,a in audit.items()},allowed_objects=sorted(geo.TARGETS))
+    return dict(ok=True,audit_sha256=digest(out/'surface-audit.json'),surfaces={n:{k:v for k,v in a.items() if k not in ('origins','retained_indices')} for n,a in audit.items()},vehicle_poses=vehicle_poses,allowed_objects=sorted(geo.TARGETS))
 
 
 def validate(source,out,config,plan):
@@ -201,6 +216,38 @@ def validate(source,out,config,plan):
             require(abs(b[2]-a[2]-dz)<3e-5,'Ground detail elevation differs')
             if abs(b[2]-a[2])>1e-5:moved+=1
         checks[n]=dict(moved_vertices=moved)
+    vehicle_checks=[];poses=read(out/'build.json')['vehicle_poses']
+    for n in geo.TRAFFIC:
+        nv,nf=points(bpy.data.objects[n].data);(ov,of),r,flags=originals[n]
+        require(nf==of and mesh_flags(bpy.data.objects[n].data)==flags,'Vehicle topology or flags changed')
+        expected=list(ov);count=0;touched=set()
+        for car,entry in zip(config['vehicles'],poses):
+            if n not in car['ranges']:continue
+            require(entry['index']==car['index'],'Vehicle identity differs')
+            start,end=car['ranges'][n]
+            for i in range(start,end):
+                require(math.dist(ov[i][:2],car['xy'])<4 and car['z']-.001<=ov[i][2]<car['z']+2.5,'Vertex range does not belong to declared source vehicle')
+                expected[i]=geo.vehicle_point(ov[i],entry['pose']);count+=1;touched.add(i)
+        require(all(math.dist(a,b)<1.5e-5 for a,b in zip(expected,nv)),'Vehicle pose or unaffected vehicle changed')
+        require(all(a==b for i,(a,b) in enumerate(zip(ov,nv)) if i not in touched),'Unselected vehicle vertex changed')
+        checks[n]=dict(transformed_vertices=count,protected_vertices=len(ov)-count)
+    for car,entry in zip(config['vehicles'],poses):
+        pose=entry['pose'];e,f,n=pose['axes']
+        require(all(abs(sum(a*b for a,b in zip(u,v))-(1 if i==j else 0))<1e-8 for i,u in enumerate((e,f,n)) for j,v in enumerate((e,f,n))),'Vehicle pose is not rigid')
+        m=bpy.data.objects[geo.TRAFFIC_PREFIX+'tire'].data;start,end=car['ranges'][geo.TRAFFIC_PREFIX+'tire'];contacts=[];saved_contacts=[]
+        for wheel in range(4):
+            ps=[xy.local(v.co) for v in list(m.vertices)[start+wheel*40:start+(wheel+1)*40]]
+            gap=min(p[2]-.3-geo.grade(*p[:2]) for p in ps);contacts.append(gap)
+            p=min(ps,key=lambda p:p[2]-.3-geo.grade(*p[:2]));origin=Vector(xy.world((p[0],p[1],8)))
+            road=bpy.data.objects['asphalt 15s road detail']
+            hit,co,normal,index=road.ray_cast(origin,Vector((0,0,-1)))
+            require(hit and -.01<p[2]-co.z<.08,'Wheel is not supported by saved asphalt')
+            saved_contacts.append(p[2]-float(co.z))
+            walk=bpy.data.objects['pavement_0 unified road']
+            hit,co,normal,index=walk.ray_cast(origin,Vector((0,0,-1)))
+            require(not hit or co.z<=p[2]+.01,'Wheel penetrates saved pavement')
+        require(min(contacts)>-2e-5 and max(contacts)<.08,'Vehicle wheel contact exceeds tolerance: '+str(contacts))
+        vehicle_checks.append(dict(index=car['index'],wheel_ground_gaps_m=contacts,saved_asphalt_contact_gaps_m=saved_contacts))
     for n in (geo.STONE,geo.JOINTS):
         m=bpy.data.objects[n].data;nv,nf=points(m);(ov,of),r,flags=originals[n]
         require(nf==of and mesh_flags(m)==flags,'Cladding topology/flags changed')
@@ -233,34 +280,79 @@ def validate(source,out,config,plan):
         require(hit and obj.name==geo.PREFIX+'stairs' and abs(co.z-z)<1e-4,'North tread blocked')
     # Compare ray obstructions at matched source/candidate points, recording
     # inherited furniture explicitly rather than allowing entire object classes.
-    dg=bpy.context.evaluated_depsgraph_get();pending=[];inherited=[];clear=0
+    dg=bpy.context.evaluated_depsgraph_get();pending=[];inherited=[];clear=0;traffic=[]
     for n,q in surface_samples:
         hit,co,normal,i,obj,m=bpy.context.scene.ray_cast(dg,Vector(xy.world((q[0],q[1],q[2]+1.49))),Vector((0,0,-1)),distance=1.6)
         if hit and obj.name in geo.SURFACES|{geo.PAVING} and -.02<=co.z-q[2]<=.36:
             clear+=1;continue
+        if hit and obj.name in geo.TRAFFIC and n in {'asphalt 15s road detail','gutter 15s road detail','parking mapped land use'}:
+            matches=[car['index'] for car in config['vehicles'] if math.dist(q[:2],xy.local((*car['xy'],car['z']))[:2])<4]
+            require(matches,'Traffic outside declared vehicle locations')
+            traffic.append(dict(point=q,object=obj.name,vehicles=matches));continue
         pending.append((n,q,obj.name if hit else None,float(co.z) if hit else None))
     open_scene(source);dg=bpy.context.evaluated_depsgraph_get();blockers=[]
     for n,q,current,height in pending:
         dz=geo.grade(*q[:2]);z=q[2]-dz
         hit,co,normal,i,obj,m=bpy.context.scene.ray_cast(dg,Vector(xy.world((q[0],q[1],z+1.49))),Vector((0,0,-1)),distance=1.6)
+        isolated=False
+        if current in geo.DETAILS and (not hit or obj.name!=current):
+            # Old apron geometry can hide an existing manhole in the scene ray.
+            # Confirm that exact pinned object at this XY separately; its entire
+            # displacement was already checked against source vertices above.
+            target=bpy.data.objects[current]
+            origin=target.matrix_world.inverted()@Vector(xy.world((q[0],q[1],z+1.49)))
+            found,point,normal,index=target.ray_cast(origin,Vector((0,0,-1)),distance=1.6)
+            if found:hit=True;co=target.matrix_world@point;obj=target;isolated=True
         if hit and obj.name==current and (current in geo.DETAILS or abs(height-co.z)<.001):
             inherited.append(dict(point=q,object=current,source_height=float(co.z),height=height,
+                source_isolated_due_to_occlusion=isolated,
                 basis='same XY footprint and independently checked per-vertex grade' if current in geo.DETAILS else 'unchanged source obstruction'))
         else:blockers.append(dict(point=q,surface=n,current=current,height=height,source=obj.name if hit else None))
-    write(out/'surface-clearance.json',dict(clear=clear,inherited=inherited,blockers=blockers))
+    write(out/'surface-clearance.json',dict(clear=clear,inherited=inherited,road_traffic=traffic,blockers=blockers))
     require(not blockers,'Introduced surface obstruction: '+str(blockers[:8]))
     return dict(ok=True,changed_objects=changed,objects=len(after['objects']),protected_objects=len(before['objects'])-len(changed),checks=checks,
         stair_tread_centroids=8,surface_point_count=len(surface_samples),clear_surface_points=clear,inherited_obstructions=inherited,introduced_obstructions=blockers,
+        vehicles=vehicle_checks,road_traffic_samples=traffic,
         warnings=after['warnings'],limits=after['limits']+plan['limits'])
 
 
+def show_traffic_for_review():
+    """Expose existing vehicle meshes without enabling their tree collection.
+
+    Called only in disposable diagnostic render processes; never saved.
+    """
+    import bpy
+    names=sorted(geo.TRAFFIC|{geo.TRAFFIC_PREFIX+k for k in ('blue','red','silver','taxi_plate')})
+    linked=[]
+    for name in names:
+        o=bpy.data.objects[name]
+        require(not o.hide_render and o.visible_camera,'Unexpected vehicle visibility')
+        if name not in bpy.context.scene.collection.objects:
+            bpy.context.scene.collection.objects.link(o);linked.append(name)
+    return linked
+
+
 def render(source,out,phase,preview):
+    import bpy
     from blender_worker import render as scene_render
     cameras=read(CAMERAS)
-    if preview:cameras['views']=[v for v in cameras['views'] if v['id'] in ('site-overhead','south-grade','foundation-close','foundation-north','foundation-west','north-stairs')]
+    if preview:cameras['views']=[v for v in cameras['views'] if v['id'] in ('south-grade','foundation-north','south-road-vehicle','west-road-vehicle')]
     validate_cameras(cameras);open_scene(source if phase=='render-before' else out/'after.blend')
     settings={'device':'OPTIX','width':960 if preview else 1280,'height':636 if preview else 848,'samples':12 if preview else 32,'seed':0}
-    result=scene_render({'output':str(out),'cameras':cameras,'settings':settings},phase);result.update(settings=settings,cameras_sha256=digest(CAMERAS));return result
+    regular=dict(cameras,views=[v for v in cameras['views'] if not v['id'].endswith('-vehicle')])
+    diagnostic=dict(cameras,views=[v for v in cameras['views'] if v['id'].endswith('-vehicle')])
+    result=scene_render({'output':str(out),'cameras':regular,'settings':settings},phase)
+    linked=show_traffic_for_review()
+    try:
+        extra=scene_render({'output':str(out),'cameras':diagnostic,'settings':settings},phase)
+        require(result['devices']==extra['devices'],'Diagnostic render device changed')
+        result['views'].extend(extra['views'])
+    finally:
+        for name in linked:bpy.context.scene.collection.objects.unlink(bpy.data.objects[name])
+    result.update(settings=settings,cameras_sha256=digest(CAMERAS),vehicle_visibility_override=dict(
+        views=[v['id'] for v in diagnostic['views']],temporary_root_links=linked,
+        purpose='Matched source/candidate wheel-ground diagnostic; source traffic collection remains hidden and saved blend is unchanged.'))
+    return result
 
 
 def main():

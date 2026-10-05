@@ -14,7 +14,9 @@ DETAILS = {MARKS, 'Close detail iron', 'Close detail rim', 'Close detail silver'
            'Skywalk visible detail seam', 'Skywalk visible detail steel'}
 RAILS = PREFIX+'rails'
 JOINTS = PREFIX+'plinth-joints'
-TARGETS = SURFACES | DETAILS | {STONE, PAVING, GROUND, RAILS, JOINTS}
+TRAFFIC_PREFIX = 'Tokyo traffic \u2022 '
+TRAFFIC = {TRAFFIC_PREFIX+k for k in ('black','white','glass','head','tail','plate','kei_plate','rim','tire')}
+TARGETS = SURFACES | DETAILS | TRAFFIC | {STONE, PAVING, GROUND, RAILS, JOINTS}
 KNOTS = ((-90.,0.), (-70.,2.085), (-55.,3.085), (-33.,4.285),
          (-29.,4.285), (-12.,0.))
 
@@ -67,6 +69,31 @@ def cladding_vertices(vertices, caps, slopes):
     if len(vertices)!=64:raise ValueError('Expected four 16-vertex plinth shells')
     return [incline((x,y,-2.1 if i%16<4 else z),caps,slopes)
             for i,(x,y,z) in enumerate(vertices)]
+
+
+def vehicle_pose(car):
+    """Rigid tangent pose from the four wheel locations; keeps the source yaw."""
+    from tower_footway_geometry_v5 import local,ANGLE
+    x,y,z=local((*car['xy'],car['z']));theta=car['yaw']+ANGLE
+    c,s=math.cos(theta),math.sin(theta);a=car['length']/2-.72;b=car['width']/2-.02
+    samples=[(u,v,grade(x+c*u-s*v,y+s*u+c*v)) for u in (-a,a) for v in (-b,b)]
+    mean=sum(h for u,v,h in samples)/4
+    along=sum(u*h for u,v,h in samples)/sum(u*u for u,v,h in samples)
+    across=sum(v*h for u,v,h in samples)/sum(v*v for u,v,h in samples)
+    gx=c*along-s*across;gy=s*along+c*across
+    def norm(p):
+        d=math.sqrt(sum(q*q for q in p));return tuple(q/d for q in p)
+    e=norm((c,s,along));n=norm((-gx,-gy,1.))
+    f=(n[1]*e[2]-n[2]*e[1],n[2]*e[0]-n[0]*e[2],n[0]*e[1]-n[1]*e[0])
+    return dict(center=(x,y,z),cos=c,sin=s,axes=(e,f,n),height=mean,lift=0.)
+
+
+def vehicle_point(world_point, pose):
+    from tower_footway_geometry_v5 import local,world
+    p=local(world_point);x,y,z=pose['center'];c,s=pose['cos'],pose['sin']
+    a=c*(p[0]-x)+s*(p[1]-y);b=-s*(p[0]-x)+c*(p[1]-y);h=p[2]-z
+    e,f,n=pose['axes'];q=[pose['center'][i]+a*e[i]+b*f[i]+h*n[i] for i in range(3)]
+    q[2]+=pose['height']+pose['lift'];return world(q)
 
 
 def clip_convex(poly, ring):

@@ -63,6 +63,130 @@
     },
     "pavement_0 unified road": {
       "hash": "1454c8b4964ad32a3ea5e3fb089e50ce9837459aea136edafb60eeac613b0da0"
+    },
+    "Tokyo traffic • black": {
+      "hash": "7ed5b5c09f041e2704eedc001acacb6342663bddba1a7386bfc9dd1d8884a62f"
+    },
+    "Tokyo traffic • tire": {
+      "hash": "3b4abf4a863b1583c4acf4c9422e22d48ff589447d8bfcc3c3fcc8194dc836a1"
+    },
+    "Tokyo traffic • kei_plate": {
+      "hash": "d963c8f94d0fa017aeed2760b49996ca2f95314962478d5b3de4c8453e5bacf1"
+    },
+    "Tokyo traffic • glass": {
+      "hash": "95a4957f848c5ff9b29783c56d32e36707f92de8eef7c935b5eef6f5d78e93ca"
+    },
+    "Tokyo traffic • white": {
+      "hash": "0ce7b6eec0da32da12a9618eb70c98af7608493e80d13eda6b24f8fa74f5858d"
+    },
+    "Tokyo traffic • head": {
+      "hash": "8399f959a24ff2b5666e41ae1ebd4fc532d99a694377f542f7c8249358f652cd"
+    },
+    "Tokyo traffic • tail": {
+      "hash": "0af998399c0f7080b2d6cccbaf2a9f0ae589a23d67ef022edcd44fe02f4652cf"
+    },
+    "Tokyo traffic • plate": {
+      "hash": "f442849f3180b2b46b23e8aefc2ddd054f166e48994e217b2da1b65f887e36db"
+    },
+    "Tokyo traffic • rim": {
+      "hash": "83eadc0b1ae1509660117566965eb74083f839a6f9e0a336926287f73e12fc60"
     }
-  }
+  },
+  "traffic_layout_sha256": "451a8c95accc72f7f265e56a2f2c67f71f9f83dda8eabae6d9c750be6e88ca3f",
+  "vehicles": [
+    {
+      "index": 99,
+      "xy": [
+        -51.45839699701648,
+        -58.12678473215919
+      ],
+      "yaw": -2.8653820099730987,
+      "z": 0.3,
+      "type": "sedan",
+      "way": "53831474",
+      "oneway": "yes",
+      "direction": 1,
+      "left_offset": 0,
+      "color": "black",
+      "length": 4.5,
+      "width": 1.78,
+      "ranges": {
+        "Tokyo traffic • black": [
+          4136,
+          4224
+        ],
+        "Tokyo traffic • glass": [
+          792,
+          800
+        ],
+        "Tokyo traffic • tire": [
+          19008,
+          19200
+        ],
+        "Tokyo traffic • rim": [
+          15840,
+          16000
+        ],
+        "Tokyo traffic • head": [
+          1728,
+          1744
+        ],
+        "Tokyo traffic • tail": [
+          1584,
+          1600
+        ],
+        "Tokyo traffic • plate": [
+          752,
+          768
+        ]
+      }
+    },
+    {
+      "index": 506,
+      "xy": [
+        -56.53014950934162,
+        7.76236974968545
+      ],
+      "yaw": 2.284506627927603,
+      "z": 0.3,
+      "type": "compact",
+      "way": "678486696",
+      "oneway": "no",
+      "direction": 1,
+      "left_offset": 0.96,
+      "color": "white",
+      "length": 3.4,
+      "width": 1.48,
+      "ranges": {
+        "Tokyo traffic • white": [
+          14520,
+          14608
+        ],
+        "Tokyo traffic • glass": [
+          4048,
+          4056
+        ],
+        "Tokyo traffic • tire": [
+          97152,
+          97344
+        ],
+        "Tokyo traffic • rim": [
+          80960,
+          81120
+        ],
+        "Tokyo traffic • head": [
+          8856,
+          8872
+        ],
+        "Tokyo traffic • tail": [
+          8096,
+          8112
+        ],
+        "Tokyo traffic • kei_plate": [
+          1984,
+          2000
+        ]
+      }
+    }
+  ]
 }
