@@ -113,6 +113,8 @@ The original implementations in `scripts/tower_site_v3.py`, `scripts/tower_site_
 
 The 26 Before/After PNGs in the [tower site and roof review](renders/previews/tower-site-v3/README.md) are published only as evidence for the user-requested PR, under the attribution and publication scope documented there. No new blanket image or city licence is granted. Reference photographs, PDFs, city scenes and texture originals are not redistributed.
 
+The original implementations in `scripts/tower_foundation_v4.py`, `scripts/tower_foundation_geometry_v4.py`, and `tests/test_tower_foundation_v4.py` are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. The 16 comparison PNGs in the [foundation and terrain review](renders/previews/tower-foundation-v4/README.md) retain the review-only publication scope and existing third-party attribution described there. This grant excludes the legacy city, geographic inputs, reference PDFs and textures.
+
 The 18 Before/After PNGs in the [tower structure review](renders/previews/tower-structure-v1/README.md) are published as evidence for the user-requested PR. Their publication does not grant a new blanket licence for the images, underlying city or third-party content. Retain the attribution and scope recorded in that preview and [NOTICE](NOTICE.md).
 
 The 30 PNGs in the [upper lift revision review](renders/previews/tower-lift-v2/README.md) follow the same publication scope. They include 26 pinned-input Before/After views and four views of the previous proposal for comparison with the revised upper lift. Reference photographs and PDFs are not redistributed.

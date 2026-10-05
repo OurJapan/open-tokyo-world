@@ -1,0 +1,239 @@
+{
+  "version": 1,
+  "date": "2026-10-05",
+  "ok": true,
+  "status": "candidate-human-review-pending",
+  "human_visual_approval": false,
+  "geometry_and_render_code_commit": "62e26e9fbf79d02478f9476a86bd3a01af3c05b7",
+  "local_run": "data/local/reviews/tower-foundation-v4-final-01",
+  "saved_scene_validation": {
+    "ok": true,
+    "changed_objects": [
+      "Tokyo Tower structure / stone",
+      "Tokyo Tower structure / orange",
+      "OTW Tokyo Tower structure / base-connections",
+      "OTW Tokyo Tower site v3 / site-paving"
+    ],
+    "protected_objects": 3364,
+    "objects": 3368,
+    "retained_vertices_at_or_above_52m": 40208,
+    "original_topology_and_flags_retained_except_paving": true,
+    "protected_metadata_and_original_shaders_unchanged": true,
+    "geometry": {
+      "foundation": {
+        "vertices": 32,
+        "polygons": 24,
+        "components": 4,
+        "bounds_m": [
+          [
+            -49.25,
+            49.25
+          ],
+          [
+            -49.25,
+            49.25
+          ],
+          [
+            0.0,
+            2.0
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 882.0
+      },
+      "plates_and_bolts": {
+        "vertices": 896,
+        "polygons": 1472,
+        "components": 80,
+        "bounds_m": [
+          [
+            -47.67814254760742,
+            47.67814254760742
+          ],
+          [
+            -47.67814254760742,
+            47.67814254760742
+          ],
+          [
+            1.9199999570846558,
+            2.2799999713897705
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 3.1570654072876727
+      },
+      "steel_contact_max_distance_m": 0.019999980926513672,
+      "paving": {
+        "vertices": 4904,
+        "polygons": 9794,
+        "components": 2,
+        "bounds_m": [
+          [
+            -36.5,
+            36.5
+          ],
+          [
+            -70.0,
+            -28.540000915527344
+          ],
+          [
+            -0.05999999865889549,
+            4.400000095367432
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 6469.0042311995185
+      },
+      "edge_samples": 564,
+      "maximum_edge_step_m": 0.15499696135520935,
+      "terrain_triangle_clearance_samples": 4686,
+      "retained_city_curb_overlap_samples": 24,
+      "maximum_retained_curb_overlap_m": 0.15911781787872314,
+      "door_threshold_m": 4.4,
+      "foundation_size_is_retained_estimate": true,
+      "surface_is_legacy_city_transition_not_full_dem": true
+    },
+    "warnings": [
+      "Modifier stack not fingerprinted: Close detail rim",
+      "Modifier stack not fingerprinted: Close detail iron",
+      "Modifier stack not fingerprinted: Close detail silver",
+      "Modifier stack not fingerprinted: Close detail frame",
+      "Modifier stack not fingerprinted: Tokyo traffic • silver",
+      "Modifier stack not fingerprinted: Tokyo traffic • white",
+      "Modifier stack not fingerprinted: Tokyo traffic • blue",
+      "Modifier stack not fingerprinted: Tokyo traffic • black",
+      "Modifier stack not fingerprinted: Tokyo traffic • red",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / stone",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / orange",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / white",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / white",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / aluminum",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / wood; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / wood",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / stone; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / stone",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / soil; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / leaf; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / darkmetal; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Modifier stack not fingerprinted: Mori JP curtain wall / aluminum",
+      "Modifier stack not fingerprinted: Mori JP interior / stone",
+      "Modifier stack not fingerprinted: Mori JP interior / wood",
+      "Modifier stack not fingerprinted: Mori JP interior / aluminum",
+      "Modifier stack not fingerprinted: Mori JP interior / chair",
+      "Modifier stack not fingerprinted: Mori JP interior / fabric",
+      "Modifier stack not fingerprinted: Observation interior detail / charcoal glass",
+      "Modifier stack not fingerprinted: Observation interior detail / brushed steel",
+      "Modifier stack not fingerprinted: Observation interior detail / ceiling",
+      "Modifier stack not fingerprinted: Photo based main deck / frame",
+      "Modifier stack not fingerprinted: Photo based main deck / silver",
+      "Modifier stack not fingerprinted: Photo based main deck / wall",
+      "Modifier stack not fingerprinted: 2019 reference window revision / black",
+      "Modifier stack not fingerprinted: 2019 reference window revision / aluminum",
+      "Modifier stack not fingerprinted: 2019 reference window revision / white"
+    ],
+    "limits": [
+      "No geographic accuracy certification",
+      "No complete modifier/animation/node-group fingerprint",
+      "Image decode checks dimensions and a pixel probe; not all image samples",
+      "No manifold/zero-area/normal checks",
+      "External asset content hashes not yet recorded",
+      "88m axis spacing is interpreted from historical foundation Fig.12, not a current survey.",
+      "Foundation cap dimensions and lower-frame interpolation remain model estimates.",
+      "Apron transition matches legacy city surfaces; full parking terrain and underground foundations are not reconstructed.",
+      "Boundary and triangle samples do not prove continuous clearance or accessibility."
+    ],
+    "input_sha256": "6ff6745bcd2ed40c24e8577bd86cd7cfd1de5c9c9386a82218d66d54a52f81f3",
+    "candidate_sha256": "44d2b2f61e050ffc98be64f994b5b5763b99bd4bb7ab1c92631ff80b2fc019e7",
+    "source_and_candidate_protected": true,
+    "blender_version": "4.5.1 LTS",
+    "code_sha256": {
+      "tower_foundation_v4.py": "2e04308d521aaa1a1e8b035da5669ece5a5f27c93be7cccf161d73e70496e4a8",
+      "tower_foundation_geometry_v4.py": "882714acf56459a6bbad8d74722d1e360c5ef37957fbe16779d88422d0c35a80",
+      "tower_structure_v1.py": "bfb1730e3277138aec489cdb113c6af1738a5c8d1ebad395f6119ad2d1656821",
+      "blender_worker.py": "7cd8a0437c8378a9adc72390291a8d8eef7573b926cdb1e3eb9252ed9c517cef",
+      "review.py": "622c4fd41e0128ae48a4d912a98aaed72edb0322fd1af06947d0eb487589d418",
+      "validate_tower_structure.py": "03f911a2f85f4aee0d32d986d3210b7c4a495e13487f062997abe5d26ee0581c",
+      "validate_tower_foottown.py": "ddf246dd40b4acab8c6084743f7c26b6242fd2a8bdc9e7eff9e463f0139245c2",
+      "tower_south_handrail.py": "85d3a9288ce8a0c8d9a7308f34777b31e16058bf9b34e86d10e309799be59acf",
+      "tower_site_v3.py": "c66be46098cb95348ff52569d696c3afc9c24bdaf56b9aab8a2ebce2b5558ab1"
+    },
+    "configuration_sha256": "b637981b45e2483334bd921d2d4fa537494656a9ea32c1f6b1bfbebd2b73350b"
+  },
+  "build": {
+    "ok": true,
+    "changed_objects": [
+      "OTW Tokyo Tower site v3 / site-paving",
+      "OTW Tokyo Tower structure / base-connections",
+      "Tokyo Tower structure / orange",
+      "Tokyo Tower structure / stone"
+    ],
+    "added_objects": [],
+    "foundation_axis_span_m": 88.0,
+    "upper_geometry_preserved_from_z_m": 52.0,
+    "retained_unused_materials": [],
+    "input_sha256": "6ff6745bcd2ed40c24e8577bd86cd7cfd1de5c9c9386a82218d66d54a52f81f3",
+    "candidate_sha256": "44d2b2f61e050ffc98be64f994b5b5763b99bd4bb7ab1c92631ff80b2fc019e7",
+    "source_and_candidate_protected": true,
+    "blender_version": "4.5.1 LTS",
+    "code_sha256": {
+      "tower_foundation_v4.py": "2e04308d521aaa1a1e8b035da5669ece5a5f27c93be7cccf161d73e70496e4a8",
+      "tower_foundation_geometry_v4.py": "882714acf56459a6bbad8d74722d1e360c5ef37957fbe16779d88422d0c35a80",
+      "tower_structure_v1.py": "bfb1730e3277138aec489cdb113c6af1738a5c8d1ebad395f6119ad2d1656821",
+      "blender_worker.py": "7cd8a0437c8378a9adc72390291a8d8eef7573b926cdb1e3eb9252ed9c517cef",
+      "review.py": "622c4fd41e0128ae48a4d912a98aaed72edb0322fd1af06947d0eb487589d418",
+      "validate_tower_structure.py": "03f911a2f85f4aee0d32d986d3210b7c4a495e13487f062997abe5d26ee0581c",
+      "validate_tower_foottown.py": "ddf246dd40b4acab8c6084743f7c26b6242fd2a8bdc9e7eff9e463f0139245c2",
+      "tower_south_handrail.py": "85d3a9288ce8a0c8d9a7308f34777b31e16058bf9b34e86d10e309799be59acf",
+      "tower_site_v3.py": "c66be46098cb95348ff52569d696c3afc9c24bdaf56b9aab8a2ebce2b5558ab1"
+    },
+    "configuration_sha256": "b637981b45e2483334bd921d2d4fa537494656a9ea32c1f6b1bfbebd2b73350b"
+  },
+  "render_settings": {
+    "device": "OPTIX",
+    "width": 1280,
+    "height": 848,
+    "samples": 32,
+    "seed": 0
+  },
+  "devices": [
+    "NVIDIA GeForce RTX 3060 Ti"
+  ],
+  "matched_views": [
+    "foottown-front",
+    "foottown-south",
+    "tower-context",
+    "site-overhead",
+    "site-south",
+    "south-grade",
+    "foundation-close",
+    "foundation-opposite"
+  ],
+  "portable_tests": {
+    "run": 408,
+    "passed": 400,
+    "skipped": 8,
+    "failures": 0,
+    "log_sha256": "86862af3c7d862a131a9814edf6e539791eef31902673de51a5783da74cec848"
+  },
+  "syntax_check": "python -m compileall -q scripts tests passed",
+  "configuration_sha256": {
+    "areas/tokyo-tower/tower-foundation-v4-cameras.json": "1825d28897daca35168c21ea3d219f9bbfa42d8823732b2cd12a7d0a11509874",
+    "areas/tokyo-tower/tower-foundation-v4-input.json": "b637981b45e2483334bd921d2d4fa537494656a9ea32c1f6b1bfbebd2b73350b",
+    "areas/tokyo-tower/tower-foundation-v4-sources.json": "0dd9cf07820dadc8c71c008f0e25601bd39246e0eb4d0083b74763df323e80c5"
+  },
+  "limitations": [
+    "No geographic accuracy certification",
+    "No complete modifier/animation/node-group fingerprint",
+    "Image decode checks dimensions and a pixel probe; not all image samples",
+    "No manifold/zero-area/normal checks",
+    "External asset content hashes not yet recorded",
+    "88m axis spacing is interpreted from historical foundation Fig.12, not a current survey.",
+    "Foundation cap dimensions and lower-frame interpolation remain model estimates.",
+    "Apron transition matches legacy city surfaces; full parking terrain and underground foundations are not reconstructed.",
+    "Boundary and triangle samples do not prove continuous clearance or accessibility."
+  ],
+  "agent_visual_review": "Agent compared all 8 matched view pairs and inspected the south exterior and foundation close-up at full resolution. Lower-frame contacts and graded apron are visible. Legacy footway fragments and triangular gaps remain around the foundations; those protected meshes were not repaired. This is not human approval or certification of real-world accuracy."
+}

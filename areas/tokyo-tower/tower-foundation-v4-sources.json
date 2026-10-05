@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "accessed": "2026-10-05",
+  "sources": [
+    {
+      "id": "F1",
+      "provider": "日本地震工学会掲載資料（内藤多仲ほか1962年論文の図を含む復元版）",
+      "url": "https://www.jaee.gr.jp/jp/wp-content/uploads/2015/04/vibration_characteristics.pdf",
+      "sha256": "365076249c4bdf88b9232ee20bbe883a08296d59ad2cee3c6cd412ff3a9827ab",
+      "pdf_page": 115,
+      "printed_page": 106,
+      "figure": "Fig.12",
+      "observed": "The foundation plan distinguishes an inner 80.00m dimension from an 88.00m dimension drawn through the foundation axes.",
+      "adopted": "88m between model foundation centres. This is interpretation of a historical diagram, not an as-built site survey. Cap width/height and lower-frame interpolation are not measured from the scanned picture."
+    },
+    {
+      "id": "F2",
+      "provider": "日鉄エンジニアリング",
+      "url": "https://www.eng.nipponsteel.com/business/building_and_infrastructure/high_tech_steel_structure/high_tech_steel_structure/",
+      "observed": "Its Tokyo Skytree construction reference compares the Tokyo Tower base to a square with a side of approximately 88m.",
+      "adopted": "Independent engineering-company corroboration of the 88m nominal base dimension."
+    },
+    {
+      "id": "F3",
+      "provider": "東京都立中央図書館／国立国会図書館レファレンス協同データベース",
+      "url": "https://crd.ndl.go.jp/reference/entry/index.php?id=1000026701&page=ref_view",
+      "observed": "Library research distinguishes the cited 80m width from the additional leg width.",
+      "adopted": "Do not equate 80m with the full outside tower footprint."
+    },
+    {
+      "id": "F4",
+      "provider": "東京タワー",
+      "url": "https://www.tokyotower.co.jp/plan/towerpedia/",
+      "observed": "The official explanation describes deep foundation shafts and below-ground ties.",
+      "adopted": "No underground structure reconstructed from visible-cap dimensions."
+    },
+    {
+      "id": "F5",
+      "provider": "Previous site revision source register",
+      "repository_path": "areas/tokyo-tower/tower-site-v3-sources.json",
+      "adopted": "Retain the relative south entrance rise supported by GSI samples and official parking access guidance. New apron edges are fitted to protected legacy city geometry, not a complete DEM."
+    }
+  ],
+  "existing_model_measurements": {
+    "cap_centres_xy_m": [
+      -47.5,
+      47.5
+    ],
+    "cap_centre_span_m": 95,
+    "cap_size_m": [
+      10.5,
+      10.5,
+      2
+    ],
+    "lower_steel_joint_centres_abs_xy_at_z2_m": 46.6066666667
+  },
+  "candidate_constraints": {
+    "cap_centre_span_m": 88,
+    "cap_size_retained_m": [
+      10.5,
+      10.5,
+      2
+    ],
+    "all_z_coordinates_retained_except_apron": true,
+    "frame_horizontal_deformation_ends_at_z_m": 52,
+    "new_objects": 0,
+    "mesh_targets": 4,
+    "ground_grid_samples": 2448,
+    "south_threshold_z_m": 4.4
+  },
+  "inferences": [
+    "Historical 88m axes mapped onto the current legacy local coordinate frame; geographic origin and individual surveyed foundation locations remain uncertain.",
+    "Lower-frame deformation is a bounded smooth interpolation, not a redrawing of measured steel members.",
+    "Foundation-cap dimensions and base-plate dimensions remain model estimates.",
+    "Apron side slopes are a local transition to existing city surfaces. They are not certified paths or a reproduction of the entire parking terrain.",
+    "At 14 facade-adjacent samples the legacy city under-building mask lies at -2m; the sample list and adopted adjacent-road 0.3m datum are recorded in the input file.",
+    "Historical GL and advertised observation-deck elevations use differing reference conventions; no global vertical correction is made in this increment."
+  ],
+  "reference_originals_published": false
+}
