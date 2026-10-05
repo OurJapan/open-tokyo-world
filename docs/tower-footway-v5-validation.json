@@ -1,0 +1,240 @@
+{
+  "version": 1,
+  "date": "2026-10-05",
+  "ok": true,
+  "status": "candidate-human-review-pending",
+  "human_visual_approval": false,
+  "geometry_and_render_code_commit": "001f1bc4ada50a3c2e7f8caf5bccee91876375b3",
+  "local_run": "data/local/reviews/tower-footway-v5-final-01",
+  "saved_scene_validation": {
+    "ok": true,
+    "surface_samples": {
+      "saved_top_triangle_centroids": 435,
+      "maximum_probe_height_m": 1.95,
+      "blockers": [],
+      "limits": "Centroid probes are not a full continuous clearance or accessibility certificate."
+    },
+    "changed_objects": [
+      "pavement_0 unified road",
+      "asphalt 15s road detail",
+      "gutter 15s road detail"
+    ],
+    "protected_objects": 3365,
+    "objects": 3368,
+    "checks": {
+      "gutter 15s road detail": {
+        "preserved_faces": 33027,
+        "cut_faces": 249,
+        "source_vertices_exact": true,
+        "outside_area_error_m2": 2.606427005957812e-05,
+        "remaining_old_inside_area_m2": 7.110278022743247e-06,
+        "new_shape": {}
+      },
+      "asphalt 15s road detail": {
+        "preserved_faces": 140318,
+        "cut_faces": 176,
+        "source_vertices_exact": true,
+        "outside_area_error_m2": 5.559995770454407e-06,
+        "remaining_old_inside_area_m2": 9.085825341273149e-05,
+        "new_shape": {}
+      },
+      "pavement_0 unified road": {
+        "preserved_faces": 270571,
+        "cut_faces": 460,
+        "source_vertices_exact": true,
+        "outside_area_error_m2": 0.00018637767061591148,
+        "remaining_old_inside_area_m2": 1.1241541087243836e-05,
+        "new_shape": {
+          "vertices": 914,
+          "polygons": 1327,
+          "components": 12,
+          "bounds_m": [
+            [
+              -51.00000177290066,
+              67.00000152659717
+            ],
+            [
+              -63.0000020636234,
+              60.50000053311703
+            ],
+            [
+              0.30000001192092896,
+              0.46000000834465027
+            ]
+          ],
+          "closed_edge_incidence_two": true,
+          "consistent_outward_winding": true,
+          "volume_m3": 45.416467356004475
+        }
+      }
+    },
+    "warnings": [
+      "Modifier stack not fingerprinted: Close detail rim",
+      "Modifier stack not fingerprinted: Close detail iron",
+      "Modifier stack not fingerprinted: Close detail silver",
+      "Modifier stack not fingerprinted: Close detail frame",
+      "Modifier stack not fingerprinted: Tokyo traffic • silver",
+      "Modifier stack not fingerprinted: Tokyo traffic • white",
+      "Modifier stack not fingerprinted: Tokyo traffic • blue",
+      "Modifier stack not fingerprinted: Tokyo traffic • black",
+      "Modifier stack not fingerprinted: Tokyo traffic • red",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / stone",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / orange",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / white",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / white",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / aluminum",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / wood; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / wood",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / stone; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / stone",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / soil; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / leaf; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / darkmetal; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Modifier stack not fingerprinted: Mori JP curtain wall / aluminum",
+      "Modifier stack not fingerprinted: Mori JP interior / stone",
+      "Modifier stack not fingerprinted: Mori JP interior / wood",
+      "Modifier stack not fingerprinted: Mori JP interior / aluminum",
+      "Modifier stack not fingerprinted: Mori JP interior / chair",
+      "Modifier stack not fingerprinted: Mori JP interior / fabric",
+      "Modifier stack not fingerprinted: Observation interior detail / charcoal glass",
+      "Modifier stack not fingerprinted: Observation interior detail / brushed steel",
+      "Modifier stack not fingerprinted: Observation interior detail / ceiling",
+      "Modifier stack not fingerprinted: Photo based main deck / frame",
+      "Modifier stack not fingerprinted: Photo based main deck / silver",
+      "Modifier stack not fingerprinted: Photo based main deck / wall",
+      "Modifier stack not fingerprinted: 2019 reference window revision / black",
+      "Modifier stack not fingerprinted: 2019 reference window revision / aluminum",
+      "Modifier stack not fingerprinted: 2019 reference window revision / white"
+    ],
+    "limits": [
+      "No geographic accuracy certification",
+      "No complete modifier/animation/node-group fingerprint",
+      "Image decode checks dimensions and a pixel probe; not all image samples",
+      "No manifold/zero-area/normal checks",
+      "External asset content hashes not yet recorded",
+      "Nominal widths and flat local road elevations are inherited model assumptions.",
+      "OSM steps way 1245345677 remains a mapped pedestrian route; real riser elevations and stair geometry are not reconstructed.",
+      "Existing tower/road georegistration conflicts are not solved by moving road centre lines.",
+      "Only three declared edit rectangles are rebuilt; other city roads are unchanged."
+    ],
+    "input_sha256": "44d2b2f61e050ffc98be64f994b5b5763b99bd4bb7ab1c92631ff80b2fc019e7",
+    "candidate_sha256": "9b977881ebcde3cf407473926756cbe93455c18780722ca0eac1c1b8a3fb702c",
+    "source_and_candidate_protected": true,
+    "blender_version": "4.5.1 LTS",
+    "code_sha256": {
+      "tower_footway_v5.py": "473253249e1f3862c7b072a6f7d956511a9c9070cb2fb6ac8e891af1810e20ff",
+      "tower_footway_geometry_v5.py": "60fe725a37590f4f1352e7cbae16fd4047dc626581caa4d8813130d319cb91af",
+      "prepare_tower_footway_v5.py": "f1b9e0eee8426be2d50ba00ca09512afbad7863019605d7e6c44f9a9a95041d8",
+      "tower_foundation_v4.py": "2e04308d521aaa1a1e8b035da5669ece5a5f27c93be7cccf161d73e70496e4a8",
+      "tower_foundation_geometry_v4.py": "882714acf56459a6bbad8d74722d1e360c5ef37957fbe16779d88422d0c35a80",
+      "tower_structure_v1.py": "bfb1730e3277138aec489cdb113c6af1738a5c8d1ebad395f6119ad2d1656821",
+      "blender_worker.py": "7cd8a0437c8378a9adc72390291a8d8eef7573b926cdb1e3eb9252ed9c517cef",
+      "review.py": "622c4fd41e0128ae48a4d912a98aaed72edb0322fd1af06947d0eb487589d418",
+      "validate_tower_structure.py": "03f911a2f85f4aee0d32d986d3210b7c4a495e13487f062997abe5d26ee0581c",
+      "validate_tower_foottown.py": "ddf246dd40b4acab8c6084743f7c26b6242fd2a8bdc9e7eff9e463f0139245c2",
+      "tower_site_v3.py": "c66be46098cb95348ff52569d696c3afc9c24bdaf56b9aab8a2ebce2b5558ab1"
+    },
+    "configuration_sha256": "7b3d6dd204b630298b8616689f630288960f7da86068cec332457924b8779783",
+    "plan_sha256": "18be17c95b0a068cd3f4bd1ac002fc5382eb68280ca8bd94a7d5d772b6414737"
+  },
+  "build": {
+    "ok": true,
+    "audit": {
+      "asphalt 15s road detail": {
+        "source_vertices": 423335,
+        "cut_faces": 176,
+        "removed_area_m2": 882.870961879533,
+        "retained_faces": 140383,
+        "replacement_vertex_start": 423564,
+        "replacement_faces": 227
+      },
+      "gutter 15s road detail": {
+        "source_vertices": 102204,
+        "cut_faces": 249,
+        "removed_area_m2": 94.77541197804078,
+        "retained_faces": 33069,
+        "replacement_vertex_start": 102351,
+        "replacement_faces": 273
+      },
+      "pavement_0 unified road": {
+        "source_vertices": 278939,
+        "cut_faces": 460,
+        "removed_area_m2": 537.2803124845437,
+        "retained_faces": 270650,
+        "replacement_vertex_start": 279236,
+        "replacement_faces": 1327
+      }
+    },
+    "changed_objects": [
+      "asphalt 15s road detail",
+      "gutter 15s road detail",
+      "pavement_0 unified road"
+    ],
+    "added_objects": [],
+    "input_sha256": "44d2b2f61e050ffc98be64f994b5b5763b99bd4bb7ab1c92631ff80b2fc019e7",
+    "candidate_sha256": "9b977881ebcde3cf407473926756cbe93455c18780722ca0eac1c1b8a3fb702c",
+    "source_and_candidate_protected": true,
+    "blender_version": "4.5.1 LTS",
+    "code_sha256": {
+      "tower_footway_v5.py": "473253249e1f3862c7b072a6f7d956511a9c9070cb2fb6ac8e891af1810e20ff",
+      "tower_footway_geometry_v5.py": "60fe725a37590f4f1352e7cbae16fd4047dc626581caa4d8813130d319cb91af",
+      "prepare_tower_footway_v5.py": "f1b9e0eee8426be2d50ba00ca09512afbad7863019605d7e6c44f9a9a95041d8",
+      "tower_foundation_v4.py": "2e04308d521aaa1a1e8b035da5669ece5a5f27c93be7cccf161d73e70496e4a8",
+      "tower_foundation_geometry_v4.py": "882714acf56459a6bbad8d74722d1e360c5ef37957fbe16779d88422d0c35a80",
+      "tower_structure_v1.py": "bfb1730e3277138aec489cdb113c6af1738a5c8d1ebad395f6119ad2d1656821",
+      "blender_worker.py": "7cd8a0437c8378a9adc72390291a8d8eef7573b926cdb1e3eb9252ed9c517cef",
+      "review.py": "622c4fd41e0128ae48a4d912a98aaed72edb0322fd1af06947d0eb487589d418",
+      "validate_tower_structure.py": "03f911a2f85f4aee0d32d986d3210b7c4a495e13487f062997abe5d26ee0581c",
+      "validate_tower_foottown.py": "ddf246dd40b4acab8c6084743f7c26b6242fd2a8bdc9e7eff9e463f0139245c2",
+      "tower_site_v3.py": "c66be46098cb95348ff52569d696c3afc9c24bdaf56b9aab8a2ebce2b5558ab1"
+    },
+    "configuration_sha256": "7b3d6dd204b630298b8616689f630288960f7da86068cec332457924b8779783",
+    "plan_sha256": "18be17c95b0a068cd3f4bd1ac002fc5382eb68280ca8bd94a7d5d772b6414737"
+  },
+  "render_settings": {
+    "device": "OPTIX",
+    "width": 1280,
+    "height": 848,
+    "samples": 32,
+    "seed": 0
+  },
+  "devices": [
+    "NVIDIA GeForce RTX 3060 Ti"
+  ],
+  "matched_views": [
+    "foottown-front",
+    "tower-context",
+    "site-overhead",
+    "south-grade",
+    "foundation-close",
+    "foundation-opposite",
+    "foundation-north",
+    "foundation-west"
+  ],
+  "portable_tests": {
+    "run": 413,
+    "passed": 405,
+    "skipped": 8,
+    "failures": 0,
+    "log_sha256": "ede5d1653b301cc792ff30ad3190fbb1cadf114405879cee7c6f786907e23476"
+  },
+  "syntax_check": "python -m compileall -q scripts tests passed",
+  "configuration_sha256": {
+    "areas/tokyo-tower/tower-footway-v5-cameras.json": "18b3972741a32ea472e45346fd6b547499d2b0bce2d917c0f4c849b6b291b738",
+    "areas/tokyo-tower/tower-footway-v5-input.json": "7b3d6dd204b630298b8616689f630288960f7da86068cec332457924b8779783",
+    "areas/tokyo-tower/tower-footway-v5-plan.json": "18be17c95b0a068cd3f4bd1ac002fc5382eb68280ca8bd94a7d5d772b6414737",
+    "areas/tokyo-tower/tower-footway-v5-sources.json": "a076bdb1cdf6ef8cc8fb3cf5f0fa2efa02402ca6107735bc5ba4376852d36508"
+  },
+  "limitations": [
+    "No geographic accuracy certification",
+    "No complete modifier/animation/node-group fingerprint",
+    "Image decode checks dimensions and a pixel probe; not all image samples",
+    "No manifold/zero-area/normal checks",
+    "External asset content hashes not yet recorded",
+    "Nominal widths and flat local road elevations are inherited model assumptions.",
+    "OSM steps way 1245345677 remains a mapped pedestrian route; real riser elevations and stair geometry are not reconstructed.",
+    "Existing tower/road georegistration conflicts are not solved by moving road centre lines.",
+    "Only three declared edit rectangles are rebuilt; other city roads are unchanged."
+  ],
+  "agent_visual_review": "Agent inspected all 8 matched Before/After pairs and the north/opposite foundation close-ups at full resolution. The old narrow pavement/gutter fragments and north-road gutter remnants are removed within the declared rectangles; junctions are continuous and pointed ends rounded. The tower, FootTown and south apron are retained. The historical steps route is represented as a flat pedestrian strip; actual riser elevations and tower/road geographic registration remain unresolved. This is not human visual approval."
+}
