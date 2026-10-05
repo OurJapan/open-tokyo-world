@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "source_pr": 67,
+  "input_bytes": 640221535,
+  "input_sha256": "df71be6c9b2e606a7ec277f15285bc92123a712d0069d7c413ab5d210d7cc9c3",
+  "targets": {
+    "asphalt 15s road detail": {
+      "mesh_sha256": "3755a4314c361a2a9946f079330e7c2df6d91de616935f39275461348f0b63a4",
+      "original_material": "asphalt.002",
+      "original_material_sha256": "be5febc5f7e1444a861e770521323e88564b370196a112d58128b4af8574cb5e"
+    },
+    "asphalt_7 unified road": {
+      "mesh_sha256": "ad860f403f1308517303de5fb94e5a3a35ee4e47f7f001bd824eef76bb0f7be7",
+      "original_material": "asphalt.001",
+      "original_material_sha256": "2c3e9bfe770737bceb99389f22327444e108216a89a94188bd59c04dda0e57ff"
+    },
+    "gutter 15s road detail": {
+      "mesh_sha256": "31eabd6b5b616419cf7decd227468368ed77c3a1991aa1aa9451504922d1cf63",
+      "original_material": "gutter",
+      "original_material_sha256": "e6e7f35e3176dfe57e19e30882695ec4a231f8219770f6bbc838260316ede8a2"
+    },
+    "parking mapped land use": {
+      "mesh_sha256": "85ed91b1ac34a01d63f0bf099fceb2391c69378ed9cad888b45e72e41ec2819a",
+      "original_material": "parking.001",
+      "original_material_sha256": "91d4f603a2bab992181df169a555e5610e38d3745e3661fa238c701e4b858b7d"
+    },
+    "pavement_0 unified road": {
+      "mesh_sha256": "65e163a61c276c4003f32bbcf1a6f1adbb5f65b0d864b3b4a00e92eb6a95739e",
+      "original_material": "pavement",
+      "original_material_sha256": "60012fc906f1679cf8e5fcdcbb90e16e204f54b94ce50e9359d5d5483df5b771"
+    },
+    "pavement_7 unified road": {
+      "mesh_sha256": "d8e1b9f8f7f18054a795f3b157de5a1da97661ddb70118aec2a98f775f34b941",
+      "original_material": "pavement",
+      "original_material_sha256": "60012fc906f1679cf8e5fcdcbb90e16e204f54b94ce50e9359d5d5483df5b771"
+    },
+    "paint_0 unified road": {
+      "mesh_sha256": "ba63b01e354ae1e7e228454601a818cf34e93957eee395d3b87a81360c452343",
+      "original_material": "paint",
+      "original_material_sha256": "e6621851b7d590d94ee32fa1d8c264e042af5c67bcad1ddb9800e0108ce96b16"
+    },
+    "paint_7 unified road": {
+      "mesh_sha256": "9c3538a7c84d298c6ec513d651961dab94e681888d658038fec1ad5dfa7235d1",
+      "original_material": "paint",
+      "original_material_sha256": "e6621851b7d590d94ee32fa1d8c264e042af5c67bcad1ddb9800e0108ce96b16"
+    }
+  },
+  "finish_region_m": [
+    150,
+    220
+  ],
+  "kind": "artistic surface finish; geometry and placement unchanged"
+}
