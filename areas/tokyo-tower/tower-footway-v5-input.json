@@ -1,0 +1,117 @@
+{
+  "version": 1,
+  "base_main": "ca5ee930db10380bf0e0dfe99232c40eccf6b661",
+  "input_sha256": "44d2b2f61e050ffc98be64f994b5b5763b99bd4bb7ab1c92631ff80b2fc019e7",
+  "plan_sha256": "18be17c95b0a068cd3f4bd1ac002fc5382eb68280ca8bd94a7d5d772b6414737",
+  "objects": {
+    "asphalt 15s road detail": {
+      "vertices": 423335,
+      "polygons": 140494,
+      "uv": [],
+      "materials": [
+        "asphalt.002"
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "modifiers": [],
+      "hash": "03a8596d33eeb3d1dd39be55027e048c3fc825ff9152789f127bd8f2f8705c62"
+    },
+    "gutter 15s road detail": {
+      "vertices": 102204,
+      "polygons": 33276,
+      "uv": [],
+      "materials": [
+        "gutter"
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "modifiers": [],
+      "hash": "3a2be71925b39b48d4d0e66c9dee233c87c5642e88a5340c00065dd204d9189b"
+    },
+    "pavement_0 unified road": {
+      "vertices": 278939,
+      "polygons": 271031,
+      "uv": [],
+      "materials": [
+        "pavement"
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "modifiers": [],
+      "hash": "fc73f6c394f21b13a07d5c907104473bb6b126eb144723773adbbb97d28b2cc7"
+    }
+  },
+  "provenance": "PR63 saved and independently validated candidate. Original is immutable."
+}

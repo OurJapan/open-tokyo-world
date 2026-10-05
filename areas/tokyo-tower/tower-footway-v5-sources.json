@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "date": "2026-10-05",
+  "local_source_commit": "defac576e076f40bf3bc4fddcdcefe30f9a009f7",
+  "code_read_not_executed": [
+    {
+      "path": "work/tokyo60/build_city.py",
+      "sha256": "7ad68498792753110a455649f80e02c195a827af61b7add24652fc70861986aa"
+    },
+    {
+      "path": "work/wide_detail/roads.py",
+      "sha256": "32a4b939bf1d4dfac44f5549477d363ecfc4113374fa62da5835b46ee670cc93"
+    },
+    {
+      "path": "work/tower15_env/surfaces.py",
+      "sha256": "2e781f8224a28f83f0611a4d2d4d5750e6544598240a511e444a5a5fc0937df8"
+    }
+  ],
+  "source_input": {
+    "path": "work/osm.xml",
+    "sha256": "f04e8e70ab24a61ca749375d1ef37401feb0fdc840cc506b670ef71454a6a8ab",
+    "snapshot_date": "unknown",
+    "copyright": "OpenStreetMap contributors",
+    "licence": "ODbL-1.0",
+    "licence_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+    "attribution_url": "https://www.openstreetmap.org/copyright"
+  },
+  "findings": [
+    "Original city builder placed one road and pavement box per OSM line segment.",
+    "Later surface union and gutter extraction inherited gaps and pointed junction geometry.",
+    "Steps inherited the default 4m asphalt road type. Candidate preserves the route as a pedestrian strip with nominal 2m width; real step heights remain unresolved.",
+    "Source taxi aisle and other vehicle routes are retained with their original centreline and source or inherited nominal width."
+  ],
+  "model_constraints": {
+    "road_z_m": 0.3,
+    "walk_top_z_m": 0.46,
+    "gutter_width_m": 0.24,
+    "pavement_allowance_m": 1.05,
+    "rounding_radius_m": 0.22,
+    "plan_precision_m": 0.001
+  },
+  "scope": "Three declared rectangles in the inherited tower construction frame; not new geographic registration or surveyed pavement reconstruction."
+}

@@ -126,3 +126,5 @@ Except for the separately identified starters and original additions above, no l
 広場6部品、森JPタワーの独自追加部分等、東京タワーの指定独自部分等、および植栽の指定16部品・31材質等にCC BY 4.0を適用します。全都市モデルや他のコード・文書が一括してMIT／CC BYになったとは扱わないでください。
 
 See [NOTICE](NOTICE.md) for provenance and operational dependencies. Attribution required by a third-party license must be retained when that data is used; those requirements are not additional restrictions on the independent MIT code.
+
+The original implementations in `scripts/prepare_tower_footway_v5.py`, `scripts/tower_footway_geometry_v5.py`, `scripts/tower_footway_v5.py`, and `tests/test_tower_footway_v5.py` are licensed under [MIT](MIT-LICENSE.txt), copyright (c) 2026 ark4ez. The OSM-derived routes and surface plan in `areas/tokyo-tower/tower-footway-v5-plan.json` are attributed to OpenStreetMap contributors under ODbL 1.0. The 16 PNGs in the [tower footway review](renders/previews/tower-footway-v5/README.md) retain the documented review-only publication scope and third-party attribution; no city scene, source XML or texture original is redistributed.
