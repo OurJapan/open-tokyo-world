@@ -1,0 +1,253 @@
+{
+  "version": 1,
+  "date": "2026-10-05",
+  "feature_id": "otw:jp:tokyo:minato:tokyo-tower",
+  "geometry_and_render_code_commit": "62e26e9fbf79d02478f9476a86bd3a01af3c05b7",
+  "input_sha256": "6ff6745bcd2ed40c24e8577bd86cd7cfd1de5c9c9386a82218d66d54a52f81f3",
+  "candidate_sha256": "44d2b2f61e050ffc98be64f994b5b5763b99bd4bb7ab1c92631ff80b2fc019e7",
+  "render_settings": {
+    "device": "OPTIX",
+    "width": 1280,
+    "height": 848,
+    "samples": 32,
+    "seed": 0
+  },
+  "devices": [
+    "NVIDIA GeForce RTX 3060 Ti"
+  ],
+  "blender_version": "4.5.1 LTS",
+  "matched_views": [
+    "foottown-front",
+    "foottown-south",
+    "tower-context",
+    "site-overhead",
+    "site-south",
+    "south-grade",
+    "foundation-close",
+    "foundation-opposite"
+  ],
+  "matched_before_after_conditions": [
+    "camera",
+    "lighting",
+    "engine",
+    "device",
+    "dimensions",
+    "samples",
+    "seed"
+  ],
+  "images": [
+    {
+      "file": "before-foottown-front.png",
+      "view": "foottown-front",
+      "state": "before",
+      "width": 1280,
+      "height": 848,
+      "source_sha256": "338192d0e7361d2e62f43ac4e386543f403dcdcef36821222eb0842e6f01b27d",
+      "sha256": "cc5b91dbc9c68ae20415bf3a7ec8da7a2a86e35a9d6dd2d5dded8fa864c4542d",
+      "bytes": 1879454,
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "after-foottown-front.png",
+      "view": "foottown-front",
+      "state": "after",
+      "width": 1280,
+      "height": 848,
+      "source_sha256": "f72f9ab693271ad7f64a9dd398d2f3b1e1e9473e0eb257beafb0c05426a536c8",
+      "sha256": "b27eb46dbce15a72a119ccbc5645c07b9e733478b74249b2f6557fef03492f8b",
+      "bytes": 1890353,
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "before-foottown-south.png",
+      "view": "foottown-south",
+      "state": "before",
+      "width": 1280,
+      "height": 848,
+      "source_sha256": "cec504c10c0eb9c2026b1c77cbf0e19f463c68e011231e34294de3a85593bed5",
+      "sha256": "8065b618c6c68add69af81e995ebdff362cca621cc10cf16772003b6372fd08d",
+      "bytes": 1676645,
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "after-foottown-south.png",
+      "view": "foottown-south",
+      "state": "after",
+      "width": 1280,
+      "height": 848,
+      "source_sha256": "92bf9b670a0fff10ab4a555489466146d668de191269deb59683cacf58c8ad7d",
+      "sha256": "c566b7a8a58e02ede6790c51af5c516fe815c0c682f2f68f5121c87606975061",
+      "bytes": 1712344,
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "before-tower-context.png",
+      "view": "tower-context",
+      "state": "before",
+      "width": 1280,
+      "height": 848,
+      "source_sha256": "48a1b628e5ceee2ece093b9ed29ed5f1ef828a4c0ce5fce04a7a68380252aff5",
+      "sha256": "c30e8c86ab1329529b94b5ef71b31e49f862f1c2e59f394a1128a0503688779e",
+      "bytes": 1830322,
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "after-tower-context.png",
+      "view": "tower-context",
+      "state": "after",
+      "width": 1280,
+      "height": 848,
+      "source_sha256": "002b2e1a345cc2f082068ca86c213c56de0a2472fcc9f373e1c568f1b8d9683a",
+      "sha256": "98570278f8cb06c0e97fb63a35bc2df58876f1794b332133381c365e3bb750f4",
+      "bytes": 1829905,
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "before-site-overhead.png",
+      "view": "site-overhead",
+      "state": "before",
+      "width": 1280,
+      "height": 848,
+      "source_sha256": "4a071dc8f49d74ecf193b0c7a8fd1ca8ee498f6d6c6460f82cabf24eb7e511c3",
+      "sha256": "321a0e551e0425407859297e2a1eefdf42a8f631d5c2ac05ddf6b3996d61844b",
+      "bytes": 2006020,
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "after-site-overhead.png",
+      "view": "site-overhead",
+      "state": "after",
+      "width": 1280,
+      "height": 848,
+      "source_sha256": "672d94900c0098fa3e892040ca8da4122ba638d71cd634c001d86c58d9bbd9c9",
+      "sha256": "31065bc920d8b7466ec71cf088172d553699382ed57658db3ecfa799b32265d7",
+      "bytes": 1998749,
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "before-site-south.png",
+      "view": "site-south",
+      "state": "before",
+      "width": 1280,
+      "height": 848,
+      "source_sha256": "a663ad95f5df6c4f5138a4b6b029400f965da63b56df1390fbf584de6a7fd02d",
+      "sha256": "faf2815e6ad0f0dd8637ccef1cc9d0b9f93a3a969020ab4e971b269d21687ee6",
+      "bytes": 1125183,
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "after-site-south.png",
+      "view": "site-south",
+      "state": "after",
+      "width": 1280,
+      "height": 848,
+      "source_sha256": "e9c92c51c4e98337c944daffa9afc4f4ed95467e35d3d03004c23c7f0c92934b",
+      "sha256": "9bf18c0ec3d2d1613ab0c6b0438581e4590b276b314bfcdf48071176c33fc157",
+      "bytes": 1124202,
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "before-south-grade.png",
+      "view": "south-grade",
+      "state": "before",
+      "width": 1280,
+      "height": 848,
+      "source_sha256": "6850ecca89c20843acb743f84ce3f1603d67a148f7f7f46086ff68a53e40631a",
+      "sha256": "3e5ea2c9b516549601961a8a33365b6ef7bb5366a0aeecec003766e21e7e384f",
+      "bytes": 1604248,
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "after-south-grade.png",
+      "view": "south-grade",
+      "state": "after",
+      "width": 1280,
+      "height": 848,
+      "source_sha256": "2dfa26bf1a95e466c5dbebca4566eba45ae0bdc825243ee7feb7f4e5c801bc18",
+      "sha256": "9355146adc7b24982d8d3a4a92601265f300cb6733a353111a916d8347708720",
+      "bytes": 1560928,
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "before-foundation-close.png",
+      "view": "foundation-close",
+      "state": "before",
+      "width": 1280,
+      "height": 848,
+      "source_sha256": "e00cbca9a729841ebdd02b59bf0cfe608747ef9aa127d6f90a33cf18f0268904",
+      "sha256": "c4a8ef098ebeea9954e6cc51025b65d7c01dfa3c015985be440ef9690941d8a7",
+      "bytes": 1505271,
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "after-foundation-close.png",
+      "view": "foundation-close",
+      "state": "after",
+      "width": 1280,
+      "height": 848,
+      "source_sha256": "e0d2c0235f8c4e19f2155188ede80ed04d977172945dfee7eea56967d7f76f12",
+      "sha256": "9730e894a4240d81d9f6f3a531f46c4da21093ca66b2fc1d2730f4a1f0e4029b",
+      "bytes": 1486237,
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "before-foundation-opposite.png",
+      "view": "foundation-opposite",
+      "state": "before",
+      "width": 1280,
+      "height": 848,
+      "source_sha256": "9096dd83ede0be8dfe9ffad64690a77515b1a7e98ca2678166fa204b01799b37",
+      "sha256": "e1d5911caffbadbda6262b52bb34c701c04736b7564e10cf1bc1a7dd0ba56119",
+      "bytes": 1568457,
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    },
+    {
+      "file": "after-foundation-opposite.png",
+      "view": "foundation-opposite",
+      "state": "after",
+      "width": 1280,
+      "height": 848,
+      "source_sha256": "9ef4ace90742a5d447d7841db65844721ca7557e6cb3315451ef692262f8b596",
+      "sha256": "4dd9ab21052b4929931d70d3dc6e71e130c33be18341fb775f0c2c5905998f98",
+      "bytes": 1547487,
+      "removed_text_chunks": 11,
+      "decoded_pixels_identical": true
+    }
+  ],
+  "code_sha256": {
+    "tower_foundation_v4.py": "2e04308d521aaa1a1e8b035da5669ece5a5f27c93be7cccf161d73e70496e4a8",
+    "tower_foundation_geometry_v4.py": "882714acf56459a6bbad8d74722d1e360c5ef37957fbe16779d88422d0c35a80",
+    "tower_structure_v1.py": "bfb1730e3277138aec489cdb113c6af1738a5c8d1ebad395f6119ad2d1656821",
+    "blender_worker.py": "7cd8a0437c8378a9adc72390291a8d8eef7573b926cdb1e3eb9252ed9c517cef",
+    "review.py": "622c4fd41e0128ae48a4d912a98aaed72edb0322fd1af06947d0eb487589d418",
+    "validate_tower_structure.py": "03f911a2f85f4aee0d32d986d3210b7c4a495e13487f062997abe5d26ee0581c",
+    "validate_tower_foottown.py": "ddf246dd40b4acab8c6084743f7c26b6242fd2a8bdc9e7eff9e463f0139245c2",
+    "tower_south_handrail.py": "85d3a9288ce8a0c8d9a7308f34777b31e16058bf9b34e86d10e309799be59acf",
+    "tower_site_v3.py": "c66be46098cb95348ff52569d696c3afc9c24bdaf56b9aab8a2ebce2b5558ab1"
+  },
+  "configuration_sha256": {
+    "areas/tokyo-tower/tower-foundation-v4-cameras.json": "1825d28897daca35168c21ea3d219f9bbfa42d8823732b2cd12a7d0a11509874",
+    "areas/tokyo-tower/tower-foundation-v4-input.json": "b637981b45e2483334bd921d2d4fa537494656a9ea32c1f6b1bfbebd2b73350b",
+    "areas/tokyo-tower/tower-foundation-v4-sources.json": "0dd9cf07820dadc8c71c008f0e25601bd39246e0eb4d0083b74763df323e80c5"
+  },
+  "image_processing": "Only PNG text metadata removed. Compressed image chunks and decoded pixels are unchanged; no resizing, recompression or generative editing.",
+  "human_visual_approval": false,
+  "publication_authorization": "User requested the tower refinement and a PR with review images; earlier image-publication approval remains applicable.",
+  "distribution": "Only review PNGs, original code and metadata. No city blend, reference photographs/PDFs or texture originals.",
+  "agent_visual_review": "Agent compared all 8 matched view pairs and inspected the south exterior and foundation close-up at full resolution. Lower-frame contacts and graded apron are visible. Legacy footway fragments and triangular gaps remain around the foundations; those protected meshes were not repaired. This is not human approval or certification of real-world accuracy."
+}
