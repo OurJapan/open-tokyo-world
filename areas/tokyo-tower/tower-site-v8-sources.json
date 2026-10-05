@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "checked_date": "2026-10-05",
+  "sources": [
+    {
+      "id": "official-agency-access",
+      "url": "https://www.tokyotower.co.jp/fee/agency/",
+      "claim": "正面入口1F、駐車場側入口2F。丘の上に立つ施設と駐車場の関係。",
+      "type": "official text",
+      "limit": "造成勾配や台座寸法の測量図ではない。"
+    },
+    {
+      "id": "official-south-door",
+      "url": "https://www.tokyotower.co.jp/foottown/uq76y55913.html",
+      "claim": "2階南側出入口が駐車場に直結。",
+      "type": "official text"
+    },
+    {
+      "id": "venue-front-plinth",
+      "url": "https://venue-link.com/images/999/3741/room202561611637490.jpeg",
+      "additional_url": "https://venue-link.com/images/999/3741/room202561611637475.jpeg",
+      "claim": "正面側台座外装の傾斜、下端の外側への偏り、パネル割。",
+      "type": "venue listing photograph",
+      "limit": "撮影日・測量縮尺は未確認。目視による形状の根拠に限定。写真は再配布・テクスチャ転用しない。"
+    },
+    {
+      "id": "venue-south-parking",
+      "url": "https://venue-link.com/images/999/3742/room202561611726605.jpeg",
+      "listing_url": "https://venue-link.com/s/999/3742/",
+      "claim": "広い南側駐車場と2F出入口の接続、南側台座の低い露出部分と傾斜。",
+      "type": "venue listing photograph",
+      "limit": "絶対高さ・実測勾配を確定しない。写真は再配布・テクスチャ転用しない。"
+    },
+    {
+      "id": "saved-osm-north-steps",
+      "url": "https://www.openstreetmap.org/way/1245345677",
+      "source_sha256": "f04e8e70ab24a61ca749375d1ef37401feb0fdc840cc506b670ef71454a6a8ab",
+      "tags": {"highway":"steps","step_count":"8","handrail":"no","ramp":"separate","surface":"paving_stones"},
+      "claim": "保存済み入力に8段・手すりなしの記載。現在の実物を実測したものではない。",
+      "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+    },
+    {
+      "id": "gsi-elevation",
+      "url": "https://maps.gsi.go.jp/development/elevation_s.html",
+      "accuracy_url": "https://www.gsi.go.jp/kiban/faq.html",
+      "claim": "前版の南側相対高さアンカーと周辺地形の照合。",
+      "type": "GSI elevation API, 1m DEM",
+      "new_context_sample_count": 81,
+      "limit": "階段の各蹴上げ・敷居・擁壁を測定した値ではない。建物と崖をまたぐ単純補間は採用しない。",
+      "attribution": "国土地理院の標高データを加工。絶対標高基準は未確定。"
+    },
+    {
+      "id": "inherited-procedural-vehicles",
+      "record": "docs/city-production-sources.md",
+      "source_repository": "ark4ez/tokyo-tower-blender (private)",
+      "source_commit": "defac576e076f40bf3bc4fddcdcefe30f9a009f7",
+      "layout_sha256": "451a8c95accc72f7f265e56a2f2c67f71f9f83dda8eabae6d9c750be6e88ca3f",
+      "changed_car_indices": [99, 506],
+      "claim": "593台の材質別集約メッシュから、地盤変更にかかる2台の全パーツの頂点範囲を特定。",
+      "limit": "旧シーンの演出的な車両配置。現地の交通量や駐停車位置の観測ではない。旧コードや配置原本は再配布しない。"
+    }
+  ],
+  "unresolved": ["北側階段の各段・踊り場寸法", "台座の実測上端高・外装寸法", "敷地全体の絶対標高と現地勾配"],
+  "publication": "Source links and derived modeling metadata only. No source photographs, PDFs, textures or city blend."
+}

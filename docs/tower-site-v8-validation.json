@@ -1,0 +1,1760 @@
+{
+  "version": 1,
+  "date": "2026-10-05",
+  "ok": true,
+  "status": "candidate-human-review-pending",
+  "human_visual_approval": false,
+  "geometry_and_render_code_commit": "4a8071eeeeeea89ad86f5cd87fd0d1f8fbaa3cdb",
+  "local_run": "data/local/reviews/tower-site-v8-final-02",
+  "saved_scene_validation": {
+    "ok": true,
+    "changed_objects": [
+      "pavement_0 unified road",
+      "asphalt 15s road detail",
+      "gutter 15s road detail",
+      "parking mapped land use",
+      "gravel mapped land use",
+      "ground",
+      "Close detail rim",
+      "Close detail iron",
+      "Close detail silver",
+      "Close detail white",
+      "Tokyo traffic • glass",
+      "Tokyo traffic • tire",
+      "Tokyo traffic • rim",
+      "Tokyo traffic • head",
+      "Tokyo traffic • tail",
+      "Tokyo traffic • kei_plate",
+      "Tokyo traffic • white",
+      "Tokyo traffic • plate",
+      "Tokyo traffic • black",
+      "Tokyo Tower structure / stone",
+      "Skywalk visible detail steel",
+      "Skywalk visible detail dark",
+      "Skywalk visible detail seam",
+      "Skywalk visible detail white",
+      "OTW Tokyo Tower site v3 / site-paving",
+      "OTW Tokyo Tower ground v7 / rails",
+      "OTW Tokyo Tower ground v7 / plinth-joints"
+    ],
+    "objects": 3372,
+    "protected_objects": 3345,
+    "checks": {
+      "parking mapped land use": {
+        "preserved_vertices": 2028,
+        "preserved_faces": 586,
+        "top_centroids_checked": 22244
+      },
+      "pavement_0 unified road": {
+        "preserved_vertices": 289984,
+        "preserved_faces": 285550,
+        "top_centroids_checked": 49779
+      },
+      "gutter 15s road detail": {
+        "preserved_vertices": 104694,
+        "preserved_faces": 35542,
+        "top_centroids_checked": 48137
+      },
+      "park mapped land use": {
+        "preserved_vertices": 20285,
+        "preserved_faces": 6736,
+        "top_centroids_checked": 0
+      },
+      "asphalt 15s road detail": {
+        "preserved_vertices": 442214,
+        "preserved_faces": 175402,
+        "top_centroids_checked": 60370
+      },
+      "gravel mapped land use": {
+        "preserved_vertices": 516,
+        "preserved_faces": 168,
+        "top_centroids_checked": 7427
+      },
+      "Skywalk visible detail seam": {
+        "moved_vertices": 8
+      },
+      "Skywalk visible detail steel": {
+        "moved_vertices": 48
+      },
+      "Skywalk visible detail dark": {
+        "moved_vertices": 110
+      },
+      "Close detail rim": {
+        "moved_vertices": 3232
+      },
+      "Close detail yellow": {
+        "moved_vertices": 0
+      },
+      "Close detail silver": {
+        "moved_vertices": 1248
+      },
+      "Close detail iron": {
+        "moved_vertices": 1600
+      },
+      "Close detail white": {
+        "moved_vertices": 1248
+      },
+      "Skywalk visible detail white": {
+        "moved_vertices": 168
+      },
+      "Tokyo traffic • glass": {
+        "transformed_vertices": 16,
+        "protected_vertices": 4728
+      },
+      "Tokyo traffic • tail": {
+        "transformed_vertices": 32,
+        "protected_vertices": 9456
+      },
+      "Tokyo traffic • head": {
+        "transformed_vertices": 32,
+        "protected_vertices": 10280
+      },
+      "Tokyo traffic • plate": {
+        "transformed_vertices": 16,
+        "protected_vertices": 4464
+      },
+      "Tokyo traffic • tire": {
+        "transformed_vertices": 384,
+        "protected_vertices": 113472
+      },
+      "Tokyo traffic • white": {
+        "transformed_vertices": 88,
+        "protected_vertices": 17848
+      },
+      "Tokyo traffic • black": {
+        "transformed_vertices": 88,
+        "protected_vertices": 19096
+      },
+      "Tokyo traffic • rim": {
+        "transformed_vertices": 320,
+        "protected_vertices": 94560
+      },
+      "Tokyo traffic • kei_plate": {
+        "transformed_vertices": 16,
+        "protected_vertices": 2496
+      },
+      "Tokyo Tower structure / stone": {
+        "vertices": 64,
+        "polygons": 112,
+        "components": 4,
+        "bounds_m": [
+          [
+            -44.92556381225586,
+            48.68151092529297
+          ],
+          [
+            -43.64589309692383,
+            50.239803314208984
+          ],
+          [
+            -2.0999999046325684,
+            7.0
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 1148.7848634728307
+      },
+      "OTW Tokyo Tower ground v7 / plinth-joints": {
+        "vertices": 2048,
+        "polygons": 3072,
+        "components": 256,
+        "bounds_m": [
+          [
+            -44.35114669799805,
+            47.92069625854492
+          ],
+          [
+            -43.087100982666016,
+            49.44553756713867
+          ],
+          [
+            0.47200000286102295,
+            6.9079999923706055
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 0.20089297265856654
+      },
+      "ground": {
+        "vertices": 15071,
+        "polygons": 30138,
+        "components": 1,
+        "bounds_m": [
+          [
+            -15000.0,
+            15000.0
+          ],
+          [
+            -15000.0,
+            15000.0
+          ],
+          [
+            -2.0,
+            4.284999847412109
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 1800018230.3304336
+      },
+      "apron": {
+        "vertices": 4904,
+        "polygons": 9794,
+        "components": 2,
+        "bounds_m": [
+          [
+            -36.5,
+            36.5
+          ],
+          [
+            -70.0,
+            -28.540000915527344
+          ],
+          [
+            -0.05999999865889549,
+            4.400000095367432
+          ]
+        ],
+        "closed_edge_incidence_two": true,
+        "consistent_outward_winding": true,
+        "volume_m3": 9274.430780530049
+      }
+    },
+    "stair_tread_centroids": 8,
+    "surface_point_count": 6066,
+    "clear_surface_points": 5968,
+    "inherited_obstructions": [
+      {
+        "point": [
+          45.35223690658291,
+          -59.07249769795647,
+          3.013592004776001
+        ],
+        "object": "Skywalk visible detail white",
+        "source_height": 0.14800822734832764,
+        "height": 3.0378499031066895,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          47.20611333119433,
+          -57.51801732432955,
+          3.1194836298624673
+        ],
+        "object": "Skywalk visible detail white",
+        "source_height": 0.1480083465576172,
+        "height": 3.1347341537475586,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.828952009897298,
+          -77.60231637694585,
+          1.870090126991272
+        ],
+        "object": "Close detail iron",
+        "source_height": 0.5199999809265137,
+        "height": 1.9302412271499634,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.840856942699489,
+          -77.59278474255352,
+          1.8714936971664429
+        ],
+        "object": "Close detail iron",
+        "source_height": 0.5199998617172241,
+        "height": 1.931649923324585,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.842399741860016,
+          -77.59148436712982,
+          1.8716851075490315
+        ],
+        "object": "Close detail iron",
+        "source_height": 0.5200001001358032,
+        "height": 1.9318420886993408,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -4.831494309642682,
+          -65.936553204808,
+          2.5656525293986
+        ],
+        "object": "Close detail iron",
+        "source_height": 0.30799973011016846,
+        "height": 2.574141025543213,
+        "source_isolated_due_to_occlusion": true,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -4.9919187689968965,
+          -66.05068068714168,
+          2.556720813115438
+        ],
+        "object": "Close detail rim",
+        "source_height": 0.3260000944137573,
+        "height": 2.5824990272521973,
+        "source_isolated_due_to_occlusion": true,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          30.11420785207673,
+          -43.41840873131392,
+          4.032539049784343
+        ],
+        "object": "Close detail iron",
+        "source_height": 0.30799996852874756,
+        "height": 4.040534973144531,
+        "source_isolated_due_to_occlusion": true,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          29.85383850962855,
+          -43.335797470565474,
+          4.039276123046875
+        ],
+        "object": "Close detail iron",
+        "source_height": 0.3080000877380371,
+        "height": 4.047275066375732,
+        "source_isolated_due_to_occlusion": true,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          57.36316992586035,
+          -15.749791439470991,
+          0.366242637236913
+        ],
+        "object": "Close detail rim",
+        "source_height": 0.3259998559951782,
+        "height": 0.39201509952545166,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          57.27885843182086,
+          -15.749791595812875,
+          0.37015677491823834
+        ],
+        "object": "Close detail iron",
+        "source_height": 0.3080000877380371,
+        "height": 0.3781167268753052,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          57.37798953855292,
+          -16.12477041816479,
+          0.37790555755297345
+        ],
+        "object": "Close detail iron",
+        "source_height": 0.307999849319458,
+        "height": 0.3856794834136963,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          57.37046605330037,
+          -16.124771722393884,
+          0.37831459442774457
+        ],
+        "object": "Close detail iron",
+        "source_height": 0.30799996852874756,
+        "height": 0.3861125707626343,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          53.47813668460372,
+          -44.39227257553793,
+          2.3636916478474936
+        ],
+        "object": "Close detail iron",
+        "source_height": 0.3080000877380371,
+        "height": 2.372053861618042,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          53.78141526685343,
+          -47.9946445681102,
+          2.0781211455663047
+        ],
+        "object": "Close detail rim",
+        "source_height": 0.3070000410079956,
+        "height": 2.085331916809082,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          59.958818219318864,
+          -29.62401987175077,
+          0.30018048485120136
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.3270031213760376,
+        "height": 0.33408892154693604,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          59.97362120025502,
+          -29.81151090080964,
+          0.3000914851824443
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32700300216674805,
+        "height": 0.34012556076049805,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -4.85428247656965,
+          -66.15967877262882,
+          2.5483384927113852
+        ],
+        "object": "Close detail rim",
+        "source_height": 0.3259999752044678,
+        "height": 2.5741231441497803,
+        "source_isolated_due_to_occlusion": true,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -4.771556130192457,
+          -65.98122419956752,
+          2.5621327559153237
+        ],
+        "object": "Close detail iron",
+        "source_height": 0.307999849319458,
+        "height": 2.5706284046173096,
+        "source_isolated_due_to_occlusion": true,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -16.90692782808326,
+          -80.52792556630526,
+          1.2600529193878174
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699549198150635,
+        "height": 1.2872341871261597,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -16.299044065297874,
+          -80.01340746601117,
+          1.340407093365987
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.3269953727722168,
+        "height": 1.3673869371414185,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -16.45273782467204,
+          -80.15406365163791,
+          1.3184167544047039
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699549198150635,
+        "height": 1.3454880714416504,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -16.415129213847468,
+          -80.15406453806737,
+          1.3184167544047039
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699525356292725,
+        "height": 1.3455257415771484,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -16.336651970601277,
+          -80.01340763746609,
+          1.340407093365987
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699549198150635,
+        "height": 1.36734938621521,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -20.27869656597576,
+          -84.37375070342532,
+          0.7024346590042114
+        ],
+        "object": "Close detail iron",
+        "source_height": 0.3080000877380371,
+        "height": 0.710617184638977,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          30.114208012533734,
+          -43.55716366193022,
+          4.02121114730835
+        ],
+        "object": "Close detail rim",
+        "source_height": 0.3259999752044678,
+        "height": 4.047205924987793,
+        "source_isolated_due_to_occlusion": true,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -14.59574283551884,
+          -80.63219421814493,
+          1.2438048124313354
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.3269953727722168,
+        "height": 1.2711485624313354,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -16.530617844053346,
+          -83.05830689094006,
+          0.8793380657831827
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.3439953327178955,
+        "height": 0.9235039949417114,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -14.877398722861978,
+          -80.39184558867686,
+          1.2812755505243938
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.3269953727722168,
+        "height": 1.3087817430496216,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -16.136367279514484,
+          -80.43537721905788,
+          1.2744908332824707
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.3269953727722168,
+        "height": 1.302314281463623,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.164050720735093,
+          -79.31012647964377,
+          1.4501622517903645
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.3269951343536377,
+        "height": 1.4772512912750244,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.61303162573136,
+          -79.59143870990793,
+          1.4063308238983154
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699525356292725,
+        "height": 1.433310627937317,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -16.76959677492339,
+          -80.99800128136802,
+          1.1870145003000896
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.3269953727722168,
+        "height": 1.2146984338760376,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.93352815060748,
+          -80.01340758262837,
+          1.340407093365987
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699549198150635,
+        "height": 1.3677533864974976,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -16.19519597749904,
+          -80.43537683720335,
+          1.2744908332824707
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.3269953727722168,
+        "height": 1.3022555112838745,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -16.71382974334098,
+          -80.57603245370778,
+          1.252555251121521
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699525356292725,
+        "height": 1.279990553855896,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -16.216846772147985,
+          -80.15406296314536,
+          1.3184167544047039
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.3269953727722168,
+        "height": 1.3457245826721191,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.393242532232223,
+          -80.15406513466077,
+          1.3184167544047039
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699549198150635,
+        "height": 1.3462296724319458,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.51866207229711,
+          -80.43537558515575,
+          1.2744908332824707
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699549198150635,
+        "height": 1.3025987148284912,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -14.86684309627821,
+          -79.73209442398327,
+          1.384364128112793
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.3269953727722168,
+        "height": 1.411367654800415,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.14984530663864,
+          -80.20270711791896,
+          1.3108155727386475
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699525356292725,
+        "height": 1.3384432792663574,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -14.7010984878306,
+          -79.8649280538878,
+          1.3636095523834229
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699525356292725,
+        "height": 1.3905597925186157,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -16.146865894623478,
+          -81.51351358751533,
+          1.1077210108439128
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.3269953727722168,
+        "height": 1.1355152130126953,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.6825143387397,
+          -80.94901791560575,
+          1.1946035623550415
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.3269953727722168,
+        "height": 1.2228740453720093,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -16.239112306219692,
+          -81.43493731619373,
+          1.1197365522384644
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699525356292725,
+        "height": 1.1476799249649048,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.074937944714748,
+          -80.0265035751766,
+          1.3383599122365315
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.3269953727722168,
+        "height": 1.3657753467559814,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.029136808646944,
+          -80.28502591486254,
+          1.2979555527369182
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699549198150635,
+        "height": 1.3255318403244019,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.617910435838501,
+          -80.9789521845474,
+          1.189967115720113
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699525356292725,
+        "height": 1.218159794807434,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -16.099883656405638,
+          -81.53409425286905,
+          1.104577660560608
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699549198150635,
+        "height": 1.1322720050811768,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.735913722402431,
+          -81.1177369173033,
+          1.1685061852137248
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.3269953727722168,
+        "height": 1.196685552597046,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -14.675128359997508,
+          -79.8686696008261,
+          1.363024910291036
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.3269953727722168,
+        "height": 1.3899540901184082,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -16.083698270383703,
+          -81.53409356307492,
+          1.104577660560608
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699525356292725,
+        "height": 1.1322572231292725,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.251450306678455,
+          -80.5625954753021,
+          1.2546534935633342
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699525356292725,
+        "height": 1.2825708389282227,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.986858291228677,
+          -81.39530967771982,
+          1.1258114576339722
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.3269953727722168,
+        "height": 1.1537508964538574,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.391862879932477,
+          -80.701380566117,
+          1.2330407698949177
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699525356292725,
+        "height": 1.2611171007156372,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.718485178389221,
+          -81.11773707000897,
+          1.1685061852137248
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699549198150635,
+        "height": 1.1966696977615356,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -14.884990529881604,
+          -80.14624052946236,
+          1.3196448882420857
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699525356292725,
+        "height": 1.3469821214675903,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.240246721217774,
+          -80.56259600179378,
+          1.2546534935633342
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699525356292725,
+        "height": 1.2825608253479004,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.960716004548436,
+          -81.39530796719116,
+          1.1258114576339722
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699525356292725,
+        "height": 1.1537272930145264,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -16.114822710783177,
+          -81.53409366859947,
+          1.104577660560608
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699525356292725,
+        "height": 1.1322855949401855,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.044076920908857,
+          -80.28502603611415,
+          1.2979555527369182
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32699549198150635,
+        "height": 1.3255455493927002,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.753342266415636,
+          -81.11773676459765,
+          1.1685061852137248
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.3269953727722168,
+        "height": 1.1967015266418457,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          -15.645297643915564,
+          -80.97895270021307,
+          1.189967115720113
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.3269953727722168,
+        "height": 1.218184471130371,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          59.21962921520756,
+          -29.811510063123098,
+          0.35213832060496014
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.32700300216674805,
+        "height": 0.432952880859375,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          58.662896105352324,
+          -31.141292791193933,
+          0.44849186142285663
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.3270031213760376,
+        "height": 0.5042126178741455,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          58.56745832679093,
+          -33.197417998618825,
+          0.4693119525909424
+        ],
+        "object": "Skywalk visible detail dark",
+        "source_height": 0.3440030813217163,
+        "height": 0.5127205848693848,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          53.742875904299545,
+          -44.61825041154241,
+          2.2342050075531006
+        ],
+        "object": "Close detail iron",
+        "source_height": 0.30799996852874756,
+        "height": 2.241400718688965,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          53.84291797515456,
+          -44.595625229473114,
+          2.189781109491984
+        ],
+        "object": "Close detail iron",
+        "source_height": 0.30799996852874756,
+        "height": 2.1970295906066895,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          53.90174966701025,
+          -44.554915982568055,
+          2.1647586027781167
+        ],
+        "object": "Close detail iron",
+        "source_height": 0.30799996852874756,
+        "height": 2.1720259189605713,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          53.92137554851751,
+          -44.53375103612427,
+          2.1567150751749673
+        ],
+        "object": "Close detail iron",
+        "source_height": 0.30799996852874756,
+        "height": 2.163987159729004,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      },
+      {
+        "point": [
+          53.93691725057255,
+          -44.51304174056188,
+          2.150505224863688
+        ],
+        "object": "Close detail rim",
+        "source_height": 0.3259999752044678,
+        "height": 2.1762423515319824,
+        "source_isolated_due_to_occlusion": false,
+        "basis": "same XY footprint and independently checked per-vertex grade"
+      }
+    ],
+    "introduced_obstructions": [],
+    "vehicles": [
+      {
+        "index": 99,
+        "wheel_ground_gaps_m": [
+          0.011713023962406588,
+          -1.230594446344213e-07,
+          0.00020972061474444637,
+          0.012070548744088638
+        ],
+        "saved_asphalt_contact_gaps_m": [
+          0.011784791946411133,
+          0.00015473365783691406,
+          0.00029087066650390625,
+          0.01214742660522461
+        ]
+      },
+      {
+        "index": 506,
+        "wheel_ground_gaps_m": [
+          0.03823689690222709,
+          0.0022231607292457767,
+          -4.9620104025649425e-08,
+          0.03946005663061891
+        ],
+        "saved_asphalt_contact_gaps_m": [
+          0.045690298080444336,
+          0.004427909851074219,
+          0.0028040409088134766,
+          0.03971552848815918
+        ]
+      }
+    ],
+    "road_traffic_samples": [
+      {
+        "point": [
+          -50.15604222301539,
+          -24.589299485085604,
+          3.5581301848093667
+        ],
+        "object": "Tokyo traffic • glass",
+        "vehicles": [
+          506
+        ]
+      },
+      {
+        "point": [
+          -50.4532327459012,
+          -24.54723568200181,
+          3.465781291325887
+        ],
+        "object": "Tokyo traffic • white",
+        "vehicles": [
+          506
+        ]
+      },
+      {
+        "point": [
+          -10.647102497843251,
+          -78.20932438298492,
+          1.6194338003794353
+        ],
+        "object": "Tokyo traffic • black",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -11.22575375820204,
+          -78.83648691326337,
+          1.5235679944356282
+        ],
+        "object": "Tokyo traffic • black",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -10.401712892918667,
+          -78.08389077164787,
+          1.638372262318929
+        ],
+        "object": "Tokyo traffic • black",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -10.852845308445163,
+          -78.58562213788785,
+          1.5621267954508464
+        ],
+        "object": "Tokyo traffic • glass",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -10.519407792466263,
+          -78.2093255226958,
+          1.6194338003794353
+        ],
+        "object": "Tokyo traffic • glass",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -10.862668900571881,
+          -78.58562137216829,
+          1.5621267954508464
+        ],
+        "object": "Tokyo traffic • glass",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -10.695861330607308,
+          -78.46018939262855,
+          1.5813110669453938
+        ],
+        "object": "Tokyo traffic • black",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -9.460156162285509,
+          -77.08042969179857,
+          1.7859301964441936
+        ],
+        "object": "Tokyo traffic • black",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -9.705366027491104,
+          -77.33129454820583,
+          1.7497823238372803
+        ],
+        "object": "Tokyo traffic • black",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -10.107386831279774,
+          -77.83302480677975,
+          1.6759478251139324
+        ],
+        "object": "Tokyo traffic • black",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -9.461056565540966,
+          -75.66020329989584,
+          1.9782904386520386
+        ],
+        "object": "Tokyo traffic • black",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -10.182967682297502,
+          -75.52384029500811,
+          1.9954675038655598
+        ],
+        "object": "Tokyo traffic • glass",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -10.379624883926617,
+          -75.59586327669668,
+          1.986424724260966
+        ],
+        "object": "Tokyo traffic • black",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -11.014020136438907,
+          -76.97319888184794,
+          1.8011975685755413
+        ],
+        "object": "Tokyo traffic • black",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -9.88991023958026,
+          -76.73326252086879,
+          1.8349827925364177
+        ],
+        "object": "Tokyo traffic • black",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -10.377108410917572,
+          -76.79718921769468,
+          1.826040228207906
+        ],
+        "object": "Tokyo traffic • black",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -10.526821612738404,
+          -76.90927042161651,
+          1.8102508783340454
+        ],
+        "object": "Tokyo traffic • black",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -10.104338663823858,
+          -77.2697908972893,
+          1.7586758931477864
+        ],
+        "object": "Tokyo traffic • black",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -10.600422622252616,
+          -77.56597346553164,
+          1.7154680490493774
+        ],
+        "object": "Tokyo traffic • black",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -11.744817040286884,
+          -77.06909174837666,
+          1.7875383297602336
+        ],
+        "object": "Tokyo traffic • black",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -12.173670714326187,
+          -78.14215096934963,
+          1.6295787493387859
+        ],
+        "object": "Tokyo traffic • black",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -11.807014731021459,
+          -78.69486874104761,
+          1.54535706837972
+        ],
+        "object": "Tokyo traffic • black",
+        "vehicles": [
+          99
+        ]
+      },
+      {
+        "point": [
+          -51.85721860919114,
+          -25.352444228675306,
+          3.1545232931772866
+        ],
+        "object": "Tokyo traffic • white",
+        "vehicles": [
+          506
+        ]
+      },
+      {
+        "point": [
+          -52.137955631535874,
+          -24.112117608000187,
+          2.7827040354410806
+        ],
+        "object": "Tokyo traffic • tire",
+        "vehicles": [
+          506
+        ]
+      },
+      {
+        "point": [
+          -50.45323328029079,
+          -25.472339483586186,
+          3.6885323524475098
+        ],
+        "object": "Tokyo traffic • glass",
+        "vehicles": [
+          506
+        ]
+      }
+    ],
+    "warnings": [
+      "Modifier stack not fingerprinted: Close detail rim",
+      "Modifier stack not fingerprinted: Close detail iron",
+      "Modifier stack not fingerprinted: Close detail silver",
+      "Modifier stack not fingerprinted: Close detail frame",
+      "Modifier stack not fingerprinted: Tokyo traffic • silver",
+      "Modifier stack not fingerprinted: Tokyo traffic • white",
+      "Modifier stack not fingerprinted: Tokyo traffic • blue",
+      "Modifier stack not fingerprinted: Tokyo traffic • black",
+      "Modifier stack not fingerprinted: Tokyo traffic • red",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / stone",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / orange",
+      "Modifier stack not fingerprinted: Tokyo Tower structure / white",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / white",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / aluminum",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / wood; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / wood",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / stone; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Modifier stack not fingerprinted: Tokyo Tower decks and interior / stone",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / soil; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / leaf; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Known empty legacy mesh: Tokyo Tower decks and interior / darkmetal; Empty placeholder observed in the pinned legacy input; preserve unchanged, never waive a patch target.",
+      "Modifier stack not fingerprinted: Mori JP curtain wall / aluminum",
+      "Modifier stack not fingerprinted: Mori JP interior / stone",
+      "Modifier stack not fingerprinted: Mori JP interior / wood",
+      "Modifier stack not fingerprinted: Mori JP interior / aluminum",
+      "Modifier stack not fingerprinted: Mori JP interior / chair",
+      "Modifier stack not fingerprinted: Mori JP interior / fabric",
+      "Modifier stack not fingerprinted: Observation interior detail / charcoal glass",
+      "Modifier stack not fingerprinted: Observation interior detail / brushed steel",
+      "Modifier stack not fingerprinted: Observation interior detail / ceiling",
+      "Modifier stack not fingerprinted: Photo based main deck / frame",
+      "Modifier stack not fingerprinted: Photo based main deck / silver",
+      "Modifier stack not fingerprinted: Photo based main deck / wall",
+      "Modifier stack not fingerprinted: 2019 reference window revision / black",
+      "Modifier stack not fingerprinted: 2019 reference window revision / aluminum",
+      "Modifier stack not fingerprinted: 2019 reference window revision / white"
+    ],
+    "limits": [
+      "No geographic accuracy certification",
+      "No complete modifier/animation/node-group fingerprint",
+      "Image decode checks dimensions and a pixel probe; not all image samples",
+      "No manifold/zero-area/normal checks",
+      "External asset content hashes not yet recorded",
+      "South terrain uses a bounded relative grade, not an absolute or region-wide DEM reconstruction.",
+      "The retained 4.4m doorway and 3.2m lot anchors control the surface; lateral and boundary transitions are estimated.",
+      "Plinth cladding follows the retained lower-leg axis. Its common Z=7m top and panel dimensions remain provisional.",
+      "OSM records eight steps and no handrail. Unsupported rails are hidden, while the unmeasured 0.275m risers and long treads remain provisional.",
+      "Point samples and mesh checks are not a continuous pedestrian or accessibility certification."
+    ],
+    "input_sha256": "40274b646b8637a786f4fe5150216613d2c57cf9eee651333ab5227251a2c330",
+    "candidate_sha256": "df71be6c9b2e606a7ec277f15285bc92123a712d0069d7c413ab5d210d7cc9c3",
+    "source_and_candidate_protected": true,
+    "blender_version": "4.5.1 LTS",
+    "code_sha256": {
+      "tower_site_v8.py": "3f77abb4599aab49681aa86e07480ba3e08ee26287292236ab59329f7fcd8451",
+      "tower_site_geometry_v8.py": "71c9af95df7a8c553f9b3783f96635ab08aec495c295671537631067d29a31eb",
+      "prepare_tower_site_v8.py": "df1b822958c1586071c2ce9f71e93826dd677ceb2d1eba6bada6d2eaddadf4d2",
+      "prepare_tower_footway_v5.py": "eee1b9b841b0f399204828b79ec5a3b6165fe641bd5304e742006a259e0c4f54",
+      "tower_ground_geometry_v7.py": "54fc5a00e220159f0229c7d2a8825b91b2e75f66f9fc767fa59ba94267d49357",
+      "tower_registration_geometry_v6.py": "65175cb8f9190ebfcaf70f5a9f9bf56f708498ab85bb5952fbb821c720c6afb9",
+      "tower_footway_geometry_v5.py": "60fe725a37590f4f1352e7cbae16fd4047dc626581caa4d8813130d319cb91af",
+      "tower_foundation_geometry_v4.py": "882714acf56459a6bbad8d74722d1e360c5ef37957fbe16779d88422d0c35a80",
+      "tower_structure_v1.py": "bfb1730e3277138aec489cdb113c6af1738a5c8d1ebad395f6119ad2d1656821",
+      "blender_worker.py": "7cd8a0437c8378a9adc72390291a8d8eef7573b926cdb1e3eb9252ed9c517cef",
+      "review.py": "622c4fd41e0128ae48a4d912a98aaed72edb0322fd1af06947d0eb487589d418",
+      "validate_tower_structure.py": "03f911a2f85f4aee0d32d986d3210b7c4a495e13487f062997abe5d26ee0581c",
+      "validate_tower_foottown.py": "ddf246dd40b4acab8c6084743f7c26b6242fd2a8bdc9e7eff9e463f0139245c2",
+      "tower_site_v3.py": "c66be46098cb95348ff52569d696c3afc9c24bdaf56b9aab8a2ebce2b5558ab1",
+      "tower_south_handrail.py": "85d3a9288ce8a0c8d9a7308f34777b31e16058bf9b34e86d10e309799be59acf",
+      "tower_foottown_v2.py": "52b4455ddf146c0dc1444226a492aeacf3d68e593918cd0365a6b49eaf9af6d4",
+      "tower_site_geometry_v3.py": "6d4013660d33100ee6df802f743463c4a84d862d94ff61e452c5b2dc22ba7db8"
+    },
+    "configuration_sha256": "2c220973392cade5c44bd14f3cf716ccd2d2320ee7643ae4d58a2dc0b7614022",
+    "plan_sha256": "8d6a24bfbe85344abc09b11c45dbb90ddd175ca8ac9582ec344204315ba8062e"
+  },
+  "build": {
+    "ok": true,
+    "audit_sha256": "1274dff94fb1aa143db2eea4c72ab500fcfa38d7fb20368644c024058f3ad223",
+    "surfaces": {
+      "asphalt 15s road detail": {
+        "original_vertices": 442214,
+        "retained_faces": 175402,
+        "changed_source_faces": 386,
+        "new_faces": 60370
+      },
+      "gravel mapped land use": {
+        "original_vertices": 516,
+        "retained_faces": 168,
+        "changed_source_faces": 4,
+        "new_faces": 7427
+      },
+      "gutter 15s road detail": {
+        "original_vertices": 104694,
+        "retained_faces": 35542,
+        "changed_source_faces": 527,
+        "new_faces": 48137
+      },
+      "park mapped land use": {
+        "original_vertices": 20285,
+        "retained_faces": 6736,
+        "changed_source_faces": 0,
+        "new_faces": 0
+      },
+      "parking mapped land use": {
+        "original_vertices": 2028,
+        "retained_faces": 586,
+        "changed_source_faces": 90,
+        "new_faces": 22244
+      },
+      "pavement_0 unified road": {
+        "original_vertices": 289984,
+        "retained_faces": 285550,
+        "changed_source_faces": 2161,
+        "new_faces": 123544
+      },
+      "Close detail iron": {
+        "moved_vertices": 1600,
+        "excluded_high_component_count": 0
+      },
+      "Close detail rim": {
+        "moved_vertices": 3232,
+        "excluded_high_component_count": 0
+      },
+      "Close detail silver": {
+        "moved_vertices": 1248,
+        "excluded_high_component_count": 0
+      },
+      "Close detail white": {
+        "moved_vertices": 1248,
+        "excluded_high_component_count": 0
+      },
+      "Close detail yellow": {
+        "moved_vertices": 0,
+        "excluded_high_component_count": 0
+      },
+      "Skywalk visible detail dark": {
+        "moved_vertices": 110,
+        "excluded_high_component_count": 33
+      },
+      "Skywalk visible detail seam": {
+        "moved_vertices": 8,
+        "excluded_high_component_count": 65
+      },
+      "Skywalk visible detail steel": {
+        "moved_vertices": 48,
+        "excluded_high_component_count": 81
+      },
+      "Skywalk visible detail white": {
+        "moved_vertices": 168,
+        "excluded_high_component_count": 0
+      }
+    },
+    "vehicle_poses": [
+      {
+        "index": 99,
+        "pose": {
+          "center": [
+            -10.559702905786729,
+            -76.9102229833125,
+            0.3
+          ],
+          "cos": -0.6491068482929488,
+          "sin": -0.76069724562351,
+          "axes": [
+            [
+              -0.6454443670800275,
+              -0.7564051335033808,
+              -0.10607941842975757
+            ],
+            [
+              0.7638071027637123,
+              -0.6392851362259596,
+              -0.08895630594994616
+            ],
+            [
+              -0.0005279889836015354,
+              -0.13844055984533296,
+              0.9903706036718498
+            ]
+          ],
+          "height": 1.5022027059850365,
+          "lift": 0.006779586821252348
+        }
+      },
+      {
+        "index": 506,
+        "pose": {
+          "center": [
+            -51.33739850835313,
+            -24.907502927308677,
+            0.3
+          ],
+          "cos": -0.964061043049022,
+          "sin": 0.2656808334736094,
+          "axes": [
+            [
+              -0.8926153075992433,
+              0.24599145521349544,
+              -0.37779110180290787
+            ],
+            [
+              -0.30364612221696546,
+              -0.9474691526817719,
+              0.10050491121873023
+            ],
+            [
+              -0.33322206574911545,
+              0.2044270253132693,
+              0.9204198206359204
+            ]
+          ],
+          "height": 2.929323082232484,
+          "lift": 0.026511140813405998
+        }
+      }
+    ],
+    "allowed_objects": [
+      "Close detail iron",
+      "Close detail rim",
+      "Close detail silver",
+      "Close detail white",
+      "Close detail yellow",
+      "OTW Tokyo Tower ground v7 / plinth-joints",
+      "OTW Tokyo Tower ground v7 / rails",
+      "OTW Tokyo Tower site v3 / site-paving",
+      "Skywalk visible detail dark",
+      "Skywalk visible detail seam",
+      "Skywalk visible detail steel",
+      "Skywalk visible detail white",
+      "Tokyo Tower structure / stone",
+      "Tokyo traffic • black",
+      "Tokyo traffic • glass",
+      "Tokyo traffic • head",
+      "Tokyo traffic • kei_plate",
+      "Tokyo traffic • plate",
+      "Tokyo traffic • rim",
+      "Tokyo traffic • tail",
+      "Tokyo traffic • tire",
+      "Tokyo traffic • white",
+      "asphalt 15s road detail",
+      "gravel mapped land use",
+      "ground",
+      "gutter 15s road detail",
+      "park mapped land use",
+      "parking mapped land use",
+      "pavement_0 unified road"
+    ],
+    "input_sha256": "40274b646b8637a786f4fe5150216613d2c57cf9eee651333ab5227251a2c330",
+    "candidate_sha256": "df71be6c9b2e606a7ec277f15285bc92123a712d0069d7c413ab5d210d7cc9c3",
+    "source_and_candidate_protected": true,
+    "blender_version": "4.5.1 LTS",
+    "code_sha256": {
+      "tower_site_v8.py": "3f77abb4599aab49681aa86e07480ba3e08ee26287292236ab59329f7fcd8451",
+      "tower_site_geometry_v8.py": "71c9af95df7a8c553f9b3783f96635ab08aec495c295671537631067d29a31eb",
+      "prepare_tower_site_v8.py": "df1b822958c1586071c2ce9f71e93826dd677ceb2d1eba6bada6d2eaddadf4d2",
+      "prepare_tower_footway_v5.py": "eee1b9b841b0f399204828b79ec5a3b6165fe641bd5304e742006a259e0c4f54",
+      "tower_ground_geometry_v7.py": "54fc5a00e220159f0229c7d2a8825b91b2e75f66f9fc767fa59ba94267d49357",
+      "tower_registration_geometry_v6.py": "65175cb8f9190ebfcaf70f5a9f9bf56f708498ab85bb5952fbb821c720c6afb9",
+      "tower_footway_geometry_v5.py": "60fe725a37590f4f1352e7cbae16fd4047dc626581caa4d8813130d319cb91af",
+      "tower_foundation_geometry_v4.py": "882714acf56459a6bbad8d74722d1e360c5ef37957fbe16779d88422d0c35a80",
+      "tower_structure_v1.py": "bfb1730e3277138aec489cdb113c6af1738a5c8d1ebad395f6119ad2d1656821",
+      "blender_worker.py": "7cd8a0437c8378a9adc72390291a8d8eef7573b926cdb1e3eb9252ed9c517cef",
+      "review.py": "622c4fd41e0128ae48a4d912a98aaed72edb0322fd1af06947d0eb487589d418",
+      "validate_tower_structure.py": "03f911a2f85f4aee0d32d986d3210b7c4a495e13487f062997abe5d26ee0581c",
+      "validate_tower_foottown.py": "ddf246dd40b4acab8c6084743f7c26b6242fd2a8bdc9e7eff9e463f0139245c2",
+      "tower_site_v3.py": "c66be46098cb95348ff52569d696c3afc9c24bdaf56b9aab8a2ebce2b5558ab1",
+      "tower_south_handrail.py": "85d3a9288ce8a0c8d9a7308f34777b31e16058bf9b34e86d10e309799be59acf",
+      "tower_foottown_v2.py": "52b4455ddf146c0dc1444226a492aeacf3d68e593918cd0365a6b49eaf9af6d4",
+      "tower_site_geometry_v3.py": "6d4013660d33100ee6df802f743463c4a84d862d94ff61e452c5b2dc22ba7db8"
+    },
+    "configuration_sha256": "2c220973392cade5c44bd14f3cf716ccd2d2320ee7643ae4d58a2dc0b7614022",
+    "plan_sha256": "8d6a24bfbe85344abc09b11c45dbb90ddd175ca8ac9582ec344204315ba8062e"
+  },
+  "render_settings": {
+    "device": "OPTIX",
+    "width": 1280,
+    "height": 848,
+    "samples": 32,
+    "seed": 0
+  },
+  "render_visibility_override": {
+    "views": [
+      "south-road-vehicle",
+      "west-road-vehicle"
+    ],
+    "temporary_root_links": [
+      "Tokyo traffic • black",
+      "Tokyo traffic • blue",
+      "Tokyo traffic • glass",
+      "Tokyo traffic • head",
+      "Tokyo traffic • kei_plate",
+      "Tokyo traffic • plate",
+      "Tokyo traffic • red",
+      "Tokyo traffic • rim",
+      "Tokyo traffic • silver",
+      "Tokyo traffic • tail",
+      "Tokyo traffic • taxi_plate",
+      "Tokyo traffic • tire",
+      "Tokyo traffic • white"
+    ],
+    "purpose": "Matched source/candidate wheel-ground diagnostic; source traffic collection remains hidden and saved blend is unchanged."
+  },
+  "devices": [
+    "NVIDIA GeForce RTX 3060 Ti"
+  ],
+  "matched_views": [
+    "foottown-front",
+    "tower-context",
+    "site-overhead",
+    "south-grade",
+    "foundation-close",
+    "foundation-opposite",
+    "foundation-north",
+    "foundation-west",
+    "north-stairs",
+    "base-joints",
+    "south-road-vehicle",
+    "west-road-vehicle"
+  ],
+  "portable_tests": {
+    "run": 432,
+    "passed": 424,
+    "skipped": 8,
+    "failures": 0,
+    "log_sha256": "fa0e61d16ada781e5ed29c64ca3515b25e62a8f3f75c8a66136c470e2da94062"
+  },
+  "syntax_check": "python -m compileall -q scripts tests passed",
+  "configuration_sha256": {
+    "areas/tokyo-tower/tower-site-v8-cameras.json": "98f4fe727675af81f8298952a82d104cc97947b1961d9de11f0a13f60b53365b",
+    "areas/tokyo-tower/tower-site-v8-input.json": "2c220973392cade5c44bd14f3cf716ccd2d2320ee7643ae4d58a2dc0b7614022",
+    "areas/tokyo-tower/tower-site-v8-plan.json": "8d6a24bfbe85344abc09b11c45dbb90ddd175ca8ac9582ec344204315ba8062e",
+    "areas/tokyo-tower/tower-site-v8-sources.json": "567c695f5c180b6d83df8d922d066edd75e45413bee12653522f881e197d5863"
+  },
+  "limitations": [
+    "No geographic accuracy certification",
+    "No complete modifier/animation/node-group fingerprint",
+    "Image decode checks dimensions and a pixel probe; not all image samples",
+    "No manifold/zero-area/normal checks",
+    "External asset content hashes not yet recorded",
+    "South terrain uses a bounded relative grade, not an absolute or region-wide DEM reconstruction.",
+    "The retained 4.4m doorway and 3.2m lot anchors control the surface; lateral and boundary transitions are estimated.",
+    "Plinth cladding follows the retained lower-leg axis. Its common Z=7m top and panel dimensions remain provisional.",
+    "OSM records eight steps and no handrail. Unsupported rails are hidden, while the unmeasured 0.275m risers and long treads remain provisional.",
+    "Point samples and mesh checks are not a continuous pedestrian or accessibility certification."
+  ]
+}
