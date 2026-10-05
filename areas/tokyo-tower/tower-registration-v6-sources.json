@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "date": "2026-10-05",
+  "feature_id": "otw:jp:tokyo:minato:tokyo-tower",
+  "status": "map-derived-provisional-registration",
+  "sources": [
+    {
+      "id": "OSM-cap",
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.7438,35.6575,139.7468,35.6597",
+      "sha256": "be3de9cbf95ce6f7a1243e7690543477b06bd4cdbe42a17ee6b28dd2c3717dd6",
+      "ways": [
+        "1244967004",
+        "1244967005",
+        "1244967006",
+        "1244967007"
+      ],
+      "version": 2,
+      "timestamp": "2024-02-01T16:54:38Z",
+      "license": "ODbL 1.0",
+      "attribution": "OpenStreetMap contributors",
+      "adopted": "Minimum rotated rectangles of mapped visible plinth outlines, in the inherited legacy geographic frame.",
+      "not_adopted": "height=7; surveying accuracy; structural asymmetry; underground footprint."
+    },
+    {
+      "id": "OSM-roads",
+      "sha256": "f04e8e70ab24a61ca749375d1ef37401feb0fdc840cc506b670ef71454a6a8ab",
+      "register": "areas/tokyo-tower/tower-footway-v5-sources.json",
+      "adopted": "Identical v5 route centres and widths. The plinth mask changes; each edit rectangle expands by 1mm to encompass saved float32 side walls.",
+      "license": "ODbL 1.0"
+    },
+    {
+      "id": "historical-foundations",
+      "url": "https://www.jaee.gr.jp/jp/wp-content/uploads/2015/04/vibration_characteristics.pdf",
+      "sha256": "365076249c4bdf88b9232ee20bbe883a08296d59ad2cee3c6cd412ff3a9827ab",
+      "pages": "PDF 115 / printed 106, figures 11 and 12",
+      "observed": "The text and figures describe underground foundations and tie beams, with 80m and 88m dimensions in Fig.12.",
+      "decision": "Withdraw the v4 use of 88m as confirmed visible plinth-centre spacing. No new physical ground-level dimension is inferred from these endpoints."
+    },
+    {
+      "id": "heritage",
+      "url": "https://online.bunka.go.jp/index.php/heritages/detail/206677",
+      "observed": "Registered description includes 80m leg span.",
+      "decision": "No uniform rescaling from this description because endpoints are not identified."
+    },
+    {
+      "id": "Miyaji-28",
+      "url": "https://www.miyaji-eng.co.jp/technology/newsletter/media/28/no28-p064-070.pdf",
+      "sha256": "03d3bb48c12d57671d7e75d52a3bb7b86470ec856be26481ff073dbbb7037f0f",
+      "pages": "PDF 2 / printed 65, Fig.1",
+      "observed": "Overall structural elevation reviewed; ground-level plinth widths are not dimensioned.",
+      "decision": "Context only; not a source of plinth dimensions."
+    }
+  ],
+  "coordinate_contract": {
+    "origin_lon": 139.74543,
+    "origin_lat": 35.65858,
+    "east_formula": "(lon-origin_lon)*111320*cos(origin_lat)",
+    "north_formula": "(lat-origin_lat)*110950",
+    "tower_rotation_degrees": -33.7,
+    "vertical_datum": "unknown / retained",
+    "absolute_survey_verified": false
+  },
+  "limits": [
+    "OSM plan outlines and legacy roads use different snapshot dates.",
+    "Per-plinth placement and interpolation are modeling decisions; not an as-built structural claim.",
+    "No source PDF, photograph, XML or legacy blend is redistributed."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "base_main": "bc93c0e1c0b60edea01b55b33c0aa08018a1ef00",
+  "input_sha256": "9b977881ebcde3cf407473926756cbe93455c18780722ca0eac1c1b8a3fb702c",
+  "plan_sha256": "2d8f0cd47cba8403d925adb0f33d43a32521a7683a036fd5de97db35ffc7b182",
+  "objects": {
+    "gutter 15s road detail": {
+      "hash": "c77d9d08935464d52ea8b42e8e14ad0c6c67cef3919fdbe0d179205b9ff9ade2"
+    },
+    "Tokyo Tower structure / stone": {
+      "hash": "3200c995dead7ea5e47836e18d727179be37ed3c63eee97c0e14d872afd2c7db"
+    },
+    "pavement_0 unified road": {
+      "hash": "000e92997663a2e8a06984511c727d04ddbd7bd9f63e59440ddb4ab10eaee8de"
+    },
+    "asphalt 15s road detail": {
+      "hash": "b59f270843be44fe4f0d61a9c51eec2980304c37123914302c151bb022904118"
+    },
+    "Tokyo Tower structure / orange": {
+      "hash": "4b68cb7689987c97b18d671c09716b5b2fb24930265d25a70ff341e7725de512"
+    },
+    "OTW Tokyo Tower structure / base-connections": {
+      "hash": "345131f578ff3789f5f34e8f0eb6561d949ebf2459423ef4ccdec8cb16bc8fb2"
+    }
+  }
+}
