@@ -1,0 +1,447 @@
+{
+  "version": 1,
+  "accessed": "2026-10-05",
+  "scope": "Tower azimuth, relative southern apron, roof service structures and model stair connection",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://www.openstreetmap.org/copyright",
+      "data_url": "https://api.openstreetmap.org/api/0.6/map?bbox=139.7438,35.6575,139.7468,35.6597",
+      "provider": "OpenStreetMap contributors",
+      "license": "ODbL 1.0; derived centroid coordinates below retain attribution and database license",
+      "sha256": "be3de9cbf95ce6f7a1243e7690543477b06bd4cdbe42a17ee6b28dd2c3717dd6",
+      "centroids": [
+        {
+          "way_id": "1244967004",
+          "way_version": "2",
+          "way_timestamp": "2024-02-01T16:54:38Z",
+          "centroid_lon_lat": [
+            139.74610520833332,
+            35.658699325
+          ]
+        },
+        {
+          "way_id": "1244967005",
+          "way_version": "2",
+          "way_timestamp": "2024-02-01T16:54:38Z",
+          "centroid_lon_lat": [
+            139.74531629166665,
+            35.659096749999996
+          ]
+        },
+        {
+          "way_id": "1244967006",
+          "way_version": "2",
+          "way_timestamp": "2024-02-01T16:54:38Z",
+          "centroid_lon_lat": [
+            139.74482656666666,
+            35.65849372499999
+          ]
+        },
+        {
+          "way_id": "1244967007",
+          "way_version": "2",
+          "way_timestamp": "2024-02-01T16:54:38Z",
+          "centroid_lon_lat": [
+            139.74556996666666,
+            35.658080025
+          ]
+        }
+      ],
+      "observed": "Four plinth polygons and Main Observatory polygon have an oblique axis; least-squares four-point azimuth -33.674 degrees relative to model +X.",
+      "limits": "Crowdsourced geometry, not a surveyed bearing; OSM height tags are not adopted. Existing horizontal footprint, centre and vertical positions retained."
+    },
+    {
+      "id": "S2",
+      "url": "https://maps.gsi.go.jp/development/elevation_s.html",
+      "provider": "国土地理院",
+      "samples": [
+        {
+          "name": "front",
+          "local_xy": [
+            0,
+            35
+          ],
+          "lat": 35.658843685500166,
+          "lon": 139.7456407548029,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74564075&lat=35.65884369&outtype=JSON",
+          "result": {
+            "elevation": 18.7,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "south_entry",
+          "local_xy": [
+            0,
+            -33
+          ],
+          "lat": 35.65833138224271,
+          "lon": 139.7452312883287,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74523129&lat=35.65833138&outtype=JSON",
+          "result": {
+            "elevation": 22.7,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "south_lot",
+          "local_xy": [
+            0,
+            -55
+          ],
+          "lat": 35.65816563707117,
+          "lon": 139.74509881388116,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74509881&lat=35.65816564&outtype=JSON",
+          "result": {
+            "elevation": 21.6,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "west_lot",
+          "local_xy": [
+            -45,
+            0
+          ],
+          "lat": 35.65880016489917,
+          "lon": 139.7450127420811,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74501274&lat=35.65880016&outtype=JSON",
+          "result": {
+            "elevation": 22.9,
+            "hsrc": "1m（レーザ）"
+          }
+        },
+        {
+          "name": "north_road",
+          "local_xy": [
+            0,
+            65
+          ],
+          "lat": 35.65906970164316,
+          "lon": 139.7458214017768,
+          "url": "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=139.74582140&lat=35.65906970&outtype=JSON",
+          "result": {
+            "elevation": 21.6,
+            "hsrc": "1m（レーザ）"
+          }
+        }
+      ],
+      "observed": "Front sample 18.7 m; south entrance 22.7 m; south lot 21.6 m. Relative south rise 4.0 m and lot rise 2.9 m.",
+      "limits": "1m laser DEM samples, not door-threshold measurements. Ground below buildings may be interpolated. Absolute datum is not assigned to legacy scene. Geometry retains existing 4.4 m threshold and fades to flat-city seams."
+    },
+    {
+      "id": "S3",
+      "url": "https://www.tokyotower.co.jp/foottown/uq76y55913.html",
+      "provider": "TOKYO TOWER",
+      "observed": "2F south exit connects directly to parking."
+    },
+    {
+      "id": "S4",
+      "url": "https://www.tokyotower.co.jp/foottown/img/rf.png",
+      "provider": "TOKYO TOWER",
+      "sha256": "d26c47911035da6cd1e9f7ffc62684b792a6f090e382ed63712b6c31def3e063",
+      "observed": "RF plan includes a large peripheral service zone and two small blocks next to the central core.",
+      "limits": "Diagram is not a dimensioned survey; model room sizes and heights inferred. Current sport/tenant fit-out omitted."
+    },
+    {
+      "id": "S5",
+      "url": "https://hdrts.com/blog-entry-796.html",
+      "provider": "sh1n / HDRTS",
+      "photo_date": "2023-03",
+      "sha256": "3547e318e450837514928f0ef067750bac4fe4c80feda26e95ab5c55e6fbb894",
+      "observed": "Brown roof buildings, louvered equipment and exposed piping beside the central lift block.",
+      "limits": "Single photo does not fix hidden sides or metric positions. Original photo not redistributed."
+    },
+    {
+      "id": "S6",
+      "url": "https://www.tokyotower.co.jp/foottown/20c72pu2d7b.html",
+      "provider": "TOKYO TOWER",
+      "observed": "Roof outdoor stairs lead to the Main Deck.",
+      "limits": "New interior connection shape is a continuity repair in the current model, not an as-built plan."
+    },
+    {
+      "id": "S7",
+      "url": "https://www.miyaji-eng.co.jp/technology/newsletter/media/28/no28-p064-070.pdf",
+      "provider": "宮地エンジニアリング",
+      "observed": "Whole-tower elevation shows central shaft reinforcement; no dimensioned shaft-specific framing schedule.",
+      "decision": "Retain upper shaft geometry; do not replace 24 inferred bays with another unverified count."
+    },
+    {
+      "id": "S8",
+      "url": "https://online.bunka.go.jp/heritages/detail/206677",
+      "provider": "文化庁 文化遺産オンライン",
+      "observed": "Registered description states 333m height and 80m leg span.",
+      "decision": "No rescaling: the referenced span endpoints cannot be equated to the model plinth centres or outer edges from this description alone."
+    }
+  ],
+  "decisions": [
+    "Rotate all 110 tower mesh objects together, including separate interior/window/floor hardware groups; compose their existing transforms.",
+    "Remove inferred south stair and obstructing landing rail; retain other FootTown facade geometry.",
+    "Southern apron only; western parking and full city terrain remain outside the corrected grade.",
+    "Roof room/equipment dimensions and exact placement are photo-guided estimates.",
+    "Provide a checked continuous model passage from the existing stair landing through central wall to the existing passenger-floor ring.",
+    "Upper support outer endpoints already lie within 0.018 m of retained tower mesh; visible member widths already overlap steel. No fictitious joint-gap fix.",
+    "Unverified upper bay spacing, rescue levels, hidden machinery and elevator motion remain unchanged."
+  ],
+  "reference_originals_published": false,
+  "adopted_rotation_degrees": -33.7,
+  "upper_support_audit": [
+    {
+      "z": 154,
+      "sx": -1,
+      "sy": -1,
+      "old": [
+        -8.456,
+        -8.456,
+        154
+      ],
+      "point": [
+        -8.455945014953613,
+        -8.45594596862793,
+        154.00100708007812
+      ],
+      "distance": 0.0010100618237629533
+    },
+    {
+      "z": 154,
+      "sx": -1,
+      "sy": 1,
+      "old": [
+        -8.456,
+        8.456,
+        154
+      ],
+      "point": [
+        -8.45594596862793,
+        8.455945014953613,
+        154.00100708007812
+      ],
+      "distance": 0.0010100618237629533
+    },
+    {
+      "z": 154,
+      "sx": 1,
+      "sy": -1,
+      "old": [
+        8.456,
+        -8.456,
+        154
+      ],
+      "point": [
+        8.45594596862793,
+        -8.455945014953613,
+        154.00100708007812
+      ],
+      "distance": 0.0010100618237629533
+    },
+    {
+      "z": 154,
+      "sx": 1,
+      "sy": 1,
+      "old": [
+        8.456,
+        8.456,
+        154
+      ],
+      "point": [
+        8.455945014953613,
+        8.45594596862793,
+        154.00100708007812
+      ],
+      "distance": 0.0010100618237629533
+    },
+    {
+      "z": 184,
+      "sx": -1,
+      "sy": -1,
+      "old": [
+        -6.792,
+        -6.792,
+        184
+      ],
+      "point": [
+        -6.791999816894531,
+        -6.791999816894531,
+        184.0
+      ],
+      "distance": 0.0
+    },
+    {
+      "z": 184,
+      "sx": -1,
+      "sy": 1,
+      "old": [
+        -6.792,
+        6.792,
+        184
+      ],
+      "point": [
+        -6.791999816894531,
+        6.791999816894531,
+        184.0
+      ],
+      "distance": 0.0
+    },
+    {
+      "z": 184,
+      "sx": 1,
+      "sy": -1,
+      "old": [
+        6.792,
+        -6.792,
+        184
+      ],
+      "point": [
+        6.791999816894531,
+        -6.791999816894531,
+        184.0
+      ],
+      "distance": 0.0
+    },
+    {
+      "z": 184,
+      "sx": 1,
+      "sy": 1,
+      "old": [
+        6.792,
+        6.792,
+        184
+      ],
+      "point": [
+        6.791999816894531,
+        6.791999816894531,
+        184.0
+      ],
+      "distance": 0.0
+    },
+    {
+      "z": 217,
+      "sx": -1,
+      "sy": -1,
+      "old": [
+        -5.0280000000000005,
+        -5.0280000000000005,
+        217
+      ],
+      "point": [
+        -5.015615463256836,
+        -5.040384292602539,
+        217.0
+      ],
+      "distance": 0.01751420646905899
+    },
+    {
+      "z": 217,
+      "sx": -1,
+      "sy": 1,
+      "old": [
+        -5.0280000000000005,
+        5.0280000000000005,
+        217
+      ],
+      "point": [
+        -5.040384292602539,
+        5.015615463256836,
+        217.0
+      ],
+      "distance": 0.01751420646905899
+    },
+    {
+      "z": 217,
+      "sx": 1,
+      "sy": -1,
+      "old": [
+        5.0280000000000005,
+        -5.0280000000000005,
+        217
+      ],
+      "point": [
+        5.040384292602539,
+        -5.015615463256836,
+        217.0
+      ],
+      "distance": 0.01751420646905899
+    },
+    {
+      "z": 217,
+      "sx": 1,
+      "sy": 1,
+      "old": [
+        5.0280000000000005,
+        5.0280000000000005,
+        217
+      ],
+      "point": [
+        5.015615463256836,
+        5.040384292602539,
+        217.0
+      ],
+      "distance": 0.01751420646905899
+    },
+    {
+      "z": 243.8,
+      "sx": -1,
+      "sy": -1,
+      "old": [
+        -3.5754999999999995,
+        -3.5754999999999995,
+        243.8
+      ],
+      "point": [
+        -3.5639472007751465,
+        -3.587052822113037,
+        243.8000030517578
+      ],
+      "distance": 0.01633814163506031
+    },
+    {
+      "z": 243.8,
+      "sx": -1,
+      "sy": 1,
+      "old": [
+        -3.5754999999999995,
+        3.5754999999999995,
+        243.8
+      ],
+      "point": [
+        -3.5639469623565674,
+        3.587052583694458,
+        243.8000030517578
+      ],
+      "distance": 0.01633814163506031
+    },
+    {
+      "z": 243.8,
+      "sx": 1,
+      "sy": -1,
+      "old": [
+        3.5754999999999995,
+        -3.5754999999999995,
+        243.8
+      ],
+      "point": [
+        3.5639469623565674,
+        -3.587052583694458,
+        243.8000030517578
+      ],
+      "distance": 0.01633814163506031
+    },
+    {
+      "z": 243.8,
+      "sx": 1,
+      "sy": 1,
+      "old": [
+        3.5754999999999995,
+        3.5754999999999995,
+        243.8
+      ],
+      "point": [
+        3.587052583694458,
+        3.5639469623565674,
+        243.8000030517578
+      ],
+      "distance": 0.01633814163506031
+    }
+  ]
+}
