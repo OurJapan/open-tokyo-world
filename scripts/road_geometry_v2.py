@@ -13,7 +13,8 @@ PLAN=ROOT/'areas/tokyo-tower/road-geometry-v2-plan.json'
 CONFIG=ROOT/'areas/tokyo-tower/road-geometry-v2-input.json'
 CAMERAS=ROOT/'areas/tokyo-tower/road-geometry-v2-cameras.json'
 SURFACES=set(xy.TARGETS)|{'parking mapped land use'}
-DETAILS={'Close detail iron','Close detail rim','Skywalk visible detail white'}
+DETAILS={'Close detail iron','Close detail rim','Close detail silver','Close detail white','Skywalk visible detail white'}
+CLOSE_VISIBLE=['Close detail iron','Close detail rim','Close detail silver','Close detail white']
 TARGETS=SURFACES|DETAILS
 
 def rows(m):return [[list(p.vertices),p.material_index,p.use_smooth,p.hide,p.select] for p in m.polygons]
@@ -148,23 +149,40 @@ def reproject_details(plan):
   if hi[0]-lo[0]<.4 or hi[1]-lo[1]<.4:continue
   if not all(xy.inside(p,plan['scopes'],-.01) for p in ps):continue
   anchors.append((lo,hi))
+ bollards=[]
+ for group in components(vs,[list(f.vertices) for f in o.data.polygons]):
+  ps=[vs[i] for i in group];lo=[min(p[k] for p in ps) for k in range(3)];hi=[max(p[k] for p in ps) for k in range(3)]
+  if not (.12<hi[0]-lo[0]<.35 and .12<hi[1]-lo[1]<.35):continue
+  if not all(xy.inside(p,plan['scopes'],-.04) for p in ps):continue
+  base=min(p[2]-grade(*p[:2]) for p in ps)
+  if not .43<base<.48:continue
+  center=((lo[0]+hi[0])/2,(lo[1]+hi[1])/2);hit=surface_hit(center,trees)
+  if not hit:continue
+  delta=hit[0]+.002-base-grade(*center)
+  assert abs(delta)<.5,'Unsupported bollard displacement'
+  bollards.append(dict(lo=lo,hi=hi,center=center,delta=delta))
  for name in sorted(DETAILS):
   o=bpy.data.objects[name];changes=[]
   for v in o.data.vertices:
    p=xy.local(v.co)
    if not xy.inside(p,plan['scopes'],-.01):continue
-   if name!='Skywalk visible detail white' and not any(lo[0]-.07<p[0]<hi[0]+.07 and lo[1]-.07<p[1]<hi[1]+.07 for lo,hi in anchors):continue
+   bollard=next((b for b in bollards if b['lo'][0]-.025<p[0]<b['hi'][0]+.025 and b['lo'][1]-.025<p[1]<b['hi'][1]+.025),None) if name in CLOSE_VISIBLE else None
+   if not bollard and name in ['Close detail silver','Close detail white']:continue
+   if not bollard and name!='Skywalk visible detail white' and not any(lo[0]-.07<p[0]<hi[0]+.07 and lo[1]-.07<p[1]<hi[1]+.07 for lo,hi in anchors):continue
    hit=surface_hit(p,trees)
    if not hit:continue
    h,surface=hit
    # Parking lines remain on the lot/apron, never migrate onto new curbs.
-   if name=='Skywalk visible detail white':
+   if bollard:z=p[2]+bollard['delta']
+   elif name=='Skywalk visible detail white':
     if surface not in ['parking mapped land use','OTW Tokyo Tower site v3 / site-paving']:continue
     z=h+.005
    else:z=h+(p[2]-grade(*p[:2])-.3)
    dz=z-p[2]
-   if abs(dz)<.001 or abs(dz)>.25:continue
-   old=list(v.co);v.co.z+=dz;changes.append(dict(index=v.index,before=old,after=list(v.co),support=surface,height=h,offset=z-h))
+   if abs(dz)<.001 or (not bollard and abs(dz)>.25):continue
+   old=list(v.co);v.co.z+=dz;row=dict(index=v.index,before=old,after=list(v.co),support=surface,height=h,offset=z-h)
+   if bollard:row.update(bollard_center=bollard['center'],rigid_vertical_delta=bollard['delta'])
+   changes.append(row)
   o.data.update();result[name]=changes
  return result
 
@@ -225,6 +243,7 @@ def validate(src,out,plan):
   for r in changes:
    hit=surface_hit(xy.local(r['after']),trees);assert hit and hit[1]==r['support'] and abs(hit[0]-r['height'])<.0001
    assert abs(r['after'][2]-hit[0]-r['offset'])<.0001
+   if 'rigid_vertical_delta' in r:assert abs(r['after'][2]-r['before'][2]-r['rigid_vertical_delta'])<1e-6
  bpy.ops.wm.open_mainfile(filepath=str(src));bpy.context.scene.frame_set(1)
  for name in DETAILS:
   expected=[[float(q) for q in v.co] for v in bpy.data.objects[name].data.vertices]
@@ -254,12 +273,12 @@ def main():
    collection=bpy.data.objects['Close detail iron'].users_collection[0];visibility=collection.hide_render;flags={o.name:o.hide_render for o in collection.objects}
    try:
     collection.hide_render=False
-    for o in collection.objects:o.hide_render=o.name not in ['Close detail iron','Close detail rim']
+    for o in collection.objects:o.hide_render=o.name not in CLOSE_VISIBLE
     detail=render(dict(output=str(out),cameras=diagnostic,settings=settings),phase);assert detail['devices']==result['devices'];result['views'].extend(detail['views'])
    finally:
     collection.hide_render=visibility
     for name,hidden in flags.items():bpy.data.objects[name].hide_render=hidden
-   result['surface_detail_visibility_override']=dict(view='surface-details-close',visible_objects=['Close detail iron','Close detail rim'],stored_collection_hidden=visibility,saved_scene_visibility_unchanged=True)
+   result['surface_detail_visibility_override']=dict(view='surface-details-close',visible_objects=CLOSE_VISIBLE,stored_collection_hidden=visibility,saved_scene_visibility_unchanged=True)
   result.update(settings=settings,cameras_sha256=digest(CAMERAS))
  assert digest(src)==SOURCE_SHA
  if candidate:assert digest(out/'after.blend')==candidate
